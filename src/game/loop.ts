@@ -28,7 +28,12 @@ export function startGame(
   }
 
   function update(dt: number) {
-    updatePlayer(dt, input.keys)
+    updatePlayer(
+      dt,
+      input.keys,
+      world.width * world.tileSize,
+      world.height * world.tileSize
+    )
   }
 
   function render() {
