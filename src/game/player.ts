@@ -1,10 +1,16 @@
 export const player = {
     x: 100,
     y: 100,
-    speed: 200 // pixels per second
+    speed: 200,
+    size: 24
   }
   
-  export function updatePlayer(dt: number, input: Record<string, boolean>) {
+  export function updatePlayer(
+    dt: number,
+    input: Record<string, boolean>,
+    worldWidthPx?: number,
+    worldHeightPx?: number
+  ) {
     let dx = 0
     let dy = 0
   
@@ -13,7 +19,6 @@ export const player = {
     if (input['a']) dx -= 1
     if (input['d']) dx += 1
   
-    // normalize diagonal movement
     const length = Math.hypot(dx, dy)
     if (length > 0) {
       dx /= length
@@ -22,4 +27,12 @@ export const player = {
   
     player.x += dx * player.speed * dt
     player.y += dy * player.speed * dt
+  
+    if (worldWidthPx !== undefined) {
+      player.x = Math.max(0, Math.min(player.x, worldWidthPx - player.size))
+    }
+  
+    if (worldHeightPx !== undefined) {
+      player.y = Math.max(0, Math.min(player.y, worldHeightPx - player.size))
+    }
   }
