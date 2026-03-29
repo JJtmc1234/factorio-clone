@@ -2,6 +2,8 @@ import { setupInput, input } from './input'
 import { player, updatePlayer } from './player'
 import { setupMouse, mouse } from './mouse'
 import { world, getTileAtScreenPosition } from './world'
+import { updateMining, getMiningProgress, getMiningTarget } from './mining'
+import { inventory } from './inventory'
 
 let running = false
 
@@ -34,15 +36,19 @@ export function startGame(
       world.width * world.tileSize,
       world.height * world.tileSize
     )
+  
+    updateMining(dt)
   }
 
   function render() {
     ctx.clearRect(0, 0, canvas.width, canvas.height)
-
+  
     drawGrid()
     drawObjects()
     drawPlayer()
     drawHover()
+    drawMiningProgress()
+    drawInventoryDebug()
   }
 
   function drawGrid() {
@@ -68,15 +74,15 @@ export function startGame(
         const px = x * world.tileSize
         const py = y * world.tileSize
 
-        if (tile.object === 'tree') {
-          ctx.fillStyle = 'green'
-          ctx.fillRect(px + 6, py + 6, 20, 20)
-        }
-
-        if (tile.object === 'ore') {
-          ctx.fillStyle = 'gray'
-          ctx.fillRect(px + 6, py + 6, 20, 20)
-        }
+        if (tile.object?.type === 'tree') {
+            ctx.fillStyle = 'green'
+            ctx.fillRect(px + 6, py + 6, 20, 20)
+          }
+          
+          if (tile.object?.type === 'ore') {
+            ctx.fillStyle = 'gray'
+            ctx.fillRect(px + 6, py + 6, 20, 20)
+          }
       }
     }
   }
@@ -99,6 +105,35 @@ export function startGame(
       world.tileSize
     )
   }
-
+  function drawMiningProgress() {
+    const target = getMiningTarget()
+    if (!target) return
+  
+    const progress = getMiningProgress()
+    const px = target.tileX * world.tileSize
+    const py = target.tileY * world.tileSize
+  
+    ctx.fillStyle = 'black'
+    ctx.fillRect(px + 4, py + 2, world.tileSize - 8, 6)
+  
+    ctx.fillStyle = 'lime'
+    ctx.fillRect(px + 4, py + 2, (world.tileSize - 8) * progress, 6)
+  }
+  function drawInventoryDebug() {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.85)'
+    ctx.fillRect(10, 10, 180, 100)
+  
+    ctx.fillStyle = 'black'
+    ctx.font = '16px sans-serif'
+  
+    let y = 30
+    ctx.fillText('Inventory:', 20, y)
+    y += 20
+  
+    for (const stack of inventory) {
+      ctx.fillText(`${stack.item}: ${stack.count}`, 20, y)
+      y += 20
+    }
+  }
   requestAnimationFrame(loop)
 }

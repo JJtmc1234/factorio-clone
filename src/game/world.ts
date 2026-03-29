@@ -1,7 +1,12 @@
 export type WorldObjectType = 'tree' | 'ore'
 
+export interface WorldObject {
+  type: WorldObjectType
+  amount: number
+}
+
 export interface Tile {
-  object: WorldObjectType | null
+  object: WorldObject | null
 }
 
 export interface World {
@@ -25,10 +30,10 @@ function createWorld(width: number, height: number, tileSize: number): World {
   }
 
   // temporary test objects
-  tiles[5][5].object = 'tree'
-  tiles[8][12].object = 'tree'
-  tiles[10][15].object = 'ore'
-  tiles[12][20].object = 'ore'
+     tiles[5][5].object = { type: 'tree', amount: 1 }
+    tiles[8][12].object = { type: 'tree', amount: 1 }
+    tiles[10][15].object = { type: 'ore', amount: 5 }
+    tiles[12][20].object = { type: 'ore', amount: 5 }
 
   return {
     width,
