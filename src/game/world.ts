@@ -1,4 +1,4 @@
-import { screenToWorld, camera } from './camera'
+import { camera, screenToWorld } from './camera'
 
 export type WorldObjectType = 'tree' | 'ore'
 
@@ -21,7 +21,6 @@ export const TILE_SIZE = 32
 export const CHUNK_SIZE = 32
 
 const chunks = new Map<string, Chunk>()
-
 const exploredTiles = new Set<string>()
 const visibleTiles = new Set<string>()
 
@@ -49,7 +48,7 @@ function createEmptyChunk(chunkX: number, chunkY: number): Chunk {
   return {
     chunkX,
     chunkY,
-    tiles
+    tiles,
   }
 }
 
@@ -71,7 +70,6 @@ function mod(n: number, m: number): number {
 function generateChunk(chunkX: number, chunkY: number): Chunk {
   const chunk = createEmptyChunk(chunkX, chunkY)
 
-  // Trees
   for (let localY = 0; localY < CHUNK_SIZE; localY++) {
     for (let localX = 0; localX < CHUNK_SIZE; localX++) {
       const worldTileX = chunkX * CHUNK_SIZE + localX
@@ -84,7 +82,6 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
     }
   }
 
-  // Ore patches
   for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
     for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
       const patchRoll = hash(patchChunkX, patchChunkY, 2)
@@ -112,7 +109,7 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
 
               chunk.tiles[localY][localX].object = {
                 type: 'ore',
-                amount
+                amount,
               }
             }
           }
@@ -150,10 +147,10 @@ export function getTileAtWorldTile(tileX: number, tileY: number): Tile {
 export function getTileCoordsAtScreenPosition(screenX: number, screenY: number) {
   const world = screenToWorld(screenX, screenY)
 
-  const tileX = Math.floor(world.x / TILE_SIZE)
-  const tileY = Math.floor(world.y / TILE_SIZE)
-
-  return { tileX, tileY }
+  return {
+    tileX: Math.floor(world.x / TILE_SIZE),
+    tileY: Math.floor(world.y / TILE_SIZE),
+  }
 }
 
 export function getTileAtScreenPosition(screenX: number, screenY: number) {
@@ -162,7 +159,7 @@ export function getTileAtScreenPosition(screenX: number, screenY: number) {
   return {
     tileX,
     tileY,
-    tile: getTileAtWorldTile(tileX, tileY)
+    tile: getTileAtWorldTile(tileX, tileY),
   }
 }
 
@@ -174,16 +171,16 @@ export function updateVisibility(playerX: number, playerY: number, radiusTiles =
 
   for (let dy = -radiusTiles; dy <= radiusTiles; dy++) {
     for (let dx = -radiusTiles; dx <= radiusTiles; dx++) {
+      if (dx * dx + dy * dy > radiusTiles * radiusTiles) {
+        continue
+      }
+
       const tileX = playerTileX + dx
       const tileY = playerTileY + dy
-
-      if (dx * dx + dy * dy > radiusTiles * radiusTiles) continue
-
       const key = getTileKey(tileX, tileY)
+
       visibleTiles.add(key)
       exploredTiles.add(key)
-
-      // ensure chunks generate when first seen
       getTileAtWorldTile(tileX, tileY)
     }
   }
@@ -198,15 +195,10 @@ export function isTileExplored(tileX: number, tileY: number) {
 }
 
 export function getVisibleTileBounds() {
-  const startTileX = Math.floor(camera.x / TILE_SIZE)
-  const startTileY = Math.floor(camera.y / TILE_SIZE)
-  const endTileX = Math.ceil((camera.x + camera.width) / TILE_SIZE)
-  const endTileY = Math.ceil((camera.y + camera.height) / TILE_SIZE)
-
   return {
-    startTileX,
-    startTileY,
-    endTileX,
-    endTileY
+    startTileX: Math.floor(camera.x / TILE_SIZE) - 1,
+    startTileY: Math.floor(camera.y / TILE_SIZE) - 1,
+    endTileX: Math.ceil((camera.x + camera.width) / TILE_SIZE) + 1,
+    endTileY: Math.ceil((camera.y + camera.height) / TILE_SIZE) + 1,
   }
 }

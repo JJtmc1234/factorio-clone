@@ -1,6 +1,6 @@
 export const input = {
   keys: {} as Record<string, boolean>,
-  pressed: {} as Record<string, boolean>
+  pressed: {} as Record<string, boolean>,
 }
 
 export function setupInput() {

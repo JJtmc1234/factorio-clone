@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { startGame } from '../game/loop'
 
 const canvas = ref<HTMLCanvasElement | null>(null)
@@ -35,4 +35,4 @@ onBeforeUnmount(() => {
 canvas {
   display: block;
 }
-</style> 
+</style>
