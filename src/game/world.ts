@@ -1,3 +1,5 @@
+import { screenToWorld, camera } from './camera'
+
 export type WorldObjectType = 'tree' | 'ore'
 
 export interface WorldObject {
@@ -20,8 +22,15 @@ export const CHUNK_SIZE = 32
 
 const chunks = new Map<string, Chunk>()
 
+const exploredTiles = new Set<string>()
+const visibleTiles = new Set<string>()
+
 function getChunkKey(chunkX: number, chunkY: number): string {
   return `${chunkX},${chunkY}`
+}
+
+function getTileKey(tileX: number, tileY: number): string {
+  return `${tileX},${tileY}`
 }
 
 function createEmptyChunk(chunkX: number, chunkY: number): Chunk {
@@ -138,13 +147,66 @@ export function getTileAtWorldTile(tileX: number, tileY: number): Tile {
   return chunk.tiles[localY][localX]
 }
 
+export function getTileCoordsAtScreenPosition(screenX: number, screenY: number) {
+  const world = screenToWorld(screenX, screenY)
+
+  const tileX = Math.floor(world.x / TILE_SIZE)
+  const tileY = Math.floor(world.y / TILE_SIZE)
+
+  return { tileX, tileY }
+}
+
 export function getTileAtScreenPosition(screenX: number, screenY: number) {
-  const tileX = Math.floor(screenX / TILE_SIZE)
-  const tileY = Math.floor(screenY / TILE_SIZE)
+  const { tileX, tileY } = getTileCoordsAtScreenPosition(screenX, screenY)
 
   return {
     tileX,
     tileY,
     tile: getTileAtWorldTile(tileX, tileY)
+  }
+}
+
+export function updateVisibility(playerX: number, playerY: number, radiusTiles = 10) {
+  visibleTiles.clear()
+
+  const playerTileX = Math.floor(playerX / TILE_SIZE)
+  const playerTileY = Math.floor(playerY / TILE_SIZE)
+
+  for (let dy = -radiusTiles; dy <= radiusTiles; dy++) {
+    for (let dx = -radiusTiles; dx <= radiusTiles; dx++) {
+      const tileX = playerTileX + dx
+      const tileY = playerTileY + dy
+
+      if (dx * dx + dy * dy > radiusTiles * radiusTiles) continue
+
+      const key = getTileKey(tileX, tileY)
+      visibleTiles.add(key)
+      exploredTiles.add(key)
+
+      // ensure chunks generate when first seen
+      getTileAtWorldTile(tileX, tileY)
+    }
+  }
+}
+
+export function isTileVisible(tileX: number, tileY: number) {
+  return visibleTiles.has(getTileKey(tileX, tileY))
+}
+
+export function isTileExplored(tileX: number, tileY: number) {
+  return exploredTiles.has(getTileKey(tileX, tileY))
+}
+
+export function getVisibleTileBounds() {
+  const startTileX = Math.floor(camera.x / TILE_SIZE)
+  const startTileY = Math.floor(camera.y / TILE_SIZE)
+  const endTileX = Math.ceil((camera.x + camera.width) / TILE_SIZE)
+  const endTileY = Math.ceil((camera.y + camera.height) / TILE_SIZE)
+
+  return {
+    startTileX,
+    startTileY,
+    endTileX,
+    endTileY
   }
 }

@@ -1,9 +1,19 @@
-import { setupInput, input } from './input'
+import { setupInput, input, consumePressed } from './input'
 import { player, updatePlayer } from './player'
 import { setupMouse, mouse } from './mouse'
-import { TILE_SIZE, getTileAtWorldTile, getTileAtScreenPosition } from './world'
+import {
+  TILE_SIZE,
+  getTileAtWorldTile,
+  getTileAtScreenPosition,
+  getVisibleTileBounds,
+  isTileExplored,
+  isTileVisible,
+  updateVisibility
+} from './world'
 import { updateMining, getMiningProgress, getMiningTarget } from './mining'
 import { inventory } from './inventory'
+import { updateCamera, worldToScreen } from './camera'
+import { mapState, renderMap, toggleMap } from './map'
 
 let running = false
 
@@ -30,14 +40,33 @@ export function startGame(
   }
 
   function update(dt: number) {
-    updatePlayer(dt, input.keys)
-    updateMining(dt)
+    if (consumePressed('m')) {
+      toggleMap()
+    }
+
+    if (!mapState.open) {
+      updatePlayer(dt, input.keys)
+      updateCamera(
+        player.x + player.size / 2,
+        player.y + player.size / 2,
+        canvas.width,
+        canvas.height
+      )
+      updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
+      updateMining(dt)
+    }
   }
 
   function render() {
     ctx.fillStyle = '#222'
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
+    if (mapState.open) {
+      renderMap(ctx, canvas.width, canvas.height)
+      return
+    }
+
+    drawTerrain()
     drawGrid()
     drawObjects()
     drawPlayer()
@@ -46,18 +75,41 @@ export function startGame(
     drawInventoryDebug()
   }
 
+  function drawTerrain() {
+    const bounds = getVisibleTileBounds()
+
+    for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
+      for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
+        if (!isTileExplored(tileX, tileY)) continue
+
+        const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
+
+        ctx.fillStyle = '#4c8a3f'
+        ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
+
+        if (!isTileVisible(tileX, tileY)) {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.55)'
+          ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
+        }
+      }
+    }
+  }
+
   function drawGrid() {
+    const bounds = getVisibleTileBounds()
+
     ctx.strokeStyle = '#333'
     ctx.lineWidth = 1
 
-    const visibleTilesX = Math.ceil(canvas.width / TILE_SIZE)
-    const visibleTilesY = Math.ceil(canvas.height / TILE_SIZE)
+    for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
+      for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
+        if (!isTileExplored(tileX, tileY)) continue
 
-    for (let y = 0; y < visibleTilesY; y++) {
-      for (let x = 0; x < visibleTilesX; x++) {
+        const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
+
         ctx.strokeRect(
-          x * TILE_SIZE,
-          y * TILE_SIZE,
+          screen.x,
+          screen.y,
           TILE_SIZE,
           TILE_SIZE
         )
@@ -66,60 +118,71 @@ export function startGame(
   }
 
   function drawObjects() {
-    const visibleTilesX = Math.ceil(canvas.width / TILE_SIZE)
-    const visibleTilesY = Math.ceil(canvas.height / TILE_SIZE)
+    const bounds = getVisibleTileBounds()
 
-    for (let y = 0; y < visibleTilesY; y++) {
-      for (let x = 0; x < visibleTilesX; x++) {
-        const tile = getTileAtWorldTile(x, y)
-        const px = x * TILE_SIZE
-        const py = y * TILE_SIZE
+    for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
+      for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
+        if (!isTileExplored(tileX, tileY)) continue
+
+        const tile = getTileAtWorldTile(tileX, tileY)
+        const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
 
         if (tile.object?.type === 'tree') {
           ctx.fillStyle = 'green'
-          ctx.fillRect(px + 6, py + 6, 20, 20)
+          ctx.fillRect(screen.x + 6, screen.y + 6, 20, 20)
         }
 
         if (tile.object?.type === 'ore') {
           ctx.fillStyle = 'gray'
-          ctx.fillRect(px + 6, py + 6, 20, 20)
+          ctx.fillRect(screen.x + 6, screen.y + 6, 20, 20)
+        }
+
+        if (!isTileVisible(tileX, tileY)) {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
+          ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
         }
       }
     }
   }
 
   function drawPlayer() {
+    const screen = worldToScreen(player.x, player.y)
+
     ctx.fillStyle = 'blue'
-    ctx.fillRect(player.x, player.y, player.size, player.size)
+    ctx.fillRect(screen.x, screen.y, player.size, player.size)
   }
 
   function drawHover() {
     const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
     if (!hovered) return
+    if (!isTileExplored(hovered.tileX, hovered.tileY)) return
+
+    const screen = worldToScreen(
+      hovered.tileX * TILE_SIZE,
+      hovered.tileY * TILE_SIZE
+    )
 
     ctx.strokeStyle = 'yellow'
     ctx.lineWidth = 2
-    ctx.strokeRect(
-      hovered.tileX * TILE_SIZE,
-      hovered.tileY * TILE_SIZE,
-      TILE_SIZE,
-      TILE_SIZE
-    )
+    ctx.strokeRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
   }
 
   function drawMiningProgress() {
     const target = getMiningTarget()
     if (!target) return
+    if (!isTileExplored(target.tileX, target.tileY)) return
 
     const progress = getMiningProgress()
-    const px = target.tileX * TILE_SIZE
-    const py = target.tileY * TILE_SIZE
+    const screen = worldToScreen(
+      target.tileX * TILE_SIZE,
+      target.tileY * TILE_SIZE
+    )
 
     ctx.fillStyle = 'black'
-    ctx.fillRect(px + 4, py + 2, TILE_SIZE - 8, 6)
+    ctx.fillRect(screen.x + 4, screen.y + 2, TILE_SIZE - 8, 6)
 
     ctx.fillStyle = 'lime'
-    ctx.fillRect(px + 4, py + 2, (TILE_SIZE - 8) * progress, 6)
+    ctx.fillRect(screen.x + 4, screen.y + 2, (TILE_SIZE - 8) * progress, 6)
   }
 
   function drawInventoryDebug() {
@@ -143,6 +206,14 @@ export function startGame(
       y += 20
     }
   }
+
+  updateCamera(
+    player.x + player.size / 2,
+    player.y + player.size / 2,
+    canvas.width,
+    canvas.height
+  )
+  updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
 
   requestAnimationFrame(loop)
 }
