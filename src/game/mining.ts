@@ -21,17 +21,22 @@ export function updateMining(dt: number) {
   }
 
   const obj = hovered.tile.object
-  const miningSpeed = obj.type === 'tree' ? 2.5 : 1.2
+  const miningSpeed =
+    obj.type === 'tree'
+      ? 2.5
+      : obj.type === 'coal'
+        ? 1.5
+        : 1.2
 
   miningProgress += dt * miningSpeed
 
   if (miningProgress >= 1) {
     if (obj.type === 'tree') {
       addItem('wood', 1)
-    }
-
-    if (obj.type === 'ore') {
+    } else if (obj.type === 'iron_ore') {
       addItem('iron_ore', 1)
+    } else if (obj.type === 'coal') {
+      addItem('coal', 1)
     }
 
     obj.amount -= 1

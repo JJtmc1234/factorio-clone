@@ -1,8 +1,12 @@
-import { player } from './player'
-import { TILE_SIZE, getTileAtWorldTile, isTileExplored } from './world'
+﻿import { player } from './player'
+import {
+  TILE_SIZE,
+  getTileAtWorldTile,
+  isTileExplored
+} from './world'
 
 export const mapState = {
-  open: false,
+  open: false
 }
 
 export function toggleMap() {
@@ -11,11 +15,16 @@ export function toggleMap() {
 
 function getMapColor(tile: ReturnType<typeof getTileAtWorldTile>) {
   if (tile.object?.type === 'tree') return '#2e8b57'
-  if (tile.object?.type === 'ore') return '#888888'
+  if (tile.object?.type === 'iron_ore') return '#a0856c'
+  if (tile.object?.type === 'coal') return '#333333'
   return '#4c8a3f'
 }
 
-export function renderMap(ctx: CanvasRenderingContext2D, canvasWidth: number, canvasHeight: number) {
+export function renderMap(
+  ctx: CanvasRenderingContext2D,
+  canvasWidth: number,
+  canvasHeight: number
+) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.92)'
   ctx.fillRect(0, 0, canvasWidth, canvasHeight)
 
@@ -23,8 +32,8 @@ export function renderMap(ctx: CanvasRenderingContext2D, canvasWidth: number, ca
   const tilesWide = Math.floor(canvasWidth / mapTileSize)
   const tilesHigh = Math.floor(canvasHeight / mapTileSize)
 
-  const playerTileX = Math.floor((player.x + player.size / 2) / TILE_SIZE)
-  const playerTileY = Math.floor((player.y + player.size / 2) / TILE_SIZE)
+  const playerTileX = Math.floor(player.x / TILE_SIZE)
+  const playerTileY = Math.floor(player.y / TILE_SIZE)
 
   const halfWide = Math.floor(tilesWide / 2)
   const halfHigh = Math.floor(tilesHigh / 2)
@@ -34,18 +43,28 @@ export function renderMap(ctx: CanvasRenderingContext2D, canvasWidth: number, ca
       const tileX = playerTileX + (sx - halfWide)
       const tileY = playerTileY + (sy - halfHigh)
 
-      if (!isTileExplored(tileX, tileY)) {
-        continue
-      }
+      if (!isTileExplored(tileX, tileY)) continue
 
       const tile = getTileAtWorldTile(tileX, tileY)
+
       ctx.fillStyle = getMapColor(tile)
-      ctx.fillRect(sx * mapTileSize, sy * mapTileSize, mapTileSize, mapTileSize)
+      ctx.fillRect(
+        sx * mapTileSize,
+        sy * mapTileSize,
+        mapTileSize,
+        mapTileSize
+      )
     }
   }
 
+  // player marker in center
   ctx.fillStyle = '#ff4444'
-  ctx.fillRect(halfWide * mapTileSize, halfHigh * mapTileSize, mapTileSize, mapTileSize)
+  ctx.fillRect(
+    halfWide * mapTileSize,
+    halfHigh * mapTileSize,
+    mapTileSize,
+    mapTileSize
+  )
 
   ctx.fillStyle = 'white'
   ctx.font = '18px sans-serif'

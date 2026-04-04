@@ -14,15 +14,27 @@ import { updateMining, getMiningProgress, getMiningTarget } from './mining'
 import { inventory } from './inventory'
 import { updateCamera, worldToScreen } from './camera'
 import {
-  renderBuildings,
-  updateBuildings,
-  placeBurnerDrill,
+  type Direction,
+  type BuildSelection,
+  canPlaceBuilding,
   fuelBuildingAtTile,
   getBuildingAtTile,
+  placeBurnerDrill,
+  placeWoodenChest,
+  renderBuildingGhost,
+  renderBuildings,
+  updateBuildings,
 } from './buildings'
 import { mapState, renderMap, toggleMap } from './map'
 
 let running = false
+
+function rotateDirection(direction: Direction): Direction {
+  if (direction === 'down') return 'left'
+  if (direction === 'left') return 'up'
+  if (direction === 'up') return 'right'
+  return 'down'
+}
 
 export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D) {
   if (running) return
@@ -31,7 +43,8 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
   setupInput()
   setupMouse(canvas)
 
-  let selectedBuild: 'burner_drill' | null = null
+  let selectedBuild: BuildSelection = null
+  let buildDirection: Direction = 'down'
   let last = performance.now()
 
   function loop(now: number) {
@@ -53,6 +66,14 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       selectedBuild = 'burner_drill'
     }
 
+    if (consumePressed('2')) {
+      selectedBuild = 'wooden_chest'
+    }
+
+    if (consumePressed('r')) {
+      buildDirection = rotateDirection(buildDirection)
+    }
+
     if (consumePressed('escape')) {
       selectedBuild = null
     }
@@ -66,12 +87,24 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
         canvas.width,
         canvas.height,
       )
-      updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
+      updateVisibility(
+        player.x + player.size / 2,
+        player.y + player.size / 2,
+        10,
+      )
 
       const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
 
-      if (consumeRightPressed() && hovered && selectedBuild === 'burner_drill') {
-        placeBurnerDrill(hovered.tileX, hovered.tileY)
+      if (consumeRightPressed() && hovered && selectedBuild) {
+        const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
+
+        if (valid) {
+          if (selectedBuild === 'burner_drill') {
+            placeBurnerDrill(hovered.tileX, hovered.tileY, buildDirection)
+          } else if (selectedBuild === 'wooden_chest') {
+            placeWoodenChest(hovered.tileX, hovered.tileY)
+          }
+        }
       }
 
       if (consumePressed('f') && hovered) {
@@ -96,8 +129,8 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     drawGrid()
     drawObjects()
     drawBuildings()
+    drawHoverAndGhost()
     drawPlayer()
-    drawHover()
     drawMiningProgress()
     drawInventoryDebug()
     drawBuildUi()
@@ -108,9 +141,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
       for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
-        if (!isTileExplored(tileX, tileY)) {
-          continue
-        }
+        if (!isTileExplored(tileX, tileY)) continue
 
         const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
 
@@ -133,9 +164,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
       for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
-        if (!isTileExplored(tileX, tileY)) {
-          continue
-        }
+        if (!isTileExplored(tileX, tileY)) continue
 
         const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
         ctx.strokeRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
@@ -148,21 +177,42 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
       for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
-        if (!isTileExplored(tileX, tileY)) {
-          continue
-        }
+        if (!isTileExplored(tileX, tileY)) continue
 
         const tile = getTileAtWorldTile(tileX, tileY)
+        const object = tile.object
+        if (!object) continue
+
         const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
 
-        if (tile.object?.type === 'tree') {
-          ctx.fillStyle = 'green'
-          ctx.fillRect(screen.x + 6, screen.y + 6, 20, 20)
+        if (object.type === 'tree') {
+          ctx.fillStyle = '#6b4f2a'
+          ctx.fillRect(screen.x + 13, screen.y + 16, 6, 10)
+
+          ctx.fillStyle = '#2e8b57'
+          ctx.fillRect(screen.x + 8, screen.y + 7, 16, 10)
+          ctx.fillRect(screen.x + 6, screen.y + 12, 8, 8)
+          ctx.fillRect(screen.x + 18, screen.y + 12, 8, 8)
         }
 
-        if (tile.object?.type === 'ore') {
-          ctx.fillStyle = 'gray'
-          ctx.fillRect(screen.x + 6, screen.y + 6, 20, 20)
+        if (object.type === 'iron_ore') {
+          ctx.fillStyle = '#5f646b'
+          ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
+
+          ctx.fillStyle = '#9aa3ad'
+          ctx.fillRect(screen.x + 9, screen.y + 10, 5, 5)
+          ctx.fillRect(screen.x + 16, screen.y + 13, 4, 4)
+          ctx.fillRect(screen.x + 20, screen.y + 10, 3, 3)
+        }
+
+        if (object.type === 'coal') {
+          ctx.fillStyle = '#1e1e22'
+          ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
+
+          ctx.fillStyle = '#3a3a40'
+          ctx.fillRect(screen.x + 10, screen.y + 11, 4, 3)
+          ctx.fillRect(screen.x + 17, screen.y + 14, 3, 3)
+          ctx.fillRect(screen.x + 20, screen.y + 10, 3, 2)
         }
 
         if (!isTileVisible(tileX, tileY)) {
@@ -179,36 +229,115 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
   function drawPlayer() {
     const screen = worldToScreen(player.x, player.y)
-
-    ctx.fillStyle = 'blue'
-    ctx.fillRect(screen.x, screen.y, player.size, player.size)
+    drawPlayerSprite(screen.x, screen.y)
   }
 
-  function drawHover() {
-    const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
-    if (!hovered || !isTileExplored(hovered.tileX, hovered.tileY)) {
-      return
+  function drawPlayerSprite(screenX: number, screenY: number) {
+    const walkFrame = Math.floor(player.animTime) % 2
+    const legOffset = player.moving ? (walkFrame === 0 ? -2 : 2) : 0
+    const armOffset = player.moving ? (walkFrame === 0 ? 2 : -2) : 0
+
+    ctx.fillStyle = 'rgba(0,0,0,0.25)'
+    ctx.beginPath()
+    ctx.ellipse(screenX + 12, screenY + 22, 8, 4, 0, 0, Math.PI * 2)
+    ctx.fill()
+
+    ctx.fillStyle = '#2f5aa8'
+    ctx.fillRect(screenX + 7, screenY + 15, 4, 8 + legOffset)
+    ctx.fillRect(screenX + 13, screenY + 15, 4, 8 - legOffset)
+
+    ctx.fillStyle = '#4da6ff'
+    ctx.fillRect(screenX + 6, screenY + 7, 12, 10)
+
+    ctx.fillStyle = '#f2c18d'
+    ctx.fillRect(screenX + 3, screenY + 8, 3, 7 + armOffset)
+    ctx.fillRect(screenX + 18, screenY + 8, 3, 7 - armOffset)
+
+    ctx.fillStyle = '#f2c18d'
+    ctx.fillRect(screenX + 7, screenY + 1, 10, 8)
+
+    ctx.fillStyle = '#111'
+    if (player.facing === 'down') {
+      ctx.fillRect(screenX + 9, screenY + 4, 1, 1)
+      ctx.fillRect(screenX + 13, screenY + 4, 1, 1)
     }
+
+    if (player.facing === 'up') {
+      ctx.fillStyle = '#224477'
+      ctx.fillRect(screenX + 8, screenY + 8, 8, 6)
+    } else if (player.facing === 'left') {
+      ctx.fillStyle = '#224477'
+      ctx.fillRect(screenX + 6, screenY + 9, 3, 6)
+    } else if (player.facing === 'right') {
+      ctx.fillStyle = '#224477'
+      ctx.fillRect(screenX + 15, screenY + 9, 3, 6)
+    }
+  }
+
+  function drawHoverAndGhost() {
+    const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
+    if (!hovered || !isTileExplored(hovered.tileX, hovered.tileY)) return
 
     const screen = worldToScreen(hovered.tileX * TILE_SIZE, hovered.tileY * TILE_SIZE)
 
-    ctx.strokeStyle = selectedBuild ? 'cyan' : 'yellow'
-    ctx.lineWidth = 2
-    ctx.strokeRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
+    if (selectedBuild) {
+      const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
+      renderBuildingGhost(
+        ctx,
+        selectedBuild,
+        hovered.tileX,
+        hovered.tileY,
+        buildDirection,
+        valid,
+      )
+    } else {
+      ctx.strokeStyle = 'yellow'
+      ctx.lineWidth = 2
+      ctx.strokeRect(screen.x + 1, screen.y + 1, TILE_SIZE - 2, TILE_SIZE - 2)
+    }
 
     const building = getBuildingAtTile(hovered.tileX, hovered.tileY)
-    if (building) {
-      ctx.fillStyle = 'white'
-      ctx.font = '12px sans-serif'
-      ctx.fillText(`fuel: ${building.fuel.toFixed(1)} (F = add wood)`, screen.x, screen.y - 6)
+    if (!building) return
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.8)'
+    ctx.fillRect(screen.x, screen.y - 42, 170, 38)
+
+    ctx.fillStyle = 'white'
+    ctx.font = '12px sans-serif'
+
+    if (building.type === 'burner_drill') {
+      const outputText = building.outputItem
+        ? `${building.outputItem} ${building.outputCount}/${building.outputCapacity}`
+        : `empty 0/${building.outputCapacity}`
+
+      ctx.fillText(
+        `drill ${building.direction} fuel:${building.fuel.toFixed(1)}`,
+        screen.x + 4,
+        screen.y - 27,
+      )
+      ctx.fillText(
+        `out: ${outputText}`,
+        screen.x + 4,
+        screen.y - 12,
+      )
+    } else {
+      const itemText = building.item ? building.item : 'empty'
+      ctx.fillText(
+        `wooden chest`,
+        screen.x + 4,
+        screen.y - 27,
+      )
+      ctx.fillText(
+        `${itemText}: ${building.count}/${building.capacity}`,
+        screen.x + 4,
+        screen.y - 12,
+      )
     }
   }
 
   function drawMiningProgress() {
     const target = getMiningTarget()
-    if (!target || !isTileExplored(target.tileX, target.tileY)) {
-      return
-    }
+    if (!target || !isTileExplored(target.tileX, target.tileY)) return
 
     const progress = getMiningProgress()
     const screen = worldToScreen(target.tileX * TILE_SIZE, target.tileY * TILE_SIZE)
@@ -222,7 +351,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
   function drawInventoryDebug() {
     ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'
-    ctx.fillRect(10, 10, 240, 180)
+    ctx.fillRect(10, 10, 250, 200)
 
     ctx.fillStyle = 'black'
     ctx.font = '16px sans-serif'
@@ -233,6 +362,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     if (inventory.length === 0) {
       ctx.fillText('(empty)', 20, y)
+      y += 20
     } else {
       for (const stack of inventory) {
         ctx.fillText(`${stack.item}: ${stack.count}`, 20, y)
@@ -245,13 +375,18 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
   }
 
   function drawBuildUi() {
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.7)'
-    ctx.fillRect(10, canvas.height - 70, 420, 60)
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
+    ctx.fillRect(10, canvas.height - 74, 520, 64)
 
     ctx.fillStyle = 'white'
     ctx.font = '16px sans-serif'
-    ctx.fillText(`Build: ${selectedBuild ?? 'none'}`, 20, canvas.height - 42)
-    ctx.fillText('1 = burner drill, Esc = clear, Right Click = place, F = fuel, M = map', 20, canvas.height - 20)
+    ctx.fillText(`Build: ${selectedBuild ?? 'none'}`, 20, canvas.height - 46)
+    ctx.fillText(`Direction: ${buildDirection}`, 170, canvas.height - 46)
+    ctx.fillText(
+      '1=drill  2=chest  R=rotate  Right Click=place  F=fuel hovered drill  M=map',
+      20,
+      canvas.height - 22,
+    )
   }
 
   updateCamera(
@@ -260,7 +395,11 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     canvas.width,
     canvas.height,
   )
-  updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
+  updateVisibility(
+    player.x + player.size / 2,
+    player.y + player.size / 2,
+    10,
+  )
 
   requestAnimationFrame(loop)
 }

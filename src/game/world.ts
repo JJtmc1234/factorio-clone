@@ -1,6 +1,6 @@
 import { camera, screenToWorld } from './camera'
 
-export type WorldObjectType = 'tree' | 'ore'
+export type WorldObjectType = 'tree' | 'iron_ore' | 'coal'
 
 export interface WorldObject {
   type: WorldObjectType
@@ -45,11 +45,7 @@ function createEmptyChunk(chunkX: number, chunkY: number): Chunk {
     tiles.push(row)
   }
 
-  return {
-    chunkX,
-    chunkY,
-    tiles,
-  }
+  return { chunkX, chunkY, tiles }
 }
 
 function hash(x: number, y: number, seed: number): number {
@@ -85,33 +81,34 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
   for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
     for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
       const patchRoll = hash(patchChunkX, patchChunkY, 2)
+      if (patchRoll >= 0.75) continue
 
-      if (patchRoll < 0.75) {
-        const patchCenterX =
-          patchChunkX * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 3) * CHUNK_SIZE)
-        const patchCenterY =
-          patchChunkY * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 4) * CHUNK_SIZE)
+      const patchCenterX =
+        patchChunkX * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 3) * CHUNK_SIZE)
+      const patchCenterY =
+        patchChunkY * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 4) * CHUNK_SIZE)
 
-        const radius = 4 + Math.floor(hash(patchChunkX, patchChunkY, 5) * 5)
-        const richness = 3 + Math.floor(hash(patchChunkX, patchChunkY, 6) * 6)
+      const radius = 4 + Math.floor(hash(patchChunkX, patchChunkY, 5) * 5)
+      const richness = 3 + Math.floor(hash(patchChunkX, patchChunkY, 6) * 6)
+      const resourceRoll = hash(patchChunkX, patchChunkY, 7)
+      const resourceType: WorldObjectType = resourceRoll < 0.68 ? 'iron_ore' : 'coal'
 
-        for (let localY = 0; localY < CHUNK_SIZE; localY++) {
-          for (let localX = 0; localX < CHUNK_SIZE; localX++) {
-            const worldTileX = chunkX * CHUNK_SIZE + localX
-            const worldTileY = chunkY * CHUNK_SIZE + localY
+      for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+        for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+          const worldTileX = chunkX * CHUNK_SIZE + localX
+          const worldTileY = chunkY * CHUNK_SIZE + localY
 
-            const dx = worldTileX - patchCenterX
-            const dy = worldTileY - patchCenterY
-            const dist = Math.sqrt(dx * dx + dy * dy)
+          const dx = worldTileX - patchCenterX
+          const dy = worldTileY - patchCenterY
+          const dist = Math.sqrt(dx * dx + dy * dy)
 
-            if (dist <= radius) {
-              const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
+          if (dist > radius) continue
 
-              chunk.tiles[localY][localX].object = {
-                type: 'ore',
-                amount,
-              }
-            }
+          const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
+
+          chunk.tiles[localY][localX].object = {
+            type: resourceType,
+            amount,
           }
         }
       }
@@ -171,9 +168,7 @@ export function updateVisibility(playerX: number, playerY: number, radiusTiles =
 
   for (let dy = -radiusTiles; dy <= radiusTiles; dy++) {
     for (let dx = -radiusTiles; dx <= radiusTiles; dx++) {
-      if (dx * dx + dy * dy > radiusTiles * radiusTiles) {
-        continue
-      }
+      if (dx * dx + dy * dy > radiusTiles * radiusTiles) continue
 
       const tileX = playerTileX + dx
       const tileY = playerTileY + dy
