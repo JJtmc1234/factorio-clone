@@ -9,58 +9,142 @@ export interface Tile {
   object: WorldObject | null
 }
 
-export interface World {
-  width: number
-  height: number
-  tileSize: number
+export interface Chunk {
+  chunkX: number
+  chunkY: number
   tiles: Tile[][]
 }
 
-function createWorld(width: number, height: number, tileSize: number): World {
+export const TILE_SIZE = 32
+export const CHUNK_SIZE = 32
+
+const chunks = new Map<string, Chunk>()
+
+function getChunkKey(chunkX: number, chunkY: number): string {
+  return `${chunkX},${chunkY}`
+}
+
+function createEmptyChunk(chunkX: number, chunkY: number): Chunk {
   const tiles: Tile[][] = []
 
-  for (let y = 0; y < height; y++) {
+  for (let y = 0; y < CHUNK_SIZE; y++) {
     const row: Tile[] = []
 
-    for (let x = 0; x < width; x++) {
+    for (let x = 0; x < CHUNK_SIZE; x++) {
       row.push({ object: null })
     }
 
     tiles.push(row)
   }
 
-  // temporary test objects
-     tiles[5][5].object = { type: 'tree', amount: 1 }
-    tiles[8][12].object = { type: 'tree', amount: 1 }
-    tiles[10][15].object = { type: 'ore', amount: 5 }
-    tiles[12][20].object = { type: 'ore', amount: 5 }
-
   return {
-    width,
-    height,
-    tileSize,
+    chunkX,
+    chunkY,
     tiles
   }
 }
 
-export const world: World = createWorld(50, 30, 32)
+function hash(x: number, y: number, seed: number): number {
+  let n = x * 374761393 + y * 668265263 + seed * 1442695041
+  n = (n ^ (n >> 13)) * 1274126177
+  n = n ^ (n >> 16)
+  return (n >>> 0) / 4294967295
+}
+
+function worldToChunkCoord(tileCoord: number): number {
+  return Math.floor(tileCoord / CHUNK_SIZE)
+}
+
+function mod(n: number, m: number): number {
+  return ((n % m) + m) % m
+}
+
+function generateChunk(chunkX: number, chunkY: number): Chunk {
+  const chunk = createEmptyChunk(chunkX, chunkY)
+
+  // Trees
+  for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+    for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+      const worldTileX = chunkX * CHUNK_SIZE + localX
+      const worldTileY = chunkY * CHUNK_SIZE + localY
+
+      const treeChance = hash(worldTileX, worldTileY, 1)
+      if (treeChance < 0.04) {
+        chunk.tiles[localY][localX].object = { type: 'tree', amount: 1 }
+      }
+    }
+  }
+
+  // Ore patches
+  for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
+    for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
+      const patchRoll = hash(patchChunkX, patchChunkY, 2)
+
+      if (patchRoll < 0.75) {
+        const patchCenterX =
+          patchChunkX * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 3) * CHUNK_SIZE)
+        const patchCenterY =
+          patchChunkY * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 4) * CHUNK_SIZE)
+
+        const radius = 4 + Math.floor(hash(patchChunkX, patchChunkY, 5) * 5)
+        const richness = 3 + Math.floor(hash(patchChunkX, patchChunkY, 6) * 6)
+
+        for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+          for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+            const worldTileX = chunkX * CHUNK_SIZE + localX
+            const worldTileY = chunkY * CHUNK_SIZE + localY
+
+            const dx = worldTileX - patchCenterX
+            const dy = worldTileY - patchCenterY
+            const dist = Math.sqrt(dx * dx + dy * dy)
+
+            if (dist <= radius) {
+              const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
+
+              chunk.tiles[localY][localX].object = {
+                type: 'ore',
+                amount
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  return chunk
+}
+
+function getOrCreateChunk(chunkX: number, chunkY: number): Chunk {
+  const key = getChunkKey(chunkX, chunkY)
+  let chunk = chunks.get(key)
+
+  if (!chunk) {
+    chunk = generateChunk(chunkX, chunkY)
+    chunks.set(key, chunk)
+  }
+
+  return chunk
+}
+
+export function getTileAtWorldTile(tileX: number, tileY: number): Tile {
+  const chunkX = worldToChunkCoord(tileX)
+  const chunkY = worldToChunkCoord(tileY)
+
+  const localX = mod(tileX, CHUNK_SIZE)
+  const localY = mod(tileY, CHUNK_SIZE)
+
+  const chunk = getOrCreateChunk(chunkX, chunkY)
+  return chunk.tiles[localY][localX]
+}
 
 export function getTileAtScreenPosition(screenX: number, screenY: number) {
-  const tileX = Math.floor(screenX / world.tileSize)
-  const tileY = Math.floor(screenY / world.tileSize)
-
-  if (
-    tileX < 0 ||
-    tileY < 0 ||
-    tileX >= world.width ||
-    tileY >= world.height
-  ) {
-    return null
-  }
+  const tileX = Math.floor(screenX / TILE_SIZE)
+  const tileY = Math.floor(screenY / TILE_SIZE)
 
   return {
     tileX,
     tileY,
-    tile: world.tiles[tileY][tileX]
+    tile: getTileAtWorldTile(tileX, tileY)
   }
 }
