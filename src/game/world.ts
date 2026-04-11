@@ -63,6 +63,37 @@ function mod(n: number, m: number): number {
   return ((n % m) + m) % m
 }
 
+function paintPatch(
+  chunk: Chunk,
+  chunkX: number,
+  chunkY: number,
+  centerX: number,
+  centerY: number,
+  radius: number,
+  richness: number,
+  resourceType: WorldObjectType,
+) {
+  for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+    for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+      const worldTileX = chunkX * CHUNK_SIZE + localX
+      const worldTileY = chunkY * CHUNK_SIZE + localY
+
+      const dx = worldTileX - centerX
+      const dy = worldTileY - centerY
+      const dist = Math.sqrt(dx * dx + dy * dy)
+
+      if (dist > radius) continue
+
+      const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
+
+      chunk.tiles[localY][localX].object = {
+        type: resourceType,
+        amount,
+      }
+    }
+  }
+}
+
 function generateChunk(chunkX: number, chunkY: number): Chunk {
   const chunk = createEmptyChunk(chunkX, chunkY)
 
@@ -78,6 +109,12 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
     }
   }
 
+  // Guaranteed starting resource patches near spawn.
+  // Spawn is around tile (0, 0), so these should be visible pretty quickly.
+  paintPatch(chunk, chunkX, chunkY, -6, 2, 6, 8, 'iron_ore')
+  paintPatch(chunk, chunkX, chunkY, 7, 1, 5, 8, 'coal')
+
+  // Random resource patches across the world.
   for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
     for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
       const patchRoll = hash(patchChunkX, patchChunkY, 2)
@@ -93,25 +130,7 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
       const resourceRoll = hash(patchChunkX, patchChunkY, 7)
       const resourceType: WorldObjectType = resourceRoll < 0.68 ? 'iron_ore' : 'coal'
 
-      for (let localY = 0; localY < CHUNK_SIZE; localY++) {
-        for (let localX = 0; localX < CHUNK_SIZE; localX++) {
-          const worldTileX = chunkX * CHUNK_SIZE + localX
-          const worldTileY = chunkY * CHUNK_SIZE + localY
-
-          const dx = worldTileX - patchCenterX
-          const dy = worldTileY - patchCenterY
-          const dist = Math.sqrt(dx * dx + dy * dy)
-
-          if (dist > radius) continue
-
-          const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
-
-          chunk.tiles[localY][localX].object = {
-            type: resourceType,
-            amount,
-          }
-        }
-      }
+      paintPatch(chunk, chunkX, chunkY, patchCenterX, patchCenterY, radius, richness, resourceType)
     }
   }
 

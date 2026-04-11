@@ -19,6 +19,8 @@ import {
   canPlaceBuilding,
   fuelBuildingAtTile,
   getBuildingAtTile,
+  getBuildingTooltipLines,
+  getPrimaryBuildingTile,
   placeBurnerDrill,
   placeWoodenChest,
   renderBuildingGhost,
@@ -48,7 +50,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
   let last = performance.now()
 
   function loop(now: number) {
-    const dt = (now - last) / 1000
+    const dt = Math.min((now - last) / 1000, 0.05)
     last = now
 
     update(dt)
@@ -87,11 +89,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
         canvas.width,
         canvas.height,
       )
-      updateVisibility(
-        player.x + player.size / 2,
-        player.y + player.size / 2,
-        10,
-      )
+      updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
 
       const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
 
@@ -128,7 +126,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     drawTerrain()
     drawGrid()
     drawObjects()
-    drawBuildings()
+    renderBuildings(ctx)
     drawHoverAndGhost()
     drawPlayer()
     drawMiningProgress()
@@ -223,10 +221,6 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     }
   }
 
-  function drawBuildings() {
-    renderBuildings(ctx)
-  }
-
   function drawPlayer() {
     const screen = worldToScreen(player.x, player.y)
     drawPlayerSprite(screen.x, screen.y)
@@ -282,14 +276,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     if (selectedBuild) {
       const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
-      renderBuildingGhost(
-        ctx,
-        selectedBuild,
-        hovered.tileX,
-        hovered.tileY,
-        buildDirection,
-        valid,
-      )
+      renderBuildingGhost(ctx, selectedBuild, hovered.tileX, hovered.tileY, buildDirection, valid)
     } else {
       ctx.strokeStyle = 'yellow'
       ctx.lineWidth = 2
@@ -299,40 +286,21 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     const building = getBuildingAtTile(hovered.tileX, hovered.tileY)
     if (!building) return
 
+    const primary = getPrimaryBuildingTile(building)
+    const primaryScreen = worldToScreen(primary.x * TILE_SIZE, primary.y * TILE_SIZE)
+    const lines = getBuildingTooltipLines(building)
+    const boxWidth = 240
+    const boxHeight = 18 + lines.length * 15
+
     ctx.fillStyle = 'rgba(0, 0, 0, 0.8)'
-    ctx.fillRect(screen.x, screen.y - 42, 170, 38)
+    ctx.fillRect(primaryScreen.x, primaryScreen.y - boxHeight - 4, boxWidth, boxHeight)
 
     ctx.fillStyle = 'white'
     ctx.font = '12px sans-serif'
 
-    if (building.type === 'burner_drill') {
-      const outputText = building.outputItem
-        ? `${building.outputItem} ${building.outputCount}/${building.outputCapacity}`
-        : `empty 0/${building.outputCapacity}`
-
-      ctx.fillText(
-        `drill ${building.direction} fuel:${building.fuel.toFixed(1)}`,
-        screen.x + 4,
-        screen.y - 27,
-      )
-      ctx.fillText(
-        `out: ${outputText}`,
-        screen.x + 4,
-        screen.y - 12,
-      )
-    } else {
-      const itemText = building.item ? building.item : 'empty'
-      ctx.fillText(
-        `wooden chest`,
-        screen.x + 4,
-        screen.y - 27,
-      )
-      ctx.fillText(
-        `${itemText}: ${building.count}/${building.capacity}`,
-        screen.x + 4,
-        screen.y - 12,
-      )
-    }
+    lines.forEach((line, index) => {
+      ctx.fillText(line, primaryScreen.x + 6, primaryScreen.y - boxHeight + 12 + index * 15)
+    })
   }
 
   function drawMiningProgress() {
@@ -376,30 +344,21 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
   function drawBuildUi() {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
-    ctx.fillRect(10, canvas.height - 74, 520, 64)
+    ctx.fillRect(10, canvas.height - 74, 650, 64)
 
     ctx.fillStyle = 'white'
     ctx.font = '16px sans-serif'
     ctx.fillText(`Build: ${selectedBuild ?? 'none'}`, 20, canvas.height - 46)
-    ctx.fillText(`Direction: ${buildDirection}`, 170, canvas.height - 46)
+    ctx.fillText(`Direction: ${buildDirection}`, 190, canvas.height - 46)
     ctx.fillText(
-      '1=drill  2=chest  R=rotate  Right Click=place  F=fuel hovered drill  M=map',
+      '1=2x2 drill  2=chest  R=rotate  Right Click=place  F=fuel drill with coal/wood  M=map',
       20,
       canvas.height - 22,
     )
   }
 
-  updateCamera(
-    player.x + player.size / 2,
-    player.y + player.size / 2,
-    canvas.width,
-    canvas.height,
-  )
-  updateVisibility(
-    player.x + player.size / 2,
-    player.y + player.size / 2,
-    10,
-  )
+  updateCamera(player.x + player.size / 2, player.y + player.size / 2, canvas.width, canvas.height)
+  updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
 
   requestAnimationFrame(loop)
 }
