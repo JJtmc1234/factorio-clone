@@ -1,3 +1,4 @@
+import { loadGameSprites, getGameSprite } from '../components/gameSprites.ts'
 import { setupInput, input, consumePressed } from './input'
 import { player, updatePlayer } from './player'
 import { setupMouse, mouse, consumeRightPressed } from './mouse'
@@ -11,7 +12,7 @@ import {
   updateVisibility,
 } from './world'
 import { updateMining, getMiningProgress, getMiningTarget, resetMining } from './mining'
-import { addItem, inventory, isInventoryUiOpen, toggleInventoryUi } from './inventory'
+import { inventory, isInventoryUiOpen, toggleInventoryUi } from './inventory'
 import { updateCamera, worldToScreen } from './camera'
 import {
   type Direction,
@@ -30,7 +31,6 @@ import {
   takeOneFromBuilding,
   updateBuildings,
 } from './buildings'
-import { pickupGroundItemsAtTile, renderGroundItems } from './groundItems'
 import { mapState, renderMap, toggleMap } from './map'
 
 let running = false
@@ -46,6 +46,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
   if (running) return
   running = true
 
+  loadGameSprites()
   setupInput()
   setupMouse(canvas)
 
@@ -110,10 +111,6 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       canvas.height,
     )
     updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
-
-    const playerTileX = Math.floor((player.x + player.size / 2) / TILE_SIZE)
-    const playerTileY = Math.floor((player.y + player.size / 2) / TILE_SIZE)
-    pickupGroundItemsAtTile(playerTileX, playerTileY, addItem)
 
     const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
     const hoveredBuilding = hovered ? getBuildingAtTile(hovered.tileX, hovered.tileY) : null
@@ -181,7 +178,6 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     drawGrid()
     drawObjects()
     renderBuildings(ctx)
-    renderGroundItems(ctx)
     drawHoverAndGhost()
     drawPlayer()
     drawMiningProgress()
@@ -289,7 +285,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     drawPlayerSprite(screen.x, screen.y)
   }
 
-  function drawPlayerSprite(screenX: number, screenY: number) {
+  function drawFallbackPlayerSprite(screenX: number, screenY: number) {
     const walkFrame = Math.floor(player.animTime) % 2
     const legOffset = player.moving ? (walkFrame === 0 ? -2 : 2) : 0
     const armOffset = player.moving ? (walkFrame === 0 ? 2 : -2) : 0
@@ -331,6 +327,19 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     }
   }
 
+  function drawPlayerSprite(screenX: number, screenY: number) {
+    const sprite = getGameSprite('player')
+
+    if (sprite && sprite.complete && sprite.naturalWidth > 0) {
+      ctx.save()
+      ctx.drawImage(sprite, screenX - 8, screenY - 16, 48, 48)
+      ctx.restore()
+      return
+    }
+
+    drawFallbackPlayerSprite(screenX, screenY)
+  }
+
   function drawHoverAndGhost() {
     const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
     if (!hovered || !isTileExplored(hovered.tileX, hovered.tileY)) return
@@ -357,7 +366,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     if (!building) return
 
     const lines = getBuildingTooltipLines(building)
-    const boxWidth = 180
+    const boxWidth = 220
     const boxHeight = 10 + lines.length * 15
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.82)'
@@ -411,7 +420,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     currentOpenBuilding: Building | null,
   ) {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
-    ctx.fillRect(10, canvas.height - 88, 850, 78)
+    ctx.fillRect(10, canvas.height - 88, 870, 78)
 
     ctx.fillStyle = 'white'
     ctx.font = '16px sans-serif'
@@ -448,8 +457,9 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       ctx.fillText(`Fuel: ${building.fuel.toFixed(1)}`, panelX + 14, panelY + 58)
       ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 80)
       ctx.fillText(`Output: ${output}`, panelX + 14, panelY + 102)
-      ctx.fillText('F = add coal/wood fuel', panelX + 14, panelY + 132)
-      ctx.fillText('G = take one output item', panelX + 14, panelY + 152)
+      ctx.fillText('2x2 footprint', panelX + 14, panelY + 124)
+      ctx.fillText('F = add coal/wood fuel', panelX + 14, panelY + 144)
+      ctx.fillText('G = take one output item', panelX + 14, panelY + 162)
     } else {
       const stored = building.item ? `${building.item} x${building.count}` : 'empty'
       ctx.fillText(`Stored: ${stored}`, panelX + 14, panelY + 58)
