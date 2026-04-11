@@ -23,6 +23,7 @@ import {
   getBuildingAtTile,
   getBuildingTooltipLines,
   placeBurnerDrill,
+  placeStoneFurnace,
   placeTransportBelt,
   placeWoodenChest,
   removeBuildingAtTile,
@@ -104,6 +105,11 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       openedBuilding = null
     }
 
+    if (consumePressed('4')) {
+      selectedBuild = 'stone_furnace'
+      openedBuilding = null
+    }
+
     if (consumePressed('r')) {
       buildDirection = rotateDirection(buildDirection)
     }
@@ -149,6 +155,8 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
           placeWoodenChest(hovered.tileX, hovered.tileY)
         } else if (selectedBuild === 'transport_belt') {
           placeTransportBelt(hovered.tileX, hovered.tileY, buildDirection)
+        } else if (selectedBuild === 'stone_furnace') {
+          placeStoneFurnace(hovered.tileX, hovered.tileY)
         }
       }
     }
@@ -374,7 +382,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     if (!building) return
 
     const lines = getBuildingTooltipLines(building)
-    const boxWidth = 220
+    const boxWidth = 240
     const boxHeight = 10 + lines.length * 15
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.82)'
@@ -428,7 +436,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     currentOpenBuilding: Building | null,
   ) {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
-    ctx.fillRect(10, canvas.height - 88, 930, 78)
+    ctx.fillRect(10, canvas.height - 88, 980, 78)
 
     ctx.fillStyle = 'white'
     ctx.font = '16px sans-serif'
@@ -436,17 +444,17 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     ctx.fillText(`Direction: ${currentDirection}`, 180, canvas.height - 58)
     ctx.fillText(`Open: ${currentOpenBuilding ? currentOpenBuilding.type : 'none'}`, 340, canvas.height - 58)
     ctx.fillText(
-      '1=drill  2=chest  3=belt  R=rotate  Right Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
+      '1=drill  2=chest  3=belt  4=furnace  R=rotate  Right Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
       20,
       canvas.height - 28,
     )
   }
 
   function drawBuildingPanel(building: Building) {
-    const panelX = canvas.width - 300
+    const panelX = canvas.width - 320
     const panelY = 20
-    const panelW = 270
-    const panelH = 190
+    const panelW = 290
+    const panelH = 210
 
     ctx.fillStyle = 'rgba(20, 20, 20, 0.9)'
     ctx.fillRect(panelX, panelY, panelW, panelH)
@@ -482,13 +490,34 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       return
     }
 
-    ctx.fillText('Transport Belt', panelX + 14, panelY + 28)
+    if (building.type === 'transport_belt') {
+      ctx.fillText('Transport Belt', panelX + 14, panelY + 28)
+      ctx.font = '14px sans-serif'
+      ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 58)
+      ctx.fillText(`Item: ${building.item ?? 'empty'}`, panelX + 14, panelY + 80)
+      ctx.fillText(`Progress: ${building.item ? building.itemProgress.toFixed(2) : '0.00'}`, panelX + 14, panelY + 102)
+      ctx.fillText('F = place 1 coal on belt', panelX + 14, panelY + 132)
+      ctx.fillText('G = take belt item', panelX + 14, panelY + 152)
+      return
+    }
+
+    ctx.fillText('Stone Furnace', panelX + 14, panelY + 28)
     ctx.font = '14px sans-serif'
-    ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 58)
-    ctx.fillText(`Item: ${building.item ?? 'empty'}`, panelX + 14, panelY + 80)
-    ctx.fillText(`Progress: ${building.item ? building.itemProgress.toFixed(2) : '0.00'}`, panelX + 14, panelY + 102)
-    ctx.fillText('F = place 1 coal on belt', panelX + 14, panelY + 132)
-    ctx.fillText('G = take belt item', panelX + 14, panelY + 152)
+    ctx.fillText(`Fuel: ${building.fuel.toFixed(1)}`, panelX + 14, panelY + 58)
+    ctx.fillText(
+      `Input: ${(building.inputItem ?? 'empty')} x${building.inputCount}/${building.inputCapacity}`,
+      panelX + 14,
+      panelY + 80,
+    )
+    ctx.fillText(
+      `Output: ${(building.outputItem ?? 'empty')} x${building.outputCount}/${building.outputCapacity}`,
+      panelX + 14,
+      panelY + 102,
+    )
+    ctx.fillText(`Progress: ${building.progress.toFixed(2)}`, panelX + 14, panelY + 124)
+    ctx.fillText('2x2 footprint', panelX + 14, panelY + 146)
+    ctx.fillText('F = add coal/wood fuel', panelX + 14, panelY + 168)
+    ctx.fillText('G = take one output item', panelX + 14, panelY + 190)
   }
 
   function drawInventoryMenu() {
@@ -530,7 +559,14 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       const stack = inventory[i]
       if (!stack) continue
 
-      ctx.fillStyle = stack.item === 'coal' ? '#bdbdbd' : stack.item === 'iron_ore' ? '#d7dee7' : '#8bc34a'
+      ctx.fillStyle =
+        stack.item === 'coal'
+          ? '#bdbdbd'
+          : stack.item === 'iron_ore'
+            ? '#d7dee7'
+            : stack.item === 'iron_plate'
+              ? '#eceff4'
+              : '#8bc34a'
       ctx.fillRect(x + 10, y + 10, 20, 20)
       ctx.fillStyle = 'white'
       ctx.font = '13px sans-serif'

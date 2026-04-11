@@ -4,9 +4,13 @@ import { addItem, getItemCount, removeItem } from './inventory'
 import { TILE_SIZE, getTileAtWorldTile, isTileExplored, isTileVisible } from './world'
 
 export type Direction = 'up' | 'right' | 'down' | 'left'
-export type BuildingType = 'burner_drill' | 'wooden_chest' | 'transport_belt'
+export type BuildingType =
+  | 'burner_drill'
+  | 'wooden_chest'
+  | 'transport_belt'
+  | 'stone_furnace'
 export type BuildSelection = BuildingType | null
-export type ItemType = 'iron_ore' | 'coal'
+export type ItemType = 'iron_ore' | 'coal' | 'wood' | 'iron_plate'
 
 export interface BurnerDrill {
   type: 'burner_drill'
@@ -38,12 +42,34 @@ export interface TransportBelt {
   itemProgress: number
 }
 
-export type Building = BurnerDrill | WoodenChest | TransportBelt
+export interface StoneFurnace {
+  type: 'stone_furnace'
+  tileX: number
+  tileY: number
+  fuel: number
+  progress: number
+  inputItem: ItemType | null
+  inputCount: number
+  inputCapacity: number
+  outputItem: ItemType | null
+  outputCount: number
+  outputCapacity: number
+}
+
+export type Building = BurnerDrill | WoodenChest | TransportBelt | StoneFurnace
 
 const buildings: Building[] = []
 
 function isMineableResource(type: string | undefined): type is ItemType {
   return type === 'iron_ore' || type === 'coal'
+}
+
+function isFuelItem(item: ItemType | null): item is 'coal' | 'wood' {
+  return item === 'coal' || item === 'wood'
+}
+
+function isSmeltableInput(item: ItemType | null): item is 'iron_ore' {
+  return item === 'iron_ore'
 }
 
 function occupiesTile(building: Building, tileX: number, tileY: number) {
@@ -73,6 +99,19 @@ function getDrillCoveredTiles(drill: BurnerDrill) {
     { x: drill.tileX, y: drill.tileY + 1 },
     { x: drill.tileX + 1, y: drill.tileY + 1 },
   ]
+}
+
+function getFurnaceCoveredTiles(furnace: StoneFurnace) {
+  return [
+    { x: furnace.tileX, y: furnace.tileY },
+    { x: furnace.tileX + 1, y: furnace.tileY },
+    { x: furnace.tileX, y: furnace.tileY + 1 },
+    { x: furnace.tileX + 1, y: furnace.tileY + 1 },
+  ]
+}
+
+function getFurnaceOutputTile(furnace: StoneFurnace) {
+  return { x: furnace.tileX + 2, y: furnace.tileY + 1 }
 }
 
 function getDrillMiningTile(drill: BurnerDrill) {
@@ -171,6 +210,28 @@ function tryInsertIntoBelt(belt: TransportBelt, item: ItemType) {
   return true
 }
 
+function tryInsertIntoFurnace(furnace: StoneFurnace, item: ItemType) {
+  if (item === 'iron_ore') {
+    if (furnace.inputCount >= furnace.inputCapacity) return false
+    if (furnace.inputItem !== null && furnace.inputItem !== item) return false
+    furnace.inputItem = 'iron_ore'
+    furnace.inputCount += 1
+    return true
+  }
+
+  if (item === 'coal') {
+    furnace.fuel += 8
+    return true
+  }
+
+  if (item === 'wood') {
+    furnace.fuel += 5
+    return true
+  }
+
+  return false
+}
+
 function tryPushDrillOutput(drill: BurnerDrill) {
   if (!drill.outputItem || drill.outputCount <= 0) return
 
@@ -193,6 +254,17 @@ function tryPushDrillOutput(drill: BurnerDrill) {
 
   if (target.type === 'transport_belt') {
     if (tryInsertIntoBelt(target, drill.outputItem)) {
+      drill.outputCount -= 1
+      if (drill.outputCount <= 0) {
+        drill.outputCount = 0
+        drill.outputItem = null
+      }
+    }
+    return
+  }
+
+  if (target.type === 'stone_furnace') {
+    if (tryInsertIntoFurnace(target, drill.outputItem)) {
       drill.outputCount -= 1
       if (drill.outputCount <= 0) {
         drill.outputCount = 0
@@ -249,7 +321,77 @@ function updateBelt(belt: TransportBelt, dt: number) {
     return
   }
 
+  if (target.type === 'stone_furnace') {
+    if (tryInsertIntoFurnace(target, belt.item)) {
+      belt.item = null
+      belt.itemProgress = 0
+    } else {
+      belt.itemProgress = 1
+    }
+    return
+  }
+
   belt.itemProgress = 1
+}
+
+function updateFurnace(furnace: StoneFurnace, dt: number) {
+  if (furnace.outputCount > 0) {
+    const outputTile = getFurnaceOutputTile(furnace)
+    const target = getBuildingAtTile(outputTile.x, outputTile.y)
+
+    if (target?.type === 'transport_belt' && furnace.outputItem) {
+      if (tryInsertIntoBelt(target, furnace.outputItem)) {
+        furnace.outputCount -= 1
+        if (furnace.outputCount <= 0) {
+          furnace.outputCount = 0
+          furnace.outputItem = null
+        }
+      }
+    } else if (target?.type === 'wooden_chest' && furnace.outputItem) {
+      const moved = tryInsertIntoChest(target, furnace.outputItem, 1)
+      if (moved > 0) {
+        furnace.outputCount -= moved
+        if (furnace.outputCount <= 0) {
+          furnace.outputCount = 0
+          furnace.outputItem = null
+        }
+      }
+    }
+  }
+
+  if (furnace.fuel <= 0) return
+  if (!isSmeltableInput(furnace.inputItem)) return
+  if (furnace.inputCount <= 0) return
+  if (furnace.outputCount >= furnace.outputCapacity) return
+  if (furnace.outputItem !== null && furnace.outputItem !== 'iron_plate') return
+
+  furnace.fuel = Math.max(0, furnace.fuel - dt)
+  furnace.progress += dt * 0.4
+
+  while (furnace.progress >= 1) {
+    if (furnace.fuel <= 0) {
+      furnace.progress = 0
+      break
+    }
+    if (!isSmeltableInput(furnace.inputItem) || furnace.inputCount <= 0) {
+      furnace.progress = 0
+      break
+    }
+    if (furnace.outputCount >= furnace.outputCapacity) {
+      furnace.progress = 0.999
+      break
+    }
+
+    furnace.inputCount -= 1
+    if (furnace.inputCount <= 0) {
+      furnace.inputCount = 0
+      furnace.inputItem = null
+    }
+
+    furnace.outputItem = 'iron_plate'
+    furnace.outputCount += 1
+    furnace.progress -= 1
+  }
 }
 
 export function getBuildingAtTile(tileX: number, tileY: number) {
@@ -269,6 +411,19 @@ export function canPlaceBuilding(
     if (getBuildingAtTile(tileX, tileY)) return false
     const tile = getTileAtWorldTile(tileX, tileY)
     return tile.object === null
+  }
+
+  if (type === 'stone_furnace') {
+    for (let dy = 0; dy < 2; dy++) {
+      for (let dx = 0; dx < 2; dx++) {
+        const x = tileX + dx
+        const y = tileY + dy
+        if (getBuildingAtTile(x, y)) return false
+        const tile = getTileAtWorldTile(x, y)
+        if (tile.object !== null) return false
+      }
+    }
+    return true
   }
 
   for (let dy = 0; dy < 2; dy++) {
@@ -341,6 +496,26 @@ export function placeTransportBelt(tileX: number, tileY: number, direction: Dire
   return true
 }
 
+export function placeStoneFurnace(tileX: number, tileY: number) {
+  if (!canPlaceBuilding('stone_furnace', tileX, tileY)) return false
+
+  buildings.push({
+    type: 'stone_furnace',
+    tileX,
+    tileY,
+    fuel: 0,
+    progress: 0,
+    inputItem: null,
+    inputCount: 0,
+    inputCapacity: 8,
+    outputItem: null,
+    outputCount: 0,
+    outputCapacity: 8,
+  })
+
+  return true
+}
+
 export function removeBuildingAtTile(tileX: number, tileY: number) {
   const index = buildings.findIndex((building) => occupiesTile(building, tileX, tileY))
   if (index === -1) return false
@@ -359,22 +534,33 @@ export function removeBuildingAtTile(tileX: number, tileY: number) {
     addItem(building.item, 1)
   }
 
+  if (building.type === 'stone_furnace') {
+    if (building.inputItem && building.inputCount > 0) {
+      addItem(building.inputItem, building.inputCount)
+    }
+    if (building.outputItem && building.outputCount > 0) {
+      addItem(building.outputItem, building.outputCount)
+    }
+  }
+
   buildings.splice(index, 1)
   return true
 }
 
 export function fuelBuildingAtTile(tileX: number, tileY: number) {
   const building = getBuildingAtTile(tileX, tileY)
-  if (!building || building.type !== 'burner_drill') return false
+  if (!building) return false
 
-  if (getItemCount('coal') > 0 && removeItem('coal', 1)) {
-    building.fuel += 8
-    return true
-  }
+  if (building.type === 'burner_drill' || building.type === 'stone_furnace') {
+    if (getItemCount('coal') > 0 && removeItem('coal', 1)) {
+      building.fuel += 8
+      return true
+    }
 
-  if (getItemCount('wood') > 0 && removeItem('wood', 1)) {
-    building.fuel += 5
-    return true
+    if (getItemCount('wood') > 0 && removeItem('wood', 1)) {
+      building.fuel += 5
+      return true
+    }
   }
 
   return false
@@ -397,6 +583,17 @@ export function takeOneFromBuilding(building: Building) {
     addItem(building.item, 1)
     building.item = null
     building.itemProgress = 0
+    return true
+  }
+
+  if (building.type === 'stone_furnace') {
+    if (!building.outputItem || building.outputCount <= 0) return false
+    addItem(building.outputItem, 1)
+    building.outputCount -= 1
+    if (building.outputCount <= 0) {
+      building.outputCount = 0
+      building.outputItem = null
+    }
     return true
   }
 
@@ -428,6 +625,12 @@ export function storeOneCoalInBuilding(building: Building) {
     if (!removeItem('coal', 1)) return false
     building.item = 'coal'
     building.itemProgress = 0
+    return true
+  }
+
+  if (building.type === 'stone_furnace') {
+    if (!removeItem('coal', 1)) return false
+    building.fuel += 8
     return true
   }
 
@@ -491,6 +694,12 @@ export function updateBuildings(dt: number) {
   for (const building of buildings) {
     if (building.type === 'transport_belt') {
       updateBelt(building, dt)
+    }
+  }
+
+  for (const building of buildings) {
+    if (building.type === 'stone_furnace') {
+      updateFurnace(building, dt)
     }
   }
 }
@@ -636,6 +845,48 @@ function drawFallbackBeltSprite(
   ctx.restore()
 }
 
+function drawFallbackFurnaceSprite(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  furnace: StoneFurnace,
+  alpha = 1,
+) {
+  const size = TILE_SIZE * 2
+
+  ctx.save()
+  ctx.globalAlpha = alpha
+
+  ctx.fillStyle = '#5d5d5d'
+  ctx.fillRect(screenX + 4, screenY + 4, size - 8, size - 8)
+
+  ctx.fillStyle = '#787878'
+  ctx.fillRect(screenX + 8, screenY + 8, size - 16, size - 16)
+
+  ctx.fillStyle = '#2f2f2f'
+  ctx.fillRect(screenX + 18, screenY + 16, size - 36, size - 30)
+
+  ctx.fillStyle = '#111'
+  ctx.fillRect(screenX + 24, screenY + 22, size - 48, size - 42)
+
+  ctx.fillStyle = furnace.fuel > 0 ? '#ff7a1a' : '#444'
+  ctx.fillRect(screenX + 28, screenY + 30, size - 56, 14)
+
+  ctx.fillStyle = 'black'
+  ctx.fillRect(screenX + 8, screenY + size - 10, size - 16, 6)
+
+  const fuelRatio = Math.min(furnace.fuel / 12, 1)
+  ctx.fillStyle = fuelRatio > 0 ? '#ff9800' : '#555'
+  ctx.fillRect(screenX + 8, screenY + size - 10, (size - 16) * fuelRatio, 6)
+
+  if (furnace.outputCount > 0) {
+    ctx.fillStyle = '#cfd5dd'
+    ctx.fillRect(screenX + size - 22, screenY + 10, 12, 10)
+  }
+
+  ctx.restore()
+}
+
 function getDrillRotation(direction: Direction) {
   if (direction === 'right') return 0
   if (direction === 'down') return Math.PI / 2
@@ -750,7 +1001,7 @@ function drawBeltItem(
   if (!belt.item) return
 
   const offset = getBeltItemOffset(belt.direction, belt.itemProgress)
-  ctx.fillStyle = belt.item === 'coal' ? '#1a1a1d' : '#c0c6cf'
+  ctx.fillStyle = belt.item === 'coal' ? '#1a1a1d' : belt.item === 'iron_plate' ? '#d9dee6' : '#c0c6cf'
   ctx.fillRect(screenX + offset.x - 4, screenY + offset.y - 4, 8, 8)
 }
 
@@ -767,6 +1018,16 @@ function drawBeltSprite(
   }
 }
 
+function drawFurnaceSprite(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  furnace: StoneFurnace,
+  alpha = 1,
+) {
+  drawFallbackFurnaceSprite(ctx, screenX, screenY, furnace, alpha)
+}
+
 export function renderBuildings(ctx: CanvasRenderingContext2D) {
   for (const building of buildings) {
     if (building.type === 'burner_drill') {
@@ -779,6 +1040,26 @@ export function renderBuildings(ctx: CanvasRenderingContext2D) {
       drawBurnerDrillSprite(ctx, screen.x, screen.y, building)
 
       const allTilesVisible = getDrillCoveredTiles(building).every((tile) =>
+        isTileVisible(tile.x, tile.y),
+      )
+      if (!allTilesVisible) {
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
+        ctx.fillRect(screen.x, screen.y, TILE_SIZE * 2, TILE_SIZE * 2)
+      }
+
+      continue
+    }
+
+    if (building.type === 'stone_furnace') {
+      const anyTileExplored = getFurnaceCoveredTiles(building).some((tile) =>
+        isTileExplored(tile.x, tile.y),
+      )
+      if (!anyTileExplored) continue
+
+      const screen = worldToScreen(building.tileX * TILE_SIZE, building.tileY * TILE_SIZE)
+      drawFurnaceSprite(ctx, screen.x, screen.y, building)
+
+      const allTilesVisible = getFurnaceCoveredTiles(building).every((tile) =>
         isTileVisible(tile.x, tile.y),
       )
       if (!allTilesVisible) {
@@ -828,6 +1109,33 @@ export function renderBuildingGhost(
         direction,
         fuel: 5,
         progress: 0,
+        outputItem: null,
+        outputCount: 0,
+        outputCapacity: 8,
+      },
+      0.55,
+    )
+
+    ctx.strokeStyle = valid ? '#00e5ff' : '#ff5252'
+    ctx.lineWidth = 2
+    ctx.strokeRect(screen.x + 1, screen.y + 1, TILE_SIZE * 2 - 2, TILE_SIZE * 2 - 2)
+    return
+  }
+
+  if (type === 'stone_furnace') {
+    drawFurnaceSprite(
+      ctx,
+      screen.x,
+      screen.y,
+      {
+        type: 'stone_furnace',
+        tileX,
+        tileY,
+        fuel: 5,
+        progress: 0,
+        inputItem: 'iron_ore',
+        inputCount: 1,
+        inputCapacity: 8,
         outputItem: null,
         outputCount: 0,
         outputCapacity: 8,
@@ -893,6 +1201,14 @@ export function getBuildingTooltipLines(building: Building) {
       `belt ${building.direction}`,
       `item: ${building.item ?? 'empty'}`,
       'E open  G take  X deconstruct',
+    ]
+  }
+
+  if (building.type === 'stone_furnace') {
+    return [
+      `2x2 furnace fuel:${building.fuel.toFixed(1)}`,
+      `in: ${(building.inputItem ?? 'empty')} ${building.inputCount}/${building.inputCapacity}`,
+      `out: ${(building.outputItem ?? 'empty')} ${building.outputCount}/${building.outputCapacity}`,
     ]
   }
 
