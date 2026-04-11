@@ -23,6 +23,7 @@ import {
   getBuildingAtTile,
   getBuildingTooltipLines,
   placeBurnerDrill,
+  placeBurnerInserter,
   placeStoneFurnace,
   placeTransportBelt,
   placeWoodenChest,
@@ -110,6 +111,11 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       openedBuilding = null
     }
 
+    if (consumePressed('5')) {
+      selectedBuild = 'burner_inserter'
+      openedBuilding = null
+    }
+
     if (consumePressed('r')) {
       buildDirection = rotateDirection(buildDirection)
     }
@@ -157,6 +163,8 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
           placeTransportBelt(hovered.tileX, hovered.tileY, buildDirection)
         } else if (selectedBuild === 'stone_furnace') {
           placeStoneFurnace(hovered.tileX, hovered.tileY)
+        } else if (selectedBuild === 'burner_inserter') {
+          placeBurnerInserter(hovered.tileX, hovered.tileY, buildDirection)
         }
       }
     }
@@ -444,7 +452,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     ctx.fillText(`Direction: ${currentDirection}`, 180, canvas.height - 58)
     ctx.fillText(`Open: ${currentOpenBuilding ? currentOpenBuilding.type : 'none'}`, 340, canvas.height - 58)
     ctx.fillText(
-      '1=drill  2=chest  3=belt  4=furnace  R=rotate  Right Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
+      '1=drill  2=chest  3=belt  4=furnace  5=inserter  R=rotate  Right Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
       20,
       canvas.height - 28,
     )
@@ -498,6 +506,18 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
       ctx.fillText(`Progress: ${building.item ? building.itemProgress.toFixed(2) : '0.00'}`, panelX + 14, panelY + 102)
       ctx.fillText('F = place 1 coal on belt', panelX + 14, panelY + 132)
       ctx.fillText('G = take belt item', panelX + 14, panelY + 152)
+      return
+    }
+
+    if (building.type === 'burner_inserter') {
+      ctx.fillText('Burner Inserter', panelX + 14, panelY + 28)
+      ctx.font = '14px sans-serif'
+      ctx.fillText(`Fuel: ${building.fuel.toFixed(1)}`, panelX + 14, panelY + 58)
+      ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 80)
+      ctx.fillText(`Held: ${building.heldItem ?? 'empty'}`, panelX + 14, panelY + 102)
+      ctx.fillText(`Swing: ${building.progress.toFixed(2)}`, panelX + 14, panelY + 124)
+      ctx.fillText('F = add coal fuel', panelX + 14, panelY + 146)
+      ctx.fillText('G = take held item', panelX + 14, panelY + 168)
       return
     }
 
