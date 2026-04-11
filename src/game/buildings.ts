@@ -1,10 +1,10 @@
 import { worldToScreen } from './camera'
-import { getGameSprite } from '../components/gameSprites.ts'
+import { getGameSprite } from '../components/gameSprites'
 import { addItem, getItemCount, removeItem } from './inventory'
 import { TILE_SIZE, getTileAtWorldTile, isTileExplored, isTileVisible } from './world'
 
 export type Direction = 'up' | 'right' | 'down' | 'left'
-export type BuildingType = 'burner_drill' | 'wooden_chest'
+export type BuildingType = 'burner_drill' | 'wooden_chest' | 'transport_belt'
 export type BuildSelection = BuildingType | null
 export type ItemType = 'iron_ore' | 'coal'
 
@@ -29,7 +29,16 @@ export interface WoodenChest {
   capacity: number
 }
 
-export type Building = BurnerDrill | WoodenChest
+export interface TransportBelt {
+  type: 'transport_belt'
+  tileX: number
+  tileY: number
+  direction: Direction
+  item: ItemType | null
+  itemProgress: number
+}
+
+export type Building = BurnerDrill | WoodenChest | TransportBelt
 
 const buildings: Building[] = []
 
@@ -38,7 +47,7 @@ function isMineableResource(type: string | undefined): type is ItemType {
 }
 
 function occupiesTile(building: Building, tileX: number, tileY: number) {
-  if (building.type === 'wooden_chest') {
+  if (building.type === 'wooden_chest' || building.type === 'transport_belt') {
     return building.tileX === tileX && building.tileY === tileY
   }
 
@@ -48,6 +57,13 @@ function occupiesTile(building: Building, tileX: number, tileY: number) {
     tileY >= building.tileY &&
     tileY < building.tileY + 2
   )
+}
+
+function getFrontTile(tileX: number, tileY: number, direction: Direction) {
+  if (direction === 'up') return { x: tileX, y: tileY - 1 }
+  if (direction === 'right') return { x: tileX + 1, y: tileY }
+  if (direction === 'down') return { x: tileX, y: tileY + 1 }
+  return { x: tileX - 1, y: tileY }
 }
 
 function getDrillCoveredTiles(drill: BurnerDrill) {
@@ -148,6 +164,13 @@ function tryAutoFuelDrill(drill: BurnerDrill) {
   }
 }
 
+function tryInsertIntoBelt(belt: TransportBelt, item: ItemType) {
+  if (belt.item !== null) return false
+  belt.item = item
+  belt.itemProgress = 0
+  return true
+}
+
 function tryPushDrillOutput(drill: BurnerDrill) {
   if (!drill.outputItem || drill.outputCount <= 0) return
 
@@ -168,6 +191,17 @@ function tryPushDrillOutput(drill: BurnerDrill) {
     return
   }
 
+  if (target.type === 'transport_belt') {
+    if (tryInsertIntoBelt(target, drill.outputItem)) {
+      drill.outputCount -= 1
+      if (drill.outputCount <= 0) {
+        drill.outputCount = 0
+        drill.outputItem = null
+      }
+    }
+    return
+  }
+
   if (target.type === 'burner_drill' && drill.outputItem === 'coal' && target.fuel <= 5) {
     drill.outputCount -= 1
     if (drill.outputCount <= 0) {
@@ -176,6 +210,46 @@ function tryPushDrillOutput(drill: BurnerDrill) {
     }
     target.fuel += 8
   }
+}
+
+function updateBelt(belt: TransportBelt, dt: number) {
+  if (!belt.item) return
+
+  belt.itemProgress += dt * 2.2
+  if (belt.itemProgress < 1) return
+
+  const nextTile = getFrontTile(belt.tileX, belt.tileY, belt.direction)
+  const target = getBuildingAtTile(nextTile.x, nextTile.y)
+
+  if (!target) {
+    belt.itemProgress = 1
+    return
+  }
+
+  if (target.type === 'transport_belt') {
+    if (target.item === null) {
+      target.item = belt.item
+      target.itemProgress = 0
+      belt.item = null
+      belt.itemProgress = 0
+    } else {
+      belt.itemProgress = 1
+    }
+    return
+  }
+
+  if (target.type === 'wooden_chest') {
+    const moved = tryInsertIntoChest(target, belt.item, 1)
+    if (moved > 0) {
+      belt.item = null
+      belt.itemProgress = 0
+    } else {
+      belt.itemProgress = 1
+    }
+    return
+  }
+
+  belt.itemProgress = 1
 }
 
 export function getBuildingAtTile(tileX: number, tileY: number) {
@@ -191,7 +265,7 @@ export function canPlaceBuilding(
   tileX: number,
   tileY: number,
 ) {
-  if (type === 'wooden_chest') {
+  if (type === 'wooden_chest' || type === 'transport_belt') {
     if (getBuildingAtTile(tileX, tileY)) return false
     const tile = getTileAtWorldTile(tileX, tileY)
     return tile.object === null
@@ -252,6 +326,21 @@ export function placeWoodenChest(tileX: number, tileY: number) {
   return true
 }
 
+export function placeTransportBelt(tileX: number, tileY: number, direction: Direction) {
+  if (!canPlaceBuilding('transport_belt', tileX, tileY)) return false
+
+  buildings.push({
+    type: 'transport_belt',
+    tileX,
+    tileY,
+    direction,
+    item: null,
+    itemProgress: 0,
+  })
+
+  return true
+}
+
 export function removeBuildingAtTile(tileX: number, tileY: number) {
   const index = buildings.findIndex((building) => occupiesTile(building, tileX, tileY))
   if (index === -1) return false
@@ -264,6 +353,10 @@ export function removeBuildingAtTile(tileX: number, tileY: number) {
 
   if (building.type === 'burner_drill' && building.outputItem && building.outputCount > 0) {
     addItem(building.outputItem, building.outputCount)
+  }
+
+  if (building.type === 'transport_belt' && building.item) {
+    addItem(building.item, 1)
   }
 
   buildings.splice(index, 1)
@@ -299,6 +392,14 @@ export function takeOneFromBuilding(building: Building) {
     return true
   }
 
+  if (building.type === 'transport_belt') {
+    if (!building.item) return false
+    addItem(building.item, 1)
+    building.item = null
+    building.itemProgress = 0
+    return true
+  }
+
   if (!building.outputItem || building.outputCount <= 0) return false
   addItem(building.outputItem, 1)
   building.outputCount -= 1
@@ -319,6 +420,14 @@ export function storeOneCoalInBuilding(building: Building) {
       addItem('coal', 1)
       return false
     }
+    return true
+  }
+
+  if (building.type === 'transport_belt') {
+    if (building.item !== null) return false
+    if (!removeItem('coal', 1)) return false
+    building.item = 'coal'
+    building.itemProgress = 0
     return true
   }
 
@@ -377,6 +486,12 @@ export function updateBuildings(dt: number) {
     }
 
     tryPushDrillOutput(building)
+  }
+
+  for (const building of buildings) {
+    if (building.type === 'transport_belt') {
+      updateBelt(building, dt)
+    }
   }
 }
 
@@ -462,6 +577,60 @@ function drawFallbackChestSprite(
   if (chest.count > 0) {
     ctx.fillStyle = chest.item === 'coal' ? '#1a1a1d' : '#c0c6cf'
     ctx.fillRect(screenX + 10, screenY + 15, 12, 6)
+  }
+
+  ctx.restore()
+}
+
+function drawFallbackBeltSprite(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  belt: TransportBelt,
+  alpha = 1,
+) {
+  ctx.save()
+  ctx.globalAlpha = alpha
+
+  ctx.fillStyle = '#7f6a52'
+  ctx.fillRect(screenX + 2, screenY + 2, TILE_SIZE - 4, TILE_SIZE - 4)
+
+  ctx.fillStyle = '#4f4335'
+  if (belt.direction === 'up' || belt.direction === 'down') {
+    ctx.fillRect(screenX + 12, screenY + 4, 8, TILE_SIZE - 8)
+  } else {
+    ctx.fillRect(screenX + 4, screenY + 12, TILE_SIZE - 8, 8)
+  }
+
+  ctx.fillStyle = '#c7a66a'
+  if (belt.direction === 'up') {
+    ctx.beginPath()
+    ctx.moveTo(screenX + 16, screenY + 6)
+    ctx.lineTo(screenX + 10, screenY + 14)
+    ctx.lineTo(screenX + 22, screenY + 14)
+    ctx.closePath()
+    ctx.fill()
+  } else if (belt.direction === 'right') {
+    ctx.beginPath()
+    ctx.moveTo(screenX + 26, screenY + 16)
+    ctx.lineTo(screenX + 18, screenY + 10)
+    ctx.lineTo(screenX + 18, screenY + 22)
+    ctx.closePath()
+    ctx.fill()
+  } else if (belt.direction === 'down') {
+    ctx.beginPath()
+    ctx.moveTo(screenX + 16, screenY + 26)
+    ctx.lineTo(screenX + 10, screenY + 18)
+    ctx.lineTo(screenX + 22, screenY + 18)
+    ctx.closePath()
+    ctx.fill()
+  } else {
+    ctx.beginPath()
+    ctx.moveTo(screenX + 6, screenY + 16)
+    ctx.lineTo(screenX + 14, screenY + 10)
+    ctx.lineTo(screenX + 14, screenY + 22)
+    ctx.closePath()
+    ctx.fill()
   }
 
   ctx.restore()
@@ -565,6 +734,39 @@ function drawChestSprite(
   drawFallbackChestSprite(ctx, screenX, screenY, chest, alpha)
 }
 
+function getBeltItemOffset(direction: Direction, progress: number) {
+  if (direction === 'up') return { x: 16, y: 24 - progress * 16 }
+  if (direction === 'right') return { x: 8 + progress * 16, y: 16 }
+  if (direction === 'down') return { x: 16, y: 8 + progress * 16 }
+  return { x: 24 - progress * 16, y: 16 }
+}
+
+function drawBeltItem(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  belt: TransportBelt,
+) {
+  if (!belt.item) return
+
+  const offset = getBeltItemOffset(belt.direction, belt.itemProgress)
+  ctx.fillStyle = belt.item === 'coal' ? '#1a1a1d' : '#c0c6cf'
+  ctx.fillRect(screenX + offset.x - 4, screenY + offset.y - 4, 8, 8)
+}
+
+function drawBeltSprite(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  belt: TransportBelt,
+  alpha = 1,
+) {
+  drawFallbackBeltSprite(ctx, screenX, screenY, belt, alpha)
+  if (alpha >= 1) {
+    drawBeltItem(ctx, screenX, screenY, belt)
+  }
+}
+
 export function renderBuildings(ctx: CanvasRenderingContext2D) {
   for (const building of buildings) {
     if (building.type === 'burner_drill') {
@@ -590,7 +792,12 @@ export function renderBuildings(ctx: CanvasRenderingContext2D) {
     if (!isTileExplored(building.tileX, building.tileY)) continue
 
     const screen = worldToScreen(building.tileX * TILE_SIZE, building.tileY * TILE_SIZE)
-    drawChestSprite(ctx, screen.x, screen.y, building)
+
+    if (building.type === 'wooden_chest') {
+      drawChestSprite(ctx, screen.x, screen.y, building)
+    } else {
+      drawBeltSprite(ctx, screen.x, screen.y, building)
+    }
 
     if (!isTileVisible(building.tileX, building.tileY)) {
       ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
@@ -634,20 +841,37 @@ export function renderBuildingGhost(
     return
   }
 
-  drawChestSprite(
-    ctx,
-    screen.x,
-    screen.y,
-    {
-      type: 'wooden_chest',
-      tileX,
-      tileY,
-      item: null,
-      count: 0,
-      capacity: 50,
-    },
-    0.55,
-  )
+  if (type === 'wooden_chest') {
+    drawChestSprite(
+      ctx,
+      screen.x,
+      screen.y,
+      {
+        type: 'wooden_chest',
+        tileX,
+        tileY,
+        item: null,
+        count: 0,
+        capacity: 50,
+      },
+      0.55,
+    )
+  } else {
+    drawBeltSprite(
+      ctx,
+      screen.x,
+      screen.y,
+      {
+        type: 'transport_belt',
+        tileX,
+        tileY,
+        direction,
+        item: null,
+        itemProgress: 0,
+      },
+      0.55,
+    )
+  }
 
   ctx.strokeStyle = valid ? '#00e5ff' : '#ff5252'
   ctx.lineWidth = 2
@@ -661,6 +885,14 @@ export function getBuildingTooltipLines(building: Building) {
       'wooden chest',
       `${itemText}: ${building.count}/${building.capacity}`,
       'E open  X deconstruct',
+    ]
+  }
+
+  if (building.type === 'transport_belt') {
+    return [
+      `belt ${building.direction}`,
+      `item: ${building.item ?? 'empty'}`,
+      'E open  G take  X deconstruct',
     ]
   }
 
