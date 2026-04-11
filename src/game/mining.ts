@@ -1,6 +1,7 @@
 import { mouse } from './mouse'
 import { getTileAtScreenPosition } from './world'
 import { addItem } from './inventory'
+import { getBuildingAtTile } from './buildings'
 
 let miningTileX: number | null = null
 let miningTileY: number | null = null
@@ -9,7 +10,12 @@ let miningProgress = 0
 export function updateMining(dt: number) {
   const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
 
-  if (!mouse.leftDown || !hovered || !hovered.tile.object) {
+  if (
+    !mouse.leftDown ||
+    !hovered ||
+    !hovered.tile.object ||
+    getBuildingAtTile(hovered.tileX, hovered.tileY)
+  ) {
     resetMining()
     return
   }
@@ -58,7 +64,7 @@ export function getMiningTarget() {
   return { tileX: miningTileX, tileY: miningTileY }
 }
 
-function resetMining() {
+export function resetMining() {
   miningTileX = null
   miningTileY = null
   miningProgress = 0

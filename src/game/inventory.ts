@@ -5,6 +5,10 @@ export interface InventoryStack {
 
 export const inventory: InventoryStack[] = []
 
+export const inventoryUi = {
+  open: false,
+}
+
 export function addItem(item: string, count: number = 1) {
   const existing = inventory.find((stack) => stack.item === item)
 
@@ -34,4 +38,16 @@ export function removeItem(item: string, count: number = 1) {
   }
 
   return true
+}
+
+export function toggleInventoryUi() {
+  inventoryUi.open = !inventoryUi.open
+}
+
+export function closeInventoryUi() {
+  inventoryUi.open = false
+}
+
+export function isInventoryUiOpen() {
+  return inventoryUi.open
 }

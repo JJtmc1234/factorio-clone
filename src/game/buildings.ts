@@ -1,5 +1,6 @@
 import { worldToScreen } from './camera'
-import { getItemCount, removeItem } from './inventory'
+import { addItem, getItemCount, removeItem } from './inventory'
+import { spawnGroundItem } from './groundItems'
 import { TILE_SIZE, getTileAtWorldTile, isTileExplored, isTileVisible } from './world'
 
 export type Direction = 'up' | 'right' | 'down' | 'left'
@@ -11,8 +12,6 @@ export interface BurnerDrill {
   type: 'burner_drill'
   tileX: number
   tileY: number
-  width: 2
-  height: 2
   direction: Direction
   fuel: number
   progress: number
@@ -33,26 +32,16 @@ export interface WoodenChest {
 export type Building = BurnerDrill | WoodenChest
 
 const buildings = new Map<string, Building>()
-const occupiedTiles = new Map<string, Building>()
 
 function getKey(tileX: number, tileY: number) {
   return `${tileX},${tileY}`
 }
 
-function getDrillFootprint(tileX: number, tileY: number) {
-  return [
-    { x: tileX, y: tileY },
-    { x: tileX + 1, y: tileY },
-    { x: tileX, y: tileY + 1 },
-    { x: tileX + 1, y: tileY + 1 },
-  ]
-}
-
-function getDrillOutputTile(drill: Pick<BurnerDrill, 'tileX' | 'tileY' | 'direction'>) {
-  if (drill.direction === 'up') return { x: drill.tileX, y: drill.tileY - 1 }
-  if (drill.direction === 'right') return { x: drill.tileX + 2, y: drill.tileY }
-  if (drill.direction === 'down') return { x: drill.tileX + 1, y: drill.tileY + 2 }
-  return { x: drill.tileX - 1, y: drill.tileY + 1 }
+function getFrontTile(tileX: number, tileY: number, direction: Direction) {
+  if (direction === 'up') return { x: tileX, y: tileY - 1 }
+  if (direction === 'right') return { x: tileX + 1, y: tileY }
+  if (direction === 'down') return { x: tileX, y: tileY + 1 }
+  return { x: tileX - 1, y: tileY }
 }
 
 function isMineableResource(type: string | undefined): type is ItemType {
@@ -113,37 +102,13 @@ function consumeCoalFromDrill(drill: BurnerDrill) {
   return true
 }
 
-function getDrillResourceTile(drill: BurnerDrill) {
-  const footprint = getDrillFootprint(drill.tileX, drill.tileY)
-
-  let best: { x: number; y: number; type: ItemType; amount: number } | null = null
-
-  for (const pos of footprint) {
-    const tile = getTileAtWorldTile(pos.x, pos.y)
-    const resourceType = tile.object?.type
-
-    if (!isMineableResource(resourceType) || !tile.object) continue
-
-    if (!best || tile.object.amount > best.amount) {
-      best = {
-        x: pos.x,
-        y: pos.y,
-        type: resourceType,
-        amount: tile.object.amount,
-      }
-    }
-  }
-
-  return best
-}
-
 function tryAutoFuelDrill(drill: BurnerDrill) {
-  if (drill.fuel > 2) return
+  if (drill.fuel > 1.5) return
 
-  const outputTile = getDrillOutputTile(drill)
-  const target = getBuildingAtTile(outputTile.x, outputTile.y)
+  const front = getFrontTile(drill.tileX, drill.tileY, drill.direction)
+  const target = getBuildingAtTile(front.x, front.y)
 
-  if (!target || target === drill) return
+  if (!target) return
 
   if (target.type === 'wooden_chest' && consumeCoalFromChest(target)) {
     drill.fuel += 8
@@ -155,13 +120,31 @@ function tryAutoFuelDrill(drill: BurnerDrill) {
   }
 }
 
+function dropOneDrillOutputToGround(drill: BurnerDrill) {
+  if (!drill.outputItem || drill.outputCount <= 0) return false
+
+  const front = getFrontTile(drill.tileX, drill.tileY, drill.direction)
+  spawnGroundItem(front.x, front.y, drill.outputItem, 1)
+
+  drill.outputCount -= 1
+  if (drill.outputCount <= 0) {
+    drill.outputCount = 0
+    drill.outputItem = null
+  }
+
+  return true
+}
+
 function tryPushDrillOutput(drill: BurnerDrill) {
   if (!drill.outputItem || drill.outputCount <= 0) return
 
-  const outputTile = getDrillOutputTile(drill)
-  const target = getBuildingAtTile(outputTile.x, outputTile.y)
+  const front = getFrontTile(drill.tileX, drill.tileY, drill.direction)
+  const target = getBuildingAtTile(front.x, front.y)
 
-  if (!target || target === drill) return
+  if (!target) {
+    dropOneDrillOutputToGround(drill)
+    return
+  }
 
   if (target.type === 'wooden_chest') {
     const moved = tryInsertIntoChest(target, drill.outputItem, 1)
@@ -171,22 +154,32 @@ function tryPushDrillOutput(drill: BurnerDrill) {
         drill.outputCount = 0
         drill.outputItem = null
       }
+      return
     }
+
+    dropOneDrillOutputToGround(drill)
     return
   }
 
-  if (target.type === 'burner_drill' && drill.outputItem === 'coal' && target.fuel <= 6) {
+  if (target.type === 'burner_drill' && drill.outputItem === 'coal' && target.fuel <= 5) {
     drill.outputCount -= 1
     if (drill.outputCount <= 0) {
       drill.outputCount = 0
       drill.outputItem = null
     }
     target.fuel += 8
+    return
   }
+
+  dropOneDrillOutputToGround(drill)
 }
 
 export function getBuildingAtTile(tileX: number, tileY: number) {
-  return occupiedTiles.get(getKey(tileX, tileY)) ?? null
+  return buildings.get(getKey(tileX, tileY)) ?? null
+}
+
+export function getAllBuildings() {
+  return [...buildings.values()]
 }
 
 export function canPlaceBuilding(
@@ -194,26 +187,15 @@ export function canPlaceBuilding(
   tileX: number,
   tileY: number,
 ) {
+  if (getBuildingAtTile(tileX, tileY)) return false
+
+  const tile = getTileAtWorldTile(tileX, tileY)
+
   if (type === 'burner_drill') {
-    const footprint = getDrillFootprint(tileX, tileY)
-    let hasResource = false
-
-    for (const pos of footprint) {
-      if (getBuildingAtTile(pos.x, pos.y)) return false
-
-      const tile = getTileAtWorldTile(pos.x, pos.y)
-      const objectType = tile.object?.type
-
-      if (objectType === 'tree') return false
-      if (isMineableResource(objectType)) hasResource = true
-    }
-
-    return hasResource
+    return !!tile.object && isMineableResource(tile.object.type)
   }
 
   if (type === 'wooden_chest') {
-    if (getBuildingAtTile(tileX, tileY)) return false
-    const tile = getTileAtWorldTile(tileX, tileY)
     return tile.object === null
   }
 
@@ -223,25 +205,17 @@ export function canPlaceBuilding(
 export function placeBurnerDrill(tileX: number, tileY: number, direction: Direction) {
   if (!canPlaceBuilding('burner_drill', tileX, tileY)) return false
 
-  const drill: BurnerDrill = {
+  buildings.set(getKey(tileX, tileY), {
     type: 'burner_drill',
     tileX,
     tileY,
-    width: 2,
-    height: 2,
     direction,
     fuel: 0,
     progress: 0,
     outputItem: null,
     outputCount: 0,
-    outputCapacity: 8,
-  }
-
-  buildings.set(getKey(tileX, tileY), drill)
-
-  for (const pos of getDrillFootprint(tileX, tileY)) {
-    occupiedTiles.set(getKey(pos.x, pos.y), drill)
-  }
+    outputCapacity: 5,
+  })
 
   return true
 }
@@ -249,17 +223,31 @@ export function placeBurnerDrill(tileX: number, tileY: number, direction: Direct
 export function placeWoodenChest(tileX: number, tileY: number) {
   if (!canPlaceBuilding('wooden_chest', tileX, tileY)) return false
 
-  const chest: WoodenChest = {
+  buildings.set(getKey(tileX, tileY), {
     type: 'wooden_chest',
     tileX,
     tileY,
     item: null,
     count: 0,
     capacity: 50,
+  })
+
+  return true
+}
+
+export function removeBuildingAtTile(tileX: number, tileY: number) {
+  const building = getBuildingAtTile(tileX, tileY)
+  if (!building) return false
+
+  if (building.type === 'wooden_chest' && building.item && building.count > 0) {
+    addItem(building.item, building.count)
   }
 
-  buildings.set(getKey(tileX, tileY), chest)
-  occupiedTiles.set(getKey(tileX, tileY), chest)
+  if (building.type === 'burner_drill' && building.outputItem && building.outputCount > 0) {
+    addItem(building.outputItem, building.outputCount)
+  }
+
+  buildings.delete(getKey(building.tileX, building.tileY))
   return true
 }
 
@@ -273,11 +261,51 @@ export function fuelBuildingAtTile(tileX: number, tileY: number) {
   }
 
   if (getItemCount('wood') > 0 && removeItem('wood', 1)) {
-    building.fuel += 4
+    building.fuel += 5
     return true
   }
 
   return false
+}
+
+export function takeOneFromBuilding(building: Building) {
+  if (building.type === 'wooden_chest') {
+    if (!building.item || building.count <= 0) return false
+    addItem(building.item, 1)
+    building.count -= 1
+    if (building.count <= 0) {
+      building.count = 0
+      building.item = null
+    }
+    return true
+  }
+
+  if (!building.outputItem || building.outputCount <= 0) return false
+  addItem(building.outputItem, 1)
+  building.outputCount -= 1
+  if (building.outputCount <= 0) {
+    building.outputCount = 0
+    building.outputItem = null
+  }
+  return true
+}
+
+export function storeOneCoalInBuilding(building: Building) {
+  if (getItemCount('coal') <= 0) return false
+
+  if (building.type === 'wooden_chest') {
+    if (!removeItem('coal', 1)) return false
+    const moved = tryInsertIntoChest(building, 'coal', 1)
+    if (moved <= 0) {
+      addItem('coal', 1)
+      return false
+    }
+    return true
+  }
+
+  if (!removeItem('coal', 1)) return false
+  building.fuel += 8
+  return true
 }
 
 export function updateBuildings(dt: number) {
@@ -287,47 +315,42 @@ export function updateBuildings(dt: number) {
     tryAutoFuelDrill(building)
     tryPushDrillOutput(building)
 
-    const resourceTile = getDrillResourceTile(building)
-    if (!resourceTile) {
-      building.progress = 0
-      continue
-    }
+    const tile = getTileAtWorldTile(building.tileX, building.tileY)
+    const resourceType = tile.object?.type
 
     if (building.fuel <= 0) continue
-    if (!canAcceptDrillOutput(building, resourceTile.type)) continue
+    if (!isMineableResource(resourceType)) continue
+    if (!canAcceptDrillOutput(building, resourceType)) continue
 
     building.fuel = Math.max(0, building.fuel - dt)
-    building.progress += dt * 0.5
+    building.progress += dt * 0.35
 
     while (building.progress >= 1) {
-      const current = getDrillResourceTile(building)
+      const currentTile = getTileAtWorldTile(building.tileX, building.tileY)
+      const currentType = currentTile.object?.type
 
-      if (!current) {
+      if (!isMineableResource(currentType)) {
         building.progress = 0
         break
       }
 
-      if (!addDrillOutput(building, current.type)) {
+      if (!addDrillOutput(building, currentType)) {
         building.progress = 0.999
         break
       }
 
-      const tile = getTileAtWorldTile(current.x, current.y)
-      const obj = tile.object
-      if (!obj || !isMineableResource(obj.type)) {
-        building.progress = 0
-        break
-      }
-
+      const obj = currentTile.object!
       obj.amount -= 1
       building.progress -= 1
 
       if (obj.amount <= 0) {
-        tile.object = null
+        currentTile.object = null
+        building.progress = 0
+        break
       }
-
-      tryPushDrillOutput(building)
     }
+
+    tryPushDrillOutput(building)
   }
 }
 
@@ -335,20 +358,15 @@ function drawDirectionMarker(
   ctx: CanvasRenderingContext2D,
   screenX: number,
   screenY: number,
-  width: number,
-  height: number,
   direction: Direction,
   color = '#ffd54f',
 ) {
   ctx.fillStyle = color
 
-  const midX = Math.floor(width / 2)
-  const midY = Math.floor(height / 2)
-
-  if (direction === 'up') ctx.fillRect(screenX + midX - 6, screenY + 4, 12, 6)
-  if (direction === 'right') ctx.fillRect(screenX + width - 10, screenY + midY - 6, 6, 12)
-  if (direction === 'down') ctx.fillRect(screenX + midX - 6, screenY + height - 10, 12, 6)
-  if (direction === 'left') ctx.fillRect(screenX + 4, screenY + midY - 6, 6, 12)
+  if (direction === 'up') ctx.fillRect(screenX + 12, screenY + 3, 8, 4)
+  if (direction === 'right') ctx.fillRect(screenX + 25, screenY + 12, 4, 8)
+  if (direction === 'down') ctx.fillRect(screenX + 12, screenY + 25, 8, 4)
+  if (direction === 'left') ctx.fillRect(screenX + 3, screenY + 12, 4, 8)
 }
 
 function drawBurnerDrillSprite(
@@ -358,56 +376,37 @@ function drawBurnerDrillSprite(
   drill: BurnerDrill,
   alpha = 1,
 ) {
-  const width = drill.width * TILE_SIZE
-  const height = drill.height * TILE_SIZE
-
   ctx.save()
   ctx.globalAlpha = alpha
 
-  ctx.fillStyle = '#5b3c20'
-  ctx.fillRect(screenX + 4, screenY + 4, width - 8, height - 8)
+  ctx.fillStyle = '#6b4a2d'
+  ctx.fillRect(screenX + 3, screenY + 3, 26, 26)
 
-  ctx.fillStyle = '#7a5230'
-  ctx.fillRect(screenX + 8, screenY + 8, width - 16, height - 16)
+  ctx.fillStyle = '#8c6239'
+  ctx.fillRect(screenX + 6, screenY + 6, 20, 20)
 
-  ctx.fillStyle = '#3b4048'
-  ctx.fillRect(screenX + 18, screenY + 14, width - 36, height - 28)
+  ctx.fillStyle = '#4f555d'
+  ctx.fillRect(screenX + 10, screenY + 9, 12, 10)
 
-  ctx.fillStyle = '#262a30'
-  ctx.fillRect(screenX + 24, screenY + 20, width - 48, height - 40)
+  ctx.fillStyle = '#2c3138'
+  ctx.fillRect(screenX + 12, screenY + 11, 8, 6)
 
-  ctx.fillStyle = '#c96a2c'
-  ctx.fillRect(screenX + width - 18, screenY + 12, 8, 16)
+  ctx.fillStyle = '#cc6b2c'
+  ctx.fillRect(screenX + 22, screenY + 7, 4, 8)
 
-  drawDirectionMarker(ctx, screenX, screenY, width, height, drill.direction)
-
-  ctx.strokeStyle = '#1e1e1e'
-  ctx.lineWidth = 2
-  ctx.beginPath()
-  ctx.moveTo(screenX + width / 2, screenY + 14)
-  ctx.lineTo(screenX + width / 2, screenY + height - 14)
-  ctx.moveTo(screenX + 14, screenY + height / 2)
-  ctx.lineTo(screenX + width - 14, screenY + height / 2)
-  ctx.stroke()
+  drawDirectionMarker(ctx, screenX, screenY, drill.direction)
 
   ctx.fillStyle = 'black'
-  ctx.fillRect(screenX + 8, screenY + height - 10, width - 16, 5)
+  ctx.fillRect(screenX + 4, screenY + 26, 24, 4)
 
-  const fuelRatio = Math.min(drill.fuel / 16, 1)
+  const fuelRatio = Math.min(drill.fuel / 10, 1)
   ctx.fillStyle = fuelRatio > 0 ? '#ff9800' : '#555'
-  ctx.fillRect(screenX + 8, screenY + height - 10, (width - 16) * fuelRatio, 5)
+  ctx.fillRect(screenX + 4, screenY + 26, 24 * fuelRatio, 4)
 
   if (drill.outputCount > 0) {
     ctx.fillStyle = drill.outputItem === 'coal' ? '#1a1a1d' : '#c0c6cf'
-    ctx.fillRect(screenX + 10, screenY + height - 22, 12, 8)
-    ctx.fillRect(screenX + 24, screenY + height - 22, 8, 8)
+    ctx.fillRect(screenX + 6, screenY + 20, 6, 4)
   }
-
-  const outputTile = getDrillOutputTile(drill)
-  const outputScreen = worldToScreen(outputTile.x * TILE_SIZE, outputTile.y * TILE_SIZE)
-  ctx.strokeStyle = '#00e5ff'
-  ctx.lineWidth = 2
-  ctx.strokeRect(outputScreen.x + 6, outputScreen.y + 6, TILE_SIZE - 12, TILE_SIZE - 12)
 
   ctx.restore()
 }
@@ -440,30 +439,20 @@ function drawChestSprite(
 }
 
 export function renderBuildings(ctx: CanvasRenderingContext2D) {
-  const drawn = new Set<Building>()
-
-  for (const building of occupiedTiles.values()) {
-    if (drawn.has(building)) continue
-    drawn.add(building)
-
+  for (const building of buildings.values()) {
     if (!isTileExplored(building.tileX, building.tileY)) continue
 
     const screen = worldToScreen(building.tileX * TILE_SIZE, building.tileY * TILE_SIZE)
 
     if (building.type === 'burner_drill') {
       drawBurnerDrillSprite(ctx, screen.x, screen.y, building)
-
-      if (!isTileVisible(building.tileX, building.tileY)) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
-        ctx.fillRect(screen.x, screen.y, building.width * TILE_SIZE, building.height * TILE_SIZE)
-      }
     } else {
       drawChestSprite(ctx, screen.x, screen.y, building)
+    }
 
-      if (!isTileVisible(building.tileX, building.tileY)) {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
-        ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
-      }
+    if (!isTileVisible(building.tileX, building.tileY)) {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
+      ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
     }
   }
 }
@@ -487,61 +476,54 @@ export function renderBuildingGhost(
         type: 'burner_drill',
         tileX,
         tileY,
-        width: 2,
-        height: 2,
         direction,
-        fuel: 8,
+        fuel: 5,
         progress: 0,
         outputItem: null,
         outputCount: 0,
-        outputCapacity: 8,
+        outputCapacity: 5,
       },
       0.55,
     )
-
-    ctx.strokeStyle = valid ? '#00e5ff' : '#ff5252'
-    ctx.lineWidth = 2
-    ctx.strokeRect(screen.x + 1, screen.y + 1, TILE_SIZE * 2 - 2, TILE_SIZE * 2 - 2)
-    return
+  } else {
+    drawChestSprite(
+      ctx,
+      screen.x,
+      screen.y,
+      {
+        type: 'wooden_chest',
+        tileX,
+        tileY,
+        item: null,
+        count: 0,
+        capacity: 50,
+      },
+      0.55,
+    )
   }
-
-  drawChestSprite(
-    ctx,
-    screen.x,
-    screen.y,
-    {
-      type: 'wooden_chest',
-      tileX,
-      tileY,
-      item: null,
-      count: 0,
-      capacity: 50,
-    },
-    0.55,
-  )
 
   ctx.strokeStyle = valid ? '#00e5ff' : '#ff5252'
   ctx.lineWidth = 2
   ctx.strokeRect(screen.x + 1, screen.y + 1, TILE_SIZE - 2, TILE_SIZE - 2)
 }
 
-export function getPrimaryBuildingTile(building: Building) {
-  return { x: building.tileX, y: building.tileY }
-}
-
 export function getBuildingTooltipLines(building: Building) {
   if (building.type === 'wooden_chest') {
     const itemText = building.item ?? 'empty'
-    return ['wooden chest', `${itemText}: ${building.count}/${building.capacity}`]
+    return [
+      'wooden chest',
+      `${itemText}: ${building.count}/${building.capacity}`,
+      'E open  X deconstruct',
+    ]
   }
 
-  const outputTile = getDrillOutputTile(building)
   const outputText = building.outputItem
     ? `${building.outputItem} ${building.outputCount}/${building.outputCapacity}`
     : `empty 0/${building.outputCapacity}`
 
   return [
-    `2x2 drill ${building.direction} fuel:${building.fuel.toFixed(1)}`,
-    `out: ${outputText} -> ${outputTile.x},${outputTile.y}`,
+    `drill ${building.direction} fuel:${building.fuel.toFixed(1)}`,
+    `out: ${outputText}`,
+    'F fuel  E open  X deconstruct',
   ]
 }

@@ -10,23 +10,27 @@ import {
   isTileVisible,
   updateVisibility,
 } from './world'
-import { updateMining, getMiningProgress, getMiningTarget } from './mining'
-import { inventory } from './inventory'
+import { updateMining, getMiningProgress, getMiningTarget, resetMining } from './mining'
+import { addItem, inventory, isInventoryUiOpen, toggleInventoryUi } from './inventory'
 import { updateCamera, worldToScreen } from './camera'
 import {
   type Direction,
   type BuildSelection,
+  type Building,
   canPlaceBuilding,
   fuelBuildingAtTile,
   getBuildingAtTile,
   getBuildingTooltipLines,
-  getPrimaryBuildingTile,
   placeBurnerDrill,
   placeWoodenChest,
+  removeBuildingAtTile,
   renderBuildingGhost,
   renderBuildings,
+  storeOneCoalInBuilding,
+  takeOneFromBuilding,
   updateBuildings,
 } from './buildings'
+import { pickupGroundItemsAtTile, renderGroundItems } from './groundItems'
 import { mapState, renderMap, toggleMap } from './map'
 
 let running = false
@@ -47,6 +51,7 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
   let selectedBuild: BuildSelection = null
   let buildDirection: Direction = 'down'
+  let openedBuilding: Building | null = null
   let last = performance.now()
 
   function loop(now: number) {
@@ -60,57 +65,106 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
   }
 
   function update(dt: number) {
-    if (consumePressed('m')) {
+    if (consumePressed('tab') || consumePressed('i')) {
+      toggleInventoryUi()
+      if (isInventoryUiOpen()) {
+        openedBuilding = null
+      }
+      resetMining()
+    }
+
+    if (consumePressed('m') && !isInventoryUiOpen()) {
       toggleMap()
+    }
+
+    if (consumePressed('escape')) {
+      selectedBuild = null
+      openedBuilding = null
+      resetMining()
+    }
+
+    if (mapState.open || isInventoryUiOpen()) {
+      return
     }
 
     if (consumePressed('1')) {
       selectedBuild = 'burner_drill'
+      openedBuilding = null
     }
 
     if (consumePressed('2')) {
       selectedBuild = 'wooden_chest'
+      openedBuilding = null
     }
 
     if (consumePressed('r')) {
       buildDirection = rotateDirection(buildDirection)
     }
 
-    if (consumePressed('escape')) {
-      selectedBuild = null
+    updatePlayer(dt, input.keys)
+
+    updateCamera(
+      player.x + player.size / 2,
+      player.y + player.size / 2,
+      canvas.width,
+      canvas.height,
+    )
+    updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
+
+    const playerTileX = Math.floor((player.x + player.size / 2) / TILE_SIZE)
+    const playerTileY = Math.floor((player.y + player.size / 2) / TILE_SIZE)
+    pickupGroundItemsAtTile(playerTileX, playerTileY, addItem)
+
+    const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
+    const hoveredBuilding = hovered ? getBuildingAtTile(hovered.tileX, hovered.tileY) : null
+
+    if (consumePressed('e')) {
+      if (openedBuilding && hoveredBuilding === openedBuilding) {
+        openedBuilding = null
+      } else {
+        openedBuilding = hoveredBuilding
+        selectedBuild = null
+      }
+      resetMining()
     }
 
-    if (!mapState.open) {
-      updatePlayer(dt, input.keys)
+    if (consumePressed('x') && hoveredBuilding) {
+      if (openedBuilding === hoveredBuilding) {
+        openedBuilding = null
+      }
+      removeBuildingAtTile(hoveredBuilding.tileX, hoveredBuilding.tileY)
+      resetMining()
+    }
 
-      updateCamera(
-        player.x + player.size / 2,
-        player.y + player.size / 2,
-        canvas.width,
-        canvas.height,
-      )
-      updateVisibility(player.x + player.size / 2, player.y + player.size / 2, 10)
+    if (consumeRightPressed() && hovered && selectedBuild) {
+      const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
 
-      const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
-
-      if (consumeRightPressed() && hovered && selectedBuild) {
-        const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
-
-        if (valid) {
-          if (selectedBuild === 'burner_drill') {
-            placeBurnerDrill(hovered.tileX, hovered.tileY, buildDirection)
-          } else if (selectedBuild === 'wooden_chest') {
-            placeWoodenChest(hovered.tileX, hovered.tileY)
-          }
+      if (valid) {
+        if (selectedBuild === 'burner_drill') {
+          placeBurnerDrill(hovered.tileX, hovered.tileY, buildDirection)
+        } else if (selectedBuild === 'wooden_chest') {
+          placeWoodenChest(hovered.tileX, hovered.tileY)
         }
       }
+    }
 
-      if (consumePressed('f') && hovered) {
-        fuelBuildingAtTile(hovered.tileX, hovered.tileY)
+    if (consumePressed('f') && hovered) {
+      const fueled = fuelBuildingAtTile(hovered.tileX, hovered.tileY)
+      if (!fueled && openedBuilding) {
+        storeOneCoalInBuilding(openedBuilding)
       }
+    }
 
-      updateBuildings(dt)
+    if (openedBuilding && consumePressed('g')) {
+      takeOneFromBuilding(openedBuilding)
+    }
+
+    updateBuildings(dt)
+
+    if (!openedBuilding && !selectedBuild) {
       updateMining(dt)
+    } else {
+      resetMining()
     }
   }
 
@@ -127,11 +181,20 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     drawGrid()
     drawObjects()
     renderBuildings(ctx)
+    renderGroundItems(ctx)
     drawHoverAndGhost()
     drawPlayer()
     drawMiningProgress()
-    drawInventoryDebug()
-    drawBuildUi()
+    drawCompactInventory()
+    drawBuildUi(selectedBuild, buildDirection, openedBuilding)
+
+    if (openedBuilding) {
+      drawBuildingPanel(openedBuilding)
+    }
+
+    if (isInventoryUiOpen()) {
+      drawInventoryMenu()
+    }
   }
 
   function drawTerrain() {
@@ -276,7 +339,14 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
 
     if (selectedBuild) {
       const valid = canPlaceBuilding(selectedBuild, hovered.tileX, hovered.tileY)
-      renderBuildingGhost(ctx, selectedBuild, hovered.tileX, hovered.tileY, buildDirection, valid)
+      renderBuildingGhost(
+        ctx,
+        selectedBuild,
+        hovered.tileX,
+        hovered.tileY,
+        buildDirection,
+        valid,
+      )
     } else {
       ctx.strokeStyle = 'yellow'
       ctx.lineWidth = 2
@@ -286,20 +356,18 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     const building = getBuildingAtTile(hovered.tileX, hovered.tileY)
     if (!building) return
 
-    const primary = getPrimaryBuildingTile(building)
-    const primaryScreen = worldToScreen(primary.x * TILE_SIZE, primary.y * TILE_SIZE)
     const lines = getBuildingTooltipLines(building)
-    const boxWidth = 240
-    const boxHeight = 18 + lines.length * 15
+    const boxWidth = 180
+    const boxHeight = 10 + lines.length * 15
 
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.8)'
-    ctx.fillRect(primaryScreen.x, primaryScreen.y - boxHeight - 4, boxWidth, boxHeight)
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.82)'
+    ctx.fillRect(screen.x, screen.y - boxHeight - 4, boxWidth, boxHeight)
 
     ctx.fillStyle = 'white'
     ctx.font = '12px sans-serif'
 
     lines.forEach((line, index) => {
-      ctx.fillText(line, primaryScreen.x + 6, primaryScreen.y - boxHeight + 12 + index * 15)
+      ctx.fillText(line, screen.x + 5, screen.y - boxHeight + 12 + index * 15)
     })
   }
 
@@ -317,44 +385,130 @@ export function startGame(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext
     ctx.fillRect(screen.x + 4, screen.y + 2, (TILE_SIZE - 8) * progress, 6)
   }
 
-  function drawInventoryDebug() {
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.9)'
-    ctx.fillRect(10, 10, 250, 200)
+  function drawCompactInventory() {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.92)'
+    ctx.fillRect(10, 10, 230, 120)
 
     ctx.fillStyle = 'black'
-    ctx.font = '16px sans-serif'
+    ctx.font = '14px sans-serif'
+    ctx.fillText('Inventory', 20, 30)
 
-    let y = 30
-    ctx.fillText('Inventory:', 20, y)
-    y += 20
-
-    if (inventory.length === 0) {
-      ctx.fillText('(empty)', 20, y)
-      y += 20
-    } else {
-      for (const stack of inventory) {
-        ctx.fillText(`${stack.item}: ${stack.count}`, 20, y)
-        y += 20
-      }
+    let y = 52
+    const shown = inventory.slice(0, 4)
+    for (const stack of shown) {
+      ctx.fillText(`${stack.item}: ${stack.count}`, 20, y)
+      y += 18
     }
 
-    y += 8
-    ctx.fillText(`pos: ${Math.floor(player.x)}, ${Math.floor(player.y)}`, 20, y)
+    if (shown.length === 0) {
+      ctx.fillText('(empty)', 20, y)
+    }
   }
 
-  function drawBuildUi() {
+  function drawBuildUi(
+    currentBuild: BuildSelection,
+    currentDirection: Direction,
+    currentOpenBuilding: Building | null,
+  ) {
     ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
-    ctx.fillRect(10, canvas.height - 74, 650, 64)
+    ctx.fillRect(10, canvas.height - 88, 850, 78)
 
     ctx.fillStyle = 'white'
     ctx.font = '16px sans-serif'
-    ctx.fillText(`Build: ${selectedBuild ?? 'none'}`, 20, canvas.height - 46)
-    ctx.fillText(`Direction: ${buildDirection}`, 190, canvas.height - 46)
+    ctx.fillText(`Build: ${currentBuild ?? 'none'}`, 20, canvas.height - 58)
+    ctx.fillText(`Direction: ${currentDirection}`, 180, canvas.height - 58)
+    ctx.fillText(`Open: ${currentOpenBuilding ? currentOpenBuilding.type : 'none'}`, 340, canvas.height - 58)
     ctx.fillText(
-      '1=2x2 drill  2=chest  R=rotate  Right Click=place  F=fuel drill with coal/wood  M=map',
+      '1=drill  2=chest  R=rotate  Right Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
       20,
-      canvas.height - 22,
+      canvas.height - 28,
     )
+  }
+
+  function drawBuildingPanel(building: Building) {
+    const panelX = canvas.width - 300
+    const panelY = 20
+    const panelW = 270
+    const panelH = 170
+
+    ctx.fillStyle = 'rgba(20, 20, 20, 0.9)'
+    ctx.fillRect(panelX, panelY, panelW, panelH)
+
+    ctx.strokeStyle = '#bdbdbd'
+    ctx.lineWidth = 2
+    ctx.strokeRect(panelX, panelY, panelW, panelH)
+
+    ctx.fillStyle = 'white'
+    ctx.font = '18px sans-serif'
+    ctx.fillText(building.type === 'burner_drill' ? 'Burner Drill' : 'Wooden Chest', panelX + 14, panelY + 28)
+
+    ctx.font = '14px sans-serif'
+    if (building.type === 'burner_drill') {
+      const output = building.outputItem ? `${building.outputItem} x${building.outputCount}` : 'empty'
+      ctx.fillText(`Fuel: ${building.fuel.toFixed(1)}`, panelX + 14, panelY + 58)
+      ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 80)
+      ctx.fillText(`Output: ${output}`, panelX + 14, panelY + 102)
+      ctx.fillText('F = add coal/wood fuel', panelX + 14, panelY + 132)
+      ctx.fillText('G = take one output item', panelX + 14, panelY + 152)
+    } else {
+      const stored = building.item ? `${building.item} x${building.count}` : 'empty'
+      ctx.fillText(`Stored: ${stored}`, panelX + 14, panelY + 58)
+      ctx.fillText(`Capacity: ${building.count}/${building.capacity}`, panelX + 14, panelY + 80)
+      ctx.fillText('F = store 1 coal', panelX + 14, panelY + 132)
+      ctx.fillText('G = take 1 item', panelX + 14, panelY + 152)
+    }
+  }
+
+  function drawInventoryMenu() {
+    const panelW = 520
+    const panelH = 340
+    const panelX = Math.floor((canvas.width - panelW) / 2)
+    const panelY = Math.floor((canvas.height - panelH) / 2)
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.72)'
+    ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+    ctx.fillStyle = 'rgba(26, 26, 26, 0.96)'
+    ctx.fillRect(panelX, panelY, panelW, panelH)
+
+    ctx.strokeStyle = '#d0d0d0'
+    ctx.lineWidth = 2
+    ctx.strokeRect(panelX, panelY, panelW, panelH)
+
+    ctx.fillStyle = 'white'
+    ctx.font = '22px sans-serif'
+    ctx.fillText('Inventory', panelX + 18, panelY + 32)
+
+    const cols = 5
+    const slotSize = 84
+    const startX = panelX + 18
+    const startY = panelY + 56
+
+    for (let i = 0; i < 15; i++) {
+      const col = i % cols
+      const row = Math.floor(i / cols)
+      const x = startX + col * (slotSize + 10)
+      const y = startY + row * (slotSize + 10)
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.08)'
+      ctx.fillRect(x, y, slotSize, slotSize)
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'
+      ctx.strokeRect(x, y, slotSize, slotSize)
+
+      const stack = inventory[i]
+      if (!stack) continue
+
+      ctx.fillStyle = stack.item === 'coal' ? '#bdbdbd' : stack.item === 'iron_ore' ? '#d7dee7' : '#8bc34a'
+      ctx.fillRect(x + 10, y + 10, 20, 20)
+      ctx.fillStyle = 'white'
+      ctx.font = '13px sans-serif'
+      ctx.fillText(stack.item, x + 10, y + 46)
+      ctx.fillText(`x${stack.count}`, x + 10, y + 64)
+    }
+
+    ctx.fillStyle = '#e0e0e0'
+    ctx.font = '14px sans-serif'
+    ctx.fillText('Tab / I / Esc = close', panelX + 18, panelY + panelH - 18)
   }
 
   updateCamera(player.x + player.size / 2, player.y + player.size / 2, canvas.width, canvas.height)
