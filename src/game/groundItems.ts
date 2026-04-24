@@ -81,7 +81,12 @@ export function pickupGroundItemsAtTile(
 function getGroundItemColor(item: string) {
   if (item === 'coal') return '#1a1a1d'
   if (item === 'iron_ore') return '#c0c6cf'
+  if (item === 'copper_ore') return '#b87333'
+  if (item === 'stone') return '#8f8f8f'
   if (item === 'wood') return '#8d6e63'
+  if (item === 'iron_plate') return '#d9dee6'
+  if (item === 'copper_plate') return '#d08a45'
+  if (item === 'stone_brick') return '#b0b0b0'
   return '#ffffff'
 }
 

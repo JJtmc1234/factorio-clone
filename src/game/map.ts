@@ -1,12 +1,8 @@
 ﻿import { player } from './player'
-import {
-  TILE_SIZE,
-  getTileAtWorldTile,
-  isTileExplored
-} from './world'
+import { TILE_SIZE, getTileAtWorldTile, isTileExplored } from './world'
 
 export const mapState = {
-  open: false
+  open: false,
 }
 
 export function toggleMap() {
@@ -16,6 +12,8 @@ export function toggleMap() {
 function getMapColor(tile: ReturnType<typeof getTileAtWorldTile>) {
   if (tile.object?.type === 'tree') return '#2e8b57'
   if (tile.object?.type === 'iron_ore') return '#a0856c'
+  if (tile.object?.type === 'copper_ore') return '#b87333'
+  if (tile.object?.type === 'stone') return '#8d8d8d'
   if (tile.object?.type === 'coal') return '#333333'
   return '#4c8a3f'
 }
@@ -23,7 +21,7 @@ function getMapColor(tile: ReturnType<typeof getTileAtWorldTile>) {
 export function renderMap(
   ctx: CanvasRenderingContext2D,
   canvasWidth: number,
-  canvasHeight: number
+  canvasHeight: number,
 ) {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.92)'
   ctx.fillRect(0, 0, canvasWidth, canvasHeight)
@@ -48,23 +46,12 @@ export function renderMap(
       const tile = getTileAtWorldTile(tileX, tileY)
 
       ctx.fillStyle = getMapColor(tile)
-      ctx.fillRect(
-        sx * mapTileSize,
-        sy * mapTileSize,
-        mapTileSize,
-        mapTileSize
-      )
+      ctx.fillRect(sx * mapTileSize, sy * mapTileSize, mapTileSize, mapTileSize)
     }
   }
 
-  // player marker in center
   ctx.fillStyle = '#ff4444'
-  ctx.fillRect(
-    halfWide * mapTileSize,
-    halfHigh * mapTileSize,
-    mapTileSize,
-    mapTileSize
-  )
+  ctx.fillRect(halfWide * mapTileSize, halfHigh * mapTileSize, mapTileSize, mapTileSize)
 
   ctx.fillStyle = 'white'
   ctx.font = '18px sans-serif'

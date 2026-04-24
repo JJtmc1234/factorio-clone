@@ -32,7 +32,9 @@ export function updateMining(dt: number) {
       ? 2.5
       : obj.type === 'coal'
         ? 1.5
-        : 1.2
+        : obj.type === 'stone'
+          ? 0.9
+          : 1.2
 
   miningProgress += dt * miningSpeed
 
@@ -41,6 +43,10 @@ export function updateMining(dt: number) {
       addItem('wood', 1)
     } else if (obj.type === 'iron_ore') {
       addItem('iron_ore', 1)
+    } else if (obj.type === 'copper_ore') {
+      addItem('copper_ore', 1)
+    } else if (obj.type === 'stone') {
+      addItem('stone', 1)
     } else if (obj.type === 'coal') {
       addItem('coal', 1)
     }

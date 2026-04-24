@@ -1,6 +1,6 @@
 import { camera, screenToWorld } from './camera'
 
-export type WorldObjectType = 'tree' | 'iron_ore' | 'coal'
+export type WorldObjectType = 'tree' | 'iron_ore' | 'copper_ore' | 'stone' | 'coal'
 
 export interface WorldObject {
   type: WorldObjectType
@@ -84,7 +84,7 @@ function paintPatch(
 
       if (dist > radius) continue
 
-      const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 3))
+      const amount = Math.max(1, Math.floor(richness * (1 - dist / radius) * 6))
 
       chunk.tiles[localY][localX].object = {
         type: resourceType,
@@ -110,25 +110,36 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
   }
 
   // Guaranteed starting resource patches near spawn.
-  // Spawn is around tile (0, 0), so these should be visible pretty quickly.
-  paintPatch(chunk, chunkX, chunkY, -6, 2, 6, 8, 'iron_ore')
-  paintPatch(chunk, chunkX, chunkY, 7, 1, 5, 8, 'coal')
+  paintPatch(chunk, chunkX, chunkY, -8, 2, 8, 12, 'iron_ore')
+  paintPatch(chunk, chunkX, chunkY, 8, 1, 7, 10, 'coal')
+  paintPatch(chunk, chunkX, chunkY, 3, 8, 7, 10, 'copper_ore')
+  paintPatch(chunk, chunkX, chunkY, -4, -8, 6, 9, 'stone')
 
   // Random resource patches across the world.
   for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
     for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
       const patchRoll = hash(patchChunkX, patchChunkY, 2)
-      if (patchRoll >= 0.75) continue
+      if (patchRoll >= 0.88) continue
 
       const patchCenterX =
         patchChunkX * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 3) * CHUNK_SIZE)
       const patchCenterY =
         patchChunkY * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 4) * CHUNK_SIZE)
 
-      const radius = 4 + Math.floor(hash(patchChunkX, patchChunkY, 5) * 5)
-      const richness = 3 + Math.floor(hash(patchChunkX, patchChunkY, 6) * 6)
+      const radius = 6 + Math.floor(hash(patchChunkX, patchChunkY, 5) * 7)
+      const richness = 5 + Math.floor(hash(patchChunkX, patchChunkY, 6) * 8)
       const resourceRoll = hash(patchChunkX, patchChunkY, 7)
-      const resourceType: WorldObjectType = resourceRoll < 0.68 ? 'iron_ore' : 'coal'
+
+      let resourceType: WorldObjectType
+      if (resourceRoll < 0.4) {
+        resourceType = 'iron_ore'
+      } else if (resourceRoll < 0.65) {
+        resourceType = 'coal'
+      } else if (resourceRoll < 0.85) {
+        resourceType = 'copper_ore'
+      } else {
+        resourceType = 'stone'
+      }
 
       paintPatch(chunk, chunkX, chunkY, patchCenterX, patchCenterY, radius, richness, resourceType)
     }
