@@ -1,4 +1,4 @@
-import { loadGameSprites } from '../components/gameSprites'
+import { getGameSprite, loadGameSprites } from '../components/gameSprites'
 import { setupInput, input, consumePressed } from './input'
 import { player, updatePlayer } from './player'
 import { setupMouse, mouse, consumeRightPressed } from './mouse'
@@ -241,6 +241,7 @@ function render() {
   drawGrid()
   drawObjects()
   renderBuildings(ctx)
+  drawPlayer()
 }
 
 function drawTerrain() {
@@ -294,4 +295,17 @@ function drawObjects() {
       ctx.fillRect(screen.x + 8, screen.y + 8, 16, 16)
     }
   }
+}
+
+function drawPlayer() {
+  const screen = worldToScreen(player.x, player.y)
+  const sprite = getGameSprite('player')
+
+  if (sprite && sprite.complete && sprite.naturalWidth > 0) {
+    ctx.drawImage(sprite, screen.x, screen.y, player.size, player.size)
+    return
+  }
+
+  ctx.fillStyle = '#3f51b5'
+  ctx.fillRect(screen.x, screen.y, player.size, player.size)
 }

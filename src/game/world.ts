@@ -119,7 +119,7 @@ function generateChunk(chunkX: number, chunkY: number): Chunk {
   for (let patchChunkY = chunkY - 1; patchChunkY <= chunkY + 1; patchChunkY++) {
     for (let patchChunkX = chunkX - 1; patchChunkX <= chunkX + 1; patchChunkX++) {
       const patchRoll = hash(patchChunkX, patchChunkY, 2)
-      if (patchRoll >= 0.88) continue
+      if (patchRoll >= 0.18) continue
 
       const patchCenterX =
         patchChunkX * CHUNK_SIZE + Math.floor(hash(patchChunkX, patchChunkY, 3) * CHUNK_SIZE)
