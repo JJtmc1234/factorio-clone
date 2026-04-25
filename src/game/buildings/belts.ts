@@ -4,7 +4,7 @@ import { getItemDrawColor } from './items'
 import { getFrontTile, getBuildingAtTile } from './tile'
 import { tryInsertIntoChest } from './chest'
 import { tryInsertIntoFurnace } from './furnace'
-import { drawDirectionMarker } from './sprite'
+import { drawDirectionMarker } from './draw-helpers'
 
 export function tryInsertIntoBelt(belt: TransportBelt, item: ItemType) {
   if (belt.item !== null) return false

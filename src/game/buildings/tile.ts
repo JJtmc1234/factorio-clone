@@ -1,5 +1,5 @@
 import type { Building, Direction, ItemType } from './types'
-import { getAllBuildings } from './state'
+import { getAllBuildings } from './store'
 import { canBurnerConsumeItem, getFuelValue, isSmeltableInput } from './items'
 import { tryInsertIntoChest, takeOneFromChestInternal } from './chest'
 import { tryInsertIntoBelt } from './belts'

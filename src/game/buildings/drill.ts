@@ -6,7 +6,7 @@ import { getBuildingAtTile } from './tile'
 import { tryInsertIntoChest, consumeCoalFromChest } from './chest'
 import { tryInsertIntoBelt } from './belts'
 import { tryInsertIntoFurnace } from './furnace'
-import { drawDirectionMarker, drawSpriteRotated } from './sprite'
+import { drawDirectionMarker, drawSpriteRotated } from './draw-helpers'
 
 export function getDrillCoveredTiles(drill: BurnerDrill) {
   return [

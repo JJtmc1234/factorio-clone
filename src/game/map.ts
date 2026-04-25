@@ -1,5 +1,5 @@
 ﻿import { player } from './player'
-import { TILE_SIZE, getTileAtWorldTile, isTileExplored } from './world'
+import { TILE_SIZE, getTileAtWorldTile, isChunkCharted } from './world'
 
 export const mapState = {
   open: false,
@@ -10,11 +10,13 @@ export function toggleMap() {
 }
 
 function getMapColor(tile: ReturnType<typeof getTileAtWorldTile>) {
-  if (tile.object?.type === 'tree') return '#2e8b57'
-  if (tile.object?.type === 'iron_ore') return '#a0856c'
+  if (tile.object?.type === 'tree') return '#2e6d3a'
+  if (tile.object?.type === 'iron_ore') return '#5a708a'
   if (tile.object?.type === 'copper_ore') return '#b87333'
-  if (tile.object?.type === 'stone') return '#8d8d8d'
-  if (tile.object?.type === 'coal') return '#333333'
+  if (tile.object?.type === 'stone') return '#a89274'
+  if (tile.object?.type === 'coal') return '#222222'
+  if (tile.biome === 'dirt') return '#8b6c40'
+  if (tile.biome === 'grass_lush') return '#3a6f2c'
   return '#4c8a3f'
 }
 
@@ -41,7 +43,7 @@ export function renderMap(
       const tileX = playerTileX + (sx - halfWide)
       const tileY = playerTileY + (sy - halfHigh)
 
-      if (!isTileExplored(tileX, tileY)) continue
+      if (!isChunkCharted(tileX, tileY)) continue
 
       const tile = getTileAtWorldTile(tileX, tileY)
 

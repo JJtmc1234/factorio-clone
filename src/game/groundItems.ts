@@ -1,4 +1,4 @@
-import { TILE_SIZE, isTileExplored, isTileVisible } from './world'
+import { TILE_SIZE } from './world'
 import { worldToScreen } from './camera'
 
 export interface GroundItem {
@@ -92,8 +92,6 @@ function getGroundItemColor(item: string) {
 
 export function renderGroundItems(ctx: CanvasRenderingContext2D) {
   for (const item of groundItems.values()) {
-    if (!isTileExplored(item.tileX, item.tileY)) continue
-
     const screen = worldToScreen(item.tileX * TILE_SIZE, item.tileY * TILE_SIZE)
 
     ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
@@ -107,10 +105,5 @@ export function renderGroundItems(ctx: CanvasRenderingContext2D) {
     ctx.fillStyle = '#111'
     ctx.font = '10px sans-serif'
     ctx.fillText(String(item.count), screen.x + 18, screen.y + 11)
-
-    if (!isTileVisible(item.tileX, item.tileY)) {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.35)'
-      ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
-    }
   }
 }
