@@ -61,14 +61,12 @@ export function startGame(
   setupMouse(canvas)
   loadGameSprites()
 
-  // Starter inventory — slimmed Factorio Freeplay kit so the player can
-  // immediately mine, smelt, and defend themselves.
+  // Starter inventory matches the Factorio Freeplay default documented on
+  // wiki.factorio.com/Character (history note, since 0.8.0): 1 burner
+  // mining drill + 1 stone furnace. Player crafts everything else from
+  // raw materials they mine by hand.
   addItem('burner_mining_drill', 1)
   addItem('stone_furnace', 1)
-  addItem('wood', 1)
-  addItem('iron_plate', 8)
-  addItem('firearm_magazine', 10)
-  addItem('pistol', 1)
 
   updateCamera(
     player.x + player.size / 2,
