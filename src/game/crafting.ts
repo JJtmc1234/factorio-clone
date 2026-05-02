@@ -65,7 +65,7 @@ export function canCraft(recipeName: string): boolean {
   return true
 }
 
-export function startCraft(recipeName: string): boolean {
+function enqueueCraft(recipeName: string): boolean {
   const recipe = recipes[recipeName]
   if (!recipe || !isHandCraftable(recipe)) return false
   if (!canCraft(recipeName)) return false
@@ -73,7 +73,6 @@ export function startCraft(recipeName: string): boolean {
   const cost = normalizeIngredients(recipe.ingredients)
   for (const [name, amount] of Object.entries(cost)) {
     if (!removeItem(toInventoryKey(name), amount)) {
-      // Roll back already-removed ingredients on partial failure (paranoia).
       for (const [n, a] of Object.entries(cost)) {
         if (n === name) break
         addItem(toInventoryKey(n), a)
@@ -93,6 +92,95 @@ export function startCraft(recipeName: string): boolean {
     remainingTime: recipe.time,
     totalTime: recipe.time,
   })
+  return true
+}
+
+// Index from output kebab name -> recipe key. Lets the auto-prerequisite
+// resolver find which hand-craftable recipe produces a given ingredient.
+function findRecipeProducing(outputKebab: string): string | null {
+  for (const [recipeName, recipe] of Object.entries(recipes)) {
+    if (!isHandCraftable(recipe)) continue
+    if (Object.prototype.hasOwnProperty.call(recipe.output, outputKebab)) {
+      return recipeName
+    }
+  }
+  return null
+}
+
+// Walk the recipe DAG in dependency-order and queue prerequisite crafts so
+// the target recipe becomes craftable. Returns the list of recipe names to
+// queue (target last). Returns null if any prerequisite is not itself
+// hand-craftable (e.g. raw ore must be mined manually).
+function buildPrerequisitePlan(targetRecipeName: string): string[] | null {
+  const target = recipes[targetRecipeName]
+  if (!target) return null
+
+  // Track the simulated inventory deltas so we don't double-count items
+  // produced by an intermediate craft when sizing the next one.
+  const simulated: Record<string, number> = {}
+  const getSim = (k: string) => (simulated[k] ?? 0) + getItemCount(k)
+  const plan: string[] = []
+  const visiting = new Set<string>()
+
+  function ensureFor(recipeName: string): boolean {
+    if (visiting.has(recipeName)) return false // cycle guard
+    const recipe = recipes[recipeName]
+    if (!recipe || !isHandCraftable(recipe)) return false
+    visiting.add(recipeName)
+
+    const cost = normalizeIngredients(recipe.ingredients)
+    for (const [ingKebab, amount] of Object.entries(cost)) {
+      const key = toInventoryKey(ingKebab)
+      let need = amount - getSim(key)
+      if (need <= 0) continue
+
+      const subRecipeName = findRecipeProducing(ingKebab)
+      if (!subRecipeName) return false // raw resource — must be mined
+
+      const subRecipe = recipes[subRecipeName]
+      const perBatch = subRecipe.output[ingKebab] ?? 1
+      const batches = Math.ceil(need / perBatch)
+      for (let b = 0; b < batches; b++) {
+        if (!ensureFor(subRecipeName)) return false
+        const subCost = normalizeIngredients(subRecipe.ingredients)
+        for (const [subIng, subAmount] of Object.entries(subCost)) {
+          simulated[toInventoryKey(subIng)] =
+            (simulated[toInventoryKey(subIng)] ?? 0) - subAmount
+        }
+        for (const [outKey, outAmount] of Object.entries(subRecipe.output)) {
+          simulated[toInventoryKey(outKey)] =
+            (simulated[toInventoryKey(outKey)] ?? 0) + outAmount
+        }
+        plan.push(subRecipeName)
+      }
+    }
+
+    visiting.delete(recipeName)
+    return true
+  }
+
+  if (!ensureFor(targetRecipeName)) return null
+
+  // Subtract the target's own cost from simulated, then verify the target
+  // is now fully covered.
+  const targetCost = normalizeIngredients(target.ingredients)
+  for (const [ing, amount] of Object.entries(targetCost)) {
+    const key = toInventoryKey(ing)
+    if (getSim(key) < amount) return null
+  }
+  plan.push(targetRecipeName)
+  return plan
+}
+
+export function startCraft(recipeName: string): boolean {
+  if (canCraft(recipeName)) return enqueueCraft(recipeName)
+
+  const plan = buildPrerequisitePlan(recipeName)
+  if (!plan) return false
+
+  for (const step of plan) {
+    if (!enqueueCraft(step)) return false
+  }
   return true
 }
 

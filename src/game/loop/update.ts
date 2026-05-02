@@ -82,7 +82,17 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
   if (consumePressed('6')) state.selectedBuild = 'iron_chest'
 
   if (consumePressed('r')) {
-    state.buildDirection = rotateDirection(state.buildDirection)
+    if (state.selectedBuild) {
+      // Rotating the cursor build — affects the next placement.
+      state.buildDirection = rotateDirection(state.buildDirection)
+    } else {
+      // R on a hovered placed building rotates it in place (Factorio-style).
+      const tile = getTileAtScreenPosition(mouse.x, mouse.y)
+      const b = tile ? getBuildingAtTile(tile.tileX, tile.tileY) : null
+      if (b && 'direction' in b) {
+        b.direction = rotateDirection(b.direction)
+      }
+    }
   }
 
   // Q pipettes: with a build selected, clear it; otherwise pick up the

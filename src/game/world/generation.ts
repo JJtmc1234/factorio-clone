@@ -103,31 +103,18 @@ function paintPatch(
 export function generateChunk(chunkX: number, chunkY: number): Chunk {
   const chunk = createEmptyChunk(chunkX, chunkY)
 
+  // Pass 1: paint biomes only (no objects yet) so paintPatch and the tree
+  // pass have a stable biome map to read from.
   for (let localY = 0; localY < CHUNK_SIZE; localY++) {
     for (let localX = 0; localX < CHUNK_SIZE; localX++) {
       const worldTileX = chunkX * CHUNK_SIZE + localX
       const worldTileY = chunkY * CHUNK_SIZE + localY
-      const tile = chunk.tiles[localY][localX]
-
-      const biome = biomeForTile(worldTileX, worldTileY)
-      tile.biome = biome
-
-      const treeNoise = fbm(worldTileX / TREE_SCALE, worldTileY / TREE_SCALE, TREE_SEED, 3)
-      const chance = treePlacementChance(biome, treeNoise)
-
-      if (chance > 0 && hash(worldTileX, worldTileY, 11) < chance) {
-        tile.object = { type: 'tree', amount: 1 }
-      }
+      chunk.tiles[localY][localX].biome = biomeForTile(worldTileX, worldTileY)
     }
   }
 
-  // Guaranteed starter forest clusters so trees are always within sight of
-  // spawn (issue #4: "no trees" repro had spawn landing in dirt biome).
-  paintForest(chunk, chunkX, chunkY, 12, -4, 7, 0.7)
-  paintForest(chunk, chunkX, chunkY, -10, 7, 6, 0.65)
-  paintForest(chunk, chunkX, chunkY, 14, 10, 5, 0.6)
-
-  // Guaranteed starting resource patches near spawn (~300k total each, edge ≥ ~100, center ≥ ~3000).
+  // Pass 2: ores. Resources go down BEFORE trees so trees never overwrite
+  // ore patches (the previous order had trees blocking ore tiles).
   paintPatch(chunk, chunkX, chunkY, -8, 2, 8, 120, 4000, 'iron_ore')
   paintPatch(chunk, chunkX, chunkY, 8, 1, 7, 100, 3500, 'coal')
   paintPatch(chunk, chunkX, chunkY, 3, 8, 7, 100, 3500, 'copper_ore')
@@ -182,6 +169,30 @@ export function generateChunk(chunkX: number, chunkY: number): Chunk {
       )
     }
   }
+
+  // Pass 3: trees. Tree placement skips tiles that already have ore so
+  // resources are preserved.
+  for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+    for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+      const worldTileX = chunkX * CHUNK_SIZE + localX
+      const worldTileY = chunkY * CHUNK_SIZE + localY
+      const tile = chunk.tiles[localY][localX]
+      if (tile.object) continue
+
+      const treeNoise = fbm(worldTileX / TREE_SCALE, worldTileY / TREE_SCALE, TREE_SEED, 3)
+      const chance = treePlacementChance(tile.biome, treeNoise)
+
+      if (chance > 0 && hash(worldTileX, worldTileY, 11) < chance) {
+        tile.object = { type: 'tree', amount: 1 }
+      }
+    }
+  }
+
+  // Pass 4: guaranteed starter forest clusters so trees are always within
+  // sight of spawn even in worst-case biome noise.
+  paintForest(chunk, chunkX, chunkY, 12, -4, 7, 0.7)
+  paintForest(chunk, chunkX, chunkY, -10, 7, 6, 0.65)
+  paintForest(chunk, chunkX, chunkY, 14, 10, 5, 0.6)
 
   return chunk
 }

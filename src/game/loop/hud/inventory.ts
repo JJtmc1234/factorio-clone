@@ -1,5 +1,5 @@
 import { inventory } from '../../inventory'
-import { mouse } from '../../mouse'
+import { consumeWheelDelta, mouse } from '../../mouse'
 import {
   canCraft,
   getCraftQueue,
@@ -14,11 +14,62 @@ const INVENTORY_COLS = 5
 const SLOT_SIZE = 56
 const SLOT_GAP = 8
 const RECIPE_ROW_W = 360
-const RECIPE_ROW_H = 44
-const RECIPE_ROW_GAP = 4
+const RECIPE_ROW_H = 36
+const RECIPE_ROW_GAP = 3
+const SECTION_HEADER_H = 20
 const PANEL_W = 760
 const PANEL_H = 500
 const PANEL_PADDING = 20
+
+// Persistent across frames so the scroll position survives a redraw.
+let recipeScrollOffset = 0
+
+type CraftSection = 'Logistics' | 'Production' | 'Intermediate' | 'Combat'
+
+const SECTION_ORDER: CraftSection[] = [
+  'Logistics',
+  'Production',
+  'Intermediate',
+  'Combat',
+]
+
+function recipeSection(recipe: Recipe): CraftSection {
+  const name = recipe.name
+  if (
+    name === 'wooden-chest' ||
+    name === 'iron-chest' ||
+    name === 'transport-belt' ||
+    name === 'burner-inserter' ||
+    name === 'inserter'
+  )
+    return 'Logistics'
+  if (name === 'stone-furnace' || name === 'burner-mining-drill') return 'Production'
+  if (name === 'firearm-magazine' || name === 'light-armor' || name === 'pistol')
+    return 'Combat'
+  return 'Intermediate'
+}
+
+type FlatRow =
+  | { kind: 'header'; section: CraftSection; height: number }
+  | { kind: 'recipe'; recipe: Recipe; height: number }
+
+function buildFlatRows(): FlatRow[] {
+  const recipes = getHandCraftableRecipes()
+  const bySection = new Map<CraftSection, Recipe[]>()
+  for (const r of recipes) {
+    const s = recipeSection(r)
+    if (!bySection.has(s)) bySection.set(s, [])
+    bySection.get(s)!.push(r)
+  }
+  const rows: FlatRow[] = []
+  for (const section of SECTION_ORDER) {
+    const list = bySection.get(section)
+    if (!list || list.length === 0) continue
+    rows.push({ kind: 'header', section, height: SECTION_HEADER_H })
+    for (const r of list) rows.push({ kind: 'recipe', recipe: r, height: RECIPE_ROW_H })
+  }
+  return rows
+}
 
 function getMaxVisibleRecipeRows(layout: { craftStartY: number; bottomStripY: number }) {
   const available = layout.bottomStripY - layout.craftStartY - 8
@@ -50,13 +101,13 @@ function getInventoryMenuLayout(canvas: HTMLCanvasElement) {
   }
 }
 
-function getCraftRowRect(canvas: HTMLCanvasElement, index: number) {
+function getRecipeAreaBounds(canvas: HTMLCanvasElement) {
   const layout = getInventoryMenuLayout(canvas)
   return {
     x: layout.craftStartX,
-    y: layout.craftStartY + index * (RECIPE_ROW_H + RECIPE_ROW_GAP),
+    y: layout.craftStartY,
     w: RECIPE_ROW_W,
-    h: RECIPE_ROW_H,
+    h: layout.bottomStripY - layout.craftStartY - 8,
   }
 }
 
@@ -187,18 +238,30 @@ function drawCraftRow(
   ctx.strokeRect(rect.x, rect.y, rect.w, rect.h)
 
   const outputKey = recipeOutputKey(recipe) ?? recipe.name
-  drawItemIcon(ctx, outputKey, rect.x + 22, rect.y + rect.h / 2, 32)
+  drawItemIcon(ctx, outputKey, rect.x + 18, rect.y + rect.h / 2, 26)
 
   ctx.fillStyle = 'white'
-  ctx.font = 'bold 13px sans-serif'
-  ctx.fillText(recipe.name, rect.x + 44, rect.y + 17)
+  ctx.font = 'bold 12px sans-serif'
+  ctx.fillText(recipe.name, rect.x + 36, rect.y + 14)
 
   ctx.fillStyle = '#bbb'
   ctx.font = '10px sans-serif'
-  ctx.fillText(`${recipe.time}s`, rect.x + rect.w - 36, rect.y + 17)
-  ctx.fillText(formatIngredients(recipe), rect.x + 44, rect.y + 33)
+  ctx.fillText(`${recipe.time}s`, rect.x + rect.w - 32, rect.y + 14)
+  ctx.fillText(formatIngredients(recipe), rect.x + 36, rect.y + 28)
 
   ctx.globalAlpha = 1
+}
+
+function drawSectionHeader(
+  ctx: CanvasRenderingContext2D,
+  section: CraftSection,
+  rect: { x: number; y: number; w: number; h: number },
+) {
+  ctx.fillStyle = 'rgba(255, 200, 100, 0.18)'
+  ctx.fillRect(rect.x, rect.y, rect.w, rect.h)
+  ctx.fillStyle = '#ffd180'
+  ctx.font = 'bold 11px sans-serif'
+  ctx.fillText(section.toUpperCase(), rect.x + 6, rect.y + 14)
 }
 
 function drawCraftQueue(
@@ -284,21 +347,49 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   ctx.font = 'bold 16px sans-serif'
   ctx.fillText('Craft', layout.craftStartX, layout.panelY + 38)
 
-  const recipes = getHandCraftableRecipes()
-  const maxRows = getMaxVisibleRecipeRows(layout)
-  const visibleCount = Math.min(recipes.length, maxRows)
-  for (let i = 0; i < visibleCount; i++) {
-    drawCraftRow(ctx, recipes[i], getCraftRowRect(canvas, i))
+  const flatRows = buildFlatRows()
+  const area = getRecipeAreaBounds(canvas)
+
+  // Wheel scroll while pointer is over the recipe area.
+  const overArea =
+    mouse.x >= area.x &&
+    mouse.x < area.x + area.w &&
+    mouse.y >= area.y &&
+    mouse.y < area.y + area.h
+  if (overArea) {
+    const dy = consumeWheelDelta()
+    if (dy !== 0) {
+      const step = dy > 0 ? 1 : -1
+      recipeScrollOffset += step
+    }
   }
-  const hidden = recipes.length - visibleCount
-  if (hidden > 0) {
-    ctx.fillStyle = '#bbb'
-    ctx.font = '11px sans-serif'
-    ctx.fillText(
-      `+${hidden} more recipes (need scroll)`,
-      layout.craftStartX,
-      layout.bottomStripY - 4,
-    )
+
+  const maxScroll = Math.max(0, flatRows.length - getMaxVisibleRecipeRows(layout))
+  if (recipeScrollOffset < 0) recipeScrollOffset = 0
+  if (recipeScrollOffset > maxScroll) recipeScrollOffset = maxScroll
+
+  let cursorY = area.y
+  for (let i = recipeScrollOffset; i < flatRows.length; i++) {
+    const row = flatRows[i]
+    if (cursorY + row.height > area.y + area.h) break
+    const rect = { x: area.x, y: cursorY, w: area.w, h: row.height }
+    if (row.kind === 'header') drawSectionHeader(ctx, row.section, rect)
+    else drawCraftRow(ctx, row.recipe, rect)
+    cursorY += row.height + RECIPE_ROW_GAP
+  }
+
+  // Scrollbar indicator on the right edge of the recipe area.
+  if (flatRows.length > 0 && maxScroll > 0) {
+    const trackX = area.x + area.w + 2
+    const trackW = 4
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)'
+    ctx.fillRect(trackX, area.y, trackW, area.h)
+    const visible = getMaxVisibleRecipeRows(layout)
+    const thumbH = Math.max(20, Math.floor((visible / flatRows.length) * area.h))
+    const thumbY =
+      area.y + Math.floor((recipeScrollOffset / maxScroll) * (area.h - thumbH))
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'
+    ctx.fillRect(trackX, thumbY, trackW, thumbH)
   }
 
   drawCraftQueue(ctx, layout)
@@ -313,18 +404,26 @@ export function handleInventoryMenuClick(
   mx: number,
   my: number,
 ): boolean {
-  const layout = getInventoryMenuLayout(canvas)
-  const recipes = getHandCraftableRecipes()
-  const maxRows = getMaxVisibleRecipeRows(layout)
-  const visibleCount = Math.min(recipes.length, maxRows)
-  for (let i = 0; i < visibleCount; i++) {
-    const rect = getCraftRowRect(canvas, i)
-    if (mx >= rect.x && mx < rect.x + rect.w && my >= rect.y && my < rect.y + rect.h) {
-      if (canCraft(recipes[i].name)) {
-        startCraft(recipes[i].name)
-      }
+  const flatRows = buildFlatRows()
+  const area = getRecipeAreaBounds(canvas)
+
+  let cursorY = area.y
+  for (let i = recipeScrollOffset; i < flatRows.length; i++) {
+    const row = flatRows[i]
+    if (cursorY + row.height > area.y + area.h) break
+    if (
+      row.kind === 'recipe' &&
+      mx >= area.x &&
+      mx < area.x + area.w &&
+      my >= cursorY &&
+      my < cursorY + row.height
+    ) {
+      // startCraft will auto-queue prerequisite intermediates if the player
+      // has the raw materials but not the immediate ingredients.
+      startCraft(row.recipe.name)
       return true
     }
+    cursorY += row.height + RECIPE_ROW_GAP
   }
   return false
 }

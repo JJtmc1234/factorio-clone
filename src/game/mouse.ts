@@ -8,6 +8,10 @@ export const mouse = {
   // Cleared by consumeLeftPressed alongside the press flag.
   leftPressedCtrl: false,
   leftPressedShift: false,
+  // Wheel delta accumulated since last consume. Positive = wheel-down
+  // (scroll forward / list down). UI consumers call consumeWheelDelta() to
+  // read + reset.
+  wheelDelta: 0,
 }
 
 export function setupMouse(canvas: HTMLCanvasElement) {
@@ -39,6 +43,17 @@ export function setupMouse(canvas: HTMLCanvasElement) {
       mouse.leftDown = false
     }
   })
+
+  canvas.addEventListener(
+    'wheel',
+    (e) => {
+      // Normalize wheel delta to "rows" (deltaY is usually 100 per notch on
+      // a mouse wheel). Sign: positive = down/forward.
+      mouse.wheelDelta += e.deltaY
+      e.preventDefault()
+    },
+    { passive: false },
+  )
 }
 
 export function consumeLeftPressed() {
@@ -53,4 +68,10 @@ export function consumeRightPressed() {
   const pressed = mouse.rightPressed
   mouse.rightPressed = false
   return pressed
+}
+
+export function consumeWheelDelta() {
+  const d = mouse.wheelDelta
+  mouse.wheelDelta = 0
+  return d
 }
