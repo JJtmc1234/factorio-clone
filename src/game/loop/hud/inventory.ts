@@ -1,5 +1,5 @@
 import { inventory } from '../../inventory'
-import { consumeWheelDelta, mouse } from '../../mouse'
+import { mouse } from '../../mouse'
 import {
   canCraft,
   getCraftQueue,
@@ -350,20 +350,6 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   const flatRows = buildFlatRows()
   const area = getRecipeAreaBounds(canvas)
 
-  // Wheel scroll while pointer is over the recipe area.
-  const overArea =
-    mouse.x >= area.x &&
-    mouse.x < area.x + area.w &&
-    mouse.y >= area.y &&
-    mouse.y < area.y + area.h
-  if (overArea) {
-    const dy = consumeWheelDelta()
-    if (dy !== 0) {
-      const step = dy > 0 ? 1 : -1
-      recipeScrollOffset += step
-    }
-  }
-
   const maxScroll = Math.max(0, flatRows.length - getMaxVisibleRecipeRows(layout))
   if (recipeScrollOffset < 0) recipeScrollOffset = 0
   if (recipeScrollOffset > maxScroll) recipeScrollOffset = maxScroll
@@ -397,6 +383,16 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   ctx.fillStyle = '#cfcfcf'
   ctx.font = '12px sans-serif'
   ctx.fillText('E / Esc = close', layout.panelX + PANEL_PADDING, layout.panelY + layout.panelH - 8)
+}
+
+export function isOverRecipeArea(canvas: HTMLCanvasElement, mx: number, my: number) {
+  const area = getRecipeAreaBounds(canvas)
+  return mx >= area.x && mx < area.x + area.w && my >= area.y && my < area.y + area.h
+}
+
+export function scrollRecipeList(deltaY: number) {
+  if (deltaY === 0) return
+  recipeScrollOffset += deltaY > 0 ? 1 : -1
 }
 
 export function handleInventoryMenuClick(

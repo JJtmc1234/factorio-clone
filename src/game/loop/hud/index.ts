@@ -5,4 +5,6 @@ export {
   drawCompactInventory,
   drawInventoryMenu,
   handleInventoryMenuClick,
+  isOverRecipeArea,
+  scrollRecipeList,
 } from './inventory'

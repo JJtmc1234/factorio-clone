@@ -1,10 +1,10 @@
 import { consumePressed, input } from '../input'
 import { player, updatePlayer } from '../player'
-import { mouse, consumeLeftPressed } from '../mouse'
+import { mouse, consumeLeftPressed, consumeWheelDelta } from '../mouse'
 import { getTileAtScreenPosition, updateVisibility } from '../world'
 import { updateMining, resetMining } from '../mining'
 import { closeInventoryUi, isInventoryUiOpen, toggleInventoryUi } from '../inventory'
-import { updateCamera } from '../camera'
+import { adjustZoom, updateCamera } from '../camera'
 import {
   canPlaceBuilding,
   fuelBuildingAtTile,
@@ -22,7 +22,13 @@ import {
 } from '../buildings'
 import { mapState, toggleMap } from '../map'
 import { updateCrafting } from '../crafting'
-import { grantDebugItems, handleInventoryMenuClick, isDebugButtonHit } from './hud'
+import {
+  grantDebugItems,
+  handleInventoryMenuClick,
+  isDebugButtonHit,
+  isOverRecipeArea,
+  scrollRecipeList,
+} from './hud'
 import { rotateDirection, state } from './state'
 
 export function update(dt: number, canvas: HTMLCanvasElement) {
@@ -36,6 +42,18 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
     consumeLeftPressed()
     grantDebugItems()
     return
+  }
+
+  // Wheel handling, single source of truth so deltas don't accumulate
+  // between frames. Inventory recipe list wins when open + over the area;
+  // otherwise the wheel zooms the world view.
+  const wheel = consumeWheelDelta()
+  if (wheel !== 0) {
+    if (isInventoryUiOpen() && isOverRecipeArea(canvas, mouse.x, mouse.y)) {
+      scrollRecipeList(wheel)
+    } else {
+      adjustZoom(wheel)
+    }
   }
 
   // E (Tab/I aliases) toggles the inventory only. Entity panels open by

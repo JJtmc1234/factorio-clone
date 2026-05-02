@@ -51,10 +51,14 @@ export function isChunkCharted(tileX: number, tileY: number) {
 }
 
 export function getVisibleTileBounds() {
+  // Zoom < 1 (zoomed out) means camera.width/zoom is larger than camera.width,
+  // so we render more world tiles. Zoom > 1 reduces the visible range.
+  const visibleW = camera.width / camera.zoom
+  const visibleH = camera.height / camera.zoom
   return {
     startTileX: Math.floor(camera.x / TILE_SIZE) - 1,
     startTileY: Math.floor(camera.y / TILE_SIZE) - 1,
-    endTileX: Math.ceil((camera.x + camera.width) / TILE_SIZE) + 1,
-    endTileY: Math.ceil((camera.y + camera.height) / TILE_SIZE) + 1,
+    endTileX: Math.ceil((camera.x + visibleW) / TILE_SIZE) + 1,
+    endTileY: Math.ceil((camera.y + visibleH) / TILE_SIZE) + 1,
   }
 }

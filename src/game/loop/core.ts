@@ -4,7 +4,7 @@ import { player } from '../player'
 import { setupMouse } from '../mouse'
 import { TILE_SIZE, chartStarterArea, updateVisibility } from '../world'
 import { addItem, isInventoryUiOpen } from '../inventory'
-import { updateCamera } from '../camera'
+import { applyWorldTransform, restoreWorldTransform, updateCamera } from '../camera'
 import { renderBuildings } from '../buildings'
 import { mapState, renderMap } from '../map'
 import { state } from './state'
@@ -121,6 +121,10 @@ function render() {
     return
   }
 
+  // World rendering happens in zoom-scaled space. Everything that uses
+  // worldToScreen draws in this transformed ctx; the HUD passes below
+  // run in the unscaled (screen-pixel) ctx after restore.
+  applyWorldTransform(ctx)
   drawTerrain(ctx)
   drawGrid(ctx)
   drawObjects(ctx)
@@ -128,6 +132,8 @@ function render() {
   drawHoverAndGhost(ctx)
   drawPlayer(ctx)
   drawMiningProgress(ctx)
+  restoreWorldTransform(ctx)
+
   drawCompactInventory(ctx)
   drawBuildUi(ctx, canvas)
 
