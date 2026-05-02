@@ -1,21 +1,42 @@
-import { addItem } from '../inventory'
+import { addItem, getItemCount, removeItem } from '../inventory'
 import { getTileAtWorldTile } from '../world'
-import type { BuildSelection, Direction } from './types'
+import type { BuildSelection, BuildingType, Direction } from './types'
 import { isGroundBlockingObject, isMineableResource } from './items'
 import { occupiesTile, getBuildingAtTile } from './tile'
 import { addBuilding, getAllBuildings } from './store'
-import { createWoodenChest } from './chest'
+import { createIronChest, createWoodenChest } from './chest'
 import { createTransportBelt } from './belts'
 import { createBurnerDrill } from './drill'
 import { createStoneFurnace } from './furnace'
 import { createBurnerInserter } from './inserter'
+
+// BuildingType internal names map to canonical Factorio item names used by recipes
+// (after kebab→snake normalization in crafting.ts). burner_drill differs because
+// the canonical Factorio name is "burner-mining-drill".
+export const BUILDING_ITEM_KEY: Record<BuildingType, string> = {
+  burner_drill: 'burner_mining_drill',
+  wooden_chest: 'wooden_chest',
+  iron_chest: 'iron_chest',
+  transport_belt: 'transport_belt',
+  stone_furnace: 'stone_furnace',
+  burner_inserter: 'burner_inserter',
+}
+
+export function getBuildingInventoryCount(type: BuildingType): number {
+  return getItemCount(BUILDING_ITEM_KEY[type])
+}
 
 export function canPlaceBuilding(
   type: Exclude<BuildSelection, null>,
   tileX: number,
   tileY: number,
 ) {
-  if (type === 'wooden_chest' || type === 'transport_belt' || type === 'burner_inserter') {
+  if (
+    type === 'wooden_chest' ||
+    type === 'iron_chest' ||
+    type === 'transport_belt' ||
+    type === 'burner_inserter'
+  ) {
     if (getBuildingAtTile(tileX, tileY)) return false
     const tile = getTileAtWorldTile(tileX, tileY)
     return !isGroundBlockingObject(tile.object?.type)
@@ -57,32 +78,54 @@ export function canPlaceBuilding(
   return hasMineableResource
 }
 
+function consumeBuildingItem(type: BuildingType): boolean {
+  return removeItem(BUILDING_ITEM_KEY[type], 1)
+}
+
 export function placeBurnerDrill(tileX: number, tileY: number, direction: Direction) {
   if (!canPlaceBuilding('burner_drill', tileX, tileY)) return false
+  if (getBuildingInventoryCount('burner_drill') < 1) return false
+  if (!consumeBuildingItem('burner_drill')) return false
   addBuilding(createBurnerDrill(tileX, tileY, direction))
   return true
 }
 
 export function placeWoodenChest(tileX: number, tileY: number) {
   if (!canPlaceBuilding('wooden_chest', tileX, tileY)) return false
+  if (getBuildingInventoryCount('wooden_chest') < 1) return false
+  if (!consumeBuildingItem('wooden_chest')) return false
   addBuilding(createWoodenChest(tileX, tileY))
+  return true
+}
+
+export function placeIronChest(tileX: number, tileY: number) {
+  if (!canPlaceBuilding('iron_chest', tileX, tileY)) return false
+  if (getBuildingInventoryCount('iron_chest') < 1) return false
+  if (!consumeBuildingItem('iron_chest')) return false
+  addBuilding(createIronChest(tileX, tileY))
   return true
 }
 
 export function placeTransportBelt(tileX: number, tileY: number, direction: Direction) {
   if (!canPlaceBuilding('transport_belt', tileX, tileY)) return false
+  if (getBuildingInventoryCount('transport_belt') < 1) return false
+  if (!consumeBuildingItem('transport_belt')) return false
   addBuilding(createTransportBelt(tileX, tileY, direction))
   return true
 }
 
 export function placeStoneFurnace(tileX: number, tileY: number) {
   if (!canPlaceBuilding('stone_furnace', tileX, tileY)) return false
+  if (getBuildingInventoryCount('stone_furnace') < 1) return false
+  if (!consumeBuildingItem('stone_furnace')) return false
   addBuilding(createStoneFurnace(tileX, tileY))
   return true
 }
 
 export function placeBurnerInserter(tileX: number, tileY: number, direction: Direction) {
   if (!canPlaceBuilding('burner_inserter', tileX, tileY)) return false
+  if (getBuildingInventoryCount('burner_inserter') < 1) return false
+  if (!consumeBuildingItem('burner_inserter')) return false
   addBuilding(createBurnerInserter(tileX, tileY, direction))
   return true
 }
@@ -95,6 +138,7 @@ export function placeBuilding(
 ) {
   if (type === 'burner_drill') return placeBurnerDrill(tileX, tileY, direction)
   if (type === 'wooden_chest') return placeWoodenChest(tileX, tileY)
+  if (type === 'iron_chest') return placeIronChest(tileX, tileY)
   if (type === 'transport_belt') return placeTransportBelt(tileX, tileY, direction)
   if (type === 'stone_furnace') return placeStoneFurnace(tileX, tileY)
   if (type === 'burner_inserter') return placeBurnerInserter(tileX, tileY, direction)
@@ -108,7 +152,14 @@ export function removeBuildingAtTile(tileX: number, tileY: number) {
 
   const [building] = buildings.splice(index, 1)
 
-  if (building.type === 'wooden_chest' && building.item && building.count > 0) {
+  // Refund the building itself (Factorio-style: deconstruct returns the item).
+  addItem(BUILDING_ITEM_KEY[building.type], 1)
+
+  if (
+    (building.type === 'wooden_chest' || building.type === 'iron_chest') &&
+    building.item &&
+    building.count > 0
+  ) {
     addItem(building.item, building.count)
   }
 

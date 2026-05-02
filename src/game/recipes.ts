@@ -1,23 +1,13 @@
-// Clean restart: practical, scalable Factorio + Space Age recipe schema
+// Recipe types live in recipes-types.ts so the auto-generated
+// recipes.generated.ts (written by scripts/fetch-recipes.mjs) can import them
+// without creating a circular dependency back through this file.
+export type { Ingredient, Recipe } from './recipes-types'
+import type { Recipe } from './recipes-types'
 
-export type Ingredient = {
-  name: string
-  amount: number
-  type?: 'item' | 'fluid'
-}
-
-export type Recipe = {
-  name: string
-  time: number
-  category: string
-  madeIn: string[]
-  tech?: string
-  ingredients: Record<string, number> | Ingredient[]
-  output: Record<string, number>
-  surface?: 'any' | 'nauvis' | 'vulcanus' | 'fulgora' | 'gleba' | 'aquilo' | 'space'
-}
-
-export const recipes: Record<string, Recipe> = {
+// Manual recipe table — the historical source of truth. After running
+// `npm run fetch-recipes`, wiki-derived values from recipes.generated.ts
+// override these for any overlapping keys (see merge below).
+const manualRecipes: Record<string, Recipe> = {
   // ===== CORE =====
   'iron-plate': {
     name: 'iron-plate',
@@ -101,6 +91,79 @@ export const recipes: Record<string, Recipe> = {
     ],
     output: { 'processing-unit': 1 },
     surface: 'any'
+  },
+
+  // ===== EARLY-GAME BUILDINGS (hand-craftable) =====
+  // Times taken from wiki.factorio.com (Factorio 2.0 / Space Age values).
+  'iron-stick': {
+    name: 'iron-stick',
+    time: 0.5,
+    category: 'crafting',
+    // Locked: iron-stick is gated behind medium electric poles in vanilla and
+    // we don't have a tech tree yet, so it must not appear in the hand-craft
+    // menu. Keep the recipe defined for future ingredient routing.
+    madeIn: ['assembler'],
+    tech: 'medium-electric-pole',
+    ingredients: { 'iron-plate': 1 },
+    output: { 'iron-stick': 2 },
+    surface: 'any',
+  },
+
+  'wooden-chest': {
+    name: 'wooden-chest',
+    time: 0.5,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: { wood: 2 },
+    output: { 'wooden-chest': 1 },
+    surface: 'any',
+  },
+
+  'iron-chest': {
+    name: 'iron-chest',
+    time: 0.5,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: { 'iron-plate': 8 },
+    output: { 'iron-chest': 1 },
+    surface: 'any',
+  },
+
+  'stone-furnace': {
+    name: 'stone-furnace',
+    time: 0.5,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: { stone: 5 },
+    output: { 'stone-furnace': 1 },
+    surface: 'any',
+  },
+
+  'burner-mining-drill': {
+    name: 'burner-mining-drill',
+    time: 2,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: {
+      'iron-gear-wheel': 3,
+      'iron-plate': 3,
+      'stone-furnace': 1,
+    },
+    output: { 'burner-mining-drill': 1 },
+    surface: 'any',
+  },
+
+  'burner-inserter': {
+    name: 'burner-inserter',
+    time: 0.5,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: {
+      'iron-gear-wheel': 1,
+      'iron-plate': 1,
+    },
+    output: { 'burner-inserter': 1 },
+    surface: 'any',
   },
 
   // ===== LOGISTICS =====
@@ -249,6 +312,19 @@ export const recipes: Record<string, Recipe> = {
     output: { 'quantum-processor': 1 },
     surface: 'aquilo'
   }
+}
+
+// Pull in wiki-derived recipes if the generator has been run. Using a
+// dynamic-style barrel keeps the build green when the file is missing
+// (Vite will emit an empty object). After `npm run fetch-recipes`, generated
+// values take precedence, but we preserve any handwritten metadata
+// (category/madeIn/tech/surface) by spreading manual *under* generated and
+// then re-overlaying our manual extras for any keys the wiki doesn't cover.
+import { generatedRecipes } from './recipes.generated'
+
+export const recipes: Record<string, Recipe> = {
+  ...manualRecipes,
+  ...generatedRecipes,
 }
 
 export default recipes

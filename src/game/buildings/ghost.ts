@@ -2,7 +2,7 @@ import { worldToScreen } from '../camera'
 import { TILE_SIZE } from '../world'
 import type { BuildSelection, Direction } from './types'
 import { drawFallbackBeltSprite } from './belts'
-import { drawFallbackChestSprite } from './chest'
+import { drawFallbackChestSprite, drawFallbackIronChestSprite } from './chest'
 import { drawFallbackBurnerDrillSprite } from './drill'
 import { drawFallbackFurnaceSprite } from './furnace'
 import { drawFallbackInserterSprite } from './inserter'
@@ -74,6 +74,24 @@ export function renderBuildingGhost(
         item: null,
         count: 0,
         capacity: 50,
+      },
+      alpha,
+    )
+    return
+  }
+
+  if (buildingType === 'iron_chest') {
+    drawFallbackIronChestSprite(
+      ctx,
+      screen.x,
+      screen.y,
+      {
+        type: 'iron_chest',
+        tileX,
+        tileY,
+        item: null,
+        count: 0,
+        capacity: 100,
       },
       alpha,
     )

@@ -1,10 +1,28 @@
 import { worldToScreen } from '../camera'
 import { TILE_SIZE, getTileAtWorldTile, getVisibleTileBounds } from '../world'
+import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
 
 const BIOME_COLORS: Record<string, string> = {
   dirt: '#8b6c40',
   grass: '#4c8a3f',
   grass_lush: '#3a6f2c',
+}
+
+// Cheap deterministic per-tile hash for terrain micro-variation. Same input
+// always returns the same bias, so tiles don't shimmer between frames.
+function tileHash(tileX: number, tileY: number): number {
+  let h = (tileX | 0) * 374761393 + (tileY | 0) * 668265263
+  h = (h ^ (h >>> 13)) * 1274126177
+  h = h ^ (h >>> 16)
+  return (h >>> 0) / 4294967295
+}
+
+function shadeColor(hex: string, deltaPercent: number): string {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  const adj = (c: number) => Math.max(0, Math.min(255, Math.round(c * (1 + deltaPercent))))
+  return `rgb(${adj(r)},${adj(g)},${adj(b)})`
 }
 
 export function drawTerrain(ctx: CanvasRenderingContext2D) {
@@ -14,8 +32,11 @@ export function drawTerrain(ctx: CanvasRenderingContext2D) {
     for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
       const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
       const tile = getTileAtWorldTile(tileX, tileY)
+      const base = BIOME_COLORS[tile.biome] ?? '#4c8a3f'
 
-      ctx.fillStyle = BIOME_COLORS[tile.biome] ?? '#4c8a3f'
+      // Per-tile brightness variance breaks up the flat color carpet.
+      const variance = (tileHash(tileX, tileY) - 0.5) * 0.18
+      ctx.fillStyle = shadeColor(base, variance)
       ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
     }
   }
@@ -24,7 +45,7 @@ export function drawTerrain(ctx: CanvasRenderingContext2D) {
 export function drawGrid(ctx: CanvasRenderingContext2D) {
   const bounds = getVisibleTileBounds()
 
-  ctx.strokeStyle = '#333'
+  ctx.strokeStyle = 'rgba(0, 0, 0, 0.12)'
 
   for (let tileY = bounds.startTileY; tileY <= bounds.endTileY; tileY++) {
     for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
@@ -32,6 +53,28 @@ export function drawGrid(ctx: CanvasRenderingContext2D) {
       ctx.strokeRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
     }
   }
+}
+
+function drawOreFallback(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  bg: string,
+  fg: string,
+) {
+  ctx.fillStyle = bg
+  ctx.fillRect(screenX + 6, screenY + 8, 20, 16)
+  ctx.fillStyle = fg
+  ctx.fillRect(screenX + 9, screenY + 10, 5, 5)
+  ctx.fillRect(screenX + 16, screenY + 13, 4, 4)
+  ctx.fillRect(screenX + 20, screenY + 10, 3, 3)
+}
+
+const ORE_FALLBACK_COLORS: Record<string, [string, string]> = {
+  iron_ore: ['#3a4a5e', '#7a8aa3'],
+  copper_ore: ['#7a4a1f', '#c98046'],
+  stone: ['#776550', '#b8a487'],
+  coal: ['#1e1e22', '#3a3a40'],
 }
 
 export function drawObjects(ctx: CanvasRenderingContext2D) {
@@ -44,49 +87,30 @@ export function drawObjects(ctx: CanvasRenderingContext2D) {
       if (!object) continue
 
       const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
+      const sprite = getGameSprite(object.type)
 
       if (object.type === 'tree') {
-        ctx.fillStyle = '#6b4f2a'
-        ctx.fillRect(screen.x + 13, screen.y + 16, 6, 10)
+        if (isSpriteReady(sprite)) {
+          // Trees are taller than wide; anchor near bottom of tile so the
+          // crown overlaps the row above and the base sits on the ground.
+          ctx.drawImage(sprite, screen.x - 8, screen.y - 18, 48, 52)
+        } else {
+          ctx.fillStyle = '#6b4f2a'
+          ctx.fillRect(screen.x + 13, screen.y + 16, 6, 10)
+          ctx.fillStyle = '#2e8b57'
+          ctx.fillRect(screen.x + 8, screen.y + 7, 16, 10)
+          ctx.fillRect(screen.x + 6, screen.y + 12, 8, 8)
+          ctx.fillRect(screen.x + 18, screen.y + 12, 8, 8)
+        }
+        continue
+      }
 
-        ctx.fillStyle = '#2e8b57'
-        ctx.fillRect(screen.x + 8, screen.y + 7, 16, 10)
-        ctx.fillRect(screen.x + 6, screen.y + 12, 8, 8)
-        ctx.fillRect(screen.x + 18, screen.y + 12, 8, 8)
-      } else if (object.type === 'iron_ore') {
-        // cool blue-grey
-        ctx.fillStyle = '#3a4a5e'
-        ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
-
-        ctx.fillStyle = '#7a8aa3'
-        ctx.fillRect(screen.x + 9, screen.y + 10, 5, 5)
-        ctx.fillRect(screen.x + 16, screen.y + 13, 4, 4)
-        ctx.fillRect(screen.x + 20, screen.y + 10, 3, 3)
-      } else if (object.type === 'copper_ore') {
-        ctx.fillStyle = '#7a4a1f'
-        ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
-
-        ctx.fillStyle = '#c98046'
-        ctx.fillRect(screen.x + 9, screen.y + 10, 5, 5)
-        ctx.fillRect(screen.x + 16, screen.y + 13, 4, 4)
-        ctx.fillRect(screen.x + 20, screen.y + 10, 3, 3)
-      } else if (object.type === 'stone') {
-        // warm tan-grey
-        ctx.fillStyle = '#776550'
-        ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
-
-        ctx.fillStyle = '#b8a487'
-        ctx.fillRect(screen.x + 9, screen.y + 10, 5, 5)
-        ctx.fillRect(screen.x + 16, screen.y + 13, 4, 4)
-        ctx.fillRect(screen.x + 20, screen.y + 10, 3, 3)
-      } else if (object.type === 'coal') {
-        ctx.fillStyle = '#1e1e22'
-        ctx.fillRect(screen.x + 6, screen.y + 8, 20, 16)
-
-        ctx.fillStyle = '#3a3a40'
-        ctx.fillRect(screen.x + 10, screen.y + 11, 4, 3)
-        ctx.fillRect(screen.x + 17, screen.y + 14, 3, 3)
-        ctx.fillRect(screen.x + 20, screen.y + 10, 3, 2)
+      if (isSpriteReady(sprite)) {
+        // Ores: fit a 28×28 sprite inside the 32×32 tile with a 2px margin.
+        ctx.drawImage(sprite, screen.x + 2, screen.y + 2, 28, 28)
+      } else {
+        const colors = ORE_FALLBACK_COLORS[object.type]
+        if (colors) drawOreFallback(ctx, screen.x, screen.y, colors[0], colors[1])
       }
     }
   }

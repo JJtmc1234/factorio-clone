@@ -10,6 +10,15 @@ export function getBuildingTooltipLines(building: Building) {
     ]
   }
 
+  if (building.type === 'iron_chest') {
+    const itemText = building.item ?? 'empty'
+    return [
+      'iron chest',
+      `${itemText}: ${building.count}/${building.capacity}`,
+      'E open  X deconstruct',
+    ]
+  }
+
   if (building.type === 'transport_belt') {
     return [
       `belt ${building.direction}`,

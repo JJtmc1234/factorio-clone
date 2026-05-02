@@ -3,7 +3,7 @@ import { TILE_SIZE } from '../world'
 import type { BurnerInserter } from './types'
 import { getAllBuildings } from './store'
 import { drawBeltSprite } from './belts'
-import { drawChestSprite } from './chest'
+import { drawChestSprite, drawIronChestSprite } from './chest'
 import { drawBurnerDrillSprite } from './drill'
 import { drawFurnaceSprite } from './furnace'
 import { drawInserterSprite } from './inserter'
@@ -18,6 +18,8 @@ export function renderBuildings(ctx: CanvasRenderingContext2D) {
       drawFurnaceSprite(ctx, screen.x, screen.y, building)
     } else if (building.type === 'wooden_chest') {
       drawChestSprite(ctx, screen.x, screen.y, building)
+    } else if (building.type === 'iron_chest') {
+      drawIronChestSprite(ctx, screen.x, screen.y, building)
     } else if (building.type === 'transport_belt') {
       drawBeltSprite(ctx, screen.x, screen.y, building)
     } else {

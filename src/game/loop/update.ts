@@ -1,9 +1,9 @@
 import { consumePressed, input } from '../input'
 import { player, updatePlayer } from '../player'
-import { mouse, consumeRightPressed } from '../mouse'
+import { mouse, consumeLeftPressed, consumeRightPressed } from '../mouse'
 import { getTileAtScreenPosition, updateVisibility } from '../world'
 import { updateMining, resetMining } from '../mining'
-import { isInventoryUiOpen, toggleInventoryUi } from '../inventory'
+import { closeInventoryUi, isInventoryUiOpen, toggleInventoryUi } from '../inventory'
 import { updateCamera } from '../camera'
 import {
   canPlaceBuilding,
@@ -11,6 +11,7 @@ import {
   getBuildingAtTile,
   placeBurnerDrill,
   placeBurnerInserter,
+  placeIronChest,
   placeStoneFurnace,
   placeTransportBelt,
   placeWoodenChest,
@@ -20,12 +21,33 @@ import {
   updateBuildings,
 } from '../buildings'
 import { mapState, toggleMap } from '../map'
+import { updateCrafting } from '../crafting'
+import { handleInventoryMenuClick } from './hud'
 import { rotateDirection, state } from './state'
 
 export function update(dt: number, canvas: HTMLCanvasElement) {
-  if (consumePressed('tab') || consumePressed('i')) {
-    toggleInventoryUi()
-    if (isInventoryUiOpen()) state.openedBuilding = null
+  // Crafting ticks regardless of menu state — recipes finish even with the inventory closed.
+  updateCrafting(dt)
+
+  const hoveredForOpen = getTileAtScreenPosition(mouse.x, mouse.y)
+  const hoveredBuildingForOpen = hoveredForOpen
+    ? getBuildingAtTile(hoveredForOpen.tileX, hoveredForOpen.tileY)
+    : null
+
+  // E is the primary inventory toggle. Tab/I are aliases. Opening while
+  // hovering a building also opens that building's panel (Factorio-style).
+  const inventoryToggle =
+    consumePressed('e') || consumePressed('tab') || consumePressed('i')
+
+  if (inventoryToggle) {
+    if (isInventoryUiOpen()) {
+      closeInventoryUi()
+      state.openedBuilding = null
+    } else {
+      toggleInventoryUi()
+      state.openedBuilding = hoveredBuildingForOpen
+      state.selectedBuild = null
+    }
     resetMining()
   }
 
@@ -34,18 +56,27 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
   }
 
   if (consumePressed('escape')) {
+    if (isInventoryUiOpen()) closeInventoryUi()
     state.selectedBuild = null
     state.openedBuilding = null
     resetMining()
   }
 
-  if (mapState.open || isInventoryUiOpen()) return
+  if (isInventoryUiOpen()) {
+    if (consumeLeftPressed()) {
+      handleInventoryMenuClick(canvas, mouse.x, mouse.y)
+    }
+    return
+  }
+
+  if (mapState.open) return
 
   if (consumePressed('1')) state.selectedBuild = 'burner_drill'
   if (consumePressed('2')) state.selectedBuild = 'wooden_chest'
   if (consumePressed('3')) state.selectedBuild = 'transport_belt'
   if (consumePressed('4')) state.selectedBuild = 'stone_furnace'
   if (consumePressed('5')) state.selectedBuild = 'burner_inserter'
+  if (consumePressed('6')) state.selectedBuild = 'iron_chest'
 
   if (consumePressed('r')) {
     state.buildDirection = rotateDirection(state.buildDirection)
@@ -64,16 +95,6 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
 
   const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
   const hoveredBuilding = hovered ? getBuildingAtTile(hovered.tileX, hovered.tileY) : null
-
-  if (consumePressed('e')) {
-    if (state.openedBuilding && hoveredBuilding === state.openedBuilding) {
-      state.openedBuilding = null
-    } else {
-      state.openedBuilding = hoveredBuilding
-      state.selectedBuild = null
-    }
-    resetMining()
-  }
 
   if (consumePressed('x') && hoveredBuilding) {
     if (state.openedBuilding === hoveredBuilding) {
@@ -97,6 +118,8 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
         placeStoneFurnace(hovered.tileX, hovered.tileY)
       } else if (state.selectedBuild === 'burner_inserter') {
         placeBurnerInserter(hovered.tileX, hovered.tileY, state.buildDirection)
+      } else if (state.selectedBuild === 'iron_chest') {
+        placeIronChest(hovered.tileX, hovered.tileY)
       }
     }
   }

@@ -41,7 +41,7 @@ export function fuelBuildingAtTile(tileX: number, tileY: number) {
 export function storeOneCoalInBuilding(building: Building) {
   if (getItemCount('coal') <= 0) return false
 
-  if (building.type === 'wooden_chest') {
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest') {
     if (!removeItem('coal', 1)) return false
     const moved = tryInsertIntoChest(building, 'coal', 1)
     if (moved <= 0) {
@@ -57,7 +57,7 @@ export function storeOneCoalInBuilding(building: Building) {
 export const storeOneCoalFromBuilding = storeOneCoalInBuilding
 
 export function takeOneFromBuilding(building: Building) {
-  if (building.type === 'wooden_chest') {
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest') {
     const item = takeOneFromChestInternal(building)
     if (!item) return false
     addItem(item, 1)

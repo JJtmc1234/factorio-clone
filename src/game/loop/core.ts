@@ -3,7 +3,7 @@ import { setupInput } from '../input'
 import { player } from '../player'
 import { setupMouse } from '../mouse'
 import { TILE_SIZE, chartStarterArea, updateVisibility } from '../world'
-import { isInventoryUiOpen } from '../inventory'
+import { addItem, isInventoryUiOpen } from '../inventory'
 import { updateCamera } from '../camera'
 import { renderBuildings } from '../buildings'
 import { mapState, renderMap } from '../map'
@@ -60,6 +60,10 @@ export function startGame(
   setupInput()
   setupMouse(canvas)
   loadGameSprites()
+
+  // Factorio Freeplay starter inventory (wiki: Crash_site).
+  addItem('burner_mining_drill', 1)
+  addItem('stone_furnace', 1)
 
   updateCamera(
     player.x + player.size / 2,

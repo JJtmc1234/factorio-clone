@@ -4,6 +4,7 @@ import { isSmeltableInput, getSmeltingResult, getItemDrawColor } from './items'
 import { getBuildingAtTile } from './tile'
 import { tryInsertIntoBelt } from './belts'
 import { tryInsertIntoChest } from './chest'
+import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
 
 export function getFurnaceCoveredTiles(furnace: StoneFurnace) {
   return [
@@ -64,7 +65,10 @@ export function updateFurnace(furnace: StoneFurnace, dt: number) {
           furnace.outputItem = null
         }
       }
-    } else if (target?.type === 'wooden_chest' && furnace.outputItem) {
+    } else if (
+      (target?.type === 'wooden_chest' || target?.type === 'iron_chest') &&
+      furnace.outputItem
+    ) {
       const moved = tryInsertIntoChest(target, furnace.outputItem, 1)
       if (moved > 0) {
         furnace.outputCount -= moved
@@ -179,5 +183,30 @@ export function drawFurnaceSprite(
   furnace: StoneFurnace,
   alpha = 1,
 ) {
+  const sprite = getGameSprite('stone_furnace')
+  const size = TILE_SIZE * 2
+
+  if (isSpriteReady(sprite)) {
+    ctx.save()
+    ctx.globalAlpha = alpha
+    ctx.drawImage(sprite, screenX, screenY, size, size)
+
+    // Fuel/progress overlays still drawn on top so the player can see status.
+    ctx.fillStyle = 'black'
+    ctx.fillRect(screenX + 8, screenY + size - 10, size - 16, 6)
+
+    const fuelRatio = Math.min(furnace.fuel / 12, 1)
+    ctx.fillStyle = fuelRatio > 0 ? '#ff9800' : '#555'
+    ctx.fillRect(screenX + 8, screenY + size - 10, (size - 16) * fuelRatio, 6)
+
+    if (furnace.outputCount > 0 && furnace.outputItem) {
+      ctx.fillStyle = getItemDrawColor(furnace.outputItem)
+      ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+    }
+
+    ctx.restore()
+    return
+  }
+
   drawFallbackFurnaceSprite(ctx, screenX, screenY, furnace, alpha)
 }

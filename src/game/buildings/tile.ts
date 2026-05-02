@@ -10,6 +10,7 @@ import { canInsertIntoInserter, tryInsertIntoInserter } from './inserter'
 export function occupiesTile(building: Building, tileX: number, tileY: number) {
   if (
     building.type === 'wooden_chest' ||
+    building.type === 'iron_chest' ||
     building.type === 'transport_belt' ||
     building.type === 'burner_inserter'
   ) {
@@ -51,7 +52,7 @@ export function removeBuildingAtTileReference(building: Building) {
 }
 
 export function canBuildingAcceptItem(building: Building, item: ItemType) {
-  if (building.type === 'wooden_chest') {
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest') {
     return building.count < building.capacity && (building.item === null || building.item === item)
   }
 
@@ -77,7 +78,7 @@ export function canBuildingAcceptItem(building: Building, item: ItemType) {
 }
 
 export function tryInsertIntoBuilding(building: Building, item: ItemType) {
-  if (building.type === 'wooden_chest') {
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest') {
     return tryInsertIntoChest(building, item, 1) > 0
   }
 
@@ -100,7 +101,8 @@ export function tryInsertIntoBuilding(building: Building, item: ItemType) {
 }
 
 export function takeOneItemFromBuildingInternal(building: Building) {
-  if (building.type === 'wooden_chest') return takeOneFromChestInternal(building)
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest')
+    return takeOneFromChestInternal(building)
 
   if (building.type === 'transport_belt') {
     if (!building.item || building.itemProgress < 0.45) return null

@@ -3,6 +3,7 @@ export type Direction = 'up' | 'right' | 'down' | 'left'
 export type BuildingType =
   | 'burner_drill'
   | 'wooden_chest'
+  | 'iron_chest'
   | 'transport_belt'
   | 'stone_furnace'
   | 'burner_inserter'
@@ -40,6 +41,17 @@ export interface WoodenChest {
   capacity: number
 }
 
+export interface IronChest {
+  type: 'iron_chest'
+  tileX: number
+  tileY: number
+  item: ItemType | null
+  count: number
+  capacity: number
+}
+
+export type AnyChest = WoodenChest | IronChest
+
 export interface TransportBelt {
   type: 'transport_belt'
   tileX: number
@@ -76,6 +88,7 @@ export interface BurnerInserter {
 export type Building =
   | BurnerDrill
   | WoodenChest
+  | IronChest
   | TransportBelt
   | StoneFurnace
   | BurnerInserter

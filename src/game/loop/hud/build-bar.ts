@@ -1,3 +1,4 @@
+import { getBuildingInventoryCount } from '../../buildings'
 import { state } from '../state'
 
 export function drawBuildUi(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
@@ -10,16 +11,20 @@ export function drawBuildUi(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasEle
 
   ctx.fillStyle = 'white'
   ctx.font = '16px sans-serif'
-  ctx.fillText(`Build: ${state.selectedBuild ?? 'none'}`, 20, barY + 28)
-  ctx.fillText(`Direction: ${state.buildDirection}`, 200, barY + 28)
+
+  const buildLabel = state.selectedBuild
+    ? `${state.selectedBuild} ×${getBuildingInventoryCount(state.selectedBuild)}`
+    : 'none'
+  ctx.fillText(`Build: ${buildLabel}`, 20, barY + 28)
+  ctx.fillText(`Direction: ${state.buildDirection}`, 280, barY + 28)
   ctx.fillText(
     `Open: ${state.openedBuilding ? state.openedBuilding.type : 'none'}`,
-    360,
+    440,
     barY + 28,
   )
   ctx.font = '13px sans-serif'
   ctx.fillText(
-    '1=drill  2=chest  3=belt  4=furnace  5=inserter  R=rotate  Right-Click=place  E=open  G=take  F=fuel/store coal  X=deconstruct  Tab/I=inventory  M=map',
+    '1=drill  2=wooden  3=belt  4=furnace  5=inserter  6=iron  R=rotate  RClick=place  E=inv/open  G=take  F=fuel  X=deconstruct  M=map',
     20,
     barY + 56,
   )

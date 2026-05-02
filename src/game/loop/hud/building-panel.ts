@@ -35,8 +35,9 @@ export function drawBuildingPanel(
     return
   }
 
-  if (building.type === 'wooden_chest') {
-    ctx.fillText('Wooden Chest', panelX + 14, panelY + 28)
+  if (building.type === 'wooden_chest' || building.type === 'iron_chest') {
+    const title = building.type === 'iron_chest' ? 'Iron Chest' : 'Wooden Chest'
+    ctx.fillText(title, panelX + 14, panelY + 28)
     const stored = building.item ? `${building.item} x${building.count}` : 'empty'
     ctx.font = '14px sans-serif'
     ctx.fillText(`Stored: ${stored}`, panelX + 14, panelY + 58)

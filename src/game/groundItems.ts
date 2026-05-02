@@ -1,5 +1,6 @@
 import { TILE_SIZE } from './world'
 import { worldToScreen } from './camera'
+import { getGameSprite, isSpriteReady } from '../components/gameSprites'
 
 export interface GroundItem {
   id: number
@@ -99,11 +100,19 @@ export function renderGroundItems(ctx: CanvasRenderingContext2D) {
     ctx.ellipse(screen.x + 16, screen.y + 24, 10, 4, 0, 0, Math.PI * 2)
     ctx.fill()
 
-    ctx.fillStyle = getGroundItemColor(item.item)
-    ctx.fillRect(screen.x + 10, screen.y + 14, 12, 8)
+    const sprite = getGameSprite(item.item)
+    if (isSpriteReady(sprite)) {
+      ctx.drawImage(sprite, screen.x + 8, screen.y + 8, 16, 16)
+    } else {
+      ctx.fillStyle = getGroundItemColor(item.item)
+      ctx.fillRect(screen.x + 10, screen.y + 14, 12, 8)
+    }
 
-    ctx.fillStyle = '#111'
-    ctx.font = '10px sans-serif'
+    ctx.fillStyle = 'white'
+    ctx.font = 'bold 11px sans-serif'
+    ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)'
+    ctx.lineWidth = 3
+    ctx.strokeText(String(item.count), screen.x + 18, screen.y + 11)
     ctx.fillText(String(item.count), screen.x + 18, screen.y + 11)
   }
 }

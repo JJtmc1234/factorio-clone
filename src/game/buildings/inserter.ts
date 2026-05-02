@@ -9,6 +9,15 @@ import {
   takeOneItemFromBuildingInternal,
   tryInsertIntoBuilding,
 } from './tile'
+import { drawSpriteRotated } from './draw-helpers'
+import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
+
+function getInserterRotation(direction: Direction) {
+  if (direction === 'right') return 0
+  if (direction === 'down') return Math.PI / 2
+  if (direction === 'left') return Math.PI
+  return -Math.PI / 2
+}
 
 export function canInsertIntoInserter(inserter: BurnerInserter, item: ItemType) {
   return inserter.heldItem === null && canBurnerConsumeItem(item)
@@ -143,6 +152,29 @@ export function drawInserterSprite(
   inserter: BurnerInserter,
   alpha = 1,
 ) {
+  const sprite = getGameSprite('burner_inserter')
+  if (isSpriteReady(sprite)) {
+    drawSpriteRotated(
+      ctx,
+      sprite,
+      screenX,
+      screenY,
+      TILE_SIZE,
+      TILE_SIZE,
+      getInserterRotation(inserter.direction),
+      alpha,
+    )
+
+    if (inserter.heldItem) {
+      ctx.save()
+      ctx.globalAlpha = alpha
+      ctx.fillStyle = getItemDrawColor(inserter.heldItem)
+      ctx.fillRect(screenX + 12, screenY + 12, 8, 8)
+      ctx.restore()
+    }
+    return
+  }
+
   drawFallbackInserterSprite(ctx, screenX, screenY, inserter, alpha)
 }
 

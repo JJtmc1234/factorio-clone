@@ -1,0 +1,44 @@
+name: Weekly recipe sync
+
+on:
+  schedule:
+    # Mondays at 06:00 UTC. Cron is in UTC; GitHub's docs note schedules can
+    # be delayed during peak load — exact timing isn't critical here.
+    - cron: '0 6 * * 1'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  fetch-recipes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - run: npm ci
+
+      - run: npm run fetch-recipes -- --force
+
+      - name: Open PR if recipes changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/weekly-recipe-sync
+          commit-message: 'chore: refresh recipes from wiki.factorio.com'
+          title: 'chore: weekly recipe sync from wiki.factorio.com'
+          body: |
+            Automated weekly sync of `src/game/recipes.generated.ts` from
+            wiki.factorio.com via `npm run fetch-recipes`.
+
+            Diff reflects whatever changed upstream — usually nothing.
+            Close this PR if the wiki update is unwanted; the workflow will
+            recreate it next run if the diff is still present.
+          add-paths: |
+            src/game/recipes.generated.ts
+            src/game/recipes.generated.json

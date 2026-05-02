@@ -4,7 +4,8 @@ import { getItemDrawColor } from './items'
 import { getFrontTile, getBuildingAtTile } from './tile'
 import { tryInsertIntoChest } from './chest'
 import { tryInsertIntoFurnace } from './furnace'
-import { drawDirectionMarker } from './draw-helpers'
+import { drawDirectionMarker, drawSpriteRotated } from './draw-helpers'
+import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
 
 export function tryInsertIntoBelt(belt: TransportBelt, item: ItemType) {
   if (belt.item !== null) return false
@@ -39,7 +40,7 @@ export function updateBelt(belt: TransportBelt, dt: number) {
     return
   }
 
-  if (target.type === 'wooden_chest') {
+  if (target.type === 'wooden_chest' || target.type === 'iron_chest') {
     const moved = tryInsertIntoChest(target, belt.item, 1)
     if (moved > 0) {
       belt.item = null
@@ -123,6 +124,13 @@ export function drawBeltItem(
   ctx.fillRect(screenX + offset.x - 4, screenY + offset.y - 4, 8, 8)
 }
 
+function getBeltRotation(direction: Direction) {
+  if (direction === 'right') return 0
+  if (direction === 'down') return Math.PI / 2
+  if (direction === 'left') return Math.PI
+  return -Math.PI / 2
+}
+
 export function drawBeltSprite(
   ctx: CanvasRenderingContext2D,
   screenX: number,
@@ -130,7 +138,22 @@ export function drawBeltSprite(
   belt: TransportBelt,
   alpha = 1,
 ) {
-  drawFallbackBeltSprite(ctx, screenX, screenY, belt, alpha)
+  const sprite = getGameSprite('transport_belt')
+  if (isSpriteReady(sprite)) {
+    drawSpriteRotated(
+      ctx,
+      sprite,
+      screenX,
+      screenY,
+      TILE_SIZE,
+      TILE_SIZE,
+      getBeltRotation(belt.direction),
+      alpha,
+    )
+  } else {
+    drawFallbackBeltSprite(ctx, screenX, screenY, belt, alpha)
+  }
+
   if (alpha >= 1) {
     drawBeltItem(ctx, screenX, screenY, belt)
   }

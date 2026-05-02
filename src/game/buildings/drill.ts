@@ -115,7 +115,10 @@ export function tryAutoFuelDrill(drill: BurnerDrill) {
 
   if (!target) return
 
-  if (target.type === 'wooden_chest' && consumeCoalFromChest(target)) {
+  if (
+    (target.type === 'wooden_chest' || target.type === 'iron_chest') &&
+    consumeCoalFromChest(target)
+  ) {
     drill.fuel += 8
     return
   }
@@ -133,7 +136,7 @@ export function tryPushDrillOutput(drill: BurnerDrill) {
 
   if (!target) return
 
-  if (target.type === 'wooden_chest') {
+  if (target.type === 'wooden_chest' || target.type === 'iron_chest') {
     const moved = tryInsertIntoChest(target, drill.outputItem, 1)
     if (moved > 0) {
       drill.outputCount -= moved
