@@ -16,6 +16,7 @@ import {
   drawBuildUi,
   drawBuildingPanel,
   drawCompactInventory,
+  drawDebugButton,
   drawInventoryMenu,
 } from './hud'
 
@@ -137,4 +138,7 @@ function render() {
   if (isInventoryUiOpen()) {
     drawInventoryMenu(ctx, canvas)
   }
+
+  // Debug button is always on top so it's reachable even when menus are open.
+  drawDebugButton(ctx, canvas)
 }

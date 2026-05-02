@@ -22,12 +22,21 @@ import {
 } from '../buildings'
 import { mapState, toggleMap } from '../map'
 import { updateCrafting } from '../crafting'
-import { handleInventoryMenuClick } from './hud'
+import { grantDebugItems, handleInventoryMenuClick, isDebugButtonHit } from './hud'
 import { rotateDirection, state } from './state'
 
 export function update(dt: number, canvas: HTMLCanvasElement) {
   // Crafting ticks regardless of menu state — recipes finish even with the inventory closed.
   updateCrafting(dt)
+
+  // Debug button is checked before any other click handler so it works
+  // regardless of menu state. Peek at the press without consuming so the
+  // rest of the loop runs normally when the button isn't hit.
+  if (mouse.leftPressed && isDebugButtonHit(canvas, mouse.x, mouse.y)) {
+    consumeLeftPressed()
+    grantDebugItems()
+    return
+  }
 
   // E (Tab/I aliases) toggles the inventory only. Entity panels open by
   // clicking the entity itself — see the left-click handler below.
