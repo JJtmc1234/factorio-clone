@@ -194,15 +194,15 @@ export function createBurnerDrill(tileX: number, tileY: number, direction: Direc
   }
 }
 
-// The wiki sprite for the burner mining drill ships rotated 180° from the
-// orientation our rotation system assumes (output points "up" in the sprite,
-// not "right"). Adding π to every direction's rotation aligns the sprite's
-// visible output side with our logical direction.
+// The wiki Burner_mining_drill.png (and the matching animation gif) is drawn
+// south-facing: the conveyor output sits at the bottom of the sprite. So
+// drill.direction='down' should render with zero rotation, and the other
+// directions rotate from there (canvas rotate is CW for positive angles).
 export function getDrillRotation(direction: Direction) {
-  if (direction === 'right') return Math.PI
-  if (direction === 'down') return -Math.PI / 2
-  if (direction === 'left') return 0
-  return Math.PI / 2 // 'up'
+  if (direction === 'down') return 0
+  if (direction === 'left') return Math.PI / 2
+  if (direction === 'up') return Math.PI
+  return -Math.PI / 2 // 'right'
 }
 
 export function drawBurnerDrillSprite(
