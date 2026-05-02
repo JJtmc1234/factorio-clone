@@ -22,7 +22,7 @@ export function getBuildingTooltipLines(building: Building) {
   if (building.type === 'transport_belt') {
     return [
       `belt ${building.direction}`,
-      `item: ${building.item ?? 'empty'}`,
+      `items: ${building.items.length}/8`,
       'E open  G take  X deconstruct',
     ]
   }

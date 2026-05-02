@@ -163,8 +163,8 @@ export function removeBuildingAtTile(tileX: number, tileY: number) {
     addItem(building.item, building.count)
   }
 
-  if (building.type === 'transport_belt' && building.item) {
-    addItem(building.item, 1)
+  if (building.type === 'transport_belt') {
+    for (const slot of building.items) addItem(slot.item, 1)
   }
 
   if (building.type === 'stone_furnace') {

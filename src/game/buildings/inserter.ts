@@ -145,6 +145,47 @@ export function drawFallbackInserterSprite(
 
 export const drawFalblackInserterSprite = drawFallbackInserterSprite
 
+function drawInserterArmOverlay(
+  ctx: CanvasRenderingContext2D,
+  screenX: number,
+  screenY: number,
+  inserter: BurnerInserter,
+  alpha: number,
+) {
+  // Arm swings from back (heldItem null, swing=0) toward front (heldItem
+  // present, swing=1). When dropping, progress runs back to 0 again so the
+  // arm visibly swings — matches Factorio inserter rhythm.
+  const swing = inserter.heldItem ? inserter.progress : 1 - inserter.progress
+  const swingOffset = (swing - 0.5) * 1.2
+
+  ctx.save()
+  ctx.globalAlpha = alpha
+  ctx.translate(screenX + TILE_SIZE / 2, screenY + TILE_SIZE / 2)
+
+  let baseAngle = 0
+  if (inserter.direction === 'up') baseAngle = -Math.PI / 2
+  else if (inserter.direction === 'right') baseAngle = 0
+  else if (inserter.direction === 'down') baseAngle = Math.PI / 2
+  else baseAngle = Math.PI
+
+  ctx.rotate(baseAngle + swingOffset)
+
+  // Arm: a small yellow rod extending from the base toward the front.
+  ctx.fillStyle = '#ffca28'
+  ctx.fillRect(-2, -12, 4, 14)
+
+  // Hand at the tip; carries the held item color when grabbed.
+  if (inserter.heldItem) {
+    ctx.fillStyle = getItemDrawColor(inserter.heldItem)
+    ctx.fillRect(-4, -16, 8, 8)
+  } else {
+    ctx.fillStyle = '#90a4ae'
+    ctx.fillRect(-4, -14, 8, 6)
+  }
+
+  ctx.restore()
+}
+
 export function drawInserterSprite(
   ctx: CanvasRenderingContext2D,
   screenX: number,
@@ -164,14 +205,7 @@ export function drawInserterSprite(
       getInserterRotation(inserter.direction),
       alpha,
     )
-
-    if (inserter.heldItem) {
-      ctx.save()
-      ctx.globalAlpha = alpha
-      ctx.fillStyle = getItemDrawColor(inserter.heldItem)
-      ctx.fillRect(screenX + 12, screenY + 12, 8, 8)
-      ctx.restore()
-    }
+    drawInserterArmOverlay(ctx, screenX, screenY, inserter, alpha)
     return
   }
 

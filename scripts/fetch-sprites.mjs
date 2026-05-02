@@ -19,12 +19,17 @@ const force = process.argv.includes('--force')
 
 // key (used as <key>.png filename + sprite-cache key) -> wiki File: name
 const SPRITES = {
-  // resources / raw items
+  // resources / raw items (inventory icons — small refined chunks)
   iron_ore: 'Iron_ore.png',
   copper_ore: 'Copper_ore.png',
   coal: 'Coal.png',
   stone: 'Stone.png',
   wood: 'Wood.png',
+  // ground-tile ore patches (in-world rendering — clusters of chunks)
+  iron_ore_field: 'Iron_ore_entity.png',
+  copper_ore_field: 'Copper_ore_entity.png',
+  coal_field: 'Coal_entity.png',
+  stone_field: 'Stone_entity.png',
   // intermediate / smelted
   iron_plate: 'Iron_plate.png',
   copper_plate: 'Copper_plate.png',
@@ -59,16 +64,19 @@ async function exists(path) {
   }
 }
 
-async function fetchSpriteUrl(filename) {
+async function fetchSpriteUrl(filename, fullRes = false) {
   const params = new URLSearchParams({
     action: 'query',
     titles: `File:${filename}`,
     prop: 'imageinfo',
     iiprop: 'url',
-    iiurlwidth: String(WIDTH),
     format: 'json',
     redirects: '1',
   })
+  // Item icons get downsampled to WIDTH for fast load. Ore-field tile
+  // textures and animations need the full resolution to look right.
+  if (!fullRes) params.set('iiurlwidth', String(WIDTH))
+
   const r = await fetch(`${API}?${params}`, { headers: { 'User-Agent': UA } })
   if (!r.ok) throw new Error(`API HTTP ${r.status}`)
   const data = await r.json()
@@ -77,7 +85,6 @@ async function fetchSpriteUrl(filename) {
   const page = Object.values(pages)[0]
   if (page?.missing !== undefined || page?.invalid !== undefined) return null
   const info = page?.imageinfo?.[0]
-  // thumburl is the resized version; url is the original. Prefer thumb for sane sizes.
   return info?.thumburl ?? info?.url ?? null
 }
 
@@ -103,7 +110,8 @@ async function main() {
       continue
     }
     try {
-      const url = await fetchSpriteUrl(filename)
+      const fullRes = key.endsWith('_field') || key.endsWith('_anim')
+      const url = await fetchSpriteUrl(filename, fullRes)
       if (!url) {
         failed++
         console.log(`  missing ${key} (no File:${filename})`)

@@ -111,8 +111,7 @@ export function renderBuildingGhost(
         tileX,
         tileY,
         direction,
-        item: null,
-        itemProgress: 0,
+        items: [],
       },
       alpha,
     )

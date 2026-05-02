@@ -51,14 +51,15 @@ export function drawBuildingPanel(
     ctx.fillText('Transport Belt', panelX + 14, panelY + 28)
     ctx.font = '14px sans-serif'
     ctx.fillText(`Direction: ${building.direction}`, panelX + 14, panelY + 58)
-    ctx.fillText(`Item: ${building.item ?? 'empty'}`, panelX + 14, panelY + 80)
+    ctx.fillText(`Items: ${building.items.length}/8 (15/s)`, panelX + 14, panelY + 80)
+    const head = building.items[0]
     ctx.fillText(
-      `Progress: ${building.item ? building.itemProgress.toFixed(2) : '0.00'}`,
+      `Front: ${head ? `${head.item} @ ${head.progress.toFixed(2)}` : 'empty'}`,
       panelX + 14,
       panelY + 102,
     )
     ctx.fillText('F = place 1 coal on belt', panelX + 14, panelY + 132)
-    ctx.fillText('G = take belt item', panelX + 14, panelY + 152)
+    ctx.fillText('G = take front item', panelX + 14, panelY + 152)
     return
   }
 

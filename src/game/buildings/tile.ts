@@ -2,7 +2,7 @@ import type { Building, Direction, ItemType } from './types'
 import { getAllBuildings } from './store'
 import { canBurnerConsumeItem, getFuelValue, isSmeltableInput } from './items'
 import { tryInsertIntoChest, takeOneFromChestInternal } from './chest'
-import { tryInsertIntoBelt } from './belts'
+import { canBeltAcceptAtRear, takeFrontBeltItem, tryInsertIntoBelt } from './belts'
 import { tryInsertIntoFurnace, takeOneFromFurnaceOutputInternal } from './furnace'
 import { takeOneFromDrillOutputInternal } from './drill'
 import { canInsertIntoInserter, tryInsertIntoInserter } from './inserter'
@@ -57,7 +57,7 @@ export function canBuildingAcceptItem(building: Building, item: ItemType) {
   }
 
   if (building.type === 'transport_belt') {
-    return building.item === null
+    return canBeltAcceptAtRear(building)
   }
 
   if (building.type === 'stone_furnace') {
@@ -105,11 +105,7 @@ export function takeOneItemFromBuildingInternal(building: Building) {
     return takeOneFromChestInternal(building)
 
   if (building.type === 'transport_belt') {
-    if (!building.item || building.itemProgress < 0.45) return null
-    const item = building.item
-    building.item = null
-    building.itemProgress = 0
-    return item
+    return takeFrontBeltItem(building)
   }
 
   if (building.type === 'stone_furnace') return takeOneFromFurnaceOutputInternal(building)

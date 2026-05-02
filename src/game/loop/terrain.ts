@@ -105,8 +105,22 @@ export function drawObjects(ctx: CanvasRenderingContext2D) {
         continue
       }
 
+      // Ores: prefer the in-world ore-field sprite (clusters of chunks
+      // on a tinted ground) and sample a 32×32 sub-region per tile so
+      // adjacent tiles look organically different rather than repeating.
+      const fieldSprite = getGameSprite(`${object.type}_field`)
+      if (isSpriteReady(fieldSprite)) {
+        const sw = fieldSprite.naturalWidth
+        const sh = fieldSprite.naturalHeight
+        const region = TILE_SIZE
+        const sx = ((Math.abs(tileX) * region) % Math.max(1, sw - region))
+        const sy = ((Math.abs(tileY) * region) % Math.max(1, sh - region))
+        ctx.drawImage(fieldSprite, sx, sy, region, region, screen.x, screen.y, TILE_SIZE, TILE_SIZE)
+        continue
+      }
+
       if (isSpriteReady(sprite)) {
-        // Ores: fit a 28×28 sprite inside the 32×32 tile with a 2px margin.
+        // Fallback: use the inventory item icon if no field sprite ready.
         ctx.drawImage(sprite, screen.x + 2, screen.y + 2, 28, 28)
       } else {
         const colors = ORE_FALLBACK_COLORS[object.type]

@@ -2,6 +2,7 @@ import { addItem, getItemCount, removeItem } from '../inventory'
 import type { Building } from './types'
 import { getBuildingAtTile } from './tile'
 import { tryInsertIntoChest, takeOneFromChestInternal } from './chest'
+import { takeFrontBeltItem, tryInsertIntoBelt } from './belts'
 import { takeOneFromDrillOutputInternal } from './drill'
 import { takeOneFromFurnaceOutputInternal } from './furnace'
 
@@ -28,10 +29,9 @@ export function fuelBuildingAtTile(tileX: number, tileY: number) {
   }
 
   if (building.type === 'transport_belt') {
-    if (building.item === null && removeItem('coal', 1)) {
-      building.item = 'coal'
-      building.itemProgress = 0.5
-      return true
+    if (removeItem('coal', 1)) {
+      if (tryInsertIntoBelt(building, 'coal')) return true
+      addItem('coal', 1) // refund — belt was full
     }
   }
 
@@ -65,10 +65,9 @@ export function takeOneFromBuilding(building: Building) {
   }
 
   if (building.type === 'transport_belt') {
-    if (!building.item) return false
-    addItem(building.item, 1)
-    building.item = null
-    building.itemProgress = 0
+    const item = takeFrontBeltItem(building)
+    if (!item) return false
+    addItem(item, 1)
     return true
   }
 

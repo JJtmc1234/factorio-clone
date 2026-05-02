@@ -216,13 +216,21 @@ export function drawBurnerDrillSprite(
   const size = TILE_SIZE * 2
 
   if (sprite && sprite.complete && sprite.naturalWidth > 0) {
+    // Working pulse: a tiny periodic scale wiggle when the drill is fueled
+    // and actively progressing. The full 64x64 area is reserved either way
+    // so neighboring tiles don't redraw.
+    const isWorking = drill.fuel > 0 && drill.progress > 0
+    const pulse = isWorking ? 1 + Math.sin(performance.now() / 80) * 0.025 : 1
+    const drawSize = size * pulse
+    const offset = (size - drawSize) / 2
+
     drawSpriteRotated(
       ctx,
       sprite,
-      screenX,
-      screenY,
-      size,
-      size,
+      screenX + offset,
+      screenY + offset,
+      drawSize,
+      drawSize,
       getDrillRotation(drill.direction),
       alpha,
     )

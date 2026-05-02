@@ -52,13 +52,20 @@ export interface IronChest {
 
 export type AnyChest = WoodenChest | IronChest
 
+export interface BeltSlot {
+  item: ItemType
+  progress: number
+}
+
 export interface TransportBelt {
   type: 'transport_belt'
   tileX: number
   tileY: number
   direction: Direction
-  item: ItemType | null
-  itemProgress: number
+  // Items currently riding the belt, ordered by descending progress
+  // (front-most first). At most BELT_CAPACITY entries; spacing is
+  // enforced by updateBelt.
+  items: BeltSlot[]
 }
 
 export interface StoneFurnace {
