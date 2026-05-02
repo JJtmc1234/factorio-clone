@@ -17,6 +17,14 @@ function keyFromPath(path: string) {
   return file.replace(/\.png$/i, '')
 }
 
+// Aliases let multiple item-name keys map to the same sprite. The drill
+// sprite is filed as `burner_drill` (matching the BuildingType) but the
+// crafting recipe outputs the canonical Factorio name `burner_mining_drill`,
+// so the inventory icon needs both keys to resolve to the same image.
+const SPRITE_ALIASES: Record<string, string> = {
+  burner_mining_drill: 'burner_drill',
+}
+
 export function loadGameSprites() {
   if (loaded) return
   loaded = true
@@ -26,6 +34,11 @@ export function loadGameSprites() {
     const img = new Image()
     img.src = url
     spriteCache.set(key, img)
+  }
+
+  for (const [alias, target] of Object.entries(SPRITE_ALIASES)) {
+    const img = spriteCache.get(target)
+    if (img) spriteCache.set(alias, img)
   }
 }
 

@@ -14,11 +14,16 @@ const INVENTORY_COLS = 5
 const SLOT_SIZE = 56
 const SLOT_GAP = 8
 const RECIPE_ROW_W = 360
-const RECIPE_ROW_H = 60
-const RECIPE_ROW_GAP = 6
+const RECIPE_ROW_H = 44
+const RECIPE_ROW_GAP = 4
 const PANEL_W = 760
 const PANEL_H = 500
 const PANEL_PADDING = 20
+
+function getMaxVisibleRecipeRows(layout: { craftStartY: number; bottomStripY: number }) {
+  const available = layout.bottomStripY - layout.craftStartY - 8
+  return Math.max(0, Math.floor(available / (RECIPE_ROW_H + RECIPE_ROW_GAP)))
+}
 
 function recipeItemKey(recipeItemName: string) {
   return recipeItemName.replace(/-/g, '_')
@@ -182,16 +187,16 @@ function drawCraftRow(
   ctx.strokeRect(rect.x, rect.y, rect.w, rect.h)
 
   const outputKey = recipeOutputKey(recipe) ?? recipe.name
-  drawItemIcon(ctx, outputKey, rect.x + 28, rect.y + rect.h / 2, 40)
+  drawItemIcon(ctx, outputKey, rect.x + 22, rect.y + rect.h / 2, 32)
 
   ctx.fillStyle = 'white'
-  ctx.font = 'bold 14px sans-serif'
-  ctx.fillText(recipe.name, rect.x + 56, rect.y + 22)
+  ctx.font = 'bold 13px sans-serif'
+  ctx.fillText(recipe.name, rect.x + 44, rect.y + 17)
 
   ctx.fillStyle = '#bbb'
-  ctx.font = '11px sans-serif'
-  ctx.fillText(`${recipe.time}s`, rect.x + rect.w - 40, rect.y + 22)
-  ctx.fillText(formatIngredients(recipe), rect.x + 56, rect.y + 42)
+  ctx.font = '10px sans-serif'
+  ctx.fillText(`${recipe.time}s`, rect.x + rect.w - 36, rect.y + 17)
+  ctx.fillText(formatIngredients(recipe), rect.x + 44, rect.y + 33)
 
   ctx.globalAlpha = 1
 }
@@ -210,32 +215,55 @@ function drawCraftQueue(
   ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)'
   ctx.strokeRect(stripX, stripY, stripW, stripH)
 
-  const job = getCraftQueue()[0]
-  if (!job) {
+  const queue = getCraftQueue()
+  if (queue.length === 0) {
     ctx.fillStyle = '#888'
     ctx.font = '13px sans-serif'
     ctx.fillText('No active craft. Click a recipe to start.', stripX + 12, stripY + 25)
     return
   }
 
-  const ratio = 1 - job.remainingTime / Math.max(0.0001, job.totalTime)
+  // Active job (head) — left side, with progress overlay + label.
+  const head = queue[0]
+  const headW = 250
+  const ratio = 1 - head.remainingTime / Math.max(0.0001, head.totalTime)
   ctx.fillStyle = 'rgba(76, 175, 80, 0.55)'
-  ctx.fillRect(stripX, stripY, Math.floor(stripW * ratio), stripH)
+  ctx.fillRect(stripX, stripY, Math.floor(headW * ratio), stripH)
 
   ctx.fillStyle = 'white'
-  ctx.font = 'bold 13px sans-serif'
-  ctx.fillText(
-    `Crafting ${job.recipeName} ×${job.outputCount}`,
-    stripX + 12,
-    stripY + 17,
-  )
+  ctx.font = 'bold 12px sans-serif'
+  ctx.fillText(`${head.recipeName} ×${head.outputCount}`, stripX + 8, stripY + 16)
   ctx.fillStyle = '#ddd'
-  ctx.font = '11px sans-serif'
-  ctx.fillText(
-    `${job.remainingTime.toFixed(1)}s remaining (${(ratio * 100).toFixed(0)}%)`,
-    stripX + 12,
-    stripY + 33,
-  )
+  ctx.font = '10px sans-serif'
+  ctx.fillText(`${head.remainingTime.toFixed(1)}s`, stripX + 8, stripY + 31)
+
+  // Pending jobs — right side, as small slot icons with stack count.
+  const slotsX = stripX + headW + 8
+  const slotW = 32
+  const slotGap = 4
+  const slotsAvailable = Math.max(0, Math.floor((stripW - headW - 8) / (slotW + slotGap)))
+  const pending = queue.slice(1, 1 + slotsAvailable)
+  for (let i = 0; i < pending.length; i++) {
+    const x = slotsX + i * (slotW + slotGap)
+    const y = stripY + 4
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.08)'
+    ctx.fillRect(x, y, slotW, slotW)
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.18)'
+    ctx.strokeRect(x, y, slotW, slotW)
+    drawItemIcon(ctx, pending[i].outputItem, x + slotW / 2, y + slotW / 2, 22)
+    if (pending[i].outputCount > 1) {
+      drawCountBadge(ctx, pending[i].outputCount, x + slotW - 3, y + slotW - 3)
+    }
+  }
+
+  const overflow = queue.length - 1 - pending.length
+  if (overflow > 0) {
+    ctx.fillStyle = 'white'
+    ctx.font = 'bold 11px sans-serif'
+    ctx.textAlign = 'right'
+    ctx.fillText(`+${overflow}`, stripX + stripW - 6, stripY + stripH - 6)
+    ctx.textAlign = 'left'
+  }
 }
 
 export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
@@ -257,8 +285,20 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   ctx.fillText('Craft', layout.craftStartX, layout.panelY + 38)
 
   const recipes = getHandCraftableRecipes()
-  for (let i = 0; i < recipes.length; i++) {
+  const maxRows = getMaxVisibleRecipeRows(layout)
+  const visibleCount = Math.min(recipes.length, maxRows)
+  for (let i = 0; i < visibleCount; i++) {
     drawCraftRow(ctx, recipes[i], getCraftRowRect(canvas, i))
+  }
+  const hidden = recipes.length - visibleCount
+  if (hidden > 0) {
+    ctx.fillStyle = '#bbb'
+    ctx.font = '11px sans-serif'
+    ctx.fillText(
+      `+${hidden} more recipes (need scroll)`,
+      layout.craftStartX,
+      layout.bottomStripY - 4,
+    )
   }
 
   drawCraftQueue(ctx, layout)
@@ -273,8 +313,11 @@ export function handleInventoryMenuClick(
   mx: number,
   my: number,
 ): boolean {
+  const layout = getInventoryMenuLayout(canvas)
   const recipes = getHandCraftableRecipes()
-  for (let i = 0; i < recipes.length; i++) {
+  const maxRows = getMaxVisibleRecipeRows(layout)
+  const visibleCount = Math.min(recipes.length, maxRows)
+  for (let i = 0; i < visibleCount; i++) {
     const rect = getCraftRowRect(canvas, i)
     if (mx >= rect.x && mx < rect.x + rect.w && my >= rect.y && my < rect.y + rect.h) {
       if (canCraft(recipes[i].name)) {

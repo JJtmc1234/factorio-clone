@@ -129,6 +129,29 @@ const manualRecipes: Record<string, Recipe> = {
     surface: 'any',
   },
 
+  // ===== COMBAT (early-tier) =====
+  // Pistol intentionally has no recipe (Factorio 2.0.7 removed it). Players
+  // spawn with one in starter inventory.
+  'firearm-magazine': {
+    name: 'firearm-magazine',
+    time: 1,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: { 'iron-plate': 4 },
+    output: { 'firearm-magazine': 1 },
+    surface: 'any',
+  },
+
+  'light-armor': {
+    name: 'light-armor',
+    time: 3,
+    category: 'crafting',
+    madeIn: ['assembler', 'player'],
+    ingredients: { 'iron-plate': 40 },
+    output: { 'light-armor': 1 },
+    surface: 'any',
+  },
+
   'stone-furnace': {
     name: 'stone-furnace',
     time: 0.5,

@@ -1,4 +1,5 @@
 import { mouse } from './mouse'
+import { input } from './input'
 import { getTileAtScreenPosition } from './world'
 import { addItem } from './inventory'
 import { getBuildingAtTile } from './buildings'
@@ -7,11 +8,17 @@ let miningTileX: number | null = null
 let miningTileY: number | null = null
 let miningProgress = 0
 
+// The Windows ContextMenu key (and macOS-equivalent) drives mining now —
+// left-click is reserved for placement / opening entities.
+function isMiningKeyHeld() {
+  return !!input.keys['contextmenu']
+}
+
 export function updateMining(dt: number) {
   const hovered = getTileAtScreenPosition(mouse.x, mouse.y)
 
   if (
-    !mouse.leftDown ||
+    !isMiningKeyHeld() ||
     !hovered ||
     !hovered.tile.object ||
     getBuildingAtTile(hovered.tileX, hovered.tileY)

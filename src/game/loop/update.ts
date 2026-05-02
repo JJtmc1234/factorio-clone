@@ -1,6 +1,6 @@
 import { consumePressed, input } from '../input'
 import { player, updatePlayer } from '../player'
-import { mouse, consumeLeftPressed, consumeRightPressed } from '../mouse'
+import { mouse, consumeLeftPressed } from '../mouse'
 import { getTileAtScreenPosition, updateVisibility } from '../world'
 import { updateMining, resetMining } from '../mining'
 import { closeInventoryUi, isInventoryUiOpen, toggleInventoryUi } from '../inventory'
@@ -29,23 +29,16 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
   // Crafting ticks regardless of menu state — recipes finish even with the inventory closed.
   updateCrafting(dt)
 
-  const hoveredForOpen = getTileAtScreenPosition(mouse.x, mouse.y)
-  const hoveredBuildingForOpen = hoveredForOpen
-    ? getBuildingAtTile(hoveredForOpen.tileX, hoveredForOpen.tileY)
-    : null
-
-  // E is the primary inventory toggle. Tab/I are aliases. Opening while
-  // hovering a building also opens that building's panel (Factorio-style).
+  // E (Tab/I aliases) toggles the inventory only. Entity panels open by
+  // clicking the entity itself — see the left-click handler below.
   const inventoryToggle =
     consumePressed('e') || consumePressed('tab') || consumePressed('i')
 
   if (inventoryToggle) {
     if (isInventoryUiOpen()) {
       closeInventoryUi()
-      state.openedBuilding = null
     } else {
       toggleInventoryUi()
-      state.openedBuilding = hoveredBuildingForOpen
       state.selectedBuild = null
     }
     resetMining()
@@ -64,7 +57,17 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
 
   if (isInventoryUiOpen()) {
     if (consumeLeftPressed()) {
-      handleInventoryMenuClick(canvas, mouse.x, mouse.y)
+      const hit = handleInventoryMenuClick(canvas, mouse.x, mouse.y)
+      if (!hit) {
+        // Click missed every inventory hit-rect — pass it through to the
+        // world so the player can still click entities (open/close their
+        // panel) with the inventory open, like vanilla.
+        const tile = getTileAtScreenPosition(mouse.x, mouse.y)
+        const b = tile ? getBuildingAtTile(tile.tileX, tile.tileY) : null
+        if (b) {
+          state.openedBuilding = state.openedBuilding === b ? null : b
+        }
+      }
     }
     return
   }
@@ -80,6 +83,18 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
 
   if (consumePressed('r')) {
     state.buildDirection = rotateDirection(state.buildDirection)
+  }
+
+  // Q pipettes: with a build selected, clear it; otherwise pick up the
+  // hovered building's type as the cursor (Factorio default).
+  if (consumePressed('q')) {
+    if (state.selectedBuild) {
+      state.selectedBuild = null
+    } else {
+      const tile = getTileAtScreenPosition(mouse.x, mouse.y)
+      const b = tile ? getBuildingAtTile(tile.tileX, tile.tileY) : null
+      if (b) state.selectedBuild = b.type
+    }
   }
 
   updatePlayer(dt, input.keys)
@@ -104,22 +119,35 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
     resetMining()
   }
 
-  if (consumeRightPressed() && hovered && state.selectedBuild) {
-    const valid = canPlaceBuilding(state.selectedBuild, hovered.tileX, hovered.tileY)
-
-    if (valid) {
-      if (state.selectedBuild === 'burner_drill') {
-        placeBurnerDrill(hovered.tileX, hovered.tileY, state.buildDirection)
-      } else if (state.selectedBuild === 'wooden_chest') {
-        placeWoodenChest(hovered.tileX, hovered.tileY)
-      } else if (state.selectedBuild === 'transport_belt') {
-        placeTransportBelt(hovered.tileX, hovered.tileY, state.buildDirection)
-      } else if (state.selectedBuild === 'stone_furnace') {
-        placeStoneFurnace(hovered.tileX, hovered.tileY)
-      } else if (state.selectedBuild === 'burner_inserter') {
-        placeBurnerInserter(hovered.tileX, hovered.tileY, state.buildDirection)
-      } else if (state.selectedBuild === 'iron_chest') {
-        placeIronChest(hovered.tileX, hovered.tileY)
+  // Left-click is multi-purpose, gated on selectedBuild:
+  //   - With a build selected → place (consumes one from inventory).
+  //   - Without → open/close the entity panel under cursor.
+  // Mining is a separate keyboard binding (Menu/ContextMenu key) so it
+  // doesn't compete with this click.
+  if (consumeLeftPressed()) {
+    if (state.selectedBuild && hovered) {
+      const valid = canPlaceBuilding(state.selectedBuild, hovered.tileX, hovered.tileY)
+      if (valid) {
+        if (state.selectedBuild === 'burner_drill') {
+          placeBurnerDrill(hovered.tileX, hovered.tileY, state.buildDirection)
+        } else if (state.selectedBuild === 'wooden_chest') {
+          placeWoodenChest(hovered.tileX, hovered.tileY)
+        } else if (state.selectedBuild === 'transport_belt') {
+          placeTransportBelt(hovered.tileX, hovered.tileY, state.buildDirection)
+        } else if (state.selectedBuild === 'stone_furnace') {
+          placeStoneFurnace(hovered.tileX, hovered.tileY)
+        } else if (state.selectedBuild === 'burner_inserter') {
+          placeBurnerInserter(hovered.tileX, hovered.tileY, state.buildDirection)
+        } else if (state.selectedBuild === 'iron_chest') {
+          placeIronChest(hovered.tileX, hovered.tileY)
+        }
+      }
+    } else if (!state.selectedBuild) {
+      if (hoveredBuilding) {
+        state.openedBuilding =
+          state.openedBuilding === hoveredBuilding ? null : hoveredBuilding
+      } else {
+        state.openedBuilding = null
       }
     }
   }
@@ -137,7 +165,9 @@ export function update(dt: number, canvas: HTMLCanvasElement) {
 
   updateBuildings(dt)
 
-  if (!state.openedBuilding && !state.selectedBuild) {
+  // Mining is now keyboard-driven (ContextMenu key); only block it when
+  // the player is in build-mode (about to place) since the cursor is busy.
+  if (!state.selectedBuild) {
     updateMining(dt)
   } else {
     resetMining()

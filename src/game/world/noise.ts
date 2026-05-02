@@ -51,25 +51,25 @@ export { TREE_SEED }
 
 export function biomeForTile(tileX: number, tileY: number): Biome {
   const m = fbm(tileX / BIOME_SCALE, tileY / BIOME_SCALE, BIOME_SEED, 4)
-  if (m < 0.40) return 'dirt'
-  if (m < 0.56) return 'grass'
+  if (m < 0.32) return 'dirt'
+  if (m < 0.50) return 'grass'
   return 'grass_lush'
 }
 
 export function treePlacementChance(biome: Biome, treeNoise: number): number {
   if (biome === 'grass_lush') {
-    if (treeNoise > 0.45) return 0.75
-    if (treeNoise > 0.35) return 0.3
+    if (treeNoise > 0.40) return 0.78
+    if (treeNoise > 0.30) return 0.35
     return 0
   }
 
   if (biome === 'grass') {
-    if (treeNoise > 0.5) return 0.45
-    if (treeNoise > 0.4) return 0.12
+    if (treeNoise > 0.45) return 0.5
+    if (treeNoise > 0.35) return 0.18
     return 0
   }
 
   // dirt: occasional dead trees at the edges of forests
-  if (treeNoise > 0.55) return 0.06
+  if (treeNoise > 0.55) return 0.08
   return 0
 }

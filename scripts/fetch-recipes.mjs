@@ -47,6 +47,8 @@ const RECIPES = {
   'burner-mining-drill': 'Burner_mining_drill',
   'burner-inserter': 'Burner_inserter',
   'transport-belt': 'Transport_belt',
+  'firearm-magazine': 'Firearm_magazine',
+  'light-armor': 'Light_armor',
 }
 
 const API = 'https://wiki.factorio.com/api.php'

@@ -1,12 +1,15 @@
 import { worldToScreen } from '../camera'
 import { TILE_SIZE } from '../world'
 import type { BuildSelection, Direction } from './types'
-import { drawFallbackBeltSprite } from './belts'
-import { drawFallbackChestSprite, drawFallbackIronChestSprite } from './chest'
-import { drawFallbackBurnerDrillSprite } from './drill'
-import { drawFallbackFurnaceSprite } from './furnace'
-import { drawFallbackInserterSprite } from './inserter'
+import { drawBeltSprite } from './belts'
+import { drawChestSprite, drawIronChestSprite } from './chest'
+import { drawBurnerDrillSprite } from './drill'
+import { drawFurnaceSprite } from './furnace'
+import { drawInserterSprite } from './inserter'
 
+// Ghosts route through the real sprite renderers (not fallbacks) so the
+// player sees rotation/sprite previews that exactly match what will be
+// placed. Each renderer accepts an alpha to dim the ghost.
 export function renderBuildingGhost(
   ctx: CanvasRenderingContext2D,
   buildingType: Exclude<BuildSelection, null>,
@@ -16,10 +19,10 @@ export function renderBuildingGhost(
   valid: boolean,
 ) {
   const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
-  const alpha = valid ? 0.5 : 0.25
+  const alpha = valid ? 0.55 : 0.28
 
   if (buildingType === 'burner_drill') {
-    drawFallbackBurnerDrillSprite(
+    drawBurnerDrillSprite(
       ctx,
       screen.x,
       screen.y,
@@ -40,7 +43,7 @@ export function renderBuildingGhost(
   }
 
   if (buildingType === 'stone_furnace') {
-    drawFallbackFurnaceSprite(
+    drawFurnaceSprite(
       ctx,
       screen.x,
       screen.y,
@@ -63,7 +66,7 @@ export function renderBuildingGhost(
   }
 
   if (buildingType === 'wooden_chest') {
-    drawFallbackChestSprite(
+    drawChestSprite(
       ctx,
       screen.x,
       screen.y,
@@ -81,7 +84,7 @@ export function renderBuildingGhost(
   }
 
   if (buildingType === 'iron_chest') {
-    drawFallbackIronChestSprite(
+    drawIronChestSprite(
       ctx,
       screen.x,
       screen.y,
@@ -99,7 +102,7 @@ export function renderBuildingGhost(
   }
 
   if (buildingType === 'transport_belt') {
-    drawFallbackBeltSprite(
+    drawBeltSprite(
       ctx,
       screen.x,
       screen.y,
@@ -116,7 +119,7 @@ export function renderBuildingGhost(
     return
   }
 
-  drawFallbackInserterSprite(
+  drawInserterSprite(
     ctx,
     screen.x,
     screen.y,

@@ -24,7 +24,7 @@ export function drawBuildUi(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasEle
   )
   ctx.font = '13px sans-serif'
   ctx.fillText(
-    '1=drill  2=wooden  3=belt  4=furnace  5=inserter  6=iron  R=rotate  RClick=place  E=inv/open  G=take  F=fuel  X=deconstruct  M=map',
+    '1=drill  2=wood-chest  3=belt  4=furnace  5=inserter  6=iron-chest  R=rotate  Q=pipette  LClick=place/open  Menu=mine  G=take  F=fuel  X=deconstruct  E=inv  M=map',
     20,
     barY + 56,
   )

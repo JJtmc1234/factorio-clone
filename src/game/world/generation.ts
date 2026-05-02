@@ -18,6 +18,39 @@ function createEmptyChunk(chunkX: number, chunkY: number): Chunk {
   return { chunkX, chunkY, tiles }
 }
 
+// Force a small forest cluster regardless of biome noise. Used to guarantee
+// spawn-adjacent trees so the player always has a wood source on tile 1.
+function paintForest(
+  chunk: Chunk,
+  chunkX: number,
+  chunkY: number,
+  centerX: number,
+  centerY: number,
+  radius: number,
+  density: number,
+) {
+  for (let localY = 0; localY < CHUNK_SIZE; localY++) {
+    for (let localX = 0; localX < CHUNK_SIZE; localX++) {
+      const worldTileX = chunkX * CHUNK_SIZE + localX
+      const worldTileY = chunkY * CHUNK_SIZE + localY
+
+      const dx = worldTileX - centerX
+      const dy = worldTileY - centerY
+      const dist = Math.sqrt(dx * dx + dy * dy)
+      if (dist > radius) continue
+
+      const tile = chunk.tiles[localY][localX]
+      if (tile.object) continue
+
+      // Density falls off toward the radius edge so the forest has a soft border.
+      const edgeFactor = 1 - dist / radius
+      if (hash(worldTileX, worldTileY, 6601) < density * edgeFactor) {
+        tile.object = { type: 'tree', amount: 1 }
+      }
+    }
+  }
+}
+
 function paintPatch(
   chunk: Chunk,
   chunkX: number,
@@ -87,6 +120,12 @@ export function generateChunk(chunkX: number, chunkY: number): Chunk {
       }
     }
   }
+
+  // Guaranteed starter forest clusters so trees are always within sight of
+  // spawn (issue #4: "no trees" repro had spawn landing in dirt biome).
+  paintForest(chunk, chunkX, chunkY, 12, -4, 7, 0.7)
+  paintForest(chunk, chunkX, chunkY, -10, 7, 6, 0.65)
+  paintForest(chunk, chunkX, chunkY, 14, 10, 5, 0.6)
 
   // Guaranteed starting resource patches near spawn (~300k total each, edge ≥ ~100, center ≥ ~3000).
   paintPatch(chunk, chunkX, chunkY, -8, 2, 8, 120, 4000, 'iron_ore')

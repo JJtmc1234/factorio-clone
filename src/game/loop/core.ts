@@ -61,9 +61,14 @@ export function startGame(
   setupMouse(canvas)
   loadGameSprites()
 
-  // Factorio Freeplay starter inventory (wiki: Crash_site).
+  // Starter inventory — slimmed Factorio Freeplay kit so the player can
+  // immediately mine, smelt, and defend themselves.
   addItem('burner_mining_drill', 1)
   addItem('stone_furnace', 1)
+  addItem('wood', 1)
+  addItem('iron_plate', 8)
+  addItem('firearm_magazine', 10)
+  addItem('pistol', 1)
 
   updateCamera(
     player.x + player.size / 2,

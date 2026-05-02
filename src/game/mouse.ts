@@ -4,6 +4,10 @@ export const mouse = {
   leftDown: false,
   leftPressed: false,
   rightPressed: false,
+  // Modifier flags captured at the moment of the most-recent left press.
+  // Cleared by consumeLeftPressed alongside the press flag.
+  leftPressedCtrl: false,
+  leftPressedShift: false,
 }
 
 export function setupMouse(canvas: HTMLCanvasElement) {
@@ -21,6 +25,8 @@ export function setupMouse(canvas: HTMLCanvasElement) {
     if (e.button === 0) {
       mouse.leftDown = true
       mouse.leftPressed = true
+      mouse.leftPressedCtrl = e.ctrlKey || e.metaKey
+      mouse.leftPressedShift = e.shiftKey
     }
 
     if (e.button === 2) {
@@ -38,6 +44,8 @@ export function setupMouse(canvas: HTMLCanvasElement) {
 export function consumeLeftPressed() {
   const pressed = mouse.leftPressed
   mouse.leftPressed = false
+  mouse.leftPressedCtrl = false
+  mouse.leftPressedShift = false
   return pressed
 }
 
