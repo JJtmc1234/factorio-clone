@@ -82,41 +82,6 @@ const ORE_FALLBACK_COLORS: Record<string, [string, string]> = {
   coal: ['#1e1e22', '#3a3a40'],
 }
 
-// Draw a TILE_SIZE region of a source image at (screenX, screenY), with the
-// image treated as a tileable texture anchored to world coordinates so
-// adjacent world tiles display contiguous regions of the texture. Wraps
-// around the source image edges with up to four drawImage calls.
-function drawWorldAlignedTile(
-  ctx: CanvasRenderingContext2D,
-  sprite: HTMLImageElement,
-  screenX: number,
-  screenY: number,
-  worldX: number,
-  worldY: number,
-) {
-  const sw = sprite.naturalWidth
-  const sh = sprite.naturalHeight
-  if (sw <= 0 || sh <= 0) return
-
-  const tile = TILE_SIZE
-  const px = ((worldX % sw) + sw) % sw
-  const py = ((worldY % sh) + sh) % sh
-  const w1 = Math.min(tile, sw - px)
-  const h1 = Math.min(tile, sh - py)
-  const rw = tile - w1
-  const rh = tile - h1
-
-  ctx.drawImage(sprite, px, py, w1, h1, screenX, screenY, w1, h1)
-  if (rw > 0) {
-    ctx.drawImage(sprite, 0, py, rw, h1, screenX + w1, screenY, rw, h1)
-  }
-  if (rh > 0) {
-    ctx.drawImage(sprite, px, 0, w1, rh, screenX, screenY + h1, w1, rh)
-  }
-  if (rw > 0 && rh > 0) {
-    ctx.drawImage(sprite, 0, 0, rw, rh, screenX + w1, screenY + h1, rw, rh)
-  }
-}
 
 export function drawObjects(ctx: CanvasRenderingContext2D) {
   const bounds = getVisibleTileBounds()
@@ -146,29 +111,42 @@ export function drawObjects(ctx: CanvasRenderingContext2D) {
         continue
       }
 
-      // Ores: tile the in-world ore-field sprite as a periodic texture
-      // anchored to world coordinates. Adjacent world tiles sample adjacent
-      // sub-regions, so the patch looks continuous instead of patchwork.
-      const fieldSprite = getGameSprite(`${object.type}_field`)
-      if (isSpriteReady(fieldSprite)) {
-        drawWorldAlignedTile(
-          ctx,
-          fieldSprite,
-          screen.x,
-          screen.y,
-          tileX * TILE_SIZE,
-          tileY * TILE_SIZE,
-        )
-        continue
-      }
-
+      // Ores: scatter several small chunks per tile (the Factorio engine
+      // does the same thing — it places per-tile chunk sprites on top of
+      // the biome texture). The inventory icon doubles as the chunk sprite
+      // since it's already a single ore chunk.
       if (isSpriteReady(sprite)) {
-        // Fallback: use the inventory item icon if no field sprite ready.
-        ctx.drawImage(sprite, screen.x + 2, screen.y + 2, 28, 28)
+        drawScatteredOreChunks(ctx, sprite, screen.x, screen.y, tileX, tileY)
       } else {
         const colors = ORE_FALLBACK_COLORS[object.type]
         if (colors) drawOreFallback(ctx, screen.x, screen.y, colors[0], colors[1])
       }
     }
+  }
+}
+
+function drawScatteredOreChunks(
+  ctx: CanvasRenderingContext2D,
+  chunk: HTMLImageElement,
+  screenX: number,
+  screenY: number,
+  tileX: number,
+  tileY: number,
+) {
+  // Deterministic per-tile placement so tiles don't shimmer between frames.
+  // Seed mixes both coords so adjacent tiles look genuinely different.
+  let seed = (tileX * 374761393) ^ (tileY * 668265263)
+  const rand = () => {
+    seed = (seed ^ (seed >>> 13)) * 1274126177
+    seed = seed ^ (seed >>> 16)
+    return ((seed >>> 0) % 10000) / 10000
+  }
+
+  const chunkCount = 4 + Math.floor(rand() * 3) // 4-6 chunks
+  for (let i = 0; i < chunkCount; i++) {
+    const cx = rand() * (TILE_SIZE - 12)
+    const cy = rand() * (TILE_SIZE - 12)
+    const size = 10 + Math.floor(rand() * 6) // 10-15 px
+    ctx.drawImage(chunk, screenX + cx, screenY + cy, size, size)
   }
 }
