@@ -25,6 +25,16 @@ function shadeColor(hex: string, deltaPercent: number): string {
   return `rgb(${adj(r)},${adj(g)},${adj(b)})`
 }
 
+function biomeTileSprite(biome: string): HTMLImageElement | null {
+  // grass_lush also uses grass; dirt uses dirt.
+  if (biome === 'dirt') return getGameSprite('dirt_tile')
+  return getGameSprite('grass_tile')
+}
+
+// In Factorio, the terrain *.png is laid out as an 8×8 grid of base
+// variations (the leftmost 256×256 region) followed by transition tiles to
+// the right. We sample only the base variations so we don't accidentally
+// pull a transition mask.
 export function drawTerrain(ctx: CanvasRenderingContext2D) {
   const bounds = getVisibleTileBounds()
 
@@ -32,9 +42,32 @@ export function drawTerrain(ctx: CanvasRenderingContext2D) {
     for (let tileX = bounds.startTileX; tileX <= bounds.endTileX; tileX++) {
       const screen = worldToScreen(tileX * TILE_SIZE, tileY * TILE_SIZE)
       const tile = getTileAtWorldTile(tileX, tileY)
-      const base = BIOME_COLORS[tile.biome] ?? '#4c8a3f'
+      const sprite = biomeTileSprite(tile.biome)
 
-      // Per-tile brightness variance breaks up the flat color carpet.
+      if (sprite && isSpriteReady(sprite)) {
+        // Pick a 32×32 sub-region from the base-variation patch using a
+        // tile-coord hash so adjacent tiles look organically different
+        // without per-frame shimmer.
+        const seed = tileHash(tileX, tileY)
+        const cell = Math.floor(seed * 64) // 0..63 (8×8 grid)
+        const sx = (cell % 8) * TILE_SIZE
+        const sy = Math.floor(cell / 8) * TILE_SIZE
+        ctx.drawImage(
+          sprite,
+          sx,
+          sy,
+          TILE_SIZE,
+          TILE_SIZE,
+          screen.x,
+          screen.y,
+          TILE_SIZE,
+          TILE_SIZE,
+        )
+        continue
+      }
+
+      // Fallback: solid biome color with per-tile brightness variance.
+      const base = BIOME_COLORS[tile.biome] ?? '#4c8a3f'
       const variance = (tileHash(tileX, tileY) - 0.5) * 0.18
       ctx.fillStyle = shadeColor(base, variance)
       ctx.fillRect(screen.x, screen.y, TILE_SIZE, TILE_SIZE)
@@ -111,11 +144,13 @@ export function drawObjects(ctx: CanvasRenderingContext2D) {
         continue
       }
 
-      // Ores: scatter several small chunks per tile (the Factorio engine
-      // does the same thing — it places per-tile chunk sprites on top of
-      // the biome texture). The inventory icon doubles as the chunk sprite
-      // since it's already a single ore chunk.
-      if (isSpriteReady(sprite)) {
+      // Ores: prefer the actual Factorio per-stage chunk sheet
+      // (1024×1024, 8×8 grid of 128px variations). Fall back to the
+      // inventory item icon if the particle sheet isn't loaded.
+      const particleSheet = getGameSprite(`${object.type}_particle`)
+      if (particleSheet && isSpriteReady(particleSheet)) {
+        drawOreParticles(ctx, particleSheet, screen.x, screen.y, tileX, tileY)
+      } else if (isSpriteReady(sprite)) {
         drawScatteredOreChunks(ctx, sprite, screen.x, screen.y, tileX, tileY)
       } else {
         const colors = ORE_FALLBACK_COLORS[object.type]
@@ -148,5 +183,50 @@ function drawScatteredOreChunks(
     const cy = rand() * (TILE_SIZE - 12)
     const size = 10 + Math.floor(rand() * 6) // 10-15 px
     ctx.drawImage(chunk, screenX + cx, screenY + cy, size, size)
+  }
+}
+
+const ORE_PARTICLE_GRID_SIZE = 128 // each cell in the 8×8 sheet
+const ORE_PARTICLE_VARIATIONS = 8
+
+// Draw scattered ore particles using the in-game per-stage sheet. Each
+// scattered chunk samples one of the 64 variants in the 8×8 grid based on
+// a tile-stable hash so the same tile always renders identically.
+function drawOreParticles(
+  ctx: CanvasRenderingContext2D,
+  sheet: HTMLImageElement,
+  screenX: number,
+  screenY: number,
+  tileX: number,
+  tileY: number,
+) {
+  let seed = (tileX * 374761393) ^ (tileY * 668265263)
+  const rand = () => {
+    seed = (seed ^ (seed >>> 13)) * 1274126177
+    seed = seed ^ (seed >>> 16)
+    return ((seed >>> 0) % 10000) / 10000
+  }
+
+  const chunkCount = 5 + Math.floor(rand() * 3) // 5-7 chunks
+  for (let i = 0; i < chunkCount; i++) {
+    const variantCol = Math.floor(rand() * ORE_PARTICLE_VARIATIONS)
+    const variantRow = Math.floor(rand() * ORE_PARTICLE_VARIATIONS)
+    const sx = variantCol * ORE_PARTICLE_GRID_SIZE
+    const sy = variantRow * ORE_PARTICLE_GRID_SIZE
+    const cx = rand() * (TILE_SIZE - 14)
+    const cy = rand() * (TILE_SIZE - 14)
+    const size = 12 + Math.floor(rand() * 6) // 12-17 px
+
+    ctx.drawImage(
+      sheet,
+      sx,
+      sy,
+      ORE_PARTICLE_GRID_SIZE,
+      ORE_PARTICLE_GRID_SIZE,
+      screenX + cx,
+      screenY + cy,
+      size,
+      size,
+    )
   }
 }

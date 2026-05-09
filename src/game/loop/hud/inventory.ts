@@ -7,24 +7,30 @@ import {
   startCraft,
 } from '../../crafting'
 import type { Recipe } from '../../recipes'
+import { formatItemName } from '../../format'
 import { getGameSprite, isSpriteReady } from '../../../components/gameSprites'
 
 const INVENTORY_SLOTS = 25
 const INVENTORY_COLS = 5
 const SLOT_SIZE = 56
 const SLOT_GAP = 8
-const RECIPE_ROW_W = 360
-const RECIPE_ROW_H = 36
-const RECIPE_ROW_GAP = 3
-const SECTION_HEADER_H = 20
 const PANEL_W = 760
 const PANEL_H = 500
 const PANEL_PADDING = 20
 
-// Persistent across frames so the scroll position survives a redraw.
+// Recipe grid (right half).
+const RECIPE_GRID_COLS = 8
+const RECIPE_CELL_SIZE = 38
+const RECIPE_CELL_GAP = 4
+const TAB_W = 56
+const TAB_H = 36
+const TAB_GAP = 4
+
+// Persistent across frames so scroll + tab selection survive a redraw.
 let recipeScrollOffset = 0
 
 type CraftSection = 'Logistics' | 'Production' | 'Intermediate' | 'Combat'
+type TabKey = CraftSection | 'All'
 
 const SECTION_ORDER: CraftSection[] = [
   'Logistics',
@@ -32,6 +38,18 @@ const SECTION_ORDER: CraftSection[] = [
   'Intermediate',
   'Combat',
 ]
+const TAB_ORDER: TabKey[] = ['All', ...SECTION_ORDER]
+let activeTab: TabKey = 'All'
+
+// Each tab is illustrated by an iconic recipe output. Falls back to a
+// solid color if the sprite isn't ready yet.
+const TAB_ICONS: Record<TabKey, string> = {
+  All: 'iron_gear_wheel',
+  Logistics: 'transport_belt',
+  Production: 'burner_drill',
+  Intermediate: 'iron_plate',
+  Combat: 'firearm_magazine',
+}
 
 function recipeSection(recipe: Recipe): CraftSection {
   const name = recipe.name
@@ -49,31 +67,10 @@ function recipeSection(recipe: Recipe): CraftSection {
   return 'Intermediate'
 }
 
-type FlatRow =
-  | { kind: 'header'; section: CraftSection; height: number }
-  | { kind: 'recipe'; recipe: Recipe; height: number }
-
-function buildFlatRows(): FlatRow[] {
-  const recipes = getHandCraftableRecipes()
-  const bySection = new Map<CraftSection, Recipe[]>()
-  for (const r of recipes) {
-    const s = recipeSection(r)
-    if (!bySection.has(s)) bySection.set(s, [])
-    bySection.get(s)!.push(r)
-  }
-  const rows: FlatRow[] = []
-  for (const section of SECTION_ORDER) {
-    const list = bySection.get(section)
-    if (!list || list.length === 0) continue
-    rows.push({ kind: 'header', section, height: SECTION_HEADER_H })
-    for (const r of list) rows.push({ kind: 'recipe', recipe: r, height: RECIPE_ROW_H })
-  }
-  return rows
-}
-
-function getMaxVisibleRecipeRows(layout: { craftStartY: number; bottomStripY: number }) {
-  const available = layout.bottomStripY - layout.craftStartY - 8
-  return Math.max(0, Math.floor(available / (RECIPE_ROW_H + RECIPE_ROW_GAP)))
+function getRecipesForActiveTab(): Recipe[] {
+  const all = getHandCraftableRecipes()
+  if (activeTab === 'All') return all
+  return all.filter((r) => recipeSection(r) === activeTab)
 }
 
 function recipeItemKey(recipeItemName: string) {
@@ -97,18 +94,48 @@ function getInventoryMenuLayout(canvas: HTMLCanvasElement) {
     invStartY: panelY + 60,
     craftStartX: panelX + 380,
     craftStartY: panelY + 60,
+    // Tab strip y, then a small gap, then the grid starts.
+    tabStripY: panelY + 60,
+    gridStartY: panelY + 60 + TAB_H + 8,
     bottomStripY: panelY + PANEL_H - 60,
   }
 }
 
-function getRecipeAreaBounds(canvas: HTMLCanvasElement) {
+function getTabRect(canvas: HTMLCanvasElement, idx: number) {
+  const layout = getInventoryMenuLayout(canvas)
+  return {
+    x: layout.craftStartX + idx * (TAB_W + TAB_GAP),
+    y: layout.tabStripY,
+    w: TAB_W,
+    h: TAB_H,
+  }
+}
+
+function getRecipeGridBounds(canvas: HTMLCanvasElement) {
   const layout = getInventoryMenuLayout(canvas)
   return {
     x: layout.craftStartX,
-    y: layout.craftStartY,
-    w: RECIPE_ROW_W,
-    h: layout.bottomStripY - layout.craftStartY - 8,
+    y: layout.gridStartY,
+    w: RECIPE_GRID_COLS * RECIPE_CELL_SIZE + (RECIPE_GRID_COLS - 1) * RECIPE_CELL_GAP,
+    h: layout.bottomStripY - layout.gridStartY - 8,
   }
+}
+
+function getRecipeCellRect(canvas: HTMLCanvasElement, idx: number) {
+  const grid = getRecipeGridBounds(canvas)
+  const col = idx % RECIPE_GRID_COLS
+  const row = Math.floor(idx / RECIPE_GRID_COLS)
+  return {
+    x: grid.x + col * (RECIPE_CELL_SIZE + RECIPE_CELL_GAP),
+    y: grid.y + row * (RECIPE_CELL_SIZE + RECIPE_CELL_GAP),
+    w: RECIPE_CELL_SIZE,
+    h: RECIPE_CELL_SIZE,
+  }
+}
+
+function getMaxVisibleRecipeRows(layout: { gridStartY: number; bottomStripY: number }) {
+  const available = layout.bottomStripY - layout.gridStartY - 8
+  return Math.max(0, Math.floor(available / (RECIPE_CELL_SIZE + RECIPE_CELL_GAP)))
 }
 
 function getInventorySwatchColor(item: string) {
@@ -173,7 +200,7 @@ export function drawCompactInventory(ctx: CanvasRenderingContext2D) {
     drawItemIcon(ctx, stack.item, 28, y + 8, 18)
     ctx.fillStyle = 'white'
     ctx.font = '13px sans-serif'
-    ctx.fillText(`${stack.item}: ${stack.count}`, 44, y + 12)
+    ctx.fillText(`${formatItemName(stack.item)}: ${stack.count}`, 44, y + 12)
     y += 22
   }
 
@@ -211,15 +238,7 @@ function drawInventoryGrid(
   }
 }
 
-function formatIngredients(recipe: Recipe): string {
-  const ing = recipe.ingredients
-  const entries = Array.isArray(ing)
-    ? ing.filter((e) => e.type !== 'fluid').map((e) => [e.name, e.amount] as const)
-    : Object.entries(ing)
-  return entries.map(([n, a]) => `${a}× ${recipeItemKey(n)}`).join(', ')
-}
-
-function drawCraftRow(
+function drawRecipeCell(
   ctx: CanvasRenderingContext2D,
   recipe: Recipe,
   rect: { x: number; y: number; w: number; h: number },
@@ -232,36 +251,139 @@ function drawCraftRow(
     mouse.y < rect.y + rect.h
 
   ctx.globalAlpha = craftable ? 1 : 0.42
-  ctx.fillStyle = hovered && craftable ? 'rgba(255, 255, 255, 0.13)' : 'rgba(255, 255, 255, 0.05)'
+
+  // Slot background.
+  ctx.fillStyle = hovered ? 'rgba(255, 200, 80, 0.22)' : 'rgba(255, 255, 255, 0.06)'
   ctx.fillRect(rect.x, rect.y, rect.w, rect.h)
-  ctx.strokeStyle = craftable ? 'rgba(255, 255, 255, 0.25)' : 'rgba(255, 255, 255, 0.1)'
+  ctx.strokeStyle = hovered
+    ? '#ffb74d'
+    : craftable
+      ? 'rgba(255, 255, 255, 0.22)'
+      : 'rgba(255, 255, 255, 0.1)'
+  ctx.lineWidth = hovered ? 2 : 1
   ctx.strokeRect(rect.x, rect.y, rect.w, rect.h)
+  ctx.lineWidth = 1
 
+  // Output icon, big.
   const outputKey = recipeOutputKey(recipe) ?? recipe.name
-  drawItemIcon(ctx, outputKey, rect.x + 18, rect.y + rect.h / 2, 26)
+  drawItemIcon(ctx, outputKey, rect.x + rect.w / 2, rect.y + rect.h / 2, rect.w - 8)
 
-  ctx.fillStyle = 'white'
-  ctx.font = 'bold 12px sans-serif'
-  ctx.fillText(recipe.name, rect.x + 36, rect.y + 14)
-
-  ctx.fillStyle = '#bbb'
-  ctx.font = '10px sans-serif'
-  ctx.fillText(`${recipe.time}s`, rect.x + rect.w - 32, rect.y + 14)
-  ctx.fillText(formatIngredients(recipe), rect.x + 36, rect.y + 28)
+  // Output count badge, bottom-right of the cell.
+  const outputs = Object.entries(recipe.output)
+  if (outputs.length > 0 && outputs[0][1] > 1) {
+    drawCountBadge(ctx, outputs[0][1], rect.x + rect.w - 4, rect.y + rect.h - 4)
+  }
 
   ctx.globalAlpha = 1
 }
 
-function drawSectionHeader(
+function drawTabStrip(ctx: CanvasRenderingContext2D, canvas: HTMLCanvasElement) {
+  for (let i = 0; i < TAB_ORDER.length; i++) {
+    const tab = TAB_ORDER[i]
+    const r = getTabRect(canvas, i)
+    const isActive = tab === activeTab
+    const hovered =
+      mouse.x >= r.x && mouse.x < r.x + r.w && mouse.y >= r.y && mouse.y < r.y + r.h
+
+    ctx.fillStyle = isActive
+      ? 'rgba(255, 200, 80, 0.22)'
+      : hovered
+        ? 'rgba(255, 255, 255, 0.13)'
+        : 'rgba(255, 255, 255, 0.05)'
+    ctx.fillRect(r.x, r.y, r.w, r.h)
+    ctx.strokeStyle = isActive ? '#ffb74d' : 'rgba(255, 255, 255, 0.18)'
+    ctx.lineWidth = isActive ? 2 : 1
+    ctx.strokeRect(r.x, r.y, r.w, r.h)
+    ctx.lineWidth = 1
+
+    drawItemIcon(ctx, TAB_ICONS[tab], r.x + r.w / 2, r.y + r.h / 2, 26)
+  }
+}
+
+// Rich hover tooltip for a recipe cell. Floats next to the cursor, drawn
+// last so it sits on top of everything else.
+function drawRecipeTooltip(
   ctx: CanvasRenderingContext2D,
-  section: CraftSection,
-  rect: { x: number; y: number; w: number; h: number },
+  canvas: HTMLCanvasElement,
+  recipe: Recipe,
 ) {
-  ctx.fillStyle = 'rgba(255, 200, 100, 0.18)'
-  ctx.fillRect(rect.x, rect.y, rect.w, rect.h)
-  ctx.fillStyle = '#ffd180'
+  const ingredients = Array.isArray(recipe.ingredients)
+    ? recipe.ingredients
+        .filter((e) => e.type !== 'fluid')
+        .map((e) => [e.name, e.amount] as const)
+    : (Object.entries(recipe.ingredients) as Array<readonly [string, number]>)
+
+  const outputs = Object.entries(recipe.output) as Array<readonly [string, number]>
+  const lineH = 18
+  const padding = 10
+  const tooltipW = 240
+  const headerH = 26
+  const ingredientsH = 18 + ingredients.length * lineH
+  const outputsH = 18 + outputs.length * lineH
+  const metaH = 18 + lineH * (1 + (recipe.madeIn?.length ?? 0))
+  const tooltipH = headerH + ingredientsH + outputsH + metaH + padding
+
+  // Position the tooltip near the cursor but clamp to canvas.
+  let x = mouse.x + 14
+  let y = mouse.y + 12
+  if (x + tooltipW > canvas.width - 4) x = canvas.width - 4 - tooltipW
+  if (y + tooltipH > canvas.height - 4) y = canvas.height - 4 - tooltipH
+  if (x < 4) x = 4
+  if (y < 4) y = 4
+
+  // Background card.
+  ctx.fillStyle = 'rgba(20, 20, 20, 0.96)'
+  ctx.fillRect(x, y, tooltipW, tooltipH)
+  ctx.strokeStyle = '#bdbdbd'
+  ctx.lineWidth = 1
+  ctx.strokeRect(x, y, tooltipW, tooltipH)
+
+  let cy = y + 8
+
+  // Header: "<Item name> (Recipe)"
+  ctx.fillStyle = '#ffe082'
+  ctx.font = 'bold 14px sans-serif'
+  ctx.fillText(`${formatItemName(recipe.name)} (Recipe)`, x + padding, cy + 14)
+  cy += headerH
+
+  // Ingredients section.
+  ctx.fillStyle = '#bdbdbd'
   ctx.font = 'bold 11px sans-serif'
-  ctx.fillText(section.toUpperCase(), rect.x + 6, rect.y + 14)
+  ctx.fillText('Ingredients', x + padding, cy + 12)
+  cy += 16
+  ctx.font = '12px sans-serif'
+  for (const [name, amount] of ingredients) {
+    drawItemIcon(ctx, recipeItemKey(name), x + padding + 8, cy + 8, 14)
+    ctx.fillStyle = 'white'
+    ctx.fillText(`${amount} × ${formatItemName(name)}`, x + padding + 22, cy + 12)
+    cy += lineH
+  }
+
+  // Output section.
+  ctx.fillStyle = '#bdbdbd'
+  ctx.font = 'bold 11px sans-serif'
+  ctx.fillText('Output', x + padding, cy + 12)
+  cy += 16
+  ctx.font = '12px sans-serif'
+  for (const [name, amount] of outputs) {
+    drawItemIcon(ctx, recipeItemKey(name), x + padding + 8, cy + 8, 14)
+    ctx.fillStyle = 'white'
+    ctx.fillText(`${amount} × ${formatItemName(name)}`, x + padding + 22, cy + 12)
+    cy += lineH
+  }
+
+  // Meta section: time + made-in.
+  ctx.fillStyle = '#bdbdbd'
+  ctx.font = 'bold 11px sans-serif'
+  ctx.fillText('Recipe', x + padding, cy + 12)
+  cy += 16
+  ctx.fillStyle = 'white'
+  ctx.font = '12px sans-serif'
+  ctx.fillText(`${recipe.time}s crafting time`, x + padding + 8, cy + 12)
+  cy += lineH
+  if (recipe.madeIn?.length) {
+    ctx.fillText(`Made in: ${recipe.madeIn.join(', ')}`, x + padding + 8, cy + 12)
+  }
 }
 
 function drawCraftQueue(
@@ -295,7 +417,7 @@ function drawCraftQueue(
 
   ctx.fillStyle = 'white'
   ctx.font = 'bold 12px sans-serif'
-  ctx.fillText(`${head.recipeName} ×${head.outputCount}`, stripX + 8, stripY + 16)
+  ctx.fillText(`${formatItemName(head.recipeName)} ×${head.outputCount}`, stripX + 8, stripY + 16)
   ctx.fillStyle = '#ddd'
   ctx.font = '10px sans-serif'
   ctx.fillText(`${head.remainingTime.toFixed(1)}s`, stripX + 8, stripY + 31)
@@ -347,33 +469,43 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   ctx.font = 'bold 16px sans-serif'
   ctx.fillText('Craft', layout.craftStartX, layout.panelY + 38)
 
-  const flatRows = buildFlatRows()
-  const area = getRecipeAreaBounds(canvas)
+  drawTabStrip(ctx, canvas)
 
-  const maxScroll = Math.max(0, flatRows.length - getMaxVisibleRecipeRows(layout))
+  const recipes = getRecipesForActiveTab()
+  const grid = getRecipeGridBounds(canvas)
+  const maxRows = getMaxVisibleRecipeRows(layout)
+  const totalRows = Math.ceil(recipes.length / RECIPE_GRID_COLS)
+  const maxScroll = Math.max(0, totalRows - maxRows)
   if (recipeScrollOffset < 0) recipeScrollOffset = 0
   if (recipeScrollOffset > maxScroll) recipeScrollOffset = maxScroll
 
-  let cursorY = area.y
-  for (let i = recipeScrollOffset; i < flatRows.length; i++) {
-    const row = flatRows[i]
-    if (cursorY + row.height > area.y + area.h) break
-    const rect = { x: area.x, y: cursorY, w: area.w, h: row.height }
-    if (row.kind === 'header') drawSectionHeader(ctx, row.section, rect)
-    else drawCraftRow(ctx, row.recipe, rect)
-    cursorY += row.height + RECIPE_ROW_GAP
+  // Find the recipe under the cursor while drawing — saves a second pass.
+  let hoveredRecipe: Recipe | null = null
+  const startIdx = recipeScrollOffset * RECIPE_GRID_COLS
+  for (let i = startIdx; i < recipes.length; i++) {
+    const localIdx = i - startIdx
+    const cellRect = getRecipeCellRect(canvas, localIdx)
+    if (cellRect.y + cellRect.h > grid.y + grid.h) break
+    drawRecipeCell(ctx, recipes[i], cellRect)
+    if (
+      mouse.x >= cellRect.x &&
+      mouse.x < cellRect.x + cellRect.w &&
+      mouse.y >= cellRect.y &&
+      mouse.y < cellRect.y + cellRect.h
+    ) {
+      hoveredRecipe = recipes[i]
+    }
   }
 
-  // Scrollbar indicator on the right edge of the recipe area.
-  if (flatRows.length > 0 && maxScroll > 0) {
-    const trackX = area.x + area.w + 2
+  // Scrollbar indicator on the right edge of the recipe grid.
+  if (totalRows > 0 && maxScroll > 0) {
+    const trackX = grid.x + grid.w + 2
     const trackW = 4
     ctx.fillStyle = 'rgba(255, 255, 255, 0.08)'
-    ctx.fillRect(trackX, area.y, trackW, area.h)
-    const visible = getMaxVisibleRecipeRows(layout)
-    const thumbH = Math.max(20, Math.floor((visible / flatRows.length) * area.h))
+    ctx.fillRect(trackX, grid.y, trackW, grid.h)
+    const thumbH = Math.max(20, Math.floor((maxRows / totalRows) * grid.h))
     const thumbY =
-      area.y + Math.floor((recipeScrollOffset / maxScroll) * (area.h - thumbH))
+      grid.y + Math.floor((recipeScrollOffset / maxScroll) * (grid.h - thumbH))
     ctx.fillStyle = 'rgba(255, 255, 255, 0.4)'
     ctx.fillRect(trackX, thumbY, trackW, thumbH)
   }
@@ -383,11 +515,14 @@ export function drawInventoryMenu(ctx: CanvasRenderingContext2D, canvas: HTMLCan
   ctx.fillStyle = '#cfcfcf'
   ctx.font = '12px sans-serif'
   ctx.fillText('E / Esc = close', layout.panelX + PANEL_PADDING, layout.panelY + layout.panelH - 8)
+
+  // Tooltip is drawn LAST so it sits on top of the rest of the menu.
+  if (hoveredRecipe) drawRecipeTooltip(ctx, canvas, hoveredRecipe)
 }
 
 export function isOverRecipeArea(canvas: HTMLCanvasElement, mx: number, my: number) {
-  const area = getRecipeAreaBounds(canvas)
-  return mx >= area.x && mx < area.x + area.w && my >= area.y && my < area.y + area.h
+  const grid = getRecipeGridBounds(canvas)
+  return mx >= grid.x && mx < grid.x + grid.w && my >= grid.y && my < grid.y + grid.h
 }
 
 export function scrollRecipeList(deltaY: number) {
@@ -400,26 +535,35 @@ export function handleInventoryMenuClick(
   mx: number,
   my: number,
 ): boolean {
-  const flatRows = buildFlatRows()
-  const area = getRecipeAreaBounds(canvas)
+  // Tab strip first.
+  for (let i = 0; i < TAB_ORDER.length; i++) {
+    const r = getTabRect(canvas, i)
+    if (mx >= r.x && mx < r.x + r.w && my >= r.y && my < r.y + r.h) {
+      activeTab = TAB_ORDER[i]
+      recipeScrollOffset = 0
+      return true
+    }
+  }
 
-  let cursorY = area.y
-  for (let i = recipeScrollOffset; i < flatRows.length; i++) {
-    const row = flatRows[i]
-    if (cursorY + row.height > area.y + area.h) break
+  // Recipe grid hit-test, honoring the scroll offset.
+  const recipes = getRecipesForActiveTab()
+  const grid = getRecipeGridBounds(canvas)
+  const startIdx = recipeScrollOffset * RECIPE_GRID_COLS
+  for (let i = startIdx; i < recipes.length; i++) {
+    const localIdx = i - startIdx
+    const cellRect = getRecipeCellRect(canvas, localIdx)
+    if (cellRect.y + cellRect.h > grid.y + grid.h) break
     if (
-      row.kind === 'recipe' &&
-      mx >= area.x &&
-      mx < area.x + area.w &&
-      my >= cursorY &&
-      my < cursorY + row.height
+      mx >= cellRect.x &&
+      mx < cellRect.x + cellRect.w &&
+      my >= cellRect.y &&
+      my < cellRect.y + cellRect.h
     ) {
       // startCraft will auto-queue prerequisite intermediates if the player
       // has the raw materials but not the immediate ingredients.
-      startCraft(row.recipe.name)
+      startCraft(recipes[i].name)
       return true
     }
-    cursorY += row.height + RECIPE_ROW_GAP
   }
   return false
 }

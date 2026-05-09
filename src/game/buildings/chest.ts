@@ -1,6 +1,7 @@
 import type { AnyChest, IronChest, ItemType, WoodenChest } from './types'
 import { TILE_SIZE } from '../world'
 import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
+import { isAltMode } from '../altMode'
 
 export function tryInsertIntoChest(chest: AnyChest, item: ItemType, count: number) {
   if (chest.count >= chest.capacity) return 0
@@ -74,6 +75,25 @@ function drawChestCountBadge(
   ctx.fillText(String(chest.count), screenX + 5, screenY + 11)
 }
 
+function drawChestAltOverlay(
+  ctx: CanvasRenderingContext2D,
+  chest: AnyChest,
+  screenX: number,
+  screenY: number,
+) {
+  if (!isAltMode() || !chest.item) return
+  const sprite = getGameSprite(chest.item)
+  if (!isSpriteReady(sprite)) return
+  const size = 18
+  ctx.drawImage(
+    sprite,
+    screenX + (TILE_SIZE - size) / 2,
+    screenY + (TILE_SIZE - size) / 2,
+    size,
+    size,
+  )
+}
+
 export function drawFallbackChestSprite(
   ctx: CanvasRenderingContext2D,
   screenX: number,
@@ -93,6 +113,7 @@ export function drawFallbackChestSprite(
   ctx.fillStyle = '#3e2723'
   ctx.fillRect(screenX + 13, screenY + 12, 6, 8)
 
+  drawChestAltOverlay(ctx, chest, screenX, screenY)
   drawChestCountBadge(ctx, chest, screenX, screenY)
   ctx.restore()
 }
@@ -109,6 +130,7 @@ export function drawChestSprite(
     ctx.save()
     ctx.globalAlpha = alpha
     ctx.drawImage(sprite, screenX, screenY, TILE_SIZE, TILE_SIZE)
+    drawChestAltOverlay(ctx, chest, screenX, screenY)
     drawChestCountBadge(ctx, chest, screenX, screenY)
     ctx.restore()
     return
@@ -142,6 +164,7 @@ export function drawFallbackIronChestSprite(
   ctx.fillRect(screenX + 5, screenY + TILE_SIZE - 9, 2, 2)
   ctx.fillRect(screenX + TILE_SIZE - 7, screenY + TILE_SIZE - 9, 2, 2)
 
+  drawChestAltOverlay(ctx, chest, screenX, screenY)
   drawChestCountBadge(ctx, chest, screenX, screenY)
   ctx.restore()
 }
@@ -158,6 +181,7 @@ export function drawIronChestSprite(
     ctx.save()
     ctx.globalAlpha = alpha
     ctx.drawImage(sprite, screenX, screenY, TILE_SIZE, TILE_SIZE)
+    drawChestAltOverlay(ctx, chest, screenX, screenY)
     drawChestCountBadge(ctx, chest, screenX, screenY)
     ctx.restore()
     return

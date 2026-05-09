@@ -11,6 +11,7 @@ import {
 } from './tile'
 import { drawSpriteRotated } from './draw-helpers'
 import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
+import { isAltMode } from '../altMode'
 
 function getInserterRotation(direction: Direction) {
   if (direction === 'right') return 0
@@ -176,8 +177,13 @@ function drawInserterArmOverlay(
 
   // Hand at the tip; carries the held item color when grabbed.
   if (inserter.heldItem) {
-    ctx.fillStyle = getItemDrawColor(inserter.heldItem)
-    ctx.fillRect(-4, -16, 8, 8)
+    const sprite = isAltMode() ? getGameSprite(inserter.heldItem) : null
+    if (sprite && isSpriteReady(sprite)) {
+      ctx.drawImage(sprite, -8, -20, 16, 16)
+    } else {
+      ctx.fillStyle = getItemDrawColor(inserter.heldItem)
+      ctx.fillRect(-4, -16, 8, 8)
+    }
   } else {
     ctx.fillStyle = '#90a4ae'
     ctx.fillRect(-4, -14, 8, 6)

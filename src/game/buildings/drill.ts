@@ -7,6 +7,8 @@ import { tryInsertIntoChest, consumeCoalFromChest } from './chest'
 import { tryInsertIntoBelt } from './belts'
 import { tryInsertIntoFurnace } from './furnace'
 import { drawDirectionMarker, drawSpriteRotated } from './draw-helpers'
+import { isSpriteReady } from '../../components/gameSprites'
+import { isAltMode } from '../altMode'
 
 export function getDrillCoveredTiles(drill: BurnerDrill) {
   return [
@@ -244,6 +246,16 @@ export function drawBurnerDrillSprite(
     const col = frameIdx % DRILL_COLS
     const row = Math.floor(frameIdx / DRILL_COLS)
 
+    // Per the Factorio lua: width=173, height=188, scale=0.5, shift=(2.75,
+    // 0.5)px. So the rendered drill is ~86.5×94 in native display, slightly
+    // offset right + down from the 2×2 footprint centre. We mirror that to
+    // give the same overhang past the tile bounds (avoids visible seams).
+    const drawW = DRILL_FRAME_W * 0.5
+    const drawH = DRILL_FRAME_H * 0.5
+    const dxShift = 2.75
+    const dyShift = 0.5
+    const dx = screenX + size / 2 - drawW / 2 + dxShift
+    const dy = screenY + size / 2 - drawH / 2 + dyShift
     ctx.save()
     ctx.globalAlpha = alpha
     ctx.drawImage(
@@ -252,10 +264,10 @@ export function drawBurnerDrillSprite(
       row * DRILL_FRAME_H,
       DRILL_FRAME_W,
       DRILL_FRAME_H,
-      screenX,
-      screenY,
-      size,
-      size,
+      dx,
+      dy,
+      drawW,
+      drawH,
     )
 
     // Fuel bar overlay (kept on top so the player can see fuel level).
@@ -264,9 +276,14 @@ export function drawBurnerDrillSprite(
     const fuelRatio = Math.min(drill.fuel / 12, 1)
     ctx.fillStyle = fuelRatio > 0 ? '#ff9800' : '#555'
     ctx.fillRect(screenX + 8, screenY + size - 10, (size - 16) * fuelRatio, 6)
-    if (drill.outputCount > 0) {
-      ctx.fillStyle = getItemDrawColor(drill.outputItem)
-      ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+    if (drill.outputCount > 0 && drill.outputItem) {
+      const altSprite = isAltMode() ? getGameSprite(drill.outputItem) : null
+      if (altSprite && isSpriteReady(altSprite)) {
+        ctx.drawImage(altSprite, screenX + size / 2 - 12, screenY + size / 2 - 12, 24, 24)
+      } else {
+        ctx.fillStyle = getItemDrawColor(drill.outputItem)
+        ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+      }
     }
     ctx.restore()
     return

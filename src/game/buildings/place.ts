@@ -114,6 +114,23 @@ export function placeTransportBelt(tileX: number, tileY: number, direction: Dire
   return true
 }
 
+// Drag-place a single belt tile during smart belt drag.
+//   - empty tile  → place a new belt (consumes from inventory).
+//   - existing belt with a different direction → re-orient it in place.
+//   - existing belt with the same direction → no-op.
+//   - any other building → skip silently (dragging across a chest/drill
+//     doesn't blow up).
+export function dragPlaceBelt(tileX: number, tileY: number, direction: Direction) {
+  const existing = getBuildingAtTile(tileX, tileY)
+  if (!existing) {
+    placeTransportBelt(tileX, tileY, direction)
+    return
+  }
+  if (existing.type === 'transport_belt' && existing.direction !== direction) {
+    existing.direction = direction
+  }
+}
+
 export function placeStoneFurnace(tileX: number, tileY: number) {
   if (!canPlaceBuilding('stone_furnace', tileX, tileY)) return false
   if (getBuildingInventoryCount('stone_furnace') < 1) return false

@@ -5,6 +5,7 @@ import { getBuildingAtTile } from './tile'
 import { tryInsertIntoBelt } from './belts'
 import { tryInsertIntoChest } from './chest'
 import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
+import { isAltMode } from '../altMode'
 
 export function getFurnaceCoveredTiles(furnace: StoneFurnace) {
   return [
@@ -200,8 +201,13 @@ export function drawFurnaceSprite(
     ctx.fillRect(screenX + 8, screenY + size - 10, (size - 16) * fuelRatio, 6)
 
     if (furnace.outputCount > 0 && furnace.outputItem) {
-      ctx.fillStyle = getItemDrawColor(furnace.outputItem)
-      ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+      const altSprite = isAltMode() ? getGameSprite(furnace.outputItem) : null
+      if (altSprite && isSpriteReady(altSprite)) {
+        ctx.drawImage(altSprite, screenX + size / 2 - 12, screenY + size / 2 - 12, 24, 24)
+      } else {
+        ctx.fillStyle = getItemDrawColor(furnace.outputItem)
+        ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+      }
     }
 
     ctx.restore()

@@ -6,6 +6,7 @@ import { tryInsertIntoChest } from './chest'
 import { tryInsertIntoFurnace } from './furnace'
 import { drawDirectionMarker } from './draw-helpers'
 import { getGameSprite, isSpriteReady } from '../../components/gameSprites'
+import { isAltMode } from '../altMode'
 
 // Yellow belt = 15 items/second past a fixed point at full saturation.
 // With BELT_ITEM_SPACING = 1/8 (8 items per tile-length), the speed in
@@ -239,8 +240,25 @@ export function drawBeltItems(
   screenY: number,
   belt: TransportBelt,
 ) {
+  // Alt-mode renders the actual sprite at a much larger size so contents
+  // are readable from a zoomed-out view; default mode is a tiny color dot.
+  const alt = isAltMode()
   for (const slot of belt.items) {
     const pos = getBeltItemPos(belt, slot.progress)
+    if (alt) {
+      const sprite = getGameSprite(slot.item)
+      const size = 14
+      if (isSpriteReady(sprite)) {
+        ctx.drawImage(
+          sprite,
+          screenX + pos.x - size / 2,
+          screenY + pos.y - size / 2,
+          size,
+          size,
+        )
+        continue
+      }
+    }
     ctx.fillStyle = getItemDrawColor(slot.item)
     ctx.fillRect(screenX + pos.x - 4, screenY + pos.y - 4, 8, 8)
   }
@@ -319,6 +337,12 @@ function drawBeltSheetFrame(
   const row = getBeltSpriteRow(belt)
   const frame =
     Math.floor((performance.now() / 1000) * BELT_FRAME_FPS) % BELT_SHEET_COLS
+  // Source frames are 128px and render in-game at scale=0.5 → 64px = 2 tiles.
+  // We draw at 2× tile size centered so the artwork overlaps the half-tile
+  // margin on each side, hiding seams between adjacent belts (the same trick
+  // Factorio uses).
+  const drawSize = TILE_SIZE * 2
+  const offset = (TILE_SIZE - drawSize) / 2
   ctx.save()
   ctx.globalAlpha = alpha
   ctx.drawImage(
@@ -327,10 +351,10 @@ function drawBeltSheetFrame(
     row * BELT_SHEET_FRAME,
     BELT_SHEET_FRAME,
     BELT_SHEET_FRAME,
-    screenX,
-    screenY,
-    TILE_SIZE,
-    TILE_SIZE,
+    screenX + offset,
+    screenY + offset,
+    drawSize,
+    drawSize,
   )
   ctx.restore()
 }

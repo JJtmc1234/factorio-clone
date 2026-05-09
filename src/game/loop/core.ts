@@ -13,7 +13,6 @@ import { drawTerrain, drawGrid, drawObjects } from './terrain'
 import { drawPlayer } from './player'
 import { drawHoverAndGhost, drawMiningProgress } from './overlay'
 import {
-  drawBuildUi,
   drawBuildingPanel,
   drawCompactInventory,
   drawDebugButton,
@@ -135,14 +134,17 @@ function render() {
   restoreWorldTransform(ctx)
 
   drawCompactInventory(ctx)
-  drawBuildUi(ctx, canvas)
+
+  // Inventory underneath, entity panel on top — when both are open (the
+  // Factorio "open chest" / "open furnace" pattern) the player sees the
+  // inventory grid alongside the entity-specific panel. Drawing entity
+  // last keeps it visible regardless of inventory width.
+  if (isInventoryUiOpen()) {
+    drawInventoryMenu(ctx, canvas)
+  }
 
   if (state.openedBuilding) {
     drawBuildingPanel(ctx, canvas, state.openedBuilding)
-  }
-
-  if (isInventoryUiOpen()) {
-    drawInventoryMenu(ctx, canvas)
   }
 
   // Debug button is always on top so it's reachable even when menus are open.

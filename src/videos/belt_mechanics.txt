@@ -231,10 +231,12 @@ Multiple frames (100, 500, 745, 800, 1015) show the recipe tooltip layout:
 19. ACTION-VERB SUMMARY
 -----------------------
 - E = open inventory; click an entity to open its GUI.
-- Q = pipette the entity under cursor (set the cursor to a placeable of that
+- Q = pipette the entity under curso
+
+r (set the cursor to a placeable of that
   type); Q with the cursor full empties it.
 - R = rotate cursor (or hovered placed entity).
-- F = quick-fuel inserter/drill/furnace from the player's coal/wood.
+- F = pick up items from belt into player inventory
 - Z = drop the held cursor item (or distribute one from the slot under
   cursor — Factorio behavior).
 - ALT = toggle alt-mode visualization overlay.
