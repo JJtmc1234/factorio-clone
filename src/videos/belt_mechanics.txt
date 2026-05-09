@@ -1,0 +1,246 @@
+Belt Mechanics Reference (from src/videos/Screen Recording 2026-05-09 103514.mp4)
+=========================================================================
+
+Watched at 2 fps; ~115 frames sampled across the 9:35 recording.
+Below is what the video demonstrates, organized by mechanic.
+
+1. CURSOR / GHOST PREVIEW
+-------------------------
+- Holding a placeable item shows a green semi-transparent ghost on the tile under
+  the cursor.
+- The ghost shows the *exact* sprite + orientation that will be placed.
+- Belts in the ghost show their travel direction with arrows; the arrow rotates
+  with R.
+- Red tint on the ghost = invalid placement (off-map, blocking item, water,
+  occupied tile that can't be replaced).
+- Examples seen:
+  - frame 11: green left-facing belt ghost
+  - frame 15: green ghost rotated up
+  - frame 18: red ghost (player tried to place near edge of valid area)
+  - frame 165: red wooden chest ghost over a placed belt with floating label
+    "Transport belt is in the way" — confirms blocked-replace messaging.
+
+2. BELT DRAG-TO-PLACE
+---------------------
+- Hold left-click and drag → places a continuous belt line from the start tile
+  to the cursor tile.
+- The belt segment auto-orients along the drag axis (horizontal vs vertical),
+  flipping arrows as needed.
+- Releasing does *not* commit anything you didn't drag over.
+- When the drag passes a 90° corner, the corner tile renders as a curved-belt
+  sprite (sprite-sheet rows 4..11 of transport-belt.png).
+- Frames 30..50 show a complete rectangle drawn with one drag motion: corners
+  become curves, straight segments use the straight-belt sprite. Two clicks
+  built the whole loop.
+
+3. R = ROTATE BEFORE PLACE; ALSO ROTATES PLACED ENTITY; ALSO PIVOTS DRAG
+-----------------------------------------------------------------------
+- With a build selected, R cycles the cursor's facing direction
+  (up → right → down → left → up).
+- With no build selected and the cursor over a placed rotatable entity,
+  R rotates that entity in place.
+- IMPORTANT (per JJ): pressing R *while* a belt drag is in progress makes
+  the auto-laid belt line snap to the cursor's current height (or x), then
+  continue from there along the new axis — i.e. R pivots the drag direction
+  on-the-fly. The dragging rules (auto-curve at corners, no-overlap with
+  occupied tiles) still apply across the pivot. This is the "very fast belt
+  turn" the video repeatedly demonstrates: drag along one axis, tap R, drag
+  along the other axis to L-shape the segment in one motion.
+- Frame 11 vs 15 vs 17: the same green belt ghost shown facing left, then up,
+  then right as the user rotates.
+
+4. SMART-BELT REPLACE (DRAG OVER EXISTING)
+------------------------------------------
+- Dragging the belt cursor across belts that are already placed but are facing
+  the wrong way visibly highlights them in red as "will be replaced/rotated".
+- Once the drag passes through, the highlighted tiles re-orient to match the
+  drag direction without consuming additional inventory.
+- Frames 21..29: a placed yellow row gradually has 1, 2, 3 leftmost tiles
+  glow red as the user drags from left toward right; once the drag completes,
+  the arrows all match the drag direction.
+- Net effect: dragging "rewires" a path with one motion instead of forcing
+  the player to mine and re-place each tile.
+
+5. BELT THROUGHPUT + LANE COUNT
+-------------------------------
+- Final scene (frames 1130..1148) is a labelled display panel that reads
+  "8 items on the belt / 1 belt can hold 8 items". Confirms 8-item capacity per
+  belt tile (4 per lane × 2 lanes in vanilla Factorio; the clone consolidates
+  to a single 8-slot lane).
+- Yellow belt = 15 items/sec past a fixed point (covered in our recipes file);
+  the demo shows items spaced evenly along a saturated belt.
+- Frame 1100 also flashes a label "Transport belt (8)" while hovering an item
+  — this is the inventory-slot tooltip showing stack size 8.
+
+6. CURVED BELTS — VISUAL LAYOUT
+-------------------------------
+- Curved sprites are part of the same `transport-belt.png` sheet (rows 4..11
+  are the eight curve variants).
+- Curves are detected when ONE perpendicular side belt feeds into the tile
+  (frames 30..36 show that one perpendicular feeder is enough; frames 90..115
+  show that with both back and side feed present, the visual stays straight).
+- Items on a curve travel along a quarter-arc through the tile center, not
+  along the straight axis — visible as a gentle bend in the item path
+  (frames 34..50 with red items moving around a corner).
+
+7. BELT TIERS / COLORS
+----------------------
+- Frames 980..1010 lay out four parallel belts side-by-side: yellow (basic),
+  red (fast), blue (express), green (turbo / Space Age tier).
+- Each tier has an arrow tinted with the same color, and progressively faster
+  scrolling animation.
+
+8. SPLITTERS
+------------
+- 2-tile-wide entities placed across two parallel belts.
+- Outputs route to two output lanes 50/50 by default.
+- Have an internal "buffer" — items pause briefly inside.
+- The Crafting tooltip (frame 745, "Turbo splitter (Recipe)") describes them
+  as "Splits and/or joins transport belt's cargo 1:1".
+- In frames 270..330 the user demonstrates two pairs of belts converging into
+  one splitter, seeing items distributed evenly to both outputs.
+- Splitters can also have priority side and filter side (not exercised in the
+  video but visible in their tooltip stats).
+
+9. UNDERGROUND BELTS
+--------------------
+- Pair of entry/exit blocks (orange-tinted angled-arrow boxes) that let belts
+  cross gaps where you can't (or don't want to) put surface belt.
+- When holding an underground entry over a tile, a yellow placement bracket
+  + a green target bracket mark the matching exit candidate; an arrow drawn
+  between them previews where items will reappear (frame 205).
+- Maximum range is finite (Yellow underground belt vanilla = 5; Red = 7;
+  Blue = 9; "Express underground belt" tooltip from frame 500: "Max length 9").
+- If the player places an entry without an exit in range, the bracket pair
+  doesn't appear and items get stuck at the entry.
+- Frames 525..620 show progressively spaced entry/exit pairs at 1, 2, 3, ..., 9
+  tiles apart; only the in-range ones successfully transport items.
+- Underground tooltip text seen in frame 535: "Used to allow a belt to cross
+  entries or impassable terrain. Middle-click to clear shortcut."
+
+10. INSERTERS
+-------------
+- Single-tile entity with a swinging arm.
+- Picks up from the back tile, drops onto the front tile.
+- Long-handed inserter has range 2 (back tile and front tile both one farther).
+- Frame 800 shows the Long-handed Inserter recipe tooltip: rotation speed,
+  hand stack size, can-filter, energy stats.
+- The inserter sprite sheet has separate frames for the swing animation,
+  driven by the inserter's progress 0..1.
+- Burner inserter consumes coal/wood from its fuel slot (auto-loaded by the
+  player or by another inserter).
+
+11. INVENTORY + CRAFTING GUI (Factorio-style, two side-by-side panels)
+----------------------------------------------------------------------
+- Pressing E (or hovering an entity and clicking) opens a unified pair of
+  windows:
+  - Left: "Character" inventory grid with the player's stacks, count badges
+    bottom-right of each slot.
+  - Right: "Crafting" panel with:
+    - Tabs at top (4 visible icons): Logistics, Production, Intermediate
+      products, Combat. Click a tab to filter the recipe grid.
+    - Recipe grid below the tabs — small ~32×32 icons in a flat grid,
+      not row-with-text.
+    - Selected/hovered recipe is highlighted with an orange border.
+    - Quick-bar shortcuts at the bottom (4 colored slots).
+- Hovering a recipe shows a rich tooltip — see #14.
+- Frames 100, 120, 240, 360, 380, 500, 740, 780, 800, 1015 all show this
+  layout in different states.
+- Closing one panel keeps the other open (e.g. closing inventory leaves the
+  entity GUI visible).
+
+12. ENTITY GUI WITH INVENTORY
+-----------------------------
+- Clicking an opened chest shows a Wooden chest GUI:
+  - Title: "Wooden chest" at the top.
+  - Left half: Character inventory.
+  - Right half: "Normal" tab — chest contents (slot grid) with a trash slot
+    (X icon) at the bottom.
+- Frames 260, 265 show this layout; ctrl+click between the two transfers
+  whole stacks; click+drag transfers one at a time.
+
+13. ALT-MODE
+------------
+- Toggles a per-entity overlay with item-icon callouts.
+- On a chest: shows the held item icon floating above.
+- On a belt: shows the items more prominently (larger icons over the moving
+  belt surface) so contents are readable from far out.
+- Display panels and signs always show their icons in alt-mode by default
+  ("Always show in alt-mode" toggle in the panel editor — see frame 1040).
+
+14. RECIPE TOOLTIP (HOVER)
+--------------------------
+Multiple frames (100, 500, 745, 800, 1015) show the recipe tooltip layout:
+- Header: Item name + "(Recipe)" qualifier
+- "Base mod" / "Space Age" indicator pill
+- Ingredients section: list of (icon, name, amount) lines
+- Total raw section: (icon, name, amount) of the recursive raw materials
+- Crafting time with a stopwatch icon ("0.5 s Crafting time")
+- Made in: list of producer entities (assembling-machine, foundry, etc.)
+- Description paragraph (entity flavor + use)
+- Stats block:
+  - Stack size
+  - Rocket capacity
+  - Max length / Belt speed (for belts/undergrounds)
+  - Rotation speed / Hand stack size / Can filter (for inserters)
+  - Storage size (for chests)
+  - Crafting surface conditions (Pressure / Gravity)
+  - Energy block: "Consumes electricity", max consumption, min consumption
+
+15. DISPLAY PANEL (signage)
+---------------------------
+- Placeable entity, 1-tile, opens a multi-tab editor on click:
+  - "Always show in alt-mode" toggle
+  - "Show tag in chart" toggle
+  - "Icon" picker
+  - Free-text caption area (the user typed "8 items / belt", "15 items/s",
+    "8 items on the belt / 1 belt can hold 8 items" in different demos —
+    frames 1040, 1060, 1140).
+- Used for documenting / labelling factory sections.
+
+16. PICKUP NOTIFICATIONS
+------------------------
+- Mining or picking items shows floating labels near the player like
+  "+15 Iron chest (38)" / "+25 Wooden chest (1102)" that fade after ~2s.
+- Helps player track inventory deltas during fast deconstruction.
+
+17. PLACE-ON-OWN-TILE WITH ROTATION
+-----------------------------------
+- The video doesn't show this directly, but the bug report ("place rotated
+  building on top of same building without mining it") is supported by
+  Factorio's standard behavior: hovering a placed belt while holding a belt
+  with a different facing → the placement is treated as a rotate-in-place
+  rather than rejected.
+
+18. MISC OBSERVATIONS
+---------------------
+- Map view (frame 565) — a zoomed-out overview is available and shows water,
+  trees, and built belts as a chart.
+- Items on belts are 8x8-ish square sprites on the moving surface; the user
+  can see them clearly from normal zoom.
+- Sprite sheet observations:
+  - transport-belt.png: 16 frames × 20 directions, 128px per frame.
+  - burner-mining-drill: 4 directional sheets (N/E/S/W), 173×188 per frame,
+    32 frames in a 4×8 grid, run_mode = forward-then-backward, 0.5 fps tick
+    rate (= 30 fps real time).
+- Cursor brackets:
+  - Yellow brackets = entity is hoverable for inspection.
+  - White brackets = currently selected entity (clicked, GUI open).
+  - Green brackets = paired underground belt counterpart during placement.
+
+19. ACTION-VERB SUMMARY
+-----------------------
+- E = open inventory; click an entity to open its GUI.
+- Q = pipette the entity under cursor (set the cursor to a placeable of that
+  type); Q with the cursor full empties it.
+- R = rotate cursor (or hovered placed entity).
+- F = quick-fuel inserter/drill/furnace from the player's coal/wood.
+- Z = drop the held cursor item (or distribute one from the slot under
+  cursor — Factorio behavior).
+- ALT = toggle alt-mode visualization overlay.
+- CTRL+click = transfer whole stack between inventory/entity.
+- Mouse wheel over crafting list = scroll; over the world = zoom.
+
+This file should be enough of a spec for the clone to implement the same
+mechanics top-down. References below cite the frame numbers above where
+each behavior is most visible.

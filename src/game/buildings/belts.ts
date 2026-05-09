@@ -144,24 +144,47 @@ export function drawFallbackBeltSprite(
   ctx.restore()
 }
 
-// Detect whether this belt is a curve. A curve = exactly one perpendicular
-// belt feeds into the back tile. Returns the curve direction so item paths
-// can arc through the corner.
-export function getBeltCurve(belt: TransportBelt): 'left' | 'right' | null {
+// Detect a belt curve. A curve happens when one of the perpendicular SIDE
+// tiles holds a belt whose direction points INTO this belt (so its output
+// flows here). Returns the side the feeder is on (= input direction). Null
+// when the back-feed is straight-through or there's no perpendicular feeder.
+export function getBeltCurve(belt: TransportBelt): { inputDir: Direction } | null {
+  const perpDirs: Direction[] =
+    belt.direction === 'up' || belt.direction === 'down'
+      ? ['left', 'right']
+      : ['up', 'down']
+
+  let foundInput: Direction | null = null
+  let count = 0
+  for (const sideDir of perpDirs) {
+    const side = stepInDirection(belt.tileX, belt.tileY, sideDir)
+    const sideBuilding = getBuildingAtTile(side.x, side.y)
+    if (
+      sideBuilding?.type === 'transport_belt' &&
+      sideBuilding.direction === oppositeDirection(sideDir)
+    ) {
+      count += 1
+      foundInput = sideDir
+    }
+  }
+  if (count !== 1) return null
+
+  // If a back-belt is also feeding straight in, treat as straight (matches
+  // Factorio's belt rendering — straight wins when both inputs exist).
   const back = getBackTile(belt.tileX, belt.tileY, belt.direction)
   const backBuilding = getBuildingAtTile(back.x, back.y)
-  if (!backBuilding || backBuilding.type !== 'transport_belt') return null
-  if (backBuilding.direction === belt.direction) return null
+  if (backBuilding?.type === 'transport_belt' && backBuilding.direction === belt.direction) {
+    return null
+  }
 
-  // Perpendicular feeder: figure out left vs right turn relative to our heading.
-  const inDir = backBuilding.direction
-  const out = belt.direction
-  const turnsRight =
-    (out === 'right' && inDir === 'up') ||
-    (out === 'down' && inDir === 'right') ||
-    (out === 'left' && inDir === 'down') ||
-    (out === 'up' && inDir === 'left')
-  return turnsRight ? 'right' : 'left'
+  return { inputDir: foundInput! }
+}
+
+function stepInDirection(x: number, y: number, dir: Direction) {
+  if (dir === 'up') return { x, y: y - 1 }
+  if (dir === 'down') return { x, y: y + 1 }
+  if (dir === 'left') return { x: x - 1, y }
+  return { x: x + 1, y }
 }
 
 // Item position along a curved arc (when belt is a corner) vs. straight line.
@@ -170,30 +193,19 @@ function getBeltItemPos(
   progress: number,
 ): { x: number; y: number } {
   const curve = getBeltCurve(belt)
-  if (!curve) {
-    return getStraightItemPos(belt.direction, progress)
-  }
+  if (!curve) return getStraightItemPos(belt.direction, progress)
 
-  // Corner: arc from the entry side (back, perpendicular axis) sweeping into
-  // the exit direction. The pivot is the corner of the tile opposite the
-  // straight-through point.
-  const back = getBackTile(belt.tileX, belt.tileY, belt.direction)
-  // Vector from this belt's tile center to where items enter (back side)
-  const enterDir = oppositeDirection(belt.direction)
-  // Use the feeder's direction as the entry direction (item moves from
-  // feeder toward us when entering — same as `back -> belt`).
-  const inDir = (() => {
-    const b = getBuildingAtTile(back.x, back.y)
-    return b && b.type === 'transport_belt' ? b.direction : enterDir
-  })()
-  const start = unitVec(oppositeDirection(inDir))
+  // Sweep from the input side midpoint to the output side midpoint along
+  // an arc through the tile center. Pick the shorter path so 90° curves
+  // don't fly the long way around.
+  const start = unitVec(curve.inputDir)
   const end = unitVec(belt.direction)
-  // Quarter-circle arc through tile center.
-  // progress=0 at the back-entry midpoint; progress=1 at the front-exit midpoint.
-  const t = progress
-  // Spherical-ish lerp on a quarter arc — quick and cheap.
-  const angle = Math.atan2(start.y, start.x) * (1 - t) + Math.atan2(end.y, end.x) * t
-  const r = 0.5 * TILE_SIZE
+  let a0 = Math.atan2(start.y, start.x)
+  let a1 = Math.atan2(end.y, end.x)
+  if (a1 - a0 > Math.PI) a1 -= 2 * Math.PI
+  else if (a0 - a1 > Math.PI) a0 -= 2 * Math.PI
+  const angle = a0 * (1 - progress) + a1 * progress
+  const r = TILE_SIZE / 2
   return {
     x: TILE_SIZE / 2 + Math.cos(angle) * r,
     y: TILE_SIZE / 2 + Math.sin(angle) * r,
@@ -234,11 +246,38 @@ export function drawBeltItems(
   }
 }
 
-function getBeltRotation(direction: Direction) {
-  if (direction === 'right') return 0
-  if (direction === 'down') return Math.PI / 2
-  if (direction === 'left') return Math.PI
-  return -Math.PI / 2
+// Belt sprite sheet (transport_belt_sheet.png from the Factorio install) is
+// 16 columns × 20 rows of 128px frames. Rows index by direction-or-curve
+// per the `basic_belt_animation_set` lua comment in transport-belts.lua:
+//   0=east 1=west 2=north 3=south
+//   4=east_to_north 5=north_to_east
+//   6=west_to_north 7=north_to_west
+//   8=south_to_east 9=east_to_south
+//   10=south_to_west 11=west_to_south
+//   12-19 = belt-reader connection sprites (unused here)
+const BELT_SHEET_FRAME = 128
+const BELT_SHEET_COLS = 16
+const BELT_FRAME_FPS = 30 // ≈ one full cycle per tile of belt motion
+
+function getBeltSpriteRow(belt: TransportBelt): number {
+  const curve = getBeltCurve(belt)
+  if (!curve) {
+    if (belt.direction === 'right') return 0
+    if (belt.direction === 'left') return 1
+    if (belt.direction === 'up') return 2
+    return 3 // down
+  }
+  const inp = curve.inputDir
+  const out = belt.direction
+  if (inp === 'right' && out === 'up') return 4
+  if (inp === 'up' && out === 'right') return 5
+  if (inp === 'left' && out === 'up') return 6
+  if (inp === 'up' && out === 'left') return 7
+  if (inp === 'down' && out === 'right') return 8
+  if (inp === 'right' && out === 'down') return 9
+  if (inp === 'down' && out === 'left') return 10
+  if (inp === 'left' && out === 'down') return 11
+  return 0
 }
 
 export function drawBeltSprite(
@@ -248,15 +287,20 @@ export function drawBeltSprite(
   belt: TransportBelt,
   alpha = 1,
 ) {
-  const sprite = getGameSprite('transport_belt')
-  if (isSpriteReady(sprite)) {
-    // Belt scrolling animation: shift the sprite source along its travel
-    // axis at the same speed items move (1.875 tiles/sec). The sprite is
-    // square so we pan source-x and wrap.
-    const phase = ((performance.now() / 1000) * BELT_SPEED) % 1
-    drawScrollingBelt(ctx, sprite, screenX, screenY, belt.direction, phase, alpha)
+  const sheet = getGameSprite('transport_belt_sheet')
+  if (isSpriteReady(sheet)) {
+    drawBeltSheetFrame(ctx, sheet, screenX, screenY, belt, alpha)
   } else {
-    drawFallbackBeltSprite(ctx, screenX, screenY, belt, alpha)
+    // Fallback: draw the wiki single-frame sprite without animation.
+    const single = getGameSprite('transport_belt')
+    if (isSpriteReady(single)) {
+      ctx.save()
+      ctx.globalAlpha = alpha
+      ctx.drawImage(single, screenX, screenY, TILE_SIZE, TILE_SIZE)
+      ctx.restore()
+    } else {
+      drawFallbackBeltSprite(ctx, screenX, screenY, belt, alpha)
+    }
   }
 
   if (alpha >= 1) {
@@ -264,50 +308,29 @@ export function drawBeltSprite(
   }
 }
 
-function drawScrollingBelt(
+function drawBeltSheetFrame(
   ctx: CanvasRenderingContext2D,
-  sprite: HTMLImageElement,
+  sheet: HTMLImageElement,
   screenX: number,
   screenY: number,
-  direction: Direction,
-  phase: number,
+  belt: TransportBelt,
   alpha: number,
 ) {
-  // Rotate the canvas so we can pan source-x in a single axis. Positive
-  // pan moves the texture forward along the belt.
-  const rotation = getBeltRotation(direction)
+  const row = getBeltSpriteRow(belt)
+  const frame =
+    Math.floor((performance.now() / 1000) * BELT_FRAME_FPS) % BELT_SHEET_COLS
   ctx.save()
   ctx.globalAlpha = alpha
-  ctx.translate(screenX + TILE_SIZE / 2, screenY + TILE_SIZE / 2)
-  ctx.rotate(rotation)
-
-  const sw = sprite.naturalWidth
-  const sh = sprite.naturalHeight
-  const panSrc = phase * sw
-  // Two passes so the wrap is seamless.
   ctx.drawImage(
-    sprite,
-    panSrc,
-    0,
-    sw - panSrc,
-    sh,
-    -TILE_SIZE / 2,
-    -TILE_SIZE / 2,
-    TILE_SIZE * (1 - phase),
+    sheet,
+    frame * BELT_SHEET_FRAME,
+    row * BELT_SHEET_FRAME,
+    BELT_SHEET_FRAME,
+    BELT_SHEET_FRAME,
+    screenX,
+    screenY,
+    TILE_SIZE,
     TILE_SIZE,
   )
-  if (panSrc > 0) {
-    ctx.drawImage(
-      sprite,
-      0,
-      0,
-      panSrc,
-      sh,
-      -TILE_SIZE / 2 + TILE_SIZE * (1 - phase),
-      -TILE_SIZE / 2,
-      TILE_SIZE * phase,
-      TILE_SIZE,
-    )
-  }
   ctx.restore()
 }

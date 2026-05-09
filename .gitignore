@@ -25,3 +25,7 @@ dist-ssr
 
 # Personal Claude Code allowlist (shared one is .claude/settings.json)
 .claude/settings.local.json
+
+# Reference video + extracted frames (huge, kept locally only)
+src/videos/*.mp4
+src/videos/frames/

@@ -194,15 +194,31 @@ export function createBurnerDrill(tileX: number, tileY: number, direction: Direc
   }
 }
 
-// The wiki Burner_mining_drill.png (and the matching animation gif) is drawn
-// south-facing: the conveyor output sits at the bottom of the sprite. So
-// drill.direction='down' should render with zero rotation, and the other
-// directions rotate from there (canvas rotate is CW for positive angles).
+// Kept for backwards-compat — used when the directional sheets (burner_drill_n
+// /e/s/w from the Factorio install) aren't available and we fall back to the
+// single-frame wiki sprite. With the directional sheets each sprite already
+// faces the right way, so no rotation is applied in that path.
 export function getDrillRotation(direction: Direction) {
   if (direction === 'down') return 0
   if (direction === 'left') return Math.PI / 2
   if (direction === 'up') return Math.PI
   return -Math.PI / 2 // 'right'
+}
+
+// Drill animation matches the lua: 32 frames in a 4-col × 8-row grid,
+// run_mode = forward-then-backward at animation_speed 0.5 frames/tick
+// (= 30 frames/sec at the default 60 ticks/sec).
+const DRILL_FRAME_W = 173
+const DRILL_FRAME_H = 188
+const DRILL_COLS = 4
+const DRILL_FRAMES = 32
+const DRILL_FPS = 30
+
+function getDrillSheetKey(direction: Direction) {
+  if (direction === 'up') return 'burner_drill_n'
+  if (direction === 'right') return 'burner_drill_e'
+  if (direction === 'down') return 'burner_drill_s'
+  return 'burner_drill_w'
 }
 
 export function drawBurnerDrillSprite(
@@ -212,25 +228,61 @@ export function drawBurnerDrillSprite(
   drill: BurnerDrill,
   alpha = 1,
 ) {
-  const sprite = getGameSprite('burner_drill')
   const size = TILE_SIZE * 2
 
-  if (sprite && sprite.complete && sprite.naturalWidth > 0) {
-    // Working pulse: a tiny periodic scale wiggle when the drill is fueled
-    // and actively progressing. The full 64x64 area is reserved either way
-    // so neighboring tiles don't redraw.
+  // Preferred path: 4 directional sprite sheets from the Factorio install.
+  const sheet = getGameSprite(getDrillSheetKey(drill.direction))
+  if (sheet && sheet.complete && sheet.naturalWidth > 0) {
     const isWorking = drill.fuel > 0 && drill.progress > 0
-    const pulse = isWorking ? 1 + Math.sin(performance.now() / 80) * 0.025 : 1
-    const drawSize = size * pulse
-    const offset = (size - drawSize) / 2
+    let frameIdx = 0
+    if (isWorking) {
+      // Forward-then-backward ping-pong: 0..31..0 in (FRAMES-1)*2 steps.
+      const period = (DRILL_FRAMES - 1) * 2
+      const t = Math.floor((performance.now() / 1000) * DRILL_FPS) % period
+      frameIdx = t < DRILL_FRAMES ? t : period - t
+    }
+    const col = frameIdx % DRILL_COLS
+    const row = Math.floor(frameIdx / DRILL_COLS)
 
+    ctx.save()
+    ctx.globalAlpha = alpha
+    ctx.drawImage(
+      sheet,
+      col * DRILL_FRAME_W,
+      row * DRILL_FRAME_H,
+      DRILL_FRAME_W,
+      DRILL_FRAME_H,
+      screenX,
+      screenY,
+      size,
+      size,
+    )
+
+    // Fuel bar overlay (kept on top so the player can see fuel level).
+    ctx.fillStyle = 'black'
+    ctx.fillRect(screenX + 8, screenY + size - 10, size - 16, 6)
+    const fuelRatio = Math.min(drill.fuel / 12, 1)
+    ctx.fillStyle = fuelRatio > 0 ? '#ff9800' : '#555'
+    ctx.fillRect(screenX + 8, screenY + size - 10, (size - 16) * fuelRatio, 6)
+    if (drill.outputCount > 0) {
+      ctx.fillStyle = getItemDrawColor(drill.outputItem)
+      ctx.fillRect(screenX + 12, screenY + size - 24, 12, 8)
+    }
+    ctx.restore()
+    return
+  }
+
+  // Fallback: single-frame wiki sprite with rotation, then canvas fallback.
+  const sprite = getGameSprite('burner_drill')
+
+  if (sprite && sprite.complete && sprite.naturalWidth > 0) {
     drawSpriteRotated(
       ctx,
       sprite,
-      screenX + offset,
-      screenY + offset,
-      drawSize,
-      drawSize,
+      screenX,
+      screenY,
+      size,
+      size,
       getDrillRotation(drill.direction),
       alpha,
     )
