@@ -122,4 +122,22 @@ export const generatedRecipes: Record<string, Recipe> = {
     output: {"transport-belt":2},
     surface: 'any',
   },
+  'firearm-magazine': {
+    name: 'firearm-magazine',
+    time: 1,
+    category: 'crafting',
+    madeIn: ["assembler","player"],
+    ingredients: {"iron-plate":4},
+    output: {"firearm-magazine":1},
+    surface: 'any',
+  },
+  'light-armor': {
+    name: 'light-armor',
+    time: 3,
+    category: 'crafting',
+    madeIn: ["assembler","player"],
+    ingredients: {"iron-plate":40},
+    output: {"light-armor":1},
+    surface: 'any',
+  },
 }
