@@ -1,0 +1,130 @@
+[
+  {
+    "stage": "probe",
+    "base": "https://inv.us.projectsegfau.lt",
+    "error": "URLError(OSError(101, 'Network is unreachable'))"
+  },
+  {
+    "stage": "probe",
+    "base": "https://invidious.private.coffee",
+    "error": "<HTTPError 502: 'Bad Gateway'>"
+  },
+  {
+    "stage": "probe",
+    "base": "https://invidious.privacyredirect.com",
+    "error": "URLError(TimeoutError('timed out'))"
+  },
+  {
+    "stage": "probe",
+    "base": "https://iv.ggtyler.dev",
+    "error": "URLError(TimeoutError('timed out'))"
+  },
+  {
+    "stage": "search",
+    "base": "https://inv.nadeko.net",
+    "query": "Factorio Space Exploration 0.7 first cargo rocket",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://yewtu.be",
+    "query": "Factorio Space Exploration 0.7 first cargo rocket",
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  },
+  {
+    "stage": "search",
+    "base": "https://invidious.nerdvpn.de",
+    "query": "Factorio Space Exploration 0.7 first cargo rocket",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://inv.nadeko.net",
+    "query": "Factorio Space Exploration 0.7 rocket science",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://yewtu.be",
+    "query": "Factorio Space Exploration 0.7 rocket science",
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  },
+  {
+    "stage": "search",
+    "base": "https://invidious.nerdvpn.de",
+    "query": "Factorio Space Exploration 0.7 rocket science",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://inv.nadeko.net",
+    "query": "Factorio SE 0.7 cargo rocket",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://yewtu.be",
+    "query": "Factorio SE 0.7 cargo rocket",
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  },
+  {
+    "stage": "search",
+    "base": "https://invidious.nerdvpn.de",
+    "query": "Factorio SE 0.7 cargo rocket",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://inv.nadeko.net",
+    "query": "Factorio Space Exploration 0.7 save game",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://yewtu.be",
+    "query": "Factorio Space Exploration 0.7 save game",
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  },
+  {
+    "stage": "search",
+    "base": "https://invidious.nerdvpn.de",
+    "query": "Factorio Space Exploration 0.7 save game",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://inv.nadeko.net",
+    "query": "Factorio Space Exploration 0.7 playthrough",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "search",
+    "base": "https://yewtu.be",
+    "query": "Factorio Space Exploration 0.7 playthrough",
+    "error": "JSONDecodeError('Expecting value: line 1 column 1 (char 0)')"
+  },
+  {
+    "stage": "search",
+    "base": "https://invidious.nerdvpn.de",
+    "query": "Factorio Space Exploration 0.7 playthrough",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  },
+  {
+    "stage": "video",
+    "base": "https://inv.nadeko.net",
+    "id": "dDyBD4oE5Qg",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "video",
+    "base": "https://yewtu.be",
+    "id": "dDyBD4oE5Qg",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "stage": "video",
+    "base": "https://invidious.nerdvpn.de",
+    "id": "dDyBD4oE5Qg",
+    "error": "<HTTPError 401: 'Unauthorized'>"
+  }
+]
