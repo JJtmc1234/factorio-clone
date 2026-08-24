@@ -1,0 +1,161 @@
+name: Inspect public Space Exploration servers
+
+on:
+  push:
+    branches:
+      - tmp-se-server-browser-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-server-browser-result-20260824
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crawl server browser and probe mp-connect
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work
+          mkdir -p published work
+          python3 -m pip install --upgrade requests beautifulsoup4
+
+          cat > /tmp/crawl.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import json
+          import re
+          import time
+          from pathlib import Path
+          from urllib.parse import urljoin
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          BASE = "https://browser.lambs.cafe/"
+          session = requests.Session()
+          session.headers.update({"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36"})
+
+          root = session.get(BASE, timeout=120)
+          Path("published/root.html").write_text(root.text, errors="replace")
+          soup = BeautifulSoup(root.text, "html.parser")
+          links = sorted({urljoin(BASE, a.get("href")) for a in soup.find_all("a") if a.get("href") and re.search(r"/server/\d+", a.get("href"))})
+          Path("published/server-links.txt").write_text("\n".join(links))
+
+          def fetch(url: str) -> dict:
+              rec = {"url": url}
+              try:
+                  response = requests.get(url, headers=session.headers, timeout=120)
+                  rec["status"] = response.status_code
+                  rec["html"] = response.text
+                  page = BeautifulSoup(response.text, "html.parser")
+                  rec["title"] = page.title.get_text(" ", strip=True) if page.title else None
+                  rec["text"] = page.get_text("\n", strip=True)
+                  rec["links"] = [urljoin(url, a.get("href")) for a in page.find_all("a") if a.get("href")]
+                  rec["space_exploration"] = bool(re.search(r"space[- ]exploration|\bK2SE\b|\bSE\s*0\.7\b", response.text, re.I))
+                  rec["factorio_versions"] = sorted(set(re.findall(r"\b(?:1|2)\.\d+\.\d+\b", rec["text"])))
+                  rec["hours"] = [float(x) for x in re.findall(r"(?:⏱️|playtime|game time|time)\s*([0-9]+(?:\.[0-9]+)?)\s*h", rec["text"], re.I)]
+                  rec["addresses"] = sorted(set(re.findall(r"\b(?:\d{1,3}\.){3}\d{1,3}:\d{2,5}\b", rec["text"] + "\n" + "\n".join(rec["links"]))))
+                  rec["discords"] = sorted(set(re.findall(r"https?://(?:www\.)?discord(?:\.gg|\.com/invite)/[^\s<>'\"]+", response.text, re.I)))
+                  scripts = []
+                  for script in page.find_all("script"):
+                      if script.string and len(script.string) < 2_000_000:
+                          scripts.append(script.string)
+                  rec["script_text"] = "\n".join(scripts)
+              except Exception as exc:
+                  rec["error"] = repr(exc)
+              return rec
+
+          records = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as pool:
+              futures = [pool.submit(fetch, url) for url in links]
+              for idx, future in enumerate(concurrent.futures.as_completed(futures), 1):
+                  records.append(future.result())
+                  if idx % 50 == 0:
+                      print(f"fetched {idx}/{len(links)}", flush=True)
+                      time.sleep(0.5)
+
+          # Save compact records rather than every full HTML page.
+          compact = []
+          for rec in records:
+              compact.append({key: value for key, value in rec.items() if key not in {"html", "script_text"}})
+          Path("published/all-servers.json").write_text(json.dumps(compact, indent=2, ensure_ascii=False))
+
+          candidates = []
+          for rec in records:
+              haystack = (rec.get("html") or "") + "\n" + (rec.get("text") or "") + "\n" + (rec.get("script_text") or "")
+              if re.search(r"space[- ]exploration|\bK2SE\b|\bSE\s*0\.7\b|se%-space", haystack, re.I):
+                  candidate = {key: value for key, value in rec.items() if key not in {"html", "script_text"}}
+                  candidate["matching_lines"] = [line for line in (rec.get("text") or "").splitlines() if re.search(r"space|exploration|K2SE|0\.7|mod", line, re.I)][:120]
+                  candidate["matching_html_fragments"] = re.findall(r".{0,180}(?:space[- ]exploration|K2SE|SE\s*0\.7).{0,300}", haystack, re.I | re.S)[:30]
+                  candidates.append(candidate)
+          Path("published/se-candidates.json").write_text(json.dumps(candidates, indent=2, ensure_ascii=False))
+
+          lines = [
+              f"root_status={root.status_code}",
+              f"server_links={len(links)}",
+              f"server_records={len(records)}",
+              f"se_candidates={len(candidates)}",
+              "",
+          ]
+          for candidate in candidates:
+              lines.append(f"URL: {candidate.get('url')}")
+              lines.append(f"TITLE: {candidate.get('title')}")
+              lines.append(f"VERSIONS: {candidate.get('factorio_versions')}")
+              lines.append(f"ADDRESSES: {candidate.get('addresses')}")
+              lines.append("MATCHING LINES:")
+              lines.extend(f"  {line}" for line in candidate.get("matching_lines", [])[:60])
+              lines.append("")
+          Path("published/SUMMARY.txt").write_text("\n".join(lines) + "\n")
+          print("\n".join(lines[:120]))
+          PY
+
+          python3 /tmp/crawl.py | tee published/crawl-console.txt
+
+          for VERSION in 2.0.77 2.1.14; do
+            mkdir -p "work/$VERSION"
+            curl --fail --location --retry 5 --retry-all-errors \
+              "https://factorio.com/get-download/$VERSION/headless/linux64" \
+              -o "work/$VERSION/factorio.tar.xz"
+            tar -xJf "work/$VERSION/factorio.tar.xz" -C "work/$VERSION"
+            "work/$VERSION/factorio/bin/x64/factorio" --help > "published/help-$VERSION.txt" 2>&1 || true
+            set +e
+            timeout 20s "work/$VERSION/factorio/bin/x64/factorio" \
+              --mp-connect 127.0.0.1:9 \
+              > "published/mp-connect-$VERSION.log" 2>&1
+            echo "$?" > "published/mp-connect-$VERSION.exit"
+            set -e
+          done
+
+          {
+            echo
+            echo 'MP-CONNECT HELP LINES:'
+            grep -Hi -C2 'mp-connect\|connect' published/help-*.txt || true
+            echo
+            echo 'MP-CONNECT PROBE:'
+            for f in published/mp-connect-*.log; do echo "### $f"; cat "$f"; done
+          } >> published/SUMMARY.txt
+
+      - name: Publish result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-server-browser
+          mkdir -p tmp-se-server-browser
+          cp -a published/. tmp-se-server-browser/
+          git add -f tmp-se-server-browser
+          git commit -m "Inspect public Space Exploration servers"
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
