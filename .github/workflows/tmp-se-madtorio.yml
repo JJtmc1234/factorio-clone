@@ -1,0 +1,102 @@
+name: Inspect Madtorio public saves
+
+on:
+  push:
+    branches:
+      - tmp-se-madtorio-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-madtorio-result-20260824
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and parse saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work
+          mkdir -p published/native work
+          cat > /tmp/inspect.py <<'PY'
+          import json, pathlib, struct, subprocess, urllib.request, zipfile
+          P=pathlib.Path
+          urls={
+            '2026-02-03':'https://madtorio.com/api/downloads/7b63e982-63c6-4735-904a-3a4c9a3a26ab.zip',
+            '2026-01-20':'https://madtorio.com/api/downloads/d7140581-61dc-4a4e-a697-e69208efe2b3.zip',
+            '2025-11-24':'https://madtorio.com/api/downloads/be037e5f-6a36-429a-83ea-bbf6bee73d1a.zip',
+            'end-game-3':'https://madtorio.com/api/downloads/61314b1a-fb3e-46a3-9d1a-fb036021f140.zip',
+            'end-game-2':'https://madtorio.com/api/downloads/4f86aa21-42d0-49f9-8fd1-6f962c344bac.zip',
+            'end-game':'https://madtorio.com/api/downloads/0497fe9a-bd61-42fd-a911-9b168129613e.zip',
+          }
+          class R:
+            def __init__(self,d): self.d=d; self.o=0
+            def u8(self): v=self.d[self.o]; self.o+=1; return v
+            def u16(self): v=struct.unpack_from('<H',self.d,self.o)[0]; self.o+=2; return v
+            def u32(self): v=struct.unpack_from('<I',self.d,self.o)[0]; self.o+=4; return v
+            def ver(self): return self.u16(),self.u16(),self.u16(),self.u16()
+            def opt(self,b,fv):
+              if fv>(0,14,14,0):
+                v=self.u8()
+                if v!=255:return v
+              return self.u16() if b==16 else self.u32()
+            def text(self,fv):
+              n=self.opt(32,fv); v=self.d[self.o:self.o+n]; self.o+=n; return v.decode('utf-8','replace')
+            def ver48(self,fv): return self.opt(16,fv),self.opt(16,fv),self.opt(16,fv)
+          def parse(path):
+            with zipfile.ZipFile(path) as z:
+              names=z.namelist(); n=next((x for x in names if x.endswith('/level-init.dat') or x=='level-init.dat'),None)
+              if not n: raise ValueError('no level-init.dat')
+              d=z.read(n)
+            r=R(d); fv=r.ver(); r.u8(); save=r.text(fv); campaign=r.text(fv); base=r.text(fv)
+            r.u8(); r.u8(); r.u8(); r.text(fv); r.u8(); r.u8(); r.u8(); r.u8(); r.ver48(fv); r.u32() if fv[0]>=2 else r.u16(); r.u8()
+            if fv[0]>=2:r.o+=4
+            mods={}
+            for _ in range(r.opt(32,fv)):
+              name=r.text(fv); version='.'.join(map(str,r.ver48(fv))); r.u32(); mods[name]=version
+            return {'factorio':'.'.join(map(str,fv)),'save_name':save,'campaign':campaign,'base_mod':base,'se_version':mods.get('space-exploration'),'mods':mods}
+          records=[]
+          for label,url in urls.items():
+            p=P('work')/(label+'.zip'); rec={'label':label,'url':url}
+            try:
+              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+              with urllib.request.urlopen(req,timeout=1200) as resp,p.open('wb') as out:
+                while True:
+                  b=resp.read(1024*1024)
+                  if not b: break
+                  out.write(b)
+              rec['bytes']=p.stat().st_size; rec['header']=parse(p)
+              if (rec['header'].get('se_version') or '').startswith('0.7.'):
+                out=P('published/native')/label; out.mkdir(parents=True,exist_ok=True)
+                subprocess.run(['split','-b','45M','-d','-a','3',str(p),str(out/'save.zip.part')],check=True)
+                (out/'README.txt').write_text('cat save.zip.part* > save.zip\n')
+                (out/'source.json').write_text(json.dumps(rec,indent=2))
+            except Exception as e: rec['error']=repr(e)
+            records.append(rec); p.unlink(missing_ok=True)
+          P('published/results.json').write_text(json.dumps(records,indent=2))
+          lines=[]
+          for r in records:
+            h=r.get('header') or {}; lines += [r['label'],f"  bytes={r.get('bytes')}",f"  Factorio={h.get('factorio')}",f"  SE={h.get('se_version')}",f"  mods={len(h.get('mods') or {})}",f"  error={r.get('error')}"]
+          P('published/SUMMARY.txt').write_text('\n'.join(lines)+'\n'); print('\n'.join(lines))
+          PY
+          python3 /tmp/inspect.py | tee published/console.txt
+      - name: Publish
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-madtorio
+          mkdir -p tmp-se-madtorio
+          cp -a published/. tmp-se-madtorio/
+          git add -f tmp-se-madtorio
+          git commit -m 'Inspect Madtorio public saves'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
