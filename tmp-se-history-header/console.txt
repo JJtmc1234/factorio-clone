@@ -1,0 +1,24 @@
+[1/17] cloning neptunebachelor/factorio_save
+[2/17] cloning j4yu22/factorio-save
+[3/17] cloning Sebastian-Schuchmann/factorio-saves
+[4/17] cloning NotAFreak/.factorio
+[5/17] cloning abundanciaModesta/factorio_save
+[6/17] cloning Gurczi/factorioSavy
+[7/17] cloning ianic-dev/factorio-saves
+[8/17] cloning luis-navarro1/factorio_saves
+[9/17] cloning Frogo-o/factorio-saves
+[10/17] cloning syedimran23/factorio-multiplayer-saves
+[11/17] cloning lilly-lizard/factorio-saves
+[12/17] cloning ChristineZhiMei/FACTORIO_SAVES
+[13/17] cloning yoihai22/factorio-save
+[14/17] cloning lordongx/factorio_saves_2025
+[15/17] cloning hakoonet/factorio-saves
+[16/17] cloning sarkadoc/factorio
+[17/17] cloning galenemery/factorio_saves
+{
+  "repositories": 17,
+  "records": 419,
+  "native_se07_records": 0,
+  "downloaded_bytes": 4945297981,
+  "errors": 3
+}

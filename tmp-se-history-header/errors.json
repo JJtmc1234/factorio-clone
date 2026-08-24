@@ -1,0 +1,17 @@
+[
+  {
+    "repo": "lordongx/factorio_saves_2025",
+    "stage": "clone",
+    "error": "RuntimeError(\"command failed ['git', 'clone', '--filter=blob:none', '--no-checkout', '--quiet', 'https://github.com/lordongx/factorio_saves_2025.git', 'work/lordongx__factorio_saves_2025']: fatal: could not read Username for 'https://github.com': terminal prompts disabled\\n\")"
+  },
+  {
+    "repo": "hakoonet/factorio-saves",
+    "stage": "clone",
+    "error": "RuntimeError(\"command failed ['git', 'clone', '--filter=blob:none', '--no-checkout', '--quiet', 'https://github.com/hakoonet/factorio-saves.git', 'work/hakoonet__factorio-saves']: fatal: could not read Username for 'https://github.com': terminal prompts disabled\\n\")"
+  },
+  {
+    "repo": "sarkadoc/factorio",
+    "stage": "clone",
+    "error": "RuntimeError(\"command failed ['git', 'clone', '--filter=blob:none', '--no-checkout', '--quiet', 'https://github.com/sarkadoc/factorio.git', 'work/sarkadoc__factorio']: fatal: could not read Username for 'https://github.com': terminal prompts disabled\\n\")"
+  }
+]
