@@ -1,0 +1,6 @@
+repositories: 73
+zip_blobs: 405
+selected_for_download: 350
+downloaded_bytes: 4126777465
+valid_factorio_saves: 6
+native_se07_saves: 0

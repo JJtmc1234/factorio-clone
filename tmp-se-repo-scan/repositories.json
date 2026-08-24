@@ -1,0 +1,586 @@
+[
+  {
+    "full_name": "Tricade/factorio-server-manager",
+    "default_branch": "main",
+    "size_kb": 18037,
+    "description": "Self-hosted Factorio server control with profiles, saves, mods, exact versions, checkpoints and resource-aware factory maps",
+    "pushed_at": "2026-08-23T09:01:11Z",
+    "html_url": "https://github.com/Tricade/factorio-server-manager"
+  },
+  {
+    "full_name": "rephyr/save-timelapse",
+    "default_branch": "main",
+    "size_kb": 42408,
+    "description": "Interactive Factorio timelapse tool that records factories live or reconstructs them from existing saves. Explore your factory in an interactive replay or export it as a video, with no extra tools required. Built with Rust and Lua, optimized for massive factories with compact binary formats, multicore loading, and high-performance rendering.",
+    "pushed_at": "2026-08-17T11:15:46Z",
+    "html_url": "https://github.com/rephyr/save-timelapse"
+  },
+  {
+    "full_name": "KORTY-DEV/alina-ai-teammate",
+    "default_branch": "main",
+    "size_kb": 582,
+    "description": "Autonomous physical AI teammate for Factorio 2.1 \u2014 builds real mod-aware factories, joins existing saves or new games, verifies results, and respects player intent.",
+    "pushed_at": "2026-08-11T20:53:11Z",
+    "html_url": "https://github.com/KORTY-DEV/alina-ai-teammate"
+  },
+  {
+    "full_name": "zr0428/ForGavin",
+    "default_branch": "main",
+    "size_kb": 276,
+    "description": "ForGavin (\u6478\u9c7c) - Factorio QOL mod: all functions toggleable, save time and improve experience",
+    "pushed_at": "2026-08-11T18:11:08Z",
+    "html_url": "https://github.com/zr0428/ForGavin"
+  },
+  {
+    "full_name": "sacred0903-pixel/factorio-save",
+    "default_branch": "main",
+    "size_kb": 0,
+    "description": null,
+    "pushed_at": "2026-08-07T16:19:15Z",
+    "html_url": "https://github.com/sacred0903-pixel/factorio-save"
+  },
+  {
+    "full_name": "neptunebachelor/factorio_save",
+    "default_branch": "main",
+    "size_kb": 1392780,
+    "description": null,
+    "pushed_at": "2026-08-03T15:19:32Z",
+    "html_url": "https://github.com/neptunebachelor/factorio_save"
+  },
+  {
+    "full_name": "Sebastian-Schuchmann/factorio-saves",
+    "default_branch": "main",
+    "size_kb": 30125,
+    "description": null,
+    "pushed_at": "2026-07-26T08:19:23Z",
+    "html_url": "https://github.com/Sebastian-Schuchmann/factorio-saves"
+  },
+  {
+    "full_name": "Worton1720/fz-api",
+    "default_branch": "main",
+    "size_kb": 59,
+    "description": "Unofficial TypeScript/JavaScript client for the factorio.zone API \u2014 sessions/accounts, saves, mods, regions, server start/stop, live console, IP address.",
+    "pushed_at": "2026-07-22T20:14:35Z",
+    "html_url": "https://github.com/Worton1720/fz-api"
+  },
+  {
+    "full_name": "coolshrimp/Factorio-Headless-Server-Tool",
+    "default_branch": "main",
+    "size_kb": 1325,
+    "description": "Factorio Headless Server Tool to manage saves and start/stop your server.",
+    "pushed_at": "2026-07-21T17:42:23Z",
+    "html_url": "https://github.com/coolshrimp/Factorio-Headless-Server-Tool"
+  },
+  {
+    "full_name": "leoric/factorio-quicksave",
+    "default_branch": "main",
+    "size_kb": 25,
+    "description": "This mod adds a quicksave-key (F6 by default) which saves the game to '_autosave-quick<nr>'. By default the number rotates between 1 and 3 similar to the built-in autosave-feature. This can be changed in the Mod settings. It is also possible to set a name for the save there. This is most useful, when the option \"Use different mod settings per sa...",
+    "pushed_at": "2026-07-19T11:11:03Z",
+    "html_url": "https://github.com/leoric/factorio-quicksave"
+  },
+  {
+    "full_name": "czhovo/factorio-save-3d-viewer",
+    "default_branch": "main",
+    "size_kb": 63,
+    "description": "Export Factorio 2.0 saves to interactive browser-based 3D maps",
+    "pushed_at": "2026-07-15T16:49:38Z",
+    "html_url": "https://github.com/czhovo/factorio-save-3d-viewer"
+  },
+  {
+    "full_name": "ZwerOxotnik/factorio-skip-hours",
+    "default_branch": "main",
+    "size_kb": 63,
+    "description": "Adds more start items to save your time, patience etc",
+    "pushed_at": "2026-07-02T21:56:02Z",
+    "html_url": "https://github.com/ZwerOxotnik/factorio-skip-hours"
+  },
+  {
+    "full_name": "dazzo31/factorio-achievement-fix",
+    "default_branch": "main",
+    "size_kb": 23,
+    "description": "Re-enable achievements in Factorio 2.0.x saves after console commands - patches the command-used flag in the save file",
+    "pushed_at": "2026-07-02T19:07:40Z",
+    "html_url": "https://github.com/dazzo31/factorio-achievement-fix"
+  },
+  {
+    "full_name": "emlun/factorio-replay-timelapse",
+    "default_branch": "main",
+    "size_kb": 438,
+    "description": "Make timelapses from Factorio replay saves!",
+    "pushed_at": "2026-08-06T00:22:15Z",
+    "html_url": "https://github.com/emlun/factorio-replay-timelapse"
+  },
+  {
+    "full_name": "ManaFriendsmith/BrassTacksMk2",
+    "default_branch": "main",
+    "size_kb": 6726,
+    "description": "Factorio mod that adds zinc and brass, updated for 2.0 and Space Age. Not backwards compatible with old saves and lacking in K2/SE support, for that see https://github.com/AtelierAmber/BrassTacks",
+    "pushed_at": "2026-06-27T18:57:58Z",
+    "html_url": "https://github.com/ManaFriendsmith/BrassTacksMk2"
+  },
+  {
+    "full_name": "ManaFriendsmith/LasingAroundMk2",
+    "default_branch": "main",
+    "size_kb": 2715,
+    "description": "Factorio mod that adds helium and lasers, updated for 2.0 and Space Age. Not backwards compatible with old saves and lacking in K2/SE support, for that see https://github.com/AtelierAmber/LasingAround",
+    "pushed_at": "2026-06-27T18:57:30Z",
+    "html_url": "https://github.com/ManaFriendsmith/LasingAroundMk2"
+  },
+  {
+    "full_name": "hahoyer/factorio-mod-ixuAutoSave",
+    "default_branch": "master",
+    "size_kb": 57,
+    "description": null,
+    "pushed_at": "2026-06-27T12:29:56Z",
+    "html_url": "https://github.com/hahoyer/factorio-mod-ixuAutoSave"
+  },
+  {
+    "full_name": "ManaFriendsmith/BrimStuffMk2",
+    "default_branch": "main",
+    "size_kb": 9261,
+    "description": "Factorio mod that reworks sulfur and chemistry, updated for 2.0 and Space Age. Not backwards compatible with old saves and lacking in K2/SE support, for that see https://github.com/AtelierAmber/BrimStuff",
+    "pushed_at": "2026-06-26T14:08:36Z",
+    "html_url": "https://github.com/ManaFriendsmith/BrimStuffMk2"
+  },
+  {
+    "full_name": "ManaFriendsmith/IfNickelMk2",
+    "default_branch": "main",
+    "size_kb": 4225,
+    "description": "Factorio mod that adds nickel and invar, updated for 2.0 and Space Age. Not backwards compatible with old saves and lacking in K2/SE support, for that see https://github.com/AtelierAmber/IfNickel",
+    "pushed_at": "2026-06-26T10:02:12Z",
+    "html_url": "https://github.com/ManaFriendsmith/IfNickelMk2"
+  },
+  {
+    "full_name": "Abstem406/factorio-save-backup-manager",
+    "default_branch": "main",
+    "size_kb": 1461,
+    "description": null,
+    "pushed_at": "2026-06-25T16:22:59Z",
+    "html_url": "https://github.com/Abstem406/factorio-save-backup-manager"
+  },
+  {
+    "full_name": "xMakcRrR/factorio_save",
+    "default_branch": "main",
+    "size_kb": 0,
+    "description": null,
+    "pushed_at": "2026-06-24T11:42:32Z",
+    "html_url": "https://github.com/xMakcRrR/factorio_save"
+  },
+  {
+    "full_name": "ManaFriendsmith/ThemTharHillsMk2",
+    "default_branch": "main",
+    "size_kb": 3811,
+    "description": "Factorio mod that adds gold, updated for 2.0 and Space Age. Not backwards compatible with old saves and lacking in K2/SE support, for that see https://github.com/AtelierAmber/ThemTharHills",
+    "pushed_at": "2026-06-24T08:53:03Z",
+    "html_url": "https://github.com/ManaFriendsmith/ThemTharHillsMk2"
+  },
+  {
+    "full_name": "acabtr/factorio-mapshot-p061",
+    "default_branch": "main",
+    "size_kb": 157586,
+    "description": "Interactive Factorio Mapshot render of save P061",
+    "pushed_at": "2026-06-22T17:58:16Z",
+    "html_url": "https://github.com/acabtr/factorio-mapshot-p061"
+  },
+  {
+    "full_name": "AndreiTorres-0417/Factorio-save",
+    "default_branch": "main",
+    "size_kb": 0,
+    "description": null,
+    "pushed_at": "2026-06-22T05:06:26Z",
+    "html_url": "https://github.com/AndreiTorres-0417/Factorio-save"
+  },
+  {
+    "full_name": "lilly-lizard/factorio-saves",
+    "default_branch": "main",
+    "size_kb": 163748,
+    "description": null,
+    "pushed_at": "2026-06-21T04:36:57Z",
+    "html_url": "https://github.com/lilly-lizard/factorio-saves"
+  },
+  {
+    "full_name": "Live139/Factorio-Save",
+    "default_branch": "main",
+    "size_kb": 0,
+    "description": "Jatek mentes",
+    "pushed_at": "2026-06-18T19:42:58Z",
+    "html_url": "https://github.com/Live139/Factorio-Save"
+  },
+  {
+    "full_name": "BobbyEasy/factorio-advisor",
+    "default_branch": "main",
+    "size_kb": 65,
+    "description": "Factorio Advisor is a local, read-only factory diagnostics dashboard. It connects to your Factorio save through RCON and a small read-only mod, then helps you find bottlenecks, target SPM ratios, next-stage priorities, icons, and importable blueprint suggestions.",
+    "pushed_at": "2026-06-14T16:16:05Z",
+    "html_url": "https://github.com/BobbyEasy/factorio-advisor"
+  },
+  {
+    "full_name": "j4yu22/factorio-save",
+    "default_branch": "main",
+    "size_kb": 1192231,
+    "description": "a repo to manage factorio saves for multiplayer.",
+    "pushed_at": "2026-06-04T21:43:30Z",
+    "html_url": "https://github.com/j4yu22/factorio-save"
+  },
+  {
+    "full_name": "DevinPate/Project-Stardust",
+    "default_branch": "main",
+    "size_kb": 3,
+    "description": "Prep for a 2D game similar to Idleon. Combination of original Fortnite save the world, hades star, cube world, factorio, and kingdom rush battles? ",
+    "pushed_at": "2026-05-27T12:27:23Z",
+    "html_url": "https://github.com/DevinPate/Project-Stardust"
+  },
+  {
+    "full_name": "seesee010/myFactorio",
+    "default_branch": "main",
+    "size_kb": 4,
+    "description": "All my factorio stuff i could make online to save them",
+    "pushed_at": "2026-05-16T15:47:32Z",
+    "html_url": "https://github.com/seesee010/myFactorio"
+  },
+  {
+    "full_name": "luis-navarro1/factorio_saves",
+    "default_branch": "main",
+    "size_kb": 28015,
+    "description": "Factorio Freeplay Save Files. Used mainly for version (or progress) control of a specific save file. Will be testing it for aynchronous repo update if the save file will be used for multiplayer as it stands as an alternative for server hosting, since any in the multiplayer can become a host just by pulling to the latest push ",
+    "pushed_at": "2026-05-06T05:59:09Z",
+    "html_url": "https://github.com/luis-navarro1/factorio_saves"
+  },
+  {
+    "full_name": "Frogo-o/factorio-saves",
+    "default_branch": "main",
+    "size_kb": 3675504,
+    "description": null,
+    "pushed_at": "2026-05-01T19:27:26Z",
+    "html_url": "https://github.com/Frogo-o/factorio-saves"
+  },
+  {
+    "full_name": "hahoyer/factorio",
+    "default_branch": "master",
+    "size_kb": 6121,
+    "description": "hahoyers Manage mods and save files for factorio",
+    "pushed_at": "2026-04-14T01:57:09Z",
+    "html_url": "https://github.com/hahoyer/factorio"
+  },
+  {
+    "full_name": "NotAFreak/.factorio",
+    "default_branch": "main",
+    "size_kb": 378812,
+    "description": "oopssy i put my facotrio save on public repos :3",
+    "pushed_at": "2026-03-29T20:20:02Z",
+    "html_url": "https://github.com/NotAFreak/.factorio"
+  },
+  {
+    "full_name": "Toobad269/Auto_PI_-Game_Server_Setup",
+    "default_branch": "main",
+    "size_kb": 63,
+    "description": "Automated installer for a Raspberry Pi game server manager with Flask web dashboard, TLS via Nginx, and 50-slot world save management for Minecraft, Factorio, Terraria and Vintage Story.",
+    "pushed_at": "2026-03-21T18:44:24Z",
+    "html_url": "https://github.com/Toobad269/Auto_PI_-Game_Server_Setup"
+  },
+  {
+    "full_name": "Gurczi/factorioSavy",
+    "default_branch": "main",
+    "size_kb": 9383,
+    "description": "Saves factorio",
+    "pushed_at": "2026-03-16T13:39:13Z",
+    "html_url": "https://github.com/Gurczi/factorioSavy"
+  },
+  {
+    "full_name": "Walkman100/FactorioInstanceManager",
+    "default_branch": "main",
+    "size_kb": 305,
+    "description": "Factorio Instance Manager - Instance refers to a set of mods, saves, settings e.t.c.",
+    "pushed_at": "2026-03-08T17:42:08Z",
+    "html_url": "https://github.com/Walkman100/FactorioInstanceManager"
+  },
+  {
+    "full_name": "ThatCalypsoCat/Factorio-World",
+    "default_branch": "main",
+    "size_kb": 2689525,
+    "description": "MY Factorio save",
+    "pushed_at": "2026-03-02T10:29:01Z",
+    "html_url": "https://github.com/ThatCalypsoCat/Factorio-World"
+  },
+  {
+    "full_name": "CommanderRedYT/factorio-save-parser",
+    "default_branch": "main",
+    "size_kb": 2457,
+    "description": "Parses the factorio save file format",
+    "pushed_at": "2026-03-01T00:48:41Z",
+    "html_url": "https://github.com/CommanderRedYT/factorio-save-parser"
+  },
+  {
+    "full_name": "syedimran23/factorio-multiplayer-saves",
+    "default_branch": "main",
+    "size_kb": 1535388,
+    "description": null,
+    "pushed_at": "2026-02-28T21:01:32Z",
+    "html_url": "https://github.com/syedimran23/factorio-multiplayer-saves"
+  },
+  {
+    "full_name": "arye321/factorio-backup-save",
+    "default_branch": "main",
+    "size_kb": 1,
+    "description": null,
+    "pushed_at": "2026-02-23T09:05:34Z",
+    "html_url": "https://github.com/arye321/factorio-backup-save"
+  },
+  {
+    "full_name": "x1manPsychopath/WindowsGSM.Factorio",
+    "default_branch": "main",
+    "size_kb": 54,
+    "description": "A fully updated WindowsGSM plugin for hosting Factorio Dedicated Servers. Includes correct App ID, proper paths, automatic save creation, server-settings generation, and a modernized codebase for reliable SteamCMD installs and smooth server management.",
+    "pushed_at": "2026-01-17T10:03:40Z",
+    "html_url": "https://github.com/x1manPsychopath/WindowsGSM.Factorio"
+  },
+  {
+    "full_name": "cliveyong/Factorio-Save-Sync",
+    "default_branch": "main",
+    "size_kb": 7,
+    "description": null,
+    "pushed_at": "2026-01-12T18:30:26Z",
+    "html_url": "https://github.com/cliveyong/Factorio-Save-Sync"
+  },
+  {
+    "full_name": "r-fairhurst/factorio-headless-server",
+    "default_branch": "main",
+    "size_kb": 4,
+    "description": "A reposistory with steps and files needed to setup a headless factorio server with a systemctl service and cron job to update the save files",
+    "pushed_at": "2026-01-08T05:19:32Z",
+    "html_url": "https://github.com/r-fairhurst/factorio-headless-server"
+  },
+  {
+    "full_name": "toniRamos/factorio-like",
+    "default_branch": "main",
+    "size_kb": 16272,
+    "description": "A minimalist factory-building game inspired by Factorio, built fully in the browser with Svelte. You place buildings on a 2D grid, run a tick-based simulation, and produce resources through simple automation. Everything is saved locally, with import/export support via JSON.",
+    "pushed_at": "2025-12-08T19:41:20Z",
+    "html_url": "https://github.com/toniRamos/factorio-like"
+  },
+  {
+    "full_name": "abundanciaModesta/factorio_save",
+    "default_branch": "main",
+    "size_kb": 1025,
+    "description": null,
+    "pushed_at": "2025-11-15T15:24:45Z",
+    "html_url": "https://github.com/abundanciaModesta/factorio_save"
+  },
+  {
+    "full_name": "Alvind0/Factorio_Blueprint_Depot",
+    "default_branch": "main",
+    "size_kb": 167,
+    "description": "A repository for the Factorio blueprints I use across all saves.",
+    "pushed_at": "2025-11-14T00:16:43Z",
+    "html_url": "https://github.com/Alvind0/Factorio_Blueprint_Depot"
+  },
+  {
+    "full_name": "yoihai22/factorio-save",
+    "default_branch": "main",
+    "size_kb": 29942,
+    "description": "my factorio save pls no look",
+    "pushed_at": "2025-10-29T09:43:17Z",
+    "html_url": "https://github.com/yoihai22/factorio-save"
+  },
+  {
+    "full_name": "ianic-dev/factorio-saves",
+    "default_branch": "master",
+    "size_kb": 1152,
+    "description": null,
+    "pushed_at": "2025-10-13T18:07:26Z",
+    "html_url": "https://github.com/ianic-dev/factorio-saves"
+  },
+  {
+    "full_name": "ChristineZhiMei/FACTORIO_SAVES",
+    "default_branch": "main",
+    "size_kb": 343644,
+    "description": null,
+    "pushed_at": "2025-10-08T10:36:45Z",
+    "html_url": "https://github.com/ChristineZhiMei/FACTORIO_SAVES"
+  },
+  {
+    "full_name": "xXRun3Zz/Factorio-world",
+    "default_branch": "main",
+    "size_kb": 0,
+    "description": "You can save this world to your pc.",
+    "pushed_at": "2025-09-29T17:57:37Z",
+    "html_url": "https://github.com/xXRun3Zz/Factorio-world"
+  },
+  {
+    "full_name": "factorio-save/save",
+    "default_branch": "master",
+    "size_kb": 40609,
+    "description": null,
+    "pushed_at": "2026-03-16T12:58:02Z",
+    "html_url": "https://github.com/factorio-save/save"
+  },
+  {
+    "full_name": "Musyoka2020-eng/FactorioManager",
+    "default_branch": "main",
+    "size_kb": 681,
+    "description": "Download, manage, and backup Factorio mods with automatic dependency resolution.",
+    "pushed_at": "2026-05-22T07:05:12Z",
+    "html_url": "https://github.com/Musyoka2020-eng/FactorioManager"
+  },
+  {
+    "full_name": "BeLikeBrett/factorio-achievement-unlocker",
+    "default_branch": "main",
+    "size_kb": 26,
+    "description": "Re-enables Factorio Steam achievements regardless of cheat mode, console commands, map editor, or low playtime. ELF/PE byte patches with backup and restore \u2014 Linux tested, Windows scaffold untested.",
+    "pushed_at": "2026-04-26T14:32:22Z",
+    "html_url": "https://github.com/BeLikeBrett/factorio-achievement-unlocker"
+  },
+  {
+    "full_name": "closirr/factorio-mods",
+    "default_branch": "main",
+    "size_kb": 4504,
+    "description": "Local Factorio mods backup",
+    "pushed_at": "2026-04-01T20:36:39Z",
+    "html_url": "https://github.com/closirr/factorio-mods"
+  },
+  {
+    "full_name": "UserUnauthorized/Factorio-backup",
+    "default_branch": "main",
+    "size_kb": 12,
+    "description": null,
+    "pushed_at": "2026-01-25T19:22:13Z",
+    "html_url": "https://github.com/UserUnauthorized/Factorio-backup"
+  },
+  {
+    "full_name": "lohchness/space-elevator-log",
+    "default_branch": "main",
+    "size_kb": 915,
+    "description": "Utility mod for Earendel's Space Exploration mod for Factorio",
+    "pushed_at": "2026-08-22T22:10:34Z",
+    "html_url": "https://github.com/lohchness/space-elevator-log"
+  },
+  {
+    "full_name": "robot256/rocket-log",
+    "default_branch": "main",
+    "size_kb": 537,
+    "description": "Factorio mod in Lua: Logging system for Space Exploration Cargo Rocket launches",
+    "pushed_at": "2026-08-22T05:18:40Z",
+    "html_url": "https://github.com/robot256/rocket-log"
+  },
+  {
+    "full_name": "hgschmie/factorio-ltn-space-exploration",
+    "default_branch": "main",
+    "size_kb": 13458,
+    "description": "Enable LTN to use Space Exploration Space Elevators",
+    "pushed_at": "2026-08-20T14:47:19Z",
+    "html_url": "https://github.com/hgschmie/factorio-ltn-space-exploration"
+  },
+  {
+    "full_name": "Caleb-Wishart/Space-Exploration-Rocket-Part-Delivery",
+    "default_branch": "main",
+    "size_kb": 43,
+    "description": "[Factorio] An add on for the Space Exploration mod pack. Send Cargo Rocket components (Space Capsules and Cargo Rocket Sections), Meteor Defence Ammunition, and Delivery Cannon Capsules via Delivery Cannon.",
+    "pushed_at": "2026-07-24T11:24:50Z",
+    "html_url": "https://github.com/Caleb-Wishart/Space-Exploration-Rocket-Part-Delivery"
+  },
+  {
+    "full_name": "jplcz/factorio-techs",
+    "default_branch": "master",
+    "size_kb": 160,
+    "description": "Factorio Space Exploration item graph",
+    "pushed_at": "2026-07-19T15:58:15Z",
+    "html_url": "https://github.com/jplcz/factorio-techs"
+  },
+  {
+    "full_name": "heinwessels/se-early-spaceships",
+    "default_branch": "main",
+    "size_kb": 58,
+    "description": "Factorio mod that allows crafting Space Exploration's spaceships before reaching space.",
+    "pushed_at": "2026-07-04T20:10:45Z",
+    "html_url": "https://github.com/heinwessels/se-early-spaceships"
+  },
+  {
+    "full_name": "Wiwiweb/FactorioSpaceExplorationSPMTechnnologies",
+    "default_branch": "main",
+    "size_kb": 217,
+    "description": "Factorio mod for Space Exploration that adds a technology for SPM testing",
+    "pushed_at": "2026-07-02T15:58:52Z",
+    "html_url": "https://github.com/Wiwiweb/FactorioSpaceExplorationSPMTechnnologies"
+  },
+  {
+    "full_name": "Pietersielie/K2RFAC",
+    "default_branch": "main",
+    "size_kb": 121,
+    "description": "Minor mod for Factorio and the Krastorio 2 mod to allow advanced chemical plants to perform fuel refinement, atmospheric condensation, electrolysis, and filtration. Also added crushing recipes (sand and imersite powder) to advanced assembling machines. Requires Krastorio 2. Compatible with Space Exploration.",
+    "pushed_at": "2026-06-28T12:26:12Z",
+    "html_url": "https://github.com/Pietersielie/K2RFAC"
+  },
+  {
+    "full_name": "heinwessels/factorio-spidertron-dock",
+    "default_branch": "main",
+    "size_kb": 5126,
+    "description": "A Factorio mod that adds a dock that spidertron-like vehicles can dock to. Intended to be used with Space Exploration spaceships.",
+    "pushed_at": "2026-05-23T20:08:57Z",
+    "html_url": "https://github.com/heinwessels/factorio-spidertron-dock"
+  },
+  {
+    "full_name": "weggert2/delivery-cannon-everything",
+    "default_branch": "main",
+    "size_kb": 10910,
+    "description": "Factorio Space Exploration mod to allow delivery cannon of any item",
+    "pushed_at": "2026-04-27T04:48:25Z",
+    "html_url": "https://github.com/weggert2/delivery-cannon-everything"
+  },
+  {
+    "full_name": "robbyunderdog/factorioSESolver",
+    "default_branch": "main",
+    "size_kb": 8,
+    "description": "A script to assist in solving the final secret puzzle of the Factorio mod Space Exploration.",
+    "pushed_at": "2026-04-20T20:14:29Z",
+    "html_url": "https://github.com/robbyunderdog/factorioSESolver"
+  },
+  {
+    "full_name": "enjoy-er/Electromagnetic-Plant-BZ-Tweaks",
+    "default_branch": "main",
+    "size_kb": 12,
+    "description": "\"Factorio tweak mod for Space Exploration & BZ Silicon. Enables high-efficiency production of Gyros, Wafers, and Solar Cells in the Electromagnetic Plant and delete silicon out of lubricant chain.\"",
+    "pushed_at": "2026-02-09T08:40:50Z",
+    "html_url": "https://github.com/enjoy-er/Electromagnetic-Plant-BZ-Tweaks"
+  },
+  {
+    "full_name": "oleksiy1409liut/afactorio-space-exploration",
+    "default_branch": "main",
+    "size_kb": 463,
+    "description": "im tryna remake factorio space exploration+K2 in mindustry but with my own additions, repo name has a in its start for importing the mod being easier if you have lots of zip files in your downloads",
+    "pushed_at": "2026-01-18T11:22:06Z",
+    "html_url": "https://github.com/oleksiy1409liut/afactorio-space-exploration"
+  },
+  {
+    "full_name": "hkon123/Factorio-Space-Exploration-Secret-ending-plotter",
+    "default_branch": "master",
+    "size_kb": 6,
+    "description": null,
+    "pushed_at": "2026-01-16T21:28:52Z",
+    "html_url": "https://github.com/hkon123/Factorio-Space-Exploration-Secret-ending-plotter"
+  },
+  {
+    "full_name": "piurafunk/factorio-mod-configurations",
+    "default_branch": "master",
+    "size_kb": 26,
+    "description": "A mod that allows configuring various values of the Space Exploration mod (by Earendel)",
+    "pushed_at": "2025-11-05T20:42:26Z",
+    "html_url": "https://github.com/piurafunk/factorio-mod-configurations"
+  },
+  {
+    "full_name": "harag-on-steam/se-ltn-glue",
+    "default_branch": "main",
+    "size_kb": 91,
+    "description": "Interacts with LTN's cross-surface API to make deliveries through Space Exploration's space elevator",
+    "pushed_at": "2025-10-11T19:11:06Z",
+    "html_url": "https://github.com/harag-on-steam/se-ltn-glue"
+  },
+  {
+    "full_name": "NullCascade/k2se-tweaks",
+    "default_branch": "main",
+    "size_kb": 20,
+    "description": "Personally desired tweaks to running Factorio with both Space Exploration and Krastorio 2.",
+    "pushed_at": "2025-09-30T04:20:32Z",
+    "html_url": "https://github.com/NullCascade/k2se-tweaks"
+  }
+]
