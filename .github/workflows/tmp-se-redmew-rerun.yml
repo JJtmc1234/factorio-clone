@@ -80,7 +80,7 @@ jobs:
         run: |
           set -euo pipefail
           cat > work/server-settings.json <<'JSON'
-          {"name":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          {"name":"inspection","description":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
           JSON
           work/factorio/bin/x64/factorio --start-server work/candidate.zip --mod-directory work/mods \
             --server-settings work/server-settings.json --rcon-port 27501 --rcon-password inspect \
