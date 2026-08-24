@@ -1,0 +1,265 @@
+[
+  {
+    "name": "base",
+    "version": "1.1.109",
+    "status": "builtin"
+  },
+  {
+    "name": "floating-damage-text",
+    "version": "19.0.0",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "VehicleSnap",
+    "version": "1.18.5",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "aai-containers",
+    "version": "0.2.11",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "aai-signal-transmission",
+    "version": "0.4.9",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "AbandonedRuins",
+    "version": "1.1.6",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "AfraidOfTheDark",
+    "version": "1.1.1",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "alien-biomes",
+    "version": "0.6.8",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "factoriohd_modpack",
+    "version": "1.1.0",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Factorissimo2",
+    "version": "2.5.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "flib",
+    "version": "0.14.1",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "FNEI",
+    "version": "0.4.2",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Gun_Turret_Alerts",
+    "version": "1.1.11",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "helmod",
+    "version": "1.0.11",
+    "status": "failed",
+    "error": "RuntimeError('exact release missing')"
+  },
+  {
+    "name": "InfiniteTech",
+    "version": "1.0.2",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "informatron",
+    "version": "0.3.4",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "jetpack",
+    "version": "0.3.14",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Krastorio2Assets",
+    "version": "1.2.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "liborio",
+    "version": "1.1.1",
+    "status": "failed",
+    "error": "RuntimeError('exact release missing')"
+  },
+  {
+    "name": "Load-Furn-2",
+    "version": "0.1.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "QueueToFrontNG",
+    "version": "0.18.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "resourceMarker",
+    "version": "0.7.31",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "robot_attrition",
+    "version": "0.5.15",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "shield-generators",
+    "version": "0.3.6",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "shield-projector",
+    "version": "0.1.6",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-graphics",
+    "version": "0.6.18",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-graphics-2",
+    "version": "0.6.1",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-graphics-3",
+    "version": "0.6.2",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-graphics-4",
+    "version": "0.6.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-graphics-5",
+    "version": "0.6.1",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-menu-simulations",
+    "version": "0.6.9",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Squeak Through",
+    "version": "1.8.2",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "aai-industry",
+    "version": "0.5.22",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "DiscoScience",
+    "version": "1.1.4",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "FluidMustFlow",
+    "version": "1.3.5",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "heroturrets",
+    "version": "1.1.22",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "LogisticTrainNetwork",
+    "version": "1.18.6",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Milestones",
+    "version": "1.3.25",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "Krastorio2",
+    "version": "1.3.24",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration",
+    "version": "0.6.138",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "extended-descriptions",
+    "version": "1.2.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "qol_research",
+    "version": "3.3.3",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "space-exploration-postprocess",
+    "version": "0.6.30",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  },
+  {
+    "name": "BottleneckLite",
+    "version": "1.2.8",
+    "status": "failed",
+    "error": "<HTTPError 403: 'Forbidden'>"
+  }
+]
