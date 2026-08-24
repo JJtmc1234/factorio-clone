@@ -1,0 +1,42 @@
+name: Temporary SE save candidate fetch
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+env:
+  SAVE_URL: "https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip"
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p candidate
+          curl --fail --location --retry 5 --retry-all-errors \
+            --output candidate/se_crash.zip "$SAVE_URL"
+          test "$(stat -c %s candidate/se_crash.zip)" -gt 50000000
+          unzip -t candidate/se_crash.zip > candidate/unzip-test.txt
+          unzip -l candidate/se_crash.zip > candidate/file-list.txt
+          sha256sum candidate/se_crash.zip > candidate/sha256.txt
+          unzip -j candidate/se_crash.zip '*/preview.jpg' -d candidate/preview || true
+          unzip -j candidate/se_crash.zip '*/level-init.dat' -d candidate/header || true
+          unzip -j candidate/se_crash.zip '*/script.dat' -d candidate/script || true
+          ls -lahR candidate > candidate/tree.txt
+
+      - name: Upload actual save and inspection files
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se-crash-candidate
+          path: candidate
+          compression-level: 0
+          retention-days: 1
+          if-no-files-found: error
