@@ -1,0 +1,782 @@
+[
+  {
+    "id": "ndxjper2",
+    "name": "Any%",
+    "weblink": "https://www.speedrun.com/factorio?h=Any&x=ndxjper2",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/ndxjper2"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/ndxjper2/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/ndxjper2/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=ndxjper2"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/ndxjper2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "7dg85xp2",
+    "name": "Default Settings",
+    "weblink": "https://www.speedrun.com/factorio?h=Default_Settings&x=7dg85xp2",
+    "type": "per-game",
+    "rules": "`- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Only 1 player is allowed  \n- The \"Default\" preset must be used in the map generator settings  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dg85xp2"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dg85xp2/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dg85xp2/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=7dg85xp2"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/7dg85xp2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "wkpy7ljk",
+    "name": "100%",
+    "weblink": "https://www.speedrun.com/factorio?h=100&x=wkpy7ljk",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to unlock 100% of all achievements\n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- The map must be random  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the final achievement being unlocked  \n\n---\n\n## Submission Requirements\n\n- A **save file** must be linked in the run description\n- A permanent video recording of the full run is required\n\n---\n\n## Additional Rules\n\n- Achievements must be deleted before starting the run  \n- Reloads are not allowed  \n\n---\n\n## Challenger Rules: Runs under 8hr AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpy7ljk"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpy7ljk/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpy7ljk/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=wkpy7ljk"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/wkpy7ljk"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "7dggqegd",
+    "name": "Steelaxe%",
+    "weblink": "https://www.speedrun.com/factorio?h=Steelaxe&x=7dggqegd",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to unlock the \"Steelaxe\" technology  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame after unlocking the \"Steelaxe\" technology  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dggqegd"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dggqegd/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dggqegd/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=7dggqegd"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/7dggqegd"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "wkpjq9wk",
+    "name": "Any% MP",
+    "weblink": "https://www.speedrun.com/factorio?h=Any_MP&x=wkpjq9wk",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Up to 8 players are allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Alternatively, if no replay is provided, permanent video recordings of all players must be linked in the run description  \n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Permanent video recordings of all admins are required  \n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`  \n- Alternatively, instead of running the command, permanent video recordings of all players can be linked in the run description\n",
+    "players": {
+      "type": "up-to",
+      "value": 8
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpjq9wk"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpjq9wk/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpjq9wk/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=wkpjq9wk"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/wkpjq9wk"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "9kvxm882",
+    "name": "Default Settings MP",
+    "weblink": "https://www.speedrun.com/factorio?h=Default_Settings_MP&x=9kvxm882",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Up to 8 players are allowed  \n- The \"Default\" preset must be used in the map generator settings  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Alternatively, if no replay is provided, permanent video recordings of all players must be linked in the run description  \n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Permanent video recordings of all admins are required  \n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`  \n- Alternatively, instead of running the command, permanent video recordings of all players can be linked in the run description\n",
+    "players": {
+      "type": "up-to",
+      "value": 8
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kvxm882"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kvxm882/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kvxm882/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=9kvxm882"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/9kvxm882"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "5dwzo6ed",
+    "name": "Space Age",
+    "weblink": "https://www.speedrun.com/factorio?h=factorio-1-1-x&x=5dwzo6ed",
+    "type": "per-game",
+    "rules": "**Note:** This is not a category for submissions. It only provides the link to the Space Age leaderboards.\n\nSubmissions are not allowed here. Instead go to:\n\nhttps://www.speedrun.com/Space_Age",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/5dwzo6ed"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/5dwzo6ed/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/5dwzo6ed/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=5dwzo6ed"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/5dwzo6ed"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "wdmw3542",
+    "name": "Getting on track like a pro",
+    "weblink": "https://www.speedrun.com/factorio?h=Getting_on_track_like_a_pro&x=wdmw3542",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to place a locomotive\n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame a locomotive is placed\n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/wdmw3542"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/wdmw3542/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/wdmw3542/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=wdmw3542"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/wdmw3542"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "9kv7oeek",
+    "name": "Any% Duo",
+    "weblink": "https://www.speedrun.com/factorio?h=Any_Duo&x=9kv7oeek",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Up to 2 players are allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Alternatively, if no replay is provided, permanent video recordings of all players must be linked in the run description  \n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Permanent video recordings of all admins are required  \n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`  \n- Alternatively, instead of running the command, permanent video recordings of all players can be linked in the run description\n",
+    "players": {
+      "type": "exactly",
+      "value": 2
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kv7oeek"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kv7oeek/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kv7oeek/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=9kv7oeek"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/9kv7oeek"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "mke9y0nd",
+    "name": "Massive Multiplayer",
+    "weblink": "https://www.speedrun.com/factorio?h=New_Game_Massive_Multiplayer&x=mke9y0nd",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to launch a rocket  \n- Any number of players are allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n\n---\n\n## Additional Rules\n\n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`\n- Debug settings that cannot be disabled are allowed  \n- In addition to the general command whitelist, all non-admin commands and the \"/permissions\" command are allowed\n\n---\n\n## Hints\n\n- Submissions only support up to 20 player entries, but more players are allowed.\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n\n- No additional requirements apply for Challenger runs in this category",
+    "players": {
+      "type": "up-to",
+      "value": 20
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke9y0nd"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke9y0nd/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke9y0nd/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=mke9y0nd"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/mke9y0nd"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "jdroxold",
+    "name": "\u21b3 Category Extensions",
+    "weblink": "https://www.speedrun.com/factorio?h=_Category_Extensions&x=jdroxold",
+    "type": "per-game",
+    "rules": "",
+    "players": {
+      "type": "exactly",
+      "value": 1
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdroxold"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdroxold/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdroxold/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=jdroxold"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/jdroxold"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "wkp0y6g2",
+    "name": "\u21b3 Hall of Fame (Early Access Runs)",
+    "weblink": "https://www.speedrun.com/factorio?h=_Hall_of_Fame_Early_Access_Runs&x=wkp0y6g2",
+    "type": "per-game",
+    "rules": "These Categories were removed from the Leader-boards, because they were pre release. They are just here to preserve history. The exact rule-sets vary and have mostly been lost over time.\r\n\r\nNew Submissions are no longer valid.",
+    "players": {
+      "type": "up-to",
+      "value": 8
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkp0y6g2"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkp0y6g2/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkp0y6g2/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=wkp0y6g2"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/9d35xw1l/category/wkp0y6g2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "n2yzwgmk",
+    "name": "Any%",
+    "weblink": "https://www.speedrun.com/Space_Age?h=any&x=n2yzwgmk",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Runs under 7h:30 AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+    "players": {
+      "type": "up-to",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/n2yzwgmk"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/n2yzwgmk/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/n2yzwgmk/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=n2yzwgmk"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/n2yzwgmk"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "7kjwx64d",
+    "name": "Default Settings",
+    "weblink": "https://www.speedrun.com/Space_Age?h=default-settings&x=7kjwx64d",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Only 1 player is allowed  \n- The \"Default\" preset must be used in the map generator settings  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Runs under 8h:30 AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+    "players": {
+      "type": "up-to",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/7kjwx64d"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/7kjwx64d/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/7kjwx64d/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=7kjwx64d"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/7kjwx64d"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "xk97qv6d",
+    "name": "100%",
+    "weblink": "https://www.speedrun.com/Space_Age?h=100&x=xk97qv6d",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to unlock 100% of all achievements\n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- The map must be random  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the final achievement being unlocked  \n\n---\n\n## Submission Requirements\n\n- A **save file** must be linked in the run description\n- A permanent video recording of the full run is required\n\n---\n\n## Additional Rules\n\n- Achievements must be deleted before starting the run  \n- Reloads are not allowed  \n\n---\n\n## Challenger Rules: Runs under 10hr AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+    "players": {
+      "type": "up-to",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/xk97qv6d"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/xk97qv6d/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/xk97qv6d/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=xk97qv6d"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/xk97qv6d"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "jdzmlwrk",
+    "name": "Random Seed New Game+",
+    "weblink": "https://www.speedrun.com/Space_Age?h=random-seed-new-game&x=jdzmlwrk",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- The map must be random  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Submissions to Top 3\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+    "players": {
+      "type": "up-to",
+      "value": 1
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdzmlwrk"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdzmlwrk/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdzmlwrk/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=jdzmlwrk"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/jdzmlwrk"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "z27jn1z2",
+    "name": "Any% MP",
+    "weblink": "https://www.speedrun.com/Space_Age?h=any-mp&x=z27jn1z2",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Up to 8 players are allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Alternatively, if no replay is provided, permanent video recordings of all players must be linked in the run description  \n\n---\n\n## Challenger Rules: Runs under 6:30 AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Permanent video recordings of all admins are required  \n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`  \n- Alternatively, instead of running the command, permanent video recordings of all players can be linked in the run description",
+    "players": {
+      "type": "up-to",
+      "value": 8
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/z27jn1z2"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/z27jn1z2/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/z27jn1z2/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=z27jn1z2"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/z27jn1z2"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "zdn96892",
+    "name": "Default Settings MP",
+    "weblink": "https://www.speedrun.com/Space_Age?h=default-settings-mp&x=zdn96892",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Up to 8 players are allowed  \n- The \"Default\" preset must be used in the map generator settings  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Alternatively, if no replay is provided, permanent video recordings of all players must be linked in the run description  \n\n---\n\n## Challenger Rules: Runs under 7h:30 AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n- Permanent video recordings of all admins are required  \n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`  \n- Alternatively, instead of running the command, permanent video recordings of all players can be linked in the run description",
+    "players": {
+      "type": "up-to",
+      "value": 8
+    },
+    "miscellaneous": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdn96892"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdn96892/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdn96892/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=zdn96892"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/zdn96892"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "mke0mmjd",
+    "name": "Massive Multiplayer",
+    "weblink": "https://www.speedrun.com/Space_Age?h=massive-multiplayer&x=mke0mmjd",
+    "type": "per-game",
+    "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to reach the solar system edge\n- Any number of players are allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n\n- A permanent video recording of the host's full run is required\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n\n---\n\n## Additional Rules\n\n- An admin must run the following command at the very start of the run: `/config set allow-debug-settings false`\n- Debug settings that cannot be disabled are allowed  \n- In addition to the general command whitelist, all non-admin commands and the \"/permissions\" command are allowed\n\n---\n\n## Hints\n\n- Submissions only support up to 20 player entries, but more players are allowed.\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n\n- No additional requirements apply for Challenger runs in this category",
+    "players": {
+      "type": "up-to",
+      "value": 20
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke0mmjd"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke0mmjd/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke0mmjd/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=mke0mmjd"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/mke0mmjd"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "zdnvex9k",
+    "name": "\u21b3 Category Extensions",
+    "weblink": "https://www.speedrun.com/Space_Age?h=category-extensions&x=zdnvex9k",
+    "type": "per-game",
+    "rules": "",
+    "players": {
+      "type": "up-to",
+      "value": 1
+    },
+    "miscellaneous": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdnvex9k"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "variables",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdnvex9k/variables"
+      },
+      {
+        "rel": "records",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdnvex9k/records"
+      },
+      {
+        "rel": "runs",
+        "uri": "https://www.speedrun.com/api/v1/runs?category=zdnvex9k"
+      },
+      {
+        "rel": "leaderboard",
+        "uri": "https://www.speedrun.com/api/v1/leaderboards/ldewr7ed/category/zdnvex9k"
+      }
+    ],
+    "_game": "ldewr7ed"
+  }
+]

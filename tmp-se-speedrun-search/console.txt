@@ -1,0 +1,12 @@
+{
+  "games": 2,
+  "categories": 20,
+  "variables": 19,
+  "matching_categories": 0,
+  "matching_values": 0,
+  "all_runs": 3530,
+  "candidate_runs": 1063,
+  "likely_se_runs": 0,
+  "public_file_links": 0,
+  "downloads_attempted": 0
+}

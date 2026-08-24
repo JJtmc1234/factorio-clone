@@ -1,0 +1,2143 @@
+[
+  {
+    "id": "38dz90n0",
+    "name": "Players",
+    "category": "wkpjq9wk",
+    "scope": {
+      "type": "full-game"
+    },
+    "mandatory": true,
+    "user-defined": true,
+    "obsoletes": false,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "0q5z6mqp": "1",
+        "0q5nymqp": "2",
+        "4lxpr2q2": "3",
+        "5lezo5lo": "4",
+        "814y801d": "5",
+        "z19m60l4": "6",
+        "p12dr7qx": "7",
+        "5lm6yj1v": "8"
+      },
+      "values": {
+        "0q5z6mqp": {
+          "label": "1"
+        },
+        "0q5nymqp": {
+          "label": "2"
+        },
+        "4lxpr2q2": {
+          "label": "3"
+        },
+        "5lezo5lo": {
+          "label": "4"
+        },
+        "814y801d": {
+          "label": "5"
+        },
+        "z19m60l4": {
+          "label": "6"
+        },
+        "p12dr7qx": {
+          "label": "7"
+        },
+        "5lm6yj1v": {
+          "label": "8"
+        }
+      },
+      "default": null
+    },
+    "is-subcategory": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/38dz90n0"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpjq9wk"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "38d9q0l0",
+    "name": "Players",
+    "category": "9kvxm882",
+    "scope": {
+      "type": "full-game"
+    },
+    "mandatory": true,
+    "user-defined": true,
+    "obsoletes": false,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "z1925djq": "1",
+        "p12vo4vq": "2",
+        "81py46e1": "3",
+        "xqke969q": "4",
+        "gq759zn1": "5",
+        "21gneoxl": "6",
+        "jqznvy4q": "7",
+        "klr3j60l": "8"
+      },
+      "values": {
+        "z1925djq": {
+          "label": "1"
+        },
+        "p12vo4vq": {
+          "label": "2"
+        },
+        "81py46e1": {
+          "label": "3"
+        },
+        "xqke969q": {
+          "label": "4"
+        },
+        "gq759zn1": {
+          "label": "5"
+        },
+        "21gneoxl": {
+          "label": "6"
+        },
+        "jqznvy4q": {
+          "label": "7"
+        },
+        "klr3j60l": {
+          "label": "8"
+        }
+      },
+      "default": null
+    },
+    "is-subcategory": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/38d9q0l0"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kvxm882"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "38dzvren",
+    "name": "Category (Hall of Fame)",
+    "category": "wkp0y6g2",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "810j4pjl": "Any%",
+        "9qjn3901": "Default Settings",
+        "jq6rdpnq": "100%",
+        "5lm65py1": "Any% MP",
+        "81woy99l": "Default Settings MP",
+        "zqoo49gq": "Steelaxe%",
+        "rqvo895l": "Any% Duo",
+        "0137gpkl": "Getting on track like a pro",
+        "5lezj5pl": "New Game+"
+      },
+      "values": {
+        "810j4pjl": {
+          "label": "Any%",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "9qjn3901": {
+          "label": "Default Settings",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "jq6rdpnq": {
+          "label": "100%",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "5lm65py1": {
+          "label": "Any% MP",
+          "rules": null,
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "81woy99l": {
+          "label": "Default Settings MP",
+          "rules": null,
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "zqoo49gq": {
+          "label": "Steelaxe%",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "rqvo895l": {
+          "label": "Any% Duo",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "0137gpkl": {
+          "label": "Getting on track like a pro",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "5lezj5pl": {
+          "label": "New Game+",
+          "rules": null,
+          "flags": {
+            "miscellaneous": null
+          }
+        }
+      },
+      "default": "810j4pjl"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/38dzvren"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkp0y6g2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "p854g05l",
+    "name": "Version",
+    "category": null,
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "rqvp9nrq": "Please select the right version.",
+        "192v2dkq": "2.1.12",
+        "q75ovry1": "2.1.11",
+        "10vpxe5l": "2.0.77",
+        "1926n70q": "2.0.76",
+        "1gn8px6l": "2.0.73",
+        "q5vn4o2l": "2.0.72",
+        "lx5pgx41": "2.0.71",
+        "lr34kv0l": "2.0.70",
+        "1pyoj6e1": "2.0.69",
+        "lmo6kpm1": "2.0.68",
+        "1w4opjvq": "2.0.67",
+        "1w4o5koq": "2.0.66",
+        "lx5oyr31": "2.0.65",
+        "q5vzvg7l": "2.0.64",
+        "1w4ov9oq": "2.0.63",
+        "qzn7j3kq": "2.0.62",
+        "lr3wg2wl": "2.0.61",
+        "le2g9pkl": "2.0.60",
+        "qvvwg35q": "2.0.59",
+        "q65kg3ol": "2.0.58",
+        "10ve93pl": "2.0.57",
+        "qj7yejoq": "2.0.56",
+        "qkek9wnq": "2.0.55",
+        "q75e9mv1": "2.0.54",
+        "1gnreznl": "2.0.53",
+        "qyz30371": "2.0.52",
+        "lr3n8m0l": "2.0.51",
+        "1dkrpw3l": "2.0.50",
+        "q8k5norq": "2.0.49",
+        "qyz3kr31": "2.0.48",
+        "q5vk6r2l": "2.0.47",
+        "lx53zn41": "2.0.46",
+        "14o3jzvq": "2.0.45",
+        "le2dojkl": "2.0.44",
+        "q8k5ekrq": "2.0.43",
+        "1gnyeznl": "2.0.42",
+        "qznkvzgq": "2.0.41",
+        "lr3njojl": "2.0.40",
+        "ln8kgrdl": "2.0.39",
+        "1w4r6mmq": "2.0.38",
+        "12v4j2dq": "2.0.37",
+        "1gno0e6l": "2.0.36",
+        "1w4r9d5q": "2.0.35",
+        "ln8kw7jl": "2.0.34",
+        "qznypwkq": "2.0.33",
+        "qyz8yr61": "2.0.32",
+        "14o4xw0q": "2.0.31",
+        "qox2j8gq": "2.0.30",
+        "qke6emkq": "2.0.29",
+        "q75ryon1": "2.0.28",
+        "1gn2k6xl": "2.0.27",
+        "qznxow4q": "2.0.26",
+        "1dk3w93l": "2.0.25",
+        "q75rw0n1": "2.0.24",
+        "qyzjo331": "2.0.23",
+        "14o74zeq": "2.0.22",
+        "q75rz2v1": "2.0.21",
+        "1pyddz81": "2.0.20",
+        "lx5e8731": "2.0.19",
+        "14o7v0eq": "2.0.18",
+        "19289oyq": "2.0.17",
+        "q8kdgwkq": "2.0.16",
+        "qyzjng71": "2.0.15",
+        "lmog8n01": "2.0.14",
+        "1928x5jq": "2.0.13",
+        "q5vgv6nl": "2.0.12",
+        "lr3yepol": "2.0.11",
+        "le24x36l": "2.0.10",
+        "qyzy6r71": "2.0.9",
+        "lr30rw2l": "2.0.8",
+        "qzn5m7mq": "2.0.7",
+        "1dkym25l": "2.0.6",
+        "q5v54gvl": "1.1.110",
+        "qzn440gq": "1.1.109",
+        "lx540yj1": "1.1.108",
+        "13927m31": "1.1.107",
+        "qvvmekwq": "1.1.106",
+        "1gnxg8ol": "1.1.105",
+        "qoxy974q": "1.1.104",
+        "14oxgrkq": "1.1.103",
+        "qvv4ow7q": "1.1.102",
+        "le2kzg5l": "1.1.102",
+        "qker8vdq": "1.1.101",
+        "le2k2zkl": "1.1.100",
+        "qkerg0kq": "1.1.99",
+        "qoxmvy4q": "1.1.98",
+        "le23j6pl": "1.1.97",
+        "10v0nrjl": "1.1.96",
+        "q75933v1": "1.1.95",
+        "1gne8zxl": "1.1.94",
+        "qznvpegq": "1.1.93",
+        "12vow6dq": "1.1.92",
+        "1py403v1": "1.1.91",
+        "19252vyq": "1.1.90",
+        "q5v46knl": "1.1.89",
+        "1dk634jl": "1.1.88",
+        "139x9wd1": "1.1.87",
+        "qoxxv72q": "1.1.86",
+        "14oor9wq": "1.1.85",
+        "lr33ok2l": "1.1.84",
+        "1922ogyq": "1.1.83",
+        "q8kk7m6q": "1.1.82",
+        "lr33j32l": "1.1.81",
+        "1gnwzd6l": "1.1.80",
+        "qznrze2q": "1.1.79",
+        "q8kxp5yq": "1.1.78",
+        "12v6xg2q": "1.1.77",
+        "mlnon8nq": "1.1.76",
+        "4qywrzd1": "1.1.75",
+        "0136wnx1": "1.1.74",
+        "zqovm6x1": "1.1.73",
+        "81pg9wn1": "1.1.72",
+        "81wkx791": "1.1.71",
+        "p128op21": "1.1.70",
+        "814zzvwl": "1.1.69",
+        "21gm79o1": "1.1.68",
+        "013gd03l": "1.1.67",
+        "jq6d3vj1": "1.1.64",
+        "81043kjl": "1.1.65",
+        "p127wpvq": "1.1.63",
+        "0q5re4v1": "1.1.62",
+        "gq7y30dq": "1.1.61",
+        "21dpg3p1": "1.1.60",
+        "5lm7o7ml": "1.1.59",
+        "jqzorxg1": "1.1.58",
+        "5le79x51": "1.1.57",
+        "21gzoj8l": "1.1.56",
+        "4lx7xrjq": "1.1.55",
+        "5le7k9p1": "1.1.54",
+        "4lx274j1": "1.1.53",
+        "5q8vvmkl": "1.1.52",
+        "21d88mjl": "1.1.51",
+        "810neojq": "1.1.50",
+        "81w2d061": "1.1.49",
+        "5q8vex3l": "1.1.48",
+        "4lx208r1": "1.1.47",
+        "4lxk6v31": "1.1.46",
+        "gq7oywrl": "1.1.45",
+        "rqv0j67l": "1.1.44",
+        "81pzm28l": "1.1.43",
+        "81wjg2mq": "1.1.42",
+        "gq7ozxnl": "1.1.41",
+        "5lmewp4q": "1.1.40",
+        "21dn68gl": "1.1.39",
+        "gq7p8mdq": "1.1.38",
+        "jqz92y41": "1.1.37",
+        "81p2wjvl": "1.1.36",
+        "0q5p43vl": "1.1.35",
+        "jq6mopj1": "1.1.34",
+        "9qjry8el": "1.1.33",
+        "mlnn370l": "1.1.32",
+        "5lmv5y0l": "1.1.30",
+        "21gvvpm1": "1.1.27",
+        "jqz8e64q": "1.1.26",
+        "jqz86wgq": "1.1.25",
+        "0q5yovvl": "1.1.24",
+        "5le9k26q": "1.1.23",
+        "rqvg4kyq": "1.1.22",
+        "81wz4vv1": "1.1.21",
+        "4qypwe4q": "1.1.20",
+        "jq606moq": "1.1.19",
+        "4lxp2rgq": "1.1.17",
+        "81ppkvn1": "1.1.18",
+        "0q5nwyvq": "1.1.16",
+        "5lery96q": "1.1.15",
+        "p12dkw7q": "1.1.14",
+        "013883yq": "1.1.13",
+        "zqoppd41": "1.1.12",
+        "81wpp36q": "1.1.11",
+        "5lmkkz0q": "1.1.10",
+        "p12dendq": "1.1.9",
+        "jqzp778l": "1.1.8",
+        "z19mg3yl": "1.1.7",
+        "gq7j2mnq": "1.1.6",
+        "01376ddl": "1.1.5",
+        "814gw7j1": "1.1.4",
+        "5lm69kj1": "1.1.3",
+        "0q5z0emq": "1.1.2",
+        "81woy4ml": "1.1.1",
+        "5lm65o81": "1.1.0",
+        "jq6rd5vq": "1.0.0",
+        "21gdm6x1": "0.18",
+        "21gd3om1": "0.17",
+        "jqzemymq": "0.16",
+        "klr4r62q": "0.15",
+        "gq7d6kvq": "0.14",
+        "21gd3yn1": "0.13",
+        "jqzemkgq": "0.12",
+        "12v35kkq": "URL"
+      },
+      "values": {
+        "rqvp9nrq": {
+          "label": "Please select the right version."
+        },
+        "192v2dkq": {
+          "label": "2.1.12"
+        },
+        "q75ovry1": {
+          "label": "2.1.11"
+        },
+        "10vpxe5l": {
+          "label": "2.0.77"
+        },
+        "1926n70q": {
+          "label": "2.0.76"
+        },
+        "1gn8px6l": {
+          "label": "2.0.73"
+        },
+        "q5vn4o2l": {
+          "label": "2.0.72"
+        },
+        "lx5pgx41": {
+          "label": "2.0.71"
+        },
+        "lr34kv0l": {
+          "label": "2.0.70"
+        },
+        "1pyoj6e1": {
+          "label": "2.0.69"
+        },
+        "lmo6kpm1": {
+          "label": "2.0.68"
+        },
+        "1w4opjvq": {
+          "label": "2.0.67"
+        },
+        "1w4o5koq": {
+          "label": "2.0.66"
+        },
+        "lx5oyr31": {
+          "label": "2.0.65"
+        },
+        "q5vzvg7l": {
+          "label": "2.0.64"
+        },
+        "1w4ov9oq": {
+          "label": "2.0.63"
+        },
+        "qzn7j3kq": {
+          "label": "2.0.62"
+        },
+        "lr3wg2wl": {
+          "label": "2.0.61"
+        },
+        "le2g9pkl": {
+          "label": "2.0.60"
+        },
+        "qvvwg35q": {
+          "label": "2.0.59"
+        },
+        "q65kg3ol": {
+          "label": "2.0.58"
+        },
+        "10ve93pl": {
+          "label": "2.0.57"
+        },
+        "qj7yejoq": {
+          "label": "2.0.56"
+        },
+        "qkek9wnq": {
+          "label": "2.0.55"
+        },
+        "q75e9mv1": {
+          "label": "2.0.54"
+        },
+        "1gnreznl": {
+          "label": "2.0.53"
+        },
+        "qyz30371": {
+          "label": "2.0.52"
+        },
+        "lr3n8m0l": {
+          "label": "2.0.51"
+        },
+        "1dkrpw3l": {
+          "label": "2.0.50"
+        },
+        "q8k5norq": {
+          "label": "2.0.49"
+        },
+        "qyz3kr31": {
+          "label": "2.0.48"
+        },
+        "q5vk6r2l": {
+          "label": "2.0.47"
+        },
+        "lx53zn41": {
+          "label": "2.0.46"
+        },
+        "14o3jzvq": {
+          "label": "2.0.45"
+        },
+        "le2dojkl": {
+          "label": "2.0.44"
+        },
+        "q8k5ekrq": {
+          "label": "2.0.43"
+        },
+        "1gnyeznl": {
+          "label": "2.0.42"
+        },
+        "qznkvzgq": {
+          "label": "2.0.41"
+        },
+        "lr3njojl": {
+          "label": "2.0.40"
+        },
+        "ln8kgrdl": {
+          "label": "2.0.39"
+        },
+        "1w4r6mmq": {
+          "label": "2.0.38"
+        },
+        "12v4j2dq": {
+          "label": "2.0.37"
+        },
+        "1gno0e6l": {
+          "label": "2.0.36"
+        },
+        "1w4r9d5q": {
+          "label": "2.0.35"
+        },
+        "ln8kw7jl": {
+          "label": "2.0.34"
+        },
+        "qznypwkq": {
+          "label": "2.0.33"
+        },
+        "qyz8yr61": {
+          "label": "2.0.32"
+        },
+        "14o4xw0q": {
+          "label": "2.0.31"
+        },
+        "qox2j8gq": {
+          "label": "2.0.30"
+        },
+        "qke6emkq": {
+          "label": "2.0.29"
+        },
+        "q75ryon1": {
+          "label": "2.0.28"
+        },
+        "1gn2k6xl": {
+          "label": "2.0.27"
+        },
+        "qznxow4q": {
+          "label": "2.0.26"
+        },
+        "1dk3w93l": {
+          "label": "2.0.25"
+        },
+        "q75rw0n1": {
+          "label": "2.0.24"
+        },
+        "qyzjo331": {
+          "label": "2.0.23"
+        },
+        "14o74zeq": {
+          "label": "2.0.22"
+        },
+        "q75rz2v1": {
+          "label": "2.0.21"
+        },
+        "1pyddz81": {
+          "label": "2.0.20"
+        },
+        "lx5e8731": {
+          "label": "2.0.19"
+        },
+        "14o7v0eq": {
+          "label": "2.0.18"
+        },
+        "19289oyq": {
+          "label": "2.0.17"
+        },
+        "q8kdgwkq": {
+          "label": "2.0.16"
+        },
+        "qyzjng71": {
+          "label": "2.0.15"
+        },
+        "lmog8n01": {
+          "label": "2.0.14"
+        },
+        "1928x5jq": {
+          "label": "2.0.13"
+        },
+        "q5vgv6nl": {
+          "label": "2.0.12"
+        },
+        "lr3yepol": {
+          "label": "2.0.11"
+        },
+        "le24x36l": {
+          "label": "2.0.10"
+        },
+        "qyzy6r71": {
+          "label": "2.0.9"
+        },
+        "lr30rw2l": {
+          "label": "2.0.8"
+        },
+        "qzn5m7mq": {
+          "label": "2.0.7"
+        },
+        "1dkym25l": {
+          "label": "2.0.6"
+        },
+        "q5v54gvl": {
+          "label": "1.1.110"
+        },
+        "qzn440gq": {
+          "label": "1.1.109"
+        },
+        "lx540yj1": {
+          "label": "1.1.108"
+        },
+        "13927m31": {
+          "label": "1.1.107"
+        },
+        "qvvmekwq": {
+          "label": "1.1.106"
+        },
+        "1gnxg8ol": {
+          "label": "1.1.105"
+        },
+        "qoxy974q": {
+          "label": "1.1.104"
+        },
+        "14oxgrkq": {
+          "label": "1.1.103"
+        },
+        "qvv4ow7q": {
+          "label": "1.1.102"
+        },
+        "le2kzg5l": {
+          "label": "1.1.102"
+        },
+        "qker8vdq": {
+          "label": "1.1.101"
+        },
+        "le2k2zkl": {
+          "label": "1.1.100"
+        },
+        "qkerg0kq": {
+          "label": "1.1.99"
+        },
+        "qoxmvy4q": {
+          "label": "1.1.98"
+        },
+        "le23j6pl": {
+          "label": "1.1.97"
+        },
+        "10v0nrjl": {
+          "label": "1.1.96"
+        },
+        "q75933v1": {
+          "label": "1.1.95"
+        },
+        "1gne8zxl": {
+          "label": "1.1.94"
+        },
+        "qznvpegq": {
+          "label": "1.1.93"
+        },
+        "12vow6dq": {
+          "label": "1.1.92"
+        },
+        "1py403v1": {
+          "label": "1.1.91"
+        },
+        "19252vyq": {
+          "label": "1.1.90"
+        },
+        "q5v46knl": {
+          "label": "1.1.89"
+        },
+        "1dk634jl": {
+          "label": "1.1.88"
+        },
+        "139x9wd1": {
+          "label": "1.1.87"
+        },
+        "qoxxv72q": {
+          "label": "1.1.86"
+        },
+        "14oor9wq": {
+          "label": "1.1.85"
+        },
+        "lr33ok2l": {
+          "label": "1.1.84"
+        },
+        "1922ogyq": {
+          "label": "1.1.83"
+        },
+        "q8kk7m6q": {
+          "label": "1.1.82"
+        },
+        "lr33j32l": {
+          "label": "1.1.81"
+        },
+        "1gnwzd6l": {
+          "label": "1.1.80"
+        },
+        "qznrze2q": {
+          "label": "1.1.79"
+        },
+        "q8kxp5yq": {
+          "label": "1.1.78"
+        },
+        "12v6xg2q": {
+          "label": "1.1.77"
+        },
+        "mlnon8nq": {
+          "label": "1.1.76"
+        },
+        "4qywrzd1": {
+          "label": "1.1.75"
+        },
+        "0136wnx1": {
+          "label": "1.1.74"
+        },
+        "zqovm6x1": {
+          "label": "1.1.73"
+        },
+        "81pg9wn1": {
+          "label": "1.1.72"
+        },
+        "81wkx791": {
+          "label": "1.1.71"
+        },
+        "p128op21": {
+          "label": "1.1.70"
+        },
+        "814zzvwl": {
+          "label": "1.1.69"
+        },
+        "21gm79o1": {
+          "label": "1.1.68"
+        },
+        "013gd03l": {
+          "label": "1.1.67"
+        },
+        "jq6d3vj1": {
+          "label": "1.1.64"
+        },
+        "81043kjl": {
+          "label": "1.1.65"
+        },
+        "p127wpvq": {
+          "label": "1.1.63"
+        },
+        "0q5re4v1": {
+          "label": "1.1.62"
+        },
+        "gq7y30dq": {
+          "label": "1.1.61"
+        },
+        "21dpg3p1": {
+          "label": "1.1.60"
+        },
+        "5lm7o7ml": {
+          "label": "1.1.59"
+        },
+        "jqzorxg1": {
+          "label": "1.1.58"
+        },
+        "5le79x51": {
+          "label": "1.1.57"
+        },
+        "21gzoj8l": {
+          "label": "1.1.56"
+        },
+        "4lx7xrjq": {
+          "label": "1.1.55"
+        },
+        "5le7k9p1": {
+          "label": "1.1.54"
+        },
+        "4lx274j1": {
+          "label": "1.1.53"
+        },
+        "5q8vvmkl": {
+          "label": "1.1.52"
+        },
+        "21d88mjl": {
+          "label": "1.1.51"
+        },
+        "810neojq": {
+          "label": "1.1.50"
+        },
+        "81w2d061": {
+          "label": "1.1.49"
+        },
+        "5q8vex3l": {
+          "label": "1.1.48"
+        },
+        "4lx208r1": {
+          "label": "1.1.47"
+        },
+        "4lxk6v31": {
+          "label": "1.1.46"
+        },
+        "gq7oywrl": {
+          "label": "1.1.45"
+        },
+        "rqv0j67l": {
+          "label": "1.1.44"
+        },
+        "81pzm28l": {
+          "label": "1.1.43"
+        },
+        "81wjg2mq": {
+          "label": "1.1.42"
+        },
+        "gq7ozxnl": {
+          "label": "1.1.41"
+        },
+        "5lmewp4q": {
+          "label": "1.1.40"
+        },
+        "21dn68gl": {
+          "label": "1.1.39"
+        },
+        "gq7p8mdq": {
+          "label": "1.1.38"
+        },
+        "jqz92y41": {
+          "label": "1.1.37"
+        },
+        "81p2wjvl": {
+          "label": "1.1.36"
+        },
+        "0q5p43vl": {
+          "label": "1.1.35"
+        },
+        "jq6mopj1": {
+          "label": "1.1.34"
+        },
+        "9qjry8el": {
+          "label": "1.1.33"
+        },
+        "mlnn370l": {
+          "label": "1.1.32"
+        },
+        "5lmv5y0l": {
+          "label": "1.1.30"
+        },
+        "21gvvpm1": {
+          "label": "1.1.27"
+        },
+        "jqz8e64q": {
+          "label": "1.1.26"
+        },
+        "jqz86wgq": {
+          "label": "1.1.25"
+        },
+        "0q5yovvl": {
+          "label": "1.1.24"
+        },
+        "5le9k26q": {
+          "label": "1.1.23"
+        },
+        "rqvg4kyq": {
+          "label": "1.1.22"
+        },
+        "81wz4vv1": {
+          "label": "1.1.21"
+        },
+        "4qypwe4q": {
+          "label": "1.1.20"
+        },
+        "jq606moq": {
+          "label": "1.1.19"
+        },
+        "4lxp2rgq": {
+          "label": "1.1.17"
+        },
+        "81ppkvn1": {
+          "label": "1.1.18"
+        },
+        "0q5nwyvq": {
+          "label": "1.1.16"
+        },
+        "5lery96q": {
+          "label": "1.1.15"
+        },
+        "p12dkw7q": {
+          "label": "1.1.14"
+        },
+        "013883yq": {
+          "label": "1.1.13"
+        },
+        "zqoppd41": {
+          "label": "1.1.12"
+        },
+        "81wpp36q": {
+          "label": "1.1.11"
+        },
+        "5lmkkz0q": {
+          "label": "1.1.10"
+        },
+        "p12dendq": {
+          "label": "1.1.9"
+        },
+        "jqzp778l": {
+          "label": "1.1.8"
+        },
+        "z19mg3yl": {
+          "label": "1.1.7"
+        },
+        "gq7j2mnq": {
+          "label": "1.1.6"
+        },
+        "01376ddl": {
+          "label": "1.1.5"
+        },
+        "814gw7j1": {
+          "label": "1.1.4"
+        },
+        "5lm69kj1": {
+          "label": "1.1.3"
+        },
+        "0q5z0emq": {
+          "label": "1.1.2"
+        },
+        "81woy4ml": {
+          "label": "1.1.1"
+        },
+        "5lm65o81": {
+          "label": "1.1.0"
+        },
+        "jq6rd5vq": {
+          "label": "1.0.0"
+        },
+        "21gdm6x1": {
+          "label": "0.18"
+        },
+        "21gd3om1": {
+          "label": "0.17"
+        },
+        "jqzemymq": {
+          "label": "0.16"
+        },
+        "klr4r62q": {
+          "label": "0.15"
+        },
+        "gq7d6kvq": {
+          "label": "0.14"
+        },
+        "21gd3yn1": {
+          "label": "0.13"
+        },
+        "jqzemkgq": {
+          "label": "0.12"
+        },
+        "12v35kkq": {
+          "label": "URL"
+        }
+      },
+      "default": "rqvp9nrq"
+    },
+    "is-subcategory": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/p854g05l"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "p854go5l",
+    "name": "Major Version",
+    "category": "wkp0y6g2",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "21gdm5x1": "0.18",
+        "jqzej94q": "0.17",
+        "klr4g90q": "0.16",
+        "21dg0531": "0.15",
+        "5q88yprq": "0.14",
+        "4qyo093l": "0.13",
+        "mlnmx961": "0.12"
+      },
+      "values": {
+        "21gdm5x1": {
+          "label": "0.18",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "jqzej94q": {
+          "label": "0.17",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "klr4g90q": {
+          "label": "0.16",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "21dg0531": {
+          "label": "0.15",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "5q88yprq": {
+          "label": "0.14",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "4qyo093l": {
+          "label": "0.13",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        },
+        "mlnmx961": {
+          "label": "0.12",
+          "rules": "",
+          "flags": {
+            "miscellaneous": null
+          }
+        }
+      },
+      "default": "21gdm5x1"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/p854go5l"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkp0y6g2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "ql67pwk8",
+    "name": "Category (Category Extensions)",
+    "category": "jdroxold",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "0q56e2v1": "Wave Defense",
+        "ln8rn5dl": "All Peaceful Achievements",
+        "qoxxy45q": "Supply Challenge",
+        "jq609xvq": "Deathworld",
+        "4lxz6pj1": "Any% Botless",
+        "9qj0647l": "New Game+"
+      },
+      "values": {
+        "0q56e2v1": {
+          "label": "Wave Defense",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket in the \"Wave defense\" scenario  \n- Only 1 player is allowed  \n- Difficulty must be set to normal  \n- Infinite map must be disabled  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory message  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "ln8rn5dl": {
+          "label": "All Peaceful Achievements",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n\n- The goal is to unlock all achievements obtainable with \"Peaceful mode\" enabled  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- The map must be random  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the final achievement being unlocked  \n\n---\n\n## Submission Requirements\n\n- A **save file** must be linked in the run description\n- A permanent video recording of the full run is required\n\n---\n\n## Additional Rules\n\n- Achievements must be deleted before starting the run  \n- Reloads are not allowed  \n\n---\n\n## Challenger Rules: Runs under 4h:30 AND Top 3 submission\n\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "qoxxy45q": {
+          "label": "Supply Challenge",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to finish the \"Supply Challenge\" scenario\n- Only 1 player is allowed\n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "jq609xvq": {
+          "label": "Deathworld",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Only 1 player is allowed  \n- The \"Death world\" preset must be used in the map generator settings  \n- The map must be random  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "4lxz6pj1": {
+          "label": "Any% Botless",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is not allowed, but blueprints created during the run are allowed\n- Construction bots and logistics bots are not allowed  \n\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "9qj0647l": {
+          "label": "New Game+",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to launch a rocket  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- Using a set map seed is allowed  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts on the first frame of the map  \n- The timer stops on the first frame of the victory screen  \n\n---\n\n## Submission Requirements\n- A permanent video recording of the full run is required\n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "0q56e2v1"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/ql67pwk8"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdroxold"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "p85yzj0l",
+    "name": "Major Version",
+    "category": "7dg85xp2",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "lx5edm31": "1.x.x",
+        "14o74req": "2.x.x"
+      },
+      "values": {
+        "lx5edm31": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "14o74req": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "lx5edm31"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/p85yzj0l"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dg85xp2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "38d9411l",
+    "name": "Major Version",
+    "category": "wkpy7ljk",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "1928d0yq": "1.x.x",
+        "12vx4gdq": "2.x.x"
+      },
+      "values": {
+        "1928d0yq": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "12vx4gdq": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "1928d0yq"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/38d9411l"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpy7ljk"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "r8rr9p28",
+    "name": "Major Version",
+    "category": "ndxjper2",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "1pyd6rv1": "1.x.x",
+        "qkem6pdq": "2.x.x"
+      },
+      "values": {
+        "1pyd6rv1": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "qkem6pdq": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "1pyd6rv1"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/r8rr9p28"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/ndxjper2"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "5lyv54kl",
+    "name": "Major Version",
+    "category": "7dggqegd",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "q75rzyp1": "1.x.x",
+        "1gn2ok6l": "2.x.x"
+      },
+      "values": {
+        "q75rzyp1": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "1gn2ok6l": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "q75rzyp1"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/5lyv54kl"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/7dggqegd"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "e8m7okv8",
+    "name": "Major Version",
+    "category": "wkpjq9wk",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "qznxyo2q": "1.x.x",
+        "lr3y68ol": "2.x.x"
+      },
+      "values": {
+        "qznxyo2q": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "lr3y68ol": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "qznxyo2q"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/e8m7okv8"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wkpjq9wk"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "ylqxwvz8",
+    "name": "Major Version",
+    "category": "9kvxm882",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "1dk3oppl": "1.x.x",
+        "q8kdrnyq": "2.x.x"
+      },
+      "values": {
+        "1dk3oppl": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "q8kdrnyq": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "1dk3oppl"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/ylqxwvz8"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kvxm882"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "gnx61kpn",
+    "name": "Major Version",
+    "category": "wdmw3542",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "qyzj8k61": "1.x.x",
+        "ln8zkgol": "2.x.x"
+      },
+      "values": {
+        "qyzj8k61": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "ln8zkgol": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "qyzj8k61"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/gnx61kpn"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/wdmw3542"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "dloov1dl",
+    "name": "Major Version",
+    "category": "9kv7oeek",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "10vw94ol": "1.x.x",
+        "qj7xe37q": "2.x.x"
+      },
+      "values": {
+        "10vw94ol": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "qj7xe37q": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "10vw94ol"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/dloov1dl"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/9kv7oeek"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "jlzpd1qn",
+    "name": "Major Version",
+    "category": "mke9y0nd",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "q65zgdvl": "1.x.x",
+        "lmogw581": "2.x.x"
+      },
+      "values": {
+        "q65zgdvl": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "lmogw581": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "q65zgdvl"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/jlzpd1qn"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/mke9y0nd"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "9l7ypqpl",
+    "name": "Major Version",
+    "category": "jdroxold",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "1w45rymq": "1.x.x",
+        "qoxr245q": "2.x.x"
+      },
+      "values": {
+        "1w45rymq": {
+          "label": "1.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        },
+        "qoxr245q": {
+          "label": "2.x.x",
+          "rules": "",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "1w45rymq"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/9l7ypqpl"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/jdroxold"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "yn20qzel",
+    "name": " URL (Space Age Leaderboard)",
+    "category": "5dwzo6ed",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "13954gr1": "https://www.speedrun.com/Space_Age"
+      },
+      "values": {
+        "13954gr1": {
+          "label": "https://www.speedrun.com/Space_Age"
+        }
+      },
+      "default": "13954gr1"
+    },
+    "is-subcategory": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/yn20qzel"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/9d35xw1l"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/5dwzo6ed"
+      }
+    ],
+    "_game": "9d35xw1l"
+  },
+  {
+    "id": "ylpyrvrl",
+    "name": "Version ",
+    "category": null,
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": true,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "q8k0mg3q": "Please choose the version",
+        "12vkv4kq": "2.1.12",
+        "qke3gmyq": "2.1.11",
+        "q5vpoenl": "2.0.77",
+        "12vr737q": "2.0.76",
+        "qke2wryq": "2.0.75",
+        "1pyvk7k1": "2.0.74",
+        "qznp302q": "2.0.73",
+        "1gnd37xl": "2.0.72",
+        "10vjkm5l": "2.0.71",
+        "1dkg893l": "2.0.70",
+        "q8k8pw3q": "2.0.69",
+        "qoxopgxq": "2.0.68",
+        "13978jx1": "2.0.67",
+        "lmo6g9j1": "2.0.66",
+        "14og28eq": "2.0.65",
+        "le2z2mml": "2.0.64",
+        "qoxo89pq": "2.0.63",
+        "q75e8xd1": "2.0.62",
+        "1gnrmp8l": "2.0.61",
+        "q5veyd2l": "2.0.60",
+        "le2g9dpl": "2.0.59",
+        "q5veykrl": "2.0.58",
+        "lx5wr3j1": "2.0.57",
+        "14oe83wq": "2.0.56",
+        "qzn7vzgq": "2.0.55",
+        "lr3wjojl": "2.0.54",
+        "1dk7vx4l": "2.0.53",
+        "ln8rxrdl": "2.0.52",
+        "ln8rgn6l": "2.0.51",
+        "10v328jl": "2.0.50",
+        "qj7jpr0q": "2.0.49",
+        "q6538mnl": "2.0.48",
+        "qznkd0mq": "2.0.47",
+        "lr3nm52l": "2.0.46",
+        "lx53o741": "2.0.45",
+        "q75kwgv1": "2.0.44",
+        "qyz3xz31": "2.0.43",
+        "qyz37631": "2.0.42",
+        "1dkrvx4l": "2.0.41",
+        "q8k52wgq": "2.0.40",
+        "1w4r635q": "2.0.39",
+        "qox2zy5q": "2.0.38",
+        "1py6kxv1": "2.0.37",
+        "qzny2v2q": "2.0.36",
+        "lmowp441": "2.0.35",
+        "q65g0wjl": "2.0.34",
+        "qznypw8q": "2.0.33",
+        "1gno868l": "2.0.32",
+        "q75zjod1": "2.0.31",
+        "1394xok1": "2.0.30",
+        "q75z5rd1": "2.0.29",
+        "lr3y8d0l": "2.0.28",
+        "1dk3pn3l": "2.0.27",
+        "q8kdn3rq": "2.0.26",
+        "lr3ymv0l": "2.0.25",
+        "qoxrpj2q": "2.0.24",
+        "1gn2r68l": "2.0.23",
+        "qznx7w8q": "2.0.22",
+        "1gn2o9nl": "2.0.21",
+        "qkemm3kq": "2.0.20",
+        "qkem4ydq": "2.0.19",
+        "q75r4mp1": "2.0.18",
+        "1gn24z6l": "2.0.17",
+        "ln8z5jdl": "2.0.16",
+        "10vwxk5l": "2.0.15",
+        "1w45e86q": "2.0.14",
+        "qoxrmn4q": "2.0.13",
+        "1395wry1": "2.0.12",
+        "q75rvjy1": "2.0.11",
+        "q5v53xvl": "2.0.10",
+        "ln802ndl": "\t2.0.9",
+        "1dkymgjl": "2.0.8",
+        "qyzy6n21": "2.0.7",
+        "ln8025jl": "2.0.6",
+        "q8k8vjrq": "2.0.69",
+        "14oy9xvq": "2.0.71",
+        "lr3prd0l": "2.0.73"
+      },
+      "values": {
+        "q8k0mg3q": {
+          "label": "Please choose the version"
+        },
+        "12vkv4kq": {
+          "label": "2.1.12"
+        },
+        "qke3gmyq": {
+          "label": "2.1.11"
+        },
+        "q5vpoenl": {
+          "label": "2.0.77"
+        },
+        "12vr737q": {
+          "label": "2.0.76"
+        },
+        "qke2wryq": {
+          "label": "2.0.75"
+        },
+        "1pyvk7k1": {
+          "label": "2.0.74"
+        },
+        "qznp302q": {
+          "label": "2.0.73"
+        },
+        "1gnd37xl": {
+          "label": "2.0.72"
+        },
+        "10vjkm5l": {
+          "label": "2.0.71"
+        },
+        "1dkg893l": {
+          "label": "2.0.70"
+        },
+        "q8k8pw3q": {
+          "label": "2.0.69"
+        },
+        "qoxopgxq": {
+          "label": "2.0.68"
+        },
+        "13978jx1": {
+          "label": "2.0.67"
+        },
+        "lmo6g9j1": {
+          "label": "2.0.66"
+        },
+        "14og28eq": {
+          "label": "2.0.65"
+        },
+        "le2z2mml": {
+          "label": "2.0.64"
+        },
+        "qoxo89pq": {
+          "label": "2.0.63"
+        },
+        "q75e8xd1": {
+          "label": "2.0.62"
+        },
+        "1gnrmp8l": {
+          "label": "2.0.61"
+        },
+        "q5veyd2l": {
+          "label": "2.0.60"
+        },
+        "le2g9dpl": {
+          "label": "2.0.59"
+        },
+        "q5veykrl": {
+          "label": "2.0.58"
+        },
+        "lx5wr3j1": {
+          "label": "2.0.57"
+        },
+        "14oe83wq": {
+          "label": "2.0.56"
+        },
+        "qzn7vzgq": {
+          "label": "2.0.55"
+        },
+        "lr3wjojl": {
+          "label": "2.0.54"
+        },
+        "1dk7vx4l": {
+          "label": "2.0.53"
+        },
+        "ln8rxrdl": {
+          "label": "2.0.52"
+        },
+        "ln8rgn6l": {
+          "label": "2.0.51"
+        },
+        "10v328jl": {
+          "label": "2.0.50"
+        },
+        "qj7jpr0q": {
+          "label": "2.0.49"
+        },
+        "q6538mnl": {
+          "label": "2.0.48"
+        },
+        "qznkd0mq": {
+          "label": "2.0.47"
+        },
+        "lr3nm52l": {
+          "label": "2.0.46"
+        },
+        "lx53o741": {
+          "label": "2.0.45"
+        },
+        "q75kwgv1": {
+          "label": "2.0.44"
+        },
+        "qyz3xz31": {
+          "label": "2.0.43"
+        },
+        "qyz37631": {
+          "label": "2.0.42"
+        },
+        "1dkrvx4l": {
+          "label": "2.0.41"
+        },
+        "q8k52wgq": {
+          "label": "2.0.40"
+        },
+        "1w4r635q": {
+          "label": "2.0.39"
+        },
+        "qox2zy5q": {
+          "label": "2.0.38"
+        },
+        "1py6kxv1": {
+          "label": "2.0.37"
+        },
+        "qzny2v2q": {
+          "label": "2.0.36"
+        },
+        "lmowp441": {
+          "label": "2.0.35"
+        },
+        "q65g0wjl": {
+          "label": "2.0.34"
+        },
+        "qznypw8q": {
+          "label": "2.0.33"
+        },
+        "1gno868l": {
+          "label": "2.0.32"
+        },
+        "q75zjod1": {
+          "label": "2.0.31"
+        },
+        "1394xok1": {
+          "label": "2.0.30"
+        },
+        "q75z5rd1": {
+          "label": "2.0.29"
+        },
+        "lr3y8d0l": {
+          "label": "2.0.28"
+        },
+        "1dk3pn3l": {
+          "label": "2.0.27"
+        },
+        "q8kdn3rq": {
+          "label": "2.0.26"
+        },
+        "lr3ymv0l": {
+          "label": "2.0.25"
+        },
+        "qoxrpj2q": {
+          "label": "2.0.24"
+        },
+        "1gn2r68l": {
+          "label": "2.0.23"
+        },
+        "qznx7w8q": {
+          "label": "2.0.22"
+        },
+        "1gn2o9nl": {
+          "label": "2.0.21"
+        },
+        "qkemm3kq": {
+          "label": "2.0.20"
+        },
+        "qkem4ydq": {
+          "label": "2.0.19"
+        },
+        "q75r4mp1": {
+          "label": "2.0.18"
+        },
+        "1gn24z6l": {
+          "label": "2.0.17"
+        },
+        "ln8z5jdl": {
+          "label": "2.0.16"
+        },
+        "10vwxk5l": {
+          "label": "2.0.15"
+        },
+        "1w45e86q": {
+          "label": "2.0.14"
+        },
+        "qoxrmn4q": {
+          "label": "2.0.13"
+        },
+        "1395wry1": {
+          "label": "2.0.12"
+        },
+        "q75rvjy1": {
+          "label": "2.0.11"
+        },
+        "q5v53xvl": {
+          "label": "2.0.10"
+        },
+        "ln802ndl": {
+          "label": "\t2.0.9"
+        },
+        "1dkymgjl": {
+          "label": "2.0.8"
+        },
+        "qyzy6n21": {
+          "label": "2.0.7"
+        },
+        "ln8025jl": {
+          "label": "2.0.6"
+        },
+        "q8k8vjrq": {
+          "label": "2.0.69"
+        },
+        "14oy9xvq": {
+          "label": "2.0.71"
+        },
+        "lr3prd0l": {
+          "label": "2.0.73"
+        }
+      },
+      "default": "q8k0mg3q"
+    },
+    "is-subcategory": false,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/ylpyrvrl"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      }
+    ],
+    "_game": "ldewr7ed"
+  },
+  {
+    "id": "ylpkqrr8",
+    "name": "Category (Category Extensions)",
+    "category": "zdnvex9k",
+    "scope": {
+      "type": "global"
+    },
+    "mandatory": true,
+    "user-defined": false,
+    "obsoletes": true,
+    "values": {
+      "_note": "`choices` is deprecated, please use `values` instead",
+      "choices": {
+        "10v38x5l": "All Peaceful Achievements"
+      },
+      "values": {
+        "10v38x5l": {
+          "label": "All Peaceful Achievements",
+          "rules": "- The \"Game Rules\" must be followed in addition to the rules listed here\n\n---\n\n## Basic Rules\n- The goal is to unlock all achievements obtainable with \"Peaceful mode\" enabled  \n- Only 1 player is allowed  \n- Any map generator settings are allowed  \n- The map must be random  \n- Importing blueprints is allowed  \n\n---\n\n## Timing Rules\n- Timing is done in realtime (not in-game time)  \n- The timer starts when pressing the \"Random seed\" button  \n- The timer stops on the first frame of the final achievement being unlocked  \n\n---\n\n## Submission Requirements\n- A **save file** must be linked in the run description\n- A permanent video recording of the full run is required\n\n---\n\n## Additional Rules\n- Achievements must be deleted before starting the run  \n- Reloads are not allowed  \n\n---\n\n## Challenger Rules: Top 3 submissions in each category\n- A save file with **replay** must be linked in the run description: [How to permanently enable replay](https://www.speedrun.com/factorio/guides/bkces)\n",
+          "flags": {
+            "miscellaneous": false
+          }
+        }
+      },
+      "default": "10v38x5l"
+    },
+    "is-subcategory": true,
+    "links": [
+      {
+        "rel": "self",
+        "uri": "https://www.speedrun.com/api/v1/variables/ylpkqrr8"
+      },
+      {
+        "rel": "game",
+        "uri": "https://www.speedrun.com/api/v1/games/ldewr7ed"
+      },
+      {
+        "rel": "category",
+        "uri": "https://www.speedrun.com/api/v1/categories/zdnvex9k"
+      }
+    ],
+    "_game": "ldewr7ed"
+  }
+]
