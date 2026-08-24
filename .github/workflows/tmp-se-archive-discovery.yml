@@ -1,0 +1,237 @@
+name: Discover public Factorio save archives
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-archive-discovery-result-20260824
+
+jobs:
+  discover:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crawl public map archives and capture APIs
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work published/sites published/responses published/assets
+          python3 -m pip install --quiet requests beautifulsoup4 playwright
+          python3 -m playwright install chromium
+
+          cat > work/crawl.py <<'PY'
+          from __future__ import annotations
+          import hashlib
+          import json
+          import pathlib
+          import re
+          import time
+          import urllib.parse
+          from collections import deque
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.sync_api import sync_playwright
+
+          P = pathlib.Path
+          out = P('published')
+          session = requests.Session()
+          session.headers['User-Agent'] = 'Mozilla/5.0 SE-save-archive-inspector/1.0'
+          roots = [
+              'https://factorio-maps.rmdir.app/',
+              'https://factoriomaps.com/browse.html',
+          ]
+          records = []
+          saved_urls = set()
+
+          def safe_name(url: str, suffix: str = '') -> str:
+              parsed = urllib.parse.urlsplit(url)
+              base = re.sub(r'[^A-Za-z0-9._-]+', '_', parsed.netloc + parsed.path).strip('_')[:120]
+              digest = hashlib.sha256(url.encode()).hexdigest()[:12]
+              return f'{base or "root"}_{digest}{suffix}'
+
+          def save_bytes(url: str, body: bytes, content_type: str, folder: P) -> str:
+              folder.mkdir(parents=True, exist_ok=True)
+              ext = '.bin'
+              low = content_type.lower()
+              if 'json' in low: ext = '.json'
+              elif 'javascript' in low: ext = '.js'
+              elif 'html' in low: ext = '.html'
+              elif 'css' in low: ext = '.css'
+              elif 'text' in low: ext = '.txt'
+              elif 'zip' in low: ext = '.zip'
+              path = folder / safe_name(url, ext)
+              path.write_bytes(body)
+              return str(path.relative_to(out))
+
+          # First pass: ordinary HTTP and static assets.
+          for root in roots:
+              site_dir = out / 'sites' / safe_name(root)
+              site_dir.mkdir(parents=True, exist_ok=True)
+              try:
+                  response = session.get(root, timeout=60)
+                  response.raise_for_status()
+                  (site_dir / 'initial.html').write_bytes(response.content)
+                  soup = BeautifulSoup(response.text, 'html.parser')
+                  urls = []
+                  for tag, attr in [('script','src'), ('link','href'), ('a','href')]:
+                      for node in soup.find_all(tag):
+                          value = node.get(attr)
+                          if value:
+                              urls.append(urllib.parse.urljoin(root, value))
+                  (site_dir / 'static-urls.json').write_text(json.dumps(sorted(set(urls)), indent=2))
+                  for url in sorted(set(urls)):
+                      if not urllib.parse.urlsplit(url).netloc:
+                          continue
+                      try:
+                          r = session.get(url, timeout=90)
+                          ctype = r.headers.get('content-type','')
+                          if len(r.content) <= 30_000_000:
+                              rel = save_bytes(url, r.content, ctype, out / 'assets')
+                          else:
+                              rel = None
+                          records.append({'phase':'static','url':url,'status':r.status_code,'content_type':ctype,'bytes':len(r.content),'file':rel})
+                      except Exception as exc:
+                          records.append({'phase':'static','url':url,'error':repr(exc)})
+              except Exception as exc:
+                  records.append({'phase':'initial','url':root,'error':repr(exc)})
+
+          # Browser pass: capture XHR/fetch/JSON and rendered links.
+          with sync_playwright() as pw:
+              browser = pw.chromium.launch(headless=True)
+              context = browser.new_context(viewport={'width': 1600, 'height': 1000})
+              for root in roots:
+                  page = context.new_page()
+                  site_dir = out / 'sites' / safe_name(root)
+                  site_dir.mkdir(parents=True, exist_ok=True)
+                  responses = []
+
+                  def handle_response(response):
+                      url = response.url
+                      ctype = response.headers.get('content-type','')
+                      item = {'phase':'browser','page':root,'url':url,'status':response.status,'content_type':ctype}
+                      try:
+                          if any(x in ctype.lower() for x in ('json','javascript','html','text','xml')):
+                              body = response.body()
+                              item['bytes'] = len(body)
+                              if len(body) <= 30_000_000:
+                                  item['file'] = save_bytes(url, body, ctype, out / 'responses')
+                      except Exception as exc:
+                          item['body_error'] = repr(exc)
+                      responses.append(item)
+
+                  page.on('response', handle_response)
+                  try:
+                      page.goto(root, wait_until='domcontentloaded', timeout=120_000)
+                      try: page.wait_for_load_state('networkidle', timeout=45_000)
+                      except Exception: pass
+                      for _ in range(8):
+                          page.mouse.wheel(0, 5000)
+                          page.wait_for_timeout(500)
+                      page.wait_for_timeout(8_000)
+                      (site_dir / 'rendered.html').write_text(page.content())
+                      page.screenshot(path=str(site_dir / 'rendered.png'), full_page=True)
+                      links = page.eval_on_selector_all('a[href]', "els => els.map(e => ({href:e.href,text:(e.innerText||'').trim()}))")
+                      buttons = page.eval_on_selector_all('button', "els => els.map(e => (e.innerText||'').trim())")
+                      storage = page.evaluate("() => ({local:{...localStorage}, session:{...sessionStorage}, url:location.href, title:document.title, text:document.body.innerText})")
+                      (site_dir / 'links.json').write_text(json.dumps(links, indent=2))
+                      (site_dir / 'buttons.json').write_text(json.dumps(buttons, indent=2))
+                      (site_dir / 'storage-and-text.json').write_text(json.dumps(storage, indent=2))
+
+                      # Visit likely map/detail routes exposed by the rendered page.
+                      queue = []
+                      seen = set()
+                      root_host = urllib.parse.urlsplit(root).netloc
+                      for entry in links:
+                          href = entry.get('href','')
+                          low = (href + ' ' + entry.get('text','')).lower()
+                          if urllib.parse.urlsplit(href).netloc == root_host and any(k in low for k in ('map','save','world','download')):
+                              queue.append(href)
+                      for href in queue[:80]:
+                          if href in seen: continue
+                          seen.add(href)
+                          detail = context.new_page()
+                          detail_responses = []
+                          detail.on('response', lambda r, arr=detail_responses: arr.append({'url':r.url,'status':r.status,'content_type':r.headers.get('content-type','')}))
+                          try:
+                              detail.goto(href, wait_until='domcontentloaded', timeout=90_000)
+                              try: detail.wait_for_load_state('networkidle', timeout=20_000)
+                              except Exception: pass
+                              detail.wait_for_timeout(2_000)
+                              html = detail.content().encode()
+                              rel = save_bytes(href, html, 'text/html', out / 'responses')
+                              dlinks = detail.eval_on_selector_all('a[href]', "els => els.map(e => ({href:e.href,text:(e.innerText||'').trim()}))")
+                              records.append({'phase':'detail','url':href,'file':rel,'links':dlinks,'responses':detail_responses})
+                          except Exception as exc:
+                              records.append({'phase':'detail','url':href,'error':repr(exc)})
+                          finally:
+                              detail.close()
+                  except Exception as exc:
+                      records.append({'phase':'browser-page','url':root,'error':repr(exc)})
+                  records.extend(responses)
+                  page.close()
+              browser.close()
+
+          (out / 'network-records.json').write_text(json.dumps(records, indent=2))
+
+          # Mine everything captured for likely map/save/API information.
+          terms = re.compile(r'(?i)(space[ _-]*exploration|\bse[ _.-]?0[.]?7\b|rocket[ _-]*science|cargo[ _-]*rocket|\.zip\b|download|savegame|world save)')
+          url_rx = re.compile(r'https?://[^\s"\'<>]+')
+          hits = []
+          urls = set()
+          for path in out.rglob('*'):
+              if not path.is_file() or path.suffix.lower() in {'.png','.jpg','.jpeg','.zip','.bin'} or path.stat().st_size > 30_000_000:
+                  continue
+              try: text = path.read_text(errors='replace')
+              except Exception: continue
+              for match in terms.finditer(text):
+                  start=max(0,match.start()-250); end=min(len(text),match.end()+500)
+                  hits.append({'file':str(path.relative_to(out)),'term':match.group(0),'context':text[start:end]})
+                  if len(hits) >= 5000: break
+              for url in url_rx.findall(text):
+                  low=url.lower().rstrip(').,;]')
+                  if any(k in low for k in ('.zip','download','save','map','world','api')):
+                      urls.add(low)
+              if len(hits) >= 5000: break
+          (out / 'keyword-hits.json').write_text(json.dumps(hits, indent=2))
+          (out / 'candidate-urls.txt').write_text('\n'.join(sorted(urls)))
+
+          summary = [
+              f'Network/static records: {len(records)}',
+              f'Keyword hits: {len(hits)}',
+              f'Candidate URLs: {len(urls)}',
+              '',
+              'Top candidate URLs:',
+              *list(sorted(urls))[:500],
+              '',
+              'Top keyword contexts:',
+          ]
+          for hit in hits[:300]:
+              summary += [f"\n--- {hit['file']} :: {hit['term']} ---", hit['context'][:1200]]
+          (out / 'SUMMARY.txt').write_text('\n'.join(summary))
+          print('\n'.join(summary[:700]))
+          PY
+          python3 work/crawl.py
+
+      - name: Publish discovery result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-archive-discovery
+          mkdir -p tmp-se-archive-discovery
+          cp -a published/. tmp-se-archive-discovery/
+          git add -f tmp-se-archive-discovery
+          git commit -m 'Discover public Factorio save archive APIs'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
