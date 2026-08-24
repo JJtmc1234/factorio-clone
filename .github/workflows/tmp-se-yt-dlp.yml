@@ -48,6 +48,7 @@ jobs:
               "Factorio SE 0.7 first space",
               "Factorio SE 0.7 first cargo rocket",
               "Factorio SE 0.7 Nauvis Orbit",
+              "Factorio K2SE 0.7",
           ]
 
           videos: dict[str, dict] = {}
@@ -56,7 +57,7 @@ jobs:
           for query in queries:
               command = [
                   "yt-dlp", "--flat-playlist", "--dump-single-json", "--no-warnings",
-                  "--playlist-end", "120", f"ytsearchdate120:{query}",
+                  "--playlist-end", "120", f"ytsearch120:{query}",
               ]
               try:
                   completed = subprocess.run(command, capture_output=True, text=True, timeout=900)
@@ -81,7 +82,7 @@ jobs:
           interesting_host_re = re.compile(
               r"(?:drive\.google\.com|docs\.google\.com|dropbox\.com|mega\.nz|mediafire\.com|"
               r"github\.com|githubusercontent\.com|onedrive\.live\.com|1drv\.ms|file\.io|gofile\.io|"
-              r"refactorio\.de|factorio\.com|\.zip(?:$|[?&#]))",
+              r"refactorio\.de|factorio\.com|patreon\.com|\.zip(?:$|[?&#]))",
               re.I,
           )
           save_word_re = re.compile(
@@ -97,7 +98,6 @@ jobs:
               command = [
                   "yt-dlp", "--skip-download", "--dump-single-json", "--no-warnings",
                   "--socket-timeout", "45", "--retries", "2",
-                  "--extractor-args", "youtube:player_client=web_embedded,android_vr",
                   video["url"],
               ]
               try:
@@ -126,7 +126,7 @@ jobs:
 
           video_list = list(videos.values())
           results = []
-          with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
               future_map = {executor.submit(inspect, video): video for video in video_list}
               for index, future in enumerate(concurrent.futures.as_completed(future_map), 1):
                   results.append(future.result())
