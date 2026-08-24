@@ -1,0 +1,188 @@
+name: Search YouTube for public SE 0.7 saves
+
+on:
+  push:
+    branches:
+      - tmp-se-yt-dlp-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-yt-dlp-result-20260824
+
+jobs:
+  search:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search videos and inspect descriptions
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          python3 -m pip install --upgrade yt-dlp
+
+          cat > /tmp/search.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import json
+          import re
+          import subprocess
+          import time
+          from pathlib import Path
+
+          queries = [
+              "Factorio Space Exploration 0.7",
+              "Factorio SE 0.7",
+              "Factorio Space Exploration 0.7 cargo rocket",
+              "Factorio Space Exploration 0.7 rocket science",
+              "Factorio Space Exploration 0.7 playthrough",
+              "Factorio Space Exploration 0.7 lets play",
+              "Factorio SE 0.7 first space",
+              "Factorio SE 0.7 first cargo rocket",
+              "Factorio SE 0.7 Nauvis Orbit",
+          ]
+
+          videos: dict[str, dict] = {}
+          search_errors = []
+
+          for query in queries:
+              command = [
+                  "yt-dlp", "--flat-playlist", "--dump-single-json", "--no-warnings",
+                  "--playlist-end", "120", f"ytsearchdate120:{query}",
+              ]
+              try:
+                  completed = subprocess.run(command, capture_output=True, text=True, timeout=900)
+                  if completed.returncode != 0:
+                      search_errors.append({"query": query, "error": completed.stderr[-4000:]})
+                      continue
+                  payload = json.loads(completed.stdout)
+                  for entry in payload.get("entries") or []:
+                      if not entry or not entry.get("id"):
+                          continue
+                      video_id = entry["id"]
+                      videos.setdefault(video_id, {
+                          "id": video_id,
+                          "title": entry.get("title"),
+                          "url": f"https://www.youtube.com/watch?v={video_id}",
+                          "search_queries": [],
+                      })["search_queries"].append(query)
+              except Exception as exc:
+                  search_errors.append({"query": query, "error": repr(exc)})
+
+          url_re = re.compile(r"https?://[^\s<>'\"\])}]+", re.I)
+          interesting_host_re = re.compile(
+              r"(?:drive\.google\.com|docs\.google\.com|dropbox\.com|mega\.nz|mediafire\.com|"
+              r"github\.com|githubusercontent\.com|onedrive\.live\.com|1drv\.ms|file\.io|gofile\.io|"
+              r"refactorio\.de|factorio\.com|\.zip(?:$|[?&#]))",
+              re.I,
+          )
+          save_word_re = re.compile(
+              r"\b(?:save|savegame|save game|map download|world download|download|mods? sync|zip)\b",
+              re.I,
+          )
+          stage_word_re = re.compile(
+              r"(?:rocket science|cargo rocket|first space|nauvis orbit|space exploration\s*0\.7|\bSE\s*0\.7\b)",
+              re.I,
+          )
+
+          def inspect(video: dict) -> dict:
+              command = [
+                  "yt-dlp", "--skip-download", "--dump-single-json", "--no-warnings",
+                  "--socket-timeout", "45", "--retries", "2",
+                  "--extractor-args", "youtube:player_client=web_embedded,android_vr",
+                  video["url"],
+              ]
+              try:
+                  completed = subprocess.run(command, capture_output=True, text=True, timeout=240)
+                  if completed.returncode != 0:
+                      return {**video, "inspection_error": completed.stderr[-2500:]}
+                  data = json.loads(completed.stdout)
+                  description = data.get("description") or ""
+                  urls = url_re.findall(description)
+                  interesting_urls = [url.rstrip(".,;:") for url in urls if interesting_host_re.search(url)]
+                  return {
+                      **video,
+                      "title": data.get("title") or video.get("title"),
+                      "channel": data.get("channel") or data.get("uploader"),
+                      "channel_id": data.get("channel_id") or data.get("uploader_id"),
+                      "upload_date": data.get("upload_date"),
+                      "duration": data.get("duration"),
+                      "description": description,
+                      "all_urls": urls,
+                      "interesting_urls": interesting_urls,
+                      "has_save_words": bool(save_word_re.search(description)),
+                      "has_stage_words": bool(stage_word_re.search((data.get("title") or "") + "\n" + description)),
+                  }
+              except Exception as exc:
+                  return {**video, "inspection_error": repr(exc)}
+
+          video_list = list(videos.values())
+          results = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+              future_map = {executor.submit(inspect, video): video for video in video_list}
+              for index, future in enumerate(concurrent.futures.as_completed(future_map), 1):
+                  results.append(future.result())
+                  if index % 25 == 0:
+                      print(f"inspected {index}/{len(video_list)}", flush=True)
+                      time.sleep(1)
+
+          results.sort(key=lambda row: (row.get("upload_date") or "", row.get("title") or ""), reverse=True)
+          Path("published/all-videos.json").write_text(json.dumps(results, indent=2, ensure_ascii=False))
+          Path("published/search-errors.json").write_text(json.dumps(search_errors, indent=2, ensure_ascii=False))
+
+          leads = [
+              row for row in results
+              if row.get("interesting_urls") or (row.get("has_save_words") and row.get("has_stage_words"))
+          ]
+          Path("published/leads.json").write_text(json.dumps(leads, indent=2, ensure_ascii=False))
+
+          lines = [
+              f"queries={len(queries)}",
+              f"unique_videos={len(video_list)}",
+              f"inspected_successfully={sum('inspection_error' not in row for row in results)}",
+              f"inspection_errors={sum('inspection_error' in row for row in results)}",
+              f"leads={len(leads)}",
+              "",
+          ]
+          for row in leads:
+              lines.append(f"TITLE: {row.get('title')}")
+              lines.append(f"DATE: {row.get('upload_date')}")
+              lines.append(f"CHANNEL: {row.get('channel')}")
+              lines.append(f"VIDEO: {row.get('url')}")
+              lines.append("URLS:")
+              for url in row.get("interesting_urls") or []:
+                  lines.append(f"  {url}")
+              description = row.get("description") or ""
+              matched_lines = [line for line in description.splitlines() if save_word_re.search(line) or interesting_host_re.search(line)]
+              if matched_lines:
+                  lines.append("DESCRIPTION LINES:")
+                  lines.extend(f"  {line}" for line in matched_lines[:30])
+              lines.append("")
+          Path("published/SUMMARY.txt").write_text("\n".join(lines), encoding="utf-8")
+          print("\n".join(lines[:20]))
+          PY
+
+          python3 /tmp/search.py
+
+      - name: Publish results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-yt-dlp
+          mkdir -p tmp-se-yt-dlp
+          cp -a published/. tmp-se-yt-dlp/
+          git add -f tmp-se-yt-dlp
+          git commit -m "Search YouTube descriptions for SE 0.7 saves"
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
