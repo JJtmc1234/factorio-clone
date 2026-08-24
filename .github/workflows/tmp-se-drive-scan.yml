@@ -43,7 +43,7 @@ jobs:
 
           cat > work/download_and_parse.py <<'PY'
           from __future__ import annotations
-          import json, pathlib, struct, subprocess, zipfile, hashlib, re, shutil
+          import json, pathlib, struct, subprocess, zipfile, hashlib
 
           P = pathlib.Path
           candidates = json.loads(P('work/candidates.json').read_text())
@@ -74,18 +74,22 @@ jobs:
               if fv[0]>=2:r.offset+=4
               mods={}
               for _ in range(r.opt(32,fv)):
-                  name=r.string(fv); version='.'.join(map(str,r.version48(fv))); crc=r.u32(); mods[name]=version
+                  name=r.string(fv); version='.'.join(map(str,r.version48(fv))); r.u32(); mods[name]=version
               out['mods']=mods; return out
 
           for c in candidates:
               save=P('work/saves')/(c['name']+'.zip')
               rec=dict(c); rec['path']=str(save)
               try:
-                  proc=subprocess.run(['gdown','--fuzzy','--no-cookies','-O',str(save),f"https://drive.google.com/file/d/{c['id']}/view"],text=True,capture_output=True,timeout=900)
+                  proc=subprocess.run(['gdown','--no-cookies','-O',str(save),c['id']],text=True,capture_output=True,timeout=900)
                   rec['gdown_stdout']=proc.stdout[-2000:]; rec['gdown_stderr']=proc.stderr[-2000:]
                   if proc.returncode!=0: raise RuntimeError(f'gdown exit {proc.returncode}')
                   if not save.exists() or save.stat().st_size<100000: raise RuntimeError('download missing or too small')
-                  rec['bytes']=save.stat().st_size; rec['sha256']=hashlib.sha256(save.read_bytes()).hexdigest()
+                  rec['bytes']=save.stat().st_size
+                  hasher=hashlib.sha256()
+                  with save.open('rb') as f:
+                      for chunk in iter(lambda:f.read(1024*1024),b''): hasher.update(chunk)
+                  rec['sha256']=hasher.hexdigest()
                   with zipfile.ZipFile(save) as zf:
                       names=zf.namelist(); init=next((n for n in names if n.endswith('/level-init.dat') or n=='level-init.dat'),None); level=next((n for n in names if n.endswith('/level.dat') or n=='level.dat'),None)
                       if not init or not level: raise RuntimeError('download is not a Factorio save ZIP')
@@ -119,7 +123,7 @@ jobs:
           set -euo pipefail
           cat > work/inspect_candidates.py <<'PY'
           from __future__ import annotations
-          import json, pathlib, subprocess, urllib.request, urllib.parse, shutil, os, time, socket, struct, re, tarfile
+          import json, pathlib, subprocess, urllib.request, urllib.parse, os, time, socket, struct, tarfile
 
           P=pathlib.Path
           headers=json.loads(P('published/header-results.json').read_text())
@@ -207,7 +211,6 @@ jobs:
           rcon.print(encode(report))
           '''
 
-          # Favor saves likely to be around the first-space boundary; skip obvious giant endgames first.
           candidates=[r for r in headers if r.get('header') and r.get('se_version')]
           candidates.sort(key=lambda r:(0 if r['name'] in ('rampant_starter_planet_only','blueprint_sandbox_cargo_rocket','miniloader_migration_06146') else 1,r.get('bytes',0)))
           for idx,r in enumerate(candidates[:6]):
@@ -254,7 +257,7 @@ jobs:
                   if 'orbit' in low:orbit_entities+=pe
                   if low!='nauvis':non_nauvis_entities+=pe
                   launchpads+=(s.get('entities') or {}).get('se-rocket-launch-pad',0) or 0
-              score=(min(machines,12)*20+min(output/1000,100)+launchpads*15-working*0)
+              score=(min(machines,12)*20+min(output/1000,100)+launchpads*15)
               if orbit_entities==0:score+=150
               elif orbit_entities<100:score+=60
               else:score-=min(orbit_entities/10,150)
@@ -262,11 +265,11 @@ jobs:
           for r in reports:r['metrics']=metrics(r)
           reports.sort(key=lambda r:r['metrics']['score'],reverse=True)
           P('published/progression-results.json').write_text(json.dumps(reports,indent=2,sort_keys=True))
-          if reports:
-              best=reports[0];P('published/selected.json').write_text(json.dumps(best,indent=2,sort_keys=True));P('published/selected-name.txt').write_text(best['name'])
+          valid=[r for r in reports if r.get('progression')]
+          if valid:
+              best=valid[0];P('published/selected.json').write_text(json.dumps(best,indent=2,sort_keys=True));P('published/selected-name.txt').write_text(best['name'])
               source=P('work/saves')/(best['name']+'.zip')
               if source.exists():
-                  # Split into GitHub-safe pieces so the actual save can be reconstructed locally.
                   subprocess.run(['split','-b','45M','-d','-a','3',str(source),str(P('published/chunks')/(best['name']+'.zip.part'))],check=True)
                   P('published/chunks/README.txt').write_text(f"Reassemble with: cat {best['name']}.zip.part* > {best['name']}.zip\n")
           print(json.dumps(reports,indent=2,sort_keys=True))
