@@ -6,37 +6,46 @@ on:
       - main
 
 permissions:
-  contents: read
+  contents: write
 
 env:
   SAVE_URL: "https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip"
+  RESULT_BRANCH: "tmp-se-save-result-20260824"
 
 jobs:
   fetch:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 20
     steps:
-      - name: Download candidate
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Download and validate actual save
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p candidate
+          rm -rf tmp-se-candidate
+          mkdir -p tmp-se-candidate
           curl --fail --location --retry 5 --retry-all-errors \
-            --output candidate/se_crash.zip "$SAVE_URL"
-          test "$(stat -c %s candidate/se_crash.zip)" -gt 50000000
-          unzip -t candidate/se_crash.zip > candidate/unzip-test.txt
-          unzip -l candidate/se_crash.zip > candidate/file-list.txt
-          sha256sum candidate/se_crash.zip > candidate/sha256.txt
-          unzip -j candidate/se_crash.zip '*/preview.jpg' -d candidate/preview || true
-          unzip -j candidate/se_crash.zip '*/level-init.dat' -d candidate/header || true
-          unzip -j candidate/se_crash.zip '*/script.dat' -d candidate/script || true
-          ls -lahR candidate > candidate/tree.txt
+            --output tmp-se-candidate/se_crash.zip "$SAVE_URL"
+          test "$(stat -c %s tmp-se-candidate/se_crash.zip)" -gt 50000000
+          unzip -t tmp-se-candidate/se_crash.zip > tmp-se-candidate/unzip-test.txt
+          unzip -l tmp-se-candidate/se_crash.zip > tmp-se-candidate/file-list.txt
+          sha256sum tmp-se-candidate/se_crash.zip > tmp-se-candidate/sha256.txt
+          unzip -j tmp-se-candidate/se_crash.zip '*/preview.jpg' -d tmp-se-candidate/preview || true
+          unzip -j tmp-se-candidate/se_crash.zip '*/level-init.dat' -d tmp-se-candidate/header || true
+          unzip -j tmp-se-candidate/se_crash.zip '*/script.dat' -d tmp-se-candidate/script || true
+          ls -lahR tmp-se-candidate > tmp-se-candidate/tree.txt
 
-      - name: Upload actual save and inspection files
-        uses: actions/upload-artifact@v4
-        with:
-          name: redmew-se-crash-candidate
-          path: candidate
-          compression-level: 0
-          retention-days: 1
-          if-no-files-found: error
+      - name: Publish to disposable result branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B "$RESULT_BRANCH"
+          git add -f tmp-se-candidate
+          git commit -m 'Temporary RedMew SE 0.7 candidate for local inspection'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
