@@ -1,0 +1,164 @@
+[
+  {
+    "name": "RateCalculator",
+    "version": "3.3.7",
+    "bytes": 95993,
+    "status": "ok"
+  },
+  {
+    "name": "aai-containers",
+    "version": "0.3.1",
+    "bytes": 916259,
+    "status": "ok"
+  },
+  {
+    "name": "aai-industry",
+    "version": "0.6.11",
+    "bytes": 7848416,
+    "status": "ok"
+  },
+  {
+    "name": "aai-loaders",
+    "version": "0.2.7",
+    "bytes": 416466,
+    "status": "ok"
+  },
+  {
+    "name": "aai-signal-transmission",
+    "version": "0.5.1",
+    "bytes": 17460010,
+    "status": "ok"
+  },
+  {
+    "name": "alien-biomes",
+    "version": "0.7.4",
+    "bytes": 610540,
+    "status": "ok"
+  },
+  {
+    "name": "alien-biomes-graphics",
+    "version": "0.7.1",
+    "bytes": 197598218,
+    "status": "ok"
+  },
+  {
+    "name": "bullet-trails",
+    "version": "0.7.1",
+    "bytes": 71191,
+    "status": "ok"
+  },
+  {
+    "name": "combat-mechanics-overhaul",
+    "version": "0.7.2",
+    "bytes": 30445,
+    "status": "ok"
+  },
+  {
+    "name": "equipment-gantry",
+    "version": "0.2.3",
+    "bytes": 800583,
+    "status": "ok"
+  },
+  {
+    "name": "factoryplanner",
+    "version": "2.0.35",
+    "bytes": 458576,
+    "status": "ok"
+  },
+  {
+    "name": "flib",
+    "version": "0.16.3",
+    "bytes": 423039,
+    "status": "ok"
+  },
+  {
+    "name": "grappling-gun",
+    "version": "0.4.1",
+    "bytes": 49763,
+    "status": "ok"
+  },
+  {
+    "name": "informatron",
+    "version": "0.4.0",
+    "bytes": 122525,
+    "status": "ok"
+  },
+  {
+    "name": "jetpack",
+    "version": "0.4.12",
+    "bytes": 1010982,
+    "status": "ok"
+  },
+  {
+    "name": "logistic-helper",
+    "version": "2.1.0",
+    "bytes": 221195,
+    "status": "ok"
+  },
+  {
+    "name": "robot_attrition",
+    "version": "0.6.3",
+    "bytes": 198164,
+    "status": "ok"
+  },
+  {
+    "name": "shield-projector",
+    "version": "0.2.2",
+    "bytes": 43200705,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration",
+    "version": "0.7.27",
+    "bytes": 3591250,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-graphics",
+    "version": "0.7.5",
+    "bytes": 49950991,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-graphics-2",
+    "version": "0.7.2",
+    "bytes": 41850378,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-graphics-3",
+    "version": "0.7.2",
+    "bytes": 40632851,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-graphics-4",
+    "version": "0.7.2",
+    "bytes": 49165934,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-graphics-5",
+    "version": "0.7.2",
+    "bytes": 44828658,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-menu-simulations",
+    "version": "0.7.4",
+    "bytes": 66315256,
+    "status": "ok"
+  },
+  {
+    "name": "space-exploration-postprocess",
+    "version": "0.7.3",
+    "bytes": 75100,
+    "status": "ok"
+  },
+  {
+    "name": "textplates",
+    "version": "0.7.2",
+    "bytes": 8484938,
+    "status": "ok"
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "full_scale_cutoff_pass": false,
+  "hours": 29.00000462962963,
+  "inspection_complete": true,
+  "launchpads": 5,
+  "non_nauvis_player_entities": 18376,
+  "orbit_close_enough": false,
+  "orbit_player_entities": 1381,
+  "rocket_science_machines": 18,
+  "rocket_science_output": 0,
+  "rocket_science_working": 1,
+  "support": {
+    "rocket-fuel": 8,
+    "satellite": 1,
+    "se-cargo-rocket-fuel-tank": 10,
+    "se-cargo-rocket-section": 10,
+    "se-liquid-rocket-fuel": 10,
+    "se-rocket-fuel-from-water-copper": 5,
+    "se-rocket-science-pack": 18
+  }
+}
