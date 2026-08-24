@@ -1,0 +1,182 @@
+   0.000 2026-08-24 17:13:15; Factorio 2.0.66 (build 83840, linux64, headless, space-age)
+   0.008 Operating system: Linux (Ubuntu 24.04)
+   0.008 Program arguments: "work/factorio/bin/x64/factorio" "--start-server" "work/candidate.zip" "--mod-directory" "work/mods" "--server-settings" "work/server-settings.json" "--rcon-port" "27500" "--rcon-password" <private> 
+   0.008 Config path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/config/config.ini
+   0.008 Read data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/data
+   0.008 Write data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio [87304/147718MB]
+   0.008 Binaries path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/bin
+   0.016 System info: [CPU: AMD EPYC 7763 64-Core Processor, 4 cores, RAM: 15989 MB]
+   0.016 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> SDL_VIDEODRIVER=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.030 Running in headless mode
+   0.030 Audio is disabled
+   0.039 Info ModManager.cpp:444: FeatureFlag expansion-shaders = false
+   0.039 Info ModManager.cpp:444: FeatureFlag freezing = false
+   0.039 Info ModManager.cpp:444: FeatureFlag quality = false
+   0.039 Info ModManager.cpp:444: FeatureFlag rail-bridges = false
+   0.039 Info ModManager.cpp:444: FeatureFlag segmented-units = false
+   0.039 Info ModManager.cpp:444: FeatureFlag space-travel = false
+   0.039 Info ModManager.cpp:444: FeatureFlag spoiling = false
+   0.040 Loading mod settings aai-containers 0.3.1 (settings.lua)
+   0.041 Loading mod settings aai-loaders 0.2.7 (settings.lua)
+   0.041 Loading mod settings informatron 0.4.0 (settings.lua)
+   0.041 Loading mod settings jetpack 0.4.12 (settings.lua)
+   0.042 Loading mod settings robot_attrition 0.6.3 (settings.lua)
+   0.042 Loading mod settings space-exploration-menu-simulations 0.7.4 (settings.lua)
+   0.042 Loading mod settings aai-industry 0.6.11 (settings.lua)
+   0.043 Loading mod settings alien-biomes 0.7.4 (settings.lua)
+   0.043 Loading mod settings combat-mechanics-overhaul 0.7.2 (settings.lua)
+   0.043 Loading mod settings equipment-gantry 0.2.3 (settings.lua)
+   0.044 Loading mod settings RateCalculator 3.3.7 (settings.lua)
+   0.044 Loading mod settings space-exploration 0.7.27 (settings.lua)
+   0.044 Loading mod settings space-exploration-postprocess 0.7.3 (settings.lua)
+   0.047 Loading mod core 0.0.0 (data.lua)
+   0.058 Loading mod base 2.0.66 (data.lua)
+   0.187 Loading mod aai-containers 0.3.1 (data.lua)
+   0.200 Loading mod aai-loaders 0.2.7 (data.lua)
+   0.201 Script @__aai-loaders__/data.lua:5: Log mods once: {
+  RateCalculator = "3.3.7",
+  ["aai-containers"] = "0.3.1",
+  ["aai-industry"] = "0.6.11",
+  ["aai-loaders"] = "0.2.7",
+  ["aai-signal-transmission"] = "0.5.1",
+  ["alien-biomes"] = "0.7.4",
+  ["alien-biomes-graphics"] = "0.7.1",
+  base = "2.0.66",
+  ["bullet-trails"] = "0.7.1",
+  ["combat-mechanics-overhaul"] = "0.7.2",
+  ["equipment-gantry"] = "0.2.3",
+  factoryplanner = "2.0.35",
+  flib = "0.16.3",
+  ["grappling-gun"] = "0.4.1",
+  informatron = "0.4.0",
+  jetpack = "0.4.12",
+  ["logistic-helper"] = "2.1.0",
+  robot_attrition = "0.6.3",
+  ["shield-projector"] = "0.2.2",
+  ["space-exploration"] = "0.7.27",
+  ["space-exploration-graphics"] = "0.7.5",
+  ["space-exploration-graphics-2"] = "0.7.2",
+  ["space-exploration-graphics-3"] = "0.7.2",
+  ["space-exploration-graphics-4"] = "0.7.2",
+  ["space-exploration-graphics-5"] = "0.7.2",
+  ["space-exploration-menu-simulations"] = "0.7.4",
+  ["space-exploration-postprocess"] = "0.7.3",
+  textplates = "0.7.2"
+}
+   0.212 Loading mod aai-signal-transmission 0.5.1 (data.lua)
+   0.222 Loading mod bullet-trails 0.7.1 (data.lua)
+   0.231 Loading mod flib 0.16.3 (data.lua)
+   0.242 Loading mod grappling-gun 0.4.1 (data.lua)
+   0.252 Loading mod informatron 0.4.0 (data.lua)
+   0.261 Loading mod jetpack 0.4.12 (data.lua)
+   0.271 Loading mod logistic-helper 2.1.0 (data.lua)
+   0.281 Loading mod robot_attrition 0.6.3 (data.lua)
+   0.291 Loading mod space-exploration-menu-simulations 0.7.4 (data.lua)
+   0.300 Loading mod textplates 0.7.2 (data.lua)
+   0.323 Loading mod aai-industry 0.6.11 (data.lua)
+   0.346 Loading mod alien-biomes 0.7.4 (data.lua)
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-01
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-02
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-02-red
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-03
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-04
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-05
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-06
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-06-brown
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-07
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08-brown
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08-red
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09-brown
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09-red
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dry-tree
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-tree-desert
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-grey-trunk
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-dry-hairy-tree
+   0.448 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dry-hairy-tree
+   0.501 Loading mod combat-mechanics-overhaul 0.7.2 (data.lua)
+   0.522 Loading mod equipment-gantry 0.2.3 (data.lua)
+   0.541 Loading mod factoryplanner 2.0.35 (data.lua)
+   0.561 Loading mod RateCalculator 3.3.7 (data.lua)
+   0.579 Loading mod shield-projector 0.2.2 (data.lua)
+   0.602 Loading mod space-exploration 0.7.27 (data.lua)
+   0.763 Loading mod base 2.0.66 (data-updates.lua)
+   0.793 Loading mod aai-loaders 0.2.7 (data-updates.lua)
+   0.825 Loading mod bullet-trails 0.7.1 (data-updates.lua)
+   0.855 Loading mod textplates 0.7.2 (data-updates.lua)
+   0.886 Loading mod aai-industry 0.6.11 (data-updates.lua)
+   0.924 Loading mod alien-biomes 0.7.4 (data-updates.lua)
+   0.953 Loading mod space-exploration 0.7.27 (data-updates.lua)
+   0.994 Loading mod aai-containers 0.3.1 (data-final-fixes.lua)
+   1.023 Loading mod aai-loaders 0.2.7 (data-final-fixes.lua)
+   1.051 Loading mod jetpack 0.4.12 (data-final-fixes.lua)
+   1.082 Loading mod robot_attrition 0.6.3 (data-final-fixes.lua)
+   1.110 Loading mod aai-industry 0.6.11 (data-final-fixes.lua)
+   1.142 Loading mod alien-biomes 0.7.4 (data-final-fixes.lua)
+   1.173 Script @__alien-biomes__/data-final-fixes.lua:204: Setting decals to layer 246
+   1.202 Loading mod combat-mechanics-overhaul 0.7.2 (data-final-fixes.lua)
+   1.234 Loading mod space-exploration 0.7.27 (data-final-fixes.lua)
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: iron-ore
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: copper-ore
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: coal
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: stone
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: uranium-ore
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: crude-oil
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-water-ice
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-methane-ice
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-beryllium-ore
+   1.377 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-cryonite
+   1.378 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-holmium-ore
+   1.378 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-iridium-ore
+   1.378 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-naquium-ore
+   1.378 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vulcanite
+   1.378 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vitamelange
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: pistol
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: loader
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: fast-loader
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: express-loader
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: equipment-gantry-insert
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: equipment-gantry-remove
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: se-rocket-launch-pad-silo-dummy-recipe
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: se-iridium-piledriver
+   1.385 Script @__space-exploration__/data-final-fixes.lua:90: Orphaned recipe: se-space-probe-rocket-deploy
+   1.416 Loading mod space-exploration-postprocess 0.7.3 (data-final-fixes.lua)
+   1.753 Checksum for core: 2271245941
+   1.753 Checksum of base: 1151377329
+   1.753 Checksum of aai-containers: 204497985
+   1.753 Checksum of aai-loaders: 3396813620
+   1.753 Checksum of aai-signal-transmission: 3683795462
+   1.753 Checksum of alien-biomes-graphics: 0
+   1.753 Checksum of bullet-trails: 3844283971
+   1.753 Checksum of flib: 728527376
+   1.753 Checksum of grappling-gun: 173060557
+   1.753 Checksum of informatron: 1824090339
+   1.753 Checksum of jetpack: 3294144380
+   1.753 Checksum of logistic-helper: 2325940917
+   1.753 Checksum of robot_attrition: 4055476612
+   1.753 Checksum of space-exploration-graphics: 0
+   1.753 Checksum of space-exploration-graphics-2: 0
+   1.753 Checksum of space-exploration-graphics-3: 0
+   1.753 Checksum of space-exploration-graphics-4: 0
+   1.753 Checksum of space-exploration-graphics-5: 0
+   1.753 Checksum of space-exploration-menu-simulations: 982088517
+   1.753 Checksum of textplates: 1586580192
+   1.753 Checksum of aai-industry: 2403657442
+   1.753 Checksum of alien-biomes: 4229516688
+   1.753 Checksum of combat-mechanics-overhaul: 2159107297
+   1.753 Checksum of equipment-gantry: 1577319214
+   1.753 Checksum of factoryplanner: 3898654475
+   1.753 Checksum of RateCalculator: 1295360039
+   1.753 Checksum of shield-projector: 4058400129
+   1.753 Checksum of space-exploration: 267834457
+   1.753 Checksum of space-exploration-postprocess: 1614723056
+   2.244 Prototype list checksum: 4146598904
+   2.312 Info PlayerData.cpp:66: Local player-data.json unavailable
+   2.312 Info PlayerData.cpp:71: Cloud player-data.json unavailable
+   2.313 Factorio initialised
+   2.313 Error CommandLineMultiplayer.cpp:355: Hosting multiplayer game failed: Key "description" not found in property tree at ROOT, please check data/server-settings.example.json for correct format.
+   2.316 Info ServerMultiplayerManager.cpp:146: Quitting multiplayer connection.
+   2.316 Info ServerMultiplayerManager.cpp:808: updateTick(18446744073709551615) changing state from(Ready) to(Closed)
+   2.316 Info ServerMultiplayerManager.cpp:166: Deleting active scenario (global = true).
+   2.366 Goodbye
