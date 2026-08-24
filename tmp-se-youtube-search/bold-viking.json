@@ -1,0 +1,11 @@
+[
+  {
+    "id": "dDyBD4oE5Qg",
+    "title": "",
+    "queries": [
+      "exact known lead"
+    ],
+    "url": "https://www.youtube.com/watch?v=dDyBD4oE5Qg",
+    "metadata_error": "ERROR: [youtube] dDyBD4oE5Qg: Sign in to confirm you\u2019re not a bot. Use --cookies-from-browser or --cookies for the authentication. See  https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp  for how to manually pass cookies. Also see  https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies  for tips on effectively exporting YouTube cookies\n"
+  }
+]
