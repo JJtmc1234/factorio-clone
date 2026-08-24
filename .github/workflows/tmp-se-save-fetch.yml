@@ -1,4 +1,4 @@
-name: Temporary SE save candidate fetch
+name: Temporary SE save candidate inspection
 
 on:
   push:
@@ -13,39 +13,352 @@ env:
   RESULT_BRANCH: "tmp-se-save-result-20260824"
 
 jobs:
-  fetch:
+  inspect:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 1
 
-      - name: Download and validate actual save
+      - name: Fetch save and parse header
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf tmp-se-candidate
-          mkdir -p tmp-se-candidate
+          rm -rf work published
+          mkdir -p work published
           curl --fail --location --retry 5 --retry-all-errors \
-            --output tmp-se-candidate/se_crash.zip "$SAVE_URL"
-          test "$(stat -c %s tmp-se-candidate/se_crash.zip)" -gt 50000000
-          unzip -t tmp-se-candidate/se_crash.zip > tmp-se-candidate/unzip-test.txt
-          unzip -l tmp-se-candidate/se_crash.zip > tmp-se-candidate/file-list.txt
-          sha256sum tmp-se-candidate/se_crash.zip > tmp-se-candidate/sha256.txt
-          unzip -j tmp-se-candidate/se_crash.zip '*/preview.jpg' -d tmp-se-candidate/preview || true
-          unzip -j tmp-se-candidate/se_crash.zip '*/level-init.dat' -d tmp-se-candidate/header || true
-          unzip -j tmp-se-candidate/se_crash.zip '*/script.dat' -d tmp-se-candidate/script || true
-          ls -lahR tmp-se-candidate > tmp-se-candidate/tree.txt
+            --output published/se_crash.zip "$SAVE_URL"
+          test "$(stat -c %s published/se_crash.zip)" -gt 50000000
+          unzip -t published/se_crash.zip > published/unzip-test.txt
+          unzip -l published/se_crash.zip > published/file-list.txt
+          sha256sum published/se_crash.zip > published/sha256.txt
+          unzip -j published/se_crash.zip '*/level-init.dat' -d work/header
 
-      - name: Publish to disposable result branch
+          cat > work/parse_header.py <<'PY'
+          import json, struct, pathlib
+
+          data = pathlib.Path('work/header/level-init.dat').read_bytes()
+          off = 0
+          def u8():
+              global off
+              v = data[off]; off += 1; return v
+          def u16():
+              global off
+              v = struct.unpack_from('<H', data, off)[0]; off += 2; return v
+          def u32():
+              global off
+              v = struct.unpack_from('<I', data, off)[0]; off += 4; return v
+          def ver(): return (u16(), u16(), u16(), u16())
+          factorio = ver()
+          def opt(bits):
+              first = u8()
+              if first != 0xff: return first
+              return u16() if bits == 16 else u32()
+          def text():
+              global off
+              n = opt(32)
+              raw = data[off:off+n]; off += n
+              return raw.decode('utf-8', 'replace')
+          def ver48(): return (opt(16), opt(16), opt(16))
+
+          u8()
+          result = {
+              'factorio_version': '.'.join(map(str, factorio[:3])),
+              'factorio_version_full': '.'.join(map(str, factorio)),
+              'save_name': text(),
+              'campaign': text(),
+              'base_mod': text(),
+              'difficulty': u8(),
+              'finished': bool(u8()),
+              'player_won': bool(u8()),
+              'next_level': text(),
+              'can_continue': bool(u8()),
+              'finished_but_continuing': bool(u8()),
+              'saving_replay': bool(u8()),
+              'allow_non_admin_debug': bool(u8()),
+              'loaded_from': '.'.join(map(str, ver48())),
+          }
+          result['loaded_from_build'] = u32() if factorio[0] >= 2 else u16()
+          result['allowed_commands'] = bool(u8())
+          if factorio[0] >= 2:
+              off += 4
+          count = opt(32)
+          mods = []
+          for _ in range(count):
+              name = text()
+              version = '.'.join(map(str, ver48()))
+              crc = u32()
+              mods.append({'name': name, 'version': version, 'crc': crc})
+          result['mods'] = mods
+          pathlib.Path('published/header.json').write_text(json.dumps(result, indent=2))
+          pathlib.Path('work/factorio-version.txt').write_text(result['factorio_version'])
+          pathlib.Path('work/mods.json').write_text(json.dumps(mods))
+          print(json.dumps(result, indent=2))
+          PY
+          python3 work/parse_header.py | tee published/header-console.txt
+
+      - name: Download exact Factorio build and exact mods
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          FACTORIO_VERSION="$(cat work/factorio-version.txt)"
+          curl --fail --location --retry 5 --retry-all-errors \
+            --output work/factorio.tar.xz \
+            "https://factorio.com/get-download/${FACTORIO_VERSION}/headless/linux64"
+          tar -xJf work/factorio.tar.xz -C work
+
+          cat > work/download_mods.py <<'PY'
+          import json, pathlib, urllib.request, urllib.parse, urllib.error
+
+          mods = json.loads(pathlib.Path('work/mods.json').read_text())
+          out = pathlib.Path('work/mods'); out.mkdir(parents=True, exist_ok=True)
+          builtin = {
+              'base', 'core', 'elevated-rails', 'quality', 'space-age',
+              'expansion-shaders', 'freezing', 'rail-bridges',
+              'segmented-units', 'space-travel', 'spoiling'
+          }
+          report = []
+          enabled = []
+          for mod in mods:
+              name, version = mod['name'], mod['version']
+              enabled.append({'name': name, 'enabled': True})
+              if name in builtin:
+                  report.append({'name': name, 'version': version, 'status': 'builtin'})
+                  continue
+              api = 'https://mods.factorio.com/api/mods/' + urllib.parse.quote(name, safe='') + '/full'
+              try:
+                  with urllib.request.urlopen(api, timeout=60) as response:
+                      metadata = json.load(response)
+                  release = next((r for r in metadata.get('releases', []) if r.get('version') == version), None)
+                  if not release:
+                      raise RuntimeError(f'exact release {version} not found')
+                  url = urllib.parse.urljoin('https://mods.factorio.com', release['download_url'])
+                  dest = out / f'{name}_{version}.zip'
+                  request = urllib.request.Request(url, headers={'User-Agent': 'SE-save-inspector/1.0'})
+                  with urllib.request.urlopen(request, timeout=180) as response, dest.open('wb') as target:
+                      while True:
+                          chunk = response.read(1024 * 1024)
+                          if not chunk: break
+                          target.write(chunk)
+                  report.append({'name': name, 'version': version, 'status': 'downloaded', 'bytes': dest.stat().st_size, 'url': url})
+              except Exception as exc:
+                  report.append({'name': name, 'version': version, 'status': 'failed', 'error': repr(exc)})
+          (out / 'mod-list.json').write_text(json.dumps({'mods': enabled}, indent=2))
+          pathlib.Path('published/mod-download-report.json').write_text(json.dumps(report, indent=2))
+          failed = [r for r in report if r['status'] == 'failed']
+          if failed:
+              raise SystemExit(f'{len(failed)} mod downloads failed')
+          PY
+          python3 work/download_mods.py
+
+      - name: Load save and query progression through RCON
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/server-settings.json <<'JSON'
+          {
+            "name": "temporary-save-inspection",
+            "description": "temporary local inspection",
+            "visibility": {"public": false, "lan": false},
+            "require_user_verification": false,
+            "max_players": 0,
+            "autosave_interval": 0,
+            "allow_commands": "admins-only"
+          }
+          JSON
+
+          work/factorio/bin/x64/factorio \
+            --start-server published/se_crash.zip \
+            --mod-directory work/mods \
+            --server-settings work/server-settings.json \
+            --rcon-port 27015 \
+            --rcon-password inspect \
+            > published/server.log 2>&1 &
+          SERVER_PID=$!
+          echo "$SERVER_PID" > work/server.pid
+
+          for i in $(seq 1 240); do
+            if grep -q "Starting RCON interface" published/server.log; then break; fi
+            if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+              echo 'Factorio exited before RCON started' >&2
+              tail -200 published/server.log >&2
+              exit 1
+            fi
+            sleep 2
+          done
+          grep -q "Starting RCON interface" published/server.log
+
+          cat > work/rcon_query.py <<'PY'
+          import json, socket, struct, pathlib, time
+
+          def packet(request_id, packet_type, body):
+              payload = struct.pack('<ii', request_id, packet_type) + body.encode() + b'\x00\x00'
+              return struct.pack('<i', len(payload)) + payload
+
+          def receive(sock):
+              header = sock.recv(4)
+              if len(header) != 4: raise RuntimeError('short RCON header')
+              length = struct.unpack('<i', header)[0]
+              data = b''
+              while len(data) < length:
+                  chunk = sock.recv(length - len(data))
+                  if not chunk: raise RuntimeError('RCON connection closed')
+                  data += chunk
+              request_id, packet_type = struct.unpack_from('<ii', data, 0)
+              body = data[8:-2].decode('utf-8', 'replace')
+              return request_id, packet_type, body
+
+          lua = r'''
+          local report = {}
+          report.tick = game.tick
+          report.hours = game.tick / 216000
+          report.rockets_launched = {}
+          report.forces = {}
+          report.players = {}
+          report.surfaces = {}
+          report.production = {}
+          report.entity_counts = {}
+          report.active_recipes = {}
+          report.researched_rocket_space_techs = {}
+
+          local item_names = {
+            "se-rocket-science-pack",
+            "se-space-science-pack",
+            "se-cargo-rocket-section",
+            "se-space-capsule",
+            "se-space-platform-scaffold",
+            "se-space-platform-plating"
+          }
+          local entity_names = {
+            "se-rocket-launch-pad",
+            "se-rocket-landing-pad",
+            "se-space-science-lab",
+            "se-space-assembling-machine",
+            "se-space-manufactory",
+            "rocket-silo"
+          }
+
+          for _, force in pairs(game.forces) do
+            local f = {name = force.name}
+            local ok, launched = pcall(function() return force.rockets_launched end)
+            if ok then f.rockets_launched = launched end
+            f.production = {}
+            for _, name in pairs(item_names) do
+              local output = 0
+              local input = 0
+              local ok1, value1 = pcall(function() return force.item_production_statistics.get_output_count(name) end)
+              if not ok1 then ok1, value1 = pcall(function() return force.item_production_statistics.get_output_count{name=name, quality="normal"} end) end
+              if ok1 then output = value1 end
+              local ok2, value2 = pcall(function() return force.item_production_statistics.get_input_count(name) end)
+              if not ok2 then ok2, value2 = pcall(function() return force.item_production_statistics.get_input_count{name=name, quality="normal"} end) end
+              if ok2 then input = value2 end
+              f.production[name] = {output=output, input=input}
+            end
+            f.researched = {}
+            for tech_name, tech in pairs(force.technologies) do
+              if tech.researched and (
+                string.find(tech_name, "rocket", 1, true) or
+                string.find(tech_name, "space%-science") or
+                string.find(tech_name, "space%-platform")
+              ) then
+                table.insert(f.researched, tech_name)
+              end
+            end
+            table.sort(f.researched)
+            table.insert(report.forces, f)
+          end
+
+          for _, player in pairs(game.players) do
+            table.insert(report.players, {
+              name=player.name,
+              force=player.force.name,
+              surface=player.surface and player.surface.name or nil,
+              position=player.position
+            })
+          end
+
+          local recipe_counts = {}
+          for _, surface in pairs(game.surfaces) do
+            local chunks = 0
+            for _ in surface.get_chunks() do chunks = chunks + 1 end
+            local sr = {
+              name=surface.name,
+              index=surface.index,
+              chunks=chunks,
+              player_entities=0,
+              non_neutral_entities=0,
+              entities={},
+              space_scaffold_tiles=0,
+              space_plating_tiles=0
+            }
+            local okp, pc = pcall(function() return surface.count_entities_filtered{force="player"} end)
+            if okp then sr.player_entities = pc end
+            local okn, nc = pcall(function() return surface.count_entities_filtered{force={"player","enemy"}} end)
+            if okn then sr.non_neutral_entities = nc end
+            for _, name in pairs(entity_names) do
+              local ok, count = pcall(function() return surface.count_entities_filtered{name=name} end)
+              sr.entities[name] = ok and count or -1
+            end
+            local oks, sc = pcall(function() return surface.count_tiles_filtered{name="se-space-platform-scaffold"} end)
+            if oks then sr.space_scaffold_tiles = sc end
+            local okpl, plc = pcall(function() return surface.count_tiles_filtered{name="se-space-platform-plating"} end)
+            if okpl then sr.space_plating_tiles = plc end
+
+            local machines = surface.find_entities_filtered{type={"assembling-machine","furnace","rocket-silo"}}
+            for _, entity in pairs(machines) do
+              local ok, recipe = pcall(function() return entity.get_recipe() end)
+              if ok and recipe then
+                recipe_counts[recipe.name] = (recipe_counts[recipe.name] or 0) + 1
+              end
+            end
+            table.insert(report.surfaces, sr)
+          end
+
+          for name, count in pairs(recipe_counts) do
+            if string.find(name, "rocket", 1, true) or string.find(name, "space", 1, true) then
+              report.active_recipes[name] = count
+            end
+          end
+
+          rcon.print(helpers.table_to_json(report))
+          '''
+
+          with socket.create_connection(('127.0.0.1', 27015), timeout=20) as sock:
+              sock.settimeout(30)
+              sock.sendall(packet(1, 3, 'inspect'))
+              auth = receive(sock)
+              if auth[0] == -1: raise RuntimeError('RCON authentication failed')
+              sock.sendall(packet(2, 2, '/sc ' + lua))
+              response = receive(sock)
+              body = response[2].strip()
+              pathlib.Path('published/rcon-raw.txt').write_text(body)
+              start = body.find('{')
+              end = body.rfind('}')
+              if start < 0 or end < start:
+                  raise RuntimeError('RCON response did not contain JSON: ' + body[:1000])
+              obj = json.loads(body[start:end+1])
+              pathlib.Path('published/progression-report.json').write_text(json.dumps(obj, indent=2, sort_keys=True))
+              print(json.dumps(obj, indent=2, sort_keys=True))
+          PY
+          python3 work/rcon_query.py | tee published/progression-console.txt
+          kill "$SERVER_PID" || true
+          wait "$SERVER_PID" || true
+
+      - name: Publish candidate and every inspection result to disposable branch
+        if: always()
         shell: bash
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-candidate
+          mkdir -p tmp-se-candidate
+          cp -a published/. tmp-se-candidate/
           git add -f tmp-se-candidate
-          git commit -m 'Temporary RedMew SE 0.7 candidate for local inspection'
+          git commit -m 'Inspect RedMew SE 0.7 candidate'
           git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
