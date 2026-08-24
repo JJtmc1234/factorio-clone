@@ -1,0 +1,115 @@
+name: Deep-search YouTube for SE 0.7 saves
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-youtube-deep-result-20260824
+
+jobs:
+  search:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search videos and descriptions
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work published
+          python3 -m pip install --quiet --upgrade yt-dlp
+          cat > work/search.py <<'PY'
+          from __future__ import annotations
+          import json, pathlib, re, subprocess, time
+          P=pathlib.Path
+          queries=[
+            'Factorio Space Exploration 0.7',
+            'Factorio SE 0.7',
+            'Factorio Space Exploration rocket science',
+            'Factorio Space Exploration cargo rocket',
+            'Factorio Space Exploration first cargo rocket',
+            'Factorio Space Exploration pre space base',
+            'Factorio Space Exploration 0.7 playthrough',
+            'Factorio Space Exploration 0.7 lets play',
+            'Factorio Space Exploration 2025',
+            'Factorio Space Exploration 2026',
+            'Factorio K2SE 0.7',
+          ]
+          records={}
+          errors=[]
+          for q in queries:
+            cmd=['yt-dlp','--flat-playlist','--dump-single-json',f'ytsearch100:{q}']
+            try:
+              p=subprocess.run(cmd,capture_output=True,text=True,timeout=900)
+              if p.returncode:
+                errors.append({'query':q,'stage':'search','stderr':p.stderr[-5000:]});continue
+              data=json.loads(p.stdout)
+              for e in data.get('entries') or []:
+                if not e:continue
+                vid=e.get('id');url=e.get('url') or (f'https://www.youtube.com/watch?v={vid}' if vid else None)
+                if vid and url: records.setdefault(vid,{'id':vid,'url':url,'search_queries':[]})['search_queries'].append(q)
+            except Exception as exc:errors.append({'query':q,'stage':'search','error':repr(exc)})
+          print('unique videos',len(records))
+          details=[]
+          for i,(vid,base) in enumerate(records.items(),1):
+            try:
+              p=subprocess.run(['yt-dlp','--skip-download','--dump-single-json','--no-warnings',base['url']],capture_output=True,text=True,timeout=300)
+              if p.returncode:
+                errors.append({'id':vid,'stage':'metadata','stderr':p.stderr[-3000:]});continue
+              d=json.loads(p.stdout)
+              rec={k:d.get(k) for k in ('id','title','description','channel','channel_id','uploader','uploader_id','upload_date','timestamp','duration','webpage_url','original_url','playlist','playlist_id')}
+              rec['search_queries']=base['search_queries']
+              details.append(rec)
+            except Exception as exc:errors.append({'id':vid,'stage':'metadata','error':repr(exc)})
+            if i%50==0:print('metadata',i,'/',len(records))
+          url_rx=re.compile(r'https?://[^\s<>"\']+')
+          save_terms=re.compile(r'(?i)(save ?game|save ?file|save ?download|download save|google drive|dropbox|mediafire|mega\.|onedrive|github|patreon|rocket science|cargo rocket|space exploration 0\.7|\bse 0\.7)')
+          link_records=[];interesting=[]
+          for r in details:
+            desc=r.get('description') or ''
+            links=[]
+            for u in url_rx.findall(desc):
+              u=u.rstrip(').,;]}')
+              links.append(u)
+              low=u.lower()
+              if any(x in low for x in ('drive.google.com','docs.google.com','dropbox.com','mediafire.com','mega.nz','mega.io','onedrive.live.com','1drv.ms','github.com','gitlab.com','.zip','factorio.com','patreon.com','ko-fi.com')):
+                link_records.append({'video_id':r['id'],'title':r.get('title'),'upload_date':r.get('upload_date'),'channel':r.get('channel'),'url':u,'video_url':r.get('webpage_url')})
+            r['links']=links
+            hay=(r.get('title') or '')+'\n'+desc
+            if save_terms.search(hay):interesting.append(r)
+          P('published/videos.json').write_text(json.dumps(details,indent=2,ensure_ascii=False))
+          P('published/interesting.json').write_text(json.dumps(interesting,indent=2,ensure_ascii=False))
+          P('published/external-links.json').write_text(json.dumps(link_records,indent=2,ensure_ascii=False))
+          P('published/errors.json').write_text(json.dumps(errors,indent=2,ensure_ascii=False))
+          lines=[f'Unique search results: {len(records)}',f'Metadata fetched: {len(details)}',f'Interesting descriptions: {len(interesting)}',f'Candidate external links: {len(link_records)}','']
+          for x in link_records:
+            lines += [f"{x['upload_date']} | {x['channel']} | {x['title']}",x['video_url'] or '',x['url'],'']
+          lines += ['\nINTERESTING VIDEO DESCRIPTIONS\n']
+          for r in interesting[:500]:
+            lines += ['='*80,f"{r.get('upload_date')} | {r.get('channel')} | {r.get('title')}",r.get('webpage_url') or '',(r.get('description') or '')[:12000]]
+          P('published/SUMMARY.txt').write_text('\n'.join(lines))
+          print('\n'.join(lines[:1200]))
+          PY
+          python3 work/search.py | tee published/console.txt
+
+      - name: Publish search result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-youtube-deep
+          mkdir -p tmp-se-youtube-deep
+          cp -a published/. tmp-se-youtube-deep/
+          git add -f tmp-se-youtube-deep
+          git commit -m 'Deep-search YouTube for public SE 0.7 saves'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
