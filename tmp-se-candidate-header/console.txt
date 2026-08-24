@@ -1,0 +1,8 @@
+miniloader_migration_06146: 290332866 bytes, Factorio 1.1.61, SE 0.6.78, K2 1.3.3, mods 45, error None
+markers {'rocket_science': 1421, 'launch_pad': 724, 'cargo_section': 1943, 'nauvis_orbit': 680, 'space_lab': 256, 'space_scaffold': 179}
+
+migration_workaround_0754: 84013272 bytes, Factorio 1.1.109, SE 0.6.138, K2 1.3.24, mods 44, error None
+markers {'rocket_science': 32, 'launch_pad': 107, 'cargo_section': 74, 'nauvis_orbit': 10, 'space_lab': 40, 'space_scaffold': 30}
+
+factorissimo_k2se: 189973420 bytes, Factorio 2.0.69, SE 0.7.34, K2 2.0.9, mods 41, error None
+markers {'rocket_science': 22, 'launch_pad': 180, 'cargo_section': 123, 'nauvis_orbit': 61, 'space_lab': 29, 'space_scaffold': 28}
