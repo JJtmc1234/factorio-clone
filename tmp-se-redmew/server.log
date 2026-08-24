@@ -1,0 +1,13 @@
+   0.000 2026-08-24 16:15:46; Factorio 2.0.66 (build 83840, linux64, headless, space-age)
+   0.008 Operating system: Linux (Ubuntu 24.04)
+   0.008 Program arguments: "work/factorio/bin/x64/factorio" "--start-server" "work/candidate.zip" "--mod-directory" "work/mods" "--server-settings" "work/server-settings.json" "--rcon-port" "27500" "--rcon-password" <private> 
+   0.008 Config path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/config/config.ini
+   0.008 Read data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/data
+   0.008 Write data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio [87305/147718MB]
+   0.008 Binaries path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/bin
+   0.016 System info: [CPU: AMD EPYC 7763 64-Core Processor, 4 cores, RAM: 15989 MB]
+   0.016 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> SDL_VIDEODRIVER=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.030 Error Util.cpp:81: Failed to load mod "space-exploration": 
+• space-exploration
+    • Incompatible with space-age
+    • Incompatible with quality
