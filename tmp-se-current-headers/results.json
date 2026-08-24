@@ -1,0 +1,128 @@
+[
+  {
+    "label": "j4yu22_squidgame",
+    "repo": "j4yu22/factorio-save",
+    "ref": "main",
+    "path": "squidgame.zip",
+    "url": "https://raw.githubusercontent.com/j4yu22/factorio-save/main/squidgame.zip",
+    "bytes": 59039172,
+    "header": {
+      "factorio_version": "2.0.76.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "difficulty": 1,
+      "finished": false,
+      "player_won": false,
+      "next_level": "",
+      "can_continue": false,
+      "finished_but_continuing": false,
+      "saving_replay": false,
+      "allow_non_admin_debug": true,
+      "loaded_from": "2.0.76",
+      "loaded_from_build": 84451,
+      "allowed_commands": true,
+      "mods": {
+        "base": "2.0.76",
+        "elevated-rails": "2.0.76",
+        "quality": "2.0.76",
+        "space-age": "2.0.76"
+      },
+      "se_version": null,
+      "native_se07": false,
+      "marker_counts": {
+        "rocket_science": 0,
+        "launch_pad": 0,
+        "cargo_section": 0,
+        "nauvis_orbit": 0,
+        "space_lab": 0,
+        "space_scaffold": 0
+      },
+      "has_preview": true
+    }
+  },
+  {
+    "label": "neptune_12",
+    "repo": "neptunebachelor/factorio_save",
+    "ref": "main",
+    "path": "Nep-New_12.zip",
+    "url": "https://raw.githubusercontent.com/neptunebachelor/factorio_save/main/Nep-New_12.zip",
+    "bytes": 84834405,
+    "header": {
+      "factorio_version": "2.0.20.3",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "difficulty": 1,
+      "finished": false,
+      "player_won": false,
+      "next_level": "",
+      "can_continue": false,
+      "finished_but_continuing": false,
+      "saving_replay": false,
+      "allow_non_admin_debug": true,
+      "loaded_from": "2.0.20",
+      "loaded_from_build": 80511,
+      "allowed_commands": true,
+      "mods": {
+        "base": "2.0.20",
+        "elevated-rails": "2.0.20",
+        "quality": "2.0.20",
+        "space-age": "2.0.20"
+      },
+      "se_version": null,
+      "native_se07": false,
+      "marker_counts": {
+        "rocket_science": 0,
+        "launch_pad": 0,
+        "cargo_section": 0,
+        "nauvis_orbit": 0,
+        "space_lab": 0,
+        "space_scaffold": 0
+      },
+      "has_preview": true
+    }
+  },
+  {
+    "label": "neptune_14",
+    "repo": "neptunebachelor/factorio_save",
+    "ref": "main",
+    "path": "Nep-New_14.zip",
+    "url": "https://raw.githubusercontent.com/neptunebachelor/factorio_save/main/Nep-New_14.zip",
+    "bytes": 52966163,
+    "header": {
+      "factorio_version": "2.0.20.3",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "difficulty": 1,
+      "finished": false,
+      "player_won": false,
+      "next_level": "",
+      "can_continue": false,
+      "finished_but_continuing": false,
+      "saving_replay": false,
+      "allow_non_admin_debug": true,
+      "loaded_from": "2.0.20",
+      "loaded_from_build": 80511,
+      "allowed_commands": true,
+      "mods": {
+        "base": "2.0.20",
+        "elevated-rails": "2.0.20",
+        "quality": "2.0.20",
+        "space-age": "2.0.20"
+      },
+      "se_version": null,
+      "native_se07": false,
+      "marker_counts": {
+        "rocket_science": 0,
+        "launch_pad": 0,
+        "cargo_section": 0,
+        "nauvis_orbit": 0,
+        "space_lab": 0,
+        "space_scaffold": 0
+      },
+      "has_preview": true
+    }
+  }
+]

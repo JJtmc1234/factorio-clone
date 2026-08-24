@@ -1,0 +1,25 @@
+candidates=3
+successfully_parsed=3
+native_se07=0
+errors=0
+
+j4yu22_squidgame
+  bytes=59039172
+  factorio=2.0.76.0
+  SE=None
+  save_name=
+  markers={'rocket_science': 0, 'launch_pad': 0, 'cargo_section': 0, 'nauvis_orbit': 0, 'space_lab': 0, 'space_scaffold': 0}
+
+neptune_12
+  bytes=84834405
+  factorio=2.0.20.3
+  SE=None
+  save_name=
+  markers={'rocket_science': 0, 'launch_pad': 0, 'cargo_section': 0, 'nauvis_orbit': 0, 'space_lab': 0, 'space_scaffold': 0}
+
+neptune_14
+  bytes=52966163
+  factorio=2.0.20.3
+  SE=None
+  save_name=
+  markers={'rocket_science': 0, 'launch_pad': 0, 'cargo_section': 0, 'nauvis_orbit': 0, 'space_lab': 0, 'space_scaffold': 0}
