@@ -1,0 +1,193 @@
+name: Inspect promising public Factorio save headers
+
+on:
+  push:
+    branches:
+      - tmp-se-current-headers-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-current-headers-result-20260824
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and parse current public saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work
+          mkdir -p published/native work
+
+          cat > /tmp/inspect.py <<'PY'
+          from __future__ import annotations
+
+          import json
+          import pathlib
+          import struct
+          import subprocess
+          import urllib.parse
+          import urllib.request
+          import zipfile
+
+          P = pathlib.Path
+          candidates = [
+              {
+                  "label": "j4yu22_squidgame",
+                  "repo": "j4yu22/factorio-save",
+                  "ref": "main",
+                  "path": "squidgame.zip",
+              },
+              {
+                  "label": "neptune_12",
+                  "repo": "neptunebachelor/factorio_save",
+                  "ref": "main",
+                  "path": "Nep-New_12.zip",
+              },
+              {
+                  "label": "neptune_14",
+                  "repo": "neptunebachelor/factorio_save",
+                  "ref": "main",
+                  "path": "Nep-New_14.zip",
+              },
+          ]
+
+          class Reader:
+              def __init__(self, data: bytes): self.data, self.offset = data, 0
+              def u8(self): value = self.data[self.offset]; self.offset += 1; return value
+              def u16(self): value = struct.unpack_from("<H", self.data, self.offset)[0]; self.offset += 2; return value
+              def u32(self): value = struct.unpack_from("<I", self.data, self.offset)[0]; self.offset += 4; return value
+              def version(self): return self.u16(), self.u16(), self.u16(), self.u16()
+              def optimized(self, bits, fv):
+                  if fv > (0, 14, 14, 0):
+                      value = self.u8()
+                      if value != 255: return value
+                  return self.u16() if bits == 16 else self.u32()
+              def text(self, fv):
+                  length = self.optimized(32, fv)
+                  value = self.data[self.offset:self.offset + length]
+                  self.offset += length
+                  return value.decode("utf-8", "replace")
+              def version48(self, fv): return self.optimized(16, fv), self.optimized(16, fv), self.optimized(16, fv)
+
+          def parse_save(path: P):
+              with zipfile.ZipFile(path) as archive:
+                  names = archive.namelist()
+                  init_name = next((name for name in names if name.endswith("/level-init.dat") or name == "level-init.dat"), None)
+                  if not init_name: raise ValueError("missing level-init.dat")
+                  data = archive.read(init_name)
+                  preview_name = next((name for name in names if name.endswith("/preview.jpg") or name == "preview.jpg"), None)
+                  script_name = next((name for name in names if name.endswith("/script.dat") or name == "script.dat"), None)
+                  marker_counts = {}
+                  if script_name:
+                      blob = archive.read(script_name)
+                      markers = {
+                          "rocket_science": b"se-rocket-science-pack",
+                          "launch_pad": b"se-rocket-launch-pad",
+                          "cargo_section": b"se-cargo-rocket-section",
+                          "nauvis_orbit": b"Nauvis Orbit",
+                          "space_lab": b"se-space-science-lab",
+                          "space_scaffold": b"se-space-platform-scaffold",
+                      }
+                      marker_counts = {key: blob.count(value) for key, value in markers.items()}
+
+              reader = Reader(data)
+              fv = reader.version(); reader.u8()
+              result = {
+                  "factorio_version": ".".join(map(str, fv)),
+                  "save_name": reader.text(fv),
+                  "campaign": reader.text(fv),
+                  "base_mod": reader.text(fv),
+              }
+              result["difficulty"] = reader.u8(); result["finished"] = bool(reader.u8()); result["player_won"] = bool(reader.u8())
+              result["next_level"] = reader.text(fv); result["can_continue"] = bool(reader.u8()); result["finished_but_continuing"] = bool(reader.u8())
+              result["saving_replay"] = bool(reader.u8()); result["allow_non_admin_debug"] = bool(reader.u8())
+              result["loaded_from"] = ".".join(map(str, reader.version48(fv)))
+              result["loaded_from_build"] = reader.u32() if fv[0] >= 2 else reader.u16(); result["allowed_commands"] = bool(reader.u8())
+              if fv[0] >= 2: reader.offset += 4
+              mods = {}
+              for _ in range(reader.optimized(32, fv)):
+                  name = reader.text(fv); version = ".".join(map(str, reader.version48(fv))); reader.u32(); mods[name] = version
+              result["mods"] = mods
+              result["se_version"] = mods.get("space-exploration")
+              result["native_se07"] = bool((mods.get("space-exploration") or "").startswith("0.7."))
+              result["marker_counts"] = marker_counts
+              result["has_preview"] = bool(preview_name)
+              return result
+
+          records = []
+          for candidate in candidates:
+              encoded_path = "/".join(urllib.parse.quote(part, safe="") for part in candidate["path"].split("/"))
+              url = f"https://raw.githubusercontent.com/{candidate['repo']}/{candidate['ref']}/{encoded_path}"
+              destination = P("work") / f"{candidate['label']}.zip"
+              record = {**candidate, "url": url}
+              try:
+                  request = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                  with urllib.request.urlopen(request, timeout=1800) as response, destination.open("wb") as target:
+                      while True:
+                          chunk = response.read(1024 * 1024)
+                          if not chunk: break
+                          target.write(chunk)
+                  record["bytes"] = destination.stat().st_size
+                  record["header"] = parse_save(destination)
+                  if record["header"]["native_se07"]:
+                      out = P("published/native") / candidate["label"]
+                      out.mkdir(parents=True, exist_ok=True)
+                      subprocess.run(["split", "-b", "45M", "-d", "-a", "3", str(destination), str(out / "save.zip.part")], check=True)
+                      (out / "README.txt").write_text("cat save.zip.part* > save.zip\n")
+                      (out / "source.json").write_text(json.dumps(record, indent=2, ensure_ascii=False))
+                      record["preserved_directory"] = str(out.relative_to("published"))
+              except Exception as exc:
+                  record["error"] = repr(exc)
+              finally:
+                  destination.unlink(missing_ok=True)
+              records.append(record)
+
+          P("published/results.json").write_text(json.dumps(records, indent=2, ensure_ascii=False))
+          native = [record for record in records if (record.get("header") or {}).get("native_se07")]
+          summary = {
+              "candidates": len(records),
+              "successfully_parsed": sum("header" in record for record in records),
+              "native_se07": len(native),
+              "errors": sum("error" in record for record in records),
+          }
+          P("published/summary.json").write_text(json.dumps(summary, indent=2))
+          lines = [f"{key}={value}" for key, value in summary.items()]
+          for record in records:
+              header = record.get("header") or {}
+              lines.append("")
+              lines.append(record["label"])
+              lines.append(f"  bytes={record.get('bytes')}")
+              lines.append(f"  factorio={header.get('factorio_version')}")
+              lines.append(f"  SE={header.get('se_version')}")
+              lines.append(f"  save_name={header.get('save_name')}")
+              lines.append(f"  markers={header.get('marker_counts')}")
+              if record.get("error"): lines.append(f"  error={record['error']}")
+          P("published/SUMMARY.txt").write_text("\n".join(lines) + "\n")
+          print("\n".join(lines))
+          PY
+
+          python3 /tmp/inspect.py | tee published/console.txt
+
+      - name: Publish result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-current-headers
+          mkdir -p tmp-se-current-headers
+          cp -a published/. tmp-se-current-headers/
+          git add -f tmp-se-current-headers
+          git commit -m "Inspect current headers of promising public saves"
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
