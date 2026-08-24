@@ -1,0 +1,447 @@
+root_status=200
+server_links=115
+server_records=115
+se_candidates=6
+
+URL: https://browser.lambs.cafe/server/1261706
+TITLE: ThePleasureOfAva - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.1', '1.0.13', '1.0.6', '1.0.8', '1.1.1', '1.1.12', '1.1.15', '1.1.2', '1.11.0', '1.2.0', '1.2.2', '1.23.5', '1.4.1', '1.5.38', '1.7.21', '2.0.0', '2.0.1', '2.0.7', '2.1.0', '2.1.15', '2.1.2', '2.1.23', '2.196.61', '2.2.0', '2.2.1', '2.3.5', '2.4.0', '2.5.0', '2.7.0']
+ADDRESSES: ['107.2.196.61:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  module-category-defaults
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-4
+  0.7.3
+  2.0.7
+  space-age
+  se-space-trains
+  Redrawn-Space-Connections
+
+URL: https://browser.lambs.cafe/server/1262136
+TITLE: Connavar game 1 - Factorio Server Browser
+VERSIONS: ['1.0.1', '1.0.7', '1.1.0', '1.4.1', '1.5.2', '2.1.0', '2.1.15', '2.2.3']
+ADDRESSES: ['185.21.223.56:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  0.7.0
+  1.0.7
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  space-exploration-menu-simulations
+  0.7.5
+  0.0.7
+  0.7.4
+  space-exploration
+  0.7.61
+  space-exploration-postprocess
+  0.7.6
+
+URL: https://browser.lambs.cafe/server/1262273
+TITLE: IdiotLounge - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.1', '1.0.13', '1.0.2', '1.0.31', '1.0.37', '1.0.49', '1.0.6', '1.0.7', '1.0.8', '1.0.9', '1.1.0', '1.1.1', '1.1.12', '1.1.15', '1.1.3', '1.10.0', '1.11.0', '1.12.2', '1.2.0', '1.2.1', '1.2.11', '1.2.2', '1.25.1', '1.3.0', '1.3.1', '1.3.5', '1.4.1', '1.5.0', '1.5.39', '1.6.0', '1.7.5', '1.8.0', '1.8.1', '1.8.2', '2.0.0', '2.0.1', '2.0.7', '2.1.0', '2.1.15', '2.1.23', '2.1.25', '2.1.3', '2.2.0', '2.2.14', '2.3.3', '2.4.1', '2.6.60', '2.7.0']
+ADDRESSES: ['92.216.220.25:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  0.7.0
+  temporary-space-stops
+  helmod
+  module-category-defaults
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  2.0.7
+  space-age
+  1.0.7
+  se-space-trains
+
+URL: https://browser.lambs.cafe/server/1262327
+TITLE: The Smelly Factory - Season 15 - K2SE - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.4', '1.0.8', '1.1.1', '1.3.0', '1.4.0', '1.5.0', '1.5.1', '1.6.1', '2.1.0', '2.1.15', '2.1.2', '2.1.6', '2.3.0', '2.4.0']
+ADDRESSES: ['35.193.173.13:34197']
+MATCHING LINES:
+  The Smelly Factory - Season 15 - K2SE - Factorio Server Browser
+  The Smelly Factory - Season 15 - K2SE
+  Mods
+  Mods
+  0.7.0
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  space-exploration-menu-simulations
+  0.7.5
+  0.7.4
+  space-exploration
+  0.7.61
+  space-exploration-postprocess
+  0.7.6
+  space-age-many-planets-server-mod-compat
+  Space Exploration challange
+
+URL: https://browser.lambs.cafe/server/1262913
+TITLE: Amogus Inc. - Factorio Server Browser
+VERSIONS: ['1.1.2', '1.2.0', '1.3.0', '1.5.0', '1.5.2', '1.5.5', '1.7.21', '2.0.0', '2.0.2', '2.0.4', '2.1.0', '2.1.1', '2.1.12', '2.1.15', '2.1.2', '2.1.4', '2.3.3', '2.5.0']
+ADDRESSES: ['79.240.152.116:25566']
+MATCHING LINES:
+  Mods
+  Mods
+  helmod
+  0.7.0
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  space-exploration-menu-simulations
+  0.7.5
+  LTN_Combinator_Modernized
+  0.7.4
+  space-exploration
+  0.7.61
+  space-exploration-postprocess
+  0.7.6
+
+URL: https://browser.lambs.cafe/server/1263369
+TITLE: [USA] NOVA Space Age 2.1Exp Modded - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.6', '1.0.9', '1.1.1', '1.1.12', '1.1.15', '1.1.18', '1.1.3', '1.11.0', '1.2.0', '1.2.2', '1.25.1', '1.34.52', '1.5.0', '2.0.0', '2.0.7', '2.1.0', '2.1.15', '2.1.2', '2.2.0', '2.4.1', '2.6.51', '2.7.0']
+ADDRESSES: ['71.171.83.81:34201']
+MATCHING LINES:
+  [USA] NOVA Space Age 2.1Exp Modded - Factorio Server Browser
+  [USA] NOVA Space Age 2.1Exp Modded
+  Mods
+  Mods
+  module-category-defaults
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  2.0.7
+  space-age
+  se-space-trains
+  rigor-module
+
+
+MP-CONNECT HELP LINES:
+published/help-2.0.77.txt-                                data/server-settings.example.json
+published/help-2.0.77.txt-      --use-server-whitelist    If the whitelist should be used.
+published/help-2.0.77.txt:      --use-authserver-bans     Verify that connecting players are not banned
+published/help-2.0.77.txt-                                from multiplayer and inform Factorio.com
+published/help-2.0.77.txt-                                about ban/unban commands.
+--
+published/help-2.1.14.txt-                                data/server-settings.example.json
+published/help-2.1.14.txt-      --use-server-whitelist    If the whitelist should be used.
+published/help-2.1.14.txt:      --use-authserver-bans     Verify that connecting players are not banned
+published/help-2.1.14.txt-                                from multiplayer and inform Factorio.com
+published/help-2.1.14.txt-                                about ban/unban commands.
+
+MP-CONNECT PROBE:
+### published/mp-connect-2.0.77.log
+Option ‘mp-connect’ does not exist
+
+Usage:
+  factorio [OPTION...]
+
+ General options:
+  -h, --help                    display help
+      --version                 show version information
+  -v, --verbose                 enable verbose logging
+  -c, --config PATH             config file to use
+      --no-log-rotation         don't rotate log file
+      --mod-directory PATH      Mod directory to use
+      --check-unused-prototype-data
+                                Print a warning for all prototype values that
+                                were not accessed.
+      --executable-path PATH    Override autodetected __PATH__executable.
+                                Usually not needed except on very weird systems.
+
+ Running options:
+  -s, --map2scenario arg        map to scenario conversion
+  -m, --scenario2map arg        scenario to map conversion
+      --apply-update arg        immediately apply update package
+      --create FILE             create a new map
+      --map-gen-settings FILE   Map generation settings for use with
+                                --create, --start-server-load-scenario or
+                                --generate-map-preview. See
+                                data/map-gen-settings.example.json
+      --map-gen-seed SEED       Map generation seed for use with --create,
+                                --start-server-load-scenario or
+                                --generate-map-preview. Will override seed specified in map
+                                gen settings
+      --map-gen-seed-max SEED   Map generation seed for use with
+                                --generate-map-preview to generate multiple previews using
+                                every second seed in the interval from
+                                map-gen-seed to map-gen-seed-max.
+      --map-settings FILE       Map settings for use with --create or
+                                --start-server-load-scenario. See
+                                data/base/prototypes/map-settings.lua
+      --preset arg              Name of the map generation preset to be used.
+      --generate-map-preview PATH
+                                Generate preview images of the map; PATH
+                                should name a PNG file or end with a '/' or '\' to
+                                indicate a directory.
+      --generate-map-preview-random COUNT
+                                Number of maps to generate with a random seed
+                                using --generate-map-preview.
+      --map-preview-size SIZE   Size (in pixels) of map preview (default:
+                                1024)
+      --map-preview-offset X,Y  Offset of the center of the map, in meters
+                                (default: 0,0)
+      --map-preview-planet PLANET
+                                Planet to generate the preview for (default:
+                                nauvis)
+      --report-quantities PROTOTYPE,...
+                                When generating map preview, report
+                                approximate quantities of the named entity prototypes
+      --threads THREADCOUNT     Number of threads to use when generating map
+                                previews
+      --disable-migration-window
+                                Disables the gui that is shown when opening a
+                                save with migrated content
+      --instrument-mod arg      Name of a mod to enable Instrument Mode
+      --sync-mods FILE          Sync mods with save
+      --enable-unsafe-lua-debug-api
+                                Enables unsafe functions in the Lua debug
+                                library.
+      --enable-lua-udp arg      Set local port and enable helpers.send_udp()
+                                and helpers.recv_udp()
+      --host FILE               Start hosting a multiplayer game
+      --host-interactive FILE   Open multiplayer server settings for hosting
+                                the selecting save
+      --start-server FILE       start a multiplayer server
+      --start-server-load-scenario [MOD/]NAME
+                                start a multiplayer server and load the
+                                specified scenario. The scenario is looked for
+                                inside the given mod. If no mod is given, it is
+                                looked for in the top-level scenarios directory.
+      --start-server-load-latest
+                                start a multiplayer server and load the
+                                latest available save
+      --until-tick TICK         run a save until given map tick
+      --run-replay FILE         run a replay until completion in headless
+                                mode
+      --benchmark FILE          load save and run benchmark
+      --benchmark-ticks N       number of ticks for benchmarking. Default is
+                                1000 (default: 1000)
+      --benchmark-runs N        how often the number of ticks will be run,
+                                map will reload after each run. Default is 1
+                                (default: 1)
+      --benchmark-verbose timings
+                                comma separated list of timings to output
+                                each tick. "all", "timestamp" as well as all
+                                other values seen in the debug view are allowed
+                                here. An empty string disabled verbose
+                                benchmarking. (default: )
+      --benchmark-sanitize      only output the final benchmark results
+      --benchmark-ignore-paused
+                                leaves the game paused if it was paused when
+                                saved. By default the game is unpaused when a
+                                benchmark starts.
+      --output-perf-stats FILE  path of file to which rendering performance
+                                statistics measurements should be saved.
+                                Special tags {api}, {hw}, {time} and {tag} will be
+                                replaced.
+      --dump-data               dumps data.raw as JSON to the script output
+                                folder and exits.
+      --dump-icon-sprites       dumps all icon sprites as png files to the
+                                script output folder and exits.
+      --dump-prototype-locale   dumps all prototypes name and description (if
+                                they have a valid value) to the script output
+                                folder and exits.
+      --report-autogenerated-icon-mipmaps
+                                Report which icons will have generated
+                                mipmaps.
+      --log-shared-tile-layers  After loading prototypes logs which tile
+                                layers are shared by multiple prototypes and lists
+                                the prototypes that share them.
+      --log-spritesheets-to-optimize N
+                                Logs N spritesheets that seem to have some
+                                nearly transparent noise, and could be made much
+                                smaller if the noise was cleaned up.
+
+ Server options:
+      --port N                  network port to use
+      --bind ADDRESS[:PORT]     IP address (and optionally port) to bind to
+      --rcon-port N             Port to use for RCON
+      --rcon-bind ADDRESS:PORT  IP address and port to use for RCON
+      --rcon-password PASSWORD  Password for RCON
+      --server-settings FILE    Path to file with server settings. See
+                                data/server-settings.example.json
+      --use-server-whitelist    If the whitelist should be used.
+      --use-authserver-bans     Verify that connecting players are not banned
+                                from multiplayer and inform Factorio.com
+                                about ban/unban commands.
+      --server-whitelist FILE   Path to file with server whitelist.
+      --server-banlist FILE     Path to file with server banlist.
+      --server-adminlist FILE   Path to file with server adminlist.
+      --console-log FILE        Path to file where a copy of the server's log
+                                will be stored
+      --server-id FILE          Path where server ID will be stored or read
+                                from
+
+### published/mp-connect-2.1.14.log
+Option ‘mp-connect’ does not exist
+
+Usage:
+  factorio [OPTION...]
+
+ General options:
+  -h, --help                    display help
+      --version                 show version information
+  -v, --verbose                 enable verbose logging
+  -c, --config PATH             config file to use
+      --no-log-rotation         don't rotate log file
+      --mod-directory PATH      Mod directory to use
+      --check-unused-prototype-data
+                                Print a warning for all prototype values that
+                                were not accessed.
+      --executable-path PATH    Override autodetected __PATH__executable.
+                                Usually not needed except on very weird systems.
+      --dap                     Run Debug Adapter
+
+ Running options:
+  -s, --map2scenario arg        map to scenario conversion
+  -m, --scenario2map arg        scenario to map conversion
+      --apply-update arg        immediately apply update package
+      --create FILE             create a new map
+      --enable-replay           Enable replay recording when used with
+                                --create
+      --map-gen-settings FILE   Map generation settings for use with
+                                --create, --start-server-load-scenario or
+                                --generate-map-preview. See
+                                data/map-gen-settings.example.json
+      --map-gen-seed SEED       Map generation seed for use with --create,
+                                --start-server-load-scenario or
+                                --generate-map-preview. Will override seed specified in map
+                                gen settings
+      --map-gen-seed-max SEED   Map generation seed for use with
+                                --generate-map-preview to generate multiple previews using
+                                every second seed in the interval from
+                                map-gen-seed to map-gen-seed-max.
+      --map-settings FILE       Map settings for use with --create or
+                                --start-server-load-scenario. See
+                                data/base/prototypes/map-settings.lua
+      --preset arg              Name of the map generation preset to be used.
+      --exchange-string arg     The exchange string for use with --create,
+                                --start-server-load-scenario or
+                                --generate-map-preview. If provided, this is loaded first and
+                                then any other setting arguments are
+                                processed.
+      --generate-map-preview PATH
+                                Generate preview images of the map; PATH
+                                should name a PNG file or end with a '/' or '\' to
+                                indicate a directory.
+      --generate-map-preview-random COUNT
+                                Number of maps to generate with a random seed
+                                using --generate-map-preview.
+      --map-preview-size SIZE   Size (in pixels) of map preview (default:
+                                1024)
+      --map-preview-offset X,Y  Offset of the center of the map, in meters
+                                (default: 0,0)
+      --map-preview-planet PLANET
+                                Planet to generate the preview for (default:
+                                nauvis)
+      --report-quantities PROTOTYPE,...
+                                When generating map preview, report
+                                approximate quantities of the named entity prototypes
+      --threads THREADCOUNT     Number of threads to use when generating map
+                                previews
+      --instrument-mod arg      Name of a mod to enable Instrument Mode
+      --sync-mods FILE          Sync mods with save
+      --enable-unsafe-lua-debug-api
+                                Enables unsafe functions in the Lua debug
+                                library.
+      --enable-lua-udp arg      Set local port and enable helpers.send_udp()
+                                and helpers.recv_udp()
+      --start-server FILE       start a multiplayer server
+      --start-server-load-scenario [MOD/]NAME
+                                start a multiplayer server and load the
+                                specified scenario. The scenario is looked for
+                                inside the given mod. If no mod is given, it is
+                                looked for in the top-level scenarios directory.
+      --start-server-load-latest
+                                start a multiplayer server and load the
+                                latest available save
+      --run-replay FILE         run a replay until completion in headless
+                                mode
+      --benchmark FILE          load save and run benchmark
+      --benchmark-ticks N       number of ticks for benchmarking. Default is
+                                1000 (default: 1000)
+      --benchmark-runs N        how often the number of ticks will be run,
+                                map will reload after each run. Default is 1
+                                (default: 1)
+      --benchmark-verbose timings
+                                comma separated list of timings to output
+                                each tick. "all", "timestamp", "entities", as
+                                well as all other values seen in the debug view
+                                are allowed here. An empty string disables
+                                verbose benchmarking. (default: )
+      --benchmark-sanitize      only output the final benchmark results
+      --benchmark-ignore-paused
+                                leaves the game paused if it was paused when
+                                saved. By default the game is unpaused when a
+                                benchmark starts.
+      --output-perf-stats FILE  path of file to which rendering performance
+                                statistics measurements should be saved.
+                                Special tags {api}, {hw}, {time} and {tag} will be
+                                replaced.
+      --dump-data               dumps data.raw as JSON to the script output
+                                folder and exits.
+      --dump-prototype-locale   dumps all prototypes name and description (if
+                                they have a valid value) to the script output
+                                folder and exits.
+      --report-autogenerated-icon-mipmaps
+                                Report which icons will have generated
+                                mipmaps.
+      --log-shared-tile-layers  After loading prototypes logs which tile
+                                layers are shared by multiple prototypes and lists
+                                the prototypes that share them.
+
+ Server options:
+      --port N                  network port to use
+      --bind ADDRESS[:PORT]     IP address (and optionally port) to bind to
+      --rcon-port N             Port to use for RCON
+      --rcon-bind ADDRESS:PORT  IP address and port to use for RCON
+      --rcon-password PASSWORD  Password for RCON
+      --server-settings FILE    Path to file with server settings. See
+                                data/server-settings.example.json
+      --use-server-whitelist    If the whitelist should be used.
+      --use-authserver-bans     Verify that connecting players are not banned
+                                from multiplayer and inform Factorio.com
+                                about ban/unban commands.
+      --server-whitelist FILE   Path to file with server whitelist.
+      --server-banlist FILE     Path to file with server banlist.
+      --server-adminlist FILE   Path to file with server adminlist.
+      --console-log FILE        Path to file where a copy of the server's log
+                                will be stored
+      --server-id FILE          Path where server ID will be stored or read
+                                from
+

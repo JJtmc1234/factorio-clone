@@ -1,0 +1,122 @@
+fetched 50/115
+fetched 100/115
+root_status=200
+server_links=115
+server_records=115
+se_candidates=6
+
+URL: https://browser.lambs.cafe/server/1261706
+TITLE: ThePleasureOfAva - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.1', '1.0.13', '1.0.6', '1.0.8', '1.1.1', '1.1.12', '1.1.15', '1.1.2', '1.11.0', '1.2.0', '1.2.2', '1.23.5', '1.4.1', '1.5.38', '1.7.21', '2.0.0', '2.0.1', '2.0.7', '2.1.0', '2.1.15', '2.1.2', '2.1.23', '2.196.61', '2.2.0', '2.2.1', '2.3.5', '2.4.0', '2.5.0', '2.7.0']
+ADDRESSES: ['107.2.196.61:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  module-category-defaults
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-4
+  0.7.3
+  2.0.7
+  space-age
+  se-space-trains
+  Redrawn-Space-Connections
+
+URL: https://browser.lambs.cafe/server/1262136
+TITLE: Connavar game 1 - Factorio Server Browser
+VERSIONS: ['1.0.1', '1.0.7', '1.1.0', '1.4.1', '1.5.2', '2.1.0', '2.1.15', '2.2.3']
+ADDRESSES: ['185.21.223.56:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  0.7.0
+  1.0.7
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  space-exploration-menu-simulations
+  0.7.5
+  0.0.7
+  0.7.4
+  space-exploration
+  0.7.61
+  space-exploration-postprocess
+  0.7.6
+
+URL: https://browser.lambs.cafe/server/1262273
+TITLE: IdiotLounge - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.1', '1.0.13', '1.0.2', '1.0.31', '1.0.37', '1.0.49', '1.0.6', '1.0.7', '1.0.8', '1.0.9', '1.1.0', '1.1.1', '1.1.12', '1.1.15', '1.1.3', '1.10.0', '1.11.0', '1.12.2', '1.2.0', '1.2.1', '1.2.11', '1.2.2', '1.25.1', '1.3.0', '1.3.1', '1.3.5', '1.4.1', '1.5.0', '1.5.39', '1.6.0', '1.7.5', '1.8.0', '1.8.1', '1.8.2', '2.0.0', '2.0.1', '2.0.7', '2.1.0', '2.1.15', '2.1.23', '2.1.25', '2.1.3', '2.2.0', '2.2.14', '2.3.3', '2.4.1', '2.6.60', '2.7.0']
+ADDRESSES: ['92.216.220.25:34197']
+MATCHING LINES:
+  Mods
+  Mods
+  0.7.0
+  temporary-space-stops
+  helmod
+  module-category-defaults
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  2.0.7
+  space-age
+  1.0.7
+  se-space-trains
+
+URL: https://browser.lambs.cafe/server/1262327
+TITLE: The Smelly Factory - Season 15 - K2SE - Factorio Server Browser
+VERSIONS: ['1.0.0', '1.0.4', '1.0.8', '1.1.1', '1.3.0', '1.4.0', '1.5.0', '1.5.1', '1.6.1', '2.1.0', '2.1.15', '2.1.2', '2.1.6', '2.3.0', '2.4.0']
+ADDRESSES: ['35.193.173.13:34197']
+MATCHING LINES:
+  The Smelly Factory - Season 15 - K2SE - Factorio Server Browser
+  The Smelly Factory - Season 15 - K2SE
+  Mods
+  Mods
+  0.7.0
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
+  0.7.5
+  space-exploration-menu-simulations
+  0.7.5
+  0.7.4
+  space-exploration
+  0.7.61
+  space-exploration-postprocess
+  0.7.6
+  space-age-many-planets-server-mod-compat
+  Space Exploration challange
+
+URL: https://browser.lambs.cafe/server/1262913
+TITLE: Amogus Inc. - Factorio Server Browser
+VERSIONS: ['1.1.2', '1.2.0', '1.3.0', '1.5.0', '1.5.2', '1.5.5', '1.7.21', '2.0.0', '2.0.2', '2.0.4', '2.1.0', '2.1.1', '2.1.12', '2.1.15', '2.1.2', '2.1.4', '2.3.3', '2.5.0']
+ADDRESSES: ['79.240.152.116:25566']
+MATCHING LINES:
+  Mods
+  Mods
+  helmod
+  0.7.0
+  space-exploration-graphics
+  0.7.7
+  space-exploration-graphics-2
+  0.7.3
+  space-exploration-graphics-3
+  0.7.3
+  space-exploration-graphics-4
+  0.7.3
+  space-exploration-graphics-5
