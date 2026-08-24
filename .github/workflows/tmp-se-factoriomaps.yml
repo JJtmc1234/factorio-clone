@@ -1,0 +1,216 @@
+name: Inspect Factorio Maps public save directory
+
+on:
+  push:
+    branches:
+      - tmp-se-factoriomaps-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-factoriomaps-result-20260824
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inspect site and network traffic
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work
+          mkdir -p published work
+
+          python3 -m pip install --upgrade playwright requests beautifulsoup4
+          python3 -m playwright install --with-deps chromium
+
+          cat > /tmp/inspect.py <<'PY'
+          from __future__ import annotations
+
+          import asyncio
+          import json
+          import pathlib
+          import re
+          import urllib.parse
+          import zipfile
+
+          import requests
+          from bs4 import BeautifulSoup
+          from playwright.async_api import async_playwright
+
+          P = pathlib.Path
+          base = "https://factorio-maps.rmdir.app"
+          targets = [
+              base + "/",
+              base + "/app/save/2024-Space",
+              base + "/app/save/2024-Space/",
+          ]
+
+          session = requests.Session()
+          session.headers["User-Agent"] = "Mozilla/5.0"
+          static = []
+          for index, url in enumerate(targets):
+              record = {"url": url}
+              try:
+                  response = session.get(url, timeout=90, allow_redirects=True)
+                  record.update({
+                      "status": response.status_code,
+                      "final_url": response.url,
+                      "headers": dict(response.headers),
+                      "text": response.text[:2_000_000],
+                  })
+                  P(f"published/static-{index}.html").write_text(response.text, errors="replace")
+              except Exception as exc:
+                  record["error"] = repr(exc)
+              static.append(record)
+          P("published/static.json").write_text(json.dumps(static, indent=2, ensure_ascii=False))
+
+          asset_urls = set()
+          for record in static:
+              text = record.get("text") or ""
+              soup = BeautifulSoup(text, "html.parser")
+              for tag in soup.find_all(["script", "link"]):
+                  value = tag.get("src") or tag.get("href")
+                  if value:
+                      asset_urls.add(urllib.parse.urljoin(record.get("final_url") or record["url"], value))
+
+          assets = []
+          endpoint_strings = set()
+          endpoint_re = re.compile(r"(?:https?://[^\s'\"`<>]+|/(?:api|app|save|saves|download|downloads|maps|map|files|data)[A-Za-z0-9_?&=./%{}:\-]*)", re.I)
+          for index, url in enumerate(sorted(asset_urls)):
+              rec = {"url": url}
+              try:
+                  response = session.get(url, timeout=120)
+                  rec.update({"status": response.status_code, "headers": dict(response.headers), "bytes": len(response.content)})
+                  content_type = response.headers.get("content-type", "")
+                  if "javascript" in content_type or url.endswith((".js", ".mjs")):
+                      text = response.text
+                      P(f"published/asset-{index}.js").write_text(text, errors="replace")
+                      for match in endpoint_re.findall(text):
+                          if 3 < len(match) < 500:
+                              endpoint_strings.add(match)
+              except Exception as exc:
+                  rec["error"] = repr(exc)
+              assets.append(rec)
+          P("published/assets.json").write_text(json.dumps(assets, indent=2))
+          P("published/endpoint-strings.txt").write_text("\n".join(sorted(endpoint_strings)))
+
+          async def browser_pass():
+              requests_seen = []
+              responses_seen = []
+              console = []
+              async with async_playwright() as p:
+                  browser = await p.chromium.launch(headless=True)
+                  context = await browser.new_context(user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36")
+                  page = await context.new_page()
+                  page.on("console", lambda msg: console.append({"type": msg.type, "text": msg.text}))
+                  page.on("request", lambda req: requests_seen.append({"url": req.url, "method": req.method, "resource_type": req.resource_type}))
+                  page.on("response", lambda res: responses_seen.append({"url": res.url, "status": res.status, "content_type": res.headers.get("content-type")}))
+
+                  pages = []
+                  for index, url in enumerate(targets):
+                      rec = {"url": url}
+                      try:
+                          response = await page.goto(url, wait_until="networkidle", timeout=120_000)
+                          rec["status"] = response.status if response else None
+                          rec["final_url"] = page.url
+                          rec["title"] = await page.title()
+                          rec["content"] = await page.content()
+                          rec["text"] = (await page.locator("body").inner_text())[:1_000_000]
+                          rec["links"] = await page.locator("a").evaluate_all("els => els.map(e => ({text:e.innerText, href:e.href, download:e.download}))")
+                          P(f"published/browser-{index}.html").write_text(rec["content"], errors="replace")
+                          P(f"published/browser-{index}.txt").write_text(rec["text"], errors="replace")
+                          await page.screenshot(path=f"published/browser-{index}.png", full_page=True)
+                      except Exception as exc:
+                          rec["error"] = repr(exc)
+                      pages.append(rec)
+                  P("published/browser-pages.json").write_text(json.dumps(pages, indent=2, ensure_ascii=False))
+                  P("published/browser-requests.json").write_text(json.dumps(requests_seen, indent=2, ensure_ascii=False))
+                  P("published/browser-responses.json").write_text(json.dumps(responses_seen, indent=2, ensure_ascii=False))
+                  P("published/browser-console.json").write_text(json.dumps(console, indent=2, ensure_ascii=False))
+                  await browser.close()
+              return pages, requests_seen, responses_seen
+
+          pages, requests_seen, responses_seen = asyncio.run(browser_pass())
+
+          candidate_urls = set()
+          zip_re = re.compile(r"https?://[^\s'\"<>]+(?:\.zip(?:[?&#][^\s'\"<>]*)?|download[^\s'\"<>]*)", re.I)
+          for source in [json.dumps(pages), json.dumps(requests_seen), json.dumps(responses_seen), "\n".join(endpoint_strings)]:
+              candidate_urls.update(match.rstrip(".,);]") for match in zip_re.findall(source))
+          for page in pages:
+              for link in page.get("links") or []:
+                  href = link.get("href") or ""
+                  if any(word in href.lower() for word in ("zip", "download", "save")):
+                      candidate_urls.add(href)
+          P("published/candidate-urls.txt").write_text("\n".join(sorted(candidate_urls)))
+
+          downloads = []
+          for index, url in enumerate(sorted(candidate_urls)):
+              rec = {"url": url}
+              try:
+                  response = session.get(url, timeout=600, allow_redirects=True, stream=True)
+                  rec["status"] = response.status_code
+                  rec["final_url"] = response.url
+                  rec["content_type"] = response.headers.get("content-type")
+                  path = P("work") / f"candidate-{index}.bin"
+                  size = 0
+                  with path.open("wb") as target:
+                      for chunk in response.iter_content(1024 * 1024):
+                          if chunk:
+                              target.write(chunk); size += len(chunk)
+                              if size > 2_000_000_000: raise RuntimeError("too large")
+                  rec["bytes"] = size
+                  rec["is_zip"] = zipfile.is_zipfile(path)
+                  if rec["is_zip"]:
+                      with zipfile.ZipFile(path) as archive:
+                          names = archive.namelist()
+                      rec["factorio_save"] = any(name.endswith("/level-init.dat") or name == "level-init.dat" for name in names)
+                      rec["members"] = names[:500]
+              except Exception as exc:
+                  rec["error"] = repr(exc)
+              downloads.append(rec)
+          P("published/downloads.json").write_text(json.dumps(downloads, indent=2, ensure_ascii=False))
+
+          interesting_requests = sorted({
+              row["url"] for row in requests_seen
+              if any(word in row["url"].lower() for word in ("api", "save", "download", "map", "2024-space", ".json"))
+          })
+          summary = [
+              f"static_pages={len(static)}",
+              f"assets={len(assets)}",
+              f"browser_requests={len(requests_seen)}",
+              f"candidate_urls={len(candidate_urls)}",
+              f"downloaded_candidates={len(downloads)}",
+              "",
+              "INTERESTING REQUESTS:",
+              *interesting_requests,
+              "",
+              "CANDIDATE URLS:",
+              *sorted(candidate_urls),
+          ]
+          P("published/SUMMARY.txt").write_text("\n".join(summary) + "\n")
+          print("\n".join(summary[:80]))
+          PY
+
+          python3 /tmp/inspect.py | tee published/console.txt
+
+      - name: Publish result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-factoriomaps
+          mkdir -p tmp-se-factoriomaps
+          cp -a published/. tmp-se-factoriomaps/
+          git add -f tmp-se-factoriomaps
+          git commit -m "Inspect Factorio Maps public save directory"
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
