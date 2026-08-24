@@ -1,0 +1,20 @@
+rampant_starter_planet_only: outer=None actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('gdown exit 1')
+markers=None
+
+blueprint_sandbox_cargo_rocket: outer=None actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('gdown exit 1')
+markers=None
+
+miniloader_migration_06146: outer=290332866 actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('no Factorio save found directly or in nested ZIPs')
+markers=None
+
+migration_workaround_0754: outer=84013272 actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('no Factorio save found directly or in nested ZIPs')
+markers=None
+
+chunky_core_mining_base: outer=None actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('gdown exit 1')
+markers=None
+
+factorissimo_k2se: outer=189973420 actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('no Factorio save found directly or in nested ZIPs')
+markers=None
+
+old_ltn_se_base: outer=None actual=None trail=None Factorio=None SE=None K2=None error=RuntimeError('gdown exit 1')
+markers=None

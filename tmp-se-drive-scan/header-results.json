@@ -1,0 +1,71 @@
+[
+  {
+    "id": "1zA_uoOIYn3dpO92empFJY0WPg7XSY29k",
+    "name": "rampant_starter_planet_only",
+    "source": "veden/Rampant issue 66",
+    "note": "SE+K2; author says only starter planet and some satellites, no other planets visited",
+    "download_stdout": "",
+    "download_stderr": "Failed to retrieve file url:\n\n\tCannot retrieve the public link of the file. You may need to change\n\tthe permission to 'Anyone with the link', or have had many accesses.\n\tCheck FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.\n\nYou may still be able to access the file from the browser:\n\n\thttps://drive.google.com/uc?id=1zA_uoOIYn3dpO92empFJY0WPg7XSY29k\n\nbut Gdown can't. Please check connections and permissions.\n",
+    "error": "RuntimeError('gdown exit 1')"
+  },
+  {
+    "id": "1hyn5Do8q8xDSUK4Aqe6B8uRGE6gGfcJG",
+    "name": "blueprint_sandbox_cargo_rocket",
+    "source": "EarendelDevelopers/factorio-mods issue 275",
+    "note": "SE 0.6.98; cargo rocket launch bug",
+    "download_stdout": "",
+    "download_stderr": "Failed to retrieve file url:\n\n\tCannot retrieve the public link of the file. You may need to change\n\tthe permission to 'Anyone with the link', or have had many accesses.\n\tCheck FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.\n\nYou may still be able to access the file from the browser:\n\n\thttps://drive.google.com/uc?id=1hyn5Do8q8xDSUK4Aqe6B8uRGE6gGfcJG\n\nbut Gdown can't. Please check connections and permissions.\n",
+    "error": "RuntimeError('gdown exit 1')"
+  },
+  {
+    "id": "1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo",
+    "name": "miniloader_migration_06146",
+    "source": "hgschmie/factorio-miniloader-redux issue 31",
+    "note": "Known SE 0.6.146 migration bundle",
+    "download_stdout": "",
+    "download_stderr": "Downloading...\nFrom (original): https://drive.google.com/uc?id=1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo\nFrom (redirected): https://drive.google.com/uc?id=1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo&confirm=t&uuid=74296c4c-8493-421b-8add-419763f9e3d9\nTo: /home/runner/work/factorio-clone/factorio-clone/work/downloads/miniloader_migration_06146.bin\n\n  0%|          | 0.00/290M [00:00<?, ?B/s]\n  1%|          | 1.57M/290M [00:00<00:18, 15.7MB/s]\n  5%|\u258d         | 13.1M/290M [00:00<00:03, 70.8MB/s]\n  8%|\u258a         | 24.6M/290M [00:00<00:03, 88.4MB/s]\n 12%|\u2588\u258f        | 35.7M/290M [00:00<00:02, 93.9MB/s]\n 16%|\u2588\u258c        | 45.1M/290M [00:00<00:02, 89.9MB/s]\n 20%|\u2588\u2589        | 56.6M/290M [00:00<00:02, 96.9MB/s]\n 24%|\u2588\u2588\u258e       | 68.7M/290M [00:00<00:02, 103MB/s] \n 28%|\u2588\u2588\u258a       | 81.3M/290M [00:00<00:01, 108MB/s]\n 32%|\u2588\u2588\u2588\u258f      | 92.3M/290M [00:01<00:02, 93.8MB/s]\n 35%|\u2588\u2588\u2588\u258c      | 103M/290M [00:01<00:01, 96.2MB/s] \n 39%|\u2588\u2588\u2588\u2589      | 113M/290M [00:01<00:01, 97.5MB/s]\n 43%|\u2588\u2588\u2588\u2588\u258e     | 126M/290M [00:01<00:01, 105MB/s] \n 47%|\u2588\u2588\u2588\u2588\u258b     | 137M/290M [00:01<00:01, 103MB/s]\n 51%|\u2588\u2588\u2588\u2588\u2588     | 147M/290M [00:01<00:01, 103MB/s]\n 55%|\u2588\u2588\u2588\u2588\u2588\u258d    | 158M/290M [00:01<00:01, 104MB/s]\n 59%|\u2588\u2588\u2588\u2588\u2588\u258a    | 170M/290M [00:01<00:01, 108MB/s]\n 62%|\u2588\u2588\u2588\u2588\u2588\u2588\u258f   | 181M/290M [00:01<00:01, 107MB/s]\n 66%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 192M/290M [00:01<00:00, 107MB/s]\n 70%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588   | 204M/290M [00:02<00:00, 108MB/s]\n 74%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d  | 215M/290M [00:02<00:00, 109MB/s]\n 78%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a  | 228M/290M [00:02<00:00, 108MB/s]\n 82%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258f | 239M/290M [00:02<00:00, 109MB/s]\n 86%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c | 250M/290M [00:02<00:00, 110MB/s]\n 90%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589 | 261M/290M [00:02<00:00, 109MB/s]\n 94%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258d| 273M/290M [00:02<00:00, 112MB/s]\n 98%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258a| 285M/290M [00:02<00:00, 111MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 290M/290M [00:02<00:00, 103MB/s]\n",
+    "outer_bytes": 290332866,
+    "outer_magic": "504b03042d000600080000000000ac8ba2114c00000076000000280014007370",
+    "error": "RuntimeError('no Factorio save found directly or in nested ZIPs')"
+  },
+  {
+    "id": "1nScbABVE1hugI9Oj5Li6XRotivrJuBsp",
+    "name": "migration_workaround_0754",
+    "source": "EarendelDevelopers/factorio-mods issue 392",
+    "note": "Migrated 0.6 to 0.7 bundle",
+    "download_stdout": "",
+    "download_stderr": "Downloading...\nFrom (original): https://drive.google.com/uc?id=1nScbABVE1hugI9Oj5Li6XRotivrJuBsp\nFrom (redirected): https://drive.google.com/uc?id=1nScbABVE1hugI9Oj5Li6XRotivrJuBsp&confirm=t&uuid=e85f54ef-4ea4-41c0-980e-8b0835a9a11e\nTo: /home/runner/work/factorio-clone/factorio-clone/work/downloads/migration_workaround_0754.bin\n\n  0%|          | 0.00/84.0M [00:00<?, ?B/s]\n  8%|\u258a         | 6.82M/84.0M [00:00<00:01, 62.5MB/s]\n 27%|\u2588\u2588\u258b       | 23.1M/84.0M [00:00<00:00, 117MB/s] \n 44%|\u2588\u2588\u2588\u2588\u258e     | 36.7M/84.0M [00:00<00:00, 125MB/s]\n 59%|\u2588\u2588\u2588\u2588\u2588\u2589    | 49.8M/84.0M [00:00<00:00, 121MB/s]\n 76%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258c  | 64.0M/84.0M [00:00<00:00, 128MB/s]\n 94%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e| 78.6M/84.0M [00:00<00:00, 134MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 84.0M/84.0M [00:00<00:00, 126MB/s]\n",
+    "outer_bytes": 84013272,
+    "outer_magic": "504b03042d000600080000000000bcf703f2b5d10b003db532002c0014004e65",
+    "error": "RuntimeError('no Factorio save found directly or in nested ZIPs')"
+  },
+  {
+    "id": "1XlXGfwqmjviKuahV4Ow6K2cCVBlCGQAg",
+    "name": "chunky_core_mining_base",
+    "source": "EarendelDevelopers/factorio-mods issue 319",
+    "note": "SE 0.6.113 chunky base",
+    "download_stdout": "",
+    "download_stderr": "Failed to retrieve file url:\n\n\tCannot retrieve the public link of the file. You may need to change\n\tthe permission to 'Anyone with the link', or have had many accesses.\n\tCheck FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.\n\nYou may still be able to access the file from the browser:\n\n\thttps://drive.google.com/uc?id=1XlXGfwqmjviKuahV4Ow6K2cCVBlCGQAg\n\nbut Gdown can't. Please check connections and permissions.\n",
+    "error": "RuntimeError('gdown exit 1')"
+  },
+  {
+    "id": "1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT",
+    "name": "factorissimo_k2se",
+    "source": "notnotmelon/factorissimo issue 268",
+    "note": "K2SE bundle; probably advanced",
+    "download_stdout": "",
+    "download_stderr": "Downloading...\nFrom (original): https://drive.google.com/uc?id=1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT\nFrom (redirected): https://drive.google.com/uc?id=1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT&confirm=t&uuid=e6913c1f-e519-4f1b-b2bc-5851b9aeffdb\nTo: /home/runner/work/factorio-clone/factorio-clone/work/downloads/factorissimo_k2se.bin\n\n  0%|          | 0.00/190M [00:00<?, ?B/s]\n  3%|\u258e         | 5.77M/190M [00:00<00:03, 53.3MB/s]\n  7%|\u258b         | 12.6M/190M [00:00<00:02, 60.7MB/s]\n 10%|\u2589         | 18.9M/190M [00:00<00:03, 49.8MB/s]\n 17%|\u2588\u258b        | 31.5M/190M [00:00<00:02, 75.3MB/s]\n 24%|\u2588\u2588\u258d       | 46.1M/190M [00:00<00:01, 96.6MB/s]\n 30%|\u2588\u2588\u2589       | 56.6M/190M [00:00<00:02, 64.8MB/s]\n 36%|\u2588\u2588\u2588\u258b      | 69.2M/190M [00:01<00:01, 65.9MB/s]\n 41%|\u2588\u2588\u2588\u2588\u258f     | 78.6M/190M [00:01<00:01, 71.5MB/s]\n 46%|\u2588\u2588\u2588\u2588\u258c     | 87.0M/190M [00:01<00:01, 67.6MB/s]\n 50%|\u2588\u2588\u2588\u2588\u2588     | 95.4M/190M [00:01<00:01, 71.0MB/s]\n 57%|\u2588\u2588\u2588\u2588\u2588\u258b    | 109M/190M [00:01<00:00, 85.8MB/s] \n 62%|\u2588\u2588\u2588\u2588\u2588\u2588\u258f   | 118M/190M [00:01<00:00, 82.0MB/s]\n 67%|\u2588\u2588\u2588\u2588\u2588\u2588\u258b   | 127M/190M [00:01<00:00, 68.6MB/s]\n 74%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e  | 140M/190M [00:01<00:00, 82.6MB/s]\n 81%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588  | 154M/190M [00:01<00:00, 95.6MB/s]\n 87%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258b | 166M/190M [00:02<00:00, 102MB/s] \n 93%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u258e| 177M/190M [00:02<00:00, 103MB/s]\n 99%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2589| 188M/190M [00:02<00:00, 106MB/s]\n100%|\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588| 190M/190M [00:02<00:00, 81.9MB/s]\n",
+    "outer_bytes": 189973420,
+    "outer_magic": "504b03042d000e080800000000000000000000000000000000000f0000005345",
+    "error": "RuntimeError('no Factorio save found directly or in nested ZIPs')"
+  },
+  {
+    "id": "1jzqDa-mYzDRRNeyTb7_3arCnRdhgHgW6",
+    "name": "old_ltn_se_base",
+    "source": "nihilistzsche/LtnManager issue 58",
+    "note": "Very old SE base; fallback only",
+    "download_stdout": "",
+    "download_stderr": "Failed to retrieve file url:\n\n\tCannot retrieve the public link of the file. You may need to change\n\tthe permission to 'Anyone with the link', or have had many accesses.\n\tCheck FAQ in https://github.com/wkentaro/gdown?tab=readme-ov-file#faq.\n\nYou may still be able to access the file from the browser:\n\n\thttps://drive.google.com/uc?id=1jzqDa-mYzDRRNeyTb7_3arCnRdhgHgW6\n\nbut Gdown can't. Please check connections and permissions.\n",
+    "error": "RuntimeError('gdown exit 1')"
+  }
+]
