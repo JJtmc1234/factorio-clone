@@ -1,0 +1,291 @@
+name: Scan public save histories for native SE 0.7
+
+on:
+  push:
+    branches:
+      - tmp-se-history-header-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-history-header-result-20260824
+
+jobs:
+  scan:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scan historical save blobs
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          rm -rf published work
+          mkdir -p published/native work
+
+          cat > /tmp/scan.py <<'PY'
+          from __future__ import annotations
+
+          import json
+          import os
+          import pathlib
+          import shutil
+          import struct
+          import subprocess
+          import zipfile
+
+          P = pathlib.Path
+          since = "2025-09-01"
+          repos = [
+              "neptunebachelor/factorio_save",
+              "j4yu22/factorio-save",
+              "Sebastian-Schuchmann/factorio-saves",
+              "NotAFreak/.factorio",
+              "abundanciaModesta/factorio_save",
+              "Gurczi/factorioSavy",
+              "ianic-dev/factorio-saves",
+              "luis-navarro1/factorio_saves",
+              "Frogo-o/factorio-saves",
+              "syedimran23/factorio-multiplayer-saves",
+              "lilly-lizard/factorio-saves",
+              "ChristineZhiMei/FACTORIO_SAVES",
+              "yoihai22/factorio-save",
+              "lordongx/factorio_saves_2025",
+              "hakoonet/factorio-saves",
+              "sarkadoc/factorio",
+              "galenemery/factorio_saves",
+          ]
+
+          def run(args, cwd=None, timeout=1800, check=True):
+              env = os.environ.copy()
+              env["GIT_TERMINAL_PROMPT"] = "0"
+              env["GIT_LFS_SKIP_SMUDGE"] = "1"
+              completed = subprocess.run(
+                  args,
+                  cwd=cwd,
+                  env=env,
+                  capture_output=True,
+                  text=True,
+                  timeout=timeout,
+              )
+              if check and completed.returncode != 0:
+                  raise RuntimeError(f"command failed {args}: {completed.stderr[-4000:]}")
+              return completed
+
+          class Reader:
+              def __init__(self, data: bytes):
+                  self.data = data
+                  self.offset = 0
+              def u8(self):
+                  value = self.data[self.offset]; self.offset += 1; return value
+              def u16(self):
+                  value = struct.unpack_from("<H", self.data, self.offset)[0]; self.offset += 2; return value
+              def u32(self):
+                  value = struct.unpack_from("<I", self.data, self.offset)[0]; self.offset += 4; return value
+              def version(self):
+                  return self.u16(), self.u16(), self.u16(), self.u16()
+              def optimized(self, bits, fv):
+                  if fv > (0, 14, 14, 0):
+                      value = self.u8()
+                      if value != 255: return value
+                  return self.u16() if bits == 16 else self.u32()
+              def text(self, fv):
+                  length = self.optimized(32, fv)
+                  value = self.data[self.offset:self.offset + length]
+                  self.offset += length
+                  return value.decode("utf-8", "replace")
+              def version48(self, fv):
+                  return self.optimized(16, fv), self.optimized(16, fv), self.optimized(16, fv)
+
+          def parse_save(path: P):
+              with zipfile.ZipFile(path) as archive:
+                  names = archive.namelist()
+                  init_name = next((n for n in names if n.endswith("/level-init.dat") or n == "level-init.dat"), None)
+                  if not init_name:
+                      raise ValueError("missing level-init.dat")
+                  data = archive.read(init_name)
+                  preview_name = next((n for n in names if n.endswith("/preview.jpg") or n == "preview.jpg"), None)
+              reader = Reader(data)
+              fv = reader.version(); reader.u8()
+              result = {
+                  "factorio_version": ".".join(map(str, fv)),
+                  "save_name": reader.text(fv),
+                  "campaign": reader.text(fv),
+                  "base_mod": reader.text(fv),
+              }
+              result["difficulty"] = reader.u8(); result["finished"] = bool(reader.u8()); result["player_won"] = bool(reader.u8())
+              result["next_level"] = reader.text(fv); result["can_continue"] = bool(reader.u8()); result["finished_but_continuing"] = bool(reader.u8())
+              result["saving_replay"] = bool(reader.u8()); result["allow_non_admin_debug"] = bool(reader.u8())
+              result["loaded_from"] = ".".join(map(str, reader.version48(fv)))
+              result["loaded_from_build"] = reader.u32() if fv[0] >= 2 else reader.u16(); result["allowed_commands"] = bool(reader.u8())
+              if fv[0] >= 2: reader.offset += 4
+              mods = {}
+              for _ in range(reader.optimized(32, fv)):
+                  name = reader.text(fv); version = ".".join(map(str, reader.version48(fv))); reader.u32(); mods[name] = version
+              result["mods"] = mods
+              result["se_version"] = mods.get("space-exploration")
+              result["native_se07"] = bool((mods.get("space-exploration") or "").startswith("0.7."))
+              result["has_preview"] = bool(preview_name)
+              return result
+
+          all_results = []
+          errors = []
+          native_seen = set()
+          total_downloaded = 0
+          download_limit = 12_000_000_000
+
+          for repo_index, repo in enumerate(repos, 1):
+              repo_dir = P("work") / repo.replace("/", "__")
+              print(f"[{repo_index}/{len(repos)}] cloning {repo}", flush=True)
+              try:
+                  run([
+                      "git", "clone", "--filter=blob:none", "--no-checkout", "--quiet",
+                      f"https://github.com/{repo}.git", str(repo_dir),
+                  ], timeout=2400)
+              except Exception as exc:
+                  errors.append({"repo": repo, "stage": "clone", "error": repr(exc)})
+                  continue
+
+              try:
+                  changed = run([
+                      "git", "log", "--all", f"--since={since}", "--name-only", "--pretty=format:", "--", "*.zip", "*.ZIP"
+                  ], cwd=repo_dir).stdout.splitlines()
+                  paths = sorted({line.strip() for line in changed if line.strip().lower().endswith(".zip")})
+                  current = run(["git", "ls-tree", "-r", "--name-only", "HEAD"], cwd=repo_dir).stdout.splitlines()
+                  paths = sorted(set(paths) | {line for line in current if line.lower().endswith(".zip")})
+
+                  repo_sample_records = []
+                  se_paths = set()
+                  path_commit_map = {}
+
+                  for path in paths:
+                      commits = run([
+                          "git", "log", "--all", f"--since={since}", "--format=%H", "--", path
+                      ], cwd=repo_dir).stdout.splitlines()
+                      commits = [commit for commit in commits if commit]
+                      if not commits:
+                          commits = ["HEAD"]
+                      path_commit_map[path] = commits
+                      sample_commits = []
+                      for commit in [commits[-1], commits[len(commits)//2], commits[0]]:
+                          if commit not in sample_commits:
+                              sample_commits.append(commit)
+
+                      for commit in sample_commits:
+                          exists = run(["git", "cat-file", "-e", f"{commit}:{path}"], cwd=repo_dir, check=False)
+                          if exists.returncode != 0:
+                              continue
+                          blob_sha = run(["git", "rev-parse", f"{commit}:{path}"], cwd=repo_dir).stdout.strip()
+                          key = (repo, blob_sha)
+                          if any(r.get("repo") == repo and r.get("blob_sha") == blob_sha for r in repo_sample_records):
+                              continue
+                          temp = P("work") / "candidate.zip"
+                          with temp.open("wb") as target:
+                              completed = subprocess.run(
+                                  ["git", "show", f"{commit}:{path}"], cwd=repo_dir,
+                                  stdout=target, stderr=subprocess.PIPE, timeout=2400,
+                              )
+                          if completed.returncode != 0:
+                              errors.append({"repo": repo, "path": path, "commit": commit, "stage": "git-show", "error": completed.stderr.decode("utf-8", "replace")[-2000:]})
+                              temp.unlink(missing_ok=True)
+                              continue
+                          size = temp.stat().st_size
+                          total_downloaded += size
+                          record = {"repo": repo, "path": path, "commit": commit, "blob_sha": blob_sha, "bytes": size, "sample": True}
+                          try:
+                              record["header"] = parse_save(temp)
+                              if record["header"]["native_se07"]:
+                                  se_paths.add(path)
+                          except Exception as exc:
+                              record["parse_error"] = repr(exc)
+                          repo_sample_records.append(record)
+                          temp.unlink(missing_ok=True)
+                          if total_downloaded > download_limit:
+                              raise RuntimeError("download limit reached")
+
+                  all_results.extend(repo_sample_records)
+
+                  # Only a path whose earliest/middle/latest sample actually used native SE 0.7
+                  # earns the expensive full-history scan.
+                  for path in sorted(se_paths):
+                      for commit in path_commit_map[path]:
+                          exists = run(["git", "cat-file", "-e", f"{commit}:{path}"], cwd=repo_dir, check=False)
+                          if exists.returncode != 0:
+                              continue
+                          blob_sha = run(["git", "rev-parse", f"{commit}:{path}"], cwd=repo_dir).stdout.strip()
+                          if (repo, blob_sha) in native_seen:
+                              continue
+                          native_seen.add((repo, blob_sha))
+                          temp = P("work") / "candidate.zip"
+                          with temp.open("wb") as target:
+                              completed = subprocess.run(
+                                  ["git", "show", f"{commit}:{path}"], cwd=repo_dir,
+                                  stdout=target, stderr=subprocess.PIPE, timeout=2400,
+                              )
+                          if completed.returncode != 0:
+                              errors.append({"repo": repo, "path": path, "commit": commit, "stage": "git-show-full", "error": completed.stderr.decode("utf-8", "replace")[-2000:]})
+                              temp.unlink(missing_ok=True)
+                              continue
+                          size = temp.stat().st_size
+                          total_downloaded += size
+                          record = {"repo": repo, "path": path, "commit": commit, "blob_sha": blob_sha, "bytes": size, "sample": False}
+                          try:
+                              record["header"] = parse_save(temp)
+                              if record["header"]["native_se07"]:
+                                  safe = f"{repo.replace('/', '__')}__{commit[:12]}__{P(path).name}"
+                                  out_dir = P("published/native") / safe
+                                  out_dir.mkdir(parents=True, exist_ok=True)
+                                  subprocess.run(["split", "-b", "45M", "-d", "-a", "3", str(temp), str(out_dir / "save.zip.part")], check=True)
+                                  (out_dir / "README.txt").write_text("cat save.zip.part* > save.zip\n")
+                                  (out_dir / "source.json").write_text(json.dumps(record, indent=2, ensure_ascii=False))
+                                  record["preserved_directory"] = str(out_dir.relative_to("published"))
+                          except Exception as exc:
+                              record["parse_error"] = repr(exc)
+                          all_results.append(record)
+                          temp.unlink(missing_ok=True)
+                          if total_downloaded > download_limit:
+                              raise RuntimeError("download limit reached")
+
+              except Exception as exc:
+                  errors.append({"repo": repo, "stage": "scan", "error": repr(exc)})
+              finally:
+                  shutil.rmtree(repo_dir, ignore_errors=True)
+
+          native = [r for r in all_results if (r.get("header") or {}).get("native_se07")]
+          P("published/all-results.json").write_text(json.dumps(all_results, indent=2, ensure_ascii=False))
+          P("published/native-se07.json").write_text(json.dumps(native, indent=2, ensure_ascii=False))
+          P("published/errors.json").write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+          summary = {
+              "repositories": len(repos),
+              "records": len(all_results),
+              "native_se07_records": len(native),
+              "downloaded_bytes": total_downloaded,
+              "errors": len(errors),
+          }
+          P("published/summary.json").write_text(json.dumps(summary, indent=2))
+          P("published/SUMMARY.txt").write_text("\n".join(f"{k}={v}" for k, v in summary.items()) + "\n")
+          print(json.dumps(summary, indent=2))
+          PY
+
+          python3 /tmp/scan.py | tee published/console.txt
+
+      - name: Publish scan results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-history-header
+          mkdir -p tmp-se-history-header
+          cp -a published/. tmp-se-history-header/
+          git add -f tmp-se-history-header
+          git commit -m "Scan public save histories for native SE 0.7"
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
