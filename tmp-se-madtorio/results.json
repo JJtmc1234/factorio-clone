@@ -1,0 +1,110 @@
+[
+  {
+    "label": "2026-02-03",
+    "url": "https://madtorio.com/api/downloads/7b63e982-63c6-4735-904a-3a4c9a3a26ab.zip",
+    "bytes": 116185399,
+    "header": {
+      "factorio": "2.0.72.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.72",
+        "elevated-rails": "2.0.72",
+        "quality": "2.0.72",
+        "space-age": "2.0.72"
+      }
+    }
+  },
+  {
+    "label": "2026-01-20",
+    "url": "https://madtorio.com/api/downloads/d7140581-61dc-4a4e-a697-e69208efe2b3.zip",
+    "bytes": 56279961,
+    "header": {
+      "factorio": "2.0.72.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.72",
+        "elevated-rails": "2.0.72",
+        "quality": "2.0.72",
+        "space-age": "2.0.72"
+      }
+    }
+  },
+  {
+    "label": "2025-11-24",
+    "url": "https://madtorio.com/api/downloads/be037e5f-6a36-429a-83ea-bbf6bee73d1a.zip",
+    "bytes": 97687842,
+    "header": {
+      "factorio": "2.0.69.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.69",
+        "elevated-rails": "2.0.69",
+        "quality": "2.0.69",
+        "space-age": "2.0.69"
+      }
+    }
+  },
+  {
+    "label": "end-game-3",
+    "url": "https://madtorio.com/api/downloads/61314b1a-fb3e-46a3-9d1a-fb036021f140.zip",
+    "bytes": 115155177,
+    "header": {
+      "factorio": "2.0.69.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.69",
+        "elevated-rails": "2.0.69",
+        "quality": "2.0.69",
+        "space-age": "2.0.69"
+      }
+    }
+  },
+  {
+    "label": "end-game-2",
+    "url": "https://madtorio.com/api/downloads/4f86aa21-42d0-49f9-8fd1-6f962c344bac.zip",
+    "bytes": 97870656,
+    "header": {
+      "factorio": "2.0.69.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.69",
+        "elevated-rails": "2.0.69",
+        "quality": "2.0.69",
+        "space-age": "2.0.69"
+      }
+    }
+  },
+  {
+    "label": "end-game",
+    "url": "https://madtorio.com/api/downloads/0497fe9a-bd61-42fd-a911-9b168129613e.zip",
+    "bytes": 145790330,
+    "header": {
+      "factorio": "2.0.69.0",
+      "save_name": "",
+      "campaign": "freeplay",
+      "base_mod": "base",
+      "se_version": null,
+      "mods": {
+        "base": "2.0.69",
+        "elevated-rails": "2.0.69",
+        "quality": "2.0.69",
+        "space-age": "2.0.69"
+      }
+    }
+  }
+]

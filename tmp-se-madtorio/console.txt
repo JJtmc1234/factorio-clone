@@ -1,0 +1,36 @@
+2026-02-03
+  bytes=116185399
+  Factorio=2.0.72.0
+  SE=None
+  mods=4
+  error=None
+2026-01-20
+  bytes=56279961
+  Factorio=2.0.72.0
+  SE=None
+  mods=4
+  error=None
+2025-11-24
+  bytes=97687842
+  Factorio=2.0.69.0
+  SE=None
+  mods=4
+  error=None
+end-game-3
+  bytes=115155177
+  Factorio=2.0.69.0
+  SE=None
+  mods=4
+  error=None
+end-game-2
+  bytes=97870656
+  Factorio=2.0.69.0
+  SE=None
+  mods=4
+  error=None
+end-game
+  bytes=145790330
+  Factorio=2.0.69.0
+  SE=None
+  mods=4
+  error=None
