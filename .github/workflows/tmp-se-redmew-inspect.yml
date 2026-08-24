@@ -1,0 +1,300 @@
+name: Inspect RedMew SE 0.7 candidate
+
+on:
+  push:
+    branches:
+      - tmp-se-save-fetch-20260824
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-redmew-result-20260824
+  SAVE_URL: "https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip"
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download and inspect save header
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/mods published/chunks published/preview
+          curl --fail --location --retry 8 --retry-all-errors \
+            --connect-timeout 30 --max-time 1800 \
+            --output work/candidate.zip "$SAVE_URL"
+          test "$(stat -c %s work/candidate.zip)" -gt 1000000
+          unzip -t work/candidate.zip > published/unzip-test.txt
+          unzip -l work/candidate.zip > published/file-list.txt
+          sha256sum work/candidate.zip > published/save-sha256.txt
+
+          cat > work/setup.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, pathlib, random, struct, tarfile, urllib.parse, urllib.request, zipfile
+
+          P = pathlib.Path
+          with zipfile.ZipFile('work/candidate.zip') as zf:
+              names = zf.namelist()
+              init = next(n for n in names if n.endswith('/level-init.dat') or n == 'level-init.dat')
+              data = zf.read(init)
+              preview = next((n for n in names if n.endswith('/preview.jpg') or n == 'preview.jpg'), None)
+              if preview:
+                  P('published/preview/preview.jpg').write_bytes(zf.read(preview))
+              script = next((n for n in names if n.endswith('/script.dat') or n == 'script.dat'), None)
+              marker_counts = {}
+              if script:
+                  blob = zf.read(script)
+                  markers = {
+                      'rocket_science': b'se-rocket-science-pack',
+                      'launch_pad': b'se-rocket-launch-pad',
+                      'cargo_section': b'se-cargo-rocket-section',
+                      'nauvis_orbit': b'Nauvis Orbit',
+                      'space_lab': b'se-space-science-lab',
+                      'space_scaffold': b'se-space-platform-scaffold',
+                  }
+                  marker_counts = {k: blob.count(v) for k, v in markers.items()}
+
+          class Reader:
+              def __init__(self, data): self.data, self.offset = data, 0
+              def u8(self): value = self.data[self.offset]; self.offset += 1; return value
+              def u16(self): value = struct.unpack_from('<H', self.data, self.offset)[0]; self.offset += 2; return value
+              def u32(self): value = struct.unpack_from('<I', self.data, self.offset)[0]; self.offset += 4; return value
+              def version(self): return self.u16(), self.u16(), self.u16(), self.u16()
+              def optimized(self, bits, fv):
+                  if fv > (0, 14, 14, 0):
+                      value = self.u8()
+                      if value != 255: return value
+                  return self.u16() if bits == 16 else self.u32()
+              def text(self, fv):
+                  length = self.optimized(32, fv)
+                  value = self.data[self.offset:self.offset + length]
+                  self.offset += length
+                  return value.decode('utf-8', 'replace')
+              def version48(self, fv): return self.optimized(16, fv), self.optimized(16, fv), self.optimized(16, fv)
+
+          reader = Reader(data)
+          fv = reader.version(); reader.u8()
+          header = {
+              'factorio_version': '.'.join(map(str, fv[:3])),
+              'factorio_version_full': '.'.join(map(str, fv)),
+              'save_name': reader.text(fv),
+              'campaign': reader.text(fv),
+              'base_mod': reader.text(fv),
+          }
+          header['difficulty'] = reader.u8(); header['finished'] = bool(reader.u8()); header['player_won'] = bool(reader.u8())
+          header['next_level'] = reader.text(fv); header['can_continue'] = bool(reader.u8()); header['finished_but_continuing'] = bool(reader.u8())
+          header['saving_replay'] = bool(reader.u8()); header['allow_non_admin_debug'] = bool(reader.u8())
+          header['loaded_from'] = '.'.join(map(str, reader.version48(fv)))
+          header['loaded_from_build'] = reader.u32() if fv[0] >= 2 else reader.u16(); header['allowed_commands'] = bool(reader.u8())
+          if fv[0] >= 2: reader.offset += 4
+          mods = {}
+          for _ in range(reader.optimized(32, fv)):
+              name = reader.text(fv); version = '.'.join(map(str, reader.version48(fv))); reader.u32(); mods[name] = version
+          header['mods'] = mods
+          header['marker_counts'] = marker_counts
+          P('published/header.json').write_text(json.dumps(header, indent=2, sort_keys=True))
+
+          def download(url: str, destination: P, timeout: int = 1200):
+              request = urllib.request.Request(url, headers={'User-Agent': 'FactorioModDownloader/0.5.0'})
+              with urllib.request.urlopen(request, timeout=timeout) as response, destination.open('wb') as target:
+                  while True:
+                      chunk = response.read(1024 * 1024)
+                      if not chunk: break
+                      target.write(chunk)
+
+          factorio_archive = P('work/factorio.tar.xz')
+          download(f"https://factorio.com/get-download/{header['factorio_version']}/headless/linux64", factorio_archive)
+          with tarfile.open(factorio_archive, 'r:xz') as archive: archive.extractall('work')
+
+          report = []
+          for name, version in mods.items():
+              if name in {'base', 'core'}:
+                  report.append({'name': name, 'version': version, 'status': 'builtin'})
+                  continue
+              destination = P('work/mods') / f'{name}_{version}.zip'
+              encoded_name = urllib.parse.quote(name, safe='')
+              encoded_version = urllib.parse.quote(version, safe='')
+              candidates = [
+                  f'https://mods-storage.re146.dev/{encoded_name}/{encoded_version}.zip?anticache={random.random()}',
+                  f'https://dl-mod.factorio.com/{encoded_name}/{encoded_version}.zip',
+              ]
+              failure = None
+              for url in candidates:
+                  try:
+                      download(url, destination)
+                      with zipfile.ZipFile(destination) as archive:
+                          if not archive.namelist(): raise RuntimeError('empty ZIP')
+                      report.append({'name': name, 'version': version, 'status': 'downloaded', 'bytes': destination.stat().st_size, 'url': url.split('?')[0]})
+                      failure = None
+                      break
+                  except Exception as exc:
+                      failure = repr(exc); destination.unlink(missing_ok=True)
+              if failure:
+                  report.append({'name': name, 'version': version, 'status': 'failed', 'error': failure})
+          P('published/mod-downloads.json').write_text(json.dumps(report, indent=2, sort_keys=True))
+          P('work/mods/mod-list.json').write_text(json.dumps({'mods': [{'name': name, 'enabled': True} for name in mods]}, indent=2))
+          failures = [entry for entry in report if entry['status'] == 'failed']
+          P('published/mod-failure-count.txt').write_text(str(len(failures)) + '\n')
+          if failures: raise SystemExit(f'{len(failures)} exact mod downloads failed')
+          PY
+          python3 work/setup.py | tee published/setup-console.txt
+
+      - name: Headless-load and query progression
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/server-settings.json <<'JSON'
+          {"name":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          JSON
+          work/factorio/bin/x64/factorio \
+            --start-server work/candidate.zip \
+            --mod-directory work/mods \
+            --server-settings work/server-settings.json \
+            --rcon-port 27500 --rcon-password inspect \
+            > published/server.log 2>&1 &
+          SERVER_PID=$!
+          echo "$SERVER_PID" > work/server.pid
+          for _ in $(seq 1 900); do
+            grep -q 'Starting RCON interface' published/server.log && break
+            kill -0 "$SERVER_PID" 2>/dev/null || { tail -500 published/server.log; exit 1; }
+            sleep 1
+          done
+          grep -q 'Starting RCON interface' published/server.log
+
+          cat > work/query.py <<'PY'
+          import json, pathlib, socket, struct
+
+          def packet(request_id, packet_type, body):
+              payload = struct.pack('<ii', request_id, packet_type) + body.encode() + b'\0\0'
+              return struct.pack('<i', len(payload)) + payload
+          def receive(sock):
+              header = sock.recv(4)
+              if len(header) != 4: raise RuntimeError('short RCON header')
+              length = struct.unpack('<i', header)[0]; data = b''
+              while len(data) < length:
+                  chunk = sock.recv(length - len(data))
+                  if not chunk: raise RuntimeError('RCON connection closed')
+                  data += chunk
+              request_id, packet_type = struct.unpack_from('<ii', data, 0)
+              return request_id, packet_type, data[8:-2].decode('utf-8', 'replace')
+
+          lua = r'''
+          local report = {tick=game.tick, hours=game.tick/216000, players={}, forces={}, surfaces={}, recipes={}, rocket_science_machines=0, rocket_science_working=0, rocket_science_support={}}
+          local real_forces = {}
+          for _, force in pairs(game.forces) do if force.name ~= "enemy" and force.name ~= "neutral" then real_forces[force.name] = true end end
+          for _, force in pairs(game.forces) do
+            local row = {name=force.name, rockets_launched=force.rockets_launched or 0, rocket_science_output=0, rocket_science_input=0, researched={}}
+            local ok1, value1 = pcall(function() return force.item_production_statistics.get_output_count("se-rocket-science-pack") end)
+            if ok1 then row.rocket_science_output = value1 end
+            local ok2, value2 = pcall(function() return force.item_production_statistics.get_input_count("se-rocket-science-pack") end)
+            if ok2 then row.rocket_science_input = value2 end
+            for name, tech in pairs(force.technologies) do
+              if tech.researched and (string.find(name, "rocket", 1, true) or string.find(name, "space", 1, true)) then table.insert(row.researched, name) end
+            end
+            table.sort(row.researched); table.insert(report.forces, row)
+          end
+          for _, player in pairs(game.players) do table.insert(report.players, {name=player.name, force=player.force.name, surface=player.surface and player.surface.name or nil, position=player.position}) end
+          for _, surface in pairs(game.surfaces) do
+            local row = {name=surface.name, index=surface.index, chunks=0, player_entities=0, entities={}, rocket_science_machines=0}
+            for _ in surface.get_chunks() do row.chunks = row.chunks + 1 end
+            for force_name, _ in pairs(real_forces) do
+              local ok, count = pcall(function() return surface.count_entities_filtered{force=force_name} end)
+              if ok then row.player_entities = row.player_entities + count end
+            end
+            for _, entity_name in pairs({"se-rocket-launch-pad", "se-rocket-landing-pad", "se-space-science-lab", "se-space-assembling-machine", "se-space-manufactory", "rocket-silo"}) do
+              local ok, count = pcall(function() return surface.count_entities_filtered{name=entity_name} end)
+              row.entities[entity_name] = ok and count or -1
+            end
+            for _, entity in pairs(surface.find_entities_filtered{type={"assembling-machine", "furnace", "rocket-silo"}}) do
+              local ok, recipe = pcall(function() return entity.get_recipe() end)
+              if ok and recipe then
+                report.recipes[recipe.name] = (report.recipes[recipe.name] or 0) + 1
+                if recipe.name == "se-rocket-science-pack" then
+                  report.rocket_science_machines = report.rocket_science_machines + 1
+                  row.rocket_science_machines = row.rocket_science_machines + 1
+                  local status_ok, status = pcall(function() return entity.status end)
+                  if status_ok and status == defines.entity_status.working then report.rocket_science_working = report.rocket_science_working + 1 end
+                end
+                if string.find(recipe.name, "rocket", 1, true) or string.find(recipe.name, "satellite", 1, true) then report.rocket_science_support[recipe.name] = (report.rocket_science_support[recipe.name] or 0) + 1 end
+              end
+            end
+            table.insert(report.surfaces, row)
+          end
+          rcon.print(game.table_to_json(report))
+          '''
+
+          with socket.create_connection(('127.0.0.1', 27500), timeout=30) as sock:
+              sock.settimeout(180)
+              sock.sendall(packet(1, 3, 'inspect')); auth = receive(sock)
+              if auth[0] == -1: raise RuntimeError('RCON authentication failed')
+              sock.sendall(packet(2, 2, '/sc ' + lua)); body = receive(sock)[2].strip()
+          pathlib.Path('published/rcon-raw.txt').write_text(body)
+          start, end = body.find('{'), body.rfind('}')
+          if start < 0 or end < start: raise RuntimeError('No JSON in RCON response: ' + body[:2000])
+          progression = json.loads(body[start:end + 1])
+          pathlib.Path('published/progression.json').write_text(json.dumps(progression, indent=2, sort_keys=True))
+          print(json.dumps(progression, indent=2, sort_keys=True))
+          PY
+          python3 work/query.py | tee published/progression-console.txt
+          kill "$SERVER_PID" || true
+          wait "$SERVER_PID" || true
+
+      - name: Grade and preserve actual save
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib, json, pathlib, subprocess
+          P = pathlib.Path
+          grade = {'full_scale_cutoff_pass': False, 'orbit_close_enough': False, 'inspection_complete': False}
+          if P('published/progression.json').exists():
+              p = json.loads(P('published/progression.json').read_text())
+              forces = p.get('forces', [])
+              output = max([row.get('rocket_science_output', 0) or 0 for row in forces] or [0])
+              machines = p.get('rocket_science_machines', 0) or 0
+              working = p.get('rocket_science_working', 0) or 0
+              orbit_entities = 0; other_entities = 0; launchpads = 0
+              for surface in p.get('surfaces', []):
+                  count = surface.get('player_entities', 0) or 0; low = surface.get('name', '').lower()
+                  if 'orbit' in low: orbit_entities += count
+                  if low != 'nauvis': other_entities += count
+                  launchpads += (surface.get('entities') or {}).get('se-rocket-launch-pad', 0) or 0
+              grade = {
+                  'inspection_complete': True,
+                  'rocket_science_output': output,
+                  'rocket_science_machines': machines,
+                  'rocket_science_working': working,
+                  'orbit_player_entities': orbit_entities,
+                  'non_nauvis_player_entities': other_entities,
+                  'launchpads': launchpads,
+                  'full_scale_cutoff_pass': machines >= 2 and output >= 1000,
+                  'orbit_close_enough': orbit_entities < 100,
+              }
+          P('published/grade.json').write_text(json.dumps(grade, indent=2, sort_keys=True))
+          if P('work/candidate.zip').exists():
+              subprocess.run(['split', '-b', '45M', '-d', '-a', '3', 'work/candidate.zip', 'published/chunks/se_crash.zip.part'], check=True)
+              P('published/chunks/README.txt').write_text('cat se_crash.zip.part* > se_crash.zip\n')
+          print(json.dumps(grade, indent=2, sort_keys=True))
+          PY
+
+      - name: Publish result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-redmew
+          mkdir -p tmp-se-redmew
+          cp -a published/. tmp-se-redmew/
+          git add -f tmp-se-redmew
+          git commit -m 'Inspect and preserve RedMew SE candidate'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
