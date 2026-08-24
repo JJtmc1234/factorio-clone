@@ -1,0 +1,7 @@
+{
+  "name": "miniloader_migration_06146",
+  "decoder_stdout": "",
+  "decoder_stderr": "Traceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  File \"/home/runner/.local/lib/python3.12/site-packages/hornwitser/factorio_tools/__main__.py\", line 129, in <module>\n    main()\n  File \"/home/runner/.local/lib/python3.12/site-packages/hornwitser/factorio_tools/__main__.py\", line 41, in main\n    args.func(args)\n  File \"/home/runner/.local/lib/python3.12/site-packages/hornwitser/factorio_tools/parse.py\", line 353, in dat2json\n    raise RuntimeError(\"Unkown input file format\")\nRuntimeError: Unkown input file format\n",
+  "decoder_returncode": 1,
+  "error": "RuntimeError('decoder failed')"
+}
