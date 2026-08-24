@@ -1,0 +1,173 @@
+name: Temporary historical Git save scan
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: "tmp-se-history-result-20260824"
+
+jobs:
+  scan:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Clone save repositories with blob filtering and inspect every historical ZIP blob
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/repos work/blobs published/candidates published/previews
+
+          cat > work/scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib, io, json, os, pathlib, re, shutil, struct, subprocess, urllib.request, zipfile
+
+          P = pathlib.Path
+          PUB = P('published')
+          source_url = 'https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-repo-scan-result-20260824/tmp-se-repo-scan/repositories.json'
+          with urllib.request.urlopen(source_url, timeout=60) as response:
+              repos = json.load(response)
+
+          known = [
+              'NotAFreak/.factorio', 'Sebastian-Schuchmann/factorio-saves',
+              'j4yu22/factorio-save', 'luis-navarro1/factorio_saves',
+              'Frogo-o/factorio-saves', 'ChristineZhiMei/FACTORIO_SAVES',
+              'syedimran23/factorio-multiplayer-saves', 'ianic-dev/factorio-saves',
+              'galenemery/factorio_saves'
+          ]
+          by_name = {r['full_name']: r for r in repos}
+          for name in known:
+              by_name.setdefault(name, {'full_name': name, 'size_kb': 0, 'description': None, 'pushed_at': None})
+          repos = list(by_name.values())
+
+          class Reader:
+              def __init__(self, data): self.data=data; self.offset=0
+              def u8(self): v=self.data[self.offset]; self.offset+=1; return v
+              def u16(self): v=struct.unpack_from('<H',self.data,self.offset)[0]; self.offset+=2; return v
+              def u32(self): v=struct.unpack_from('<I',self.data,self.offset)[0]; self.offset+=4; return v
+              def version(self): return (self.u16(),self.u16(),self.u16(),self.u16())
+              def opt(self,bits,fv):
+                  if fv>(0,14,14,0):
+                      first=self.u8()
+                      if first!=0xff:return first
+                  return self.u16() if bits==16 else self.u32()
+              def string(self,fv):
+                  n=self.opt(32,fv); raw=self.data[self.offset:self.offset+n]; self.offset+=n
+                  return raw.decode('utf-8','replace')
+              def version48(self,fv): return (self.opt(16,fv),self.opt(16,fv),self.opt(16,fv))
+          def header(data):
+              r=Reader(data); fv=r.version(); r.u8()
+              out={'factorio_version':'.'.join(map(str,fv)),'save_name':r.string(fv),'campaign':r.string(fv),'base_mod':r.string(fv)}
+              r.u8();r.u8();r.u8();r.string(fv);r.u8();r.u8();r.u8();r.u8()
+              out['loaded_from']='.'.join(map(str,r.version48(fv))); out['loaded_from_build']=r.u32() if fv[0]>=2 else r.u16();r.u8()
+              if fv[0]>=2:r.offset+=4
+              mods={}
+              for _ in range(r.opt(32,fv)):
+                  name=r.string(fv);ver='.'.join(map(str,r.version48(fv)));r.u32();mods[name]=ver
+              out['mods']=mods;return out
+
+          def run(args,cwd=None,timeout=600,check=True):
+              return subprocess.run(args,cwd=cwd,text=True,capture_output=True,timeout=timeout,check=check)
+
+          results=[]; errors=[]; seen_global=set(); bytes_materialized=0
+          for repo_index,repo in enumerate(repos):
+              full=repo['full_name']
+              safe=re.sub(r'[^A-Za-z0-9._-]+','_',full)
+              dest=P('work/repos')/safe
+              try:
+                  run(['git','clone','--filter=blob:none','--no-checkout','--quiet','https://github.com/'+full+'.git',str(dest)],timeout=900)
+              except Exception as exc:
+                  errors.append({'repo':full,'stage':'clone','error':repr(exc)});continue
+              try:
+                  listing=run(['git','rev-list','--objects','--all'],cwd=dest,timeout=600).stdout.splitlines()
+              except Exception as exc:
+                  errors.append({'repo':full,'stage':'rev-list','error':repr(exc)});shutil.rmtree(dest,ignore_errors=True);continue
+              objs=[]
+              for line in listing:
+                  parts=line.split(' ',1)
+                  if len(parts)!=2:continue
+                  sha,path=parts
+                  if not path.lower().endswith('.zip'):continue
+                  key=(full,sha)
+                  if key in seen_global:continue
+                  seen_global.add(key);objs.append((sha,path))
+              # Prefer filenames with SE/space/rocket and medium sizes, but inspect every reachable ZIP under caps.
+              sized=[]
+              for sha,path in objs:
+                  try:
+                      size=int(run(['git','cat-file','-s',sha],cwd=dest,timeout=180).stdout.strip())
+                  except Exception as exc:
+                      errors.append({'repo':full,'stage':'size','sha':sha,'path':path,'error':repr(exc)});continue
+                  if 100_000<=size<=200_000_000:
+                      score=sum(points for word,points in [('space-exploration',50),('space exploration',50),('se07',45),('se0.7',45),('rocket',20),('space',12),('save',6),('autosave',5)] if word in path.lower())
+                      if 10_000_000<=size<=120_000_000:score+=8
+                      sized.append((score,size,sha,path))
+              sized.sort(key=lambda x:(-x[0],x[1]))
+              for score,size,sha,path in sized:
+                  if bytes_materialized>15_000_000_000:break
+                  tmp=P('work/blobs')/(sha+'.zip')
+                  try:
+                      with tmp.open('wb') as f:
+                          proc=subprocess.run(['git','cat-file','blob',sha],cwd=dest,stdout=f,stderr=subprocess.PIPE,timeout=600)
+                      if proc.returncode:raise RuntimeError(proc.stderr.decode('utf-8','replace'))
+                      bytes_materialized+=tmp.stat().st_size
+                      with zipfile.ZipFile(tmp) as zf:
+                          names=zf.namelist();init=next((n for n in names if n.endswith('/level-init.dat') or n=='level-init.dat'),None);level=next((n for n in names if n.endswith('/level.dat') or n=='level.dat'),None)
+                          if not init or not level:raise RuntimeError('not Factorio save')
+                          h=header(zf.read(init));se=h['mods'].get('space-exploration')
+                          rec={'repo':full,'path':path,'blob_sha':sha,'bytes':size,'score':score,'header':h,'se_version':se,'k2_version':h['mods'].get('Krastorio2')}
+                          script_name=next((n for n in names if n.endswith('/script.dat') or n=='script.dat'),None)
+                          if script_name:
+                              script=zf.read(script_name)
+                              rec['marker_counts']={label:script.count(marker) for label,marker in {
+                                  'rocket_science':b'se-rocket-science-pack','launch_pad':b'se-rocket-launch-pad','cargo_section':b'se-cargo-rocket-section','nauvis_orbit':b'Nauvis Orbit','space_lab':b'se-space-science-lab','space_scaffold':b'se-space-platform-scaffold'}.items()}
+                          results.append(rec)
+                          if str(se).startswith('0.7.'):
+                              outname=re.sub(r'[^A-Za-z0-9._-]+','_',f'{full}__{path}__{sha[:10]}')[-190:]
+                              if size<95_000_000:
+                                  shutil.copy2(tmp,PUB/'candidates'/outname);rec['published_copy']='candidates/'+outname
+                              preview=next((n for n in names if n.endswith('/preview.jpg') or n=='preview.jpg'),None)
+                              if preview:
+                                  (PUB/'previews'/(outname+'.jpg')).write_bytes(zf.read(preview));rec['published_preview']='previews/'+outname+'.jpg'
+                  except Exception as exc:
+                      # Non-Factorio ZIPs are expected; keep only concise errors for likely save paths.
+                      if score>=20:errors.append({'repo':full,'stage':'inspect','sha':sha,'path':path,'bytes':size,'error':repr(exc)})
+                  finally:
+                      tmp.unlink(missing_ok=True)
+              shutil.rmtree(dest,ignore_errors=True)
+              if bytes_materialized>15_000_000_000:break
+
+          native=[r for r in results if str(r.get('se_version')).startswith('0.7.')]
+          PUB.joinpath('all-factorio-history-saves.json').write_text(json.dumps(results,indent=2))
+          PUB.joinpath('native-se07-history-saves.json').write_text(json.dumps(native,indent=2))
+          PUB.joinpath('errors.json').write_text(json.dumps(errors,indent=2))
+          summary={'repositories':len(repos),'unique_zip_blobs':len(seen_global),'bytes_materialized':bytes_materialized,'valid_factorio_saves':len(results),'native_se07_saves':len(native)}
+          PUB.joinpath('summary.json').write_text(json.dumps(summary,indent=2));PUB.joinpath('summary.txt').write_text('\n'.join(f'{k}: {v}' for k,v in summary.items()))
+          print(json.dumps(summary,indent=2))
+          PY
+          python3 work/scan.py | tee published/console.txt
+
+      - name: Publish findings
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-history-scan
+          mkdir -p tmp-se-history-scan
+          cp -a published/. tmp-se-history-scan/
+          git add -f tmp-se-history-scan
+          git commit -m 'Scan historical Git blobs for native SE 0.7 saves'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
