@@ -1,0 +1,212 @@
+name: Consolidate all previous SE search branches
+
+on:
+  push:
+    branches: [tmp-se-consolidate-history-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  consolidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Fetch and index all temporary SE branches
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-history-consolidated
+          mkdir -p se-history-consolidated
+          git fetch --no-tags origin '+refs/heads/tmp-se-*:refs/remotes/origin/tmp-se-*'
+          cat > /tmp/consolidate.py <<'PY'
+          from __future__ import annotations
+
+          import csv
+          import json
+          import pathlib
+          import re
+          import subprocess
+          from collections import Counter, defaultdict
+
+          OUT = pathlib.Path('se-history-consolidated')
+          OUT.mkdir(exist_ok=True)
+
+          def git(*args: str, check: bool = True) -> subprocess.CompletedProcess[str]:
+              return subprocess.run(['git', *args], text=True, capture_output=True, check=check)
+
+          refs = git('for-each-ref', '--format=%(refname:short)', 'refs/remotes/origin/tmp-se-*').stdout.splitlines()
+          refs = sorted(r for r in refs if r and not r.endswith('/HEAD'))
+
+          TEXT_EXTS = {'.txt', '.json', '.md', '.csv', '.tsv', '.log', '.html', '.htm', '.yml', '.yaml', '.lua', '.py', '.sh'}
+          MAX_TEXT = 3_000_000
+          PATH_PRIORITY = re.compile(r'(?i)(summary|status|result|record|candidate|manifest|verdict|report|console|error|header|progress|listing|match|url)')
+          TARGET = re.compile(
+              r'(?i)(rocket[ -]?science|cargo[ -]?rocket|launch[ -]?pad|nauvis[ -]?orbit|'
+              r'satellite|space[ -]?exploration|\bSE\s*0\.7|0\.7\.\d+|'
+              r'exact[ -]?match|launch[ -]?ready|unvisited|untouched[ -]?orbit|'
+              r'Ohoots|lazy_kojocho|boobers-SE|sandbox_not_opening|Asterixyz|'
+              r'drive\.google\.com|user-attachments/files|\.zip\b|save[ -]?(?:file|game)|download)'
+          )
+          STAGE = re.compile(r'(?i)(rocket[ -]?science|cargo[ -]?rocket|launch[ -]?pad|nauvis[ -]?orbit|satellite|launch[ -]?ready|unvisited|untouched[ -]?orbit)')
+          URL_RX = re.compile(r'https?://[^\s<>"\'\\]+', re.I)
+          DRIVE_RX = re.compile(r'(?:drive\.google\.com/(?:file/d/|open\?id=)|drive\.usercontent\.google\.com/download\?id=)([-\w]{15,})', re.I)
+
+          all_entries: list[dict] = []
+          text_records: list[dict] = []
+          urls: dict[str, list[dict]] = defaultdict(list)
+          drive_ids: dict[str, list[dict]] = defaultdict(list)
+          branch_stats = Counter()
+          full_sections: list[str] = []
+          match_rows: list[dict] = []
+          errors: list[dict] = []
+
+          for ref in refs:
+              branch = ref.removeprefix('origin/')
+              proc = git('ls-tree', '-r', '-l', ref, check=False)
+              if proc.returncode:
+                  errors.append({'branch': branch, 'error': proc.stderr})
+                  continue
+              entries = []
+              for raw in proc.stdout.splitlines():
+                  # Format: MODE TYPE SHA SIZE<TAB>PATH. Symlinks/submodules can use '-'.
+                  try:
+                      left, path = raw.split('\t', 1)
+                      mode, typ, sha, size_text = left.split(None, 3)
+                      size = int(size_text) if size_text.isdigit() else None
+                  except Exception:
+                      continue
+                  entry = {'branch': branch, 'path': path, 'sha': sha, 'size': size, 'type': typ, 'mode': mode}
+                  entries.append(entry)
+                  all_entries.append(entry)
+              branch_stats[(branch, 'files')] = len(entries)
+              branch_stats[(branch, 'bytes')] = sum(e['size'] or 0 for e in entries)
+
+              for entry in entries:
+                  path = entry['path']
+                  size = entry['size']
+                  suffix = pathlib.PurePosixPath(path).suffix.lower()
+                  if suffix in {'.zip', '.sav', '.7z', '.rar'}:
+                      match_rows.append({
+                          'branch': branch, 'path': path, 'line': 0,
+                          'kind': 'ARCHIVE_ENTRY', 'text': f"repository archive entry size={size}",
+                      })
+                  if suffix not in TEXT_EXTS or size is None or size > MAX_TEXT:
+                      continue
+                  shown = git('show', f'{ref}:{path}', check=False)
+                  if shown.returncode:
+                      errors.append({'branch': branch, 'path': path, 'error': shown.stderr[-1000:]})
+                      continue
+                  content = shown.stdout
+                  target_hits = len(TARGET.findall(content))
+                  stage_hits = len(STAGE.findall(content))
+                  priority = bool(PATH_PRIORITY.search(path))
+                  text_records.append({
+                      'branch': branch, 'path': path, 'size': size,
+                      'target_hits': target_hits, 'stage_hits': stage_hits,
+                      'priority_path': priority,
+                  })
+
+                  for line_no, line in enumerate(content.splitlines(), 1):
+                      if TARGET.search(line):
+                          match_rows.append({
+                              'branch': branch, 'path': path, 'line': line_no,
+                              'kind': 'MATCH', 'text': line[:4000],
+                          })
+                      for raw_url in URL_RX.findall(line):
+                          url = raw_url.rstrip('.,;:!?)\]}>")\'')
+                          if url:
+                              urls[url].append({'branch': branch, 'path': path, 'line': line_no, 'text': line[:1500]})
+                      for m in DRIVE_RX.finditer(line):
+                          drive_ids[m.group(1)].append({'branch': branch, 'path': path, 'line': line_no, 'text': line[:1500]})
+
+                  # Preserve complete likely result files. Skip ordinary source files unless they
+                  # contain actual stage evidence or URLs, otherwise the report becomes a YAML landfill.
+                  keep_full = (
+                      (priority and not path.startswith('.github/')) or
+                      (stage_hits >= 2 and target_hits >= 4 and size <= 300_000) or
+                      (drive_ids and 'drive.google.com' in content and size <= 300_000)
+                  )
+                  if keep_full and content.strip():
+                      full_sections.extend([
+                          '\n' + '=' * 120,
+                          f'BRANCH: {branch}',
+                          f'PATH: {path}',
+                          f'SIZE: {size} | TARGET_HITS: {target_hits} | STAGE_HITS: {stage_hits}',
+                          '-' * 120,
+                          content[:300_000],
+                      ])
+
+          # De-duplicate repeated branch copies of the same source line, but preserve result provenance.
+          unique_matches = []
+          seen_match = set()
+          for row in match_rows:
+              key = (row['branch'], row['path'], row['line'], row['text'])
+              if key not in seen_match:
+                  seen_match.add(key)
+                  unique_matches.append(row)
+
+          with (OUT / 'branch-files.tsv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=['branch', 'path', 'size', 'type', 'mode', 'sha'], delimiter='\t')
+              w.writeheader(); w.writerows(all_entries)
+          with (OUT / 'text-index.tsv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=['branch', 'path', 'size', 'target_hits', 'stage_hits', 'priority_path'], delimiter='\t')
+              w.writeheader(); w.writerows(sorted(text_records, key=lambda r: (-r['stage_hits'], -r['target_hits'], r['branch'], r['path'])))
+          with (OUT / 'keyword-matches.tsv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.DictWriter(f, fieldnames=['branch', 'path', 'line', 'kind', 'text'], delimiter='\t')
+              w.writeheader(); w.writerows(unique_matches)
+          (OUT / 'urls.json').write_text(json.dumps(urls, indent=2, ensure_ascii=False), encoding='utf-8')
+          (OUT / 'drive-ids.json').write_text(json.dumps(drive_ids, indent=2, ensure_ascii=False), encoding='utf-8')
+          (OUT / 'full-relevant-files.txt').write_text('\n'.join(full_sections), encoding='utf-8')
+          (OUT / 'errors.json').write_text(json.dumps(errors, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          archive_entries = [e for e in all_entries if pathlib.PurePosixPath(e['path']).suffix.lower() in {'.zip', '.sav', '.7z', '.rar'}]
+          ranked = sorted(text_records, key=lambda r: (-r['stage_hits'], -r['target_hits'], r['branch'], r['path']))
+          summary = [
+              f'Branches indexed: {len(refs)}',
+              f'Files indexed: {len(all_entries)}',
+              f'Text files read: {len(text_records)}',
+              f'Unique URLs: {len(urls)}',
+              f'Unique Google Drive IDs: {len(drive_ids)}',
+              f'Archive entries committed in result branches: {len(archive_entries)}',
+              f'Errors: {len(errors)}',
+              '',
+              'ARCHIVE ENTRIES',
+              '=' * 100,
+          ]
+          for e in archive_entries:
+              summary.append(f"{e['branch']}\t{e['size']}\t{e['path']}")
+          summary.extend(['', 'GOOGLE DRIVE IDS', '=' * 100])
+          for drive_id, contexts in sorted(drive_ids.items(), key=lambda kv: (-len(kv[1]), kv[0])):
+              summary.append(f'{drive_id}\toccurrences={len(contexts)}')
+              for c in contexts[:5]:
+                  summary.append(f"  {c['branch']}:{c['path']}:{c['line']}  {c['text'][:500]}")
+          summary.extend(['', 'TOP STAGE-RELEVANT TEXT FILES', '=' * 100])
+          for r in ranked[:250]:
+              if r['stage_hits'] or r['target_hits'] >= 3:
+                  summary.append(
+                      f"stage={r['stage_hits']} target={r['target_hits']} size={r['size']}\t{r['branch']}:{r['path']}"
+                  )
+          (OUT / 'SUMMARY.txt').write_text('\n'.join(summary), encoding='utf-8')
+          print('\n'.join(summary[:800]))
+          PY
+          python3 /tmp/consolidate.py | tee se-history-consolidated/console.txt
+
+      - name: Publish consolidated history
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-consolidate-history-result-20260824
+          rm -rf tmp-se-consolidated-history
+          mkdir -p tmp-se-consolidated-history
+          cp -a se-history-consolidated/. tmp-se-consolidated-history/ || true
+          git add -f tmp-se-consolidated-history
+          git commit -m 'Publish consolidated SE search history' || true
+          git push --force origin HEAD:refs/heads/tmp-se-consolidate-history-result-20260824
