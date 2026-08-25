@@ -1,0 +1,394 @@
+name: Alternate YouTube hunt for SE 0.7 saves
+
+on:
+  push:
+    branches: [tmp-se-youtube-alt-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search videos and recover descriptions through alternate endpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-youtube-alt-work se-youtube-alt-result
+          mkdir -p se-youtube-alt-work se-youtube-alt-result
+          python3 -m pip install --quiet --upgrade yt-dlp requests
+          cat > se-youtube-alt-work/hunt.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import html
+          import json
+          import pathlib
+          import re
+          import subprocess
+          import time
+          from urllib.parse import urlparse
+
+          import requests
+
+          OUT = pathlib.Path("se-youtube-alt-result")
+          OUT.mkdir(exist_ok=True)
+          SESSION = requests.Session()
+          SESSION.headers.update({
+              "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36",
+              "Accept-Language": "en-US,en;q=0.9",
+          })
+
+          QUERIES = [
+              "Factorio Space Exploration 0.7 rocket science",
+              "Factorio SE 0.7 rocket science",
+              "Factorio Space Exploration 0.7 cargo rocket",
+              "Factorio SE 0.7 cargo rocket",
+              "Factorio Space Exploration 0.7 first cargo rocket",
+              "Factorio Space Exploration 0.7 Nauvis orbit",
+              "Factorio Space Exploration 0.7 satellite",
+              "Factorio Space Exploration 0.7 launch pad",
+              "Factorio Space Exploration 0.7 playthrough",
+              "Factorio Space Exploration 0.7 lets play",
+              "Factorio Space Exploration 2025 rocket science",
+              "Factorio Space Exploration 2026 rocket science",
+              "Factorio Space Exploration save download",
+              "Factorio SE save game download",
+          ]
+
+          URL_RX = re.compile(r"https?://[^\s<>\"'\\]+", re.I)
+          SAVE_HOSTS = (
+              "drive.google.com", "docs.google.com", "dropbox.com", "mediafire.com",
+              "mega.nz", "mega.io", "onedrive.live.com", "1drv.ms", "github.com",
+              "gitlab.com", "factorio.com", "patreon.com", "ko-fi.com", "gumroad.com",
+              "itch.io", "bit.ly", "tinyurl.com", "linktr.ee", "beacons.ai",
+          )
+          TARGET_TERMS = re.compile(
+              r"(?i)(save\s*(?:game|file|download)|download\s*(?:the\s*)?save|"
+              r"rocket\s+science|cargo\s+rocket|launch\s+pad|satellite|nauvis\s+orbit|"
+              r"space\s+exploration\s+0\.7|\bse\s*0\.7)"
+          )
+
+          def run_flat_search(query: str) -> list[dict]:
+              cmd = [
+                  "yt-dlp", "--flat-playlist", "--dump-single-json", "--no-warnings",
+                  f"ytsearch100:{query}",
+              ]
+              proc = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
+              if proc.returncode:
+                  return [{"_error": proc.stderr[-4000:], "_query": query}]
+              data = json.loads(proc.stdout)
+              result = []
+              for entry in data.get("entries") or []:
+                  if not entry or not entry.get("id"):
+                      continue
+                  result.append({
+                      "id": entry.get("id"),
+                      "title": entry.get("title"),
+                      "url": entry.get("url") or f"https://www.youtube.com/watch?v={entry['id']}",
+                      "channel": entry.get("channel") or entry.get("uploader"),
+                      "channel_id": entry.get("channel_id") or entry.get("uploader_id"),
+                      "timestamp": entry.get("timestamp"),
+                      "duration": entry.get("duration"),
+                      "playlist": entry.get("playlist"),
+                      "playlist_id": entry.get("playlist_id"),
+                      "query": query,
+                  })
+              return result
+
+          def json_string_value(raw: str) -> str:
+              try:
+                  return json.loads('"' + raw + '"')
+              except Exception:
+                  return html.unescape(raw.replace("\\n", "\n").replace("\\/", "/"))
+
+          def extract_description(text: str) -> str | None:
+              patterns = [
+                  r'"shortDescription"\s*:\s*"((?:\\.|[^"\\])*)"',
+                  r'"description"\s*:\s*\{\s*"simpleText"\s*:\s*"((?:\\.|[^"\\])*)"',
+                  r'"description"\s*:\s*"((?:\\.|[^"\\])*)"',
+              ]
+              for pat in patterns:
+                  match = re.search(pat, text, re.S)
+                  if match:
+                      value = json_string_value(match.group(1)).strip()
+                      if value:
+                          return value
+              return None
+
+          def get_text(url: str, timeout: int = 18) -> tuple[str | None, str | None]:
+              try:
+                  response = SESSION.get(url, timeout=timeout)
+                  if response.status_code == 200 and response.text:
+                      return response.text, None
+                  return None, f"HTTP {response.status_code}"
+              except Exception as exc:
+                  return None, repr(exc)
+
+          def load_instances() -> tuple[list[str], list[str]]:
+              inv: list[str] = []
+              piped: list[str] = []
+              try:
+                  data = SESSION.get("https://api.invidious.io/instances.json?sort_by=health", timeout=20).json()
+                  for host, meta in data:
+                      if isinstance(meta, dict) and meta.get("api") and meta.get("type") == "https":
+                          inv.append("https://" + host.rstrip("/"))
+              except Exception:
+                  pass
+              try:
+                  data = SESSION.get("https://piped.video/api/v1/instances", timeout=20).json()
+                  for item in data:
+                      api = item.get("api_url") if isinstance(item, dict) else None
+                      if api:
+                          piped.append(api.rstrip("/"))
+              except Exception:
+                  pass
+              # Frequently available historical endpoints, tried only after dynamic lists.
+              inv.extend([
+                  "https://yewtu.be", "https://inv.nadeko.net", "https://invidious.nerdvpn.de",
+                  "https://invidious.privacyredirect.com",
+              ])
+              piped.extend([
+                  "https://pipedapi.kavin.rocks", "https://pipedapi.adminforge.de",
+                  "https://pipedapi.reallyaweso.me",
+              ])
+              return list(dict.fromkeys(inv))[:12], list(dict.fromkeys(piped))[:12]
+
+          INVIDIOUS, PIPED = load_instances()
+
+          def description_from_apis(video_id: str) -> tuple[str | None, str | None]:
+              errors = []
+              for base in INVIDIOUS[:6]:
+                  try:
+                      r = SESSION.get(f"{base}/api/v1/videos/{video_id}", timeout=12)
+                      if r.status_code == 200:
+                          d = r.json()
+                          desc = d.get("description") or d.get("descriptionHtml")
+                          if desc:
+                              return html.unescape(re.sub(r"<[^>]+>", "", desc)), f"invidious:{base}"
+                      errors.append(f"{base}:{r.status_code}")
+                  except Exception as exc:
+                      errors.append(f"{base}:{type(exc).__name__}")
+              for base in PIPED[:6]:
+                  try:
+                      r = SESSION.get(f"{base}/streams/{video_id}", timeout=12)
+                      if r.status_code == 200:
+                          d = r.json()
+                          desc = d.get("description")
+                          if desc:
+                              return desc, f"piped:{base}"
+                      errors.append(f"{base}:{r.status_code}")
+                  except Exception as exc:
+                      errors.append(f"{base}:{type(exc).__name__}")
+              return None, "; ".join(errors[-8:])
+
+          def recover_one(base: dict) -> dict:
+              video_id = base["id"]
+              rec = dict(base)
+              rec["video_url"] = f"https://www.youtube.com/watch?v={video_id}"
+              rec["description"] = None
+              rec["description_source"] = None
+              rec["errors"] = []
+
+              endpoints = [
+                  f"https://www.youtube.com/embed/{video_id}?hl=en",
+                  f"https://www.youtube-nocookie.com/embed/{video_id}?hl=en",
+                  f"https://www.youtube.com/watch?v={video_id}&hl=en&gl=US&persist_hl=1",
+              ]
+              for endpoint in endpoints:
+                  text, err = get_text(endpoint)
+                  if text:
+                      desc = extract_description(text)
+                      if desc:
+                          rec["description"] = desc
+                          rec["description_source"] = endpoint.split('/')[2]
+                          break
+                  if err:
+                      rec["errors"].append(endpoint.split('/')[2] + ":" + err)
+
+              if not rec["description"]:
+                  desc, source = description_from_apis(video_id)
+                  if desc:
+                      rec["description"] = desc
+                      rec["description_source"] = source
+                  elif source:
+                      rec["errors"].append(source)
+
+              if not rec["description"]:
+                  text, err = get_text(f"https://r.jina.ai/http://www.youtube.com/watch?v={video_id}", timeout=30)
+                  if text and len(text) > 80:
+                      rec["jina_text"] = text[:30000]
+                      # Jina often labels the description, but even when it does not, preserving the
+                      # page text lets the link extractor recover description URLs.
+                      rec["description"] = text
+                      rec["description_source"] = "r.jina.ai"
+                  elif err:
+                      rec["errors"].append("jina:" + err)
+
+              desc = rec.get("description") or ""
+              urls = []
+              for raw in URL_RX.findall(desc):
+                  clean = html.unescape(raw).rstrip(".,;:!?)\]}>'\"")
+                  if clean and clean not in urls:
+                      urls.append(clean)
+              rec["links"] = urls
+              return rec
+
+          def resolve_link(url: str) -> dict:
+              result = {"url": url, "final_url": url, "status": None, "error": None}
+              try:
+                  # Stream only a tiny prefix. This follows shorteners without downloading save files.
+                  with SESSION.get(url, timeout=18, allow_redirects=True, stream=True) as r:
+                      result["status"] = r.status_code
+                      result["final_url"] = r.url
+              except Exception as exc:
+                  result["error"] = repr(exc)
+              return result
+
+          # Search in parallel so one slow query does not consume the whole run.
+          search_rows: list[dict] = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=6) as pool:
+              futures = {pool.submit(run_flat_search, q): q for q in QUERIES}
+              for fut in concurrent.futures.as_completed(futures):
+                  search_rows.extend(fut.result())
+
+          errors = [r for r in search_rows if r.get("_error")]
+          by_id: dict[str, dict] = {}
+          for row in search_rows:
+              if row.get("_error"):
+                  continue
+              vid = row["id"]
+              if vid not in by_id:
+                  by_id[vid] = row
+                  by_id[vid]["queries"] = [row["query"]]
+              elif row["query"] not in by_id[vid]["queries"]:
+                  by_id[vid]["queries"].append(row["query"])
+
+          # Titles that mention the target stage go first; all unique results are still attempted.
+          ordered = sorted(
+              by_id.values(),
+              key=lambda r: (
+                  0 if TARGET_TERMS.search((r.get("title") or "")) else 1,
+                  r.get("title") or "",
+              ),
+          )
+          print(f"Flat-search rows={len(search_rows)} unique={len(ordered)}")
+          print(f"Instances: invidious={len(INVIDIOUS)} piped={len(PIPED)}")
+
+          recovered: list[dict] = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=14) as pool:
+              futures = [pool.submit(recover_one, row) for row in ordered]
+              for index, fut in enumerate(concurrent.futures.as_completed(futures), 1):
+                  recovered.append(fut.result())
+                  if index % 50 == 0:
+                      got = sum(bool(r.get("description")) for r in recovered)
+                      print(f"Recovered {index}/{len(ordered)} descriptions={got}")
+
+          link_rows = []
+          candidate_links = []
+          for rec in recovered:
+              for url in rec.get("links") or []:
+                  row = {
+                      "video_id": rec["id"],
+                      "title": rec.get("title"),
+                      "channel": rec.get("channel"),
+                      "video_url": rec.get("video_url"),
+                      "url": url,
+                  }
+                  link_rows.append(row)
+                  low = url.lower()
+                  host = urlparse(url).netloc.lower()
+                  if host in SAVE_HOSTS or any(h in host for h in SAVE_HOSTS) or ".zip" in low:
+                      candidate_links.append(row)
+
+          # Resolve only likely save/link-hub URLs, with deduplication and a conservative cap.
+          unique_urls = list(dict.fromkeys(row["url"] for row in candidate_links))[:500]
+          resolved_map: dict[str, dict] = {}
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+              for result in pool.map(resolve_link, unique_urls):
+                  resolved_map[result["url"]] = result
+          for row in candidate_links:
+              row["resolved"] = resolved_map.get(row["url"])
+
+          def score(rec: dict) -> int:
+              title = rec.get("title") or ""
+              desc = rec.get("description") or ""
+              hay = (title + "\n" + desc).lower()
+              points = 0
+              for term, weight in [
+                  ("rocket science", 12), ("cargo rocket", 10), ("launch pad", 7),
+                  ("satellite", 5), ("nauvis orbit", 4), ("space exploration 0.7", 6),
+                  ("save file", 18), ("save game", 18), ("download save", 20),
+                  ("google drive", 18), ("dropbox", 18), ("mediafire", 18),
+              ]:
+                  if term in hay:
+                      points += weight
+              if any(row["video_id"] == rec["id"] for row in candidate_links):
+                  points += 25
+              # Late-space terms do not erase the candidate, but they lower its inspection priority.
+              for term in ("cryonite", "vulcanite", "holmium", "iridium", "astronomic science", "energy science", "deep space"):
+                  if term in hay:
+                      points -= 6
+              return points
+
+          for rec in recovered:
+              rec["score"] = score(rec)
+          ranked = sorted(recovered, key=lambda r: (-r["score"], r.get("title") or ""))
+
+          (OUT / "flat-search.json").write_text(json.dumps(search_rows, indent=2, ensure_ascii=False))
+          (OUT / "videos.json").write_text(json.dumps(recovered, indent=2, ensure_ascii=False))
+          (OUT / "all-links.json").write_text(json.dumps(link_rows, indent=2, ensure_ascii=False))
+          (OUT / "candidate-links.json").write_text(json.dumps(candidate_links, indent=2, ensure_ascii=False))
+          (OUT / "ranked.json").write_text(json.dumps(ranked, indent=2, ensure_ascii=False))
+          (OUT / "errors.json").write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+
+          lines = [
+              f"Unique videos: {len(ordered)}",
+              f"Descriptions recovered: {sum(bool(r.get('description')) for r in recovered)}",
+              f"Videos with any extracted URL: {sum(bool(r.get('links')) for r in recovered)}",
+              f"Likely save/link-hub URLs: {len(candidate_links)}",
+              "",
+              "LIKELY SAVE OR LINK-HUB URLS",
+              "=" * 80,
+          ]
+          for row in candidate_links:
+              resolved = row.get("resolved") or {}
+              lines.extend([
+                  f"{row.get('channel')} | {row.get('title')}",
+                  row.get("video_url") or "",
+                  row.get("url") or "",
+                  ("=> " + str(resolved.get("final_url"))) if resolved.get("final_url") and resolved.get("final_url") != row.get("url") else "",
+                  "",
+              ])
+          lines.extend(["", "TOP RANKED VIDEOS", "=" * 80])
+          for rec in ranked[:250]:
+              lines.extend([
+                  f"SCORE {rec['score']} | {rec.get('channel')} | {rec.get('title')}",
+                  rec.get("video_url") or "",
+                  f"description source: {rec.get('description_source')}",
+                  (rec.get("description") or "")[:5000],
+                  "",
+              ])
+          (OUT / "SUMMARY.txt").write_text("\n".join(lines), encoding="utf-8")
+          print("\n".join(lines[:500]))
+          PY
+          python3 se-youtube-alt-work/hunt.py | tee se-youtube-alt-result/console.txt
+
+      - name: Publish results to a dedicated branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-youtube-alt-result-20260824
+          rm -rf tmp-se-youtube-alt
+          mkdir -p tmp-se-youtube-alt
+          cp -a se-youtube-alt-result/. tmp-se-youtube-alt/ || true
+          git add -f tmp-se-youtube-alt
+          git commit -m 'Publish alternate YouTube SE 0.7 hunt results' || true
+          git push --force origin HEAD:refs/heads/tmp-se-youtube-alt-result-20260824
