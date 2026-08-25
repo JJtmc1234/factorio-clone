@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=%E7%BA%AF%E7%B2%B9%E7%9A%84se&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=%E7%BA%AF%E7%B2%B9%E7%9A%84se&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=%E7%BA%AF%E7%B2%B9%E7%9A%84se&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=%E7%BA%AF%E7%B2%B9%E7%9A%84se&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=space+exploration&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=space+exploration&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=space+exploration&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=space+exploration&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=k2se&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=k2se&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=k2se&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=k2se&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=crossworld&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=crossworld&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=crossworld&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=crossworld&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=amogus&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=amogus&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=amogus&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=amogus&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=connavar&limit=1000",
+    "attempt": 1,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=connavar&limit=1000",
+    "attempt": 2,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=connavar&limit=1000",
+    "attempt": 3,
+    "error": "<HTTPError 404: 'Not Found'>"
+  },
+  {
+    "url": "https://browser.lambs.cafe/api/servers?search=connavar&limit=1000",
+    "attempt": 4,
+    "error": "<HTTPError 404: 'Not Found'>"
+  }
+]

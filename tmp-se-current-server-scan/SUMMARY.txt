@@ -1,0 +1,5 @@
+SEARCH_RECORDS: 0
+DETAILS_SELECTED: 0
+DETAIL_ERRORS: 0
+
+No details selected; inspect diagnostics.json and searches.json.
