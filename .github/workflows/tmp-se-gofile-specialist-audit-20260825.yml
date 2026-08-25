@@ -1,0 +1,461 @@
+name: Audit public SE 0.7 post-space pre-specialist save
+
+on:
+  push:
+    branches: [tmp-se-gofile-specialist-audit-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-gofile-specialist-audit-result-20260825
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Reddit post and Gofile save
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/downloads work/mods published
+          python3 -m pip install --quiet --upgrade requests
+          cat > work/fetch.py <<'PY'
+          import hashlib, json, pathlib, re, struct, sys, zipfile
+          import requests
+
+          P = pathlib.Path
+          OUT = P('published')
+          WORK = P('work')
+          UA = 'JJ-SE-save-auditor/1.0 (+https://github.com/JJtmc1234/factorio-clone)'
+
+          def dump(name, obj):
+              (OUT / name).write_text(json.dumps(obj, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          # Preserve the source discussion as evidence.
+          reddit_url = 'https://www.reddit.com/comments/1m1p3b.json?raw_json=1'
+          reddit = {'url': reddit_url}
+          try:
+              r = requests.get(reddit_url, headers={'User-Agent': UA}, timeout=60)
+              reddit.update({'status_code': r.status_code, 'content_type': r.headers.get('content-type'), 'text_head': r.text[:2000]})
+              if r.ok:
+                  raw = r.json()
+                  reddit['raw'] = raw
+                  try:
+                      post = raw[0]['data']['children'][0]['data']
+                      reddit['post'] = {k: post.get(k) for k in ('title','selftext','author','created_utc','permalink','url','num_comments')}
+                      comments=[]
+                      for child in raw[1]['data']['children']:
+                          if child.get('kind') == 't1':
+                              d=child.get('data',{})
+                              comments.append({k:d.get(k) for k in ('author','body','score','created_utc')})
+                      reddit['comments'] = comments
+                  except Exception as exc:
+                      reddit['parse_error'] = repr(exc)
+          except Exception as exc:
+              reddit['error'] = repr(exc)
+          dump('reddit-source.json', reddit)
+
+          # Resolve and download the shared Gofile folder.
+          session = requests.Session()
+          session.headers.update({'User-Agent': UA, 'Accept': 'application/json, text/plain, */*'})
+          token_response = session.post('https://api.gofile.io/accounts', timeout=60)
+          token_payload = token_response.json()
+          dump('gofile-account-response.json', {'status_code': token_response.status_code, 'payload': token_payload})
+          if token_payload.get('status') != 'ok':
+              raise RuntimeError(f'Gofile guest token failed: {token_payload}')
+          token = token_payload['data']['token']
+          auth = {'Authorization': f'Bearer {token}', 'User-Agent': UA}
+
+          def get_folder(content_id):
+              url = f'https://api.gofile.io/contents/{content_id}?wt=4fd6sg89d7s6&cache=true'
+              resp = session.get(url, headers=auth, timeout=90)
+              try:
+                  payload = resp.json()
+              except Exception:
+                  raise RuntimeError(f'Gofile content response {resp.status_code}: {resp.text[:1000]}')
+              if payload.get('status') != 'ok':
+                  raise RuntimeError(f'Gofile content failed: {payload}')
+              return payload['data']
+
+          files=[]
+          def walk(data, prefix=''):
+              if data.get('type') == 'file':
+                  files.append({
+                      'id': data.get('id'), 'name': data.get('name'), 'size': data.get('size'),
+                      'mimetype': data.get('mimetype'), 'link': data.get('link'),
+                      'path': prefix + (data.get('name') or 'unnamed')
+                  })
+                  return
+              children = data.get('children') or {}
+              iterable = children.values() if isinstance(children, dict) else children
+              for child in iterable:
+                  if child.get('type') == 'folder':
+                      # The root response normally includes children recursively, but fetch if not.
+                      child_data = child
+                      if not child.get('children'):
+                          child_data = get_folder(child['id'])
+                      walk(child_data, prefix + (child.get('name') or child.get('id','folder')) + '/')
+                  else:
+                      walk(child, prefix)
+
+          root = get_folder('1mQ0nZ')
+          dump('gofile-folder.json', root)
+          walk(root)
+          dump('gofile-files.json', files)
+          if not files:
+              raise RuntimeError('Gofile folder contains no files')
+
+          def stream_download(file_meta, dest):
+              with session.get(file_meta['link'], headers=auth, stream=True, timeout=900) as resp:
+                  resp.raise_for_status()
+                  with dest.open('wb') as out:
+                      for chunk in resp.iter_content(1024*1024):
+                          if chunk:
+                              out.write(chunk)
+
+          downloaded=[]
+          for idx, meta in enumerate(files):
+              name = re.sub(r'[^A-Za-z0-9._-]+','_',meta.get('name') or f'file_{idx}')
+              if not name.lower().endswith('.zip'):
+                  continue
+              dest = WORK/'downloads'/name
+              stream_download(meta, dest)
+              h=hashlib.sha256(dest.read_bytes()).hexdigest()
+              rec={**meta,'local':str(dest),'bytes':dest.stat().st_size,'sha256':h,'factorio_save':False}
+              try:
+                  with zipfile.ZipFile(dest) as z:
+                      names=z.namelist()
+                      rec['members']=len(names)
+                      rec['factorio_save']=any(n.endswith('level.dat') for n in names) and any(n.endswith('level-init.dat') for n in names)
+              except Exception as exc:
+                  rec['zip_error']=repr(exc)
+              downloaded.append(rec)
+          dump('downloaded-zips.json', downloaded)
+          saves=[x for x in downloaded if x.get('factorio_save')]
+          if not saves:
+              raise RuntimeError('No Factorio save ZIP found in Gofile folder')
+          saves.sort(key=lambda x:x['bytes'], reverse=True)
+          selected=saves[0]
+          src=P(selected['local'])
+          dest=OUT/'candidate.zip'
+          dest.write_bytes(src.read_bytes())
+          dump('selected-file.json', selected)
+
+          class R:
+              def __init__(self,d): self.d=d; self.o=0
+              def u8(self): v=self.d[self.o]; self.o+=1; return v
+              def u16(self): v=struct.unpack_from('<H',self.d,self.o)[0]; self.o+=2; return v
+              def u32(self): v=struct.unpack_from('<I',self.d,self.o)[0]; self.o+=4; return v
+              def ver(self): return self.u16(),self.u16(),self.u16(),self.u16()
+              def opt(self,b,fv):
+                  if fv>(0,14,14,0):
+                      x=self.u8()
+                      if x!=255: return x
+                  return self.u16() if b==16 else self.u32()
+              def text(self,fv):
+                  n=self.opt(32,fv); v=self.d[self.o:self.o+n]; self.o+=n; return v.decode('utf-8','replace')
+              def v48(self,fv): return self.opt(16,fv),self.opt(16,fv),self.opt(16,fv)
+
+          with zipfile.ZipFile(dest) as z:
+              init=next(n for n in z.namelist() if n.endswith('/level-init.dat') or n=='level-init.dat')
+              data=z.read(init)
+              previews=[n for n in z.namelist() if n.lower().endswith(('.png','.jpg','.jpeg')) and ('preview' in n.lower() or 'screenshot' in n.lower())]
+              if previews:
+                  ext=P(previews[0]).suffix or '.png'
+                  (OUT/f'preview{ext}').write_bytes(z.read(previews[0]))
+
+          r=R(data); fv=r.ver(); r.u8(); save_name=r.text(fv); campaign=r.text(fv); base_mod=r.text(fv)
+          difficulty=r.u8(); finished=bool(r.u8()); player_won=bool(r.u8()); next_level=r.text(fv)
+          can_continue=bool(r.u8()); finished_but_continuing=bool(r.u8()); saving_replay=bool(r.u8()); allow_debug=bool(r.u8())
+          loaded=r.v48(fv); build=r.u32() if fv[0]>=2 else r.u16(); allowed_commands=bool(r.u8())
+          if fv[0]>=2: r.o += 4
+          mods={}
+          mod_count=r.opt(32,fv)
+          for _ in range(mod_count):
+              name=r.text(fv); version='.'.join(map(str,r.v48(fv))); crc=r.u32(); mods[name]={'version':version,'crc':crc}
+          header={
+              'factorio_version_full':'.'.join(map(str,fv)), 'factorio_version':'.'.join(map(str,fv[:3])),
+              'save_name':save_name,'campaign':campaign,'base_mod':base_mod,'difficulty':difficulty,
+              'finished':finished,'player_won':player_won,'next_level':next_level,'can_continue':can_continue,
+              'finished_but_continuing':finished_but_continuing,'saving_replay':saving_replay,
+              'allow_non_admin_debug':allow_debug,'loaded_from':'.'.join(map(str,loaded)),
+              'loaded_from_build':build,'allowed_commands':allowed_commands,'mods':mods
+          }
+          dump('header.json',header)
+          if not str(mods.get('space-exploration',{}).get('version','')).startswith('0.7.'):
+              raise RuntimeError(f"Selected save is not native SE 0.7: {mods.get('space-exploration')}")
+          PY
+          python3 work/fetch.py | tee published/fetch-console.txt
+
+      - name: Download exact Factorio and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/setup.py <<'PY'
+          import json, pathlib, tarfile, urllib.parse, urllib.request
+          P=pathlib.Path
+          header=json.loads(P('published/header.json').read_text())
+          version=header['factorio_version']
+          mods={name:meta['version'] for name,meta in header['mods'].items()}
+
+          def download(url,dest,timeout=1200):
+              req=urllib.request.Request(url,headers={'User-Agent':'JJ-SE-save-auditor/1.0'})
+              with urllib.request.urlopen(req,timeout=timeout) as src,dest.open('wb') as out:
+                  while True:
+                      chunk=src.read(1024*1024)
+                      if not chunk: break
+                      out.write(chunk)
+
+          archive=P('work/factorio.tar.xz')
+          download(f'https://factorio.com/get-download/{version}/headless/linux64',archive)
+          with tarfile.open(archive,'r:xz') as t: t.extractall('work')
+
+          builtin={'base','core'}
+          report=[]
+          for name,ver in mods.items():
+              if name in builtin:
+                  report.append({'name':name,'version':ver,'status':'builtin'}); continue
+              try:
+                  api='https://mods.factorio.com/api/mods/'+urllib.parse.quote(name,safe='')+'/full'
+                  req=urllib.request.Request(api,headers={'User-Agent':'JJ-SE-save-auditor/1.0'})
+                  with urllib.request.urlopen(req,timeout=120) as response: meta=json.load(response)
+                  rel=next((x for x in meta.get('releases',[]) if x.get('version')==ver),None)
+                  if not rel: raise RuntimeError('exact release missing')
+                  url=urllib.parse.urljoin('https://mods.factorio.com',rel['download_url'])
+                  dest=P('work/mods')/f'{name}_{ver}.zip'
+                  download(url,dest)
+                  report.append({'name':name,'version':ver,'status':'downloaded','bytes':dest.stat().st_size,'url':url})
+              except Exception as exc:
+                  report.append({'name':name,'version':ver,'status':'failed','error':repr(exc)})
+          P('published/mod-downloads.json').write_text(json.dumps(report,indent=2))
+          failures=[x for x in report if x['status']=='failed']
+          if failures: raise SystemExit(f'{len(failures)} exact mod downloads failed: {failures[:5]}')
+          (P('work/mods')/'mod-list.json').write_text(json.dumps({'mods':[{'name':n,'enabled':True} for n in mods]},indent=2))
+          PY
+          python3 work/setup.py | tee published/setup-console.txt
+
+      - name: Load save and audit science progression
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/server-settings.json <<'JSON'
+          {"name":"SE progression audit","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          JSON
+          work/factorio/bin/x64/factorio \
+            --start-server published/candidate.zip \
+            --mod-directory work/mods \
+            --server-settings work/server-settings.json \
+            --rcon-port 27419 --rcon-password inspect \
+            > published/server.log 2>&1 &
+          PID=$!
+          echo "$PID" > work/server.pid
+          for i in $(seq 1 900); do
+            grep -q 'Starting RCON interface' published/server.log && break
+            kill -0 "$PID" 2>/dev/null || { tail -400 published/server.log; exit 1; }
+            sleep 1
+          done
+          grep -q 'Starting RCON interface' published/server.log
+
+          cat > work/query.py <<'PY'
+          import json, pathlib, socket, struct
+
+          def packet(i,t,b):
+              p=struct.pack('<ii',i,t)+b.encode()+b'\0\0'
+              return struct.pack('<i',len(p))+p
+          def recv(sock):
+              h=sock.recv(4)
+              if len(h)!=4: raise RuntimeError('short RCON header')
+              n=struct.unpack('<i',h)[0]; data=b''
+              while len(data)<n: data+=sock.recv(n-len(data))
+              return struct.unpack_from('<ii',data,0)+(data[8:-2].decode('utf-8','replace'),)
+
+          lua=r'''
+          local out={tick=game.tick,hours=game.tick/216000,forces={},players={},surfaces={},science={},recipes={},relevant_technologies={}}
+          local science_names={
+            "automation-science-pack","logistic-science-pack","military-science-pack","chemical-science-pack",
+            "production-science-pack","utility-science-pack","space-science-pack",
+            "se-rocket-science-pack","se-space-science-pack",
+            "se-astronomic-science-pack-1","se-astronomic-science-pack-2","se-astronomic-science-pack-3","se-astronomic-science-pack-4",
+            "se-biological-science-pack-1","se-biological-science-pack-2","se-biological-science-pack-3","se-biological-science-pack-4",
+            "se-energy-science-pack-1","se-energy-science-pack-2","se-energy-science-pack-3","se-energy-science-pack-4",
+            "se-material-science-pack-1","se-material-science-pack-2","se-material-science-pack-3","se-material-science-pack-4"
+          }
+          local science_set={}; for _,n in pairs(science_names) do science_set[n]=true end
+          local item_protos=(prototypes and prototypes.item) or game.item_prototypes
+          if item_protos then
+            for n,_ in pairs(item_protos) do if string.find(n,"science-pack",1,true) then science_set[n]=true end end
+          end
+          local realforces={}
+          for _,f in pairs(game.forces) do if f.name~="enemy" and f.name~="neutral" then realforces[f.name]=true end end
+          for _,f in pairs(game.forces) do
+            if realforces[f.name] then
+              local fr={name=f.name,rockets_launched=f.rockets_launched or 0,science={},relevant_technologies={}}
+              for n,_ in pairs(science_set) do
+                local ok1,o=pcall(function() return f.item_production_statistics.get_output_count(n) end)
+                local ok2,i=pcall(function() return f.item_production_statistics.get_input_count(n) end)
+                if (ok1 and o and o>0) or (ok2 and i and i>0) then fr.science[n]={output=ok1 and o or 0,input=ok2 and i or 0} end
+              end
+              for n,t in pairs(f.technologies) do
+                local low=string.lower(n)
+                if string.find(low,"science",1,true) or string.find(low,"space",1,true) or string.find(low,"rocket",1,true)
+                  or string.find(low,"astronomic",1,true) or string.find(low,"biological",1,true)
+                  or string.find(low,"energy",1,true) or string.find(low,"material",1,true)
+                then
+                  if t.researched or t.enabled or (t.research_unit_count_formula~=nil) then
+                    fr.relevant_technologies[n]={researched=t.researched,enabled=t.enabled,level=t.level,progress=t.research_progress}
+                  end
+                end
+              end
+              table.insert(out.forces,fr)
+            end
+          end
+          for _,p in pairs(game.players) do table.insert(out.players,{name=p.name,force=p.force.name,surface=p.surface and p.surface.name or nil,position=p.position}) end
+          local entity_names={"se-rocket-launch-pad","se-rocket-landing-pad","se-space-science-lab","se-space-assembling-machine","se-space-manufactory","rocket-silo"}
+          for _,s in pairs(game.surfaces) do
+            local sr={name=s.name,index=s.index,chunks=0,player_entities=0,entities={},science_machines={}}
+            for _ in s.get_chunks() do sr.chunks=sr.chunks+1 end
+            for fn,_ in pairs(realforces) do
+              local ok,c=pcall(function() return s.count_entities_filtered{force=fn} end)
+              if ok then sr.player_entities=sr.player_entities+c end
+            end
+            for _,en in pairs(entity_names) do
+              local ok,c=pcall(function() return s.count_entities_filtered{name=en} end)
+              sr.entities[en]=ok and c or -1
+            end
+            local okents,ents=pcall(function() return s.find_entities_filtered{type={"assembling-machine","furnace","rocket-silo"}} end)
+            if okents then
+              for _,e in pairs(ents) do
+                local ok,r=pcall(function() return e.get_recipe() end)
+                if ok and r then
+                  out.recipes[r.name]=(out.recipes[r.name] or 0)+1
+                  if science_set[r.name] then sr.science_machines[r.name]=(sr.science_machines[r.name] or 0)+1 end
+                end
+              end
+            end
+            table.insert(out.surfaces,sr)
+          end
+          local encoder=(helpers and helpers.table_to_json) or game.table_to_json
+          rcon.print(encoder(out))
+          '''
+          with socket.create_connection(('127.0.0.1',27419),timeout=30) as s:
+              s.settimeout(180)
+              s.sendall(packet(1,3,'inspect')); auth=recv(s)
+              if auth[0]==-1: raise RuntimeError('RCON auth failed')
+              s.sendall(packet(2,2,'/sc '+lua)); body=recv(s)[2].strip()
+          pathlib.Path('published/rcon-raw.txt').write_text(body)
+          start=body.find('{'); end=body.rfind('}')
+          if start<0 or end<start: raise RuntimeError(body[:4000])
+          data=json.loads(body[start:end+1])
+          pathlib.Path('published/progression.json').write_text(json.dumps(data,indent=2,sort_keys=True))
+
+          science={}
+          for f in data.get('forces',[]):
+              for n,v in f.get('science',{}).items():
+                  x=science.setdefault(n,{'output':0,'input':0})
+                  x['output']=max(x['output'],v.get('output',0) or 0)
+                  x['input']=max(x['input'],v.get('input',0) or 0)
+          recipes=data.get('recipes',{})
+          specialists=[]
+          for branch in ('astronomic','biological','energy','material'):
+              for tier in range(1,5): specialists.append(f'se-{branch}-science-pack-{tier}')
+          specialist_output=sum(science.get(n,{}).get('output',0) or 0 for n in specialists)
+          specialist_input=sum(science.get(n,{}).get('input',0) or 0 for n in specialists)
+          specialist_machines=sum(recipes.get(n,0) or 0 for n in specialists)
+          space_candidates=['se-space-science-pack','space-science-pack']
+          space_output=max([science.get(n,{}).get('output',0) or 0 for n in space_candidates] or [0])
+          space_input=max([science.get(n,{}).get('input',0) or 0 for n in space_candidates] or [0])
+          space_machines=sum(recipes.get(n,0) or 0 for n in space_candidates)
+          specialist_researched=[]
+          for f in data.get('forces',[]):
+              for n,t in f.get('relevant_technologies',{}).items():
+                  low=n.lower()
+                  if t.get('researched') and any(x in low for x in ('astronomic','biological','energy-science','material-science')):
+                      specialist_researched.append(n)
+          orbit_entities=0
+          non_nauvis_entities=0
+          for s in data.get('surfaces',[]):
+              pe=s.get('player_entities',0) or 0
+              low=s.get('name','').lower()
+              if 'orbit' in low: orbit_entities+=pe
+              if low!='nauvis': non_nauvis_entities+=pe
+          grade={
+              'post_space_science_proven': space_output>0 or space_input>0,
+              'space_science_output':space_output,'space_science_input':space_input,'space_science_machines':space_machines,
+              'specialist_output':specialist_output,'specialist_input':specialist_input,'specialist_machines':specialist_machines,
+              'specialist_researched_technologies':sorted(set(specialist_researched)),
+              'strict_pre_specialist': specialist_output==0 and specialist_input==0 and specialist_machines==0 and len(specialist_researched)==0,
+              'practical_pre_specialist': specialist_output==0 and specialist_input==0 and specialist_machines==0,
+              'production_science_output':science.get('production-science-pack',{}).get('output',0),
+              'utility_science_output':science.get('utility-science-pack',{}).get('output',0),
+              'orbit_player_entities':orbit_entities,'non_nauvis_player_entities':non_nauvis_entities,
+              'science':science
+          }
+          grade['target_match']=grade['post_space_science_proven'] and grade['practical_pre_specialist']
+          pathlib.Path('published/grade.json').write_text(json.dumps(grade,indent=2,sort_keys=True))
+          print(json.dumps(grade,indent=2,sort_keys=True))
+          PY
+          python3 work/query.py | tee published/progression-console.txt
+          kill "$PID" || true
+          wait "$PID" || true
+
+      - name: Write concise verdict
+        if: always()
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json,pathlib
+          P=pathlib.Path
+          lines=['# SE 0.7 post-space, pre-specialist audit','']
+          try:
+              h=json.loads(P('published/header.json').read_text())
+              lines += [f"- Factorio: `{h.get('factorio_version_full')}`",f"- Space Exploration: `{h.get('mods',{}).get('space-exploration',{}).get('version')}`",f"- Save name: `{h.get('save_name')}`"]
+          except Exception as exc: lines.append(f'- Header unavailable: `{exc!r}`')
+          try:
+              g=json.loads(P('published/grade.json').read_text())
+              lines += ['',f"## Verdict: {'MATCH' if g.get('target_match') else 'NOT A MATCH'}",'',
+                        f"- Space science output: **{g.get('space_science_output')}**",
+                        f"- Space science consumed: **{g.get('space_science_input')}**",
+                        f"- Specialist science output: **{g.get('specialist_output')}**",
+                        f"- Specialist science consumed: **{g.get('specialist_input')}**",
+                        f"- Specialist science machines: **{g.get('specialist_machines')}**",
+                        f"- Production science output: **{g.get('production_science_output')}**",
+                        f"- Utility science output: **{g.get('utility_science_output')}**",
+                        f"- Strict pre-specialist: **{g.get('strict_pre_specialist')}**",
+                        f"- Practical pre-specialist: **{g.get('practical_pre_specialist')}**"]
+          except Exception as exc: lines += ['',f'Runtime audit unavailable: `{exc!r}`']
+          P('published/VERDICT.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines))
+          PY
+
+      - name: Upload actual save and audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se-post-space-pre-specialist-candidate
+          path: |
+            published/
+          compression-level: 0
+          if-no-files-found: warn
+          retention-days: 7
+
+      - name: Publish small result files to result branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f published/candidate.zip
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-gofile-specialist-audit
+          mkdir -p tmp-se-gofile-specialist-audit
+          cp -a published/. tmp-se-gofile-specialist-audit/
+          git add -f tmp-se-gofile-specialist-audit
+          git commit -m 'Publish SE post-space pre-specialist audit' || true
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
