@@ -1,0 +1,11 @@
+Flat-search rows=994 unique=499
+Instances: invidious=4 piped=3
+Recovered 50/499 descriptions=39
+Recovered 100/499 descriptions=46
+Recovered 150/499 descriptions=53
+Recovered 200/499 descriptions=60
+Recovered 250/499 descriptions=67
+Recovered 300/499 descriptions=74
+Recovered 350/499 descriptions=81
+Recovered 400/499 descriptions=89
+Recovered 450/499 descriptions=96
