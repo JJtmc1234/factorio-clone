@@ -1,0 +1,70 @@
+name: Probe public Note API for lazy_kojocho attachments
+
+on:
+  push:
+    branches: [tmp-se-note-api-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-note-api-result-20260825
+
+jobs:
+  probe:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch exact public Note records
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published/raw
+          declare -A posts=(
+            [47h]=ncc796712f232
+            [53h]=nff719a8e0603
+            [57h]=n87a312078e7c
+            [63h]=nd3ae48174230
+          )
+          : > published/SUMMARY.txt
+          for stage in 47h 53h 57h 63h; do
+            key="${posts[$stage]}"
+            api="https://note.com/api/v3/notes/$key"
+            page="https://note.com/lazy_kojocho/n/$key"
+            curl -L --fail-with-body --retry 3 -A 'Mozilla/5.0 JJ-SE-research/1.0' "$api" -o "published/raw/${stage}-api.json" || true
+            curl -L --fail-with-body --retry 3 -A 'Mozilla/5.0 JJ-SE-research/1.0' "$page" -o "published/raw/${stage}-page.html" || true
+            echo "=== $stage ===" >> published/SUMMARY.txt
+            wc -c "published/raw/${stage}-api.json" "published/raw/${stage}-page.html" >> published/SUMMARY.txt 2>&1 || true
+            if jq -e . "published/raw/${stage}-api.json" >/dev/null 2>&1; then
+              jq -r '
+                paths(scalars) as $p
+                | getpath($p) as $v
+                | select((($p|map(tostring)|join("/"))|test("download|attach|file|asset|url|href|link|zip|save|drive|dropbox|discord|media|source|original|content|body|embed";"i")) or (($v|tostring)|test("https?://|\\.zip|download|attachment|drive\\.google|dropbox|discord";"i")))
+                | {path:($p|map(tostring)|join("/")),value:$v}
+              ' "published/raw/${stage}-api.json" > "published/${stage}-hits.json"
+              cat "published/${stage}-hits.json" >> published/SUMMARY.txt
+            fi
+            grep -Eio 'https?://[^"<> ]+|[^"<> ]+\.zip([^"<> ]*)?' "published/raw/${stage}-page.html" 2>/dev/null \
+              | grep -Ei 'download|attach|file|zip|drive|dropbox|discord|github|storage|cdn|lazy_kojocho' \
+              | sort -u > "published/${stage}-page-urls.txt" || true
+            cat "published/${stage}-page-urls.txt" >> published/SUMMARY.txt || true
+            echo >> published/SUMMARY.txt
+          done
+          cat published/SUMMARY.txt
+      - name: Publish results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-note-api
+          mkdir tmp-se-note-api
+          cp -a published/. tmp-se-note-api/
+          git add -f tmp-se-note-api
+          git commit --allow-empty -m 'Probe lazy_kojocho Note API records'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
