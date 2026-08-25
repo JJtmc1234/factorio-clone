@@ -1,0 +1,11 @@
+FACTORIO 2.0 SCRIPT.DAT RE-AUDIT
+========================================================================================================================
+Factorio 2.0 save records: 31
+unique source downloads attempted: 31
+decoded save records: 31
+saves whose script registry contains mod-space-exploration: 0
+download errors: 0
+decode/fatal errors: 31
+
+SPACE EXPLORATION CANDIDATES
+------------------------------------------------------------------------------------------------------------------------
