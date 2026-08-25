@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+        <link href="https://factorio.com/static/css/main.css?v=a134a950" rel="stylesheet" type="text/css"/>
+        
+        
+
+        <link href="https://cdn.factorio.com/assets/fonts/titillium-web.css" rel="stylesheet">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <script src="https://factorio.com/static/js/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" integrity="sha512-JvpjarJlOl4sW26MnEb3IdSAcGdeTeOaAlu2gUZtfFrRgnChdzELOZKl0mN6ZvI0X+xiX5UMvxjK2Rx2z/fliw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/head-support.min.js" integrity="sha512-ZXZrgVLRbVwG6i/w2/iT/YtrxH7yXqhMFj+KDBgRNqTPdHkKQ/hzj9enGUPienVX0Cu8OhegZ1LcULuemfWHRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/preload.min.js" integrity="sha512-2lqd++ZVVmZg5LU//IabHHKQBV3qL6kPMjXvtzLfd+Fn99uOw7MmWLlVQhF2uVzH0yOuVzV3/BIC5w5QUP6uTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Factorio Mods</title>
+
+        
+        
+
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-core@1.0.1.js"></script>
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-dom@1.0.4.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+
+        
+            
+
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="sites links flex flex-items-baseline">
+                
+                
+                    <a href="https://factorio.com" class="">
+                        Factorio.com</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://forums.factorio.com/" class="">
+                        Forums</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://wiki.factorio.com/" class="">
+                        Wiki</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://mods.factorio.com" class="sites-current">
+                        Mod Portal</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://lua-api.factorio.com/latest/" class="">
+                        API Docs</a>
+                    
+                
+            </div>
+            <div class="user-controls links">
+                <!-- TODO icons -->
+                <a href="/login?next=/user/Asterixyz"><i class="fas fa-user"></i>Log in</a>
+            </div>
+            <style>
+                .top-banner {
+                    margin-top: 12px;
+                    font-size: larger;
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                }
+                .top-banner a {
+                    color: white;
+                }
+                .top-banner i {
+                    color: #ffa200;
+                }
+                .top-banner-divider {
+                    margin-top: 12px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    font-size: larger;
+                }
+            </style>
+
+            <div class="top-banner">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <a href="/" class="header-logo">
+                <!-- TODO cdn -->
+                <img src="https://cdn.factorio.com/assets/img/web/factorio-logo2.png">
+            </a>
+            
+            
+        </div>
+    </div>
+
+
+            <div class="container">
+                <div class="container-inner">
+                    
+<div id="flashed-messages" class="small-center float-to-center">
+    
+</div>
+
+                    
+<div class="panel pt0 pb0">
+  
+  <div class="flex">
+    <div class="author-card-thumbnail panel-inset position-relative p0 profile-image-dropzone">
+      <img src="/static/no-avatar.png">
+
+      <div class="shadow-overlay"></div>
+    </div>
+
+    <div class="author-card-content p16">
+      <h2 class="author-card-title">Asterixyz </h2>
+
+      <div id="profile-bio-display">
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div class="panel pb0">
+  <div class="flex flex-space-between flex-items-center">
+    <h2 class="mb0">
+      
+      Mods by Asterixyz
+      
+    </h2>
+    <div>
+      
+    </div>
+  </div>
+  
+  <div class="mod-list">
+    
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/erm_exclude_pelagos" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/erm_exclude_pelagos">Exclude Planet Pelagos from running ERM logic</a>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/Asterixyz">Asterixyz</a>
+            </div>
+            <hr>
+            <p class="pre-line ">Prevents ERM from touching Planet Pelagos to stop constant doomsday with Copper Spitters and ERM enemies
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Tweaks
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Tweaks
+                </div>
+                <div class="panel-tooltip">
+                    <p>Small changes concerning balance, gameplay, or graphics.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-01-10T16:27:06.918000">7 months ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            2.0
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="45">45</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/Asterixyz101/erm_exclude_pelagos" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/erm_exclude_pelagos">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/non-spoiling-pelagos-science" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/non-spoiling-pelagos-science">Non-Spoiling Pelagos Science</a>
+              
+                <span class="deprecated">
+                    deprecated <!-- TODO -->
+                </span>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/Asterixyz">Asterixyz</a>
+            </div>
+            <hr>
+            <p class="pre-line ">Causes the Pelagos Science pack to not spoil because my friend thinks that&#39;s stupid.
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Tweaks
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Tweaks
+                </div>
+                <div class="panel-tooltip">
+                    <p>Small changes concerning balance, gameplay, or graphics.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-02-16T16:47:47.474000">6 months ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            2.0
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="10">10</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/Asterixyz101/non-spoiling-pelagos-science" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/non-spoiling-pelagos-science">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+  </div>
+  
+</div>
+
+                </div>
+            </div>
+
+            
+<div class="footer">
+    <div class="footer-inner panel">
+
+        <div class="footer-links flex flex-wrap flex-center panel-inset m0">
+            <a href="https://factorio.com/terms-of-service">Terms of Service</a><span class="separator">|</span><a href="https://factorio.com/privacy-policy">Privacy</a><span class="separator">|</span><a href="https://factorio.com/imprint">Imprint</a><span class="separator">|</span><a href="https://factorio.com/press-kit">Presskit</a><span class="separator">|</span><a href="https://factorio.com/support/contact">Contact</a><span class="separator">|</span><a href="https://factorio.com/faq">FAQ</a><span class="separator">|</span><a href="https://factorio.com/jobs">Jobs</a>
+        </div>
+        <div class="footer-rocket panel-inset m0 p0">
+            <div id="rocket" class="rocket"></div>
+            <div class="shadow-overlay"></div>
+            <div class="shadow-overlay-bottom"></div>
+        </div>
+        <div class="footer-copyright panel-inset m0">
+            Copyright © 2015 - 2026 Wube Software - all rights reserved.
+        </div>
+    </div>
+</div>
+            
+                <script src="/static/js/factorio_mod_portal.js?v=a134a950"></script>
+                <script>
+                  var messages = [
+                  ];
+                  Factorio.main({
+                      // old url for compatibility with cached JS
+                      contentServerUrl: 'https://assets-mod.factorio.com',
+                      assetCDNUrl: 'https://assets-mod.factorio.com',
+                      messages: messages
+                  });
+                </script>
+                
+                
+            
+        
+        <script src="https://factorio.com/static/js/factorio.js?v=a134a950" type="module"></script>
+    </body>
+</html>

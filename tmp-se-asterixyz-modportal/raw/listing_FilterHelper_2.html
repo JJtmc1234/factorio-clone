@@ -1,0 +1,2195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+        <link href="https://factorio.com/static/css/main.css?v=a134a950" rel="stylesheet" type="text/css"/>
+        
+        
+
+        <link href="https://cdn.factorio.com/assets/fonts/titillium-web.css" rel="stylesheet">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <script src="https://factorio.com/static/js/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" integrity="sha512-JvpjarJlOl4sW26MnEb3IdSAcGdeTeOaAlu2gUZtfFrRgnChdzELOZKl0mN6ZvI0X+xiX5UMvxjK2Rx2z/fliw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/head-support.min.js" integrity="sha512-ZXZrgVLRbVwG6i/w2/iT/YtrxH7yXqhMFj+KDBgRNqTPdHkKQ/hzj9enGUPienVX0Cu8OhegZ1LcULuemfWHRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/preload.min.js" integrity="sha512-2lqd++ZVVmZg5LU//IabHHKQBV3qL6kPMjXvtzLfd+Fn99uOw7MmWLlVQhF2uVzH0yOuVzV3/BIC5w5QUP6uTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Filter Helper - Factorio Mods</title>
+
+        
+  
+  
+  <meta name="twitter:image:src" content="/opengraph/mod/FilterHelper.png">
+  <meta name="twitter:site" content="@factoriogame">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Filter Helper - Factorio Mods">
+  <meta name="twitter:description" content="Adds context aware quick select for filter inserters.">
+
+  <meta property="og:image" content="/opengraph/mod/FilterHelper.png">
+  <meta property="og:image:alt" content="Filter Helper - Factorio Mod Portal">
+  <meta property="og:image:width" content="800"><meta property="og:image:height" content="400">
+  <meta property="og:site_name" content="Factorio Mod Portal">
+  <meta property="og:type" content="object">
+  <meta property="og:title" content="Filter Helper">
+  <meta property="og:description" content="Adds context aware quick select for filter inserters.">
+
+
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-core@1.0.1.js"></script>
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-dom@1.0.4.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+
+        
+            
+
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="sites links flex flex-items-baseline">
+                
+                
+                    <a href="https://factorio.com" class="">
+                        Factorio.com</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://forums.factorio.com/" class="">
+                        Forums</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://wiki.factorio.com/" class="">
+                        Wiki</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://mods.factorio.com" class="sites-current">
+                        Mod Portal</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://lua-api.factorio.com/latest/" class="">
+                        API Docs</a>
+                    
+                
+            </div>
+            <div class="user-controls links">
+                <!-- TODO icons -->
+                <a href="/login?next=/mod/FilterHelper/discussion"><i class="fas fa-user"></i>Log in</a>
+            </div>
+            <style>
+                .top-banner {
+                    margin-top: 12px;
+                    font-size: larger;
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                }
+                .top-banner a {
+                    color: white;
+                }
+                .top-banner i {
+                    color: #ffa200;
+                }
+                .top-banner-divider {
+                    margin-top: 12px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    font-size: larger;
+                }
+            </style>
+
+            <div class="top-banner">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <a href="/" class="header-logo">
+                <!-- TODO cdn -->
+                <img src="https://cdn.factorio.com/assets/img/web/factorio-logo2.png">
+            </a>
+            
+            
+        </div>
+    </div>
+
+
+            <div class="container">
+                <div class="container-inner">
+                    
+<div id="flashed-messages" class="small-center float-to-center">
+    
+</div>
+
+                    
+  
+<div
+  id="tabs-header"
+  
+>
+  
+  <ul class="tabs tabs-for-panel tabs-header flex-end">
+      
+      
+      <li>
+        <a href="/highlights">
+          <i class="fa fa-star"></i>
+          Highlighted mods
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/updated">
+          <i class="fa fa-history"></i>
+          Recently updated
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/downloaded">
+          <i class="fa fa-sort-amount-down"></i>
+          Most downloaded
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/trending">
+          <i class="fa fa-chart-line"></i>
+          Trending
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/search">
+          <i class="fa fa-search"></i>
+          Search mods
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+  <div class="panel pt0 pb0 mb32">
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/FilterHelper" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+                  <img src="https://assets-mod.factorio.com/assets/acc8fa6bac3c09eb327e471b0ecb823ac0daf805.thumb.png">
+                  <div class="shadow-overlay"></div>
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/FilterHelper">Filter Helper</a>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/Mudscape">Mudscape</a>
+            </div>
+            <hr>
+            <p class="pre-line ">Adds context aware quick select for filter inserters.
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Utilities
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Utilities
+                </div>
+                <div class="panel-tooltip">
+                    <p>Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-07-01T19:55:32.120000">2 months ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            1.1 - 2.1
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="36088">36.1K</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/MESLewis/FilterHelper" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/FilterHelper">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="panel-inset p0">
+      
+  <ul class="tabs">
+    <li>
+      <a href="/mod/FilterHelper" >
+        Information
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/mod/FilterHelper/changelog" >
+          Changelog
+        </a>
+    </li>
+    
+
+    <li>
+      <a href="/mod/FilterHelper/downloads" >
+        Downloads
+      </a>
+    </li>
+
+    <li>
+      <a href="/mod/FilterHelper/dependencies" >
+        Dependencies
+        <span class="badge">0 / 63 </span>
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/FilterHelper/discussion" class="active">
+        Discussion
+        <span class="badge">74</span>
+        
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/FilterHelper/metrics" >
+        Metrics
+      </a>
+    </li>
+
+  </ul>
+
+      <div class="panel-lighter mb0">
+        
+          <div class="discussion">
+            
+    <div class="discussion-list">
+        
+        
+        <div class="panel-inset p0">
+            <div class="panel-inset flex flex-space-between flex-align-center p4 m0">
+                <div class="flex">
+                    
+                        
+                        
+                            <a class="button discussion-list-new-message disabled" title="You need to own Factorio to participate in mod portal discussions.">New Thread</a>
+                        
+                        
+                    
+                </div>
+                <div class="w100p text-right">
+                    Filter:
+                    <div class="discussion-tags-filter inline-flex flex-wrap flex-end">
+                        
+                            <a href="/mod/FilterHelper/discussion/g">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">General</span>
+                            </a>
+                        
+                            <a href="/mod/FilterHelper/discussion/b">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Bugs</span>
+                            </a>
+                        
+                            <a href="/mod/FilterHelper/discussion/a">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Announcements</span>
+                            </a>
+                        
+                            <a href="/mod/FilterHelper/discussion/i">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Ideas &amp; suggestions</span>
+                            </a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+                <table class="discussion-list-messages  panel-hole m0 ms0">
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6a7c135d53c887b98fc34255" title="Crash with Creative mod">Crash with Creative mod</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DJ_Pen_is" class="orange">DJ_Pen_is</a>
+                                    
+                                    <span title="2026-08-12T06:31:57.245000">12 days ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-08-16T18:43:29.962000">8 days ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6a264c98a4ccedd43942579b" title="Am I missing something? How do you use this mod.">Am I missing something? How do you use this mod.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Ellthan" class="orange">Ellthan</a>
+                                    
+                                    <span title="2026-06-08T05:01:12.683000">3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Ellthan" class="orange">Ellthan</a>
+                                    <span title="2026-06-10T17:44:08.317000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/699be6da5d57f256edab82fb" title="Adapt to fuel filter">Adapt to fuel filter</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/SWeini" class="orange">SWeini</a>
+                                    
+                                    <span title="2026-02-23T05:34:18.447000">6 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/SWeini" class="orange">SWeini</a>
+                                    <span title="2026-02-24T06:00:37.540000">6 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6943d9bf649ca5e362d57d29" title="Question about filters.">Question about filters.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Hoochie" class="orange">Hoochie</a>
+                                    
+                                    <span title="2025-12-18T10:38:55.820000">8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-02-20T19:45:20.383000">6 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/69848ff560343288c8277cf5" title="[Fixed] Include decay products of inputs">[Fixed] Include decay products of inputs</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Prezombie" class="orange">Prezombie</a>
+                                    
+                                    <span title="2026-02-05T12:41:25.466000">7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-02-06T08:42:11.767000">7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6984957ff89240df883c510e" title="Add this menu to all entities on a circuit with a conditional enable option">Add this menu to all entities on a circuit with a conditional enable option</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Prezombie" class="orange">Prezombie</a>
+                                    
+                                    <span title="2026-02-05T13:05:03.821000">7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-02-06T08:21:05.034000">7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/697ddd35902be04649fd7495" title="[Done] multiple default items">[Done] multiple default items</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/nux_" class="orange">nux_</a>
+                                    
+                                    <span title="2026-01-31T10:45:09.960000">7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-02-02T19:15:55.435000">7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6832e096aa502d0273efc346" title="[Added] [Suggestion] Splitter deconstruction planner">[Added] [Suggestion] Splitter deconstruction planner</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ceeloman" class="orange">ceeloman</a>
+                                    
+                                    <span title="2025-05-25T09:19:18.366000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2026-01-01T22:32:51.987000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/68dfa131c2af4382e5c236b5" title="[WIP] Pre-filtering of inserters">[WIP] Pre-filtering of inserters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    
+                                    <span title="2025-10-03T10:10:57.661000">11 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Hoochie" class="orange">Hoochie</a>
+                                    <span title="2025-12-18T10:17:26.151000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/692ba533d956d8d1428ffde7" title="[Done] Default splitter suggestion">[Done] Default splitter suggestion</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Myrax" class="orange">Myrax</a>
+                                    
+                                    <span title="2025-11-30T02:00:19.266000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-11-30T19:54:53.805000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/69165df90fc3e6b12c19cab9" title="Suggestion: Circuit Condition Helper">Suggestion: Circuit Condition Helper</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/NotRexButCaesar" class="orange">NotRexButCaesar</a>
+                                    
+                                    <span title="2025-11-13T22:38:49.809000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-11-13T23:25:15.391000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/68efd2cad4c06cba6e422df7" title="[Resolved] SE and Q Pipette">[Resolved] SE and Q Pipette</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Asterixyz" class="orange">Asterixyz</a>
+                                    
+                                    <span title="2025-10-15T16:58:50.331000">10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    13
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-10-16T15:30:57.412000">10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/68dc53c2553f08ef45a5b9d1" title="[Fixed] Very high update times when opening outposts (with pyanodons)">[Fixed] Very high update times when opening outposts (with pyanodons)</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/lejendary" class="orange">lejendary</a>
+                                    
+                                    <span title="2025-09-30T22:03:46.310000">11 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/lejendary" class="orange">lejendary</a>
+                                    <span title="2025-10-03T19:50:09.077000">11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/688fa12d478b00e120b15b17" title="[Linked] Default option for inserters">[Linked] Default option for inserters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/bonesbro" class="orange">bonesbro</a>
+                                    
+                                    <span title="2025-08-03T17:49:33.509000">1 year, 1 month ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-10-03T10:11:19.392000">11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/683cabd7e4330b426aa82a7b" title="[Linked] Shortcut key to pre-enable &#34;use filter&#34;">[Linked] Shortcut key to pre-enable &#34;use filter&#34;</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/NOiZE" class="orange">NOiZE</a>
+                                    
+                                    <span title="2025-06-01T19:36:55.270000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-10-03T10:11:15.803000">11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/68d16b2951385adfa7ae47a0" title="[Fixed] [2.0.67] Circuit controlled splitters">[Fixed] [2.0.67] Circuit controlled splitters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DemonicLaxatives" class="orange">DemonicLaxatives</a>
+                                    
+                                    <span title="2025-09-22T15:28:41.758000">11 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    7
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/dantefromhell" class="orange">dantefromhell</a>
+                                    <span title="2025-09-23T15:49:35.613000">11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6834cace37f13134ef6b3fc5" title="Compatibility with loaders">Compatibility with loaders</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ceeloman" class="orange">ceeloman</a>
+                                    
+                                    <span title="2025-05-26T20:10:54.882000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-08-27T20:04:30.542000">a year ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/685c54dcdd7a6f107ad6a462" title="[Added] Deconstruction planner on Splitter on the empty side">[Added] Deconstruction planner on Splitter on the empty side</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/flart" class="orange">flart</a>
+                                    
+                                    <span title="2025-06-25T19:58:20.428000">1 year, 2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-06-27T17:14:43.312000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6834cb072dcd78366c4393ca" title="[Fixed] ghost support">[Fixed] ghost support</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ceeloman" class="orange">ceeloman</a>
+                                    
+                                    <span title="2025-05-26T20:11:51.656000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-06-13T12:23:32.339000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67278cd9d6030f9c7379ab33" title="[Added] Enable &#34;use filter&#34;">[Added] Enable &#34;use filter&#34;</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/yokmp" class="orange">yokmp</a>
+                                    
+                                    <span title="2024-11-03T14:46:49.626000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    19
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-06-09T20:36:26.880000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/682babbdc3bdcb129c91499d" title="[Added] Support Lane Balancer">[Added] Support Lane Balancer</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Magi1053" class="orange">Magi1053</a>
+                                    
+                                    <span title="2025-05-19T22:07:57.144000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-06-01T07:38:35.254000">1 year, 3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/683aa189492778455263becc" title="[Fixed] Attempt to get length of a nil value">[Fixed] Attempt to get length of a nil value</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Krypt0n_C0R3" class="orange">Krypt0n_C0R3</a>
+                                    
+                                    <span title="2025-05-31T06:28:25.362000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-06-01T06:47:35.834000">1 year, 3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/681a01071a5aee52eb645e43" title="pipette to cursor key does not support middle mouse click">pipette to cursor key does not support middle mouse click</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Yuki_Nagato" class="orange">Yuki_Nagato</a>
+                                    
+                                    <span title="2025-05-06T12:31:03.807000">1 year, 4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-05-19T16:49:51.880000">1 year, 3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/682a6cc89c0e0e7d43792134" title="[Fixed] Crash - flake-graphite">[Fixed] Crash - flake-graphite</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Trollseidon" class="orange">Trollseidon</a>
+                                    
+                                    <span title="2025-05-18T23:27:04.659000">1 year, 3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-05-19T16:47:13.844000">1 year, 3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/68135f545edc99508351d515" title="[Suggestion] Asteroid collector filters">[Suggestion] Asteroid collector filters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/SetazeR" class="orange">SetazeR</a>
+                                    
+                                    <span title="2025-05-01T11:47:32.481000">1 year, 4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/SetazeR" class="orange">SetazeR</a>
+                                    <span title="2025-05-01T11:47:32.481000">1 year, 4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/680b0852b30c4f3fec38a3e2" title="provide available extra default quality filters">provide available extra default quality filters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/naiad" class="orange">naiad</a>
+                                    
+                                    <span title="2025-04-25T03:58:10.516000">1 year, 4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/naiad" class="orange">naiad</a>
+                                    <span title="2025-04-25T03:58:10.516000">1 year, 4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/680144cb19a6420f4d5719fe" title="[Fixed] Crash with Spidertron Patrols">[Fixed] Crash with Spidertron Patrols</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/MengLei" class="orange">MengLei</a>
+                                    
+                                    <span title="2025-04-17T18:13:31.477000">1 year, 4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/MengLei" class="orange">MengLei</a>
+                                    <span title="2025-04-22T07:25:01.258000">1 year, 4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67d15a290312cdfaf23b7658" title="[Fixed] Crash with Spidertron Patrols">[Fixed] Crash with Spidertron Patrols</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/back_null" class="orange">back_null</a>
+                                    
+                                    <span title="2025-03-12T09:55:53.449000">1 year, 5 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/back_null" class="orange">back_null</a>
+                                    <span title="2025-04-01T20:05:15.610000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67ebf597c2d85e7e34ace6b9" title="[Fixed] another crash">[Fixed] another crash</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Muramas" class="orange">Muramas</a>
+                                    
+                                    <span title="2025-04-01T14:17:59.698000">1 year, 5 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Muramas" class="orange">Muramas</a>
+                                    <span title="2025-04-01T15:50:59.591000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67eb44f774c4d1c4696e2dec" title="[Fixed] crash">[Fixed] crash</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/yavis1231" class="orange">yavis1231</a>
+                                    
+                                    <span title="2025-04-01T01:44:23.777000">1 year, 5 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-04-01T15:34:29.985000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67c38104b8975c422b24169d" title="[Fixed] Crash with FilterMiningDrills">[Fixed] Crash with FilterMiningDrills</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Trollseidon" class="orange">Trollseidon</a>
+                                    
+                                    <span title="2025-03-01T21:49:56.804000">1 year, 6 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-03-31T20:05:20.125000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67c531cac36028d2d058001a" title="[Done] [Feature Request] Ghosts">[Done] [Feature Request] Ghosts</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/SWeini" class="orange">SWeini</a>
+                                    
+                                    <span title="2025-03-03T04:36:26.737000">1 year, 6 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-03-31T20:04:57.811000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67b4aba195114d58a2192abd" title="[Feature request] Add a liquid variant of filter helper for pumps">[Feature request] Add a liquid variant of filter helper for pumps</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/JigSaW_3" class="orange">JigSaW_3</a>
+                                    
+                                    <span title="2025-02-18T15:47:45.327000">1 year, 6 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/JigSaW_3" class="orange">JigSaW_3</a>
+                                    <span title="2025-02-18T15:47:45.327000">1 year, 6 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/679c78d2d019f9f669aedc71" title="Removal of &#34;Use filter&#34; checkbox">Removal of &#34;Use filter&#34; checkbox</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/NOiZE" class="orange">NOiZE</a>
+                                    
+                                    <span title="2025-01-31T07:16:34.559000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/NOiZE" class="orange">NOiZE</a>
+                                    <span title="2025-01-31T07:16:34.559000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6794ac1b02d4c37d959b33f5" title="Position of the filter window">Position of the filter window</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Hoochie" class="orange">Hoochie</a>
+                                    
+                                    <span title="2025-01-25T09:17:15.576000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Hoochie" class="orange">Hoochie</a>
+                                    <span title="2025-01-25T09:17:15.576000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/678a7f7564d8aea6f5d6a516" title="[Request] Spoiled ingredients should be on outgoing inserter">[Request] Spoiled ingredients should be on outgoing inserter</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/StephenB" class="orange">StephenB</a>
+                                    
+                                    <span title="2025-01-17T16:04:05.041000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/StephenB" class="orange">StephenB</a>
+                                    <span title="2025-01-17T16:47:16.651000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67860f60e0e32532a86656f3" title="[Answered] How to use it?">[Answered] How to use it?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/wvlad" class="orange">wvlad</a>
+                                    
+                                    <span title="2025-01-14T07:16:48.716000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/wvlad" class="orange">wvlad</a>
+                                    <span title="2025-01-14T18:14:00.574000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67812cf726027a207d9f8e3e" title="[Fixed] Error with Ammo Loader+">[Fixed] Error with Ammo Loader+</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Silberwolf325" class="orange">Silberwolf325</a>
+                                    
+                                    <span title="2025-01-10T14:21:43.150000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-01-11T15:56:26.733000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/678161f6f225e8aae02958fc" title="[Invalid] Error with Mod Tycoon ">[Invalid] Error with Mod Tycoon </a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Silberwolf325" class="orange">Silberwolf325</a>
+                                    
+                                    <span title="2025-01-10T18:07:50.501000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2025-01-11T15:36:26.039000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6772dc7440f746f6d85d972d" title="[Done] Space Age: Spoilage suggestion for all output inserters of biochambers">[Done] Space Age: Spoilage suggestion for all output inserters of biochambers</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Spook2U" class="orange">Spook2U</a>
+                                    
+                                    <span title="2024-12-30T17:46:28.994000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-12-31T15:55:13.788000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/676f2b5a1673236545d810a7" title="[Fixed] Crash in combination with creative mod">[Fixed] Crash in combination with creative mod</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Eydamos" class="orange">Eydamos</a>
+                                    
+                                    <span title="2024-12-27T22:34:02.155000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-12-28T14:33:37.275000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/674cb2c4caedb4f914052bb5" title="[Request] requester chest: *2 and /2">[Request] requester chest: *2 and /2</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/flart" class="orange">flart</a>
+                                    
+                                    <span title="2024-12-01T19:02:28.496000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/flart" class="orange">flart</a>
+                                    <span title="2024-12-03T23:40:11.675000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/674e6a4195b18f3103184dd1" title="[Request] Assemblers (and the like) should automatically have a filter for what they create">[Request] Assemblers (and the like) should automatically have a filter for what they create</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DisRuptive1" class="orange">DisRuptive1</a>
+                                    
+                                    <span title="2024-12-03T02:17:37.635000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-12-03T17:59:13.140000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/672877dc5125391c7d53f0ab" title="Ability to set &#34;Enabled condition&#34; [Feature request]">Ability to set &#34;Enabled condition&#34; [Feature request]</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/thelordodin" class="orange">thelordodin</a>
+                                    
+                                    <span title="2024-11-04T07:29:32.527000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/sh4dow" class="orange">sh4dow</a>
+                                    <span title="2024-12-02T13:34:43.287000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/6737dd8f51ec48a257e2a11e" title="[Fixed] Crash on clicking too fast?">[Fixed] Crash on clicking too fast?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/carlobot" class="orange">carlobot</a>
+                                    
+                                    <span title="2024-11-15T23:47:27.630000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-11-16T11:18:25.223000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/648f73728ec299a792e893e7" title="splitter decon planer">splitter decon planer</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Alkumist" class="orange">Alkumist</a>
+                                    
+                                    <span title="2023-06-18T21:13:22.443000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Alkumist" class="orange">Alkumist</a>
+                                    <span title="2024-11-16T06:41:38.819000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/672bf7ce4175970276a98f5c" title="[Request] Add the filter GUI to the &#34;Enable/Disable&#34; selection">[Request] Add the filter GUI to the &#34;Enable/Disable&#34; selection</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Xeonight" class="orange">Xeonight</a>
+                                    
+                                    <span title="2024-11-06T23:12:14.049000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-11-07T06:30:17.661000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/672a3dced6dcfa6232964a6b" title="[Fixed] Crash on Aquilo">[Fixed] Crash on Aquilo</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Eddy_Karacho" class="orange">Eddy_Karacho</a>
+                                    
+                                    <span title="2024-11-05T15:46:22.022000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-11-06T16:23:40.547000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67236d3bf7d2d83048b75558" title="[Fixed] Game just crashed">[Fixed] Game just crashed</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Serjevski" class="orange">Serjevski</a>
+                                    
+                                    <span title="2024-10-31T11:42:51.789000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Serjevski" class="orange">Serjevski</a>
+                                    <span title="2024-11-02T20:04:49.876000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/FilterHelper/discussion/67264480ed2563275c98233f" title="[Fixed] Crash (FilterHelper::on_tick (ID 0))">[Fixed] Crash (FilterHelper::on_tick (ID 0))</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Nutter" class="orange">Nutter</a>
+                                    
+                                    <span title="2024-11-02T15:25:52.197000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Soul-Burn" class="orange">Soul-Burn</a>
+                                    <span title="2024-11-02T16:15:10.569000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                </table>
+            
+        </div>
+        
+  <div class="text-right flex flex-end">
+      
+      
+
+      
+          <a
+              class="button square-sm disabled "
+              
+          >
+              
+                  <i class="fas fa-angle-double-left"></i>
+              
+          </a>
+      
+
+      
+          
+          <a
+              class="button square-sm  active"
+              
+              href="/mod/FilterHelper/discussion/page/1"
+              
+          >
+              
+                  1
+              
+          </a>
+      
+        
+      
+          
+          <a
+              class="button square-sm  "
+              
+              href="/mod/FilterHelper/discussion/page/2"
+              
+          >
+              
+                  2
+              
+          </a>
+      
+        
+      
+
+      
+          <a
+              class="button square-sm  "
+              
+              href="/mod/FilterHelper/discussion/page/2"
+              
+          >
+              
+                  <i class="fas fa-angle-double-right"></i>
+              
+          </a>
+      
+  </div>
+
+        <div class="text-right discussion-list-options">
+            
+        </div>
+    </div>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+                </div>
+            </div>
+
+            
+<div class="footer">
+    <div class="footer-inner panel">
+
+        <div class="footer-links flex flex-wrap flex-center panel-inset m0">
+            <a href="https://factorio.com/terms-of-service">Terms of Service</a><span class="separator">|</span><a href="https://factorio.com/privacy-policy">Privacy</a><span class="separator">|</span><a href="https://factorio.com/imprint">Imprint</a><span class="separator">|</span><a href="https://factorio.com/press-kit">Presskit</a><span class="separator">|</span><a href="https://factorio.com/support/contact">Contact</a><span class="separator">|</span><a href="https://factorio.com/faq">FAQ</a><span class="separator">|</span><a href="https://factorio.com/jobs">Jobs</a>
+        </div>
+        <div class="footer-rocket panel-inset m0 p0">
+            <div id="rocket" class="rocket"></div>
+            <div class="shadow-overlay"></div>
+            <div class="shadow-overlay-bottom"></div>
+        </div>
+        <div class="footer-copyright panel-inset m0">
+            Copyright © 2015 - 2026 Wube Software - all rights reserved.
+        </div>
+    </div>
+</div>
+            
+                <script src="/static/js/factorio_mod_portal.js?v=a134a950"></script>
+                <script>
+                  var messages = [
+                  ];
+                  Factorio.main({
+                      // old url for compatibility with cached JS
+                      contentServerUrl: 'https://assets-mod.factorio.com',
+                      assetCDNUrl: 'https://assets-mod.factorio.com',
+                      messages: messages
+                  });
+                </script>
+                
+                
+            
+        
+        <script src="https://factorio.com/static/js/factorio.js?v=a134a950" type="module"></script>
+    </body>
+</html>

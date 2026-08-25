@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://mods.factorio.com/api/user/Asterixyz",
+    "error": "HTTP 404"
+  },
+  {
+    "url": "https://mods.factorio.com/api/users/Asterixyz",
+    "error": "HTTP 404"
+  },
+  {
+    "url": "https://html.duckduckgo.com/html/?q=%22Asterixyz%22+%22save+file%22+Factorio",
+    "error": "HTTP 202"
+  },
+  {
+    "url": "https://html.duckduckgo.com/html/?q=%22Asterixyz%22+%22Space+Exploration%22+Factorio",
+    "error": "HTTP 202"
+  }
+]

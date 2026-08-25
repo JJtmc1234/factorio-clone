@@ -1,0 +1,339 @@
+Exact mods checked: 42
+Discussion-list pages containing Asterixyz: 9
+Candidate threads fetched: 21
+Confirmed threads containing Asterixyz: 3
+Confirmed threads with Drive IDs: 2
+
+MATCHES
+====================================================================================================
+Filter Helper
+https://mods.factorio.com/mod/FilterHelper/discussion/68efd2cad4c06cba6e422df7
+Drive IDs: 1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq
+Relevant links:
+  https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+
+Filter Helper - Factorio Mods
+Factorio.com
+|
+Forums
+|
+Wiki
+|
+Mod Portal
+|
+API Docs
+Log in
+Highlighted mods
+Recently updated
+Most downloaded
+Trending
+Search mods
+Filter Helper
+by
+Mudscape
+Adds context aware quick select for filter inserters.
+Utilities
+Mod category: Utilities
+Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+2 months ago
+1.1 - 2.1
+36.1K
+source code
+Download
+Information
+Changelog
+Downloads
+Dependencies
+0 / 63
+Discussion
+74
+Metrics
+b
+[Resolved] SE and Q Pipette
+Asterixyz
+10 months ago
+Pressing Q on Items/Buildings from Space Exploration in the Filter Helper Menu doesnt seem to want to put those item on the cursor. I noticed it with the special Efficiency modules SE has + Fuel Processor from AAI industries which is edited by SE
+Asterixyz
+10 months ago
+(updated 10 months ago)
+It also seems to not like it when you use the Pipette on Ammo(Piercing Ammo in my case), though there it flickers it on the cursor in the amount you have in your ammo slots, then removes it again.
+Soul-Burn
+☆
+10 months ago
+Can you share a full mod list?
+Can you try loading the save just Space Exploration and Filter Helper and no other mods?
+Is this when using the standard opening a building near it or remote view? Or does it specifically happen in satellite view?
+Asterixyz
+10 months ago
+Heres the full modlist, Ill do the test casing rn after this
+https://pastebin.com/9HSKunNV
+no satellites launched yet, so we only got remote view and personal
+Asterixyz
+10 months ago
+Okay it still happens with just the SE(+hard required mods) + Filter Helper Modlist
+in person standing right next to the inserter but
+not
+from remote view
+Asterixyz
+10 months ago
+(updated 10 months ago)
+And the issue is with anything that SE specifically touches (in person), which for example includes accumulators, but yeah, remote view gets around it, it seems.
+Asterixyz
+10 months ago
+Here is the minimum modlist btw, in case its relevant
+https://pastebin.com/p3ZLByUx
+The least amount of mods you can play SE (+ Filter Helper)
+Soul-Burn
+☆
+10 months ago
+I can't seem to reproduce this.
+I'm thinking maybe you have another keybind on Q for some reason. Can you check your binds?
+Can you check if this happens also without Space Exploration?
+If you can send me your save file, with the exact places where it should fail, it would be very helpful.
+Asterixyz
+10 months ago
+(updated 10 months ago)
+Keybind wise i only got the vanilla Q commands on it, Pipette Tool and Clear Cursor which if they did interfere should interfere everywhere
+lm adding some pins to remote view for the ones i know are not doing what they are supposed to do and then im gonna upload the safe file
+edit: 3 examples should hopefully be enough
+Asterixyz
+10 months ago
+(updated 10 months ago)
+Okay this is the latest save file
+https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+just a quick recap:
+Expected behavior: press Q on the item in the Filterhelper menu while outside remote view is meant to put it on your cursor so you can plop it down in for example the signal equation
+Behavior observed on my installation: It refuses to put it on the cursor, or with regards to piercing ammo does only so for a split second, but only for items that are changed by Space Exploration?
+where: on a MultiPlayer server with a friend, which i forgot to mention which might be highly relevant ^^''
+edit:
+though it did happen on my singleplayer version of the save file with minimum mods too now thinking about it
+Asterixyz
+10 months ago
+(updated 10 months ago)
+okay i realized whats happening. i have the setting "Pick Ghost Item if no item are avaible" disabled in Interface settings, and the mod basically requires that to be enabled to be able to ghost an item onto the cursor outside remote view if you dont have it in your inventory.
+Its no SE specific at all, which is great. I just mistook cause and effect.
+edit:
+which is also why piercing ammo jumped onto the cursor only for a split second, cause the ghost piercing ammo is different from the actual piercing ammo in your ammo slot i assume.
+Soul-Burn
+☆
+10 months ago
+I tried with your save, clicking on various inserters and then Q on piercing ammo inside Filter Helper. Everything worked as expected.
+Does this also happen to your friend?
+Asterixyz
+10 months ago
+(updated 10 months ago)
+Yes, it did, but see the post just before yours. I figured out what the actual issue was.
+I was mistaken that it was SE
+Soul-Burn
+☆
+10 months ago
+The funny part is that I thought it might have been the case, and disabled the feature and it
+still
+didn't do anything unexpected for me!
+Anyways, glad the issue got resolved.
+New response
+Log in to reply
+Terms of Service
+|
+Privacy
+|
+Imprint
+|
+Presskit
+|
+Contact
+|
+FAQ
+|
+Jobs
+Copyright © 2015 - 2026 Wube Software - all rights reserved.
+
+----------------------------------------------------------------------------------------------------
+P.U.M.P.
+https://mods.factorio.com/mod/pump/discussion/69598d0576df7303f5bba4a8
+Drive IDs: 1nMip4ceTgxMbiR745H40FauzEmLFWP6R
+Relevant links:
+  https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+
+P.U.M.P. - Factorio Mods
+Factorio.com
+|
+Forums
+|
+Wiki
+|
+Mod Portal
+|
+API Docs
+Log in
+Highlighted mods
+Recently updated
+Most downloaded
+Trending
+Search mods
+P.U.M.P.
+by
+Xcone
+P.U.M.P. (Prevent Unwanted Manual Pump-placement) takes out the chore of making outposts. It's a selection tool with which you can select liquid resources (oil, sulfuric acid, etc.. ) and it then proceeds to plan the layout of pumpjacks and pipes for you.
+Utilities
+Mod category: Utilities
+Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+a month ago
+0.18 - 2.1
+98.4K
+Mining
+Mod tag: Mining
+New Ores and resources as well as machines.
+Fluids
+Mod tag: Fluids
+Things related to oil and other fluids.
+Blueprints
+Mod tag: Blueprints
+Change blueprint behavior.
+source code
+Download
+Information
+Changelog
+Downloads
+Dependencies
+2 / 90
+Discussion
+61
+Metrics
+b
+Pumps cornering each other
+Asterixyz
+8 months ago
+when two pumps share a corner and it wants to place an underground pipe, it doesnt do underground -> pipe, it just places the underground and assumes that pumpjacks can sideload into that underground
+https://imgur.com/a/p0vnoLY
+Xcone
+8 months ago
+Thanks for the report.
+It's odd, though. I'm certain it has code to understand this scenario and not make this mistake.
+Must be some edge case. Could you share your save file so I can have a proper look at your specific scenario?
+Xcone
+8 months ago
+I've quickly dug through my test cases, and found one that indicates that mechanism still works.
+And I also tried the map editor to recreate a similar layout to match your screenshot. I succeeded at creating a similar pipeplan, but there too, it preserved a pipe to connect to.
+So I won't be able to address this without a save in which this happens.
+Asterixyz
+8 months ago
+(updated 8 months ago)
+heres the save file, its on planet igrys with the water field on the wayyy right side
+https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+sorry for late reply, was watching a movie.
+Asterixyz
+8 months ago
+I did manually fix the issue myself by moving the pipe, but was able to consistently get it to happen, so just clear out the ghosts and stuff i placed down
+Xcone
+8 months ago
+No worries about the timing. It's all hobbies here. 🎉
+Besides, you're relatively quick. Its not uncommon having to wait a couple of days.
+And thanks for the save. I can reproduce the issue with it. And now I understand what's going wrong.
+The routine works by first planning everything above ground (except for some other special cases) and bury the pipes afterwards.
+The bury-routine does take into account neighboring pipes to avoid burying at that position. But it doesn't look for pump-outputs. So the routine is there, it's just incomplete.
+And it's going to be a bit of a pain in the ass to fix. Because at the stage of burying pipes, I've already discarded a bunch of data that would help. So I'll need to think for a bit on how I want to fix this.
+I am not exactly sure why my earlier tests didn't have this issue, though. Maybe the routine decided to not-bury the pipe in those scenarios for other reasons.
+I'll post back when I have a fix. Thanks again for reporting it.
+Xcone
+8 months ago
+Oh ,.. turned out not to be too bad after all.
+I've just released v2.1.19 which should fix the issue.
+Asterixyz
+8 months ago
+Thanks for the quick fix, love the mod btw. After 2k hours of placing them manually, its definetly nice to just drag and drop :D
+Xcone
+8 months ago
+I hear you! I'm surprised you didn't cave earlier to using a mod for that bit of gameplay tedium.
+I decided to make this mod after having enough of it after just 300hrs or so. 🙈
+New response
+Log in to reply
+Terms of Service
+|
+Privacy
+|
+Imprint
+|
+Presskit
+|
+Contact
+|
+FAQ
+|
+Jobs
+Copyright © 2015 - 2026 Wube Software - all rights reserved.
+
+----------------------------------------------------------------------------------------------------
+Belt Visualizer
+https://mods.factorio.com/mod/belt-visualizer/discussion/641f6c8cd1f4be6fbc503478
+Drive IDs: 
+Relevant links:
+
+Belt Visualizer - Factorio Mods
+Factorio.com
+|
+Forums
+|
+Wiki
+|
+Mod Portal
+|
+API Docs
+Log in
+Highlighted mods
+Recently updated
+Most downloaded
+Trending
+Search mods
+Belt Visualizer
+by
+_CodeGreen
+Highlight a belt line with the press of a button! (G)
+Cycle between different lanes by highlighting the same belt again.
+Press again while not selecting a belt to stop highlighting.
+Utilities
+Mod category: Utilities
+Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+2 months ago
+1.1 - 2.1
+127K
+Logistics
+Mod tag: Logistics
+Augmented or new ways of transporting materials - belts, inserters, pipes!
+source code
+Download
+Information
+Changelog
+Downloads
+Dependencies
+0 / 114
+Discussion
+45
+Metrics
+g
+✅ Cant Find the Button to turn off the visualizer
+Asterixyz
+3 years ago
+Is there a button to turn off the visualizer. i know H cycles between the different modes, but now i have a permanently highlighted belt.
+I solved this so far by just placing a single belt, highlighting it and removing it, but thats more of a workaround.
+_CodeGreen
+3 years ago
+You have to press H again while not hovering over a belt to turn it off
+New response
+Log in to reply
+Terms of Service
+|
+Privacy
+|
+Imprint
+|
+Presskit
+|
+Contact
+|
+FAQ
+|
+Jobs
+Copyright © 2015 - 2026 Wube Software - all rights reserved.
+
+----------------------------------------------------------------------------------------------------

@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+        <link href="https://factorio.com/static/css/main.css?v=a134a950" rel="stylesheet" type="text/css"/>
+        
+        
+
+        <link href="https://cdn.factorio.com/assets/fonts/titillium-web.css" rel="stylesheet">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <script src="https://factorio.com/static/js/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" integrity="sha512-JvpjarJlOl4sW26MnEb3IdSAcGdeTeOaAlu2gUZtfFrRgnChdzELOZKl0mN6ZvI0X+xiX5UMvxjK2Rx2z/fliw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/head-support.min.js" integrity="sha512-ZXZrgVLRbVwG6i/w2/iT/YtrxH7yXqhMFj+KDBgRNqTPdHkKQ/hzj9enGUPienVX0Cu8OhegZ1LcULuemfWHRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/preload.min.js" integrity="sha512-2lqd++ZVVmZg5LU//IabHHKQBV3qL6kPMjXvtzLfd+Fn99uOw7MmWLlVQhF2uVzH0yOuVzV3/BIC5w5QUP6uTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Belt Visualizer - Factorio Mods</title>
+
+        
+  
+  
+  <meta name="twitter:image:src" content="/opengraph/mod/belt-visualizer.png">
+  <meta name="twitter:site" content="@factoriogame">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Belt Visualizer - Factorio Mods">
+  <meta name="twitter:description" content="Highlight a belt line with the press of a button! (G)">
+
+  <meta property="og:image" content="/opengraph/mod/belt-visualizer.png">
+  <meta property="og:image:alt" content="Belt Visualizer - Factorio Mod Portal">
+  <meta property="og:image:width" content="800"><meta property="og:image:height" content="400">
+  <meta property="og:site_name" content="Factorio Mod Portal">
+  <meta property="og:type" content="object">
+  <meta property="og:title" content="Belt Visualizer">
+  <meta property="og:description" content="Highlight a belt line with the press of a button! (G)">
+
+
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-core@1.0.1.js"></script>
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-dom@1.0.4.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+
+        
+            
+
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="sites links flex flex-items-baseline">
+                
+                
+                    <a href="https://factorio.com" class="">
+                        Factorio.com</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://forums.factorio.com/" class="">
+                        Forums</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://wiki.factorio.com/" class="">
+                        Wiki</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://mods.factorio.com" class="sites-current">
+                        Mod Portal</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://lua-api.factorio.com/latest/" class="">
+                        API Docs</a>
+                    
+                
+            </div>
+            <div class="user-controls links">
+                <!-- TODO icons -->
+                <a href="/login?next=/mod/belt-visualizer/discussion"><i class="fas fa-user"></i>Log in</a>
+            </div>
+            <style>
+                .top-banner {
+                    margin-top: 12px;
+                    font-size: larger;
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                }
+                .top-banner a {
+                    color: white;
+                }
+                .top-banner i {
+                    color: #ffa200;
+                }
+                .top-banner-divider {
+                    margin-top: 12px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    font-size: larger;
+                }
+            </style>
+
+            <div class="top-banner">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <a href="/" class="header-logo">
+                <!-- TODO cdn -->
+                <img src="https://cdn.factorio.com/assets/img/web/factorio-logo2.png">
+            </a>
+            
+            
+        </div>
+    </div>
+
+
+            <div class="container">
+                <div class="container-inner">
+                    
+<div id="flashed-messages" class="small-center float-to-center">
+    
+</div>
+
+                    
+  
+<div
+  id="tabs-header"
+  
+>
+  
+  <ul class="tabs tabs-for-panel tabs-header flex-end">
+      
+      
+      <li>
+        <a href="/highlights">
+          <i class="fa fa-star"></i>
+          Highlighted mods
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/updated">
+          <i class="fa fa-history"></i>
+          Recently updated
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/downloaded">
+          <i class="fa fa-sort-amount-down"></i>
+          Most downloaded
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/trending">
+          <i class="fa fa-chart-line"></i>
+          Trending
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/search">
+          <i class="fa fa-search"></i>
+          Search mods
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+  <div class="panel pt0 pb0 mb32">
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/belt-visualizer" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+                  <img src="https://assets-mod.factorio.com/assets/c5d31b521e36b71d8901cc6367898b29e43076d2.thumb.png">
+                  <div class="shadow-overlay"></div>
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/belt-visualizer">Belt Visualizer</a>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/_CodeGreen">_CodeGreen</a>
+            </div>
+            <hr>
+            <p class="pre-line ">Highlight a belt line with the press of a button! (G)
+Cycle between different lanes by highlighting the same belt again.
+Press again while not selecting a belt to stop highlighting.
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Utilities
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Utilities
+                </div>
+                <div class="panel-tooltip">
+                    <p>Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-07-07T17:06:10.041000">2 months ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            1.1 - 2.1
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="126729">127K</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+            <a class="slot-button-inline" href="/?tag=logistics">
+              Logistics
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Logistics
+                </div>
+                <div class="panel-tooltip">
+                    <p>Augmented or new ways of transporting materials - belts, inserters, pipes!
+                </div>
+            </div>
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/CodeGreen0386/belt-visualizer" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/belt-visualizer">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="panel-inset p0">
+      
+  <ul class="tabs">
+    <li>
+      <a href="/mod/belt-visualizer" >
+        Information
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/mod/belt-visualizer/changelog" >
+          Changelog
+        </a>
+    </li>
+    
+
+    <li>
+      <a href="/mod/belt-visualizer/downloads" >
+        Downloads
+      </a>
+    </li>
+
+    <li>
+      <a href="/mod/belt-visualizer/dependencies" >
+        Dependencies
+        <span class="badge">0 / 114 </span>
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/belt-visualizer/discussion" class="active">
+        Discussion
+        <span class="badge">45</span>
+        
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/belt-visualizer/metrics" >
+        Metrics
+      </a>
+    </li>
+
+  </ul>
+
+      <div class="panel-lighter mb0">
+        
+          <div class="discussion">
+            
+    <div class="discussion-list">
+        
+        
+        <div class="panel-inset p0">
+            <div class="panel-inset flex flex-space-between flex-align-center p4 m0">
+                <div class="flex">
+                    
+                        
+                        
+                            <a class="button discussion-list-new-message disabled" title="You need to own Factorio to participate in mod portal discussions.">New Thread</a>
+                        
+                        
+                    
+                </div>
+                <div class="w100p text-right">
+                    Filter:
+                    <div class="discussion-tags-filter inline-flex flex-wrap flex-end">
+                        
+                            <a href="/mod/belt-visualizer/discussion/g">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">General</span>
+                            </a>
+                        
+                            <a href="/mod/belt-visualizer/discussion/b">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Bugs</span>
+                            </a>
+                        
+                            <a href="/mod/belt-visualizer/discussion/a">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Announcements</span>
+                            </a>
+                        
+                            <a href="/mod/belt-visualizer/discussion/i">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Ideas &amp; suggestions</span>
+                            </a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+                <table class="discussion-list-messages  panel-hole m0 ms0">
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a873e0ba71f1cf665b788bd" title="idl">idl</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Geovannix_xD" class="orange">Geovannix_xD</a>
+                                    
+                                    <span title="2026-08-20T17:48:59.515000">4 days ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2026-08-20T18:00:53.122000">4 days ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a4370cdacf141a947add5a9" title="✅ [2.1.2] Crash after placing underground belt">✅ [2.1.2] Crash after placing underground belt</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/zinful" class="orange">zinful</a>
+                                    
+                                    <span title="2026-06-30T07:31:25.803000">2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2026-07-07T17:07:36.952000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a4166296903ceccbc30fc95" title="✅ [2.1.2] Lane cycling no longer working">✅ [2.1.2] Lane cycling no longer working</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/zinful" class="orange">zinful</a>
+                                    
+                                    <span title="2026-06-28T18:21:29.249000">2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2026-07-07T16:35:41.016000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a3beb611370f054aa14463c" title="✅ Another bug in 2.1.7 experimental">✅ Another bug in 2.1.7 experimental</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/sheryiu" class="orange">sheryiu</a>
+                                    
+                                    <span title="2026-06-24T14:36:17.843000">2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/sheryiu" class="orange">sheryiu</a>
+                                    <span title="2026-06-25T15:41:28.661000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a3cc55c309afae6e23eb758" title="❌ Yet another bug in 2.1.7">❌ Yet another bug in 2.1.7</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/LeonidasSG" class="orange">LeonidasSG</a>
+                                    
+                                    <span title="2026-06-25T06:06:20.105000">2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2026-06-25T06:10:19.969000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a3aafd1bb86c16dfe567177" title="✅ Bug in 2.1.7 experimental">✅ Bug in 2.1.7 experimental</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/sheryiu" class="orange">sheryiu</a>
+                                    
+                                    <span title="2026-06-23T16:09:53.014000">2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2026-06-23T16:15:39.429000">2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6a1676fa677c8ea5ce7a5d21" title="Error while having bv passivly siplaying my belt connections">Error while having bv passivly siplaying my belt connections</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Bytex" class="orange">Bytex</a>
+                                    
+                                    <span title="2026-05-27T04:45:46.492000">3 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Bytex" class="orange">Bytex</a>
+                                    <span title="2026-05-27T04:45:46.492000">3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/69f6e747026036885915b32e" title="Error while building belts without needed spliters">Error while building belts without needed spliters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/GeneralTank" class="orange">GeneralTank</a>
+                                    
+                                    <span title="2026-05-03T06:12:23.730000">4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/GeneralTank" class="orange">GeneralTank</a>
+                                    <span title="2026-05-03T06:12:23.730000">4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/687159ecd79f462221da8e1b" title="Error while running event belt-visualizer::on_tick (ID O) real number expected got table.">Error while running event belt-visualizer::on_tick (ID O) real number expected got table.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/LeoPok" class="orange">LeoPok</a>
+                                    
+                                    <span title="2025-07-11T18:37:32.848000">1 year, 1 month ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Shadowlords" class="orange">Shadowlords</a>
+                                    <span title="2026-02-21T13:34:46.292000">6 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/694a7a90fec00f2dd3cc9ea0" title="Crash with tunnel with replace-order">Crash with tunnel with replace-order</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Xcone" class="orange">Xcone</a>
+                                    
+                                    <span title="2025-12-23T11:18:40.341000">8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-12-23T11:25:17.440000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6861dc0542b9e80afacbc760" title="Flip belts with H or V didn&#39;t refresh highlighted belts">Flip belts with H or V didn&#39;t refresh highlighted belts</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/lily_black" class="orange">lily_black</a>
+                                    
+                                    <span title="2025-06-30T00:36:21.988000">1 year, 2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/lily_black" class="orange">lily_black</a>
+                                    <span title="2025-06-30T00:36:21.988000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6849af6eccb1f01b98af578c" title="Error while running event belt-visualizer::on_tick (ID 0)">Error while running event belt-visualizer::on_tick (ID 0)</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/MikdadAgasiev" class="orange">MikdadAgasiev</a>
+                                    
+                                    <span title="2025-06-11T16:31:42.514000">1 year, 2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/MikdadAgasiev" class="orange">MikdadAgasiev</a>
+                                    <span title="2025-06-11T16:31:42.514000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/678582568a18edf410096a25" title="❌ same for pipes in plan`?">❌ same for pipes in plan`?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Jesus8000" class="orange">Jesus8000</a>
+                                    
+                                    <span title="2025-01-13T21:15:02.558000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Serjevski" class="orange">Serjevski</a>
+                                    <span title="2025-01-15T11:51:52.298000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6787a0f69340c9cfdd5ddb17" title="Quick switch &#34;pass through chests&#34; option.">Quick switch &#34;pass through chests&#34; option.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Serjevski" class="orange">Serjevski</a>
+                                    
+                                    <span title="2025-01-15T11:50:14.548000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Serjevski" class="orange">Serjevski</a>
+                                    <span title="2025-01-15T11:50:14.548000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/677b674cd3d5ddd41d5ed7de" title="Startup Setting">Startup Setting</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Kryzeth" class="orange">Kryzeth</a>
+                                    
+                                    <span title="2025-01-06T05:17:00.467000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Kryzeth" class="orange">Kryzeth</a>
+                                    <span title="2025-01-06T05:43:56.041000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/677b308a23aff0ffce2d5210" title="Flipping a splitter vertically seems to break hover mode">Flipping a splitter vertically seems to break hover mode</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/macintacos" class="orange">macintacos</a>
+                                    
+                                    <span title="2025-01-06T01:23:22.360000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2025-01-06T05:39:43.463000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/672a83626f7fa6a3834672bf" title="Toggle hover mode">Toggle hover mode</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Phaz" class="orange">Phaz</a>
+                                    
+                                    <span title="2024-11-05T20:43:14.687000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/robot256" class="orange">robot256</a>
+                                    <span title="2024-12-30T02:22:45.846000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6764c4ef128b11b9ff796acb" title="real number expected got table.">real number expected got table.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/AnEntireSleeve" class="orange">AnEntireSleeve</a>
+                                    
+                                    <span title="2024-12-20T01:14:23.411000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/AnEntireSleeve" class="orange">AnEntireSleeve</a>
+                                    <span title="2024-12-20T01:26:50.188000">1 year, 8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/67378e3beb8230ad2f42a54d" title="Support for Belt Balancer">Support for Belt Balancer</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Ieuan" class="orange">Ieuan</a>
+                                    
+                                    <span title="2024-11-15T18:08:59.893000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2024-11-15T18:10:15.470000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/672e8dac2109948683d9032d" title="sudden bug">sudden bug</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/MissUnikitty" class="orange">MissUnikitty</a>
+                                    
+                                    <span title="2024-11-08T22:16:12.972000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/MissUnikitty" class="orange">MissUnikitty</a>
+                                    <span title="2024-11-13T18:54:30.402000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/672dd7de424a2ceb6a63cfb3" title="❌ Item Thoughput?">❌ Item Thoughput?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/StormChaser014" class="orange">StormChaser014</a>
+                                    
+                                    <span title="2024-11-08T09:20:30.082000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/StormChaser014" class="orange">StormChaser014</a>
+                                    <span title="2024-11-08T09:20:30.082000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6729f352d6dcfa6232964a10" title="Hover Inserter">Hover Inserter</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DieFelsenbirne" class="orange">DieFelsenbirne</a>
+                                    
+                                    <span title="2024-11-05T10:28:34.183000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/DieFelsenbirne" class="orange">DieFelsenbirne</a>
+                                    <span title="2024-11-05T10:28:34.183000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/638b47135db804d7a2a02fd4" title="❌ Idea: Change Colors">❌ Idea: Change Colors</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/configdotini" class="orange">configdotini</a>
+                                    
+                                    <span title="2022-12-03T12:54:43.372000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Thaui" class="orange">Thaui</a>
+                                    <span title="2024-11-02T14:30:49.249000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/67108d11b475bc1f2d9b069e" title="✅ Crash Issue in Version 2.0.4">✅ Crash Issue in Version 2.0.4</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/asfoitio" class="orange">asfoitio</a>
+                                    
+                                    <span title="2024-10-17T04:05:37.618000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Thaui" class="orange">Thaui</a>
+                                    <span title="2024-11-02T14:27:36.066000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/66ddd8f5733a08f007b70318" title="on player changed position">on player changed position</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/LeadHail" class="orange">LeadHail</a>
+                                    
+                                    <span title="2024-09-08T17:03:49.613000">1 year, 11 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/LeadHail" class="orange">LeadHail</a>
+                                    <span title="2024-09-08T17:04:06.940000">1 year, 11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/66455268e1a41421a7c84b7e" title="✅ Follow ghost item through splitters">✅ Follow ghost item through splitters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/abarrett" class="orange">abarrett</a>
+                                    
+                                    <span title="2024-05-16T00:25:12.914000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/abarrett" class="orange">abarrett</a>
+                                    <span title="2024-05-16T00:25:12.914000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/66283964e796c276d574d095" title="belt sorter compatibility">belt sorter compatibility</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ChocoMaxXx" class="orange">ChocoMaxXx</a>
+                                    
+                                    <span title="2024-04-23T22:42:44.954000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/ChocoMaxXx" class="orange">ChocoMaxXx</a>
+                                    <span title="2024-04-24T20:46:28.398000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/65d2703da2c98a825c173323" title="✅ Keep belt highlighted even in hover mode">✅ Keep belt highlighted even in hover mode</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DaviAMSilva" class="orange">DaviAMSilva</a>
+                                    
+                                    <span title="2024-02-18T21:01:49.458000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2024-02-21T01:26:22.686000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/64816cb4c6f904fd6ded1a34" title="✅ Game Crash">✅ Game Crash</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/asfoitio" class="orange">asfoitio</a>
+                                    
+                                    <span title="2023-06-08T05:52:52.228000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/gobsan" class="orange">gobsan</a>
+                                    <span title="2023-09-24T20:02:52.479000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/64dd2b1af93391555c644bf9" title="✅ Using the filter option causes the mod to stop working correctly">✅ Using the filter option causes the mod to stop working correctly</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Sir-Caps-a-Lot" class="orange">Sir-Caps-a-Lot</a>
+                                    
+                                    <span title="2023-08-16T20:01:30.852000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-08-17T21:23:02.470000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/64bcd258686b03ab63432591" title="✅ Request to Maintain Original Functionality">✅ Request to Maintain Original Functionality</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/asfoitio" class="orange">asfoitio</a>
+                                    
+                                    <span title="2023-07-23T07:10:16.407000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/asfoitio" class="orange">asfoitio</a>
+                                    <span title="2023-07-23T15:51:09.059000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/648ce5b7648acf866882c21b" title="✅ Tried this with Fluid?">✅ Tried this with Fluid?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/riverrob" class="orange">riverrob</a>
+                                    
+                                    <span title="2023-06-16T22:44:07.329000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/riverrob" class="orange">riverrob</a>
+                                    <span title="2023-06-17T21:57:14.518000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/648529e2171ad4714ed33923" title="❌ Same idea with Red and Green wires?">❌ Same idea with Red and Green wires?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/riverrob" class="orange">riverrob</a>
+                                    
+                                    <span title="2023-06-11T01:56:50.972000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-06-11T02:26:13.803000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/6484ad5f6a3a93a716871311" title="✅ Game Crashed">✅ Game Crashed</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/nathanxd22" class="orange">nathanxd22</a>
+                                    
+                                    <span title="2023-06-10T17:05:35.007000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-06-10T19:32:18.917000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/641f6c8cd1f4be6fbc503478" title="✅ Cant Find the Button to turn off the visualizer">✅ Cant Find the Button to turn off the visualizer</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Asterixyz" class="orange">Asterixyz</a>
+                                    
+                                    <span title="2023-03-25T21:50:04.261000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-03-25T21:50:45.225000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63e2850539e78d3fa75ec5ce" title="✅ could you add a &#34;toggle hover belt&#34;?">✅ could you add a &#34;toggle hover belt&#34;?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/rasta4e4" class="orange">rasta4e4</a>
+                                    
+                                    <span title="2023-02-07T17:06:13.034000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-02-27T07:06:07.636000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63ddf1d678b6fb7e355e8acd" title="❌ Make pipes highlighted">❌ Make pipes highlighted</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/13309756" class="orange">13309756</a>
+                                    
+                                    <span title="2023-02-04T05:49:10.159000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    10
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Sgamez" class="orange">Sgamez</a>
+                                    <span title="2023-02-05T15:04:28.647000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63dddf4a2d5fd59e18b03c4f" title="✅ Changelog">✅ Changelog</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Sgamez" class="orange">Sgamez</a>
+                                    
+                                    <span title="2023-02-04T04:30:02.829000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-02-04T04:47:29.073000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63dba77bbb4994f4c9225436" title="✅ .git Folder">✅ .git Folder</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/dtoxic" class="orange">dtoxic</a>
+                                    
+                                    <span title="2023-02-02T12:07:23.946000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/dtoxic" class="orange">dtoxic</a>
+                                    <span title="2023-02-02T18:00:34.243000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63b466c04f5a00fbe4a26edc" title="❌ Follow through inserters">❌ Follow through inserters</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DarkShadow44" class="orange">DarkShadow44</a>
+                                    
+                                    <span title="2023-01-03T17:32:48.229000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/DarkShadow44" class="orange">DarkShadow44</a>
+                                    <span title="2023-01-03T18:19:03.157000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63b466218ac163da10cff922" title="✅ Can&#39;t find the way back through a filtered splitter">✅ Can&#39;t find the way back through a filtered splitter</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DarkShadow44" class="orange">DarkShadow44</a>
+                                    
+                                    <span title="2023-01-03T17:30:09.096000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/DarkShadow44" class="orange">DarkShadow44</a>
+                                    <span title="2023-01-03T18:13:17.741000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63b46664c90e0450f5a24b7d" title="✅ Forward through filtered splitter">✅ Forward through filtered splitter</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DarkShadow44" class="orange">DarkShadow44</a>
+                                    
+                                    <span title="2023-01-03T17:31:16.166000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2023-01-03T17:46:47.842000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/639a473492b39a2220e99168" title="✅ Splitter performance">✅ Splitter performance</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ExterminatorX" class="orange">ExterminatorX</a>
+                                    
+                                    <span title="2022-12-14T21:59:16.046000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2022-12-14T23:02:07.555000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/63906694b6125637ff693695" title="✅ Crash with space exploration">✅ Crash with space exploration</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DefectiveNu" class="orange">DefectiveNu</a>
+                                    
+                                    <span title="2022-12-07T10:10:28.468000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2022-12-07T10:35:52">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/belt-visualizer/discussion/637455811ac614cb2f9ef907" title="Super cool">Super cool</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/GrimerX" class="orange">GrimerX</a>
+                                    
+                                    <span title="2022-11-16T03:14:09.761000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/_CodeGreen" class="orange">_CodeGreen</a>
+                                    <span title="2022-11-16T03:30:39.182000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                </table>
+            
+        </div>
+        
+        <div class="text-right discussion-list-options">
+            
+        </div>
+    </div>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+                </div>
+            </div>
+
+            
+<div class="footer">
+    <div class="footer-inner panel">
+
+        <div class="footer-links flex flex-wrap flex-center panel-inset m0">
+            <a href="https://factorio.com/terms-of-service">Terms of Service</a><span class="separator">|</span><a href="https://factorio.com/privacy-policy">Privacy</a><span class="separator">|</span><a href="https://factorio.com/imprint">Imprint</a><span class="separator">|</span><a href="https://factorio.com/press-kit">Presskit</a><span class="separator">|</span><a href="https://factorio.com/support/contact">Contact</a><span class="separator">|</span><a href="https://factorio.com/faq">FAQ</a><span class="separator">|</span><a href="https://factorio.com/jobs">Jobs</a>
+        </div>
+        <div class="footer-rocket panel-inset m0 p0">
+            <div id="rocket" class="rocket"></div>
+            <div class="shadow-overlay"></div>
+            <div class="shadow-overlay-bottom"></div>
+        </div>
+        <div class="footer-copyright panel-inset m0">
+            Copyright © 2015 - 2026 Wube Software - all rights reserved.
+        </div>
+    </div>
+</div>
+            
+                <script src="/static/js/factorio_mod_portal.js?v=a134a950"></script>
+                <script>
+                  var messages = [
+                  ];
+                  Factorio.main({
+                      // old url for compatibility with cached JS
+                      contentServerUrl: 'https://assets-mod.factorio.com',
+                      assetCDNUrl: 'https://assets-mod.factorio.com',
+                      messages: messages
+                  });
+                </script>
+                
+                
+            
+        
+        <script src="https://factorio.com/static/js/factorio.js?v=a134a950" type="module"></script>
+    </body>
+</html>

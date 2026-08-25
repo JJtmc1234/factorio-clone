@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+        <link href="https://factorio.com/static/css/main.css?v=a134a950" rel="stylesheet" type="text/css"/>
+        
+        
+
+        <link href="https://cdn.factorio.com/assets/fonts/titillium-web.css" rel="stylesheet">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <script src="https://factorio.com/static/js/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" integrity="sha512-JvpjarJlOl4sW26MnEb3IdSAcGdeTeOaAlu2gUZtfFrRgnChdzELOZKl0mN6ZvI0X+xiX5UMvxjK2Rx2z/fliw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/head-support.min.js" integrity="sha512-ZXZrgVLRbVwG6i/w2/iT/YtrxH7yXqhMFj+KDBgRNqTPdHkKQ/hzj9enGUPienVX0Cu8OhegZ1LcULuemfWHRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/preload.min.js" integrity="sha512-2lqd++ZVVmZg5LU//IabHHKQBV3qL6kPMjXvtzLfd+Fn99uOw7MmWLlVQhF2uVzH0yOuVzV3/BIC5w5QUP6uTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>P.U.M.P. - Factorio Mods</title>
+
+        
+  
+  
+  <meta name="twitter:site" content="@factoriogame">
+  <meta name="twitter:title" content="Pumps cornering each other  - P.U.M.P.">
+  <meta name="twitter:description" content="when two pumps share a corner and it wants to place an underground pipe, it doesnt do underground -&gt; pipe, it just places the underground and assumes that pumpjacks can sideload into that underground">
+
+  <meta property="og:site_name" content="Factorio Mod Portal">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Pumps cornering each other  - P.U.M.P.">
+  <meta property="og:description" content="when two pumps share a corner and it wants to place an underground pipe, it doesnt do underground -&gt; pipe, it just places the underground and assumes that pumpjacks can sideload into that underground">
+
+
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-core@1.0.1.js"></script>
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-dom@1.0.4.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+
+        
+            
+
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="sites links flex flex-items-baseline">
+                
+                
+                    <a href="https://factorio.com" class="">
+                        Factorio.com</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://forums.factorio.com/" class="">
+                        Forums</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://wiki.factorio.com/" class="">
+                        Wiki</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://mods.factorio.com" class="sites-current">
+                        Mod Portal</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://lua-api.factorio.com/latest/" class="">
+                        API Docs</a>
+                    
+                
+            </div>
+            <div class="user-controls links">
+                <!-- TODO icons -->
+                <a href="/login?next=/mod/pump/discussion/69598d0576df7303f5bba4a8"><i class="fas fa-user"></i>Log in</a>
+            </div>
+            <style>
+                .top-banner {
+                    margin-top: 12px;
+                    font-size: larger;
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                }
+                .top-banner a {
+                    color: white;
+                }
+                .top-banner i {
+                    color: #ffa200;
+                }
+                .top-banner-divider {
+                    margin-top: 12px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    font-size: larger;
+                }
+            </style>
+
+            <div class="top-banner">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <a href="/" class="header-logo">
+                <!-- TODO cdn -->
+                <img src="https://cdn.factorio.com/assets/img/web/factorio-logo2.png">
+            </a>
+            
+            
+        </div>
+    </div>
+
+
+            <div class="container">
+                <div class="container-inner">
+                    
+<div id="flashed-messages" class="small-center float-to-center">
+    
+</div>
+
+                    
+  
+<div
+  id="tabs-header"
+  
+>
+  
+  <ul class="tabs tabs-for-panel tabs-header flex-end">
+      
+      
+      <li>
+        <a href="/highlights">
+          <i class="fa fa-star"></i>
+          Highlighted mods
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/updated">
+          <i class="fa fa-history"></i>
+          Recently updated
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/downloaded">
+          <i class="fa fa-sort-amount-down"></i>
+          Most downloaded
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/trending">
+          <i class="fa fa-chart-line"></i>
+          Trending
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/search">
+          <i class="fa fa-search"></i>
+          Search mods
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+  <div class="panel pt0 pb0 mb32">
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/pump" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+                  <img src="https://assets-mod.factorio.com/assets/289e509a26a0e4f23479601801c09bac0ead73f0.thumb.png">
+                  <div class="shadow-overlay"></div>
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/pump">P.U.M.P.</a>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/Xcone">Xcone</a>
+            </div>
+            <hr>
+            <p class="pre-line ">P.U.M.P. (Prevent Unwanted Manual Pump-placement) takes out the chore of making outposts. It&#39;s a selection tool with which you can select liquid resources (oil, sulfuric acid, etc.. ) and it then proceeds to plan the layout of pumpjacks and pipes for you.
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Utilities
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Utilities
+                </div>
+                <div class="panel-tooltip">
+                    <p>Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-07-10T19:30:01.843000">a month ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            0.18 - 2.1
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="98394">98.4K</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+            <a class="slot-button-inline" href="/?tag=mining">
+              Mining
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Mining
+                </div>
+                <div class="panel-tooltip">
+                    <p>New Ores and resources as well as machines.
+                </div>
+            </div>
+          
+            <a class="slot-button-inline" href="/?tag=fluids">
+              Fluids
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Fluids
+                </div>
+                <div class="panel-tooltip">
+                    <p>Things related to oil and other fluids.
+                </div>
+            </div>
+          
+            <a class="slot-button-inline" href="/?tag=blueprints">
+              Blueprints
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Blueprints
+                </div>
+                <div class="panel-tooltip">
+                    <p>Change blueprint behavior.
+                </div>
+            </div>
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/Xcone/factorio_pump" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/pump">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="panel-inset p0">
+      
+  <ul class="tabs">
+    <li>
+      <a href="/mod/pump" >
+        Information
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/mod/pump/changelog" >
+          Changelog
+        </a>
+    </li>
+    
+
+    <li>
+      <a href="/mod/pump/downloads" >
+        Downloads
+      </a>
+    </li>
+
+    <li>
+      <a href="/mod/pump/dependencies" >
+        Dependencies
+        <span class="badge">2 / 90 </span>
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/pump/discussion" class="active">
+        Discussion
+        <span class="badge">61</span>
+        
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/pump/metrics" >
+        Metrics
+      </a>
+    </li>
+
+  </ul>
+
+      <div class="panel-lighter mb0">
+        
+          <div class="discussion">
+            
+<div class="discussion-detail">
+    <div class="float-right flex flex-wrap flex-end">
+        <form method="POST" action="/notifications/subscribe">
+          <input type="hidden" name="thread_id" value="69598d0576df7303f5bba4a8">
+          <input type="hidden" name="type" value="message">
+          
+            
+          
+        </form>
+        
+    </div>
+    <h2 class="discussion-detail-title  pt8">
+        
+          <span class="badge tag discussion-message-tag discussion-tag-style-b" title="Bugs">b</span>
+        
+        
+        
+        
+        
+            <span>Pumps cornering each other </span>
+        
+    </h2>
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="/static/no-avatar.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Asterixyz" class="orange">
+                    Asterixyz
+                  </a>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-03T21:41:25.427000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>when two pumps share a corner and it wants to place an underground pipe, it doesnt do underground -&gt; pipe, it just places the underground and assumes that pumpjacks can sideload into that underground<br>
+<a href="https://imgur.com/a/p0vnoLY">https://imgur.com/a/p0vnoLY</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="https://assets-mod.factorio.com/assets/e03cefe383a75f64db0d1197d6b1ece9117528e7.thumb.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+               discussion-message-header-owner
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Xcone" class="orange">
+                    Xcone
+                  </a>
+                  
+                    <i class="fa fa-star" title="Mod author"></i>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-03T21:59:05.213000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>Thanks for the report. </p>
+<p>It's odd, though. I'm certain it has code to understand this scenario and not make this mistake.</p>
+<p>Must be some edge case. Could you share your save file so I can have a proper look at your specific scenario?
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="https://assets-mod.factorio.com/assets/e03cefe383a75f64db0d1197d6b1ece9117528e7.thumb.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+               discussion-message-header-owner
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Xcone" class="orange">
+                    Xcone
+                  </a>
+                  
+                    <i class="fa fa-star" title="Mod author"></i>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-03T22:16:10.282000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>I've quickly dug through my test cases, and found one that indicates that mechanism still works. </p>
+<p>And I also tried the map editor to recreate a similar layout to match your screenshot. I succeeded at creating a similar pipeplan, but there too, it preserved a pipe to connect to.</p>
+<p>So I won't be able to address this without a save in which this happens.
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="/static/no-avatar.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Asterixyz" class="orange">
+                    Asterixyz
+                  </a>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-04T00:42:07.445000">
+                  8 months ago
+                </div>
+                
+                  <div class="ml8 grey" title="2026-01-04T00:42:25.323000">
+                    (updated 8 months ago)
+                  </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>heres the save file, its on planet igrys with the water field on the wayyy right side<br>
+<a href="https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link">https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link</a></p>
+<p>sorry for late reply, was watching a movie.
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="/static/no-avatar.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Asterixyz" class="orange">
+                    Asterixyz
+                  </a>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-04T00:45:04.847000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>I did manually fix the issue myself by moving the pipe, but was able to consistently get it to happen, so just clear out the ghosts and stuff i placed down
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="https://assets-mod.factorio.com/assets/e03cefe383a75f64db0d1197d6b1ece9117528e7.thumb.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+               discussion-message-header-owner
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Xcone" class="orange">
+                    Xcone
+                  </a>
+                  
+                    <i class="fa fa-star" title="Mod author"></i>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-04T08:39:04.658000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>No worries about the timing. It's all hobbies here. 🎉<br>
+Besides, you're relatively quick. Its not uncommon having to wait a couple of days.</p>
+<p>And thanks for the save. I can reproduce the issue with it. And now I understand what's going wrong. </p>
+<p>The routine works by first planning everything above ground (except for some other special cases) and bury the pipes afterwards. <br>
+The bury-routine does take into account neighboring pipes to avoid burying at that position. But it doesn't look for pump-outputs. So the routine is there, it's just incomplete.</p>
+<p>And it's going to be a bit of a pain in the ass to fix. Because at the stage of burying pipes, I've already discarded a bunch of data that would help. So I'll need to think for a bit on how I want to fix this.</p>
+<p>I am not exactly sure why my earlier tests didn't have this issue, though. Maybe the routine decided to not-bury the pipe in those scenarios for other reasons.</p>
+<p>I'll post back when I have a fix. Thanks again for reporting it.
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="https://assets-mod.factorio.com/assets/e03cefe383a75f64db0d1197d6b1ece9117528e7.thumb.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+               discussion-message-header-owner
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Xcone" class="orange">
+                    Xcone
+                  </a>
+                  
+                    <i class="fa fa-star" title="Mod author"></i>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-04T11:05:49.787000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>Oh ,.. turned out not to be too bad after all.<br>
+I've just released v2.1.19 which should fix the issue.
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="/static/no-avatar.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Asterixyz" class="orange">
+                    Asterixyz
+                  </a>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-04T14:24:05.089000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>Thanks for the quick fix, love the mod btw. After 2k hours of placing them manually, its definetly nice to just drag and drop :D
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <div class="discussion-message flex mt12 mb12">
+        <div class="discussion-message-avatar mr12 fs0">
+            <img src="https://assets-mod.factorio.com/assets/e03cefe383a75f64db0d1197d6b1ece9117528e7.thumb.png" class="panel-inset bottom-shadow-border p0" style="width: 72px;">
+        </div>
+        <div class="discussion-message-content panel-inset-lighter m0 p0 w100p">
+            <div class="
+              m0
+              panel-inset
+              flex flex-space-between
+              discussion-message-header
+               discussion-message-header-owner
+              
+            ">
+              <div class="flex">
+                
+                <div class="discussion-message-author">
+                  <a href="/user/Xcone" class="orange">
+                    Xcone
+                  </a>
+                  
+                    <i class="fa fa-star" title="Mod author"></i>
+                  
+                </div>
+                <div class="ml8 grey" title="2026-01-05T14:27:55.630000">
+                  8 months ago
+                </div>
+                
+              </div>
+              <div>
+                
+              </div>
+            </div>
+            <div class="discussion-message-body p16">
+                <p>I hear you! I'm surprised you didn't cave earlier to using a mod for that bit of gameplay tedium. <br>
+I decided to make this mod after having enough of it after just 300hrs or so. 🙈
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+        <div class="discussion-message-new-info">
+            
+        </div>
+        
+            <h3 class="mb8">New response</h3>
+            <form class="discussion-message-editor" method="post">
+                
+                <div class="flex flex-space-between mt8">
+                    <div>
+                      
+                    </div>
+                    <div>
+                      <button
+                        
+                          class="button-green disabled" disabled title="You need to own Factorio to participate in mod portal discussions."
+                        
+                        type="submit"
+                      >
+                          
+                          Log in to reply
+                          
+                      </button>
+                    </div>
+                </div>
+            </form>
+        
+    
+</div>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+                </div>
+            </div>
+
+            
+<div class="footer">
+    <div class="footer-inner panel">
+
+        <div class="footer-links flex flex-wrap flex-center panel-inset m0">
+            <a href="https://factorio.com/terms-of-service">Terms of Service</a><span class="separator">|</span><a href="https://factorio.com/privacy-policy">Privacy</a><span class="separator">|</span><a href="https://factorio.com/imprint">Imprint</a><span class="separator">|</span><a href="https://factorio.com/press-kit">Presskit</a><span class="separator">|</span><a href="https://factorio.com/support/contact">Contact</a><span class="separator">|</span><a href="https://factorio.com/faq">FAQ</a><span class="separator">|</span><a href="https://factorio.com/jobs">Jobs</a>
+        </div>
+        <div class="footer-rocket panel-inset m0 p0">
+            <div id="rocket" class="rocket"></div>
+            <div class="shadow-overlay"></div>
+            <div class="shadow-overlay-bottom"></div>
+        </div>
+        <div class="footer-copyright panel-inset m0">
+            Copyright © 2015 - 2026 Wube Software - all rights reserved.
+        </div>
+    </div>
+</div>
+            
+                <script src="/static/js/factorio_mod_portal.js?v=a134a950"></script>
+                <script>
+                  var messages = [
+                  ];
+                  Factorio.main({
+                      // old url for compatibility with cached JS
+                      contentServerUrl: 'https://assets-mod.factorio.com',
+                      assetCDNUrl: 'https://assets-mod.factorio.com',
+                      messages: messages
+                  });
+                </script>
+                
+                
+            
+        
+        <script src="https://factorio.com/static/js/factorio.js?v=a134a950" type="module"></script>
+    </body>
+</html>

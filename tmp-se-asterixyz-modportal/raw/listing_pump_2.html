@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+        <link href="https://factorio.com/static/css/main.css?v=a134a950" rel="stylesheet" type="text/css"/>
+        
+        
+
+        <link href="https://cdn.factorio.com/assets/fonts/titillium-web.css" rel="stylesheet">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/fontawesome.min.css" rel="stylesheet" crossorigin="anonymous">
+        <link href="https://cdn.factorio.com/assets/vendor/fontawesome/css/solid.min.css" rel="stylesheet" crossorigin="anonymous">
+
+        <script src="https://factorio.com/static/js/jquery-3.7.0.min.js"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/htmx.min.js" integrity="sha512-JvpjarJlOl4sW26MnEb3IdSAcGdeTeOaAlu2gUZtfFrRgnChdzELOZKl0mN6ZvI0X+xiX5UMvxjK2Rx2z/fliw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/head-support.min.js" integrity="sha512-ZXZrgVLRbVwG6i/w2/iT/YtrxH7yXqhMFj+KDBgRNqTPdHkKQ/hzj9enGUPienVX0Cu8OhegZ1LcULuemfWHRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/htmx/1.9.12/ext/preload.min.js" integrity="sha512-2lqd++ZVVmZg5LU//IabHHKQBV3qL6kPMjXvtzLfd+Fn99uOw7MmWLlVQhF2uVzH0yOuVzV3/BIC5w5QUP6uTw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>P.U.M.P. - Factorio Mods</title>
+
+        
+  
+  
+  <meta name="twitter:image:src" content="/opengraph/mod/pump.png">
+  <meta name="twitter:site" content="@factoriogame">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="P.U.M.P. - Factorio Mods">
+  <meta name="twitter:description" content="P.U.M.P. (Prevent Unwanted Manual Pump-placement) takes out the chore of making outposts. It&#39;s a selection tool with which you can select liquid resources (oil, sulfuric acid, etc.. ) and it then proceeds to plan the layout of pumpjacks and pipes for you.">
+
+  <meta property="og:image" content="/opengraph/mod/pump.png">
+  <meta property="og:image:alt" content="P.U.M.P. - Factorio Mod Portal">
+  <meta property="og:image:width" content="800"><meta property="og:image:height" content="400">
+  <meta property="og:site_name" content="Factorio Mod Portal">
+  <meta property="og:type" content="object">
+  <meta property="og:title" content="P.U.M.P.">
+  <meta property="og:description" content="P.U.M.P. (Prevent Unwanted Manual Pump-placement) takes out the chore of making outposts. It&#39;s a selection tool with which you can select liquid resources (oil, sulfuric acid, etc.. ) and it then proceeds to plan the layout of pumpjacks and pipes for you.">
+
+
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-core@1.0.1.js"></script>
+        <script src="https://cdn.factorio.com/assets/js/floating-ui-dom@1.0.4.js"></script>
+
+        
+
+        
+    </head>
+
+    <body>
+
+        
+            
+
+
+    <div class="top-bar">
+        <div class="top-bar-inner">
+            <div class="sites links flex flex-items-baseline">
+                
+                
+                    <a href="https://factorio.com" class="">
+                        Factorio.com</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://forums.factorio.com/" class="">
+                        Forums</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://wiki.factorio.com/" class="">
+                        Wiki</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://mods.factorio.com" class="sites-current">
+                        Mod Portal</a>
+                    
+                        <span class="separator separator-blue">|</span>
+                    
+                
+                    <a href="https://lua-api.factorio.com/latest/" class="">
+                        API Docs</a>
+                    
+                
+            </div>
+            <div class="user-controls links">
+                <!-- TODO icons -->
+                <a href="/login?next=/mod/pump/discussion"><i class="fas fa-user"></i>Log in</a>
+            </div>
+            <style>
+                .top-banner {
+                    margin-top: 12px;
+                    font-size: larger;
+                    text-decoration: underline;
+                    text-decoration-color: red;
+                }
+                .top-banner a {
+                    color: white;
+                }
+                .top-banner i {
+                    color: #ffa200;
+                }
+                .top-banner-divider {
+                    margin-top: 12px;
+                    margin-left: 12px;
+                    margin-right: 12px;
+                    font-size: larger;
+                }
+            </style>
+
+            <div class="top-banner">
+                
+
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-inner">
+            <a href="/" class="header-logo">
+                <!-- TODO cdn -->
+                <img src="https://cdn.factorio.com/assets/img/web/factorio-logo2.png">
+            </a>
+            
+            
+        </div>
+    </div>
+
+
+            <div class="container">
+                <div class="container-inner">
+                    
+<div id="flashed-messages" class="small-center float-to-center">
+    
+</div>
+
+                    
+  
+<div
+  id="tabs-header"
+  
+>
+  
+  <ul class="tabs tabs-for-panel tabs-header flex-end">
+      
+      
+      <li>
+        <a href="/highlights">
+          <i class="fa fa-star"></i>
+          Highlighted mods
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/updated">
+          <i class="fa fa-history"></i>
+          Recently updated
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/downloaded">
+          <i class="fa fa-sort-amount-down"></i>
+          Most downloaded
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/browse/trending">
+          <i class="fa fa-chart-line"></i>
+          Trending
+        </a>
+      </li>
+    
+      
+      
+      <li>
+        <a href="/search">
+          <i class="fa fa-search"></i>
+          Search mods
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+  <div class="panel pt0 pb0 mb32">
+    
+  
+  <div class="panel-inset-lighter flex-column p0">
+    <div class="flex z1">
+      <div class="panel-inset-lighter m0 w100p mr2">
+        <div class="flex">
+          <div class="mt0 mb0 mr12 fs0">
+            <a href="/mod/pump" class="block">
+              <div class="panel-inset-lighter mod-thumbnail m0 p0">
+                
+                  <img src="https://assets-mod.factorio.com/assets/289e509a26a0e4f23479601801c09bac0ead73f0.thumb.png">
+                  <div class="shadow-overlay"></div>
+                
+              </div>
+            </a>
+          </div>
+          <div class="w100p">
+            <h2 class="mb0">
+              <a href="/mod/pump">P.U.M.P.</a>
+              
+            </h2>
+            <div>
+              by <a class="orange bold" href="/user/Xcone">Xcone</a>
+            </div>
+            <hr>
+            <p class="pre-line ">P.U.M.P. (Prevent Unwanted Manual Pump-placement) takes out the chore of making outposts. It&#39;s a selection tool with which you can select liquid resources (oil, sulfuric acid, etc.. ) and it then proceeds to plan the layout of pumpjacks and pipes for you.
+          </div>
+        </div>
+      </div>
+      <div class="panel-inset-lighter m0 w256 sm-none">
+          
+            <div class="pb8">
+              <i class="fa fa-cubes"></i>
+              Utilities
+            </div>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod category: Utilities
+                </div>
+                <div class="panel-tooltip">
+                    <p>Providing the player with new tools or adjusting the game interface, without fundamentally changing gameplay.
+                </div>
+            </div>
+          
+        <div class="mod-card-info">
+          <div class="pb8" title="Last updated">
+            <i class="fa fa-history"></i>
+            <span title="2026-07-10T19:30:01.843000">a month ago</span>
+          </div>
+          <div class="pb8" title="Available for these Factorio versions">
+            <i class="fa fa-cog"></i>
+            0.18 - 2.1
+          </div>
+          <div class="pb8" title="Downloads, updated daily">
+            <i class="fa fa-download"></i>
+            <span title="98394">98.4K</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <div class="panel-inset m0 w100 p4">
+      <div class="flex flex-space-between mod-tags-download">
+        <div class="flex flex-wrap mod-tags">
+          
+            <a class="slot-button-inline" href="/?tag=mining">
+              Mining
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Mining
+                </div>
+                <div class="panel-tooltip">
+                    <p>New Ores and resources as well as machines.
+                </div>
+            </div>
+          
+            <a class="slot-button-inline" href="/?tag=fluids">
+              Fluids
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Fluids
+                </div>
+                <div class="panel-tooltip">
+                    <p>Things related to oil and other fluids.
+                </div>
+            </div>
+          
+            <a class="slot-button-inline" href="/?tag=blueprints">
+              Blueprints
+            </a>
+            <div class="tooltip" role="tooltip">
+                <div class="panel-tooltip-title">
+                    Mod tag: Blueprints
+                </div>
+                <div class="panel-tooltip">
+                    <p>Change blueprint behavior.
+                </div>
+            </div>
+          
+        </div>
+        <div class="text-right flex flex-items-baseline flex-end mod-download-section" style="margin-top: auto;">
+          <div class="mr12">
+            
+              <a href="https://github.com/Xcone/factorio_pump" class="nowrap">source code</a></li>
+            
+          </div>
+          <div class="mr12">
+            
+          </div>
+          <div class="btn mod-download-button btn-download">
+            
+              
+                
+                <a class="button-green text-center" href="/login?next=/mod/pump">
+                  <i class="fa fa-download"></i> Download
+                </a>
+              
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="panel-inset p0">
+      
+  <ul class="tabs">
+    <li>
+      <a href="/mod/pump" >
+        Information
+      </a>
+    </li>
+
+    
+      <li>
+        <a href="/mod/pump/changelog" >
+          Changelog
+        </a>
+    </li>
+    
+
+    <li>
+      <a href="/mod/pump/downloads" >
+        Downloads
+      </a>
+    </li>
+
+    <li>
+      <a href="/mod/pump/dependencies" >
+        Dependencies
+        <span class="badge">2 / 90 </span>
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/pump/discussion" class="active">
+        Discussion
+        <span class="badge">61</span>
+        
+      </a>
+    </li>
+
+    
+
+    <li>
+      <a href="/mod/pump/metrics" >
+        Metrics
+      </a>
+    </li>
+
+  </ul>
+
+      <div class="panel-lighter mb0">
+        
+          <div class="discussion">
+            
+    <div class="discussion-list">
+        
+        
+            <div class="alert alert-info panel">
+                <p>⚠️When reporting a bug ⚠️</p>
+<p>Please, always provide a save-file. No matter how trivial or obvious a bug seems. <br>
+Without a save it basically impossible for me to reproduce an issue or test if the changes I make actually work.</p>
+            </div>
+        
+        <div class="panel-inset p0">
+            <div class="panel-inset flex flex-space-between flex-align-center p4 m0">
+                <div class="flex">
+                    
+                        
+                        
+                            <a class="button discussion-list-new-message disabled" title="You need to own Factorio to participate in mod portal discussions.">New Thread</a>
+                        
+                        
+                    
+                </div>
+                <div class="w100p text-right">
+                    Filter:
+                    <div class="discussion-tags-filter inline-flex flex-wrap flex-end">
+                        
+                            <a href="/mod/pump/discussion/g">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">General</span>
+                            </a>
+                        
+                            <a href="/mod/pump/discussion/b">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Bugs</span>
+                            </a>
+                        
+                            <a href="/mod/pump/discussion/a">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Announcements</span>
+                            </a>
+                        
+                            <a href="/mod/pump/discussion/i">
+                                <span class="discussion-tag-style-g discussion-tags-filter-tag slot-button-inline tag">Ideas &amp; suggestions</span>
+                            </a>
+                        
+                    </div>
+                </div>
+            </div>
+            
+                <table class="discussion-list-messages  panel-hole m0 ms0">
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/698c861efab043ef81fe6a43" title="BUG">BUG</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Hebrajus" class="orange">Hebrajus</a>
+                                    
+                                    <span title="2026-02-11T13:37:34.804000">6 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2026-05-05T21:19:02.870000">4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/69fa2c18e00aba6ef949761b" title="crush">crush</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Aquilo" class="orange">Aquilo</a>
+                                    
+                                    <span title="2026-05-05T17:42:48.297000">4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2026-05-05T21:06:56.978000">4 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/695d807932cbd6e4d687c9be" title="Auto deconstruct">Auto deconstruct</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Twisted" class="orange">Twisted</a>
+                                    
+                                    <span title="2026-01-06T21:36:57.661000">8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Twisted" class="orange">Twisted</a>
+                                    <span title="2026-01-08T02:17:24.186000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/69598d0576df7303f5bba4a8" title="Pumps cornering each other ">Pumps cornering each other </a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Asterixyz" class="orange">Asterixyz</a>
+                                    
+                                    <span title="2026-01-03T21:41:25.427000">8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    8
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2026-01-05T14:27:55.634000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6767430996d69a411e2d5616" title="Auto place beacons">Auto place beacons</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/zigjohnson" class="orange">zigjohnson</a>
+                                    
+                                    <span title="2024-12-21T22:36:57.856000">1 year, 8 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    8
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/creekz" class="orange">creekz</a>
+                                    <span title="2025-12-10T13:55:26.978000">8 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6934bf6819ee46ae9f614c09" title="&#34;More quality scaling&#34; compatibility">&#34;More quality scaling&#34; compatibility</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/sh4dow" class="orange">sh4dow</a>
+                                    
+                                    <span title="2025-12-06T23:42:32.722000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-12-07T07:00:56.967000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/67394140ed76c1432083265e" title="Aquilo heat pipes">Aquilo heat pipes</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Simoyd" class="orange">Simoyd</a>
+                                    
+                                    <span title="2024-11-17T01:05:04.303000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-12-06T17:54:35.333000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/692b45c95e0f69363a214337" title="error on aquilo">error on aquilo</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Speadge" class="orange">Speadge</a>
+                                    
+                                    <span title="2025-11-29T19:13:13.299000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    9
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Speadge" class="orange">Speadge</a>
+                                    <span title="2025-12-04T10:39:51.959000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/692092e02fdd9e319899a36b" title="Unrecoverable error during Space Exploration playthrough: ">Unrecoverable error during Space Exploration playthrough: </a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/grillgamesh" class="orange">grillgamesh</a>
+                                    
+                                    <span title="2025-11-21T16:27:12.174000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-11-23T14:13:40.558000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6918a6ab5e17899239ea2395" title="Conflict with another modem">Conflict with another modem</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DuszaCamelot" class="orange">DuszaCamelot</a>
+                                    
+                                    <span title="2025-11-15T16:13:31.793000">9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/DuszaCamelot" class="orange">DuszaCamelot</a>
+                                    <span title="2025-11-16T10:33:36.850000">9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/68d04ce551385adfa7ae473f" title="Another pipe placement oddity">Another pipe placement oddity</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Techjar" class="orange">Techjar</a>
+                                    
+                                    <span title="2025-09-21T19:07:17.681000">11 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Techjar" class="orange">Techjar</a>
+                                    <span title="2025-09-27T16:44:24.299000">11 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/687c95f48f7e4311b95a405b" title="clicked on the hand in the beacon row">clicked on the hand in the beacon row</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/EvilPLa" class="orange">EvilPLa</a>
+                                    
+                                    <span title="2025-07-20T07:08:36.318000">1 year, 1 month ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/EvilPLa" class="orange">EvilPLa</a>
+                                    <span title="2025-07-20T10:03:13.855000">1 year, 1 month ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/68658202af39873aa6c07194" title="Option to hide this behind a tech research for mid-game">Option to hide this behind a tech research for mid-game</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Zombo.Brain" class="orange">Zombo.Brain</a>
+                                    
+                                    <span title="2025-07-02T19:01:22.701000">1 year, 2 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-07-03T07:56:29.067000">1 year, 2 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/67ffedd095a8b3bee31061b0" title="&#34;PUMP does not support mixed resources&#34; when Ghost tiles are in the selection area">&#34;PUMP does not support mixed resources&#34; when Ghost tiles are in the selection area</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/gh314" class="orange">gh314</a>
+                                    
+                                    <span title="2025-04-16T17:50:08.914000">1 year, 4 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-05-17T17:12:13.220000">1 year, 3 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/67e734422b7869c4de8d85e5" title="Confirm input control (E) does not trigger ghost placement">Confirm input control (E) does not trigger ghost placement</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/azaghal" class="orange">azaghal</a>
+                                    
+                                    <span title="2025-03-28T23:44:02.079000">1 year, 5 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    7
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/azaghal" class="orange">azaghal</a>
+                                    <span title="2025-03-30T16:18:00.515000">1 year, 5 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/679112fe9991c0f240a74229" title="Error in Factorio 2.0.30">Error in Factorio 2.0.30</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Kasc" class="orange">Kasc</a>
+                                    
+                                    <span title="2025-01-22T15:47:10.824000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2025-01-22T17:11:20.103000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/67859182e0e32532a86656cb" title="error while trying to use legendary quality pumps on vulcanus ">error while trying to use legendary quality pumps on vulcanus </a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Solarwuff" class="orange">Solarwuff</a>
+                                    
+                                    <span title="2025-01-13T22:19:46.424000">1 year, 7 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Solarwuff" class="orange">Solarwuff</a>
+                                    <span title="2025-01-15T14:24:26.845000">1 year, 7 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/674e45b919fd2ff1dd9d28e9" title="Error Report">Error Report</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Xeypher" class="orange">Xeypher</a>
+                                    
+                                    <span title="2024-12-02T23:41:45.394000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/techwolf359" class="orange">techwolf359</a>
+                                    <span title="2024-12-04T15:57:27.582000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/674d10c96f6c6909b960a58f" title="Module Inserter is NOT 2.0 compatible yet.">Module Inserter is NOT 2.0 compatible yet.</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/BlackHat" class="orange">BlackHat</a>
+                                    
+                                    <span title="2024-12-02T01:43:37.365000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/BlackHat" class="orange">BlackHat</a>
+                                    <span title="2024-12-03T03:44:50.668000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/673407659104c73a041fc65e" title="Error with some fields">Error with some fields</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/DragonHeart996" class="orange">DragonHeart996</a>
+                                    
+                                    <span title="2024-11-13T01:56:53.574000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    13
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/DragonHeart996" class="orange">DragonHeart996</a>
+                                    <span title="2024-12-02T17:26:06.117000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6747095b22712b6bf911c74a" title="Experimental pipe planner layouts">Experimental pipe planner layouts</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Techjar" class="orange">Techjar</a>
+                                    
+                                    <span title="2024-11-27T11:58:19.345000">1 year, 9 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2024-12-02T14:26:11.809000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6729353449642e24980b9cdf" title="Aquilo Bug (doesn&#39;t work /properly/ on Aquilo)">Aquilo Bug (doesn&#39;t work /properly/ on Aquilo)</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Lawlzer" class="orange">Lawlzer</a>
+                                    
+                                    <span title="2024-11-04T20:57:24.122000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    18
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Techjar" class="orange">Techjar</a>
+                                    <span title="2024-11-26T11:05:27.045000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6723418881b85a9192665df4" title="less underground pipes">less underground pipes</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Speadge" class="orange">Speadge</a>
+                                    
+                                    <span title="2024-10-31T08:36:24.964000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Speadge" class="orange">Speadge</a>
+                                    <span title="2024-11-23T02:08:34.507000">1 year, 9 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/672385f0e110c7da23813db4" title="Non-Oil support">Non-Oil support</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/HISKI" class="orange">HISKI</a>
+                                    
+                                    <span title="2024-10-31T13:28:16.719000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2024-10-31T14:32:43.744000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/67224a662e8ac822e9de0a43" title="Support for Quality Pumpjacks">Support for Quality Pumpjacks</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/KeinNIemand" class="orange">KeinNIemand</a>
+                                    
+                                    <span title="2024-10-30T15:01:58.387000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2024-10-30T23:50:13.435000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/671b22ea262cd4a400e94ff9" title="Multiplayer desync">Multiplayer desync</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/JGAO" class="orange">JGAO</a>
+                                    
+                                    <span title="2024-10-25T04:47:38.928000">1 year, 10 months ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/JGAO" class="orange">JGAO</a>
+                                    <span title="2024-10-25T15:18:51.735000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/66c12c47eff3344ddb687b46" title="Support for Space Age?">Support for Space Age?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/zigjohnson" class="orange">zigjohnson</a>
+                                    
+                                    <span title="2024-08-17T23:03:35.659000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2024-10-16T21:59:06.383000">1 year, 10 months ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/666e32744067ce517ce576a3" title="PUMP crash on Nullius sd">PUMP crash on Nullius sd</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/FeistyCanuck" class="orange">FeistyCanuck</a>
+                                    
+                                    <span title="2024-06-16T00:31:48.372000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/zebede413" class="orange">zebede413</a>
+                                    <span title="2024-09-02T18:15:32.520000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/65bf81dc41884181852d53eb" title="Does not take into account different forces">Does not take into account different forces</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/TBC_x" class="orange">TBC_x</a>
+                                    
+                                    <span title="2024-02-04T12:23:56.743000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/TBC_x" class="orange">TBC_x</a>
+                                    <span title="2024-02-07T18:06:41.952000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/65708e9f81fb001eb674fdc5" title="cant download 1.3.3">cant download 1.3.3</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Speadge" class="orange">Speadge</a>
+                                    
+                                    <span title="2023-12-06T15:09:19.147000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/vnznz" class="orange">vnznz</a>
+                                    <span title="2023-12-06T19:32:43.930000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/65709cd0b26b452dadd047ad" title="Trying to download just authenticates Steam account">Trying to download just authenticates Steam account</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/YunruStellaria" class="orange">YunruStellaria</a>
+                                    
+                                    <span title="2023-12-06T16:09:52.620000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/vnznz" class="orange">vnznz</a>
+                                    <span title="2023-12-06T19:32:34.443000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/65516920445f21b7ff70e382" title="Failure when pumpjack impossible to use">Failure when pumpjack impossible to use</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Monkfish" class="orange">Monkfish</a>
+                                    
+                                    <span title="2023-11-13T00:09:04.106000">2 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Monkfish" class="orange">Monkfish</a>
+                                    <span title="2023-11-14T00:11:18.866000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6491b1e9aa30b2734b673a05" title="Exotic industries compatiblity">Exotic industries compatiblity</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Vaendryl" class="orange">Vaendryl</a>
+                                    
+                                    <span title="2023-06-20T14:04:25.103000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    9
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/andrei9669" class="orange">andrei9669</a>
+                                    <span title="2023-09-24T13:54:55.634000">2 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6494c5bcfefe242efca253dc" title="Any chance for Beacon support ?">Any chance for Beacon support ?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/NIKITAzed" class="orange">NIKITAzed</a>
+                                    
+                                    <span title="2023-06-22T22:05:48.535000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/NIKITAzed" class="orange">NIKITAzed</a>
+                                    <span title="2023-06-27T02:53:23.101000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/64147d74bc9bb4cd036b3896" title="I am fall">I am fall</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/WildBraas" class="orange">WildBraas</a>
+                                    
+                                    <span title="2023-03-17T14:47:16.735000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/WildBraas" class="orange">WildBraas</a>
+                                    <span title="2023-03-18T07:13:06.767000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/5f687c3ab5ce094dc2968a63" title="Prevent Unwanted Manual Power poles placement">Prevent Unwanted Manual Power poles placement</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/WOLFYLoner" class="orange">WOLFYLoner</a>
+                                    
+                                    <span title="2020-09-21T10:11:06.490000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    14
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/ShiftyW" class="orange">ShiftyW</a>
+                                    <span title="2023-03-17T22:37:32.439000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/64148d641fa7f66c155a2f5c" title="Permanent freeze">Permanent freeze</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/WildBraas" class="orange">WildBraas</a>
+                                    
+                                    <span title="2023-03-17T15:55:16.680000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2023-03-17T21:46:39.322000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/63ea69511fa65085221022b9" title="Changelog tab on mod portal hasn&#39;t updated in 3 years">Changelog tab on mod portal hasn&#39;t updated in 3 years</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ShiftyW" class="orange">ShiftyW</a>
+                                    
+                                    <span title="2023-02-13T16:46:09.245000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2023-03-03T08:34:26.995000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/63e7e65233019eb78a54fa0e" title="Compatibility with Construction Planner Continued?">Compatibility with Construction Planner Continued?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/ShiftyW" class="orange">ShiftyW</a>
+                                    
+                                    <span title="2023-02-11T19:02:42.240000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    3
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2023-02-13T17:26:44.622000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/63d03462d19773034459f7cf" title="Support for Tiberium">Support for Tiberium</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Ferlonas" class="orange">Ferlonas</a>
+                                    
+                                    <span title="2023-01-24T19:41:22.199000">3 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2023-02-11T19:21:07.201000">3 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/61e94f725c7ce666d9b96972" title="Optimised for beacon">Optimised for beacon</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Stargateur" class="orange">Stargateur</a>
+                                    
+                                    <span title="2022-01-20T12:02:58.920000">4 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2022-03-31T13:31:30.486000">4 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6245aa74af59b81949884b35" title="electricity">electricity</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/bashar.b" class="orange">bashar.b</a>
+                                    
+                                    <span title="2022-03-31T13:19:48.474000">4 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2022-03-31T13:27:10.208000">4 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/616b234b8a01075e9cdad73a" title="This for miners">This for miners</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/OceanOfGaming" class="orange">OceanOfGaming</a>
+                                    
+                                    <span title="2021-10-16T19:08:59.835000">4 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Stringweasel" class="orange">Stringweasel</a>
+                                    <span title="2022-01-07T09:32:08.774000">4 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/61b27c37ba36ac05c648e51a" title="Bug Involving Landfill">Bug Involving Landfill</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Terrra" class="orange">Terrra</a>
+                                    
+                                    <span title="2021-12-09T21:59:19.335000">4 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    1
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Xcone" class="orange">Xcone</a>
+                                    <span title="2021-12-10T12:16:13.610000">4 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/6161e79b521dcff48f600802" title="Creating underground pipes sometimes skip pumpjacks">Creating underground pipes sometimes skip pumpjacks</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/PietersieliePC" class="orange">PietersieliePC</a>
+                                    
+                                    <span title="2021-10-09T19:03:55.076000">4 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    4
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/PietersieliePC" class="orange">PietersieliePC</a>
+                                    <span title="2021-10-16T10:05:56.351000">4 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/5fefda60e794fa476bdf1972" title="Support other pipes">Support other pipes</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Merikolus" class="orange">Merikolus</a>
+                                    
+                                    <span title="2021-01-02T02:28:48.933000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    7
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/macnoz" class="orange">macnoz</a>
+                                    <span title="2021-05-20T12:29:00.466000">5 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/608c3ea44ce83a687d88190b" title="Does it account for throughput?">Does it account for throughput?</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Kakasdodo" class="orange">Kakasdodo</a>
+                                    
+                                    <span title="2021-04-30T17:30:12.239000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                General
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    2
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Kakasdodo" class="orange">Kakasdodo</a>
+                                    <span title="2021-05-02T11:35:46.819000">5 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/608668d25c9077a7dba4fee1" title="Crash with 4 to 4 Pipes [Advanced Fluid Handling]">Crash with 4 to 4 Pipes [Advanced Fluid Handling]</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Adrenalex" class="orange">Adrenalex</a>
+                                    
+                                    <span title="2021-04-26T07:16:34.361000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    6
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Adrenalex" class="orange">Adrenalex</a>
+                                    <span title="2021-04-29T06:27:03.169000">5 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/60685815c78e0f2848fd0cb3" title="Crash with Nullius">Crash with Nullius</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/Merikolus" class="orange">Merikolus</a>
+                                    
+                                    <span title="2021-04-03T11:57:09.420000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Bugs
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    0
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/Merikolus" class="orange">Merikolus</a>
+                                    <span title="2021-04-03T11:57:09.420000">5 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                        <tr class="discussion-list-message">
+                            <td class="discussion-list-message-title w60p">
+                                <h3 class="m0">
+                                    
+                                    
+                                    
+                                    <a href="/mod/pump/discussion/60156989c1d1d7d2f545c639" title="Bot-Technology - Availability">Bot-Technology - Availability</a>
+                                </h3>
+                                <div>
+                                    posted by
+                                    
+                                        <a href="/user/nosports" class="orange">nosports</a>
+                                    
+                                    <span title="2021-01-30T14:13:29.045000">5 years ago</span>
+                                </div>
+                            </td>
+                            <td class="text-center sm-none">
+                                Ideas &amp; suggestions
+                            </td>
+                            <td class="nowrap sm-none">
+                                <div class="text-right">
+                                    5
+                                    <i class="fa fa-comments"></i>
+                                </div>
+                                
+                                <div class="text-right">
+                                    last message by
+                                    <a href="/user/nosports" class="orange">nosports</a>
+                                    <span title="2021-01-30T15:57:50.033000">5 years ago</span>
+                                </div>
+                                
+                            </td>
+                        </tr>
+                    
+                </table>
+            
+        </div>
+        
+  <div class="text-right flex flex-end">
+      
+      
+
+      
+          <a
+              class="button square-sm disabled "
+              
+          >
+              
+                  <i class="fas fa-angle-double-left"></i>
+              
+          </a>
+      
+
+      
+          
+          <a
+              class="button square-sm  active"
+              
+              href="/mod/pump/discussion/page/1"
+              
+          >
+              
+                  1
+              
+          </a>
+      
+        
+      
+          
+          <a
+              class="button square-sm  "
+              
+              href="/mod/pump/discussion/page/2"
+              
+          >
+              
+                  2
+              
+          </a>
+      
+        
+      
+
+      
+          <a
+              class="button square-sm  "
+              
+              href="/mod/pump/discussion/page/2"
+              
+          >
+              
+                  <i class="fas fa-angle-double-right"></i>
+              
+          </a>
+      
+  </div>
+
+        <div class="text-right discussion-list-options">
+            
+        </div>
+    </div>
+
+          </div>
+        
+      </div>
+    </div>
+  </div>
+
+                </div>
+            </div>
+
+            
+<div class="footer">
+    <div class="footer-inner panel">
+
+        <div class="footer-links flex flex-wrap flex-center panel-inset m0">
+            <a href="https://factorio.com/terms-of-service">Terms of Service</a><span class="separator">|</span><a href="https://factorio.com/privacy-policy">Privacy</a><span class="separator">|</span><a href="https://factorio.com/imprint">Imprint</a><span class="separator">|</span><a href="https://factorio.com/press-kit">Presskit</a><span class="separator">|</span><a href="https://factorio.com/support/contact">Contact</a><span class="separator">|</span><a href="https://factorio.com/faq">FAQ</a><span class="separator">|</span><a href="https://factorio.com/jobs">Jobs</a>
+        </div>
+        <div class="footer-rocket panel-inset m0 p0">
+            <div id="rocket" class="rocket"></div>
+            <div class="shadow-overlay"></div>
+            <div class="shadow-overlay-bottom"></div>
+        </div>
+        <div class="footer-copyright panel-inset m0">
+            Copyright © 2015 - 2026 Wube Software - all rights reserved.
+        </div>
+    </div>
+</div>
+            
+                <script src="/static/js/factorio_mod_portal.js?v=a134a950"></script>
+                <script>
+                  var messages = [
+                  ];
+                  Factorio.main({
+                      // old url for compatibility with cached JS
+                      contentServerUrl: 'https://assets-mod.factorio.com',
+                      assetCDNUrl: 'https://assets-mod.factorio.com',
+                      messages: messages
+                  });
+                </script>
+                
+                
+            
+        
+        <script src="https://factorio.com/static/js/factorio.js?v=a134a950" type="module"></script>
+    </body>
+</html>
