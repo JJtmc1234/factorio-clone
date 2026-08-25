@@ -1,0 +1,341 @@
+name: Re-audit Factorio 2.0 issue saves through script.dat
+
+on:
+  push:
+    branches: [tmp-se-script-reaudit-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-script-reaudit-result-20260825
+
+jobs:
+  decode:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decode every Factorio 2.0 script registry
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work matches
+          mkdir -p published/candidates work matches
+          python3 -m pip install --quiet --upgrade requests gdown hornwitser.factorio_tools==0.0.7
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import gzip
+          import hashlib
+          import io
+          import json
+          import pathlib
+          import re
+          import shutil
+          import subprocess
+          import traceback
+          import zipfile
+          from urllib.parse import parse_qs, unquote, urlparse
+
+          import requests
+
+          OUT = pathlib.Path('published')
+          WORK = pathlib.Path('work')
+          MATCHES = pathlib.Path('matches')
+          SAVES_URL = 'https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-issue-sieve-result-20260825/tmp-se-issue-sieve/saves.json'
+          MAX_DOWNLOAD = 500 * 1024 * 1024
+          MAX_SCRIPT_JSON = 1000 * 1024 * 1024
+          MAX_NESTED_ZIP = 500 * 1024 * 1024
+          MAX_DEPTH = 2
+
+          session = requests.Session()
+          session.headers.update({'User-Agent':'Mozilla/5.0 JJ-SE-script-reaudit/1.0','Accept':'*/*'})
+
+          def slug(text: str, fallback: str) -> str:
+              text = unquote(text or '')
+              text = re.sub(r'[^A-Za-z0-9._-]+', '_', text).strip('._-')
+              return (text[:120] or fallback)
+
+          def sha256(path: pathlib.Path) -> str:
+              h = hashlib.sha256()
+              with path.open('rb') as f:
+                  for chunk in iter(lambda:f.read(1024*1024), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def drive_id(url: str) -> str | None:
+              m=re.search(r'/file/d/([^/?#]+)',url)
+              if m:return m.group(1)
+              return (parse_qs(urlparse(url).query).get('id') or [None])[0]
+
+          def download(url: str, path: pathlib.Path) -> dict:
+              rec={'url':url,'path':str(path)}
+              try:
+                  did=drive_id(url) if 'drive.google.com' in url.lower() else None
+                  if did:
+                      p=subprocess.run(['gdown','--no-cookies','-O',str(path),did],text=True,capture_output=True,timeout=1500)
+                      rec.update({'method':'gdown','returncode':p.returncode,'stderr':p.stderr[-4000:]})
+                      if p.returncode or not path.exists(): raise RuntimeError('gdown failed')
+                  else:
+                      request_url=url
+                      if 'dropbox.com/' in request_url and 'dl=' not in request_url:
+                          request_url += ('&' if '?' in request_url else '?')+'dl=1'
+                      with session.get(request_url,stream=True,timeout=(25,240),allow_redirects=True) as r:
+                          rec.update({'method':'requests','status':r.status_code,'final_url':r.url,'content_type':r.headers.get('content-type')})
+                          n=int(r.headers.get('content-length','0') or 0)
+                          rec['reported_bytes']=n
+                          if n and n>MAX_DOWNLOAD: raise RuntimeError(f'reported size {n} exceeds cap')
+                          r.raise_for_status()
+                          written=0
+                          with path.open('wb') as f:
+                              for chunk in r.iter_content(1024*1024):
+                                  if not chunk: continue
+                                  written += len(chunk)
+                                  if written>MAX_DOWNLOAD: raise RuntimeError('download exceeded cap')
+                                  f.write(chunk)
+                  rec.update({'bytes':path.stat().st_size,'sha256':sha256(path)})
+                  return rec
+              except Exception as e:
+                  rec.update({'error':repr(e),'traceback':traceback.format_exc()})
+                  path.unlink(missing_ok=True)
+                  return rec
+
+          def iter_saves(data: bytes, label: str, depth: int=0, lineage: list[str] | None=None):
+              lineage=list(lineage or [])
+              try:
+                  with zipfile.ZipFile(io.BytesIO(data)) as z:
+                      names=z.namelist()
+                      for init in [n for n in names if n=='level-init.dat' or n.endswith('/level-init.dat')]:
+                          root=init[:-len('/level-init.dat')] if init.endswith('/level-init.dat') else ''
+                          prefix=root+'/' if root else ''
+                          script=prefix+'script.dat'
+                          if script not in names: continue
+                          yield {
+                              'label':label,'lineage':lineage,'depth':depth,'root':root,
+                              'level_init':z.read(init),'script':z.read(script),
+                              'script_bytes':z.getinfo(script).file_size,
+                              'level_files':[{'name':n,'bytes':z.getinfo(n).file_size} for n in names if n.startswith(prefix+'level.dat') and '/' not in n[len(prefix):]],
+                          }
+                      if depth<MAX_DEPTH:
+                          for info in z.infolist():
+                              if not info.filename.lower().endswith('.zip') or not (0<info.file_size<=MAX_NESTED_ZIP):
+                                  continue
+                              try:
+                                  child=z.read(info)
+                                  yield from iter_saves(child,label+'::'+info.filename,depth+1,lineage+[info.filename])
+                              except Exception:
+                                  continue
+              except Exception:
+                  return
+
+          def compact(value, depth=0):
+              if depth>=5:
+                  if isinstance(value,(dict,list)): return {'type':type(value).__name__,'length':len(value)}
+                  return value
+              if isinstance(value,dict):
+                  out={}
+                  for i,(k,v) in enumerate(value.items()):
+                      if i>=30:
+                          out['__truncated__']=len(value)-30; break
+                      out[str(k)[:200]]=compact(v,depth+1)
+                  return out
+              if isinstance(value,list):
+                  vals=[compact(v,depth+1) for v in value[:30]]
+                  if len(value)>30: vals.append({'__truncated__':len(value)-30})
+                  return vals
+              if isinstance(value,str): return value[:2000]
+              return value
+
+          SEARCH_TERMS = [
+              'rocket','satellite','orbit','surface','zone','launch','science','milestone',
+              'cargo','spaceship','discovered','visit','telemetry','nauvis','player_force',
+          ]
+          EXACT_KEYS = {
+              'rocket_launch_pads','cargo_rockets_launched','satellites_launched',
+              'surface_index','surface_name','zone_index','zones_discovered',
+              'discovered','player_visits','rocket_sections','launch_pads',
+              'se-rocket-science-pack','space-science-pack','milestones','forces',
+          }
+
+          def analyze_target(mod: dict) -> dict:
+              hits=[]
+              stats={'nodes':0,'dicts':0,'lists':0,'scalars':0,'max_depth':0}
+              def walk(v,path,depth):
+                  stats['nodes']+=1; stats['max_depth']=max(stats['max_depth'],depth)
+                  if isinstance(v,dict):
+                      stats['dicts']+=1
+                      if 'key' in v and 'value' in v:
+                          key=v.get('key')
+                          key_text=str(key).lower() if isinstance(key,(str,int,float,bool)) else ''
+                          if key_text in EXACT_KEYS or any(t in key_text for t in SEARCH_TERMS):
+                              if len(hits)<6000:
+                                  hits.append({'kind':'pair','path':'/'.join(map(str,path)),'key':compact(key),'value':compact(v.get('value'))})
+                      for k,x in v.items():
+                          walk(x,path+[str(k)],depth+1)
+                  elif isinstance(v,list):
+                      stats['lists']+=1
+                      for i,x in enumerate(v): walk(x,path+[str(i)],depth+1)
+                  else:
+                      stats['scalars']+=1
+                      if isinstance(v,str):
+                          low=v.lower()
+                          if any(t in low for t in SEARCH_TERMS):
+                              if len(hits)<6000:
+                                  hits.append({'kind':'scalar','path':'/'.join(map(str,path)),'value':v[:4000]})
+              walk(mod,[],0)
+              scalar_text='\n'.join(str(h.get('value','')) for h in hits if h.get('kind')=='scalar').lower()
+              return {
+                  'stats':stats,
+                  'hit_count':len(hits),
+                  'hits':hits,
+                  'signals':{
+                      'contains_nauvis_orbit': 'nauvis orbit' in scalar_text,
+                      'contains_rocket_science_pack': 'se-rocket-science-pack' in scalar_text,
+                      'contains_space_science_pack': 'space-science-pack' in scalar_text,
+                      'contains_satellite_telemetry': 'satellite-telemetry' in scalar_text,
+                  },
+              }
+
+          raw=session.get(SAVES_URL,timeout=90); raw.raise_for_status()
+          prior=raw.json()
+          current=[r for r in prior if str(r.get('factorio_version','')).startswith('2.0')]
+          unique={}
+          for r in current:
+              key=(r.get('source_url'),r.get('save_root'))
+              unique.setdefault(key,r)
+          records=list(unique.values())
+          records.sort(key=lambda r:(str(r.get('source_repo')),int(r.get('source_issue_number') or 0),str(r.get('source_url')),str(r.get('save_root'))))
+
+          print(f'Factorio 2.0 save records selected: {len(records)}',flush=True)
+          downloads=[]; decoded=[]; se_candidates=[]
+          downloaded_cache={}
+
+          for idx,meta in enumerate(records,1):
+              url=meta['source_url']; root_wanted=meta.get('save_root')
+              print(f'[{idx}/{len(records)}] {url} root={root_wanted}',flush=True)
+              if url in downloaded_cache and downloaded_cache[url].exists():
+                  archive=downloaded_cache[url]
+                  drec={'url':url,'cached':True,'bytes':archive.stat().st_size,'sha256':sha256(archive)}
+              else:
+                  archive=WORK/f'{idx:03d}-{slug(pathlib.PurePosixPath(urlparse(url).path).name,"save.zip")}'
+                  drec=download(url,archive)
+                  downloads.append(drec)
+                  if drec.get('error'): continue
+                  downloaded_cache[url]=archive
+              try:
+                  data=archive.read_bytes()
+                  matches=[s for s in iter_saves(data,archive.name) if not root_wanted or s['root']==root_wanted]
+                  if not matches:
+                      matches=list(iter_saves(data,archive.name))
+                  for si,save in enumerate(matches,1):
+                      sid=f'{idx:03d}-{si:02d}-{slug(save["root"],"root")}'
+                      cdir=OUT/'candidates'/sid
+                      cdir.mkdir(parents=True,exist_ok=True)
+                      script_path=WORK/f'{sid}-script.dat'
+                      json_path=WORK/f'{sid}-script.json'
+                      script_path.write_bytes(save['script'])
+                      proc=subprocess.run(
+                          [sys.executable,'-m','hornwitser.factorio_tools','dat2json','--input-format','script','-i',str(script_path),'-o',str(json_path)],
+                          text=True,capture_output=True,timeout=900,
+                      )
+                      rec={
+                          'id':sid,'source_url':url,'source_repo':meta.get('source_repo'),
+                          'source_issue_number':meta.get('source_issue_number'),'source_issue_url':meta.get('source_issue_url'),
+                          'source_issue_title':meta.get('source_issue_title'),'source_context':meta.get('source_context'),
+                          'factorio_version':meta.get('factorio_version_full'),'save_root':save['root'],
+                          'archive_label':save['label'],'depth':save['depth'],'lineage':save['lineage'],
+                          'download_bytes':archive.stat().st_size,'download_sha256':sha256(archive),
+                          'script_bytes':save['script_bytes'],'level_files':save['level_files'],
+                          'decoder_returncode':proc.returncode,'decoder_stdout':proc.stdout[-4000:],'decoder_stderr':proc.stderr[-8000:],
+                      }
+                      if proc.returncode or not json_path.exists():
+                          rec['decode_error']='decoder failed'; decoded.append(rec); continue
+                      if json_path.stat().st_size>MAX_SCRIPT_JSON:
+                          rec['decode_error']=f'json too large: {json_path.stat().st_size}'; decoded.append(rec); continue
+                      obj=json.loads(json_path.read_text(encoding='utf-8'))
+                      mods=obj.get('data') if isinstance(obj,dict) else None
+                      if not isinstance(mods,list): mods=[]
+                      mod_names=[m.get('name') for m in mods if isinstance(m,dict) and isinstance(m.get('name'),str)]
+                      rec.update({'json_bytes':json_path.stat().st_size,'mod_count':len(mod_names),'mod_names':mod_names})
+                      targets={m.get('name'):m for m in mods if isinstance(m,dict) and m.get('name') in {'mod-space-exploration','mod-Milestones','mod-milestones'}}
+                      rec['target_mods']=sorted(targets)
+                      if 'mod-space-exploration' in targets:
+                          se_analysis=analyze_target(targets['mod-space-exploration'])
+                          rec['se_signals']=se_analysis['signals']
+                          rec['se_hit_count']=se_analysis['hit_count']
+                          (cdir/'se-keyword-hits.json').write_text(json.dumps(se_analysis,ensure_ascii=False,indent=2),encoding='utf-8')
+                          with gzip.open(cdir/'space-exploration.json.gz','wt',encoding='utf-8',compresslevel=9) as f:
+                              json.dump(targets['mod-space-exploration'],f,ensure_ascii=False,separators=(',',':'))
+                          for mname in ('mod-Milestones','mod-milestones'):
+                              if mname in targets:
+                                  ma=analyze_target(targets[mname])
+                                  rec['milestones_signals']=ma['signals']; rec['milestones_hit_count']=ma['hit_count']
+                                  (cdir/'milestones-keyword-hits.json').write_text(json.dumps(ma,ensure_ascii=False,indent=2),encoding='utf-8')
+                                  with gzip.open(cdir/'milestones.json.gz','wt',encoding='utf-8',compresslevel=9) as f:
+                                      json.dump(targets[mname],f,ensure_ascii=False,separators=(',',':'))
+                                  break
+                          (cdir/'summary.json').write_text(json.dumps(rec,ensure_ascii=False,indent=2),encoding='utf-8')
+                          preserved=MATCHES/f'{sid}-{archive.name}'
+                          if not preserved.exists(): shutil.copy2(archive,preserved)
+                          se_candidates.append(rec)
+                          print(f'  SE SCRIPT ROOT FOUND: {sid} mods={len(mod_names)}',flush=True)
+                      decoded.append(rec)
+                      script_path.unlink(missing_ok=True); json_path.unlink(missing_ok=True)
+              except Exception as exc:
+                  decoded.append({'source_url':url,'save_root':root_wanted,'fatal_error':repr(exc),'traceback':traceback.format_exc()})
+
+          OUT.joinpath('downloads.json').write_text(json.dumps(downloads,ensure_ascii=False,indent=2),encoding='utf-8')
+          OUT.joinpath('decoded.json').write_text(json.dumps(decoded,ensure_ascii=False,indent=2),encoding='utf-8')
+          OUT.joinpath('se-candidates.json').write_text(json.dumps(se_candidates,ensure_ascii=False,indent=2),encoding='utf-8')
+          lines=[
+              'FACTORIO 2.0 SCRIPT.DAT RE-AUDIT','='*120,
+              f'Factorio 2.0 save records: {len(records)}',
+              f'unique source downloads attempted: {len(downloads)}',
+              f'decoded save records: {len(decoded)}',
+              f'saves whose script registry contains mod-space-exploration: {len(se_candidates)}',
+              f'download errors: {sum(1 for d in downloads if d.get("error"))}',
+              f'decode/fatal errors: {sum(1 for d in decoded if d.get("decode_error") or d.get("fatal_error"))}',
+              '', 'SPACE EXPLORATION CANDIDATES','-'*120,
+          ]
+          for r in se_candidates:
+              lines += [
+                  f"id={r['id']} repo={r.get('source_repo')} issue={r.get('source_issue_number')} url={r.get('source_url')}",
+                  f"  title={r.get('source_issue_title')}",
+                  f"  factorio={r.get('factorio_version')} root={r.get('save_root')} archive={r.get('archive_label')}",
+                  f"  bytes={r.get('download_bytes')} sha256={r.get('download_sha256')} script={r.get('script_bytes')} json={r.get('json_bytes')}",
+                  f"  mods={r.get('mod_count')} targets={r.get('target_mods')}",
+                  f"  SE signals={r.get('se_signals')} hits={r.get('se_hit_count')}",
+                  f"  Milestones signals={r.get('milestones_signals')} hits={r.get('milestones_hit_count')}",
+                  f"  context={str(r.get('source_context',''))[:900]}", '',
+              ]
+          OUT.joinpath('SUMMARY.txt').write_text('\n'.join(lines),encoding='utf-8')
+          print('\n'.join(lines))
+          PY
+
+      - name: Upload all current-SE save archives
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: script-confirmed-current-se-saves
+          path: matches/*
+          if-no-files-found: ignore
+          retention-days: 7
+          compression-level: 0
+
+      - name: Publish re-audit metadata
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-script-reaudit
+          mkdir tmp-se-script-reaudit
+          cp -a published/. tmp-se-script-reaudit/
+          git add -f tmp-se-script-reaudit
+          git commit --allow-empty -m 'Publish Factorio 2.0 script registry re-audit'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
