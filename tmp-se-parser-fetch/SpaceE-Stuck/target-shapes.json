@@ -1,0 +1,1308 @@
+{
+  "mod-space-exploration": {
+    "name": "mod-space-exploration",
+    "dump": {
+      "version": {
+        "major": 2,
+        "minor": 0,
+        "patch": 69,
+        "even_": 0,
+        "odd_": 0
+      },
+      "data": [
+        {
+          "key": "connected_players_in_remote_view",
+          "value": []
+        },
+        {
+          "key": "rocket_launch_pads",
+          "value": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ]
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "core_seam_chunks"
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "fragment_name"
+        },
+        {
+          "key": "se-core-fragment-crude-oil",
+          "value": "core_mining"
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "resource_index"
+        },
+        {
+          "key": 3.0,
+          "value": "position"
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "zone_index"
+        },
+        {
+          "key": 1245.0,
+          "value": "surface_index"
+        },
+        {
+          "key": 11.0,
+          "value": "force_name"
+        },
+        {
+          "key": "player_force_1",
+          "value": "core_seam_resources"
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "smoke_generator"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "resource_registration_number"
+        },
+        {
+          "key": 18809.0,
+          "value": "fissure_registration_number"
+        },
+        {
+          "key": 18810.0,
+          "value": 3.0
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "smoke_generator"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "resource_registration_number"
+        },
+        {
+          "key": 18811.0,
+          "value": "fissure_registration_number"
+        },
+        {
+          "key": 18812.0,
+          "value": 4.0
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "fissure"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "smoke_generator"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "resource_registration_number"
+        },
+        {
+          "key": 18813.0,
+          "value": "fissure_registration_number"
+        },
+        {
+          "key": 18814.0,
+          "value": 5.0
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "fissure"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "smoke_generator"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "resource_registration_number"
+        },
+        {
+          "key": 18815.0,
+          "value": "fissure_registration_number"
+        },
+        {
+          "key": 18816.0,
+          "value": 6.0
+        },
+        {
+          "key": [
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            },
+            {
+              "type": "dict",
+              "length": 2
+            }
+          ],
+          "value": "fissure"
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          }
+        },
+        {
+          "key": {
+            "type": {
+              "type": "int",
+              "length": null
+            },
+            "data": {
+              "type": "NoneType",
+              "length": null
+            }
+          },
+          "value": "smoke_generator"
+        }
+      ]
+    },
+    "tabletop_": 1
+  }
+}

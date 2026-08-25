@@ -1,0 +1,59 @@
+{
+  "zip_bytes": 47870055,
+  "zip_entries": 195,
+  "script_name": "SpaceE-Stuck/script.dat",
+  "script_bytes": 26564496,
+  "level_init_name": "SpaceE-Stuck/level-init.dat",
+  "level_init_bytes": 3195260,
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 4597997,
+  "top_type": "dict",
+  "top_keys": [
+    "_type",
+    "version",
+    "data"
+  ],
+  "mod_count": 27,
+  "mod_names": [
+    "level",
+    "mod-belt-visualizer",
+    "mod-aai-signal-transmission",
+    "mod-aai-vehicles-warden",
+    "mod-AutoDeconstruct",
+    "mod-clock",
+    "mod-deadlock-beltboxes-loaders",
+    "mod-DiscoScience",
+    "mod-even-distribution",
+    "mod-far-reach",
+    "mod-FluidMustFlow",
+    "mod-informatron",
+    "mod-jetpack",
+    "mod-no-wall-repair",
+    "mod-robot_attrition",
+    "mod-aai-industry",
+    "mod-alien-biomes",
+    "mod-filter_assistant",
+    "mod-RateCalculator",
+    "mod-RecipeBook",
+    "mod-aai-programmable-vehicles",
+    "mod-shield-projector",
+    "mod-space-exploration",
+    "mod-factorissimo-2-notnotmelon",
+    "mod-Kux-CoreLib",
+    "mod-Kux-GuiLib",
+    "mod-Kux-OrbitalIonCannon"
+  ],
+  "target_mods": [
+    "mod-space-exploration"
+  ],
+  "walk_stats": {
+    "nodes": 2144,
+    "dicts": 805,
+    "lists": 110,
+    "scalars": 1229,
+    "max_depth": 20
+  },
+  "hit_count": 13
+}

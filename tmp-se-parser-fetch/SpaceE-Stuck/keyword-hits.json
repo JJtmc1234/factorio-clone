@@ -1,0 +1,119 @@
+[
+  {
+    "path": "mod-space-exploration/dump/data/1/value/0/value/0/value",
+    "match": "value",
+    "terms": [
+      "se-rocket-launch-pad"
+    ],
+    "type": "str",
+    "value": "se-rocket-launch-pad"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/1/value/0/value/14/value",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/1/value/0/value/15/key/1/value/0/value/11/key",
+    "match": "value",
+    "terms": [
+      "orbit"
+    ],
+    "type": "str",
+    "value": "orbit"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/1/value/0/value/15/key/1/value/0/value/11/value/0/value",
+    "match": "value",
+    "terms": [
+      "orbit"
+    ],
+    "type": "str",
+    "value": "orbit"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/1/value/0/value/15/key/1/value/0/value/11/value/1/value",
+    "match": "value",
+    "terms": [
+      "orbit"
+    ],
+    "type": "str",
+    "value": "Donn Orbit"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/10/value",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/11/value",
+    "match": "value",
+    "terms": [
+      "surface"
+    ],
+    "type": "str",
+    "value": "surface_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/14/key/0/value/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/14/key/13/value/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/25/key/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/34/key/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/47/key/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  },
+  {
+    "path": "mod-space-exploration/dump/data/60/key/1/key",
+    "match": "value",
+    "terms": [
+      "zone"
+    ],
+    "type": "str",
+    "value": "zone_index"
+  }
+]
