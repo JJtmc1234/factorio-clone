@@ -1,4 +1,4 @@
-name: Extract exact SE server records
+name: Scan Factorio game IDs for SE servers
 
 on:
   push:
@@ -8,148 +8,120 @@ permissions:
   contents: write
 
 env:
-  RESULT_BRANCH: tmp-se-exact-server-records-result-20260825
+  RESULT_BRANCH: tmp-se-game-id-range-result-20260825
 
 jobs:
-  extract:
+  scan:
     if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
-      - name: Extract old records and query live details
+      - name: Scan compact current game-id range
         shell: bash
         run: |
           set -euo pipefail
-          rm -rf published oldscan
-          mkdir -p published oldscan
-          git fetch origin tmp-se-server-browser-result-20260824
-          git archive origin/tmp-se-server-browser-result-20260824 tmp-se-server-browser | tar -x -C oldscan
-
+          rm -rf published
+          mkdir published
+          python3 -m pip install --quiet aiohttp
           python3 - <<'PY'
-          import json, pathlib, re, urllib.request, traceback, time
-          root = pathlib.Path('oldscan/tmp-se-server-browser')
-          out = pathlib.Path('published')
+          import asyncio, aiohttp, json, pathlib, time
+
+          START, END = 1261400, 1263900
+          CONCURRENCY = 16
+          BASE = 'https://multiplayer.factorio.com/get-game-details/'
           targets = [
               '纯粹的se',
-              'Crossworld Gaming Space Exploration',
-              'Connavar game 1',
-              'Amogus Inc.',
-              'The Smelly Factory - Season 15 - K2SE',
+              'crossworld gaming space exploration',
+              'connavar game 1',
+              'amogus inc.',
+              'the smelly factory - season 15 - k2se',
           ]
-          target_lowers = [t.lower() for t in targets]
-          matches = []
-          file_hits = []
-
-          def contains_target(obj):
-              try:
-                  s = json.dumps(obj, ensure_ascii=False).lower()
-              except Exception:
-                  s = str(obj).lower()
-              return any(t in s for t in target_lowers)
-
-          def walk(obj, path, source):
-              if isinstance(obj, dict):
-                  if contains_target(obj):
-                      # Keep likely record dicts, not every ancestor container.
-                      keys = {str(k).lower() for k in obj}
-                      if keys & {'game_id','name','server_id','host_address','description','title'}:
-                          matches.append({'source': source, 'path': path, 'record': obj})
-                  for k, v in obj.items():
-                      walk(v, path + [str(k)], source)
-              elif isinstance(obj, list):
-                  for i, v in enumerate(obj):
-                      walk(v, path + [str(i)], source)
-
-          for p in root.rglob('*'):
-              if not p.is_file() or p.stat().st_size > 100_000_000:
-                  continue
-              try:
-                  raw = p.read_bytes()
-              except Exception:
-                  continue
-              text = raw.decode('utf-8', 'replace')
-              low = text.lower()
-              hit_targets = [targets[i] for i,t in enumerate(target_lowers) if t in low]
-              if hit_targets:
-                  contexts = []
-                  for target in hit_targets:
-                      idx = low.find(target.lower())
-                      contexts.append(text[max(0,idx-1000):idx+3000])
-                  file_hits.append({
-                      'file': str(p.relative_to(root)),
-                      'size': p.stat().st_size,
-                      'targets': hit_targets,
-                      'contexts': contexts,
-                      'server_paths': sorted(set(re.findall(r'/server/(\d+)', text))),
-                      'game_ids': sorted(set(re.findall(r'"game_id"\s*:\s*(\d+)', text))),
-                  })
-              if p.suffix.lower() == '.json':
-                  try:
-                      walk(json.loads(text), [], str(p.relative_to(root)))
-                  except Exception:
-                      pass
-
-          # Deduplicate candidate record dicts by serialized content.
-          seen = set(); unique = []
-          for m in matches:
-              key = json.dumps(m['record'], ensure_ascii=False, sort_keys=True, default=str)
-              if key not in seen:
-                  seen.add(key); unique.append(m)
-
-          ids = set()
-          for m in unique:
-              r = m['record']
-              for key in ('game_id','id'):
-                  val = r.get(key) if isinstance(r, dict) else None
-                  if isinstance(val, int) or (isinstance(val, str) and val.isdigit()):
-                      ids.add(int(val))
-          for h in file_hits:
-              ids.update(int(x) for x in h['server_paths'])
-              ids.update(int(x) for x in h['game_ids'])
-
-          def get_json(url):
-              req = urllib.request.Request(url, headers={'User-Agent':'Mozilla/5.0 JJ-SE-save-research/1.0','Accept':'application/json,*/*'})
-              with urllib.request.urlopen(req, timeout=30) as r:
-                  return json.loads(r.read())
-
-          live = []
+          sem = asyncio.Semaphore(CONCURRENCY)
+          valid = []
+          se_servers = []
+          target_matches = []
+          status_counts = {}
           errors = []
-          for gid in sorted(ids):
-              try:
-                  d = get_json(f'https://multiplayer.factorio.com/get-game-details/{gid}')
-                  d['_queried_game_id'] = gid
-                  live.append(d)
-              except Exception as e:
-                  errors.append({'game_id':gid,'error':repr(e)})
-              time.sleep(0.1)
 
-          out.joinpath('old-record-matches.json').write_text(json.dumps(unique, ensure_ascii=False, indent=2, default=str))
-          out.joinpath('file-hits.json').write_text(json.dumps(file_hits, ensure_ascii=False, indent=2))
-          out.joinpath('live-details.json').write_text(json.dumps(live, ensure_ascii=False, indent=2))
-          out.joinpath('live-errors.json').write_text(json.dumps(errors, ensure_ascii=False, indent=2))
+          async def one(session, gid):
+              async with sem:
+                  try:
+                      async with session.get(BASE + str(gid), timeout=aiohttp.ClientTimeout(total=12)) as r:
+                          status_counts[str(r.status)] = status_counts.get(str(r.status), 0) + 1
+                          if r.status != 200:
+                              return
+                          raw = await r.read()
+                          try:
+                              d = json.loads(raw)
+                          except Exception:
+                              return
+                          if not isinstance(d, dict) or not d.get('name'):
+                              return
+                          d['_queried_game_id'] = gid
+                          valid.append(d)
+                          name = str(d.get('name','')).lower()
+                          desc = str(d.get('description','')).lower()
+                          mods = d.get('mods') or []
+                          md = {str(m.get('name','')).lower():str(m.get('version','')) for m in mods if isinstance(m,dict)}
+                          se = md.get('space-exploration')
+                          if se and se.startswith('0.7'):
+                              rec = {
+                                  'game_id': d.get('game_id') or gid,
+                                  'name': d.get('name'),
+                                  'description': d.get('description'),
+                                  'host_address': d.get('host_address'),
+                                  'has_password': d.get('has_password'),
+                                  'players': d.get('players'),
+                                  'max_players': d.get('max_players'),
+                                  'game_time_elapsed': d.get('game_time_elapsed'),
+                                  'application_version': d.get('application_version'),
+                                  'space_exploration': se,
+                                  'krastorio2': md.get('krastorio2'),
+                                  'mod_count': len(mods),
+                                  'mods': mods,
+                              }
+                              se_servers.append(rec)
+                          if any(t in name or t in desc for t in targets):
+                              target_matches.append(d)
+                  except Exception as e:
+                      if len(errors) < 200:
+                          errors.append({'game_id':gid,'error':repr(e)})
 
-          lines = [
-              f'OLD_RECORD_MATCHES: {len(unique)}',
-              f'FILES_WITH_TARGET_TEXT: {len(file_hits)}',
-              f'EXTRACTED_GAME_IDS: {sorted(ids)}',
-              f'LIVE_DETAILS: {len(live)}',
-              f'LIVE_ERRORS: {len(errors)}',
+          async def main():
+              connector = aiohttp.TCPConnector(limit=CONCURRENCY, ttl_dns_cache=300)
+              headers={'User-Agent':'JJ-SE-save-research/1.0','Accept':'application/json,*/*'}
+              async with aiohttp.ClientSession(connector=connector, headers=headers) as session:
+                  for base in range(START, END + 1, 200):
+                      await asyncio.gather(*(one(session,g) for g in range(base, min(base+200, END+1))))
+                      await asyncio.sleep(0.25)
+
+          started=time.time()
+          asyncio.run(main())
+          elapsed=time.time()-started
+          out=pathlib.Path('published')
+          out.joinpath('se-servers.json').write_text(json.dumps(sorted(se_servers,key=lambda x:int(x['game_id'])),ensure_ascii=False,indent=2))
+          out.joinpath('target-matches.json').write_text(json.dumps(target_matches,ensure_ascii=False,indent=2))
+          out.joinpath('errors.json').write_text(json.dumps(errors,ensure_ascii=False,indent=2))
+          summary=[
+              f'RANGE: {START}-{END}',
+              f'ELAPSED_SECONDS: {elapsed:.1f}',
+              f'STATUS_COUNTS: {status_counts}',
+              f'VALID_CURRENT_GAMES: {len(valid)}',
+              f'SE_0_7_SERVERS: {len(se_servers)}',
+              f'TARGET_MATCHES: {len(target_matches)}',
               '',
           ]
-          for m in unique:
-              r=m['record']
-              lines.append(f"OLD: source={m['source']} path={'/'.join(m['path'])} name={r.get('name') or r.get('title')} game_id={r.get('game_id')} host={r.get('host_address')} password={r.get('has_password')} time={r.get('game_time_elapsed')} mods={r.get('mod_count')}")
-          lines.append('')
-          for d in live:
-              mods=d.get('mods') or []
-              md={str(m.get('name','')).lower():m.get('version') for m in mods}
-              lines.append(f"LIVE: name={d.get('name')} game_id={d.get('game_id') or d.get('_queried_game_id')} host={d.get('host_address')} password={d.get('has_password')} ticks={d.get('game_time_elapsed')} SE={md.get('space-exploration')} K2={md.get('krastorio2')} mods={len(mods)}")
-          out.joinpath('SUMMARY.txt').write_text('\n'.join(lines))
-          print('\n'.join(lines))
+          for s in sorted(se_servers,key=lambda x:int(x['game_id'])):
+              summary.append(
+                  f"SE: id={s['game_id']} name={s['name']} host={s['host_address']} password={s['has_password']} elapsed={s['game_time_elapsed']} SE={s['space_exploration']} K2={s['krastorio2']} mods={s['mod_count']} players={s['players']} desc={s['description']}"
+              )
+          summary.append('')
+          for d in target_matches:
+              summary.append(f"TARGET: id={d.get('game_id') or d.get('_queried_game_id')} name={d.get('name')} host={d.get('host_address')} password={d.get('has_password')}")
+          out.joinpath('SUMMARY.txt').write_text('\n'.join(summary))
+          print('\n'.join(summary))
           PY
 
       - name: Publish results
@@ -160,9 +132,9 @@ jobs:
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git checkout -B "$RESULT_BRANCH"
-          rm -rf tmp-se-exact-server-records
-          mkdir tmp-se-exact-server-records
-          cp -a published/. tmp-se-exact-server-records/
-          git add -f tmp-se-exact-server-records
-          git commit --allow-empty -m 'Extract exact Space Exploration server records'
+          rm -rf tmp-se-game-id-range
+          mkdir tmp-se-game-id-range
+          cp -a published/. tmp-se-game-id-range/
+          git add -f tmp-se-game-id-range
+          git commit --allow-empty -m 'Scan current Factorio game IDs for SE 0.7 servers'
           git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
