@@ -1,0 +1,15 @@
+SE videos inspected: 251
+Videos with real file-host/download links: 1
+Explicit SE 0.7 rows: 0
+Unknown-version rows: 0
+
+DOWNLOAD CANDIDATES
+========================================================================================================================
+SCORE -5 | version=old-factorio | save_words=True | stage=True | late=0 | Nilaus | Factorio 0.17 Space Exploration #79 ROCKET LAUNCH FACILITY
+https://www.youtube.com/watch?v=V1yzFLIkIdc
+Links:
+  https://drive.google.com/open?id=1m1f...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEFUMTVnSDJHeTdCcnJPaFZnYmdRNHxBR3JiS2FsVHM2REV3alBpb3NuZnc5LTBlbW5ZX1htcGM1WXJHZXQ1QkxEWkhsR1B3RWpDbWQwVnZmNEczWWIwdjRYRmlTUUphUWlWOHBXWlh5MmdoczZTbTlhWmgybjRNWDJt&q=https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D1m1f1hIVSwRv1E7yniFv0uSomco264_5S&v=V1yzFLIkIdc
+  https://drive.google.com/file/d/1m1f1hIVSwRv1E7yniFv0uSomco264_5S/view
+Contexts:
+  Streaming schedule: Monday or Tuesday at [20:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1200s) CEST and Thursday at [20:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1200s). Schedule for the coming week: [/events](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFFCcmo3SWlsYk4zRkplOW5td3ZDX3xBR3JiS2Ftem5YcGNQbHNtSkNiSDBtYXVlSnF5eVQ2Q0dya0hMdDZnenJtQVRWY0JNcXh4ZGtleUlCR05LU3JQS1JPNk05Tlo0SjZmNm9xZTIxWDkycVpRS2NuN0FaN0dPbE9x&q=https%3A%2F%2Fwww.twitch.tv%2Fnilaus%2Fevents&v=V1yzFLIkIdc) VOD schedule: A new episode will be released every day at [18:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1080s) CEST Map Exchange string: [https://nilaus.atlassian.net/wiki/spa...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUN3WXg2UEloclR6cm1VOHVLZGhzeXxBR3JiS2FsSUQ3S3F6U3Y4dUx0NUZxTTh2Z0RoRXVWZ01XY2lxSC05ems0UkVjS3BRTzJWdUhsVkU5S054SW9LMU1tMHNiMzIteHdrRGo5ODVLODV2MjVVTWRLaXo0VDVpQk5X&q=https%3A%2F%2Fnilaus.atlassian.net%2Fwiki%2Fspaces%2FPM%2Fpages%2F1062764568%2FFactorio%2BS28%2B-%2BSpace%2BExploration&v=V1yzFLIkIdc) Mods: [https://drive.google.com/open?id=1m1f...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEFUMTVnSDJHeTdCcnJPaFZnYmdRNHxBR3JiS2FsVHM2REV3alBpb3NuZnc5LTBlbW5ZX1htcGM1WXJHZXQ1QkxEWkhsR1B3RWpDbWQwVnZmNEczWWIwdjRYRmlTUUphUWlWOHBXWlh5MmdoczZTbTlhWmgybjRNWDJt&q=https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D1m1f1hIVSwRv1E7yniFv0uSomco264_5S&v=V1yzFLIkIdc) Website: [http://nilaus.tv](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVGR6dWpBb2NkV3
+
