@@ -1,0 +1,800 @@
+Branches indexed: 43
+Files indexed: 5464
+Text files read: 1194
+Unique URLs: 10256
+Unique Google Drive IDs: 613
+Archive entries committed in result branches: 0
+Errors: 0
+
+ARCHIVE ENTRIES
+====================================================================================================
+
+GOOGLE DRIVE IDS
+====================================================================================================
+13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl	occurrences=21
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:18501      "comment": "https://youtu.be/b3l5yWV_I90\r\n\r\nAntis blueprints: https://drive.google.com/file/d/13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl/view\r\nsave: https://www.speedrun.com/resourceasset/bd5c9",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:18508        "https://drive.google.com/file/d/13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:18512        "https://drive.google.com/file/d/13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19029      "comment": "Antis blueprints: https://drive.google.com/file/d/13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl/view\r\nsave: https://www.speedrun.com/resourceasset/ndukn",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19034        "https://drive.google.com/file/d/13BBX0_MQKrB7O6HQ19fB8nD1I2KEC-Jl/view",
+1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf	occurrences=15
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26777      "comment": "Save file: https://drive.google.com/file/d/16_q_ZqACe-TlZhG6PM7_lEi6RDjkkn8h/view?usp=sharing\r\nNotes export: https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26783        "https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26787        "https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28156      "comment": "Savegame: https://drive.google.com/file/d/17yvtuLMa5ZxEbAdjx8blS6xu-d345UBV/view?usp=sharing\r\nNotes: https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28162        "https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing"
+1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq	occurrences=10
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/SUMMARY.txt:13    https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/SUMMARY.txt:103  https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/console.txt:13    https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/console.txt:103  https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/matches.json:36        "https://drive.google.com/file/d/1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq/view?usp=drive_link",
+1nMip4ceTgxMbiR745H40FauzEmLFWP6R	occurrences=10
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/SUMMARY.txt:156    https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/SUMMARY.txt:223  https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/console.txt:156    https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/console.txt:223  https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+  tmp-se-asterixyz-modportal-result-20260824:tmp-se-asterixyz-modportal/matches.json:97        "https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link",
+1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw	occurrences=9
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22637      "comment": "Antis blueprints: https://drive.google.com/file/d/1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw/view?usp=sharing\r\nsave: https://www.speedrun.com/resourceasset/1euc7",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22642        "https://drive.google.com/file/d/1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22646        "https://drive.google.com/file/d/1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22926      "comment": "Antis blueprints: https://drive.google.com/file/d/1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw/view?usp=sharing\r\nsave: https://www.speedrun.com/resourceasset/kazlr",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22931        "https://drive.google.com/file/d/1lQqxwDjGcuNh69eZ3bRwZqtY6IiFScrw/view?usp=sharing",
+1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11601      "comment": "Got a decent run. Split a full second late because I stopped paying attention to the research lmao.\n\nSave: [https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing](https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCU
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11601      "comment": "Got a decent run. Split a full second late because I stopped paying attention to the research lmao.\n\nSave: [https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing](https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCU
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11606        "https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11607        "https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11610        "https://drive.google.com/file/d/1-EsNyvusHuJw0zdv9ugB9pd8h_mo-Ki7/view?usp=sharing",
+13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11552      "comment": "[https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing](https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQOor/tB/kdYxNDqljCkNv
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11552      "comment": "[https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing](https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQOor/tB/kdYxNDqljCkNv
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11557        "https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11558        "https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11561        "https://drive.google.com/file/d/13LerVz_Y4i2ENbd5t7uielCnnOzd8CQa/view?usp=sharing",
+13iqcO608AbRZsHECq2H18ddIftGsVo04	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59430      "comment": "This is my first run. Thank you to everyone who supported me and helped me with the drawings. I plan to run for 8 hours in 2026.\n\nSave: https://drive.google.com/file/d/13iqcO608AbRZsHECq2H18ddIftGsVo04/view?usp=sharing\n\n---\n\n\u042d\u0442\u043e\u0439 \u043c\u043e\u0439 \u043f\u0435\u0440\u0432\u044b\u0439 run. \u0412\u0441\u0435\u043c \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u043a\u0442\u043e \u043c\u0435\u043d\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59430      "comment": "This is my first run. Thank you to everyone who supported me and helped me with the drawings. I plan to run for 8 hours in 2026.\n\nSave: https://drive.google.com/file/d/13iqcO608AbRZsHECq2H18ddIftGsVo04/view?usp=sharing\n\n---\n\n\u042d\u0442\u043e\u0439 \u043c\u043e\u0439 \u043f\u0435\u0440\u0432\u044b\u0439 run. \u0412\u0441\u0435\u043c \u0441\u043f\u0430\u0441\u0438\u0431\u043e \u043a\u0442\u043e \u043c\u0435\u043d\u044f \u043f\u043e\u0434\u0434\u0435\u0440\u0436\u0438\u0432\
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59435        "https://drive.google.com/file/d/13iqcO608AbRZsHECq2H18ddIftGsVo04/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59436        "https://drive.google.com/file/d/13iqcO608AbRZsHECq2H18ddIftGsVo04/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59439        "https://drive.google.com/file/d/13iqcO608AbRZsHECq2H18ddIftGsVo04/view?usp=sharing",
+159uvXRp_O6OkHlH5v4u0CUB83klK3qVB	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10389      "comment": "Savegame: [https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link](https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10389      "comment": "Savegame: [https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link](https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10394        "https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10395        "https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10398        "https://drive.google.com/file/d/159uvXRp_O6OkHlH5v4u0CUB83klK3qVB/view?usp=drive_link",
+164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16326      "comment": "An 11 minute PB! I need to work a lot on the first 30 minutes and first 90 minutes. Getting better though.\n\nCopy of the save: [https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing](https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing)\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16326      "comment": "An 11 minute PB! I need to work a lot on the first 30 minutes and first 90 minutes. Getting better though.\n\nCopy of the save: [https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing](https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing)\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16331        "https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16332        "https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16335        "https://drive.google.com/file/d/164hin5S_ZenVXZuwnFqNv_YqDgfFGgfq/view?usp=sharing",
+16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3988      "comment": "a little silly\n\n[https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link](https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3988      "comment": "a little silly\n\n[https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link](https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3993        "https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3994        "https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3997        "https://drive.google.com/file/d/16CVYaRWeLL18OvNWdsz9CEtgoHzBsUfS/view?usp=drive_link",
+1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61858      "comment": "https://drive.google.com/file/d/1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61863        "https://drive.google.com/file/d/1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61866        "https://drive.google.com/file/d/1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:62007      "comment": "https://drive.google.com/file/d/1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:62012        "https://drive.google.com/file/d/1B8Okfe9vdXX-bGJMpHIrEtI_D0ocTvvs/view?usp=sharing"
+1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6324      "comment": "run starts at 6:22\n\nsave: [https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link](https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6324      "comment": "run starts at 6:22\n\nsave: [https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link](https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6329        "https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6330        "https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6333        "https://drive.google.com/file/d/1G42efwBXvE8K0HXfcSqit6CZ7yaCd4YP/view?usp=drive_link",
+1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6373      "comment": "save: [https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link](https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6373      "comment": "save: [https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link](https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6378        "https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6379        "https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6382        "https://drive.google.com/file/d/1KMhmKyWnOGklkPXrO6DNUUZ81Cu9z8zu/view?usp=drive_link",
+1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24687      "comment": "https://drive.google.com/file/d/1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9/view?usp=share_link\r\n\r\nhttps://www.twitch.tv/videos/1653158602",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24693        "https://drive.google.com/file/d/1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9/view?usp=share_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24697        "https://drive.google.com/file/d/1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9/view?usp=share_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25209      "comment": "https://drive.google.com/file/d/1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9/view?usp=share_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25214        "https://drive.google.com/file/d/1KZqeAzWrskUczafgb6KTEgI0ZQnjskw9/view?usp=share_link"
+1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11456      "comment": "Sweet run.\n\n[https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing](https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQOor/tB
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11456      "comment": "Sweet run.\n\n[https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing](https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQOor/tB
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11461        "https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11462        "https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11465        "https://drive.google.com/file/d/1K_bflIyg0vFsKzN85c0uWgGeKwJB59nd/view?usp=sharing",
+1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5945      "comment": "Save & Replay - [https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing](https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5945      "comment": "Save & Replay - [https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing](https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5950        "https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5951        "https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5954        "https://drive.google.com/file/d/1LAxUh8uWolDFmFAUo7ptMAwTBYma55BG/view?usp=sharing",
+1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23321      "comment": "Huge iprovement from 3:21:08\r\nSave:\r\nhttps://drive.google.com/file/d/1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23326        "https://drive.google.com/file/d/1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23329        "https://drive.google.com/file/d/1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23512      "comment": "Save: https://drive.google.com/file/d/1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23517        "https://drive.google.com/file/d/1LI0GLozDqwzgk3geBn3ZA-iWDpVRK1wb/view?usp=sharing"
+1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9347      "comment": "Found a few seconds in steel.\n\n[https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing](https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0Bz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9347      "comment": "Found a few seconds in steel.\n\n[https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing](https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0Bz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9352        "https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9353        "https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9356        "https://drive.google.com/file/d/1LztRHQSnUh9GFKW5q33CDGWKZooV4ND3/view?usp=sharing",
+1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11792      "comment": "Sub 10 and in style. Split a bit late.\n\nSave: [https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing](https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6blhTdXObPq23VAdupITZ\n1p+0XVaNc4d7gNi5eApf0o31sE+ZAYD
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11792      "comment": "Sub 10 and in style. Split a bit late.\n\nSave: [https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing](https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6blhTdXObPq23VAdupITZ\n1p+0XVaNc4d7gNi5eApf0o31sE+ZAYD
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11797        "https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11798        "https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11801        "https://drive.google.com/file/d/1MBcos6fnEIU-_qH1EtVt7kTUco7Mu--z/view?usp=sharing",
+1OHG6McFTJTbZh6-j77D_3Wv0CeXfGovY	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60227      "comment": "Run from approximately 0:04:55 till 7:32:56 makes it a time of 7:28:01 (ingame time 5:36:34). The only real problems this run was getting low on LDS for some reason, which caused around 15 minutes to be lost when leaving for Aquilo.\n\nMy potato pc really had trouble playing and recording at the same time, which killed UPS for half of the run. You should not watch the video. It is terrible gameplay, but uploaded to help the category grow. It was fun learning it though, and you sh
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60234        "https://drive.google.com/file/d/1OHG6McFTJTbZh6-j77D_3Wv0CeXfGovY/view?pli=1",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60238        "https://drive.google.com/file/d/1OHG6McFTJTbZh6-j77D_3Wv0CeXfGovY/view?pli=1",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60602      "comment": "Run from approximately 0:00:51 till 8:21:51 makes it a time of 8:21:00 (ingame time 6:31:44).\nMy potato pc really had trouble playing and recording at the same time, which killed UPS half of the run. The audio also gets progressively desynced during the video. You should not watch the video, it is terrible gameplay and quality, but uploaded to help the category grow. It was fun learning it though and you should try it yourself as well!\n\nThis speedrun was made possible with the
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60609        "https://drive.google.com/file/d/1OHG6McFTJTbZh6-j77D_3Wv0CeXfGovY/view?pli=1",
+1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10799      "comment": "Savefile: [https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing](https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10799      "comment": "Savefile: [https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing](https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10804        "https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10805        "https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10808        "https://drive.google.com/file/d/1Qb96A7GJuOW-GLaHvMm7ELD_001148Kq/view?usp=sharing",
+1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9774      "comment": "It's honest work\n\n[https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing](https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9774      "comment": "It's honest work\n\n[https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing](https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9779        "https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9780        "https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9783        "https://drive.google.com/file/d/1RZO3D7ZwDmXdNzBgv-KoKVbyGUoozd7L/view?usp=sharing",
+1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8974      "comment": "Mod Retimed:\n\n0h 8m 31s 150ms\n\nTime starts at 4.000 and ends at 515.150 at 60 fps to get a final time of 0h 8m 31s 150ms. Retimed using yt-frame-timer\n\nFirst run of the day, I'd say this was a pretty good warmup.\n\n[https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing](https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3Sou
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8974      "comment": "Mod Retimed:\n\n0h 8m 31s 150ms\n\nTime starts at 4.000 and ends at 515.150 at 60 fps to get a final time of 0h 8m 31s 150ms. Retimed using yt-frame-timer\n\nFirst run of the day, I'd say this was a pretty good warmup.\n\n[https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing](https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3Sou
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8979        "https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8980        "https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8983        "https://drive.google.com/file/d/1SrwNKsUNrVy92fNDlb5JH0O2_wPtApFD/view?usp=sharing",
+1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12975      "comment": "First submission! Bit on the longer side compared to other runs nowadays but I'm quite happy to break the 2:30 barrier. I also felt like I was having some fps issues but the recording looks smooth, so I don't know what's going on.\n\nSave: [https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing](https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing)\n\nMap string:\n\n```\n>>>eNp9U79LHEEUnlEPVwPB4ooEYrziSCSwy6KmOcLNJI34Z+ztz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12975      "comment": "First submission! Bit on the longer side compared to other runs nowadays but I'm quite happy to break the 2:30 barrier. I also felt like I was having some fps issues but the recording looks smooth, so I don't know what's going on.\n\nSave: [https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing](https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing)\n\nMap string:\n\n```\n>>>eNp9U79LHEEUnlEPVwPB4ooEYrziSCSwy6KmOcLNJI34Z+ztz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12980        "https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12981        "https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12984        "https://drive.google.com/file/d/1UN_1Ccexyj-nXlhHMNRB2ag3P0FLgKSa/view?usp=sharing",
+1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15743      "comment": "Credit to Warger for BP and guide.\n\nReplay: [https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link](https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link)\n\nBP: [https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing](https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15743      "comment": "Credit to Warger for BP and guide.\n\nReplay: [https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link](https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link)\n\nBP: [https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing](https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15750        "https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15751        "https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15756        "https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing",
+1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11220      "comment": "Sub-9 finally, and in style! \n\n[https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing](https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0Bz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11220      "comment": "Sub-9 finally, and in style! \n\n[https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing](https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0Bz
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11225        "https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11226        "https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11229        "https://drive.google.com/file/d/1XjDvFIPDDHdqpMUrPb_1C7fMz-9lZZzy/view?usp=sharing",
+1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1198      "comment": "Save file: https://drive.google.com/file/d/1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ/view?usp=drive_link\n\nRun is from 00:07 to 58:46 of video, for a run length of 58:39.\n\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1203        "https://drive.google.com/file/d/1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1206        "https://drive.google.com/file/d/1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1246      "comment": "Save file: https://drive.google.com/file/d/1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ/view?usp=drive_link\n\nRun is from 00:09 to 59:42 of video.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1251        "https://drive.google.com/file/d/1a7fUAxcnOd5bY_8_KQ5Cb7AK_7FbZRpJ/view?usp=drive_link"
+1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5896      "comment": ":3\n\nReplay: [https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing](https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5896      "comment": ":3\n\nReplay: [https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing](https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5901        "https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5902        "https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5905        "https://drive.google.com/file/d/1cPy9ex4kWRP4F3ghWlP_m_AXZN612jaf/view?usp=sharing",
+1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10523      "comment": "Savegame: [https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link](https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10523      "comment": "Savegame: [https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link](https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10528        "https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10529        "https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10532        "https://drive.google.com/file/d/1cQVCo92BRXnZKKntb0Yj8DiJmkaUeBqr/view?usp=drive_link",
+1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9873      "comment": "That's more like it!\n\n[https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing](https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9873      "comment": "That's more like it!\n\n[https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing](https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9878        "https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9879        "https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9882        "https://drive.google.com/file/d/1fIYwSVvU76Jr0ooub86UNokvAH_3pSLU/view?usp=sharing",
+1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11171      "comment": "Did not see this one coming so soon. \n\n[https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing](https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQd
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11171      "comment": "Did not see this one coming so soon. \n\n[https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing](https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQd
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11176        "https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11177        "https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11180        "https://drive.google.com/file/d/1hAB_gt2f9wuzzdaGSZCjL4cF3-bdMZRu/view?usp=sharing",
+1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11841      "comment": "I keep choking hard at steel but I feel both early game and late game are slowly improving.\n\nSave: [https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing](https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11841      "comment": "I keep choking hard at steel but I feel both early game and late game are slowly improving.\n\nSave: [https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing](https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11846        "https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11847        "https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11850        "https://drive.google.com/file/d/1mG4LeUB1tEoOZmoTLRvO9VGsFFXMDKe7/view?usp=sharing",
+1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61393      "comment": "https://drive.google.com/file/d/1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61398        "https://drive.google.com/file/d/1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61401        "https://drive.google.com/file/d/1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61715      "comment": "https://drive.google.com/file/d/1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61720        "https://drive.google.com/file/d/1mKhL7Kz87t_jHazuR7RWxa54wSYNo3rD/view?usp=drive_link"
+1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22310      "comment": "Save: https://drive.google.com/file/d/1NJ6LHqoc-_H39OCneHINO2vRfr9c2e4C/view?usp=share_link\r\n\r\nBP: https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view\r\n\r\nI did a run the day before that was green at 5m chips, but it died to missclicking the supply train and it blocked uranium train and power died. I had decided to not do more runs, but the next day I remembered that Warger used a simple request BP for the supply train, so I made the change and decided l
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22316        "https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22320        "https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22540      "comment": "Save File: https://drive.google.com/file/d/10yRqDwSI7dijhsVU61F9In48NZn5ALMb/view?usp=share_link\r\n\r\nBlueprints: Anti's: https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view\r\n- I use a custom base 0 mostly for more science which I think is definitely worth doing. Also a few minor changes to the first main base bp that aren't important.\r\n\r\nMap: Early game was kind of bad, mid/late game was good, especially the right side which was beautiful.\r\n\r\nMista
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22546        "https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view"
+1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12115      "comment": "Tried following Zaspar's WR to the best of my ability. Split half a second too late and thought it was 10:48.67. mpv.net inspection said the time was 10:48.232.\n\nSave: [https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link](https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link)\n\nMapstring:\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDi
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12115      "comment": "Tried following Zaspar's WR to the best of my ability. Split half a second too late and thought it was 10:48.67. mpv.net inspection said the time was 10:48.232.\n\nSave: [https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link](https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link)\n\nMapstring:\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDi
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12120        "https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12121        "https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12124        "https://drive.google.com/file/d/1o2kFSWeNpBkui4WmtXxBuDr483CjYMAW/view?usp=drive_link",
+1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59336      "comment": "Save file: https://drive.google.com/file/d/1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M/view?usp=drive_link\n\nRun starts at 00:01:13 and ends at 5:46:37, for a run length of 5:45:24\n\nThe improvements are primarily the result of two BP changes:\n\n- Blocked yellow science from stealing LDS and/or blue chips if silos or exports needs them. This makes loading rockets a lot faster early and also means fewer ships waiting for blue chips.\n- Belting science packs to lab print before logistics.
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59341        "https://drive.google.com/file/d/1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59344        "https://drive.google.com/file/d/1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59528      "comment": "Save file: https://drive.google.com/file/d/1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M/view?usp=drive_link\n\n\nRun starts at 00:01:07 and ends at 5:58:09 of video, with a short break from 4:25:38 to 4:32:01, for a run length of 5:57:02 - 0:06:23 = 5:50:39.\n\nImproved my previous PB by 7 min, despite a mediocre early game. I've been having a lot of large (5-8min) Nauvis green splits recently that lose significant time in later planets recently, particularly Fulgora. This run, I made a pla
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:59533        "https://drive.google.com/file/d/1q5CD0nyvE5jJ9_7FWCE-InFLvYy5pg7M/view?usp=drive_link"
+1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10072      "comment": "The classic scuffed 1s PB\n\nSave: [https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing](https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10072      "comment": "The classic scuffed 1s PB\n\nSave: [https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing](https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing)\n\n```\n>>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10077        "https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10078        "https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10081        "https://drive.google.com/file/d/1qI2PKkgtVpg90IwPSRR49HU4R9C7_onD/view?usp=sharing",
+1qiYNI4KliR9LEkPFQvseQLYueSW440xF	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9023      "comment": "Disaster but PB\n\n[https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing](https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing)\n\n```\n >>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9023      "comment": "Disaster but PB\n\n[https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing](https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing)\n\n```\n >>>eNp9Ub9Lw1AQvmcM1grSoYsg2qGTUMHqKH0nDuKf0aavEGmTkraD\nOlhEnAS3gi46K7i7FVwUFAUX3SouDg6C4lrfJbmklOJH3t29736/CBC\nwBT66SCcxbrnFKt8A2pi03HpdeTnXUwCoKfDpSctrlVXOtauXFwsFKk\nA6qRxV286Vig3FtA6WCdtznaBCUJS02Wi6TlgzaGc2PaUaQYeupMSpl\nld07FaNcgf7gFjaf8x39I1Ofw8y/T4dbfU0QQdEmyKF0BzDtKp2pQKQ\nWQ
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9028        "https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9029        "https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9032        "https://drive.google.com/file/d/1qiYNI4KliR9LEkPFQvseQLYueSW440xF/view?usp=sharing",
+1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6183      "comment": "Save & Replay - [https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5](https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6183      "comment": "Save & Replay - [https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5](https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6188        "https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6189        "https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6192        "https://drive.google.com/file/d/1qsBobAFDj87wDKfzMf912kLYo1Uhb1i5",
+1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29896      "comment": "save file: https://drive.google.com/file/d/1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29901        "https://drive.google.com/file/d/1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29904        "https://drive.google.com/file/d/1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30337      "comment": "I'm happy with the time, 1.5h improvement compared to the  previous one :)\r\n\r\nSave game: https://drive.google.com/file/d/1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30342        "https://drive.google.com/file/d/1r2xYYd_UBwSMiMW7MHawyBOFMCTmPnkU/view?usp=sharing"
+1sMjgXsWG45MACps4jg8Gslw7jsfN835t	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9922      "comment": "Savegame: [https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link](https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9922      "comment": "Savegame: [https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link](https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9927        "https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9928        "https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9931        "https://drive.google.com/file/d/1sMjgXsWG45MACps4jg8Gslw7jsfN835t/view?usp=drive_link",
+1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6134      "comment": "timer started late :3\n\nsave: [https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link](https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6134      "comment": "timer started late :3\n\nsave: [https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link](https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6139        "https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6140        "https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6143        "https://drive.google.com/file/d/1ud4_y-r19WtXiAkMz6kDj8new89Qvwt3/view?usp=drive_link",
+1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15743      "comment": "Credit to Warger for BP and guide.\n\nReplay: [https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link](https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link)\n\nBP: [https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing](https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15743      "comment": "Credit to Warger for BP and guide.\n\nReplay: [https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link](https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link)\n\nBP: [https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing](https://drive.google.com/file/d/1Wb1NhX9LSqR7XKvwrnUFURWL-vUM2j7Y/view?usp=sharing)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15748        "https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15749        "https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15754        "https://drive.google.com/file/d/1vZcsGCSRaEdU-qkW7AdDPal9KXvz_k9R/view?usp=drive_link",
+1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11890      "comment": "Changed my setup, I'm still getting used to it, but got a pretty good run anyway.\n\nSave: [https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing](https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6blhTdXObPq
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11890      "comment": "Changed my setup, I'm still getting used to it, but got a pretty good run anyway.\n\nSave: [https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing](https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing)\n\n```\n>>>eNp9UT1LA0EQnfU8jBEkRRpBNEUqIYLRUrIjFuLPSC4XOEjuwiUp\n1MIgNoJgJ5hGawV7u4CNgqJgZRexsbAIKFrGmdvbuxCCAzP79s33rgA\nBDilJF1kTk5ZXrOobQBuTllev237O820AJAoCetryW2U75znVq8ulAh\nfgM2m7dm0nVyo2bE1TsEw4vueqCqoon2aj6blhTdXObPq
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11895        "https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11896        "https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11899        "https://drive.google.com/file/d/1wIJJZXRuM-G9_kqdVkmLRHvV4meslLy_/view?usp=sharing",
+1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo	occurrences=6
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9823      "comment": "Savegame: [https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link](https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link)\n\nTimer seemed to pause at 2:24:25. Used YouTube Frame Timer to confirm total run time: Time starts at 27.250 and ends at 17798.033 at 60 fps to get a final time of 4h 56m 10s 783ms. Retimed using [yt-frame-timer](https://slashinfty.github.io/yt-frame-timer)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9823      "comment": "Savegame: [https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link](https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link)\n\nTimer seemed to pause at 2:24:25. Used YouTube Frame Timer to confirm total run time: Time starts at 27.250 and ends at 17798.033 at 60 fps to get a final time of 4h 56m 10s 783ms. Retimed using [yt-frame-timer](https://slashinfty.github.io/yt-frame-timer)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9828        "https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9829        "https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9833        "https://drive.google.com/file/d/1x45a4okG_ZdAVS1vCqZVbEqRczcBlBUo/view?usp=drive_link",
+1TyC2nNxm_dDc8ANFEP8gfUmwjbCIQ6l0	occurrences=4
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6570      "comment": "**Savegame**: https://drive.google.com/file/d/1PSHs21DCkdHolwj-gzPtDesR6uCTurUp/\n\n**Video**: https://drive.google.com/file/d/1TyC2nNxm_dDc8ANFEP8gfUmwjbCIQ6l0/",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6572        "https://drive.google.com/file/d/1TyC2nNxm_dDc8ANFEP8gfUmwjbCIQ6l0/"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6576        "https://drive.google.com/file/d/1TyC2nNxm_dDc8ANFEP8gfUmwjbCIQ6l0/"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6580        "https://drive.google.com/file/d/1TyC2nNxm_dDc8ANFEP8gfUmwjbCIQ6l0/"
+1tlx8cUWSE-E4E88S62WJ0PgmhXUlV_I3	occurrences=4
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6521      "comment": "**Video**: https://drive.google.com/file/d/1tlx8cUWSE-E4E88S62WJ0PgmhXUlV_I3/\n\n**Savegame**: https://drive.google.com/file/d/1Uy0W7tGVDO34Zcrqj0aXoEaVkeIv1KlC/",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6523        "https://drive.google.com/file/d/1tlx8cUWSE-E4E88S62WJ0PgmhXUlV_I3"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6526        "https://drive.google.com/file/d/1tlx8cUWSE-E4E88S62WJ0PgmhXUlV_I3/",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:6530        "https://drive.google.com/file/d/1tlx8cUWSE-E4E88S62WJ0PgmhXUlV_I3/",
+1--DzOMYPQ_umkM5Y6bmAlpuWqm1IqxS1	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37874      "comment": "We have been playing without biters and cliffs before. We plan to do our main speedrun on Default Settings Multiplayer. This is just a practise run. We are aiming for sub 4 hours within the next two runs. Eventual goal for me is 3:30 eventually though, we are playing for fun mostly. \r\n\r\nThe video is muted because of other people who could be heard on my microphone who did not consent to being recorded.\r\n\r\nHere is a link for the final map:\r\nhttps://drive.google.com/file/
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37879        "https://drive.google.com/file/d/1--DzOMYPQ_umkM5Y6bmAlpuWqm1IqxS1/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37882        "https://drive.google.com/file/d/1--DzOMYPQ_umkM5Y6bmAlpuWqm1IqxS1/view?usp=sharing"
+1-1uQUAH4y1P4VZ_sbF1mSRbatfD7SGVY	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7534      "comment": "Save / Replay: https://drive.google.com/file/d/1-1uQUAH4y1P4VZ_sbF1mSRbatfD7SGVY/view?usp=drive_link\n\nThanks everyone who pointed out mistakes.\n\nNot perfect execution, but I think this is as far as I will go.\n\n![](/static/blob/qzp7qwlz.jpg)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7539        "https://drive.google.com/file/d/1-1uQUAH4y1P4VZ_sbF1mSRbatfD7SGVY/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7542        "https://drive.google.com/file/d/1-1uQUAH4y1P4VZ_sbF1mSRbatfD7SGVY/view?usp=drive_link"
+1-249aa5KMZaXBukjf3f6MsD4q8mT8IUQ	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5552      "comment": "First run of 2.0 any%.  Original Nefrums match, but with tweaked moisture and trees.\n\nReplay: https://drive.google.com/open?id=1-249aa5KMZaXBukjf3f6MsD4q8mT8IUQ",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5557        "https://drive.google.com/open?id=1-249aa5KMZaXBukjf3f6MsD4q8mT8IUQ"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5560        "https://drive.google.com/open?id=1-249aa5KMZaXBukjf3f6MsD4q8mT8IUQ"
+1-2couatcKti6V6BHDLoqvAuo3v1T4W-v	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15844      "comment": "Seed: 2709841057\n\nSave / Replay: https://drive.google.com/open?id=1-2couatcKti6V6BHDLoqvAuo3v1T4W-v&usp=drive_fs\n\nScreenshot: https://drive.google.com/open?id=1REPQg0IitWBbcul_Ni0irODkLMyPBYcT&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15849        "https://drive.google.com/open?id=1-2couatcKti6V6BHDLoqvAuo3v1T4W-v&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15853        "https://drive.google.com/open?id=1-2couatcKti6V6BHDLoqvAuo3v1T4W-v&usp=drive_fs",
+1-6IDi871lomhAv6yAVkASfk0EVJFdwNU	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3196      "comment": "https://drive.google.com/file/d/1-6IDi871lomhAv6yAVkASfk0EVJFdwNU/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3201        "https://drive.google.com/file/d/1-6IDi871lomhAv6yAVkASfk0EVJFdwNU/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:3204        "https://drive.google.com/file/d/1-6IDi871lomhAv6yAVkASfk0EVJFdwNU/view?usp=drive_link"
+1-7fczSrGVxPE9ZFFrA5TI6eWgmVxPjVN	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7345      "comment": "https://drive.google.com/file/d/1-7fczSrGVxPE9ZFFrA5TI6eWgmVxPjVN/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7350        "https://drive.google.com/file/d/1-7fczSrGVxPE9ZFFrA5TI6eWgmVxPjVN/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7353        "https://drive.google.com/file/d/1-7fczSrGVxPE9ZFFrA5TI6eWgmVxPjVN/view?usp=sharing"
+1-8JEyIlYu-chAqj3FkJJzgYz5a9nxket	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15797      "comment": "Seed: 4024427139\n\nSave / Replay: https://drive.google.com/open?id=1-8JEyIlYu-chAqj3FkJJzgYz5a9nxket&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15802        "https://drive.google.com/open?id=1-8JEyIlYu-chAqj3FkJJzgYz5a9nxket&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15805        "https://drive.google.com/open?id=1-8JEyIlYu-chAqj3FkJJzgYz5a9nxket&usp=drive_fs"
+1-8Sfwp-uSvR_FajEOog0oc67e9fH93c_	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13474      "comment": "2nd place run, outposting was messy a hell and still a great time. Feeling good. Only one place left to go.\n\nSave file: https://drive.google.com/file/d/1-8Sfwp-uSvR_FajEOog0oc67e9fH93c_/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13479        "https://drive.google.com/file/d/1-8Sfwp-uSvR_FajEOog0oc67e9fH93c_/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13482        "https://drive.google.com/file/d/1-8Sfwp-uSvR_FajEOog0oc67e9fH93c_/view?usp=sharing"
+1-8oML4dytM2DAjtQ3PlqiNLJElK9Ijnd	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9202      "comment": "This run could have been a real banger of a PB (around 2.5 to 3 minutes) if not for an unfortunate blueprint error that caused two blue science assemblers to not run.\n\nThat said, and as ever, there's a lot of room for early game improvements. This map was okay, but the front side was punishing. The sides, and outposting were really great, though.\n\nSavegame: https://drive.google.com/file/d/1-8oML4dytM2DAjtQ3PlqiNLJElK9Ijnd/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9207        "https://drive.google.com/file/d/1-8oML4dytM2DAjtQ3PlqiNLJElK9Ijnd/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9210        "https://drive.google.com/file/d/1-8oML4dytM2DAjtQ3PlqiNLJElK9Ijnd/view?usp=sharing"
+1-92NkfLnWZBsqJTnlLkR_HOwiHjotx8r	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5505      "comment": "Replay: https://drive.google.com/open?id=1-92NkfLnWZBsqJTnlLkR_HOwiHjotx8r",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5510        "https://drive.google.com/open?id=1-92NkfLnWZBsqJTnlLkR_HOwiHjotx8r"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5513        "https://drive.google.com/open?id=1-92NkfLnWZBsqJTnlLkR_HOwiHjotx8r"
+1-9CEuqRz67m_OPxMNGOS1S0pcbuxjbwa	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14573      "comment": "\"Rocket fuel limited isn't the best\"\n\nSave / Replay: https://drive.google.com/open?id=1-9CEuqRz67m_OPxMNGOS1S0pcbuxjbwa&usp=drive_fs\n\nhttps://www.youtube.com/watch?v=uE2k38w3wwU\n\nhttps://www.twitch.tv/videos/2022075871",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14580        "https://drive.google.com/open?id=1-9CEuqRz67m_OPxMNGOS1S0pcbuxjbwa&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14585        "https://drive.google.com/open?id=1-9CEuqRz67m_OPxMNGOS1S0pcbuxjbwa&usp=drive_fs"
+1-C5jMz_KwgSTYdrXRQtYrgk8ZmWVJ9Hb	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60323      "comment": "Save file with replay: https://drive.google.com/file/d/1-C5jMz_KwgSTYdrXRQtYrgk8ZmWVJ9Hb/view?usp=drive_link\n\nRun starts at 00:02:27 and ends at 07:16:36 of video.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60328        "https://drive.google.com/file/d/1-C5jMz_KwgSTYdrXRQtYrgk8ZmWVJ9Hb/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60331        "https://drive.google.com/file/d/1-C5jMz_KwgSTYdrXRQtYrgk8ZmWVJ9Hb/view?usp=drive_link"
+1-DcKgvsqNSpqTy5uYLRww8nsi2mVrI22	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:55493      "comment": "Thank you to those who joined: billbo99, Avum, foxhound590, rcheli, JD-Plays, thelordsmith, Scoffee, Typhon925, andrewreds, Yivry, Nimbus7020, Thunder0010, HolyKow, snugger, BulletTestDummy, Svenly, MeeFloppi, BTG, dfbossman, commandershephard, erndog1001, fall-guy, Ocarion, wesleycoder, PlantMgrRay, muppet9010, Ozy_Viking, RaoGamer, baddest641, darksurge\n\nSave File: https://drive.google.com/file/d/1-DcKgvsqNSpqTy5uYLRww8nsi2mVrI22/view?usp=sharing\n\nAdmins include, myself, Bi
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:55498        "https://drive.google.com/file/d/1-DcKgvsqNSpqTy5uYLRww8nsi2mVrI22/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:55501        "https://drive.google.com/file/d/1-DcKgvsqNSpqTy5uYLRww8nsi2mVrI22/view?usp=sharing"
+1-MADT5R4yazyK6byqm70-uR6ZYwbJHhB	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24114      "comment": "https://drive.google.com/file/d/1-MADT5R4yazyK6byqm70-uR6ZYwbJHhB/view?usp=share_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24119        "https://drive.google.com/file/d/1-MADT5R4yazyK6byqm70-uR6ZYwbJHhB/view?usp=share_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:24122        "https://drive.google.com/file/d/1-MADT5R4yazyK6byqm70-uR6ZYwbJHhB/view?usp=share_link"
+1-WeJLBEFJKMQJGEusfNNMxiwyVExL5PM	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14141      "comment": "Save / Replay: https://drive.google.com/open?id=1-WeJLBEFJKMQJGEusfNNMxiwyVExL5PM&usp=drive_fs\n\n1 lane of big steel and 1 lane of mixed never ran.  Still got a 2 minute PB.  Quest for sub 2hr is on!",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14146        "https://drive.google.com/open?id=1-WeJLBEFJKMQJGEusfNNMxiwyVExL5PM&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14149        "https://drive.google.com/open?id=1-WeJLBEFJKMQJGEusfNNMxiwyVExL5PM&usp=drive_fs"
+1-ZRa-6iK3vKJvrQh-mwtt_IjNyF7LGbB	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13898      "comment": "save / replay: https://drive.google.com/open?id=1-ZRa-6iK3vKJvrQh-mwtt_IjNyF7LGbB&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13903        "https://drive.google.com/open?id=1-ZRa-6iK3vKJvrQh-mwtt_IjNyF7LGbB&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13906        "https://drive.google.com/open?id=1-ZRa-6iK3vKJvrQh-mwtt_IjNyF7LGbB&usp=drive_fs"
+1-b78GTC97r5L0_ES0Bv0j_u5HjZ-H0D1	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13851      "comment": "Save / replay: https://drive.google.com/open?id=1-b78GTC97r5L0_ES0Bv0j_u5HjZ-H0D1&usp=drive_fs\n\nForgot to red-chest robports.  Easy time save, I hope.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13856        "https://drive.google.com/open?id=1-b78GTC97r5L0_ES0Bv0j_u5HjZ-H0D1&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13859        "https://drive.google.com/open?id=1-b78GTC97r5L0_ES0Bv0j_u5HjZ-H0D1&usp=drive_fs"
+1-f2Agq-SZ0oNMbAZoGUZ3Vk93l1toaFO	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13804      "comment": "Save / replay: https://drive.google.com/open?id=1-f2Agq-SZ0oNMbAZoGUZ3Vk93l1toaFO&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13809        "https://drive.google.com/open?id=1-f2Agq-SZ0oNMbAZoGUZ3Vk93l1toaFO&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13812        "https://drive.google.com/open?id=1-f2Agq-SZ0oNMbAZoGUZ3Vk93l1toaFO&usp=drive_fs"
+1-goQG9Obf_wZoqt93FJ2hVMZu9ckHeLi	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17076      "comment": "Should have been MUCH faster but I had severe power issues.\n\nSavegame https://user.fm/files/v2-95e668aa88f04df519857a0ef3ac6d6c/4h42m47s.zip\n\nBlueprints https://drive.google.com/file/d/1-goQG9Obf_wZoqt93FJ2hVMZu9ckHeLi/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17082        "https://drive.google.com/file/d/1-goQG9Obf_wZoqt93FJ2hVMZu9ckHeLi/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17086        "https://drive.google.com/file/d/1-goQG9Obf_wZoqt93FJ2hVMZu9ckHeLi/view?usp=sharing"
+1-i86eQS9AR8OFz_7qyPAv-eqEGmHhg1I	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13757      "comment": "Save / Replay: https://drive.google.com/open?id=1-i86eQS9AR8OFz_7qyPAv-eqEGmHhg1I&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13762        "https://drive.google.com/open?id=1-i86eQS9AR8OFz_7qyPAv-eqEGmHhg1I&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13765        "https://drive.google.com/open?id=1-i86eQS9AR8OFz_7qyPAv-eqEGmHhg1I&usp=drive_fs"
+1-mJqTOIWZpT8nDVOdF0kFg__m8KjCqu2	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13521      "comment": "Save / replay: https://drive.google.com/open?id=1-mJqTOIWZpT8nDVOdF0kFg__m8KjCqu2&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13526        "https://drive.google.com/open?id=1-mJqTOIWZpT8nDVOdF0kFg__m8KjCqu2&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13529        "https://drive.google.com/open?id=1-mJqTOIWZpT8nDVOdF0kFg__m8KjCqu2&usp=drive_fs"
+1-mubU_OupnS_6MbKqsX5uOyt-vKT3Kkt	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13332      "comment": "No major mistakes let me finally save all that time.\n\nSave / replay: https://drive.google.com/open?id=1-mubU_OupnS_6MbKqsX5uOyt-vKT3Kkt&usp=drive_fs\n\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13337        "https://drive.google.com/open?id=1-mubU_OupnS_6MbKqsX5uOyt-vKT3Kkt&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13340        "https://drive.google.com/open?id=1-mubU_OupnS_6MbKqsX5uOyt-vKT3Kkt&usp=drive_fs"
+1-rlezL4iRvMqEmUHdzQFa90nIRP-L7tj	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12468      "comment": "Sub 1:50.  2 years, 5 months since my first any% speedrun.  2 years ago I would have said \"never, not a chance\".  Thanks everyone for the help, encouragement, guides, etc.\n\nSave: https://drive.google.com/open?id=1-rlezL4iRvMqEmUHdzQFa90nIRP-L7tj&usp=drive_fs\n\n![](/static/blob/5ngdy86n.jpg)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12473        "https://drive.google.com/open?id=1-rlezL4iRvMqEmUHdzQFa90nIRP-L7tj&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12476        "https://drive.google.com/open?id=1-rlezL4iRvMqEmUHdzQFa90nIRP-L7tj&usp=drive_fs"
+1-sfRkocqQ-uSz9eQqedJSWq4WiuNkgZ-	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21478      "comment": "Rip power though lol. Did not play around the power dip very well.\r\n\r\nSave:\r\nhttps://drive.google.com/file/d/1-sfRkocqQ-uSz9eQqedJSWq4WiuNkgZ-/view?usp=sharing\r\n\r\nString:\r\n>>>eNp9Us1rE0EUf9M0mKZQeshBoa05BCqFLaF+QZDM6EX8MzabSRnY\r\n7MTZXbB6sIVehIJnvbTnFAo9eit4UVAQPHlr6cWDB0Hx4iF9b7qziUv\r\nqD97Hvo/fvDezDBgIFIJA4ZXZQPshwIlwUg30YCCNp42cDM8FJu1KT6\r\nt/i2Uk+1tex4+xeJtbXrQVZXRUZCjHiY4mIkKUEyNlTN7hcNimxvnU+\r\nJFK+9R7OFxrE521bPWgy49x8J0ZgNFLqI9GJOidYgkJsG07AsNYhtnr\r\ngY4So
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21483        "https://drive.google.com/file/d/1-sfRkocqQ-uSz9eQqedJSWq4WiuNkgZ-/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21486        "https://drive.google.com/file/d/1-sfRkocqQ-uSz9eQqedJSWq4WiuNkgZ-/view?usp=sharing"
+1-srMhzQw0SmZw78vtHhz8HQVVnvIBi_-	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11269      "comment": "Save / Replay: https://drive.google.com/open?id=1-srMhzQw0SmZw78vtHhz8HQVVnvIBi_-&usp=drive_fs\n\nRocket parts a little bit late.\n\n![](/static/blob/qnyp0m4n.jpg)\n\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11274        "https://drive.google.com/open?id=1-srMhzQw0SmZw78vtHhz8HQVVnvIBi_-&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11277        "https://drive.google.com/open?id=1-srMhzQw0SmZw78vtHhz8HQVVnvIBi_-&usp=drive_fs"
+109utt-6I0TSNBDodmiKCYugNH9g3Nl2e	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4177      "comment": "https://drive.google.com/file/d/109utt-6I0TSNBDodmiKCYugNH9g3Nl2e/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4182        "https://drive.google.com/file/d/109utt-6I0TSNBDodmiKCYugNH9g3Nl2e/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4185        "https://drive.google.com/file/d/109utt-6I0TSNBDodmiKCYugNH9g3Nl2e/view?usp=drive_link"
+10BJW8AJ39w12uQSVcITLEHRcSweEltZz	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20848      "comment": "seed 2892008761\r\nSave / replay: https://drive.google.com/file/d/10BJW8AJ39w12uQSVcITLEHRcSweEltZz/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20853        "https://drive.google.com/file/d/10BJW8AJ39w12uQSVcITLEHRcSweEltZz/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20856        "https://drive.google.com/file/d/10BJW8AJ39w12uQSVcITLEHRcSweEltZz/view"
+10LX1-ERUj3fKTSDw6OXtydleWs1jcO2g	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13568      "comment": "So close to 2nd place, science held me back a bit - I'd like to look into why...\n\n\nSave file: https://drive.google.com/file/d/10LX1-ERUj3fKTSDw6OXtydleWs1jcO2g/view?usp=sharing\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13573        "https://drive.google.com/file/d/10LX1-ERUj3fKTSDw6OXtydleWs1jcO2g/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13576        "https://drive.google.com/file/d/10LX1-ERUj3fKTSDw6OXtydleWs1jcO2g/view?usp=sharing"
+10N-kf0g-spkguZtHEjObQFrUFpZUcI5V	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15992      "comment": "https://drive.google.com/file/d/10N-kf0g-spkguZtHEjObQFrUFpZUcI5V/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15997        "https://drive.google.com/file/d/10N-kf0g-spkguZtHEjObQFrUFpZUcI5V/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16000        "https://drive.google.com/file/d/10N-kf0g-spkguZtHEjObQFrUFpZUcI5V/view?usp=sharing"
+10OalFUAi3kUqsT0ABxMne9aly1c_NRjF	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22831      "comment": "So close to 2nd place with this, it's within my grasp now!\r\n\r\nSaveGame:\r\nhttps://drive.google.com/file/d/10OalFUAi3kUqsT0ABxMne9aly1c_NRjF/view?usp=share_link\r\n\r\ntwitch.tv/cobai",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22836        "https://drive.google.com/file/d/10OalFUAi3kUqsT0ABxMne9aly1c_NRjF/view?usp=share_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22839        "https://drive.google.com/file/d/10OalFUAi3kUqsT0ABxMne9aly1c_NRjF/view?usp=share_link"
+10grQnp3nBRyw79w85ot08vjrybyUaqGH	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9072      "comment": "Nice little offline PB after a good day's work.\n\n\n\nSavegame: https://drive.google.com/file/d/10grQnp3nBRyw79w85ot08vjrybyUaqGH/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9077        "https://drive.google.com/file/d/10grQnp3nBRyw79w85ot08vjrybyUaqGH/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9080        "https://drive.google.com/file/d/10grQnp3nBRyw79w85ot08vjrybyUaqGH/view?usp=sharing"
+10jKwAtChbLIIPtXxHuTnJNHlVPLQUZP9	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57383      "comment": "Thank you to those who joined: billbo99, JD-Plays, nezaDnmrk, Cookap, Nimbus7020, ram0124, dfbossman, foxhound590, Fac_Okami, Baseline, thelordsmith, BulletTestDummy, hatterz, andrewreds, itsmeYakuza, fall-guy, Carlos_the_Hun, Saddest, TooFly4WiFi, ashnitz, nvkspad476_kole, Szuzyn, Daredev, DerEichler, BVGorp, muppet9010, Rhoanor, Boombutscha, Ozy_Viking, Adrie, Adamosz, SugerGlider, LudZilla\n\nSave File: https://drive.google.com/file/d/10jKwAtChbLIIPtXxHuTnJNHlVPLQUZP9/view?usp
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57388        "https://drive.google.com/file/d/10jKwAtChbLIIPtXxHuTnJNHlVPLQUZP9/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57391        "https://drive.google.com/file/d/10jKwAtChbLIIPtXxHuTnJNHlVPLQUZP9/view?usp=drive_link"
+10nu02NDhzaEQFel1-HlDoF6rmTnqvcJV	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22979      "comment": "Run start: 0:06:29\r\nRun end: 4:44:20\r\n\r\nMy friend and I speedran Factorio. this be the second attempt made, as the last hour of the first recording was lost due to a skill issue.\r\n\r\nSave download:\r\nhttps://drive.google.com/file/d/10nu02NDhzaEQFel1-HlDoF6rmTnqvcJV/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22984        "https://drive.google.com/file/d/10nu02NDhzaEQFel1-HlDoF6rmTnqvcJV/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22987        "https://drive.google.com/file/d/10nu02NDhzaEQFel1-HlDoF6rmTnqvcJV/view?usp=sharing"
+10sPZYZtwNePU33zuXJjIo78GyJPD5XM2	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20488      "comment": "seed: 2892008761\r\n\r\nSave / replay: https://drive.google.com/file/d/10sPZYZtwNePU33zuXJjIo78GyJPD5XM2/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20493        "https://drive.google.com/file/d/10sPZYZtwNePU33zuXJjIo78GyJPD5XM2/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20496        "https://drive.google.com/file/d/10sPZYZtwNePU33zuXJjIo78GyJPD5XM2/view"
+10wnRVKI6h8WG4ypnBcwj7GLrytitLLn3	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5075      "comment": "Save game (58 of 59 achievements): https://drive.google.com/file/d/1EAA2XSnXSm7u0wHdKyzmAlCmmN2i9uDH/view?usp=drive_link\n\nSave game (59 of 59 achievements): https://drive.google.com/file/d/10wnRVKI6h8WG4ypnBcwj7GLrytitLLn3/view?usp=drive_link (Mining with Determination achievement)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5081        "https://drive.google.com/file/d/10wnRVKI6h8WG4ypnBcwj7GLrytitLLn3/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5085        "https://drive.google.com/file/d/10wnRVKI6h8WG4ypnBcwj7GLrytitLLn3/view?usp=drive_link"
+10yRqDwSI7dijhsVU61F9In48NZn5ALMb	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22540      "comment": "Save File: https://drive.google.com/file/d/10yRqDwSI7dijhsVU61F9In48NZn5ALMb/view?usp=share_link\r\n\r\nBlueprints: Anti's: https://drive.google.com/file/d/1nLEV0pJoPQj3EJlVO_Z0n0sQv_cTbHLF/view\r\n- I use a custom base 0 mostly for more science which I think is definitely worth doing. Also a few minor changes to the first main base bp that aren't important.\r\n\r\nMap: Early game was kind of bad, mid/late game was good, especially the right side which was beautiful.\r\n\r\nMista
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22545        "https://drive.google.com/file/d/10yRqDwSI7dijhsVU61F9In48NZn5ALMb/view?usp=share_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:22549        "https://drive.google.com/file/d/10yRqDwSI7dijhsVU61F9In48NZn5ALMb/view?usp=share_link",
+11Z29NvmV1LFOxZuWhchX_s_-u8flHSxJ	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2987      "comment": "https://drive.google.com/file/d/11Z29NvmV1LFOxZuWhchX_s_-u8flHSxJ/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2992        "https://drive.google.com/file/d/11Z29NvmV1LFOxZuWhchX_s_-u8flHSxJ/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2995        "https://drive.google.com/file/d/11Z29NvmV1LFOxZuWhchX_s_-u8flHSxJ/view?usp=sharing"
+11b9nvtbOz6mtZcjWFn0lb7nyf3PwaA2T	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12200      "comment": "Save: https://drive.google.com/file/d/11b9nvtbOz6mtZcjWFn0lb7nyf3PwaA2T/view?usp=drive_link\n\n\n\nIron POV:\n\nhttps://www.twitch.tv/videos/2099573156https://www.twitch.tv/videos/2099573156\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12206        "https://drive.google.com/file/d/11b9nvtbOz6mtZcjWFn0lb7nyf3PwaA2T/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:12210        "https://drive.google.com/file/d/11b9nvtbOz6mtZcjWFn0lb7nyf3PwaA2T/view?usp=drive_link"
+11gFFu-zBVxgp4blthp6QWYaLFK5Go6KJ	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44717      "comment": "Save : https://drive.google.com/file/d/11gFFu-zBVxgp4blthp6QWYaLFK5Go6KJ/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44722        "https://drive.google.com/file/d/11gFFu-zBVxgp4blthp6QWYaLFK5Go6KJ/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44725        "https://drive.google.com/file/d/11gFFu-zBVxgp4blthp6QWYaLFK5Go6KJ/view?usp=sharing"
+11hNNo5kpJKMnF5bHhI2FgWeoP8e4xNDw	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23750      "comment": "save game: https://drive.google.com/file/d/11hNNo5kpJKMnF5bHhI2FgWeoP8e4xNDw/view?usp=share_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23755        "https://drive.google.com/file/d/11hNNo5kpJKMnF5bHhI2FgWeoP8e4xNDw/view?usp=share_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23758        "https://drive.google.com/file/d/11hNNo5kpJKMnF5bHhI2FgWeoP8e4xNDw/view?usp=share_link"
+11kwe2ymDBMT3c98CK9WZyi-XFpHZZ4lz	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2600      "comment": "Save and replay:  https://drive.google.com/file/d/11kwe2ymDBMT3c98CK9WZyi-XFpHZZ4lz/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2605        "https://drive.google.com/file/d/11kwe2ymDBMT3c98CK9WZyi-XFpHZZ4lz/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2608        "https://drive.google.com/file/d/11kwe2ymDBMT3c98CK9WZyi-XFpHZZ4lz/view?usp=sharing"
+11tXHq_OG0BlBQMBmnA1J5MXGwyqOELXi	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44858      "comment": "Save file: https://drive.google.com/file/d/11tXHq_OG0BlBQMBmnA1J5MXGwyqOELXi/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44863        "https://drive.google.com/file/d/11tXHq_OG0BlBQMBmnA1J5MXGwyqOELXi/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:44866        "https://drive.google.com/file/d/11tXHq_OG0BlBQMBmnA1J5MXGwyqOELXi/view?usp=sharing"
+11wiQcl86Ip7MQpl6mQT0m9itmzKq4UD0	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17029      "comment": "Savegame / Replay: https://drive.google.com/file/d/11wiQcl86Ip7MQpl6mQT0m9itmzKq4UD0/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17034        "https://drive.google.com/file/d/11wiQcl86Ip7MQpl6mQT0m9itmzKq4UD0/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:17037        "https://drive.google.com/file/d/11wiQcl86Ip7MQpl6mQT0m9itmzKq4UD0/view?usp=sharing"
+11xpxQKAzf0KhlVygQbtdBPTxO53QPsIw	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31752      "comment": "https://drive.google.com/file/d/11xpxQKAzf0KhlVygQbtdBPTxO53QPsIw/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31757        "https://drive.google.com/file/d/11xpxQKAzf0KhlVygQbtdBPTxO53QPsIw/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31760        "https://drive.google.com/file/d/11xpxQKAzf0KhlVygQbtdBPTxO53QPsIw/view?usp=sharing"
+121XFabmBwPP2JAw8N1vkB8t-k4OIkPhd	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31093      "comment": "Savefile: https://drive.google.com/file/d/121XFabmBwPP2JAw8N1vkB8t-k4OIkPhd/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31098        "https://drive.google.com/file/d/121XFabmBwPP2JAw8N1vkB8t-k4OIkPhd/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31101        "https://drive.google.com/file/d/121XFabmBwPP2JAw8N1vkB8t-k4OIkPhd/view?usp=sharing"
+128YXO4jrRGuR-WNj46uZGE4pD628Bu12	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20214      "comment": "Seed: 461207227\r\n\r\nSave / replay: https://drive.google.com/open?id=129gWaaFJIbmV2iDfwC_af-WqVGvEc6e2\r\n\r\nScreenshot: https://drive.google.com/file/d/128YXO4jrRGuR-WNj46uZGE4pD628Bu12/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20220        "https://drive.google.com/file/d/128YXO4jrRGuR-WNj46uZGE4pD628Bu12/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20224        "https://drive.google.com/file/d/128YXO4jrRGuR-WNj46uZGE4pD628Bu12/view"
+129gWaaFJIbmV2iDfwC_af-WqVGvEc6e2	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20214      "comment": "Seed: 461207227\r\n\r\nSave / replay: https://drive.google.com/open?id=129gWaaFJIbmV2iDfwC_af-WqVGvEc6e2\r\n\r\nScreenshot: https://drive.google.com/file/d/128YXO4jrRGuR-WNj46uZGE4pD628Bu12/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20219        "https://drive.google.com/open?id=129gWaaFJIbmV2iDfwC_af-WqVGvEc6e2",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20223        "https://drive.google.com/open?id=129gWaaFJIbmV2iDfwC_af-WqVGvEc6e2",
+12KUXq15QYgY7sc2FV-HQXrgtBgKh55Fb	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32634      "comment": "We did it, another month, another double set of runs and the amazing team we've been bringing together for these runs have smashed another WR - awesome job!\r\n\r\nSave File:\r\nhttps://drive.google.com/file/d/12KUXq15QYgY7sc2FV-HQXrgtBgKh55Fb/view?usp=sharing\r\n\r\nPlayer List:\r\nhttps://drive.google.com/file/d/1ij678XXsctZYG-xUBNcxmv3nl5JQgVvm/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32639        "https://drive.google.com/file/d/12KUXq15QYgY7sc2FV-HQXrgtBgKh55Fb/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32643        "https://drive.google.com/file/d/12KUXq15QYgY7sc2FV-HQXrgtBgKh55Fb/view?usp=sharing",
+12MfiLCPtHcziPKV-aZBier-p7ZkQqzLf	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1838      "comment": "Runners: hy_speed & jmatya\n\nWe tried to build only what we needed from the larger design.\n\nLink to Save Files, Map Exchange String, and Screen Shots:\nhttps://drive.google.com/open?id=12MfiLCPtHcziPKV-aZBier-p7ZkQqzLf&usp=drive_fs\n\n- twitch.tv/hy_speed\n- twitch.tv/jmatya\n- -- https://www.twitch.tv/videos/2595921629",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1844        "https://drive.google.com/open?id=12MfiLCPtHcziPKV-aZBier-p7ZkQqzLf&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1848        "https://drive.google.com/open?id=12MfiLCPtHcziPKV-aZBier-p7ZkQqzLf&usp=drive_fs"
+12QsAPblDeV05tjj-xI7udUkIDlOofmwm	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8005      "comment": "save / replay: https://drive.google.com/open?id=12QsAPblDeV05tjj-xI7udUkIDlOofmwm&usp=drive_fs\n\nMissing buffer chests for steel the whole run, otherwise would have been a big pb.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8010        "https://drive.google.com/open?id=12QsAPblDeV05tjj-xI7udUkIDlOofmwm&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8013        "https://drive.google.com/open?id=12QsAPblDeV05tjj-xI7udUkIDlOofmwm&usp=drive_fs"
+12RWl_Qr6HRE3y2UcnDtUQPur8lLNi1Xe	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20896      "comment": "replay: https://drive.google.com/file/d/12RWl_Qr6HRE3y2UcnDtUQPur8lLNi1Xe/view?usp=sharing\r\n\r\nplanning save: https://drive.google.com/file/d/1uZEO5qVXXlBejKa6etFQI_ciDPZRGprf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20901        "https://drive.google.com/file/d/12RWl_Qr6HRE3y2UcnDtUQPur8lLNi1Xe/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:20905        "https://drive.google.com/file/d/12RWl_Qr6HRE3y2UcnDtUQPur8lLNi1Xe/view?usp=sharing",
+12ZMJ64Orn13erpYd2khR7Vd5E827lCg-	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13192      "comment": "Save / Replay - https://drive.google.com/file/d/12ZMJ64Orn13erpYd2khR7Vd5E827lCg-/view?usp=sharing\n\nZaspar POV\n\nhttps://www.twitch.tv/videos/2078450834\n\nPantabo's POV -\n\nhttps://www.youtube.com/watch?v=NMVQ8-DwEE8\n\nAmeateyer's POV\n\nhttps://www.youtube.com/watch?v=ov551ckOcYs\n\nness056's POV\n\nhttps://www.youtube.com/watch?v=mFbMTl19OZY",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13201        "https://drive.google.com/file/d/12ZMJ64Orn13erpYd2khR7Vd5E827lCg-/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13208        "https://drive.google.com/file/d/12ZMJ64Orn13erpYd2khR7Vd5E827lCg-/view?usp=sharing"
+12nGGn6NEJwuhVGEcv9W9rvo1t0TVk3Eu	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60928      "comment": "Derek's charity event - contribution\n\nsave file: https://drive.google.com/file/d/12nGGn6NEJwuhVGEcv9W9rvo1t0TVk3Eu/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60933        "https://drive.google.com/file/d/12nGGn6NEJwuhVGEcv9W9rvo1t0TVk3Eu/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60936        "https://drive.google.com/file/d/12nGGn6NEJwuhVGEcv9W9rvo1t0TVk3Eu/view?usp=drive_link"
+12tQ3Ukp-CYi_ts9HwC5dEil32DglP6LW	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16697      "comment": "save game: https://drive.google.com/file/d/12tQ3Ukp-CYi_ts9HwC5dEil32DglP6LW/view?usp=sharing\n\nGlassBricks: https://www.twitch.tv/videos/1937032297\n\nthePiedPiper: https://www.twitch.tv/videos/1937030433\n\nheartosis: https://www.youtube.com/watch?v=bENqGdtz9UA\n\nPhredward: https://www.twitch.tv/videos/1937033868\n\nthedoh: https://www.twitch.tv/videos/1937034503",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16707        "https://drive.google.com/file/d/12tQ3Ukp-CYi_ts9HwC5dEil32DglP6LW/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16715        "https://drive.google.com/file/d/12tQ3Ukp-CYi_ts9HwC5dEil32DglP6LW/view?usp=sharing"
+12upjpwJnyQ7wXdDd9iTiOeKAzR-6O_U4	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37679      "comment": "Almost to my goal!\r\n\r\nhttps://drive.google.com/file/d/12upjpwJnyQ7wXdDd9iTiOeKAzR-6O_U4/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37684        "https://drive.google.com/file/d/12upjpwJnyQ7wXdDd9iTiOeKAzR-6O_U4/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37687        "https://drive.google.com/file/d/12upjpwJnyQ7wXdDd9iTiOeKAzR-6O_U4/view?usp=sharing"
+1308Rf0dDsJOmoztr6eU9ibYW-VTBTzBf	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25437      "comment": "https://drive.google.com/file/d/1308Rf0dDsJOmoztr6eU9ibYW-VTBTzBf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25442        "https://drive.google.com/file/d/1308Rf0dDsJOmoztr6eU9ibYW-VTBTzBf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25445        "https://drive.google.com/file/d/1308Rf0dDsJOmoztr6eU9ibYW-VTBTzBf/view?usp=sharing"
+132Nn4rjYPqlHcADpNUAoMtQnbxOogufh	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11505      "comment": "100% trial run to see if it is fun. Answer: its long.\n\nLink to save file:\nhttps://drive.google.com/file/d/132Nn4rjYPqlHcADpNUAoMtQnbxOogufh/view?usp=drive_link\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11510        "https://drive.google.com/file/d/132Nn4rjYPqlHcADpNUAoMtQnbxOogufh/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11513        "https://drive.google.com/file/d/132Nn4rjYPqlHcADpNUAoMtQnbxOogufh/view?usp=drive_link"
+13E9FoU-nyiz0hDv_fporsrEOiDfJa104	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26063      "comment": "Savefile: https://drive.google.com/file/d/13E9FoU-nyiz0hDv_fporsrEOiDfJa104/view?usp=sharing\r\n\r\nhttps://www.twitch.tv/videos/1628031193\r\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26069        "https://drive.google.com/file/d/13E9FoU-nyiz0hDv_fporsrEOiDfJa104/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26073        "https://drive.google.com/file/d/13E9FoU-nyiz0hDv_fporsrEOiDfJa104/view?usp=sharing"
+13FCYcg-O7KsyApfYR1ShFuG8FT1_ELLd	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:34952      "comment": "https://drive.google.com/file/d/13FCYcg-O7KsyApfYR1ShFuG8FT1_ELLd/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:34957        "https://drive.google.com/file/d/13FCYcg-O7KsyApfYR1ShFuG8FT1_ELLd/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:34960        "https://drive.google.com/file/d/13FCYcg-O7KsyApfYR1ShFuG8FT1_ELLd/view?usp=sharing"
+13InA0ZBFYrV0_9q7dC6UXl5DQc_f4BCf	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29409      "comment": "Save game: https://drive.google.com/file/d/13InA0ZBFYrV0_9q7dC6UXl5DQc_f4BCf/view?usp=sharing\r\n\r\nSome stupid mistakes right after bots, but otherwise I'm quite happy with the run.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29414        "https://drive.google.com/file/d/13InA0ZBFYrV0_9q7dC6UXl5DQc_f4BCf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29417        "https://drive.google.com/file/d/13InA0ZBFYrV0_9q7dC6UXl5DQc_f4BCf/view?usp=sharing"
+13MYXgGuohXbvy3H1bPWokMPBVLj_DrJ4	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60974      "comment": "33rd run of the charity event this month. This was a huge PB. I say this constantly, but I know I'm nearing the end. Great run all around.\n\n\n\nSave File: https://drive.google.com/file/d/13MYXgGuohXbvy3H1bPWokMPBVLj_DrJ4/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60979        "https://drive.google.com/file/d/13MYXgGuohXbvy3H1bPWokMPBVLj_DrJ4/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60982        "https://drive.google.com/file/d/13MYXgGuohXbvy3H1bPWokMPBVLj_DrJ4/view?usp=sharing"
+13ZzRYOdKuH2Lb-Gw_6DSWb8W-c3J-6r_	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:51667      "comment": "Save: https://drive.google.com/file/d/13ZzRYOdKuH2Lb-Gw_6DSWb8W-c3J-6r_",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:51672        "https://drive.google.com/file/d/13ZzRYOdKuH2Lb-Gw_6DSWb8W-c3J-6r_"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:51675        "https://drive.google.com/file/d/13ZzRYOdKuH2Lb-Gw_6DSWb8W-c3J-6r_"
+13xYmhJG53xpjA0fAslP8PBlqvqlCtj0r	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39665      "comment": "Archivo de descarga:\r\nhttps://drive.google.com/file/d/13xYmhJG53xpjA0fAslP8PBlqvqlCtj0r/view?usp=sharing\r\nOtros puntos de vista:\r\nMon:  https://www.youtube.com/watch?v=d6jn7gmEsKY\r\nCRVGH3: https://www.twitch.tv/videos/842968788",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39672        "https://drive.google.com/file/d/13xYmhJG53xpjA0fAslP8PBlqvqlCtj0r/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39677        "https://drive.google.com/file/d/13xYmhJG53xpjA0fAslP8PBlqvqlCtj0r/view?usp=sharing"
+13y3hdrfpxtAy20pm3oadXajAiTfhqBhV	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57101      "comment": "Thank you to those who joined: billbo99, JD-Plays, Fac_Okami, Nimbus7020, Cookap, foxhound590, MonkeyBurner, BTG, dfbossman, andrewreds, BulletTestDummy, Carlos_the_Hun, EMB_music, erndog1001, Squidje1989, Asyntactical, Cannible, Daredev, Trupen, rammstein72, itsmeYakuza, fall-guy, Bethorien.Ardhoniel, jan1412, Casparov, Saddest, hatterz, Szuzyn, muppet9010, Ozy_Viking, Solomonella, j_matya\n\nSave File: https://drive.google.com/file/d/13y3hdrfpxtAy20pm3oadXajAiTfhqBhV/view?usp=d
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57106        "https://drive.google.com/file/d/13y3hdrfpxtAy20pm3oadXajAiTfhqBhV/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:57109        "https://drive.google.com/file/d/13y3hdrfpxtAy20pm3oadXajAiTfhqBhV/view?usp=drive_link"
+13zp1XyaBG_hMl3wpW-pH2NOYES4Ng1XT	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:929      "comment": "Save file: https://drive.google.com/file/d/13zp1XyaBG_hMl3wpW-pH2NOYES4Ng1XT/view?usp=drive_link\n\n\nSorry for online timer being wrong.\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:934        "https://drive.google.com/file/d/13zp1XyaBG_hMl3wpW-pH2NOYES4Ng1XT/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:937        "https://drive.google.com/file/d/13zp1XyaBG_hMl3wpW-pH2NOYES4Ng1XT/view?usp=drive_link"
+145OesSzeluzdz7y5BIVsofx8kFyKCFCx	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30290      "comment": "https://drive.google.com/file/d/145OesSzeluzdz7y5BIVsofx8kFyKCFCx/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30295        "https://drive.google.com/file/d/145OesSzeluzdz7y5BIVsofx8kFyKCFCx/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30298        "https://drive.google.com/file/d/145OesSzeluzdz7y5BIVsofx8kFyKCFCx/view?usp=sharing"
+14SAAGulH8lLHCpVbSOm-dG6pidPxXlKh	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10121      "comment": "Factorio 100% speedrun PB\n\nModedit: retimed to 9:09:56\nsavegame: https://drive.google.com/file/d/14SAAGulH8lLHCpVbSOm-dG6pidPxXlKh/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10126        "https://drive.google.com/file/d/14SAAGulH8lLHCpVbSOm-dG6pidPxXlKh/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10129        "https://drive.google.com/file/d/14SAAGulH8lLHCpVbSOm-dG6pidPxXlKh/view?usp=drive_link"
+14cEeUpY_0NPVtvF-NB5X5zw9liptE48O	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:270      "comment": "https://drive.google.com/file/d/14cEeUpY_0NPVtvF-NB5X5zw9liptE48O/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:275        "https://drive.google.com/file/d/14cEeUpY_0NPVtvF-NB5X5zw9liptE48O/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:278        "https://drive.google.com/file/d/14cEeUpY_0NPVtvF-NB5X5zw9liptE48O/view?usp=drive_link"
+14s3YDbM8WJew2nbzRF7PimnEuaRWTiq2	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35481      "comment": "Yay!\r\nhttps://drive.google.com/file/d/14s3YDbM8WJew2nbzRF7PimnEuaRWTiq2/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35486        "https://drive.google.com/file/d/14s3YDbM8WJew2nbzRF7PimnEuaRWTiq2/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35489        "https://drive.google.com/file/d/14s3YDbM8WJew2nbzRF7PimnEuaRWTiq2/view?usp=sharing"
+15FjxQG9opVNlOWLyqFaEedOKfXb89mWv	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:56586      "comment": "Thank you to those who joined: billbo99, j_matya, BTG, Nimbus7020, JD-Plays, andrewreds, jan1412, rcheli, fall-guy, foxhound590, rammstein72, baddest641, erndog1001, Thunder0010, muppet9010, Malls, nezaDnmrk, detona_viejas\n\nSave File: https://drive.google.com/file/d/15FjxQG9opVNlOWLyqFaEedOKfXb89mWv/view?usp=sharing\n\nAdmins include, myself, Billbo99, foxhound590, muppet9010, Ozy_Viking, Huff",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:56591        "https://drive.google.com/file/d/15FjxQG9opVNlOWLyqFaEedOKfXb89mWv/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:56594        "https://drive.google.com/file/d/15FjxQG9opVNlOWLyqFaEedOKfXb89mWv/view?usp=sharing"
+15JatP8W84JUr78XmASTClXh2bSGi8FPS	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23654      "comment": "(Note: The final achievement was at 5h10m08s; I was late splitting)\n\nPretty good map, though back side coal was pretty rough. Maybe if I don't mess up power, I'd have had a lower time.\n\nOn-patch split is later than usual because I included coal for power at the same time since that's how the patches lended themselves to play.\n\nSave game: https://user.fm/files/v2-6bedb5dbea2c2d75b9730bbb2a22106a/5h10m10s.zip\n\nBlueprints: https://drive.google.com/file/d/15JatP8W84JUr78XmAST
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23660        "https://drive.google.com/file/d/15JatP8W84JUr78XmASTClXh2bSGi8FPS/view?usp=share_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:23664        "https://drive.google.com/file/d/15JatP8W84JUr78XmASTClXh2bSGi8FPS/view?usp=share_link"
+15RQPnhD5bmch9rHuZyuW9QUsbBcn4kwp	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11037      "comment": "Map exchange string: >>>eNpjZGBkyGYAgwZ7EOZgSc5PzIHxQJgrOb+gILVIN78oFVmYM7mo\n\nNCVVNz8TVXFqXmpupW5SYjFQMYMDBANNzSzKz0M3gbW4JD8PVaSkKDW\n\n1GFmEu7QoMS+zNBddLwPjfbOj5xta5BhA+H89g8L//yAMZD0AWgrCDI\n\nwNQNuBKoFiMMCanJOZlsbAoOAIxE4ggxgZGatF1rk/rJpizwhRo+cAZ\n\nTyAihxIgol4whh+DjilVGAMEyRzjMHgMxIDYmkJ0AqoKg4HBAMi2QKS\n\nZGT8mPG4Y+uPL3aMf1Z+vOSblGDPWNbM++Wr4hY7oCQ7yJ9McGLWTBD\n\nYCfMKA5ITIFI37RnPngGBN/aMrCAdIiDCwQJIHPBmZmAU4AOyFvQACQ\n\nUZBpjT7GDGiDgwpoHBN5hPHsMYl+3R/QEMCBuQ4XIg4gSIAFsI
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11042        "https://drive.google.com/file/d/15RQPnhD5bmch9rHuZyuW9QUsbBcn4kwp/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11045        "https://drive.google.com/file/d/15RQPnhD5bmch9rHuZyuW9QUsbBcn4kwp/view?usp=sharing"
+15SYadLmdit182QdzE9a7gEqjehz8y2UK	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29022      "comment": "Replay: https://drive.google.com/file/d/15SYadLmdit182QdzE9a7gEqjehz8y2UK/view?usp=sharing\r\n\r\nBlueprints: See Nefrums run: https://www.speedrun.com/factorio/run/yop3q65m",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29027        "https://drive.google.com/file/d/15SYadLmdit182QdzE9a7gEqjehz8y2UK/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29031        "https://drive.google.com/file/d/15SYadLmdit182QdzE9a7gEqjehz8y2UK/view?usp=sharing"
+15TY1edGORGj4tlh7i3Y5pkuyssH4Qq-E	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15940      "comment": "A small PB, using GC 0 now, but made mistakes with early oil, and outposting was terrible.\n\n\n\nSave: https://drive.google.com/file/d/15TY1edGORGj4tlh7i3Y5pkuyssH4Qq-E/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15945        "https://drive.google.com/file/d/15TY1edGORGj4tlh7i3Y5pkuyssH4Qq-E/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15948        "https://drive.google.com/file/d/15TY1edGORGj4tlh7i3Y5pkuyssH4Qq-E/view?usp=sharing"
+15WVOMBU2jdgpPSKxM43IGXSNzeAygNB0	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30763      "comment": "https://drive.google.com/file/d/15WVOMBU2jdgpPSKxM43IGXSNzeAygNB0/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30768        "https://drive.google.com/file/d/15WVOMBU2jdgpPSKxM43IGXSNzeAygNB0/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:30771        "https://drive.google.com/file/d/15WVOMBU2jdgpPSKxM43IGXSNzeAygNB0/view?usp=sharing"
+15WwjNhhePmwYCIQgkf78bhIXCE7wAYUO	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15462      "comment": "Getting closer to sub 5h. Game time was 4:52... need better PC. Power was super weird this run, a lot of brownouts, still tons of time saves. Still need a lot of work to bots and front lanes, need to save like 10 mins before bots somehow, most of which is pre green science.\n\n\n\nSave file: https://drive.google.com/file/d/15WwjNhhePmwYCIQgkf78bhIXCE7wAYUO/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15467        "https://drive.google.com/file/d/15WwjNhhePmwYCIQgkf78bhIXCE7wAYUO/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:15470        "https://drive.google.com/file/d/15WwjNhhePmwYCIQgkf78bhIXCE7wAYUO/view?usp=sharing"
+15o-qTXxUqmNdbcM24hjehT6hycF39uyJ	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7675      "comment": "Specific seconds may be off by 1 due to starting timer. But not close to another submission.\n\nSave: https://drive.google.com/file/d/15o-qTXxUqmNdbcM24hjehT6hycF39uyJ/view?usp=sharing\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7680        "https://drive.google.com/file/d/15o-qTXxUqmNdbcM24hjehT6hycF39uyJ/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7683        "https://drive.google.com/file/d/15o-qTXxUqmNdbcM24hjehT6hycF39uyJ/view?usp=sharing"
+15x1dF4SO9UScoqtAWvsvewNCMqjFdkii	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19494      "comment": "Retime: 8:41.050\r\nReplay file: https://drive.google.com/file/d/15x1dF4SO9UScoqtAWvsvewNCMqjFdkii/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19499        "https://drive.google.com/file/d/15x1dF4SO9UScoqtAWvsvewNCMqjFdkii/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19502        "https://drive.google.com/file/d/15x1dF4SO9UScoqtAWvsvewNCMqjFdkii/view?usp=sharing"
+160QUxep0R8Ymvqw1DT8XKbBR-H73lg89	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28786      "comment": "My own design of BP's, at the time slowest submission of them all but still fine coz \"only\" 3x slower than WR!\r\n\r\nNext time we can only go FASTER --> but have to manage yellow science buff.\r\n\r\nsavefile : https://drive.google.com/file/d/160QUxep0R8Ymvqw1DT8XKbBR-H73lg89/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28791        "https://drive.google.com/file/d/160QUxep0R8Ymvqw1DT8XKbBR-H73lg89/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28794        "https://drive.google.com/file/d/160QUxep0R8Ymvqw1DT8XKbBR-H73lg89/view?usp=sharing"
+16Qs_duWOlEMxnZVsZAMUPKWdZqCVJcos	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11407      "comment": "Insane run, amazing to get the first sub 4:20:00.\n\nBlue science time is absolutely insane, I may never see this faster again.\n\nPurple science fix print seems to have helped science keep up.\n\nThere is room to improve with a map that has an insane backside.\n\nUnfortunately the timer paused during outposting so it's ~34 seconds fast at the end (retiming needed to confirm the exact time)\n\nTwitch video: https://www.twitch.tv/videos/2121812896\n\nSave file: https://drive.googl
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11414        "https://drive.google.com/file/d/16Qs_duWOlEMxnZVsZAMUPKWdZqCVJcos/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:11417        "https://drive.google.com/file/d/16Qs_duWOlEMxnZVsZAMUPKWdZqCVJcos/view?usp=sharing"
+16SCF85AvaICJvNdDWZvtqmzMQX3u4bTA	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32316      "comment": "Save File: https://drive.google.com/file/d/16SCF85AvaICJvNdDWZvtqmzMQX3u4bTA/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32321        "https://drive.google.com/file/d/16SCF85AvaICJvNdDWZvtqmzMQX3u4bTA/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:32324        "https://drive.google.com/file/d/16SCF85AvaICJvNdDWZvtqmzMQX3u4bTA/view?usp=sharing"
+16WDUCXn0Aa7-JzLUHiQOpbFKnPegAx26	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13615      "comment": "Finally 3rd place! This run went really well - a few hiccups with my new outpost supply design, but easily fixed.\n\n\n\nSave file: https://drive.google.com/file/d/16WDUCXn0Aa7-JzLUHiQOpbFKnPegAx26/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13620        "https://drive.google.com/file/d/16WDUCXn0Aa7-JzLUHiQOpbFKnPegAx26/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:13623        "https://drive.google.com/file/d/16WDUCXn0Aa7-JzLUHiQOpbFKnPegAx26/view?usp=sharing"
+16_q_ZqACe-TlZhG6PM7_lEi6RDjkkn8h	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26777      "comment": "Save file: https://drive.google.com/file/d/16_q_ZqACe-TlZhG6PM7_lEi6RDjkkn8h/view?usp=sharing\r\nNotes export: https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26782        "https://drive.google.com/file/d/16_q_ZqACe-TlZhG6PM7_lEi6RDjkkn8h/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:26786        "https://drive.google.com/file/d/16_q_ZqACe-TlZhG6PM7_lEi6RDjkkn8h/view?usp=sharing",
+17ReqvR-o4Zu1ibSUKqwY3RpcLXlE8w6p	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9971      "comment": "Savegame: https://drive.google.com/file/d/17ReqvR-o4Zu1ibSUKqwY3RpcLXlE8w6p/view?usp=sharing\n\nWhat a great run! I'm very happy with this run, even though there's quite a lot of room for improvement, both in my skill and in the map. I'm not sure why nuclear reactors were so slow in this run, but it seems that the fix(es) for heat exchangers and steam turbines are finally playing nice with each other. Still, this was touch and go for power!\n\nBlueprints: https://drive.google.com
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9976        "https://drive.google.com/file/d/17ReqvR-o4Zu1ibSUKqwY3RpcLXlE8w6p/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9980        "https://drive.google.com/file/d/17ReqvR-o4Zu1ibSUKqwY3RpcLXlE8w6p/view?usp=sharing",
+17SO6pBbNJtN0yqdZB3cQXAuPulhgzKNY	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61250      "comment": "Save: https://drive.google.com/file/d/17SO6pBbNJtN0yqdZB3cQXAuPulhgzKNY/view?usp=sharing\n\nStill a bad run LOL",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61255        "https://drive.google.com/file/d/17SO6pBbNJtN0yqdZB3cQXAuPulhgzKNY/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61258        "https://drive.google.com/file/d/17SO6pBbNJtN0yqdZB3cQXAuPulhgzKNY/view?usp=sharing"
+17nSoXzkPv6FEqpZ6Wj-pENFmW3N4hvNf	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:53691      "comment": "Save file: https://drive.google.com/file/d/17nSoXzkPv6FEqpZ6Wj-pENFmW3N4hvNf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:53696        "https://drive.google.com/file/d/17nSoXzkPv6FEqpZ6Wj-pENFmW3N4hvNf/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:53699        "https://drive.google.com/file/d/17nSoXzkPv6FEqpZ6Wj-pENFmW3N4hvNf/view?usp=sharing"
+17uABG6dkULDx16v9IvUhYUowF_rfCj5d	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61158      "comment": "First sub 4:20! The run went really good over all... pushing all the limits the base has... Might need more ore lanes on Nauvis again.\n\nFun note, this was the 17th run of my September charity drive!\n\nSave file: https://drive.google.com/file/d/17uABG6dkULDx16v9IvUhYUowF_rfCj5d/view?usp=sharing\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61163        "https://drive.google.com/file/d/17uABG6dkULDx16v9IvUhYUowF_rfCj5d/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61166        "https://drive.google.com/file/d/17uABG6dkULDx16v9IvUhYUowF_rfCj5d/view?usp=sharing"
+17v4MzVyij9E9nytMO8724Rx53JQ9zuhY	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:49230      "comment": "Factorio Speed Run Any% Duo\r\n  with DrMacou : www.twitch.tv/dr_macou\r\n\r\nFactorio version 0.17.66\r\n02h32m35s recorded on September 2nd 2019\r\nBuild based on ClownTown's work (and others)\r\n\r\nSavegame :\r\nhttps://drive.google.com/file/d/17v4MzVyij9E9nytMO8724Rx53JQ9zuhY/view?usp=sharing\r\n\r\nSeed:\r\n>>>eNpjYBBkcGIAgwMOIJKDJTk/MYeBwcEBInLAgSs5v6AgtUg3vygV\r\nJgTCnMlFpSmpuvmZOciiXKl5qbmVukmJxUDFDfYQkxvsOTKL8vPQTWA\r\ntLsnPA4nYw0VKilJTi4EaHFavWmUH0shdWpSYl1maC9K7epWWHc
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:49235        "https://drive.google.com/file/d/17v4MzVyij9E9nytMO8724Rx53JQ9zuhY/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:49238        "https://drive.google.com/file/d/17v4MzVyij9E9nytMO8724Rx53JQ9zuhY/view?usp=sharing"
+17yvtuLMa5ZxEbAdjx8blS6xu-d345UBV	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28156      "comment": "Savegame: https://drive.google.com/file/d/17yvtuLMa5ZxEbAdjx8blS6xu-d345UBV/view?usp=sharing\r\nNotes: https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28161        "https://drive.google.com/file/d/17yvtuLMa5ZxEbAdjx8blS6xu-d345UBV/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28165        "https://drive.google.com/file/d/17yvtuLMa5ZxEbAdjx8blS6xu-d345UBV/view?usp=sharing",
+18-DnpsZZT-5RClLCYKyj47p7FpQ_0DJ1	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21381      "comment": "Should be like a 1:22:59.5 woo! Split launch late and the cutscene right on time.\r\n\r\nResearch in time for ~1:22:40 which is wild.\r\n\r\nSave:\r\nhttps://drive.google.com/file/d/18-DnpsZZT-5RClLCYKyj47p7FpQ_0DJ1/view?usp=sharing\r\n\r\nString:\r\n>>>eNp9Us1rE0EUf9M0mKZQeshBoa05BCqFLaF+QZDM6EX8MzabSRnY\r\n7MTZXbB6sIVehIJnvbTnFAo9eit4UVAQPHlr6cWDB0Hx4iF9b7qziUv\r\nqD97Hvo/fvDezDBgIFIJA4ZXZQPshwIlwUg30YCCNp42cDM8FJu1KT6\r\nt/i2Uk+1tex4+xeJtbXrQVZXRUZCjHiY4mIkKUEyNlTN7hcNimxvnU+\
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21386        "https://drive.google.com/file/d/18-DnpsZZT-5RClLCYKyj47p7FpQ_0DJ1/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:21389        "https://drive.google.com/file/d/18-DnpsZZT-5RClLCYKyj47p7FpQ_0DJ1/view?usp=sharing"
+18BOHu2kmvX2QZx-iFKllWYIBDEhM2jr-	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31140      "comment": "Replay: https://drive.google.com/file/d/18BOHu2kmvX2QZx-iFKllWYIBDEhM2jr-/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31145        "https://drive.google.com/file/d/18BOHu2kmvX2QZx-iFKllWYIBDEhM2jr-/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31148        "https://drive.google.com/file/d/18BOHu2kmvX2QZx-iFKllWYIBDEhM2jr-/view?usp=sharing"
+18bT2isdaXODgEAraNJD6EE3OgQekOBMB	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1070      "comment": "Replay save: https://drive.google.com/file/d/18bT2isdaXODgEAraNJD6EE3OgQekOBMB/view?usp=drive_link\n\nRun is from 00:05 to 8:36 of video.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1075        "https://drive.google.com/file/d/18bT2isdaXODgEAraNJD6EE3OgQekOBMB/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:1078        "https://drive.google.com/file/d/18bT2isdaXODgEAraNJD6EE3OgQekOBMB/view?usp=drive_link"
+18bz0IePkQPXAvyIhiltKY-P37eixxGza	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2846      "comment": "https://drive.google.com/file/d/18bz0IePkQPXAvyIhiltKY-P37eixxGza/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2851        "https://drive.google.com/file/d/18bz0IePkQPXAvyIhiltKY-P37eixxGza/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2854        "https://drive.google.com/file/d/18bz0IePkQPXAvyIhiltKY-P37eixxGza/view?usp=sharing"
+18sbbE9lXuWF05ren61ZG3moU-zJIieLG	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:174      "comment": "https://drive.google.com/file/d/18sbbE9lXuWF05ren61ZG3moU-zJIieLG/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:179        "https://drive.google.com/file/d/18sbbE9lXuWF05ren61ZG3moU-zJIieLG/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:182        "https://drive.google.com/file/d/18sbbE9lXuWF05ren61ZG3moU-zJIieLG/view?usp=sharing"
+18zMRID5xlsydCVHNuBxbB7Do1ZaMjVGW	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25033      "comment": "https://www.twitch.tv/videos/1649083207\r\nSavefile: https://drive.google.com/file/d/18zMRID5xlsydCVHNuBxbB7Do1ZaMjVGW/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25040        "https://drive.google.com/file/d/18zMRID5xlsydCVHNuBxbB7Do1ZaMjVGW/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25043        "https://drive.google.com/file/d/18zMRID5xlsydCVHNuBxbB7Do1ZaMjVGW/view?usp=sharing"
+192FB__k5st-4wZ-DrU2XPYqe8ndBtLeh	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8710      "comment": "https://drive.google.com/file/d/192FB__k5st-4wZ-DrU2XPYqe8ndBtLeh/view?usp=sharing savegame. BPs are Dereks beginner 100% book.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8715        "https://drive.google.com/file/d/192FB__k5st-4wZ-DrU2XPYqe8ndBtLeh/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:8718        "https://drive.google.com/file/d/192FB__k5st-4wZ-DrU2XPYqe8ndBtLeh/view?usp=sharing"
+19Em-EEO1hOIH9cunEUZw9PDF6I4bBWnE	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60556      "comment": "Save file with replay: https://drive.google.com/file/d/19Em-EEO1hOIH9cunEUZw9PDF6I4bBWnE/view?usp=drive_link\n\nRun starts at 00:04:38 and ends at 07:28:34 of video.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60561        "https://drive.google.com/file/d/19Em-EEO1hOIH9cunEUZw9PDF6I4bBWnE/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:60564        "https://drive.google.com/file/d/19Em-EEO1hOIH9cunEUZw9PDF6I4bBWnE/view?usp=drive_link"
+19PBoUTfk7MUZ6aL6v1e--EUWc2uXdsta	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4569      "comment": "save file with replay: https://drive.google.com/file/d/19PBoUTfk7MUZ6aL6v1e--EUWc2uXdsta/view?usp=sharing\n\n![](/static/blob/xz0dm08e.png)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4574        "https://drive.google.com/file/d/19PBoUTfk7MUZ6aL6v1e--EUWc2uXdsta/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4577        "https://drive.google.com/file/d/19PBoUTfk7MUZ6aL6v1e--EUWc2uXdsta/view?usp=sharing"
+19TQcbgBpb-s4YJHTWQomBHQOczu1CYWp	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37726      "comment": "https://drive.google.com/file/d/19TQcbgBpb-s4YJHTWQomBHQOczu1CYWp/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37731        "https://drive.google.com/file/d/19TQcbgBpb-s4YJHTWQomBHQOczu1CYWp/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37734        "https://drive.google.com/file/d/19TQcbgBpb-s4YJHTWQomBHQOczu1CYWp/view?usp=sharing"
+19VEvu6P3Rput4fL-qWx7F4vyIa7plGT3	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61296      "comment": "link to run:\n\nhttps://drive.google.com/file/d/19VEvu6P3Rput4fL-qWx7F4vyIa7plGT3/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61301        "https://drive.google.com/file/d/19VEvu6P3Rput4fL-qWx7F4vyIa7plGT3/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:61304        "https://drive.google.com/file/d/19VEvu6P3Rput4fL-qWx7F4vyIa7plGT3/view?usp=drive_link"
+19_VobvaokPROQg_KHF6tMXvMQzvA-elX	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29510      "comment": "https://drive.google.com/file/d/19_VobvaokPROQg_KHF6tMXvMQzvA-elX/view?usp=sharing\r\n\r\n^^ Replay from other perspective",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29515        "https://drive.google.com/file/d/19_VobvaokPROQg_KHF6tMXvMQzvA-elX/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:29518        "https://drive.google.com/file/d/19_VobvaokPROQg_KHF6tMXvMQzvA-elX/view?usp=sharing"
+19ch0IIOmcVA1gMhIGpW35Ty6KkXKKfG1	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35982      "comment": "Una vez m\u00e1s... lo intentamos y lo conseguimos. Objetivo: Bajar de 2:30\r\nEl save:\r\nhttps://drive.google.com/file/d/19ch0IIOmcVA1gMhIGpW35Ty6KkXKKfG1/view?usp=sharing\r\n\r\n",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35987        "https://drive.google.com/file/d/19ch0IIOmcVA1gMhIGpW35Ty6KkXKKfG1/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:35990        "https://drive.google.com/file/d/19ch0IIOmcVA1gMhIGpW35Ty6KkXKKfG1/view?usp=sharing"
+19pa_2kb4waTtEwa8cpK8xnEMofvBxILw	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:787      "comment": "https://drive.google.com/file/d/19pa_2kb4waTtEwa8cpK8xnEMofvBxILw/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:792        "https://drive.google.com/file/d/19pa_2kb4waTtEwa8cpK8xnEMofvBxILw/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:795        "https://drive.google.com/file/d/19pa_2kb4waTtEwa8cpK8xnEMofvBxILw/view?usp=sharing"
+1A8p-xHiMCKWFCtVe3mDM0o2pbVHd8c75	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25976      "comment": "Save game: https://drive.google.com/file/d/1A8p-xHiMCKWFCtVe3mDM0o2pbVHd8c75/view?usp=sharing\n\ntypical_guy: https://www.twitch.tv/videos/1628200610\n\nheartosis: https://www.youtube.com/watch?v=a80EHHGWkX8",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25983        "https://drive.google.com/file/d/1A8p-xHiMCKWFCtVe3mDM0o2pbVHd8c75/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:25988        "https://drive.google.com/file/d/1A8p-xHiMCKWFCtVe3mDM0o2pbVHd8c75/view?usp=sharing"
+1AC4qH8Xgt4fykM3L8dMt_8iDFQ-6r3W-	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19577      "comment": "Zaspar POV: https://www.twitch.tv/videos/1792924935\n\nSave: https://drive.google.com/file/d/1AC4qH8Xgt4fykM3L8dMt_8iDFQ-6r3W-/view",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19584        "https://drive.google.com/file/d/1AC4qH8Xgt4fykM3L8dMt_8iDFQ-6r3W-/view"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19587        "https://drive.google.com/file/d/1AC4qH8Xgt4fykM3L8dMt_8iDFQ-6r3W-/view"
+1AEm1akKW7q2AWFtIah3GozlEhzwCFyD7	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19222      "comment": "Hit the split key by accident on the final time, retimed by timestamps in twitch vod.\nsave: https://drive.google.com/file/d/1AEm1akKW7q2AWFtIah3GozlEhzwCFyD7/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19227        "https://drive.google.com/file/d/1AEm1akKW7q2AWFtIah3GozlEhzwCFyD7/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:19230        "https://drive.google.com/file/d/1AEm1akKW7q2AWFtIah3GozlEhzwCFyD7/view?usp=sharing"
+1AUt4Vzgw6s-luRkYplBOy8R3BYhr1aBD	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5697      "comment": "save game (with replay): https://drive.google.com/file/d/1AUt4Vzgw6s-luRkYplBOy8R3BYhr1aBD/view?usp=drive_link\n\nRan offline so may take an hour or two to be viewable on YouTube. Sorry to my 3 viewers for not streaming. :)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5702        "https://drive.google.com/file/d/1AUt4Vzgw6s-luRkYplBOy8R3BYhr1aBD/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:5705        "https://drive.google.com/file/d/1AUt4Vzgw6s-luRkYplBOy8R3BYhr1aBD/view?usp=drive_link"
+1AWp-uWfn1vZIXbMyF9y-HSwNwR1w4vL6	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:58773      "comment": "Thank you to all the players involved: billbo99, BTG, JD-Plays, Nimbus7020, nezaDnmrk, Cookap, datagnome, ram0124, Sabalanor, Malls, foxhound590, thelordsmith, andrewreds, dfbossman, Scoffee, Holybaer, NuDaLaOperatie, eraserchip, shackcat, Dumbrarere, DerEichler, ruihd, Ozy_Viking, Boombutscha, goodboy34, thep3141, wiseguy9000, evomike86, muppet9010, Daredev\n\nAdmins include, Billbo99, foxhound590, muppet9010\n\n\nPart 2 of the video is here: https://www.youtube.com/watch?v=lDOO
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:58780        "https://drive.google.com/file/d/1AWp-uWfn1vZIXbMyF9y-HSwNwR1w4vL6/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:58783        "https://drive.google.com/file/d/1AWp-uWfn1vZIXbMyF9y-HSwNwR1w4vL6/view?usp=sharing"
+1AYS9vjv9cHUNt3fHgBDfH8jZvk-_Txij	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31799      "comment": "Havent seen a 1:26, and never will!  \r\nsavefile:\r\nhttps://drive.google.com/file/d/1AYS9vjv9cHUNt3fHgBDfH8jZvk-_Txij/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31804        "https://drive.google.com/file/d/1AYS9vjv9cHUNt3fHgBDfH8jZvk-_Txij/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:31807        "https://drive.google.com/file/d/1AYS9vjv9cHUNt3fHgBDfH8jZvk-_Txij/view?usp=sharing"
+1AYZIEqDlgUntlnEzQng5hoc9EX-9BJx0	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28303      "comment": "Savegame: https://drive.google.com/file/d/1AYZIEqDlgUntlnEzQng5hoc9EX-9BJx0/view?usp=sharing\r\nNotes: https://drive.google.com/file/d/1XsgZRWJ_eU9lfLt25Qo6p-Srg9VT2QLf/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28308        "https://drive.google.com/file/d/1AYZIEqDlgUntlnEzQng5hoc9EX-9BJx0/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:28312        "https://drive.google.com/file/d/1AYZIEqDlgUntlnEzQng5hoc9EX-9BJx0/view?usp=sharing",
+1AihnRNAjmGl7xUGCY2ld6hm2uy81fctL	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54425      "comment": "https://drive.google.com/file/d/1AihnRNAjmGl7xUGCY2ld6hm2uy81fctL/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54430        "https://drive.google.com/file/d/1AihnRNAjmGl7xUGCY2ld6hm2uy81fctL/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54433        "https://drive.google.com/file/d/1AihnRNAjmGl7xUGCY2ld6hm2uy81fctL/view?usp=drive_link"
+1AoN2rpE2uYHclKXPtt3vjoz0OtfbuqtC	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54015      "comment": "https://drive.google.com/file/d/1AoN2rpE2uYHclKXPtt3vjoz0OtfbuqtC/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54020        "https://drive.google.com/file/d/1AoN2rpE2uYHclKXPtt3vjoz0OtfbuqtC/view?usp=drive_link"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:54023        "https://drive.google.com/file/d/1AoN2rpE2uYHclKXPtt3vjoz0OtfbuqtC/view?usp=drive_link"
+1AvNkA1UlV74tbEBThP_tlv2Va4eYcP6K	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7246      "comment": "https://drive.google.com/file/d/1AvNkA1UlV74tbEBThP_tlv2Va4eYcP6K/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7251        "https://drive.google.com/file/d/1AvNkA1UlV74tbEBThP_tlv2Va4eYcP6K/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7254        "https://drive.google.com/file/d/1AvNkA1UlV74tbEBThP_tlv2Va4eYcP6K/view?usp=sharing"
+1B4lcIZCbidTuTG0lWtjFMqDlLyo2wRIU	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7863      "comment": "Savegame: https://drive.google.com/file/d/1B4lcIZCbidTuTG0lWtjFMqDlLyo2wRIU/view?usp=sharing\n\nMod Message: Time starts at 527.483 and ends at 16266.033 at 60 fps to get a final time of 4h 22m 18s 550ms. Retimed using [yt-frame-timer](https://slashinfty.github.io/yt-frame-timer \"yt-frame-timer\n\nTime amended from 4:22:09 to 4:22:18",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7868        "https://drive.google.com/file/d/1B4lcIZCbidTuTG0lWtjFMqDlLyo2wRIU/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:7872        "https://drive.google.com/file/d/1B4lcIZCbidTuTG0lWtjFMqDlLyo2wRIU/view?usp=sharing"
+1B582-SRBYelJE4X1DpsaITNePNW_yyYb	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9527      "comment": "save game: https://drive.google.com/file/d/1B582-SRBYelJE4X1DpsaITNePNW_yyYb/view?usp=drive_link\n\n![](/static/blob/1n73537e.png)\n\nhttps://www.youtube.com/watch?v=NP3VWM3qWgYhttps://www.youtube.com/watch?v=NP3VWM3qWgY\n\nhttps://www.twitch.tv/videos/2181913214\n\nhttps://www.twitch.tv/videos/2181916019\n\nhttps://www.twitch.tv/videos/2181916025\n\nhttps://www.twitch.tv/videos/2182177040\n\n2024-07-04: Added thedoh's VOD.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9537        "https://drive.google.com/file/d/1B582-SRBYelJE4X1DpsaITNePNW_yyYb/view?usp=drive_link",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:9545        "https://drive.google.com/file/d/1B582-SRBYelJE4X1DpsaITNePNW_yyYb/view?usp=drive_link"
+1B_8xG5QBWnKYZmXBPWYwF9xJGE8bBxvo	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38162      "comment": "https://drive.google.com/file/d/1B_8xG5QBWnKYZmXBPWYwF9xJGE8bBxvo/view?usp=sharing\r\n\r\nNice.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38167        "https://drive.google.com/file/d/1B_8xG5QBWnKYZmXBPWYwF9xJGE8bBxvo/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38170        "https://drive.google.com/file/d/1B_8xG5QBWnKYZmXBPWYwF9xJGE8bBxvo/view?usp=sharing"
+1Bo18gkKaVZHEg5f98ozbyf559vUofHZ2	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16754      "comment": "Savegame: https://user.fm/files/v2-974e2111b3bf5dee21cda1289201931a/4h42m12s.zip\n\nBlueprints: https://drive.google.com/file/d/1Bo18gkKaVZHEg5f98ozbyf559vUofHZ2/view?usp=sharing\n\nThis run was pretty darn slow, all things considered. The map wasn't amazing, but my previous PB was time lossy after the rocket (with an amazing pace up until then). But a PB is a PB, right?",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16760        "https://drive.google.com/file/d/1Bo18gkKaVZHEg5f98ozbyf559vUofHZ2/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:16764        "https://drive.google.com/file/d/1Bo18gkKaVZHEg5f98ozbyf559vUofHZ2/view?usp=sharing"
+1BulVozesa0NAGnXy5W-cKa6NS09XnfPm	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2799      "comment": "Save and replay:  https://drive.google.com/file/d/1BulVozesa0NAGnXy5W-cKa6NS09XnfPm/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2804        "https://drive.google.com/file/d/1BulVozesa0NAGnXy5W-cKa6NS09XnfPm/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2807        "https://drive.google.com/file/d/1BulVozesa0NAGnXy5W-cKa6NS09XnfPm/view?usp=sharing"
+1C9vaYHrJEHDKke85Ehz3EErwoYcQYW-u	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39196      "comment": "cicuz stream: https://www.twitch.tv/videos/877286411\r\npsonico stream: https://www.twitch.tv/videos/877339387\r\nsave/replay:\r\nhttps://drive.google.com/file/d/1C9vaYHrJEHDKke85Ehz3EErwoYcQYW-u/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39204        "https://drive.google.com/file/d/1C9vaYHrJEHDKke85Ehz3EErwoYcQYW-u/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:39207        "https://drive.google.com/file/d/1C9vaYHrJEHDKke85Ehz3EErwoYcQYW-u/view?usp=sharing"
+1CSDFT305fceQOl_Gqyo5HY1zaJDOJ3FW	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2211      "comment": "Link to Save File, Map Exchange String, and Screen Shots:\nhttps://drive.google.com/open?id=1CSDFT305fceQOl_Gqyo5HY1zaJDOJ3FW&usp=drive_fs",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2216        "https://drive.google.com/open?id=1CSDFT305fceQOl_Gqyo5HY1zaJDOJ3FW&usp=drive_fs"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:2219        "https://drive.google.com/open?id=1CSDFT305fceQOl_Gqyo5HY1zaJDOJ3FW&usp=drive_fs"
+1CWg9iMaGN0NCK6KZ1453y2KzDVJF8GXD	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10752      "comment": "Save: https://drive.google.com/file/d/1CWg9iMaGN0NCK6KZ1453y2KzDVJF8GXD/view?usp=sharing\n\n\n\nMod edit: Retimed to 51m39s (run starts 22s48f, ends 3125s11f)",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10757        "https://drive.google.com/file/d/1CWg9iMaGN0NCK6KZ1453y2KzDVJF8GXD/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:10760        "https://drive.google.com/file/d/1CWg9iMaGN0NCK6KZ1453y2KzDVJF8GXD/view?usp=sharing"
+1CcXIoSv5_DfSigAsUYvM3ZGmSSU0jNAb	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37632      "comment": "Pretty good I guess.\r\n\r\nhttps://drive.google.com/file/d/1CcXIoSv5_DfSigAsUYvM3ZGmSSU0jNAb/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37637        "https://drive.google.com/file/d/1CcXIoSv5_DfSigAsUYvM3ZGmSSU0jNAb/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:37640        "https://drive.google.com/file/d/1CcXIoSv5_DfSigAsUYvM3ZGmSSU0jNAb/view?usp=sharing"
+1D310KWu1-g4sSB43Z1IoaAy64ZPOO_RM	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14812      "comment": "Well it was an amazing run that could have been 13 minutes faster, but misunderstood Anti DRM blew Solaris (among other things)\n\nA big PB is looming.... the quest for 4th place begins...\n\n\nSave file: https://drive.google.com/file/d/1D310KWu1-g4sSB43Z1IoaAy64ZPOO_RM/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14817        "https://drive.google.com/file/d/1D310KWu1-g4sSB43Z1IoaAy64ZPOO_RM/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:14820        "https://drive.google.com/file/d/1D310KWu1-g4sSB43Z1IoaAy64ZPOO_RM/view?usp=sharing"
+1D6XD0geTgpJgjGsIRxDGtnjwRXaRpwrW	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38922      "comment": "Decent run, but there is still lots of timesave\r\n\r\nReplay: https://drive.google.com/file/d/1D6XD0geTgpJgjGsIRxDGtnjwRXaRpwrW/view?usp=sharing",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38927        "https://drive.google.com/file/d/1D6XD0geTgpJgjGsIRxDGtnjwRXaRpwrW/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:38930        "https://drive.google.com/file/d/1D6XD0geTgpJgjGsIRxDGtnjwRXaRpwrW/view?usp=sharing"
+1DLDgqQ1T6SNvnEN5w9blaa6CwCQX3ysv	occurrences=3
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4616      "comment": "save file with replay: https://drive.google.com/file/d/1DLDgqQ1T6SNvnEN5w9blaa6CwCQX3ysv/view?usp=sharing\n\nMistakes were made. Labs built the wrong way again (embarrassing) meaning oil pipe was wrong too. Mixed build mistakes including messing up LDS and red circuits. Missed iron stick recipe for purple science rails.",
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4621        "https://drive.google.com/file/d/1DLDgqQ1T6SNvnEN5w9blaa6CwCQX3ysv/view?usp=sharing"
+  tmp-se-speedrun-result-20260824:tmp-se-speedrun-search/candidate-runs.json:4624        "https://drive.google.com/file/d/1DLDgqQ1T6SNvnEN5w9blaa6CwCQX3ysv/view?usp=sharing"
+1DMT3hHqQ3P3icyPy_0iVyZl9EZxgOoig	occurrences=3
