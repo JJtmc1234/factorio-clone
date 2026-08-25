@@ -1,0 +1,11 @@
+RANGE: 1261400-1263900
+ELAPSED_SECONDS: 31.9
+STATUS_COUNTS: {'404': 2416, '200': 85}
+VALID_CURRENT_GAMES: 85
+SE_0_7_SERVERS: 2
+TARGET_MATCHES: 1
+
+SE: id=1261546 name=Taiwan Bahamut Game Mods host=114.34.242.230:56984 password=True elapsed=7837 SE=0.7.57 K2=None mods=40 players=None desc=臺灣遊戲論壇巴哈姆特玩家交流房間
+SE: id=1262913 name=[entity=entity-ghost]Amogus Inc. host=79.240.152.116:25566 password=True elapsed=11437 SE=0.7.61 K2=2.1.2 mods=71 players=None desc=...
+
+TARGET: id=1262913 name=[entity=entity-ghost]Amogus Inc. host=79.240.152.116:25566 password=True

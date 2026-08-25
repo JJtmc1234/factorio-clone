@@ -1,0 +1,313 @@
+[
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "...",
+    "game_id": 1262913,
+    "game_time_elapsed": 11437,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "79.240.152.116:25566",
+    "host_port": 25566,
+    "last_heartbeat": 1787627498.255001,
+    "max_players": 5,
+    "mods": [
+      {
+        "name": "angelsaddons-mobility-graphics-crawler",
+        "version": "2.1.0"
+      },
+      {
+        "name": "angelsaddons-mobility-graphics-petro",
+        "version": "2.1.0"
+      },
+      {
+        "name": "angelsaddons-mobility-graphics-smelting",
+        "version": "2.1.0"
+      },
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "squeak-through-2",
+        "version": "0.2.0"
+      },
+      {
+        "name": "VehicleSnap",
+        "version": "2.0.4"
+      },
+      {
+        "name": "aai-containers",
+        "version": "0.4.0"
+      },
+      {
+        "name": "aai-loaders",
+        "version": "0.3.0"
+      },
+      {
+        "name": "aai-signal-transmission",
+        "version": "0.6.0"
+      },
+      {
+        "name": "aai-signals",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-chaingunner",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-flame-tank",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-flame-tumbler",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-hauler",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-laser-tank",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-miner",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-warden",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-zones",
+        "version": "0.8.0"
+      },
+      {
+        "name": "alien-biomes-graphics",
+        "version": "0.8.0"
+      },
+      {
+        "name": "angelsaddons-mobility",
+        "version": "2.1.1"
+      },
+      {
+        "name": "AutoDeconstruct",
+        "version": "1.1.2"
+      },
+      {
+        "name": "bullet-trails",
+        "version": "0.8.0"
+      },
+      {
+        "name": "clock",
+        "version": "3.0.0"
+      },
+      {
+        "name": "DiscoScience",
+        "version": "2.1.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "even-distribution",
+        "version": "2.1.0"
+      },
+      {
+        "name": "factoryplanner",
+        "version": "2.1.12"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "FluidMustFlow",
+        "version": "1.5.0"
+      },
+      {
+        "name": "FNEI",
+        "version": "0.4.7"
+      },
+      {
+        "name": "grappling-gun",
+        "version": "0.5.0"
+      },
+      {
+        "name": "helmod",
+        "version": "2.3.3"
+      },
+      {
+        "name": "informatron",
+        "version": "0.5.0"
+      },
+      {
+        "name": "jetpack",
+        "version": "0.5.1"
+      },
+      {
+        "name": "Krastorio2Assets",
+        "version": "2.1.0"
+      },
+      {
+        "name": "Krastorio2MenuSimulations",
+        "version": "2.1.0"
+      },
+      {
+        "name": "LogisticTrainNetwork",
+        "version": "3.1.0"
+      },
+      {
+        "name": "Milestones",
+        "version": "1.5.2"
+      },
+      {
+        "name": "mining-patch-planner",
+        "version": "1.7.21"
+      },
+      {
+        "name": "nixie-tubes",
+        "version": "2.1.0"
+      },
+      {
+        "name": "Placeables",
+        "version": "1.5.5"
+      },
+      {
+        "name": "RampantArsenalFork",
+        "version": "1.2.0"
+      },
+      {
+        "name": "rec-blue-plus",
+        "version": "1.5.2"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "robot_attrition",
+        "version": "0.7.0"
+      },
+      {
+        "name": "shield-projector",
+        "version": "0.3.0"
+      },
+      {
+        "name": "space-exploration-graphics",
+        "version": "0.7.7"
+      },
+      {
+        "name": "space-exploration-graphics-2",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-3",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-4",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-5",
+        "version": "0.7.5"
+      },
+      {
+        "name": "space-exploration-menu-simulations",
+        "version": "0.7.5"
+      },
+      {
+        "name": "textplates",
+        "version": "0.8.0"
+      },
+      {
+        "name": "Todo-List",
+        "version": "19.15.3"
+      },
+      {
+        "name": "valves-lib",
+        "version": "2.0.0"
+      },
+      {
+        "name": "Waterfill_v17",
+        "version": "2.1.1"
+      },
+      {
+        "name": "aai-programmable-structures",
+        "version": "0.9.0"
+      },
+      {
+        "name": "alien-biomes",
+        "version": "0.8.0"
+      },
+      {
+        "name": "ChangeInserterDropLane",
+        "version": "1.3.0"
+      },
+      {
+        "name": "LTN_Combinator_Modernized",
+        "version": "2.5.0"
+      },
+      {
+        "name": "valves",
+        "version": "3.0.0"
+      },
+      {
+        "name": "Krastorio2",
+        "version": "2.1.2"
+      },
+      {
+        "name": "LtnManager",
+        "version": "0.6.0"
+      },
+      {
+        "name": "aai-industry",
+        "version": "0.7.4"
+      },
+      {
+        "name": "aai-programmable-vehicles",
+        "version": "0.9.1"
+      },
+      {
+        "name": "space-exploration",
+        "version": "0.7.61"
+      },
+      {
+        "name": "factorissimo-2-notnotmelon",
+        "version": "3.12.3"
+      },
+      {
+        "name": "GUI_Unifyer",
+        "version": "2.0.2"
+      },
+      {
+        "name": "Hovercrafts",
+        "version": "2.1.4"
+      },
+      {
+        "name": "space-exploration-postprocess",
+        "version": "0.7.6"
+      },
+      {
+        "name": "very-early-requester-new",
+        "version": "1.1.2"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "[entity=entity-ghost]Amogus Inc.",
+    "server_id": "TwZkvbt0j/10CSlrDdQH/szpd+oi5iSMlm8LNdtarrM=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1262913
+  }
+]
