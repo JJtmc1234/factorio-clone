@@ -1,0 +1,77 @@
+name: Extract SE 0.7 stage creators
+
+on:
+  push:
+    branches: [tmp-se-stage-creators-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Rank creators around first cargo rocket
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-stage-creators-result
+          mkdir -p se-stage-creators-result
+          python3 - <<'PY'
+          import collections, json, pathlib, re
+          videos = json.loads(pathlib.Path('tmp-se-youtube-se-only/se-videos.json').read_text())
+          out = pathlib.Path('se-stage-creators-result')
+          explicit07 = re.compile(r'(?i)(space\s+exploration\s+0\.7(?:\.\d+)?|\bSE\s*0\.7(?:\.\d+)?\b)')
+          stage = re.compile(r'(?i)(rocket\s+science|cargo\s+rocket|launch\s+pad|first\s+(?:cargo\s+)?rocket|nauvis\s+orbit|satellite\s+telemetry|rocket\s+sections?)')
+          launch = re.compile(r'(?i)(launch(?:ed|ing)?\s+(?:the\s+)?(?:first\s+)?cargo\s+rocket|first\s+(?:cargo\s+)?rocket\s+launch|going\s+to\s+orbit|reached?\s+orbit|nauvis\s+orbit\s+base)')
+          late = re.compile(r'(?i)(cryonite|vulcanite|holmium|iridium|beryllium|vitamelange|naquium|astronomic|energy\s+science|material\s+science|biological\s+science|deep\s+space|spaceship|arcosphere|victory)')
+          rows=[]
+          for v in videos:
+              title=v.get('title') or ''; desc=v.get('description') or ''; hay=title+'\n'+desc
+              if not explicit07.search(hay):
+                  continue
+              if not stage.search(hay):
+                  continue
+              score=100
+              score += 35 if stage.search(title) else 0
+              score -= 30 if launch.search(title) else 0
+              score -= min(60, len(set(x.lower() for x in late.findall(hay)))*10)
+              if re.search(r'(?i)(day|episode|ep\.?|part|#)\s*\d+', title): score += 5
+              rows.append({
+                  'score':score,'channel':v.get('channel'),'title':title,
+                  'video_url':v.get('video_url'),'description_source':v.get('description_source'),
+                  'candidate_urls':v.get('candidate_urls') or [],
+                  'save_context':v.get('save_context') or [],
+                  'description_excerpt':desc[:3500],
+              })
+          rows.sort(key=lambda r:(-r['score'],(r.get('channel') or '').lower(),r['title'].lower()))
+          channels=collections.defaultdict(list)
+          for r in rows: channels[r.get('channel') or '(unknown)'].append(r)
+          pathlib.Path(out/'rows.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          lines=[f'Explicit SE 0.7 stage videos: {len(rows)}',f'Creators: {len(channels)}','', 'CREATORS', '='*110]
+          for channel, vids in sorted(channels.items(),key=lambda x:(-max(v['score'] for v in x[1]),x[0].lower())):
+              lines += [f'{channel} | videos={len(vids)} | max_score={max(v["score"] for v in vids)}']
+              for v in vids:
+                  lines += [f'  SCORE {v["score"]}: {v["title"]}',f'  {v["video_url"]}']
+                  for u in v['candidate_urls'][:8]: lines.append('    LINK '+u)
+              lines.append('')
+          lines += ['', 'FULL RANKED DETAILS', '='*110]
+          for r in rows:
+              lines += [f'SCORE {r["score"]} | {r.get("channel")} | {r["title"]}',r.get('video_url') or '',*['LINK '+x for x in r['candidate_urls']],*['CTX '+x for x in r['save_context']],r['description_excerpt'],'','-'*110]
+          pathlib.Path(out/'STAGE_CREATORS.txt').write_text('\n'.join(lines))
+          print('\n'.join(lines[:1000]))
+          PY
+      - name: Publish results
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-stage-creators-result-20260824
+          rm -rf tmp-se-stage-creators
+          mkdir -p tmp-se-stage-creators
+          cp -a se-stage-creators-result/. tmp-se-stage-creators/
+          git add -f tmp-se-stage-creators
+          git commit -m 'Publish SE 0.7 stage creator list'
+          git push --force origin HEAD:refs/heads/tmp-se-stage-creators-result-20260824
