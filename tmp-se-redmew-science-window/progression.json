@@ -1,0 +1,1969 @@
+{
+  "forces": [
+    {
+      "current_research": "effect-transmission",
+      "name": "player",
+      "researched_using_space": [
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "artillery"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "automation-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "destroyer"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "efficiency-module-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "inserter-capacity-bonus-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "laser-shooting-speed-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "laser-shooting-speed-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "laser-weapons-damage-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "laser-weapons-damage-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "logistics-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "mining-productivity-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "nuclear-fuel-reprocessing"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "physical-projectile-damage-5"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "production-science-pack"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "productivity-module-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "refined-flammables-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "research-speed-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "speed-module-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "stronger-explosives-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "uranium-ammo"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "weapon-shooting-speed-5"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "worker-robots-speed-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "worker-robots-speed-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "industrial-furnace"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "toolbelt-4"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "aai-se-space-loader"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "jetpack-2"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-adaptive-armour-3"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-cargo-rocket-section-beryllium"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-condenser-turbine"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-cryonite-lubricant"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-fluid-burner-generator"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-beryllium"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-cryonite"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-holmium"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-methane-ice"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-vitamelange"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-vulcanite"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-processing-water-ice"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-pyroflux-smelting"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-pyroflux-smelting-beryllium"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-pyroflux-smelting-holmium"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-rocket-cargo-safety-2"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-rocket-reusability-2"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-rocket-survivability-2"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-biochemical-laboratory"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-capsule-navigation"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-data-card"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-hypercooling-1"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-manufactory"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-plasma-generator"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-platform-scaffold"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-radiator-1"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-solar-panel"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-supercomputer-1"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-space-thermodynamics-laboratory"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "se-vulcanite-rocket-fuel"
+        },
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "utility-science-pack"
+        }
+      ],
+      "researched_using_specialist": {},
+      "rockets_launched": 59,
+      "science": {}
+    },
+    {
+      "name": "conquest",
+      "researched_using_space": [
+        {
+          "packs": [
+            "space-science-pack"
+          ],
+          "technology": "artillery"
+        }
+      ],
+      "researched_using_specialist": {},
+      "rockets_launched": 0,
+      "science": {}
+    },
+    {
+      "name": "ignore",
+      "researched_using_space": {},
+      "researched_using_specialist": {},
+      "rockets_launched": 0,
+      "science": {}
+    },
+    {
+      "name": "capture",
+      "researched_using_space": {},
+      "researched_using_specialist": {},
+      "rockets_launched": 0,
+      "science": {}
+    },
+    {
+      "name": "friendly",
+      "researched_using_space": {},
+      "researched_using_specialist": {},
+      "rockets_launched": 0,
+      "science": {}
+    }
+  ],
+  "hours": 29.00000462962963,
+  "players": [
+    {
+      "force": "player",
+      "name": "RedRafe",
+      "surface": "starmap-1"
+    },
+    {
+      "force": "player",
+      "name": "OmegaLunch",
+      "surface": "Nauvis Orbit"
+    },
+    {
+      "force": "player",
+      "name": "ohhnice",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "SugerGlider",
+      "surface": "Nauvis Orbit"
+    },
+    {
+      "force": "player",
+      "name": "lukurba",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "slayerxku",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "xian780",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Yess",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "GoguSpatzialu",
+      "surface": "Murasaki"
+    },
+    {
+      "force": "player",
+      "name": "Mista64",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "gnus2",
+      "surface": "Calidus Asteroid Belt 1"
+    },
+    {
+      "force": "player",
+      "name": "SangHai_Lee",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "kangzoel",
+      "surface": "Murasaki"
+    },
+    {
+      "force": "player",
+      "name": "AAD7A8",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "prezmop",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "American180",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Chillet",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "StarBurtS",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "AlexWikler",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "asAleksandr",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "emm",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "lyman",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "KillerKitten753",
+      "surface": "Murasaki"
+    },
+    {
+      "force": "player",
+      "name": "Beck6230",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "thantjnhyeu03133",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Zahuyachillo",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "ntis",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Basti-factorio",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "greg-innovator",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "CrisBullet",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Naquada",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "YAMATO_Hajime",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "wekkka",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "VeganCommunist",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "BoBro09",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Radonier",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "JnK07",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "DeadMan93",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "vvictor",
+      "surface": "Nauvis Orbit"
+    },
+    {
+      "force": "player",
+      "name": "Melvill",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Kimmy_bel",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Kyle372",
+      "surface": "Murasaki"
+    },
+    {
+      "force": "player",
+      "name": "Finny0",
+      "surface": "Mossgarden"
+    },
+    {
+      "force": "player",
+      "name": "Quadrum",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Ferefang",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "2230892312",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "cowherder9",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Th13f",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "KnoT_",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "NaShIk",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Mattisso",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "SunTzuConst",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "gosmokeajoint",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "EmptyRov",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "kunnis",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "nibu",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Scoffee",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Zengief",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Weazl",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "SLIME_Z",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "LemonBomp",
+      "surface": "starmap-61"
+    },
+    {
+      "force": "player",
+      "name": "RenanParro",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "oswaldca",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Kcuong103",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Srmilla",
+      "surface": "Nauvis Orbit"
+    },
+    {
+      "force": "player",
+      "name": "MonkeyDad",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "LawFact",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "URBE4",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "rabbit6666",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Nate_the_gamer_24",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "lib85616",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "GrandUni",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Uio.imcq",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "buggy123",
+      "surface": "starmap-74"
+    },
+    {
+      "force": "player",
+      "name": "JWop",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "iujuhuu",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "paul-k",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Lukypit11",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "AlfredTheKiller",
+      "surface": "Murasaki"
+    },
+    {
+      "force": "player",
+      "name": "HighInFiberOptics",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "adammmalpa",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "neiseon2104",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "LimeLight555",
+      "surface": "starmap-83"
+    },
+    {
+      "force": "player",
+      "name": "KampfGorilla93",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Omgalof",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "massiveblue",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Al13Jo",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "MaNiuTong",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "Salvakiya",
+      "surface": "nauvis"
+    },
+    {
+      "force": "player",
+      "name": "drakferion",
+      "surface": "starmap-90"
+    },
+    {
+      "force": "player",
+      "name": "yarigun",
+      "surface": "starmap-91"
+    }
+  ],
+  "recipes": {
+    "aai-signal-receiver": 1,
+    "aai-signal-sender": 1,
+    "aai-warehouse": 1,
+    "aai-warehouse-passive-provider": 1,
+    "aai-warehouse-storage": 1,
+    "accumulator": 9,
+    "advanced-circuit": 106,
+    "advanced-oil-processing": 62,
+    "arithmetic-combinator": 1,
+    "artillery-shell": 4,
+    "artillery-wagon": 1,
+    "assembling-machine-1": 3,
+    "assembling-machine-2": 3,
+    "assembling-machine-3": 2,
+    "automation-science-pack": 10,
+    "barrel": 4,
+    "battery": 30,
+    "big-electric-pole": 1,
+    "bulk-inserter": 1,
+    "burner-assembling-machine": 3,
+    "burner-inserter": 4,
+    "burner-mining-drill": 3,
+    "cannon-shell": 6,
+    "cargo-landing-pad": 1,
+    "cargo-wagon": 1,
+    "centrifuge": 1,
+    "chemical-plant": 1,
+    "chemical-science-pack": 20,
+    "cliff-explosives": 1,
+    "concrete": 8,
+    "constant-combinator": 1,
+    "construction-robot": 1,
+    "copper-cable": 152,
+    "copper-plate": 247,
+    "decider-combinator": 1,
+    "defender-capsule": 3,
+    "destroyer-capsule": 1,
+    "display-panel": 1,
+    "distractor-capsule": 1,
+    "efficiency-module": 13,
+    "electric-engine-unit": 12,
+    "electric-furnace": 2,
+    "electric-mining-drill": 4,
+    "electric-motor": 17,
+    "electronic-circuit": 44,
+    "electronic-circuit-wood": 2,
+    "empty-heavy-oil-barrel": 1,
+    "empty-lubricant-barrel": 1,
+    "empty-petroleum-gas-barrel": 1,
+    "empty-water-barrel": 1,
+    "engine-unit": 14,
+    "explosive-cannon-shell": 7,
+    "explosive-rocket": 1,
+    "explosives": 10,
+    "express-splitter": 2,
+    "express-transport-belt": 2,
+    "express-underground-belt": 3,
+    "fast-inserter": 3,
+    "fast-splitter": 2,
+    "fast-transport-belt": 2,
+    "fast-underground-belt": 2,
+    "firearm-magazine": 2,
+    "flamethrower-ammo": 1,
+    "flamethrower-turret": 1,
+    "fluid-wagon": 1,
+    "flying-robot-frame": 4,
+    "glass": 119,
+    "grenade": 6,
+    "heat-exchanger": 1,
+    "heat-pipe": 1,
+    "heavy-oil-barrel": 1,
+    "heavy-oil-cracking": 19,
+    "industrial-furnace": 1,
+    "inserter": 4,
+    "iron-chest": 1,
+    "iron-gear-wheel": 37,
+    "iron-plate": 314,
+    "iron-stick": 16,
+    "land-mine": 8,
+    "landfill": 2,
+    "landfill-sand": 2,
+    "landfill-se-scrap": 1,
+    "laser-turret": 1,
+    "light-oil-cracking": 68,
+    "locomotive": 1,
+    "logistic-robot": 1,
+    "logistic-science-pack": 10,
+    "long-handed-inserter": 3,
+    "low-density-structure": 46,
+    "lubricant": 9,
+    "lubricant-barrel": 1,
+    "medium-electric-pole": 1,
+    "military-science-pack": 5,
+    "motor": 15,
+    "nuclear-fuel-reprocessing": 1,
+    "nuclear-reactor": 1,
+    "offshore-pump": 1,
+    "oil-processing-heavy": 10,
+    "oil-refinery": 1,
+    "passive-provider-chest": 1,
+    "petroleum-gas-barrel": 1,
+    "piercing-rounds-magazine": 6,
+    "pipe": 26,
+    "pipe-to-ground": 1,
+    "plastic-bar": 36,
+    "poison-capsule": 2,
+    "processed-fuel": 30,
+    "processing-unit": 20,
+    "production-science-pack": 1,
+    "productivity-module": 10,
+    "productivity-module-2": 7,
+    "pump": 2,
+    "pumpjack": 1,
+    "radar": 3,
+    "rail": 1,
+    "rail-chain-signal": 1,
+    "rail-signal": 1,
+    "refined-concrete": 6,
+    "repair-pack": 1,
+    "roboport": 1,
+    "rocket": 6,
+    "rocket-control-unit": 42,
+    "rocket-fuel": 8,
+    "rocket-part": 1,
+    "sand": 2,
+    "satellite": 1,
+    "se-barrel-reprocessing": 1,
+    "se-canister": 1,
+    "se-cargo-rocket-cargo-pod": 10,
+    "se-cargo-rocket-fuel-tank": 10,
+    "se-cargo-rocket-section": 10,
+    "se-cargo-rocket-section-packed": 1,
+    "se-cargo-rocket-section-unpack": 2,
+    "se-casting-machine": 1,
+    "se-chemical-gel": 1,
+    "se-condenser-turbine": 1,
+    "se-core-fragment-omni": 16,
+    "se-core-miner-drill": 1,
+    "se-cryonite-crystal": 24,
+    "se-cryonite-powder": 12,
+    "se-cryonite-rod": 12,
+    "se-data-storage-substrate": 13,
+    "se-data-storage-substrate-cleaned": 1,
+    "se-delivery-cannon": 1,
+    "se-delivery-cannon-capsule": 1,
+    "se-delivery-cannon-chest": 1,
+    "se-delivery-cannon-pack-copper-plate": 1,
+    "se-delivery-cannon-pack-explosives": 1,
+    "se-delivery-cannon-pack-low-density-structure": 1,
+    "se-delivery-cannon-pack-lubricant-barrel": 1,
+    "se-delivery-cannon-pack-se-heat-shielding": 1,
+    "se-delivery-cannon-pack-se-vulcanite-block": 2,
+    "se-delivery-cannon-pack-uranium-235": 1,
+    "se-delivery-cannon-pack-uranium-238": 1,
+    "se-delivery-cannon-pack-water-barrel": 1,
+    "se-electric-boiler": 1,
+    "se-electric-boiling-steam-100": 1,
+    "se-electric-boiling-void": 1,
+    "se-empty-data": 1,
+    "se-empty-lifesupport-canister": 2,
+    "se-energy-beam-defence": 1,
+    "se-fuel-refinery": 2,
+    "se-heat-shielding": 44,
+    "se-iron-ingot": 16,
+    "se-lifesupport-canister": 2,
+    "se-lifesupport-equipment-1": 1,
+    "se-lifesupport-facility": 1,
+    "se-liquid-rocket-fuel": 10,
+    "se-machine-learning-data": 1,
+    "se-medpack-2": 1,
+    "se-medpack-plastic": 1,
+    "se-melting-water-ice": 2,
+    "se-meteor-defence": 1,
+    "se-meteor-defence-ammo": 1,
+    "se-methane-gas": 1,
+    "se-molten-iron": 5,
+    "se-pulverised-sand": 21,
+    "se-pulveriser": 1,
+    "se-recycling-facility": 1,
+    "se-rocket-fuel-from-water-copper": 5,
+    "se-rocket-launch-pad": 1,
+    "se-rocket-launch-pad-silo-dummy-recipe": 5,
+    "se-rocket-science-pack": 18,
+    "se-space-assembling-machine": 1,
+    "se-space-biochemical-laboratory": 1,
+    "se-space-capsule": 1,
+    "se-space-manufactory": 2,
+    "se-space-mirror": 1,
+    "se-space-pipe": 1,
+    "se-space-pipe-to-ground": 1,
+    "se-space-platform-scaffold": 2,
+    "se-space-solar-panel": 1,
+    "se-space-supercomputer-1": 1,
+    "se-space-thermodynamics-laboratory": 1,
+    "se-space-transport-belt": 2,
+    "se-space-water": 2,
+    "se-spaceship-ion-engine-burn": 2,
+    "se-used-lifesupport-canister-cleaning": 2,
+    "se-vulcanite-block": 2,
+    "se-vulcanite-crushed": 14,
+    "se-vulcanite-enriched": 16,
+    "selector-combinator": 1,
+    "small-iron-electric-pole": 1,
+    "small-lamp": 1,
+    "solar-panel": 9,
+    "solid-fuel-from-light-oil": 32,
+    "solid-fuel-from-petroleum-gas": 2,
+    "space-science-pack": 1,
+    "speed-module": 5,
+    "splitter": 2,
+    "steam-turbine": 1,
+    "steel-chest": 2,
+    "steel-furnace": 2,
+    "steel-plate": 125,
+    "stone-brick": 97,
+    "stone-furnace": 2,
+    "stone-tablet": 22,
+    "stone-wall": 2,
+    "storage-chest": 1,
+    "storage-tank": 2,
+    "substation": 2,
+    "sulfur": 30,
+    "sulfuric-acid": 7,
+    "textplate-large-plastic": 1,
+    "train-stop": 1,
+    "transport-belt": 3,
+    "underground-belt": 2,
+    "uranium-fuel-cell": 1,
+    "uranium-processing": 39,
+    "water-barrel": 1
+  },
+  "science_items": {},
+  "surfaces": [
+    {
+      "chunks": 24541,
+      "entities": {
+        "rocket-silo": 1,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 5,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 1,
+      "name": "nauvis",
+      "player_entities": 91384,
+      "science_machines": {
+        "automation-science-pack": 10,
+        "chemical-science-pack": 20,
+        "logistic-science-pack": 10,
+        "military-science-pack": 5,
+        "se-rocket-science-pack": 18
+      }
+    },
+    {
+      "chunks": 64,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 2,
+      "name": "aai-signals",
+      "player_entities": 16,
+      "science_machines": {}
+    },
+    {
+      "chunks": 3074,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 6,
+        "se-space-manufactory": 13,
+        "se-space-science-lab": 2
+      },
+      "index": 3,
+      "name": "Nauvis Orbit",
+      "player_entities": 1381,
+      "science_machines": {
+        "production-science-pack": 1,
+        "space-science-pack": 1
+      }
+    },
+    {
+      "chunks": 515,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 4,
+      "name": "starmap-24",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 417,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 5,
+      "name": "starmap-51",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 646,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 6,
+      "name": "starmap-4",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 289,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 7,
+      "name": "starmap-43",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 802,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 8,
+      "name": "starmap-15",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 358,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 9,
+      "name": "starmap-10",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 1463,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 10,
+      "name": "Calidus Orbit",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 415,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 11,
+      "name": "starmap-7",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 624,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 12,
+      "name": "starmap-34",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 527,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 13,
+      "name": "starmap-54",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 401,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 14,
+      "name": "starmap-40",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 17988,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 5,
+        "se-space-manufactory": 1,
+        "se-space-science-lab": 0
+      },
+      "index": 15,
+      "name": "Calidus Asteroid Belt 1",
+      "player_entities": 331,
+      "science_machines": {}
+    },
+    {
+      "chunks": 263,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 16,
+      "name": "starmap-9",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 255,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 17,
+      "name": "starmap-21",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 354,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 18,
+      "name": "starmap-48",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 870,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 19,
+      "name": "starmap-56",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 244,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 20,
+      "name": "starmap-33",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 381,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 21,
+      "name": "starmap-58",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 286,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 22,
+      "name": "starmap-61",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 529,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 23,
+      "name": "starmap-91",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 284,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 24,
+      "name": "starmap-47",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 488,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 25,
+      "name": "starmap-65",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 430,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 26,
+      "name": "starmap-63",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 274,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 27,
+      "name": "starmap-32",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 344,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 28,
+      "name": "starmap-17",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 330,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 29,
+      "name": "starmap-70",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 1118,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 30,
+      "name": "starmap-2",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 351,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 31,
+      "name": "starmap-72",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 510,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 32,
+      "name": "starmap-90",
+      "player_entities": 1,
+      "science_machines": {}
+    },
+    {
+      "chunks": 377,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 33,
+      "name": "starmap-16",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 972,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 34,
+      "name": "starmap-73",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 564,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 35,
+      "name": "starmap-39",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 329,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 36,
+      "name": "starmap-55",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 11376,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 37,
+      "name": "Murasaki",
+      "player_entities": 12960,
+      "science_machines": {}
+    },
+    {
+      "chunks": 14879,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 39,
+      "name": "Mossgarden",
+      "player_entities": 3669,
+      "science_machines": {}
+    },
+    {
+      "chunks": 529,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 41,
+      "name": "Calidus Asteroid Belt 2",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 791,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 42,
+      "name": "starmap-74",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 364,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 45,
+      "name": "starmap-75",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 477,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 46,
+      "name": "starmap-12",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 341,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 49,
+      "name": "starmap-1",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 418,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 50,
+      "name": "starmap-36",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 260,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 51,
+      "name": "starmap-78",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 361,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 52,
+      "name": "starmap-79",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 445,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 53,
+      "name": "starmap-80",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 276,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 54,
+      "name": "starmap-81",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 255,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 60,
+      "name": "starmap-82",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 876,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 61,
+      "name": "starmap-83",
+      "player_entities": 18,
+      "science_machines": {}
+    },
+    {
+      "chunks": 463,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 62,
+      "name": "starmap-85",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 502,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 63,
+      "name": "starmap-84",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 313,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 64,
+      "name": "starmap-11",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 366,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 65,
+      "name": "starmap-87",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 325,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 66,
+      "name": "starmap-20",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 309,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 68,
+      "name": "starmap-86",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 321,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 70,
+      "name": "starmap-88",
+      "player_entities": 0,
+      "science_machines": {}
+    },
+    {
+      "chunks": 397,
+      "entities": {
+        "rocket-silo": 0,
+        "se-rocket-landing-pad": -1,
+        "se-rocket-launch-pad": 0,
+        "se-space-assembling-machine": 0,
+        "se-space-manufactory": 0,
+        "se-space-science-lab": 0
+      },
+      "index": 71,
+      "name": "starmap-89",
+      "player_entities": 0,
+      "science_machines": {}
+    }
+  ],
+  "tick": 6264001
+}

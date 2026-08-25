@@ -1,0 +1,376 @@
+{
+  "after_space_science": true,
+  "before_specialist_sciences": true,
+  "hours": 29.00000462962963,
+  "practical_before_specialist_sciences": true,
+  "production_science_input": 0,
+  "production_science_output": 0,
+  "researched_technologies_using_space_science": [
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "artillery"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "automation-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "destroyer"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "efficiency-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "inserter-capacity-bonus-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-shooting-speed-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-shooting-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-weapons-damage-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-weapons-damage-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "logistics-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "mining-productivity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "nuclear-fuel-reprocessing"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "physical-projectile-damage-5"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "production-science-pack"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "productivity-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "refined-flammables-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "research-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "speed-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "stronger-explosives-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "uranium-ammo"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "weapon-shooting-speed-5"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "worker-robots-speed-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "worker-robots-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "industrial-furnace"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "toolbelt-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "aai-se-space-loader"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "jetpack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-adaptive-armour-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-cargo-rocket-section-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-condenser-turbine"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-cryonite-lubricant"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-fluid-burner-generator"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-cryonite"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-methane-ice"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-vitamelange"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-vulcanite"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-water-ice"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-cargo-safety-2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-reusability-2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-survivability-2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-biochemical-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-capsule-navigation"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-data-card"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-hypercooling-1"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-manufactory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-plasma-generator"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-platform-scaffold"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-radiator-1"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-solar-panel"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-supercomputer-1"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-thermodynamics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-vulcanite-rocket-fuel"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "utility-science-pack"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "artillery"
+    }
+  ],
+  "researched_technologies_using_specialist_science": [],
+  "rockets_launched": 59,
+  "science_items": {},
+  "space_science_input": 0,
+  "space_science_machines": 1,
+  "space_science_output": 0,
+  "specialist_science_input": 0,
+  "specialist_science_machines": 0,
+  "specialist_science_output": 0,
+  "target_match": true,
+  "utility_science_input": 0,
+  "utility_science_output": 0
+}
