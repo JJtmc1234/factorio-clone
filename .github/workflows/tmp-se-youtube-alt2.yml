@@ -1,0 +1,74 @@
+name: Alternate YouTube hunt for SE 0.7 saves v2
+
+on:
+  push:
+    branches: [tmp-se-youtube-alt2-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  hunt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Recover and patch crawler
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-youtube-alt-work se-youtube-alt-result
+          mkdir -p se-youtube-alt-work se-youtube-alt-result
+          python3 -m pip install --quiet --upgrade yt-dlp requests
+          python3 - <<'PY'
+          import pathlib, re, requests
+
+          url = "https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-youtube-alt-20260824/.github/workflows/tmp-se-youtube-alt.yml"
+          text = requests.get(url, timeout=30).text
+          marker = "          cat > se-youtube-alt-work/hunt.py <<'PY'\n"
+          start = text.index(marker) + len(marker)
+          end = text.index("\n          PY\n", start)
+          embedded = text[start:end]
+          code = "\n".join(line[10:] if line.startswith("          ") else line for line in embedded.splitlines()) + "\n"
+
+          pattern = re.compile(r"(?m)^(\s*)host = urlparse\(url\)\.netloc\.lower\(\)$")
+          def replacement(match):
+              i = match.group(1)
+              return (
+                  i + "try:\n" +
+                  i + "    host = urlparse(url).netloc.lower()\n" +
+                  i + "except ValueError:\n" +
+                  i + "    continue"
+              )
+          code, count = pattern.subn(replacement, code)
+          if count != 1:
+              raise RuntimeError(f"Expected one URL parser line to patch, got {count}")
+
+          # Preserve the expensive description recovery even if a later ranking step finds another oddity.
+          needle = "link_rows = []\n"
+          safeguard = (
+              "(OUT / 'videos-recovered-before-link-scan.json').write_text(" 
+              "json.dumps(recovered, indent=2, ensure_ascii=False))\n\n"
+          )
+          if needle not in code:
+              raise RuntimeError("Could not locate link scan")
+          code = code.replace(needle, safeguard + needle, 1)
+          pathlib.Path("se-youtube-alt-work/hunt.py").write_text(code, encoding="utf-8")
+          PY
+          python3 se-youtube-alt-work/hunt.py | tee se-youtube-alt-result/console.txt
+
+      - name: Publish results to a dedicated branch
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-youtube-alt2-result-20260824
+          rm -rf tmp-se-youtube-alt2
+          mkdir -p tmp-se-youtube-alt2
+          cp -a se-youtube-alt-result/. tmp-se-youtube-alt2/ || true
+          git add -f tmp-se-youtube-alt2
+          git commit -m 'Publish alternate YouTube SE 0.7 hunt v2 results' || true
+          git push --force origin HEAD:refs/heads/tmp-se-youtube-alt2-result-20260824
