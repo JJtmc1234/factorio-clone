@@ -1,0 +1,78 @@
+name: Trace prior SE candidate provenance across research branches
+
+on:
+  push:
+    branches: [tmp-se-grep-history-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-grep-history-result-20260825
+
+jobs:
+  grep-history:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch all research refs and grep provenance terms
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          git fetch --prune origin '+refs/heads/*:refs/remotes/origin/*'
+          git for-each-ref --format='%(refname:short)' refs/remotes/origin | sort > published/branches.txt
+          : > published/HITS.txt
+          terms=('Ohoots' 'ohoots' 'lazy_kojocho' 'boobers-SE' 'sandbox_not_opening' 'progression-perfect' 'progression perfect')
+          while IFS= read -r ref; do
+            for term in "${terms[@]}"; do
+              git grep -I -n -i -F -- "$term" "$ref" 2>/dev/null \
+                | sed "s#^#$ref\t#" >> published/HITS.txt || true
+            done
+          done < published/branches.txt
+          sort -u published/HITS.txt -o published/HITS.txt
+
+          {
+            echo '=== COMMIT MESSAGE HITS ==='
+            git log --all --oneline --decorate --regexp-ignore-case \
+              --grep='Ohoots\|lazy_kojocho\|boobers-SE\|sandbox_not_opening\|progression-perfect' || true
+            echo
+            echo '=== FILE CONTENT HITS ==='
+            cat published/HITS.txt
+          } > published/SUMMARY.txt
+
+          python3 - <<'PY'
+          import json, pathlib, re
+          rows=[]
+          for line in pathlib.Path('published/HITS.txt').read_text(errors='replace').splitlines():
+              parts=line.split('\t',1)
+              ref=parts[0] if len(parts)>1 else ''
+              rest=parts[1] if len(parts)>1 else line
+              m=re.match(r'([^:]+):(\d+):(.*)',rest)
+              rows.append({'ref':ref,'path':m.group(1) if m else None,'line':int(m.group(2)) if m else None,'text':m.group(3) if m else rest})
+          pathlib.Path('published/hits.json').write_text(json.dumps(rows,indent=2),encoding='utf-8')
+          print(f'branches={len(pathlib.Path("published/branches.txt").read_text().splitlines())}')
+          print(f'hits={len(rows)}')
+          print(pathlib.Path('published/SUMMARY.txt').read_text()[:12000])
+          PY
+
+      - name: Publish provenance results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-grep-history
+          mkdir tmp-se-grep-history
+          cp -a published/. tmp-se-grep-history/
+          git add -f tmp-se-grep-history
+          git commit --allow-empty -m 'Trace prior SE candidate provenance'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
