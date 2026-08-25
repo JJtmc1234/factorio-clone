@@ -1,0 +1,476 @@
+name: Sieve issue attachments for native SE 0.7 saves
+
+on:
+  push:
+    branches: [tmp-se-issue-sieve-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-issue-sieve-result-20260825
+
+jobs:
+  sieve:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download, inspect, and parse candidate saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work matches
+          mkdir -p published work matches
+          python3 -m pip install --quiet --upgrade requests gdown
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import csv
+          import hashlib
+          import io
+          import json
+          import os
+          import pathlib
+          import re
+          import shutil
+          import struct
+          import subprocess
+          import sys
+          import time
+          import traceback
+          import zipfile
+          from urllib.parse import parse_qs, unquote, urlparse
+
+          import requests
+
+          OUT = pathlib.Path('published')
+          WORK = pathlib.Path('work')
+          MATCHES = pathlib.Path('matches')
+          CANDIDATE_URL = 'https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-issue-census-result-20260825/tmp-se-issue-census/candidates.json'
+          MAX_FILE_BYTES = 450 * 1024 * 1024
+          MAX_TOTAL_BYTES = 12 * 1024 * 1024 * 1024
+          MAX_ZIP_UNCOMPRESSED = 4 * 1024 * 1024 * 1024
+          MAX_NESTED_MEMBER = 450 * 1024 * 1024
+          MAX_DEPTH = 2
+
+          session = requests.Session()
+          session.headers.update({
+              'User-Agent': 'Mozilla/5.0 JJ-SE-save-sieve/1.0',
+              'Accept': '*/*',
+          })
+
+          def sha256_path(path: pathlib.Path) -> str:
+              h = hashlib.sha256()
+              with path.open('rb') as f:
+                  for chunk in iter(lambda: f.read(1024 * 1024), b''):
+                      h.update(chunk)
+              return h.hexdigest()
+
+          def safe_name(value: str, fallback: str) -> str:
+              value = unquote(value).strip().replace(' ', '_')
+              value = re.sub(r'[^A-Za-z0-9._-]+', '_', value)
+              value = value.strip('._-')
+              return (value[:140] or fallback)
+
+          def drive_id(url: str) -> str | None:
+              m = re.search(r'/file/d/([^/?#]+)', url)
+              if m:
+                  return m.group(1)
+              q = parse_qs(urlparse(url).query)
+              return (q.get('id') or [None])[0]
+
+          def download_candidate(candidate: dict, index: int) -> tuple[pathlib.Path | None, dict]:
+              url = candidate['url']
+              basename = pathlib.PurePosixPath(urlparse(url).path).name or f'candidate-{index}.bin'
+              name = safe_name(basename, f'candidate-{index}.bin')
+              path = WORK / f'{index:03d}-{name}'
+              rec = {
+                  'index': index,
+                  'url': url,
+                  'source': candidate,
+                  'local_name': path.name,
+              }
+              try:
+                  did = drive_id(url) if 'drive.google.com' in url.lower() else None
+                  if did:
+                      proc = subprocess.run(
+                          ['gdown', '--no-cookies', '-O', str(path), did],
+                          text=True, capture_output=True, timeout=1200,
+                      )
+                      rec['download_method'] = 'gdown'
+                      rec['download_returncode'] = proc.returncode
+                      rec['download_stdout'] = proc.stdout[-2000:]
+                      rec['download_stderr'] = proc.stderr[-4000:]
+                      if proc.returncode != 0 or not path.exists():
+                          raise RuntimeError('gdown failed')
+                  else:
+                      request_url = url
+                      if 'dropbox.com/' in request_url and 'dl=' not in request_url:
+                          request_url += ('&' if '?' in request_url else '?') + 'dl=1'
+                      with session.get(request_url, stream=True, timeout=(25, 180), allow_redirects=True) as r:
+                          rec['status_code'] = r.status_code
+                          rec['final_url'] = r.url
+                          rec['content_type'] = r.headers.get('content-type')
+                          rec['content_disposition'] = r.headers.get('content-disposition')
+                          length = int(r.headers.get('content-length', '0') or 0)
+                          rec['reported_bytes'] = length
+                          if length and length > MAX_FILE_BYTES:
+                              rec['skipped'] = f'reported size exceeds {MAX_FILE_BYTES}'
+                              return None, rec
+                          r.raise_for_status()
+                          written = 0
+                          with path.open('wb') as f:
+                              for chunk in r.iter_content(1024 * 1024):
+                                  if not chunk:
+                                      continue
+                                  written += len(chunk)
+                                  if written > MAX_FILE_BYTES:
+                                      raise RuntimeError(f'download exceeded {MAX_FILE_BYTES} bytes')
+                                  f.write(chunk)
+                      rec['download_method'] = 'requests'
+                  rec['bytes'] = path.stat().st_size
+                  rec['sha256'] = sha256_path(path)
+                  rec['magic'] = path.read_bytes()[:16].hex()
+                  return path, rec
+              except Exception as exc:
+                  rec['error'] = repr(exc)
+                  rec['traceback'] = traceback.format_exc()
+                  path.unlink(missing_ok=True)
+                  return None, rec
+
+          class HeaderReader:
+              def __init__(self, data: bytes):
+                  self.data = data
+                  self.offset = 0
+
+              def _need(self, n: int) -> None:
+                  if self.offset + n > len(self.data):
+                      raise EOFError(f'need {n} bytes at {self.offset}, length={len(self.data)}')
+
+              def u8(self) -> int:
+                  self._need(1)
+                  value = self.data[self.offset]
+                  self.offset += 1
+                  return value
+
+              def u16(self) -> int:
+                  self._need(2)
+                  value = struct.unpack_from('<H', self.data, self.offset)[0]
+                  self.offset += 2
+                  return value
+
+              def u32(self) -> int:
+                  self._need(4)
+                  value = struct.unpack_from('<I', self.data, self.offset)[0]
+                  self.offset += 4
+                  return value
+
+              def version4(self) -> tuple[int, int, int, int]:
+                  return self.u16(), self.u16(), self.u16(), self.u16()
+
+              def optimized_uint(self, bits: int, factorio_version: tuple[int, int, int, int]) -> int:
+                  if factorio_version > (0, 14, 14, 0):
+                      first = self.u8()
+                      if first != 255:
+                          return first
+                  return self.u16() if bits == 16 else self.u32()
+
+              def text(self, factorio_version: tuple[int, int, int, int]) -> str:
+                  n = self.optimized_uint(32, factorio_version)
+                  self._need(n)
+                  raw = self.data[self.offset:self.offset + n]
+                  self.offset += n
+                  return raw.decode('utf-8', 'replace')
+
+              def version3_optimized(self, factorio_version: tuple[int, int, int, int]) -> tuple[int, int, int]:
+                  return (
+                      self.optimized_uint(16, factorio_version),
+                      self.optimized_uint(16, factorio_version),
+                      self.optimized_uint(16, factorio_version),
+                  )
+
+          def parse_header(data: bytes) -> dict:
+              r = HeaderReader(data)
+              fv = r.version4()
+              r.u8()
+              save_name = r.text(fv)
+              campaign = r.text(fv)
+              base_mod = r.text(fv)
+              r.u8(); r.u8(); r.u8(); r.text(fv); r.u8(); r.u8(); r.u8(); r.u8()
+              loaded_from = '.'.join(map(str, r.version3_optimized(fv)))
+              build = r.u16()
+              branch_version = r.u8()
+              count = r.optimized_uint(32, fv)
+              if count > 10000:
+                  raise ValueError(f'implausible mod count {count}')
+              mods: dict[str, str] = {}
+              for _ in range(count):
+                  mod_name = r.text(fv)
+                  mod_version = '.'.join(map(str, r.version3_optimized(fv)))
+                  r.u32()
+                  mods[mod_name] = mod_version
+              se = mods.get('space-exploration')
+              return {
+                  'factorio_version': '.'.join(map(str, fv[:3])),
+                  'factorio_version_full': '.'.join(map(str, fv)),
+                  'save_name': save_name,
+                  'campaign': campaign,
+                  'base_mod': base_mod,
+                  'loaded_from': loaded_from,
+                  'loaded_from_build': build,
+                  'branch_version': branch_version,
+                  'mod_count': len(mods),
+                  'space_exploration': se,
+                  'krastorio2': mods.get('Krastorio2'),
+                  'milestones': mods.get('Milestones') or mods.get('milestones'),
+                  'native_se07': bool(fv[0] == 2 and se and se.startswith('0.7.')),
+                  'mods': mods,
+                  'header_bytes_consumed': r.offset,
+              }
+
+          def candidate_hints(source: dict, description: str) -> dict:
+              joined = ' '.join([
+                  str(source.get('url', '')),
+                  str(source.get('issue_title', '')),
+                  str(source.get('context', '')),
+                  description,
+              ]).lower()
+              terms = {
+                  'creative': ('creative', 'editor extensions', 'editor-extension'),
+                  'test_world': ('test world', 'test.world', 'test map', 'bugmap', 'modlist.test'),
+                  'autosave': ('autosave',),
+                  'rocket': ('rocket',),
+                  'space': ('space',),
+                  'orbit': ('orbit',),
+                  'migration': ('migration', 'migrate', '1.1 save'),
+              }
+              return {name: any(term in joined for term in values) for name, values in terms.items()}
+
+          def inspect_save_in_zip(z: zipfile.ZipFile, archive_label: str, source: dict, depth: int, lineage: list[str]) -> list[dict]:
+              names = z.namelist()
+              total_uncompressed = sum(info.file_size for info in z.infolist())
+              results: list[dict] = []
+              level_inits = [n for n in names if n == 'level-init.dat' or n.endswith('/level-init.dat')]
+              for ordinal, init_name in enumerate(level_inits, start=1):
+                  root = init_name[:-len('/level-init.dat')] if init_name.endswith('/level-init.dat') else ''
+                  prefix = root + '/' if root else ''
+                  script_name = prefix + 'script.dat'
+                  if script_name not in names:
+                      continue
+                  rec: dict = {
+                      'archive_label': archive_label,
+                      'depth': depth,
+                      'lineage': lineage,
+                      'save_ordinal': ordinal,
+                      'save_root': root,
+                      'zip_members': len(names),
+                      'zip_total_uncompressed': total_uncompressed,
+                      'level_init_name': init_name,
+                      'level_init_bytes': z.getinfo(init_name).file_size,
+                      'script_name': script_name,
+                      'script_dat_bytes': z.getinfo(script_name).file_size,
+                      'level_files': [
+                          {'name': n, 'bytes': z.getinfo(n).file_size}
+                          for n in names
+                          if n.startswith(prefix + 'level.dat') and '/' not in n[len(prefix):]
+                      ],
+                  }
+                  description = ''
+                  description_name = prefix + 'description.json'
+                  if description_name in names:
+                      try:
+                          description = z.read(description_name).decode('utf-8', 'replace')[:20000]
+                      except Exception as exc:
+                          rec['description_error'] = repr(exc)
+                  rec['description'] = description
+                  rec['hints'] = candidate_hints(source, description)
+                  try:
+                      rec.update(parse_header(z.read(init_name)))
+                  except Exception as exc:
+                      rec['header_error'] = repr(exc)
+                      rec['header_traceback'] = traceback.format_exc()
+                  results.append(rec)
+              return results
+
+          def inspect_archive_bytes(data: bytes, archive_label: str, source: dict, depth: int = 0, lineage: list[str] | None = None) -> tuple[list[dict], list[dict]]:
+              lineage = list(lineage or [])
+              saves: list[dict] = []
+              nested_log: list[dict] = []
+              try:
+                  with zipfile.ZipFile(io.BytesIO(data)) as z:
+                      total = sum(info.file_size for info in z.infolist())
+                      if total > MAX_ZIP_UNCOMPRESSED:
+                          nested_log.append({'archive_label': archive_label, 'depth': depth, 'error': f'uncompressed size {total} exceeds cap'})
+                          return saves, nested_log
+                      saves.extend(inspect_save_in_zip(z, archive_label, source, depth, lineage))
+                      if depth < MAX_DEPTH:
+                          for info in z.infolist():
+                              low = info.filename.lower()
+                              if not low.endswith('.zip') or info.file_size <= 0 or info.file_size > MAX_NESTED_MEMBER:
+                                  continue
+                              child_label = archive_label + '::' + info.filename
+                              try:
+                                  child_data = z.read(info)
+                                  child_saves, child_log = inspect_archive_bytes(
+                                      child_data, child_label, source, depth + 1, lineage + [info.filename]
+                                  )
+                                  saves.extend(child_saves)
+                                  nested_log.extend(child_log)
+                              except Exception as exc:
+                                  nested_log.append({'archive_label': child_label, 'depth': depth + 1, 'error': repr(exc)})
+              except Exception as exc:
+                  nested_log.append({'archive_label': archive_label, 'depth': depth, 'error': repr(exc), 'traceback': traceback.format_exc()})
+              return saves, nested_log
+
+          response = session.get(CANDIDATE_URL, timeout=60)
+          response.raise_for_status()
+          all_candidates = response.json()
+          selected = []
+          for c in all_candidates:
+              url = str(c.get('url', ''))
+              low = url.lower()
+              if c.get('score', 0) < 80:
+                  continue
+              if re.search(r'\.(?:png|jpe?g|gif|webp|svg)(?:[?#].*)?$', low):
+                  continue
+              if not (
+                  '.zip' in low or '.7z' in low or '.rar' in low or
+                  'github.com/user-attachments/files/' in low or
+                  'drive.google.com/' in low or 'dropbox.com/' in low or
+                  'cdn.discordapp.com/attachments/' in low or 'media.discordapp.net/attachments/' in low
+              ):
+                  continue
+              selected.append(c)
+
+          # Prioritize SE-specific repositories/context, then score, while retaining the full pool.
+          def priority(c: dict) -> tuple:
+              text = ' '.join([str(c.get('repo','')), str(c.get('issue_title','')), str(c.get('context',''))]).lower()
+              se = int('space exploration' in text or 'space-exploration' in text or 'k2se' in text or c.get('repo') == 'EarendelDevelopers/factorio-mods')
+              return (-se, -int(c.get('score', 0)), str(c.get('issue_created_at', '')), str(c.get('url', '')))
+
+          selected.sort(key=priority)
+          download_records: list[dict] = []
+          save_records: list[dict] = []
+          nested_records: list[dict] = []
+          total_downloaded = 0
+
+          print(f'selected archive-like candidates: {len(selected)}', flush=True)
+          for index, candidate in enumerate(selected, start=1):
+              if total_downloaded >= MAX_TOTAL_BYTES:
+                  download_records.append({'index': index, 'url': candidate['url'], 'source': candidate, 'skipped': 'total download cap reached'})
+                  continue
+              print(f'[{index}/{len(selected)}] {candidate["url"]}', flush=True)
+              path, drec = download_candidate(candidate, index)
+              download_records.append(drec)
+              if path is None:
+                  continue
+              total_downloaded += path.stat().st_size
+              try:
+                  data = path.read_bytes()
+                  saves, nested = inspect_archive_bytes(data, path.name, candidate)
+                  for save in saves:
+                      save['source_url'] = candidate['url']
+                      save['source_repo'] = candidate.get('repo')
+                      save['source_issue_number'] = candidate.get('issue_number')
+                      save['source_issue_url'] = candidate.get('issue_url')
+                      save['source_issue_title'] = candidate.get('issue_title')
+                      save['source_context'] = candidate.get('context')
+                      save['download_sha256'] = drec.get('sha256')
+                      save['download_bytes'] = drec.get('bytes')
+                  save_records.extend(saves)
+                  nested_records.extend(nested)
+
+                  if any(s.get('native_se07') for s in saves):
+                      destination = MATCHES / path.name
+                      shutil.copy2(path, destination)
+                      drec['preserved_match_path'] = str(destination)
+                      print('  PRESERVED: native Factorio 2.0 + SE 0.7 header', flush=True)
+                  else:
+                      print(f'  saves={len(saves)} native_se07=0', flush=True)
+              finally:
+                  path.unlink(missing_ok=True)
+
+          native = [r for r in save_records if r.get('native_se07')]
+          current_se = [r for r in save_records if r.get('space_exploration')]
+          unique_se_versions = sorted({r.get('space_exploration') for r in current_se if r.get('space_exploration')})
+
+          OUT.joinpath('downloads.json').write_text(json.dumps(download_records, indent=2, ensure_ascii=False), encoding='utf-8')
+          OUT.joinpath('saves.json').write_text(json.dumps(save_records, indent=2, ensure_ascii=False), encoding='utf-8')
+          OUT.joinpath('native-se07.json').write_text(json.dumps(native, indent=2, ensure_ascii=False), encoding='utf-8')
+          OUT.joinpath('nested-errors.json').write_text(json.dumps(nested_records, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          with OUT.joinpath('native-se07.tsv').open('w', newline='', encoding='utf-8') as f:
+              writer = csv.writer(f, delimiter='\t')
+              writer.writerow(['source_repo','issue','url','factorio','SE','K2','root','bytes','sha256','hints','title'])
+              for r in native:
+                  writer.writerow([
+                      r.get('source_repo'), r.get('source_issue_number'), r.get('source_url'),
+                      r.get('factorio_version_full'), r.get('space_exploration'), r.get('krastorio2'),
+                      r.get('save_root'), r.get('download_bytes'), r.get('download_sha256'),
+                      json.dumps(r.get('hints'), sort_keys=True), r.get('source_issue_title'),
+                  ])
+
+          lines = [
+              'ISSUE ATTACHMENT HEADER SIEVE',
+              '=' * 120,
+              f'archive-like candidates selected: {len(selected)}',
+              f'download attempts recorded: {len(download_records)}',
+              f'total bytes downloaded: {total_downloaded}',
+              f'Factorio saves found (including nested): {len(save_records)}',
+              f'saves with any Space Exploration version: {len(current_se)}',
+              f'native Factorio 2.0 + Space Exploration 0.7 saves: {len(native)}',
+              f'SE versions found: {unique_se_versions}',
+              f'download errors: {sum(1 for r in download_records if r.get("error"))}',
+              f'download skips: {sum(1 for r in download_records if r.get("skipped"))}',
+              f'nested/archive inspection errors: {len(nested_records)}',
+              '',
+              'NATIVE SE 0.7 CANDIDATES',
+              '-' * 120,
+          ]
+          for r in native:
+              lines.extend([
+                  f"repo={r.get('source_repo')} issue={r.get('source_issue_number')} url={r.get('source_url')}",
+                  f"  title={r.get('source_issue_title')}",
+                  f"  factorio={r.get('factorio_version_full')} loaded_from={r.get('loaded_from')} SE={r.get('space_exploration')} K2={r.get('krastorio2')} mods={r.get('mod_count')}",
+                  f"  root={r.get('save_root')} archive={r.get('archive_label')} bytes={r.get('download_bytes')} sha256={r.get('download_sha256')}",
+                  f"  level_files={r.get('level_files')} script_dat_bytes={r.get('script_dat_bytes')}",
+                  f"  hints={r.get('hints')}",
+                  f"  context={str(r.get('source_context',''))[:700]}",
+                  '',
+              ])
+          lines.extend(['', 'ALL SPACE EXPLORATION SAVES', '-' * 120])
+          for r in current_se:
+              lines.append(
+                  f"SE={r.get('space_exploration')} Factorio={r.get('factorio_version_full')} repo={r.get('source_repo')} issue={r.get('source_issue_number')} url={r.get('source_url')} root={r.get('save_root')}"
+              )
+          OUT.joinpath('SUMMARY.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines))
+          PY
+
+      - name: Upload native SE 0.7 candidate saves
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-se07-issue-candidates
+          path: matches/*
+          if-no-files-found: ignore
+          retention-days: 7
+          compression-level: 0
+
+      - name: Publish sieve metadata
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-issue-sieve
+          mkdir tmp-se-issue-sieve
+          cp -a published/. tmp-se-issue-sieve/
+          git add -f tmp-se-issue-sieve
+          git commit --allow-empty -m 'Publish issue attachment SE header sieve'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
