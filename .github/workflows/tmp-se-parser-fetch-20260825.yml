@@ -19,27 +19,35 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Query browser and Factorio detail APIs
+        continue-on-error: true
         shell: bash
         run: |
-          set -euo pipefail
+          set -u
           rm -rf published work
           mkdir -p published work
           python3 - <<'PY'
-          import json, pathlib, time, urllib.parse, urllib.request
+          import json, pathlib, time, urllib.parse, urllib.request, traceback
 
           out = pathlib.Path('published')
           browser = 'https://browser.lambs.cafe/api/servers'
           detail_base = 'https://multiplayer.factorio.com/get-game-details/'
+          diagnostics = []
 
-          def get_json(url, retries=5):
+          def get_json(url, retries=4):
               last = None
               for attempt in range(retries):
                   try:
-                      req = urllib.request.Request(url, headers={'User-Agent': 'JJ-SE-save-research/1.0'})
-                      with urllib.request.urlopen(req, timeout=30) as r:
-                          return json.load(r)
+                      req = urllib.request.Request(url, headers={
+                          'User-Agent': 'Mozilla/5.0 JJ-SE-save-research/1.0',
+                          'Accept': 'application/json,text/plain,*/*',
+                      })
+                      with urllib.request.urlopen(req, timeout=40) as r:
+                          body = r.read()
+                          diagnostics.append({'url': url, 'status': r.status, 'bytes': len(body)})
+                          return json.loads(body)
                   except Exception as e:
                       last = e
+                      diagnostics.append({'url': url, 'attempt': attempt + 1, 'error': repr(e)})
                       time.sleep(1 + attempt)
               raise last
 
@@ -48,13 +56,14 @@ jobs:
           raw_searches = {}
           for term in searches:
               url = browser + '?' + urllib.parse.urlencode({'search': term, 'limit': 1000})
-              data = get_json(url)
-              raw_searches[term] = data
-              for s in data.get('servers', []):
-                  records[int(s['game_id'])] = s
+              try:
+                  data = get_json(url)
+                  raw_searches[term] = data
+                  for s in data.get('servers', []):
+                      records[int(s['game_id'])] = s
+              except Exception as e:
+                  raw_searches[term] = {'error': repr(e), 'traceback': traceback.format_exc()}
 
-          # The exact-name candidate is the priority; these broad name/description searches
-          # catch other plausible current SE worlds without probing unrelated servers.
           details = []
           errors = []
           for game_id, cached in sorted(records.items()):
@@ -63,21 +72,28 @@ jobs:
                   mods = d.get('mods') or []
                   names = {str(m.get('name','')).lower(): str(m.get('version','')) for m in mods}
                   se_ver = names.get('space-exploration')
-                  if se_ver or any(k in cached.get('name','').lower() for k in ('纯粹的se','k2se','space exploration','crossworld','amogus','connavar')):
+                  name_lower = cached.get('name','').lower()
+                  if se_ver or any(k in name_lower for k in ('纯粹的se','k2se','space exploration','crossworld','amogus','connavar')):
                       d['_cached'] = cached
                       d['_space_exploration_version'] = se_ver
                       d['_krastorio2_version'] = names.get('krastorio2')
-                      d['_hours'] = int(d.get('game_time_elapsed', 0)) / 216000
+                      ticks = d.get('game_time_elapsed', 0)
+                      try:
+                          ticks = int(ticks)
+                      except Exception:
+                          ticks = 0
+                      d['_hours'] = ticks / 216000
                       details.append(d)
               except Exception as e:
-                  errors.append({'game_id': game_id, 'name': cached.get('name'), 'error': repr(e)})
+                  errors.append({'game_id': game_id, 'name': cached.get('name'), 'error': repr(e), 'traceback': traceback.format_exc()})
               time.sleep(0.08)
 
+          out.joinpath('diagnostics.json').write_text(json.dumps(diagnostics, ensure_ascii=False, indent=2))
           out.joinpath('searches.json').write_text(json.dumps(raw_searches, ensure_ascii=False, indent=2))
           out.joinpath('details.json').write_text(json.dumps(details, ensure_ascii=False, indent=2))
           out.joinpath('errors.json').write_text(json.dumps(errors, ensure_ascii=False, indent=2))
 
-          lines = []
+          lines = [f'SEARCH_RECORDS: {len(records)}', f'DETAILS_SELECTED: {len(details)}', f'DETAIL_ERRORS: {len(errors)}', '']
           for d in sorted(details, key=lambda x: (x.get('_space_exploration_version') is None, x.get('_hours',0))):
               lines += [
                   f"NAME: {d.get('name')}",
@@ -94,6 +110,8 @@ jobs:
                   'MODS: ' + ', '.join(f"{m.get('name')}={m.get('version')}" for m in d.get('mods') or []),
                   '',
               ]
+          if not details:
+              lines.append('No details selected; inspect diagnostics.json and searches.json.')
           out.joinpath('SUMMARY.txt').write_text('\n'.join(lines))
           print('\n'.join(lines))
           PY
@@ -110,5 +128,5 @@ jobs:
           mkdir tmp-se-current-server-scan
           cp -a published/. tmp-se-current-server-scan/
           git add -f tmp-se-current-server-scan
-          git commit -m 'Scan current Space Exploration server details'
+          git commit --allow-empty -m 'Scan current Space Exploration server details'
           git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
