@@ -1,0 +1,132 @@
+   0.250 Info ModManager.cpp:279: Found duplicate mod Krastorio2, using highest version (2.0.14).
+   0.250 Info ModManager.cpp:279: Found duplicate mod space-exploration, using highest version (0.7.42).
+   0.250 Info ModManager.cpp:279: Found duplicate mod space-exploration-postprocess, using highest version (0.7.4).
+   0.750 Loading mod settings space-exploration-menu-simulations 0.7.4 (settings.lua)
+   0.754 Loading mod settings Krastorio2 2.0.14 (settings.lua)
+   0.754 Loading mod settings space-exploration 0.7.42 (settings.lua)
+   0.756 Loading mod settings space-exploration-postprocess 0.7.4 (settings.lua)
+   1.067 Loading mod Krastorio2MenuSimulations 2.0.2 (data.lua)
+   1.169 Loading mod space-exploration-menu-simulations 0.7.4 (data.lua)
+  Krastorio2 = "2.0.14",
+  Krastorio2Assets = "2.0.4",
+  Krastorio2MenuSimulations = "2.0.2",
+  ["space-exploration"] = "0.7.42",
+  ["space-exploration-graphics"] = "0.7.5",
+  ["space-exploration-graphics-2"] = "0.7.2",
+  ["space-exploration-graphics-3"] = "0.7.2",
+  ["space-exploration-graphics-4"] = "0.7.2",
+  ["space-exploration-graphics-5"] = "0.7.2",
+  ["space-exploration-menu-simulations"] = "0.7.4",
+  ["space-exploration-postprocess"] = "0.7.4",
+   1.528 Loading mod Krastorio2 2.0.14 (data.lua)
+   1.645 Loading mod space-exploration 0.7.42 (data.lua)
+   2.055 Loading mod Krastorio2 2.0.14 (data-updates.lua)
+   2.154 Loading mod space-exploration 0.7.42 (data-updates.lua)
+   2.501 Loading mod Krastorio2 2.0.14 (data-final-fixes.lua)
+   2.573 Loading mod space-exploration 0.7.42 (data-final-fixes.lua)
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: iron-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: copper-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: coal
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: stone
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: uranium-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: crude-oil
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-imersite
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-mineral-water
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-rare-metal-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-water-ice
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-methane-ice
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-beryllium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-cryonite
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-holmium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-iridium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-naquium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vulcanite
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vitamelange
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: pistol
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: uranium-rounds-magazine
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: fast-loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: express-loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: nuclear-fuel
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-energy-shield-mk3-equipment
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-energy-shield-mk4-equipment
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-imersite-rounds-magazine
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: glass
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-rocket-launch-pad-silo-dummy-recipe
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-iridium-piledriver
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-space-probe-rocket-deploy
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-kr-sand-to-matter
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-kr-kr-imersite-to-matter
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-oxygen
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-nitrogen
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-water-electrolysis
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-water-separation
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-rocket-fuel-from-water-copper
+   2.843 Loading mod space-exploration-postprocess 0.7.4 (data-final-fixes.lua)
+   3.171 Checksum of Krastorio2Assets: 0
+   3.171 Checksum of Krastorio2MenuSimulations: 803229161
+   3.171 Checksum of space-exploration-graphics: 0
+   3.171 Checksum of space-exploration-graphics-2: 0
+   3.171 Checksum of space-exploration-graphics-3: 0
+   3.171 Checksum of space-exploration-graphics-4: 0
+   3.171 Checksum of space-exploration-graphics-5: 0
+   3.171 Checksum of space-exploration-menu-simulations: 3244939232
+   3.171 Checksum of Krastorio2: 3053404181
+   3.171 Checksum of space-exploration: 3215980926
+   3.171 Checksum of space-exploration-postprocess: 1504513224
+  21.510 Script @__space-exploration__/scripts/migrate.lua:278: space-exploration: Starting migrations from 0.7.19 to 0.7.42 (simulation)
+  21.510 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.20
+  21.512 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.28
+  21.521 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.30
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.33
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.34
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.35
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.36
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.37
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.40
+  21.523 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.42
+  22.519 Loading map C:\Users\edwar\AppData\Roaming\Factorio\saves\SE3.zip: 189973420 bytes.
+  22.561 Info Scenario.cpp:154: Map version 2.0.73-1
+  35.168 Loading script.dat: 37630459 bytes.
+  35.253 Checksum for script __Krastorio2__/control.lua: 2015038817
+  35.339 Checksum for script __space-exploration__/control.lua: 2918768411
+ 140.517 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34675686], provider at #3, requester at #4
+ 175.851 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34671396], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34679860], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34680609], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34679771], provider at #3, requester at #4
+ 228.653 Info AppManager.cpp:324: Saving to _autosave1 (blocking).
+ 329.233 Script @__space-exploration__/scripts/migrate.lua:278: space-exploration: Starting migrations from 0.7.19 to 0.7.42 (simulation)
+ 329.233 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.20
+ 329.235 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.28
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.30
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.33
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.34
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.35
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.36
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.37
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.40
+ 329.245 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.42
+ 386.229 Loading map C:\Users\edwar\AppData\Roaming\Factorio\saves\_autosave1.zip: 190503881 bytes.
+ 386.261 Info Scenario.cpp:154: Map version 2.0.73-1
+ 391.786 Loading script.dat: 39929986 bytes.
+ 391.893 Checksum for script __Krastorio2__/control.lua: 2015038817
+ 391.988 Checksum for script __space-exploration__/control.lua: 2918768411
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678418], provider at #3, requester at #4
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34670614], provider at #3, requester at #4
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34652021], provider at #3, requester at #4
+ 448.948 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34676092], provider at #3, requester at #4
+ 448.948 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678272], provider at #3, requester at #4
+ 448.949 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34625937], provider at #3, requester at #4
+ 484.714 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34672100], provider at #3, requester at #4
+ 520.085 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678444], provider at #3, requester at #4
+ 520.085 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34666886], provider at #3, requester at #4
+ 555.478 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684879], provider at #3, requester at #4
+ 555.479 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684774], provider at #3, requester at #4
+ 591.300 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682874], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682220], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682001], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34685698], provider at #3, requester at #4
+ 627.339 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34673296], provider at #3, requester at #4
+ 662.908 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684142], provider at #3, requester at #4
+ 662.909 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34672698], provider at #3, requester at #4

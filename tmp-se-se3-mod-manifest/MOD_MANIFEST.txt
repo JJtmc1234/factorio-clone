@@ -1,0 +1,88 @@
+SE3 EXACT MOD MANIFEST
+====================================================================================================
+Factorio 2.0.73 (build 84377, win64, steam, space-age)
+
+external_mod_count=82
+
+aai-containers	0.3.2	aai-containers_0.3.2.zip
+aai-industry	0.6.14	aai-industry_0.6.14.zip
+aai-signal-transmission	0.5.3	aai-signal-transmission_0.5.3.zip
+abcnever-k2-se-tweaks	0.0.1	abcnever-k2-se-tweaks_0.0.1.zip
+Aircraft-space-age	2.3.4	Aircraft-space-age_2.3.4.zip
+alien-biomes	0.7.4	alien-biomes_0.7.4.zip
+alien-biomes-graphics	0.7.1	alien-biomes-graphics_0.7.1.zip
+ammo-loader	2.0.5	ammo-loader_2.0.5.zip
+BlueprintTools	1.5.0	BlueprintTools_1.5.0.zip
+bob-mining-fix-for-se	2.0.0	bob-mining-fix-for-se_2.0.0.zip
+bobassembly	2.0.5	bobassembly_2.0.5.zip
+bobgreenhouse	2.0.3	bobgreenhouse_2.0.3.zip
+bobinserters	2.0.3	bobinserters_2.0.3.zip
+boblibrary	2.0.3	boblibrary_2.0.3.zip
+boblogistics	2.0.6	boblogistics_2.0.6.zip
+bobmining	2.0.4	bobmining_2.0.4.zip
+botReplacer	2.0.0	botReplacer_2.0.0.zip
+ChangeInserterDropLane	1.2.0	ChangeInserterDropLane_1.2.0.zip
+factorissimo-2-notnotmelon	3.11.11	factorissimo-2-notnotmelon_3.11.11.zip
+factoryplanner	2.0.43	factoryplanner_2.0.43.zip
+fast_trans	2.1.0	fast_trans_2.1.0.zip
+Fill4Me	0.12.1	Fill4Me_0.12.1.zip
+flib	0.16.5	flib_0.16.5.zip
+Flow Control	3.2.3	Flow Control_3.2.3.zip
+FNEI	0.4.6	FNEI_0.4.6.zip
+informatron	0.4.0	informatron_0.4.0.zip
+jetpack	0.4.14	jetpack_0.4.14.zip
+Krastorio2	2.0.14	Krastorio2_2.0.14.zip
+Krastorio2Assets	2.0.4	Krastorio2Assets_2.0.4.zip
+Krastorio2MenuSimulations	2.0.2	Krastorio2MenuSimulations_2.0.2.zip
+LogisticTrainNetwork	2.6.0	LogisticTrainNetwork_2.6.0.zip
+LTN_Combinator_Modernized	2.2.7	LTN_Combinator_Modernized_2.2.7.zip
+LtnManager	0.5.0	LtnManager_0.5.0.zip
+manual-inventory-sort	2.3.0	manual-inventory-sort_2.3.0.zip
+notepad	1.0.4	notepad_1.0.4.zip
+resourceMarker	0.8.33	resourceMarker_0.8.33.zip
+robot_attrition	0.6.5	robot_attrition_0.6.5.zip
+se-ltn-glue	0.7.1	se-ltn-glue_0.7.1.zip
+settings aai-containers	0.3.2	settings aai-containers_0.3.2.zip
+settings aai-industry	0.6.14	settings aai-industry_0.6.14.zip
+settings Aircraft-space-age	2.3.4	settings Aircraft-space-age_2.3.4.zip
+settings alien-biomes	0.7.4	settings alien-biomes_0.7.4.zip
+settings ammo-loader	2.0.5	settings ammo-loader_2.0.5.zip
+settings BlueprintTools	1.5.0	settings BlueprintTools_1.5.0.zip
+settings bobassembly	2.0.5	settings bobassembly_2.0.5.zip
+settings bobinserters	2.0.3	settings bobinserters_2.0.3.zip
+settings boblibrary	2.0.3	settings boblibrary_2.0.3.zip
+settings boblogistics	2.0.6	settings boblogistics_2.0.6.zip
+settings bobmining	2.0.4	settings bobmining_2.0.4.zip
+settings factorissimo-2-notnotmelon	3.11.11	settings factorissimo-2-notnotmelon_3.11.11.zip
+settings Fill4Me	0.12.1	settings Fill4Me_0.12.1.zip
+settings Flow Control	3.2.3	settings Flow Control_3.2.3.zip
+settings informatron	0.4.0	settings informatron_0.4.0.zip
+settings jetpack	0.4.14	settings jetpack_0.4.14.zip
+settings Krastorio2	2.0.14	settings Krastorio2_2.0.14.zip
+settings LogisticTrainNetwork	2.6.0	settings LogisticTrainNetwork_2.6.0.zip
+settings LTN_Combinator_Modernized	2.2.7	settings LTN_Combinator_Modernized_2.2.7.zip
+settings LtnManager	0.5.0	settings LtnManager_0.5.0.zip
+settings manual-inventory-sort	2.3.0	settings manual-inventory-sort_2.3.0.zip
+settings resourceMarker	0.8.33	settings resourceMarker_0.8.33.zip
+settings robot_attrition	0.6.5	settings robot_attrition_0.6.5.zip
+settings se-ltn-glue	0.7.1	settings se-ltn-glue_0.7.1.zip
+settings solar-calc	0.5.72	settings solar-calc_0.5.72.zip
+settings space-exploration	0.7.42	settings space-exploration_0.7.42.zip
+settings space-exploration-menu-simulations	0.7.4	settings space-exploration-menu-simulations_0.7.4.zip
+settings space-exploration-postprocess	0.7.4	settings space-exploration-postprocess_0.7.4.zip
+settings valves	2.2.0	settings valves_2.2.0.zip
+settings valves-lib	1.0.0	settings valves-lib_1.0.0.zip
+settings Waterfill_v17	2.0.5	settings Waterfill_v17_2.0.5.zip
+shield-projector	0.2.2	shield-projector_0.2.2.zip
+solar-calc	0.5.72	solar-calc_0.5.72.zip
+space-exploration	0.7.42	space-exploration_0.7.42.zip
+space-exploration-graphics	0.7.5	space-exploration-graphics_0.7.5.zip
+space-exploration-graphics-2	0.7.2	space-exploration-graphics-2_0.7.2.zip
+space-exploration-graphics-3	0.7.2	space-exploration-graphics-3_0.7.2.zip
+space-exploration-graphics-4	0.7.2	space-exploration-graphics-4_0.7.2.zip
+space-exploration-graphics-5	0.7.2	space-exploration-graphics-5_0.7.2.zip
+space-exploration-menu-simulations	0.7.4	space-exploration-menu-simulations_0.7.4.zip
+space-exploration-postprocess	0.7.4	space-exploration-postprocess_0.7.4.zip
+valves	2.2.0	valves_2.2.0.zip
+valves-lib	1.0.0	valves-lib_1.0.0.zip
+Waterfill_v17	2.0.5	Waterfill_v17_2.0.5.zip

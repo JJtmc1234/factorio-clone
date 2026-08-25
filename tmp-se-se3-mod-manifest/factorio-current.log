@@ -1,0 +1,611 @@
+   0.001 2026-01-26 16:22:00; Factorio 2.0.73 (build 84377, win64, steam, space-age)
+   0.001 Operating system: Windows 10 (build 19045) 
+   0.000 Initializing Steam API.
+   0.001 Program arguments: "C:\Program Files (x86)\Steam\steamapps\common\Factorio\bin\x64\Factorio.exe" "--wait-to-close" "12024" 
+   0.001 Config path: C:/Users/edwar/AppData/Roaming/Factorio/config/config.ini
+   0.001 Read data path: C:/Program Files (x86)/Steam/steamapps/common/Factorio/data
+   0.001 Write data path: C:/Users/edwar/AppData/Roaming/Factorio [139092/953220MB]
+   0.001 Binaries path: C:/Program Files (x86)/Steam/steamapps/common/Factorio/bin
+   0.013 System info: [CPU: 12th Gen Intel(R) Core(TM) i5-12600K, 16 cores, RAM: 20730/32585 MB, page: 31666/48064 MB, virtual: 4358/134217727 MB, extended virtual: 0 MB]
+   0.027 Memory info:
+   0.027  [0]: G Skill Intl F4-3200C16-16GVK 16384 MB 2133 MHz 1.2 v 64|64
+   0.027  [1]: G Skill Intl F4-3200C16-16GVK 16384 MB 2133 MHz 1.2 v 64|64
+   0.250 Info ModManager.cpp:279: Found duplicate mod BlueprintTools, using highest version (1.5.0).
+   0.250 Info ModManager.cpp:279: Found duplicate mod Krastorio2, using highest version (2.0.14).
+   0.250 Info ModManager.cpp:279: Found duplicate mod LTN_Combinator_Modernized, using highest version (2.2.7).
+   0.250 Info ModManager.cpp:279: Found duplicate mod LogisticTrainNetwork, using highest version (2.6.0).
+   0.250 Info ModManager.cpp:279: Found duplicate mod aai-industry, using highest version (0.6.14).
+   0.250 Info ModManager.cpp:279: Found duplicate mod factorissimo-2-notnotmelon, using highest version (3.11.11).
+   0.250 Info ModManager.cpp:279: Found duplicate mod flib, using highest version (0.16.5).
+   0.250 Info ModManager.cpp:279: Found duplicate mod informatron, using highest version (0.4.0).
+   0.250 Info ModManager.cpp:279: Found duplicate mod resourceMarker, using highest version (0.8.33).
+   0.250 Info ModManager.cpp:279: Found duplicate mod space-exploration, using highest version (0.7.42).
+   0.250 Info ModManager.cpp:279: Found duplicate mod space-exploration-postprocess, using highest version (0.7.4).
+   0.250 Info ModManager.cpp:279: Found duplicate mod stack-combinator, using highest version (1.6.2).
+   0.250 Info ModManager.cpp:279: Found duplicate mod valves, using highest version (2.2.0).
+   0.250 Display options: [FullScreen: true] [VSync: true] [UIScale: automatic (100.0%)] [Native DPI: true] [Screen: 255] [Special: lmw] [Lang: en]
+   0.347 Video driver: windows
+   0.347 Available displays: 2
+   0.347  [0]: \\.\DISPLAY5 - NVIDIA GeForce GTX 1080 {0x05, [0,0], 1920x1080, 32bit, 60Hz}
+   0.347  [1]: \\.\DISPLAY6 - NVIDIA GeForce GTX 1080 {0x01, [1920,0], 1920x1080, 32bit, 60Hz}
+   0.380 [Direct3D11] Display: 0, Output: 0, DisplayAdapter: 0, RenderingAdapter: -1; d3dcompiler_47.dll
+   0.561 Initialised Direct3D[0]: NVIDIA GeForce GTX 1080; id: 10de-1b80; driver: nvldumdx.dll 32.0.15.8180
+   0.561   D3D Feature Level: 11.1, DXGI 1.5+, SwapChain: 3,flip-discard,-,-,-,none
+   0.561   [Local Video Memory] Budget: 7291MB, CurrentUsage: 8MB, Reservation: 0/3773MB
+   0.561   [Non-Local Vid.Mem.] Budget: 15524MB, CurrentUsage: 0MB, Reservation: 0/7890MB
+   0.561   Tiled resources: Tier 2
+   0.561   Unified Memory Architecture: No
+   0.562   BGR 565 Supported: Yes
+   0.562   MaximumFrameLatency: 3, GPUThreadPriority: 0
+   0.562 Graphics settings preset: very-high
+   0.562   Dedicated video memory size 8059 MB
+   0.594 Desktop composition is active.
+   0.594 Graphics options: [Graphics quality: high] [Video memory usage: all] [DXT: high-quality]
+   0.594                   [Max threads (load/render): 32/16] [Max texture size: 0] [Tex.Stream.: false] [Rotation quality: normal] [Other: STDCWTl] [B:0,C:0,S:100]
+   0.616 [Audio] Driver:wasapi, Device:Default device, Depth:16, Frequency:44100, Channels:2, Interpolation:linear
+   0.720 Logitech LED Controller initialized.
+   0.746 Info ModManager.cpp:449: FeatureFlag expansion-shaders = false
+   0.746 Info ModManager.cpp:449: FeatureFlag freezing = false
+   0.746 Info ModManager.cpp:449: FeatureFlag quality = false
+   0.746 Info ModManager.cpp:449: FeatureFlag rail-bridges = true
+   0.746 Info ModManager.cpp:449: FeatureFlag segmented-units = false
+   0.746 Info ModManager.cpp:449: FeatureFlag space-travel = false
+   0.746 Info ModManager.cpp:449: FeatureFlag spoiling = false
+   0.747 Loading mod settings aai-containers 0.3.2 (settings.lua)
+   0.748 Loading mod settings ammo-loader 2.0.5 (settings.lua)
+   0.748 Loading mod settings bobinserters 2.0.3 (settings.lua)
+   0.749 Loading mod settings boblibrary 2.0.3 (settings.lua)
+   0.749 Loading mod settings Fill4Me 0.12.1 (settings.lua)
+   0.749 Loading mod settings informatron 0.4.0 (settings.lua)
+   0.749 Loading mod settings jetpack 0.4.14 (settings.lua)
+   0.749 Loading mod settings LogisticTrainNetwork 2.6.0 (settings.lua)
+   0.749 Loading mod settings manual-inventory-sort 2.3.0 (settings.lua)
+   0.750 Loading mod settings resourceMarker 0.8.33 (settings.lua)
+   0.750 Loading mod settings robot_attrition 0.6.5 (settings.lua)
+   0.750 Loading mod settings space-exploration-menu-simulations 0.7.4 (settings.lua)
+   0.750 Loading mod settings valves-lib 1.0.0 (settings.lua)
+   0.750 Loading mod settings Waterfill_v17 2.0.5 (settings.lua)
+   0.751 Loading mod settings Aircraft-space-age 2.3.4 (settings.lua)
+   0.751 Loading mod settings alien-biomes 0.7.4 (settings.lua)
+   0.751 Loading mod settings BlueprintTools 1.5.0 (settings.lua)
+   0.751 Loading mod settings bobassembly 2.0.5 (settings.lua)
+   0.752 Loading mod settings bobmining 2.0.4 (settings.lua)
+   0.752 Loading mod settings LTN_Combinator_Modernized 2.2.7 (settings.lua)
+   0.752 Loading mod settings solar-calc 0.5.72 (settings.lua)
+   0.753 Loading mod settings valves 2.2.0 (settings.lua)
+   0.753 Loading mod settings Flow Control 3.2.3 (settings.lua)
+   0.754 Loading mod settings Krastorio2 2.0.14 (settings.lua)
+   0.754 Loading mod settings aai-industry 0.6.14 (settings.lua)
+   0.754 Loading mod settings boblogistics 2.0.6 (settings.lua)
+   0.754 Loading mod settings space-exploration 0.7.42 (settings.lua)
+   0.755 Loading mod settings factorissimo-2-notnotmelon 3.11.11 (settings.lua)
+   0.755 Loading mod settings LtnManager 0.5.0 (settings.lua)
+   0.755 Loading mod settings se-ltn-glue 0.7.1 (settings.lua)
+   0.756 Loading mod settings space-exploration-postprocess 0.7.4 (settings.lua)
+   0.757 Loading mod settings boblogistics 2.0.6 (settings-updates.lua)
+   0.760 Loading mod core 0.0.0 (data.lua)
+   0.774 Loading mod base 2.0.73 (data.lua)
+   0.920 Loading mod aai-containers 0.3.2 (data.lua)
+   0.933 Loading mod aai-signal-transmission 0.5.3 (data.lua)
+   0.941 Loading mod ammo-loader 2.0.5 (data.lua)
+   0.949 Loading mod bobinserters 2.0.3 (data.lua)
+   0.956 Loading mod boblibrary 2.0.3 (data.lua)
+   0.968 Loading mod botReplacer 2.0.0 (data.lua)
+   0.977 Loading mod elevated-rails 2.0.73 (data.lua)
+   1.000 Loading mod Fill4Me 0.12.1 (data.lua)
+   1.008 Loading mod flib 0.16.5 (data.lua)
+   1.017 Loading mod FNEI 0.4.6 (data.lua)
+   1.034 Loading mod informatron 0.4.0 (data.lua)
+   1.050 Loading mod jetpack 0.4.14 (data.lua)
+   1.067 Loading mod Krastorio2MenuSimulations 2.0.2 (data.lua)
+   1.084 Loading mod LogisticTrainNetwork 2.6.0 (data.lua)
+   1.104 Loading mod manual-inventory-sort 2.3.0 (data.lua)
+   1.117 Loading mod notepad 1.0.4 (data.lua)
+   1.134 Loading mod robot_attrition 0.6.5 (data.lua)
+   1.150 Loading mod shield-projector 0.2.2 (data.lua)
+   1.169 Loading mod space-exploration-menu-simulations 0.7.4 (data.lua)
+   1.184 Loading mod valves-lib 1.0.0 (data.lua)
+   1.199 Loading mod Waterfill_v17 2.0.5 (data.lua)
+   1.216 Loading mod Aircraft-space-age 2.3.4 (data.lua)
+   1.233 Loading mod alien-biomes 0.7.4 (data.lua)
+   1.243 Script @__alien-biomes__/data.lua:4: Log mods once: {
+  ["Aircraft-space-age"] = "2.3.4",
+  BlueprintTools = "1.5.0",
+  ChangeInserterDropLane = "1.2.0",
+  FNEI = "0.4.6",
+  Fill4Me = "0.12.1",
+  ["Flow Control"] = "3.2.3",
+  Krastorio2 = "2.0.14",
+  Krastorio2Assets = "2.0.4",
+  Krastorio2MenuSimulations = "2.0.2",
+  LTN_Combinator_Modernized = "2.2.7",
+  LogisticTrainNetwork = "2.6.0",
+  LtnManager = "0.5.0",
+  Waterfill_v17 = "2.0.5",
+  ["aai-containers"] = "0.3.2",
+  ["aai-industry"] = "0.6.14",
+  ["aai-signal-transmission"] = "0.5.3",
+  ["abcnever-k2-se-tweaks"] = "0.0.1",
+  ["alien-biomes"] = "0.7.4",
+  ["alien-biomes-graphics"] = "0.7.1",
+  ["ammo-loader"] = "2.0.5",
+  base = "2.0.73",
+  ["bob-mining-fix-for-se"] = "2.0.0",
+  bobassembly = "2.0.5",
+  bobgreenhouse = "2.0.3",
+  bobinserters = "2.0.3",
+  boblibrary = "2.0.3",
+  boblogistics = "2.0.6",
+  bobmining = "2.0.4",
+  botReplacer = "2.0.0",
+  ["elevated-rails"] = "2.0.73",
+  ["factorissimo-2-notnotmelon"] = "3.11.11",
+  factoryplanner = "2.0.43",
+  fast_trans = "2.1.0",
+  flib = "0.16.5",
+  informatron = "0.4.0",
+  jetpack = "0.4.14",
+  ["manual-inventory-sort"] = "2.3.0",
+  notepad = "1.0.4",
+  resourceMarker = "0.8.33",
+  robot_attrition = "0.6.5",
+  ["se-ltn-glue"] = "0.7.1",
+  ["shield-projector"] = "0.2.2",
+  ["solar-calc"] = "0.5.72",
+  ["space-exploration"] = "0.7.42",
+  ["space-exploration-graphics"] = "0.7.5",
+  ["space-exploration-graphics-2"] = "0.7.2",
+  ["space-exploration-graphics-3"] = "0.7.2",
+  ["space-exploration-graphics-4"] = "0.7.2",
+  ["space-exploration-graphics-5"] = "0.7.2",
+  ["space-exploration-menu-simulations"] = "0.7.4",
+  ["space-exploration-postprocess"] = "0.7.4",
+  valves = "2.2.0",
+  ["valves-lib"] = "1.0.0"
+}
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-01
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-02
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-02-red
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-03
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-04
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-05
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-06
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-06-brown
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-07
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08-brown
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-08-red
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09-brown
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree tree-09-red
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dry-tree
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-tree-desert
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-grey-trunk
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dead-dry-hairy-tree
+   1.318 Script @__alien-biomes__/prototypes/entity/trees.lua:47: Disabling tree dry-hairy-tree
+   1.354 Loading mod BlueprintTools 1.5.0 (data.lua)
+   1.365 Loading mod bobassembly 2.0.5 (data.lua)
+   1.382 Loading mod bobgreenhouse 2.0.3 (data.lua)
+   1.401 Loading mod bobmining 2.0.4 (data.lua)
+   1.429 Loading mod ChangeInserterDropLane 1.2.0 (data.lua)
+   1.443 Loading mod factoryplanner 2.0.43 (data.lua)
+   1.454 Loading mod fast_trans 2.1.0 (data.lua)
+   1.472 Loading mod LTN_Combinator_Modernized 2.2.7 (data.lua)
+   1.483 Loading mod solar-calc 0.5.72 (data.lua)
+   1.494 Loading mod valves 2.2.0 (data.lua)
+   1.513 Loading mod Flow Control 3.2.3 (data.lua)
+   1.528 Loading mod Krastorio2 2.0.14 (data.lua)
+   1.598 Loading mod aai-industry 0.6.14 (data.lua)
+   1.618 Loading mod boblogistics 2.0.6 (data.lua)
+   1.645 Loading mod space-exploration 0.7.42 (data.lua)
+   1.763 Loading mod factorissimo-2-notnotmelon 3.11.11 (data.lua)
+   1.792 Loading mod LtnManager 0.5.0 (data.lua)
+   1.813 Loading mod se-ltn-glue 0.7.1 (data.lua)
+   1.830 Loading mod abcnever-k2-se-tweaks 0.0.1 (data.lua)
+   1.848 Loading mod base 2.0.73 (data-updates.lua)
+   1.868 Loading mod ammo-loader 2.0.5 (data-updates.lua)
+   1.869 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-icon-overlay.png
+   1.869 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-icon-bullet-case.png
+   1.871 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest.png
+   1.871 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest.png
+   1.871 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest.png
+   1.871 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest-requester.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest-storage.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/entity/ammo-loader-chest-passive-provider.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-requester.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-storage.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-passive-provider.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-requester.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-storage.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-chest-passive-provider.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-loader-chest.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-requester-chest.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-vehicles.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-burners.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-artillery.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-upgrade.png
+   1.872 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/technology/ammo-loader-tech-return-items.png
+   1.891 Loading mod bobinserters 2.0.3 (data-updates.lua)
+   1.909 Loading mod Aircraft-space-age 2.3.4 (data-updates.lua)
+   1.929 Loading mod alien-biomes 0.7.4 (data-updates.lua)
+   1.946 Loading mod bobassembly 2.0.5 (data-updates.lua)
+   1.966 Loading mod bobgreenhouse 2.0.3 (data-updates.lua)
+   1.984 Loading mod bobmining 2.0.4 (data-updates.lua)
+   2.002 Loading mod ChangeInserterDropLane 1.2.0 (data-updates.lua)
+   2.019 Loading mod valves 2.2.0 (data-updates.lua)
+   2.037 Loading mod Flow Control 3.2.3 (data-updates.lua)
+   2.055 Loading mod Krastorio2 2.0.14 (data-updates.lua)
+   2.106 Loading mod aai-industry 0.6.14 (data-updates.lua)
+   2.133 Loading mod boblogistics 2.0.6 (data-updates.lua)
+   2.154 Loading mod space-exploration 0.7.42 (data-updates.lua)
+   2.198 Loading mod factorissimo-2-notnotmelon 3.11.11 (data-updates.lua)
+   2.231 Loading mod aai-containers 0.3.2 (data-final-fixes.lua)
+   2.249 Loading mod ammo-loader 2.0.5 (data-final-fixes.lua)
+   2.250 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-icon-overlay.png
+   2.250 Script @__ammo-loader__/prototypes/util.lua:56: __ammo-loader__/graphics/icon/ammo-loader-icon-bullet-case.png
+   2.270 Loading mod bobinserters 2.0.3 (data-final-fixes.lua)
+   2.290 Loading mod boblibrary 2.0.3 (data-final-fixes.lua)
+   2.290 Script @__boblibrary__/recipe-functions.lua:305: Running recipe ingredients cleanup...
+   2.326 Loading mod jetpack 0.4.14 (data-final-fixes.lua)
+   2.349 Loading mod LogisticTrainNetwork 2.6.0 (data-final-fixes.lua)
+   2.349 Script @__LogisticTrainNetwork__/data-final-fixes.lua:12: [LTN] (data_final_fixes) [0] - Found 6 locomotives, 3 cargo wagons, 3 fluid wagons, 1 artillery wagons.
+   2.368 Loading mod robot_attrition 0.6.5 (data-final-fixes.lua)
+   2.387 Loading mod valves-lib 1.0.0 (data-final-fixes.lua)
+   2.406 Loading mod alien-biomes 0.7.4 (data-final-fixes.lua)
+   2.424 Script @__alien-biomes__/data-final-fixes.lua:204: Setting decals to layer 246
+   2.443 Loading mod bobassembly 2.0.5 (data-final-fixes.lua)
+   2.461 Loading mod LTN_Combinator_Modernized 2.2.7 (data-final-fixes.lua)
+   2.480 Loading mod valves 2.2.0 (data-final-fixes.lua)
+   2.501 Loading mod Krastorio2 2.0.14 (data-final-fixes.lua)
+   2.528 Loading mod aai-industry 0.6.14 (data-final-fixes.lua)
+   2.553 Loading mod boblogistics 2.0.6 (data-final-fixes.lua)
+   2.573 Loading mod space-exploration 0.7.42 (data-final-fixes.lua)
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: iron-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: copper-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: coal
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: stone
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: uranium-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: crude-oil
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-imersite
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-mineral-water
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: kr-rare-metal-ore
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-water-ice
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-methane-ice
+   2.729 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-beryllium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-cryonite
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-holmium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-iridium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-naquium-ore
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vulcanite
+   2.730 Script @__space-exploration__/prototypes/phase-3/resources.lua:43: Resource can place: se-vitamelange
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: pistol
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: uranium-rounds-magazine
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: fast-loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: express-loader
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: nuclear-fuel
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-energy-shield-mk3-equipment
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-energy-shield-mk4-equipment
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: kr-imersite-rounds-magazine
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: glass
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-rocket-launch-pad-silo-dummy-recipe
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-iridium-piledriver
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-space-probe-rocket-deploy
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-kr-sand-to-matter
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-kr-kr-imersite-to-matter
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-oxygen
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-nitrogen
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-water-electrolysis
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: dummy-migration-recipe-kr-water-separation
+   2.740 Script @__space-exploration__/data-final-fixes.lua:91: Orphaned recipe: se-rocket-fuel-from-water-copper
+   2.786 Loading mod bob-mining-fix-for-se 2.0.0 (data-final-fixes.lua)
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:19: {
+  "basic-solid"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:20: {
+  "basic-solid",
+  "hard-resource"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:19: {
+  "basic-solid"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:20: {
+  "basic-solid",
+  "hard-resource"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:19: {
+  "basic-solid"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:20: {
+  "basic-solid",
+  "hard-resource"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:19: {
+  "basic-solid"
+}
+   2.787 Script @__bob-mining-fix-for-se__/data-final-fixes.lua:20: {
+  "basic-solid",
+  "hard-resource"
+}
+   2.815 Loading mod factorissimo-2-notnotmelon 3.11.11 (data-final-fixes.lua)
+   2.843 Loading mod space-exploration-postprocess 0.7.4 (data-final-fixes.lua)
+   3.035 Loading mod abcnever-k2-se-tweaks 0.0.1 (data-final-fixes.lua)
+   3.171 Checksum for core: 3316885848
+   3.171 Checksum of base: 1879415942
+   3.171 Checksum of aai-containers: 3239499301
+   3.171 Checksum of aai-signal-transmission: 1896625553
+   3.171 Checksum of alien-biomes-graphics: 0
+   3.171 Checksum of ammo-loader: 2308824753
+   3.171 Checksum of bobinserters: 787534841
+   3.171 Checksum of boblibrary: 1409583333
+   3.171 Checksum of botReplacer: 1398371295
+   3.171 Checksum of elevated-rails: 70351106
+   3.171 Checksum of Fill4Me: 3833351903
+   3.171 Checksum of flib: 728527376
+   3.171 Checksum of FNEI: 1953867081
+   3.171 Checksum of informatron: 1824090339
+   3.171 Checksum of jetpack: 2841393122
+   3.171 Checksum of Krastorio2Assets: 0
+   3.171 Checksum of Krastorio2MenuSimulations: 803229161
+   3.171 Checksum of LogisticTrainNetwork: 2786362693
+   3.171 Checksum of manual-inventory-sort: 2663605055
+   3.171 Checksum of notepad: 4085873618
+   3.171 Checksum of resourceMarker: 389115112
+   3.171 Checksum of robot_attrition: 2168526330
+   3.171 Checksum of shield-projector: 4058400129
+   3.171 Checksum of space-exploration-graphics: 0
+   3.171 Checksum of space-exploration-graphics-2: 0
+   3.171 Checksum of space-exploration-graphics-3: 0
+   3.171 Checksum of space-exploration-graphics-4: 0
+   3.171 Checksum of space-exploration-graphics-5: 0
+   3.171 Checksum of space-exploration-menu-simulations: 3244939232
+   3.171 Checksum of valves-lib: 1781254839
+   3.171 Checksum of Waterfill_v17: 425935884
+   3.171 Checksum of Aircraft-space-age: 3592126680
+   3.171 Checksum of alien-biomes: 591806000
+   3.171 Checksum of BlueprintTools: 1577581169
+   3.171 Checksum of bobassembly: 2151482268
+   3.171 Checksum of bobgreenhouse: 3138797969
+   3.171 Checksum of bobmining: 1496573313
+   3.171 Checksum of ChangeInserterDropLane: 154718258
+   3.171 Checksum of factoryplanner: 456090672
+   3.171 Checksum of fast_trans: 4209354315
+   3.171 Checksum of LTN_Combinator_Modernized: 975205837
+   3.171 Checksum of solar-calc: 4022912783
+   3.171 Checksum of valves: 1449020782
+   3.171 Checksum of Flow Control: 1095755758
+   3.171 Checksum of Krastorio2: 3053404181
+   3.171 Checksum of aai-industry: 1615618932
+   3.171 Checksum of boblogistics: 2881912379
+   3.171 Checksum of space-exploration: 3215980926
+   3.171 Checksum of bob-mining-fix-for-se: 1664321372
+   3.171 Checksum of factorissimo-2-notnotmelon: 2429752257
+   3.171 Checksum of LtnManager: 2202119433
+   3.171 Checksum of se-ltn-glue: 704427850
+   3.171 Checksum of space-exploration-postprocess: 1504513224
+   3.171 Checksum of abcnever-k2-se-tweaks: 1237427408
+   3.650 Prototype list checksum: 2019622053
+   3.723 Loading sounds...
+   3.989 Info PlayerData.cpp:66: Local player-data.json unavailable
+   3.989 Info PlayerData.cpp:69: Cloud player-data.json available, timestamp 1769462519
+   3.992 Post-data load graphics options: [Light occlusion: no]
+   4.282 Crop bitmaps.
+   4.284 Parallel sprite loader initialized (threads: 16, bitmaps: 66)
+   4.399 Initial atlas bitmap size is 16384
+   4.406 Created an atlas bitmap (size 16384x16376) [none]
+   4.411 Created an atlas bitmap (size 16384x16280) [none]
+   4.416 Created an atlas bitmap (size 16384x16376) [none]
+   4.421 Created an atlas bitmap (size 16384x16380) [none]
+   4.429 Created an atlas bitmap (size 16384x16380) [none]
+   4.450 Created an atlas bitmap (size 16384x16380) [linear-magnification]
+   4.451 Created an atlas bitmap (size 16384x8536) [none]
+   4.454 Created an atlas bitmap (size 16384x16384) [low-object]
+   4.455 Created an atlas bitmap (size 16384x5664) [low-object]
+   4.455 Created an atlas bitmap (size 16384x12092) [corpse-decay]
+   4.456 Created an atlas bitmap (size 16384x5632) [decal]
+   4.456 Created an atlas bitmap (size 16384x5776) [mipmap, linear-minification, linear-magnification, linear-mip-level]
+   4.456 Created an atlas bitmap (size 4096x2208) [smoke, mipmap, linear-minification, linear-magnification]
+   4.459 Created an atlas bitmap (size 16384x16352) [terrain, mipmap, linear-minification, linear-mip-level]
+   4.460 Created an atlas bitmap (size 16384x7856) [terrain, mipmap, linear-minification, linear-mip-level]
+   4.460 Created an atlas bitmap (size 8192x2656) [terrain-effect-map, mipmap, linear-minification, linear-mip-level]
+   4.460 Created an atlas bitmap (size 8192x3024) [mipmap]
+   4.461 Created an atlas bitmap (size 8192x6336) [icon, not-compressed, mipmap, linear-minification, linear-magnification, linear-mip-level]
+   4.461 Created an atlas bitmap (size 16384x3672) [alpha-mask]
+   4.465 Created an atlas bitmap (size 16384x16380) [shadow, linear-magnification, alpha-mask]
+   4.481 Created an atlas bitmap (size 16384x16384) [shadow, linear-magnification, alpha-mask]
+   4.482 Created an atlas bitmap (size 8192x4916) [shadow, linear-magnification, alpha-mask]
+   4.482 Created an atlas bitmap (size 16384x3712) [shadow, mipmap, linear-magnification, alpha-mask]
+   4.482 Created an atlas bitmap (size 4096x496) [icon-background, not-compressed, mipmap, linear-minification, linear-magnification, linear-mip-level, ]
+   4.482 Loading 3D bitmaps.
+   4.490 Texture processor created (4096). GPU accelerated compression Supported: yes, Enabled: yes/yes. Test passed. YCoCgDXT PSNR: 35.83, BC3 PSNR: 33.82
+   4.537 Parallel sprite loader initialized (threads: 15, bitmaps: 10178)
+  20.805 Sprites loaded
+  20.861 Generated mipmaps (4) for atlas [7] of size 16384x16384   
+  20.883 Generated mipmaps (4) for atlas [8] of size 16384x5664   
+  20.905 Generated mipmaps (3) for atlas [11] of size 16384x5776   
+  20.916 Generated mipmaps (3) for atlas [12] of size 4096x2208   
+  20.949 Generated mipmaps (3) for atlas [13] of size 16384x16352   
+  20.971 Generated mipmaps (3) for atlas [14] of size 16384x7856   
+  20.982 Generated mipmaps (3) for atlas [15] of size 8192x2656   
+  21.045 Generated mipmaps (3) for atlas [16] of size 8192x3024   
+  21.056 Generated mipmaps (5) for atlas [17] of size 8192x6336   
+  21.067 Generated mipmaps (3) for atlas [22] of size 16384x3712   
+  21.077 Custom mipmaps uploaded (2790)
+  21.107 Video memory usage: 4565.90 MB (Atlases: 4553.67 MB, Textures: 12.23 MB)
+  21.110 Custom inputs active: 91
+  21.510 Script @__space-exploration__/scripts/migrate.lua:278: space-exploration: Starting migrations from 0.7.19 to 0.7.42 (simulation)
+  21.510 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.20
+  21.512 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.28
+  21.521 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.30
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.33
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.34
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.35
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.36
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.37
+  21.522 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.40
+  21.523 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.42
+  21.568 Factorio initialised
+  21.571 Steam Storage Quota: 22378/23841
+  22.519 Loading map C:\Users\edwar\AppData\Roaming\Factorio\saves\SE3.zip: 189973420 bytes.
+  22.561 Loading level.dat: 512841285 bytes.
+  22.561 Info Scenario.cpp:154: Map version 2.0.73-1
+  33.308 Loading blueprint storage: Local timestamp -1, Cloud timestamp -1
+  33.308 Blueprint storage "blueprint-storage-2.dat" was not found, trying to load previous version storage "blueprint-storage.dat"
+  33.308 Loading blueprint storage: Local timestamp 1728156398, Cloud timestamp 1671818448
+  35.168 Loading script.dat: 37630459 bytes.
+  35.170 Checksum for script __level__/control.lua: 3792629764
+  35.172 Checksum for script __aai-signal-transmission__/control.lua: 452882495
+  35.182 Checksum for script __ammo-loader__/control.lua: 2887797361
+  35.184 Checksum for script __bobinserters__/control.lua: 3407440666
+  35.184 Checksum for script __botReplacer__/control.lua: 2136833960
+  35.188 Checksum for script __Fill4Me__/control.lua: 206876788
+  35.194 Checksum for script __FNEI__/control.lua: 2789997456
+  35.195 Checksum for script __informatron__/control.lua: 2950852081
+  35.199 Checksum for script __jetpack__/control.lua: 1494920515
+  35.204 Checksum for script __LogisticTrainNetwork__/control.lua: 2068916184
+  35.204 Checksum for script __manual-inventory-sort__/control.lua: 2934365456
+  35.205 Checksum for script __notepad__/control.lua: 435823398
+  35.208 Script @__resourceMarker__/english_lib.lua:51: english:
+{ ["angels-fissure"] = "Fissure", ["angels-natural-gas"] = "Natural gas", ["angels-ore1"] = "Saphirite", ["angels-ore2"] = "Jivolite", ["angels-ore3"] = "Stiratite", ["angels-ore4"] = "Crotinnium", ["angels-ore5"] = "Rubyte", ["angels-ore6"] = "Bobmonium", ["bauxite-ore"] = "Aluminium ore", borax = "Borax", ["clowns-ore1"] = "Adamantite", ["clowns-ore2"] = "Antitate", ["clowns-ore3"] = "Pro-Galena", ["clowns-ore4"] = "Orichalcite", ["clowns-ore5"] = "Phosphorite", ["clowns-ore6"] = "Sanguinate", ["clowns-ore7"] = "Elionagate", ["clowns-ore8"] = "Meta-Garnierite", ["clowns-ore9"] = "Nova-Leucoxene", ["clowns-resource1"] = "Alluvial Deposit", ["clowns-resource2"] = "Oil Sands", coal = "Coal", ["cobalt-ore"] = "Cobalt ore", ["copper-ore"] = "Copper ore", ["crude-oil"] = "Crude oil", deep_oil = "Deep Oil", fluorite = "Fluorite", ["gem-ore"] = "Gem ore", ["gold-ore"] = "Gold ore", ["ground-water"] = "Ground water", imersite = "Raw Imersite", ["infinite-angels-ore1"] = "Saphirite", ["infinite-angels-ore2"] = "Jivolite", ["infinite-angels-ore3"] = "Stiratite", ["infinite-angels-ore4"] = "Crotinnium", ["infinite-angels-ore5"] = "Rubyte", ["infinite-angels-ore6"] = "Bobmonium", ["infinite-bauxite-ore"] = "Aluminium ore", ["infinite-borax"] = "Borax", ["infinite-clowns-ore1"] = "Infinite Adamantite", ["infinite-clowns-ore2"] = "Infinite Antitate", ["infinite-clowns-ore3"] = "Infinite Pro-Galena", ["infinite-clowns-ore4"] = "Infinite Orichalcite", ["infinite-clowns-ore5"] = "Infinite Phosphorite", ["infinite-clowns-ore6"] = "Infinite Sanguinate", ["infinite-clowns-ore7"] = "Infinite Elionagate", ["infinite-clowns-ore8"] = "Infinite Meta-Garnierite", ["infinite-clowns-ore9"] = "Infinite Nova-Leucoxene", ["infinite-clowns-resource1"] = "Infinite Alluvial Deposit", ["infinite-clowns-resource2"] = "Infinite Oil Sands", ["infinite-coal"] = "Coal", ["infinite-cobalt-ore"] = "Cobalt ore", ["infinite-copper-ore"] = "Copper ore", ["infinite-fluorite"] = "Fluorite", ["infinite-gem-ore"] = "Gem ore", ["infinite-gold-ore"] = "Gold ore", ["infinite-iron-ore"] = "Iron ore", ["infinite-lead-ore"] = "Lead ore", ["infinite-molybdenum-ore"] = "Molybdenum", ["infinite-nickel-ore"] = "Nickel ore", ["infinite-niobium"] = "Niobium", ["infinite-oil-sand"] = "Oil sand", ["infinite-ore-aluminium"] = "Aluminium", ["infinite-ore-chromium"] = "Chromium", ["infinite-ore-lead"] = "Lead", ["infinite-ore-nickel"] = "Nickel", ["infinite-ore-quartz"] = "Quartz", ["infinite-ore-tin"] = "Tin", ["infinite-ore-titanium"] = "Titanium", ["infinite-ore-zinc"] = "Zinc", ["infinite-quartz"] = "Silicon ore", ["infinite-raw-coal"] = "Raw coal", ["infinite-rutile-ore"] = "Titanium ore", ["infinite-silver-ore"] = "Silver ore", ["infinite-stone"] = "Stone", ["infinite-sulfur"] = "Sulfur", ["infinite-tenemut"] = "Tenemut cluster", ["infinite-thorium-ore"] = "Thorium ore", ["infinite-tin-ore"] = "Tin ore", ["infinite-tungsten-ore"] = "Tungsten ore", ["infinite-uraninite"] = "Uraninite", ["infinite-uranium-ore"] = "Uranium ore", ["infinite-y-res1"] = "N4-material chunk", ["infinite-y-res2"] = "F7-material chunk", ["infinite-zinc-ore"] = "Zinc ore", ["iron-ore"] = "Iron ore", ["lead-ore"] = "Lead ore", ["lithia-water"] = "Lithia water", ["mineral-water"] = "Mineral Water", ["molybdenum-ore"] = "Molybdenum", ["nickel-ore"] = "Nickel ore", niobium = "Niobium", ["oil-sand"] = "Oil sand", ["ore-aluminium"] = "Aluminium", ["ore-chromium"] = "Chromium", ["ore-lead"] = "Lead", ["ore-nickel"] = "Nickel", ["ore-quartz"] = "Quartz", ["ore-tin"] = "Tin", ["ore-titanium"] = "Titanium", ["ore-zinc"] = "Zinc", quartz = "Silicon ore", ["rare-metals"] = "Rare Metals", ["raw-coal"] = "Raw coal", ["rutile-ore"] = "Titanium ore", ["se-beryllium-ore"] = "Beryl", ["se-core-fragment-omni"] = "Core Seam", ["se-cryonite"] = "Cryonite", ["se-holmium-ore"] = "Holminite", ["se-iridium-ore"] = "Iridite", ["se-methane-ice"] = "Methane Ice", ["se-naquium-ore"] = "Naquitite", ["se-vitamelange"] = "Vitamelange", ["se-vulcanite"] = "Vulcanite", ["se-water-ice"] = "Water Ice", ["silver-ore"] = "Silver ore", stone = "Stone", sulfur = "Sulfur", tenemut = "Tenemut cluster", ["thorium-ore"] = "Thorium ore", ["tin-ore"] = "Tin ore", ["tungsten-ore"] = "Tungsten ore", uraninite = "Uraninite", ["uranium-ore"] = "Uranium ore", ["y-res1"] = "N4-material chunk", ["y-res2"] = "F7-material chunk", ["zinc-ore"] = "Zinc ore" }
+  35.208 Checksum for script __resourceMarker__/control.lua: 1651587294
+  35.209 Checksum for script __robot_attrition__/control.lua: 1924857878
+  35.212 Checksum for script __shield-projector__/control.lua: 2942179229
+  35.213 Checksum for script __valves-lib__/control.lua: 2174016994
+  35.213 Checksum for script __Aircraft-space-age__/control.lua: 2920240717
+  35.214 Checksum for script __alien-biomes__/control.lua: 3316854230
+  35.217 Checksum for script __BlueprintTools__/control.lua: 2145753503
+  35.218 Checksum for script __ChangeInserterDropLane__/control.lua: 4074828092
+  35.239 Checksum for script __factoryplanner__/control.lua: 1600935297
+  35.240 Checksum for script __fast_trans__/control.lua: 0
+  35.244 Checksum for script __LTN_Combinator_Modernized__/control.lua: 1880470745
+  35.248 Checksum for script __solar-calc__/control.lua: 1782501471
+  35.253 Checksum for script __Krastorio2__/control.lua: 2015038817
+  35.254 Checksum for script __aai-industry__/control.lua: 3314693179
+  35.255 Checksum for script __boblogistics__/control.lua: 1122667629
+  35.339 Checksum for script __space-exploration__/control.lua: 2918768411
+  35.349 Script @__factorissimo-2-notnotmelon__/lib/events.lua:52: Finalized 58 events for factorissimo-2-notnotmelon
+  35.349 Checksum for script __factorissimo-2-notnotmelon__/control.lua: 4030607591
+  35.354 Checksum for script __LtnManager__/control.lua: 3175919796
+  35.356 Checksum for script __se-ltn-glue__/control.lua: 2974867403
+  37.191 Script @__resourceMarker__/control.lua:382: on_configuration_changed
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-coal`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-coal-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-omni-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-crude-oil`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-crude-oil-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-stone`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-stone-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-iron-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-iron-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-copper-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-copper-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-rare-metal-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-rare-metal-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-mineral-water`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-mineral-water-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-uranium-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-uranium-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-vulcanite`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-vulcanite-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-cryonite`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-cryonite-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-imersite`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-kr-imersite-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-beryllium-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-beryllium-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-holmium-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-holmium-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-iridium-ore`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-iridium-ore-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-vitamelange`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `se-core-fragment-se-vitamelange-sealed`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `kr-imersite`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `kr-mineral-water`
+  37.192 Script @__resourceMarker__/english_lib.lua:43: The english.lua table missing `kr-rare-metal-ore`
+  37.193 Script @__resourceMarker__/global_lib.lua:65: storage.aliases:
+{ Beryl = "se-beryllium-ore", Coal = "coal", ["Copper ore"] = "copper-ore", ["Core Seam"] = "se-core-fragment-omni", ["Crude oil"] = "crude-oil", Cryonite = "se-cryonite", Holminite = "se-holmium-ore", Iridite = "se-iridium-ore", ["Iron ore"] = "iron-ore", ["Methane Ice"] = "se-methane-ice", Naquitite = "se-naquium-ore", Stone = "stone", ["Uranium ore"] = "uranium-ore", Vitamelange = "se-vitamelange", Vulcanite = "se-vulcanite", ["Water Ice"] = "se-water-ice", coal = "coal", ["copper-ore"] = "copper-ore", ["crude-oil"] = "crude-oil", ["iron-ore"] = "iron-ore", ["kr-imersite"] = "kr-imersite", ["kr-mineral-water"] = "kr-mineral-water", ["kr-rare-metal-ore"] = "kr-rare-metal-ore", ["se-beryllium-ore"] = "se-beryllium-ore", ["se-core-fragment-coal"] = "se-core-fragment-coal", ["se-core-fragment-coal-sealed"] = "se-core-fragment-coal", ["se-core-fragment-copper-ore"] = "se-core-fragment-copper-ore", ["se-core-fragment-copper-ore-sealed"] = "se-core-fragment-copper-ore", ["se-core-fragment-crude-oil"] = "se-core-fragment-crude-oil", ["se-core-fragment-crude-oil-sealed"] = "se-core-fragment-crude-oil", ["se-core-fragment-iron-ore"] = "se-core-fragment-iron-ore", ["se-core-fragment-iron-ore-sealed"] = "se-core-fragment-iron-ore", ["se-core-fragment-kr-imersite"] = "se-core-fragment-kr-imersite", ["se-core-fragment-kr-imersite-sealed"] = "se-core-fragment-kr-imersite", ["se-core-fragment-kr-mineral-water"] = "se-core-fragment-kr-mineral-water", ["se-core-fragment-kr-mineral-water-sealed"] = "se-core-fragment-kr-mineral-water", ["se-core-fragment-kr-rare-metal-ore"] = "se-core-fragment-kr-rare-metal-ore", ["se-core-fragment-kr-rare-metal-ore-sealed"] = "se-core-fragment-kr-rare-metal-ore", ["se-core-fragment-omni"] = "se-core-fragment-omni", ["se-core-fragment-omni-sealed"] = "se-core-fragment-omni", ["se-core-fragment-se-beryllium-ore"] = "se-core-fragment-se-beryllium-ore", ["se-core-fragment-se-beryllium-ore-sealed"] = "se-core-fragment-se-beryllium-ore", ["se-core-fragment-se-cryonite"] = "se-core-fragment-se-cryonite", ["se-core-fragment-se-cryonite-sealed"] = "se-core-fragment-se-cryonite", ["se-core-fragment-se-holmium-ore"] = "se-core-fragment-se-holmium-ore", ["se-core-fragment-se-holmium-ore-sealed"] = "se-core-fragment-se-holmium-ore", ["se-core-fragment-se-iridium-ore"] = "se-core-fragment-se-iridium-ore", ["se-core-fragment-se-iridium-ore-sealed"] = "se-core-fragment-se-iridium-ore", ["se-core-fragment-se-vitamelange"] = "se-core-fragment-se-vitamelange", ["se-core-fragment-se-vitamelange-sealed"] = "se-core-fragment-se-vitamelange", ["se-core-fragment-se-vulcanite"] = "se-core-fragment-se-vulcanite", ["se-core-fragment-se-vulcanite-sealed"] = "se-core-fragment-se-vulcanite", ["se-core-fragment-stone"] = "se-core-fragment-stone", ["se-core-fragment-stone-sealed"] = "se-core-fragment-stone", ["se-core-fragment-uranium-ore"] = "se-core-fragment-uranium-ore", ["se-core-fragment-uranium-ore-sealed"] = "se-core-fragment-uranium-ore", ["se-cryonite"] = "se-cryonite", ["se-holmium-ore"] = "se-holmium-ore", ["se-iridium-ore"] = "se-iridium-ore", ["se-methane-ice"] = "se-methane-ice", ["se-naquium-ore"] = "se-naquium-ore", ["se-vitamelange"] = "se-vitamelange", ["se-vulcanite"] = "se-vulcanite", ["se-water-ice"] = "se-water-ice", stone = "stone", ["uranium-ore"] = "uranium-ore" }
+  86.630 Script @__robot_attrition__/control.lua:249: bot_remnants_set: {}
+ 140.517 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34675686], provider at #3, requester at #4
+ 175.851 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34671396], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34679860], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34680609], provider at #3, requester at #4
+ 212.123 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34679771], provider at #3, requester at #4
+ 228.653 Info AppManager.cpp:324: Saving to _autosave1 (blocking).
+ 231.182 Info AppManagerStates.cpp:2111: Saving finished
+ 296.786 Info AppManager.cpp:353: Deleting active scenario.
+ 320.736 Info HttpSharedState.cpp:57: Downloading https://mods.factorio.com/api/mods?page_size=max&full=True&version=2.0.73&lang=en&is_space_age=true
+ 321.209 Info HttpSharedState.cpp:57: Downloading https://mods.factorio.com/api/mods?page_size=max&full=True&version=2.0.73&lang=en&is_space_age=true
+ 329.233 Script @__space-exploration__/scripts/migrate.lua:278: space-exploration: Starting migrations from 0.7.19 to 0.7.42 (simulation)
+ 329.233 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.20
+ 329.235 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.28
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.30
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.33
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.34
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.35
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.36
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.37
+ 329.244 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.40
+ 329.245 Script @__space-exploration__/scripts/migrate.lua:285: space-exploration: Running migration 0.7.42
+ 386.229 Loading map C:\Users\edwar\AppData\Roaming\Factorio\saves\_autosave1.zip: 190503881 bytes.
+ 386.261 Loading level.dat: 513571284 bytes.
+ 386.261 Info Scenario.cpp:154: Map version 2.0.73-1
+ 391.782 Loading blueprint storage: Local timestamp -1, Cloud timestamp -1
+ 391.782 Blueprint storage "blueprint-storage-2.dat" was not found, trying to load previous version storage "blueprint-storage.dat"
+ 391.782 Loading blueprint storage: Local timestamp 1728156398, Cloud timestamp 1671818448
+ 391.786 Loading script.dat: 39929986 bytes.
+ 391.792 Checksum for script __level__/control.lua: 3792629764
+ 391.794 Checksum for script __aai-signal-transmission__/control.lua: 452882495
+ 391.805 Checksum for script __ammo-loader__/control.lua: 2887797361
+ 391.808 Checksum for script __bobinserters__/control.lua: 3407440666
+ 391.809 Checksum for script __botReplacer__/control.lua: 2136833960
+ 391.814 Checksum for script __Fill4Me__/control.lua: 206876788
+ 391.823 Checksum for script __FNEI__/control.lua: 2789997456
+ 391.825 Checksum for script __informatron__/control.lua: 2950852081
+ 391.829 Checksum for script __jetpack__/control.lua: 1494920515
+ 391.834 Checksum for script __LogisticTrainNetwork__/control.lua: 2068916184
+ 391.835 Checksum for script __manual-inventory-sort__/control.lua: 2934365456
+ 391.836 Checksum for script __notepad__/control.lua: 435823398
+ 391.839 Script @__resourceMarker__/english_lib.lua:51: english:
+{ ["angels-fissure"] = "Fissure", ["angels-natural-gas"] = "Natural gas", ["angels-ore1"] = "Saphirite", ["angels-ore2"] = "Jivolite", ["angels-ore3"] = "Stiratite", ["angels-ore4"] = "Crotinnium", ["angels-ore5"] = "Rubyte", ["angels-ore6"] = "Bobmonium", ["bauxite-ore"] = "Aluminium ore", borax = "Borax", ["clowns-ore1"] = "Adamantite", ["clowns-ore2"] = "Antitate", ["clowns-ore3"] = "Pro-Galena", ["clowns-ore4"] = "Orichalcite", ["clowns-ore5"] = "Phosphorite", ["clowns-ore6"] = "Sanguinate", ["clowns-ore7"] = "Elionagate", ["clowns-ore8"] = "Meta-Garnierite", ["clowns-ore9"] = "Nova-Leucoxene", ["clowns-resource1"] = "Alluvial Deposit", ["clowns-resource2"] = "Oil Sands", coal = "Coal", ["cobalt-ore"] = "Cobalt ore", ["copper-ore"] = "Copper ore", ["crude-oil"] = "Crude oil", deep_oil = "Deep Oil", fluorite = "Fluorite", ["gem-ore"] = "Gem ore", ["gold-ore"] = "Gold ore", ["ground-water"] = "Ground water", imersite = "Raw Imersite", ["infinite-angels-ore1"] = "Saphirite", ["infinite-angels-ore2"] = "Jivolite", ["infinite-angels-ore3"] = "Stiratite", ["infinite-angels-ore4"] = "Crotinnium", ["infinite-angels-ore5"] = "Rubyte", ["infinite-angels-ore6"] = "Bobmonium", ["infinite-bauxite-ore"] = "Aluminium ore", ["infinite-borax"] = "Borax", ["infinite-clowns-ore1"] = "Infinite Adamantite", ["infinite-clowns-ore2"] = "Infinite Antitate", ["infinite-clowns-ore3"] = "Infinite Pro-Galena", ["infinite-clowns-ore4"] = "Infinite Orichalcite", ["infinite-clowns-ore5"] = "Infinite Phosphorite", ["infinite-clowns-ore6"] = "Infinite Sanguinate", ["infinite-clowns-ore7"] = "Infinite Elionagate", ["infinite-clowns-ore8"] = "Infinite Meta-Garnierite", ["infinite-clowns-ore9"] = "Infinite Nova-Leucoxene", ["infinite-clowns-resource1"] = "Infinite Alluvial Deposit", ["infinite-clowns-resource2"] = "Infinite Oil Sands", ["infinite-coal"] = "Coal", ["infinite-cobalt-ore"] = "Cobalt ore", ["infinite-copper-ore"] = "Copper ore", ["infinite-fluorite"] = "Fluorite", ["infinite-gem-ore"] = "Gem ore", ["infinite-gold-ore"] = "Gold ore", ["infinite-iron-ore"] = "Iron ore", ["infinite-lead-ore"] = "Lead ore", ["infinite-molybdenum-ore"] = "Molybdenum", ["infinite-nickel-ore"] = "Nickel ore", ["infinite-niobium"] = "Niobium", ["infinite-oil-sand"] = "Oil sand", ["infinite-ore-aluminium"] = "Aluminium", ["infinite-ore-chromium"] = "Chromium", ["infinite-ore-lead"] = "Lead", ["infinite-ore-nickel"] = "Nickel", ["infinite-ore-quartz"] = "Quartz", ["infinite-ore-tin"] = "Tin", ["infinite-ore-titanium"] = "Titanium", ["infinite-ore-zinc"] = "Zinc", ["infinite-quartz"] = "Silicon ore", ["infinite-raw-coal"] = "Raw coal", ["infinite-rutile-ore"] = "Titanium ore", ["infinite-silver-ore"] = "Silver ore", ["infinite-stone"] = "Stone", ["infinite-sulfur"] = "Sulfur", ["infinite-tenemut"] = "Tenemut cluster", ["infinite-thorium-ore"] = "Thorium ore", ["infinite-tin-ore"] = "Tin ore", ["infinite-tungsten-ore"] = "Tungsten ore", ["infinite-uraninite"] = "Uraninite", ["infinite-uranium-ore"] = "Uranium ore", ["infinite-y-res1"] = "N4-material chunk", ["infinite-y-res2"] = "F7-material chunk", ["infinite-zinc-ore"] = "Zinc ore", ["iron-ore"] = "Iron ore", ["lead-ore"] = "Lead ore", ["lithia-water"] = "Lithia water", ["mineral-water"] = "Mineral Water", ["molybdenum-ore"] = "Molybdenum", ["nickel-ore"] = "Nickel ore", niobium = "Niobium", ["oil-sand"] = "Oil sand", ["ore-aluminium"] = "Aluminium", ["ore-chromium"] = "Chromium", ["ore-lead"] = "Lead", ["ore-nickel"] = "Nickel", ["ore-quartz"] = "Quartz", ["ore-tin"] = "Tin", ["ore-titanium"] = "Titanium", ["ore-zinc"] = "Zinc", quartz = "Silicon ore", ["rare-metals"] = "Rare Metals", ["raw-coal"] = "Raw coal", ["rutile-ore"] = "Titanium ore", ["se-beryllium-ore"] = "Beryl", ["se-core-fragment-omni"] = "Core Seam", ["se-cryonite"] = "Cryonite", ["se-holmium-ore"] = "Holminite", ["se-iridium-ore"] = "Iridite", ["se-methane-ice"] = "Methane Ice", ["se-naquium-ore"] = "Naquitite", ["se-vitamelange"] = "Vitamelange", ["se-vulcanite"] = "Vulcanite", ["se-water-ice"] = "Water Ice", ["silver-ore"] = "Silver ore", stone = "Stone", sulfur = "Sulfur", tenemut = "Tenemut cluster", ["thorium-ore"] = "Thorium ore", ["tin-ore"] = "Tin ore", ["tungsten-ore"] = "Tungsten ore", uraninite = "Uraninite", ["uranium-ore"] = "Uranium ore", ["y-res1"] = "N4-material chunk", ["y-res2"] = "F7-material chunk", ["zinc-ore"] = "Zinc ore" }
+ 391.839 Checksum for script __resourceMarker__/control.lua: 1651587294
+ 391.840 Checksum for script __robot_attrition__/control.lua: 1924857878
+ 391.843 Checksum for script __shield-projector__/control.lua: 2942179229
+ 391.845 Checksum for script __valves-lib__/control.lua: 2174016994
+ 391.845 Checksum for script __Aircraft-space-age__/control.lua: 2920240717
+ 391.846 Checksum for script __alien-biomes__/control.lua: 3316854230
+ 391.850 Checksum for script __BlueprintTools__/control.lua: 2145753503
+ 391.851 Checksum for script __ChangeInserterDropLane__/control.lua: 4074828092
+ 391.876 Checksum for script __factoryplanner__/control.lua: 1600935297
+ 391.876 Checksum for script __fast_trans__/control.lua: 0
+ 391.880 Checksum for script __LTN_Combinator_Modernized__/control.lua: 1880470745
+ 391.886 Checksum for script __solar-calc__/control.lua: 1782501471
+ 391.893 Checksum for script __Krastorio2__/control.lua: 2015038817
+ 391.893 Checksum for script __aai-industry__/control.lua: 3314693179
+ 391.895 Checksum for script __boblogistics__/control.lua: 1122667629
+ 391.988 Checksum for script __space-exploration__/control.lua: 2918768411
+ 391.999 Script @__factorissimo-2-notnotmelon__/lib/events.lua:52: Finalized 58 events for factorissimo-2-notnotmelon
+ 391.999 Checksum for script __factorissimo-2-notnotmelon__/control.lua: 4030607591
+ 392.005 Checksum for script __LtnManager__/control.lua: 3175919796
+ 392.008 Checksum for script __se-ltn-glue__/control.lua: 2974867403
+ 397.405 Script @__robot_attrition__/control.lua:249: bot_remnants_set: {}
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678418], provider at #3, requester at #4
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34670614], provider at #3, requester at #4
+ 412.745 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34652021], provider at #3, requester at #4
+ 448.948 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34676092], provider at #3, requester at #4
+ 448.948 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678272], provider at #3, requester at #4
+ 448.949 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34625937], provider at #3, requester at #4
+ 484.714 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34672100], provider at #3, requester at #4
+ 520.085 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34678444], provider at #3, requester at #4
+ 520.085 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34666886], provider at #3, requester at #4
+ 555.478 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684879], provider at #3, requester at #4
+ 555.479 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684774], provider at #3, requester at #4
+ 591.300 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682874], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682220], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34682001], provider at #3, requester at #4
+ 591.301 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34685698], provider at #3, requester at #4
+ 627.339 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34673296], provider at #3, requester at #4
+ 662.908 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34684142], provider at #3, requester at #4
+ 662.909 Script @__se-ltn-glue__/ltn-delivery.lua:115: preparing cross surface delivery for [train=34672698], provider at #3, requester at #4
