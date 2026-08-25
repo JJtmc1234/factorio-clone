@@ -1,0 +1,24 @@
+ISSUE ATTACHMENT HEADER SIEVE
+========================================================================================================================
+archive-like candidates selected: 49
+download attempts recorded: 49
+total bytes downloaded: 1187997922
+Factorio saves found (including nested): 41
+saves with any Space Exploration version: 6
+native Factorio 2.0 + Space Exploration 0.7 saves: 0
+SE versions found: ['0.6.108', '0.6.123', '0.6.138', '0.6.145', '0.6.78', '0.6.96']
+download errors: 3
+download skips: 0
+nested/archive inspection errors: 2
+
+NATIVE SE 0.7 CANDIDATES
+------------------------------------------------------------------------------------------------------------------------
+
+ALL SPACE EXPLORATION SAVES
+------------------------------------------------------------------------------------------------------------------------
+SE=0.6.145 Factorio=1.1.110.0 repo=Yafc-CE/yafc-ce issue=507 url=https://github.com/user-attachments/files/21559231/New.Game.zip root=New Game
+SE=0.6.138 Factorio=1.1.109.0 repo=EarendelDevelopers/factorio-mods issue=392 url=https://drive.google.com/file/d/1nScbABVE1hugI9Oj5Li6XRotivrJuBsp/view?usp=drive_link root=New beginings-beforemigrate-2
+SE=0.6.78 Factorio=1.1.61.0 repo=hgschmie/factorio-miniloader-redux issue=31 url=https://drive.google.com/file/d/1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo/view?usp=sharing root=spaceyboys22_v1.x_v0.6_saved
+SE=0.6.96 Factorio=1.1.74.1 repo=ClaudeMetz/FactoryPlanner issue=673 url=https://github.com/user-attachments/files/23529570/broken_factory_planer_repair.zip root=broken_factory_planer_repair
+SE=0.6.108 Factorio=1.1.80.0 repo=ClaudeMetz/FactoryPlanner issue=657 url=https://drive.google.com/file/d/12cwTj7gtY5EoCYgSqLf_bHTrB0TTG_40/view?usp=sharing root=K2 space exploration new
+SE=0.6.123 Factorio=1.1.103.0 repo=notnotmelon/factorissimo-2-notnotmelon issue=245 url=https://drive.google.com/file/d/1BFktsFpRaH8N5IHgbbquS9YHyNXClQxr/view?usp=sharing root=SpaceE-Stuck

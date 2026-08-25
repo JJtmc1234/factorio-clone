@@ -1,0 +1,14 @@
+[
+  {
+    "archive_label": "007-crash.patch",
+    "depth": 0,
+    "error": "BadZipFile('File is not a zip file')",
+    "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 275, in inspect_archive_bytes\n  File \"/usr/lib/python3.12/zipfile/__init__.py\", line 1365, in __init__\n    self._RealGetContents()\n  File \"/usr/lib/python3.12/zipfile/__init__.py\", line 1432, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n"
+  },
+  {
+    "archive_label": "038-LTN_no_fluid_space_elevator_example.zip",
+    "depth": 0,
+    "error": "BadZipFile('File is not a zip file')",
+    "traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 275, in inspect_archive_bytes\n  File \"/usr/lib/python3.12/zipfile/__init__.py\", line 1365, in __init__\n    self._RealGetContents()\n  File \"/usr/lib/python3.12/zipfile/__init__.py\", line 1432, in _RealGetContents\n    raise BadZipFile(\"File is not a zip file\")\nzipfile.BadZipFile: File is not a zip file\n"
+  }
+]
