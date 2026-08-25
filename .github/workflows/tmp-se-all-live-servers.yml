@@ -1,0 +1,211 @@
+name: Enumerate every live SE 0.7 server
+
+on:
+  push:
+    branches: [tmp-se-all-live-servers-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  enumerate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Scrape server IDs and query every live detail record
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-all-live-result
+          mkdir -p se-all-live-result
+          python3 -m pip install --quiet requests beautifulsoup4 lxml
+          cat > /tmp/enumerate_se_servers.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import json
+          import pathlib
+          import re
+          import time
+          from collections import Counter
+          from urllib.parse import urljoin
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          OUT = pathlib.Path('se-all-live-result')
+          OUT.mkdir(exist_ok=True)
+          session = requests.Session()
+          session.headers.update({
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36',
+              'Accept-Language': 'en-US,en;q=0.9',
+          })
+
+          BROWSER = 'https://browser.lambs.cafe/'
+          DETAILS = 'https://multiplayer.factorio.com/get-game-details/{}'
+          SERVER_RX = re.compile(r'/server/(\d+)')
+
+          pages = [
+              BROWSER + '?version=all',
+              BROWSER + '?version=all&no_password=true',
+              BROWSER + '?version=all&has_players=true',
+              BROWSER + '?version=all&is_dedicated=true',
+              BROWSER,
+          ]
+
+          ids: set[int] = set()
+          page_records = []
+          errors = []
+          for url in pages:
+              try:
+                  r = session.get(url, timeout=45)
+                  page_records.append({'url': url, 'status': r.status_code, 'bytes': len(r.content)})
+                  if r.status_code == 200:
+                      ids.update(int(x) for x in SERVER_RX.findall(r.text))
+                      (OUT / ('page-' + re.sub(r'[^A-Za-z0-9]+', '-', url).strip('-')[-70:] + '.html')).write_text(r.text, encoding='utf-8', errors='replace')
+              except Exception as exc:
+                  errors.append({'url': url, 'error': repr(exc)})
+
+          # The site can paginate or cap SSR output. Its current IDs are monotonic and clustered,
+          # so fill small gaps around every observed range. Expired IDs merely return 404.
+          if ids:
+              lo, hi = min(ids), max(ids)
+              # Query the complete current cluster plus a modest look-back to catch servers hidden
+              # by version/tag filters or momentarily absent from the rendered list.
+              lo = max(1, lo - 3500)
+              hi = hi + 300
+              ids.update(range(lo, hi + 1))
+
+          def fetch_detail(game_id: int) -> dict:
+              url = DETAILS.format(game_id)
+              for attempt in range(3):
+                  try:
+                      r = session.get(url, timeout=15)
+                      if r.status_code == 200:
+                          d = r.json()
+                          d['_queried_game_id'] = game_id
+                          return {'ok': True, 'detail': d}
+                      if r.status_code in (400, 404):
+                          return {'ok': False, 'game_id': game_id, 'status': r.status_code}
+                      if r.status_code == 429:
+                          time.sleep(1.5 * (attempt + 1))
+                          continue
+                      return {'ok': False, 'game_id': game_id, 'status': r.status_code, 'body': r.text[:500]}
+                  except Exception as exc:
+                      if attempt == 2:
+                          return {'ok': False, 'game_id': game_id, 'error': repr(exc)}
+                      time.sleep(0.4 * (attempt + 1))
+              return {'ok': False, 'game_id': game_id, 'error': 'exhausted'}
+
+          results = []
+          ordered_ids = sorted(ids, reverse=True)
+          with concurrent.futures.ThreadPoolExecutor(max_workers=20) as pool:
+              futures = [pool.submit(fetch_detail, game_id) for game_id in ordered_ids]
+              for idx, fut in enumerate(concurrent.futures.as_completed(futures), 1):
+                  results.append(fut.result())
+                  if idx % 1000 == 0:
+                      live = sum(bool(x.get('ok')) for x in results)
+                      print(f'queried={idx}/{len(ordered_ids)} live={live}')
+
+          live = [x['detail'] for x in results if x.get('ok')]
+          failures = [x for x in results if not x.get('ok')]
+
+          def mods_map(d: dict) -> dict[str, str]:
+              return {m.get('name'): m.get('version') for m in (d.get('mods') or []) if m.get('name')}
+
+          se = []
+          for d in live:
+              mm = mods_map(d)
+              version = mm.get('space-exploration')
+              if version and str(version).startswith('0.7.'):
+                  d['_se_version'] = version
+                  d['_k2_version'] = mm.get('Krastorio2')
+                  d['_mod_count_exact'] = len(mm)
+                  ticks = d.get('game_time_elapsed') or 0
+                  try:
+                      ticks = int(ticks)
+                  except Exception:
+                      ticks = 0
+                  d['_hours'] = ticks / 216000.0
+                  se.append(d)
+
+          def stage_score(d: dict) -> float:
+              hours = float(d.get('_hours') or 0)
+              # Broad target around first cargo rocket; multiplayer and high science multipliers vary.
+              if 40 <= hours <= 100:
+                  time_score = 60 - abs(hours - 68) * 0.8
+              elif 20 <= hours < 40:
+                  time_score = 28 - (40 - hours) * 0.6
+              elif 100 < hours <= 150:
+                  time_score = 25 - (hours - 100) * 0.4
+              else:
+                  time_score = max(-60, 5 - abs(hours - 68) * 0.25)
+              score = time_score
+              if not d.get('has_password'):
+                  score += 35
+              if d.get('headless_server'):
+                  score += 5
+              if d.get('players'):
+                  score += 5
+              desc = ((d.get('name') or '') + '\n' + (d.get('description') or '') + '\n' + ' '.join(d.get('tags') or [])).lower()
+              for term, pts in [
+                  ('rocket science', 25), ('cargo rocket', 20), ('first rocket', 14),
+                  ('space exploration', 8), ('k2se', 5), ('discord', 8),
+                  ('backup', 15), ('save', 12), ('download', 15),
+              ]:
+                  if term in desc:
+                      score += pts
+              return round(score, 2)
+
+          for d in se:
+              d['_stage_score'] = stage_score(d)
+          ranked = sorted(se, key=lambda d: (-d['_stage_score'], d['_hours'], d.get('name') or ''))
+
+          (OUT / 'page-records.json').write_text(json.dumps(page_records, indent=2, ensure_ascii=False))
+          (OUT / 'all-live-details.json').write_text(json.dumps(live, indent=2, ensure_ascii=False))
+          (OUT / 'all-failures.json').write_text(json.dumps(failures, indent=2, ensure_ascii=False))
+          (OUT / 'se07-live-details.json').write_text(json.dumps(se, indent=2, ensure_ascii=False))
+          (OUT / 'se07-ranked.json').write_text(json.dumps(ranked, indent=2, ensure_ascii=False))
+          (OUT / 'errors.json').write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+
+          lines = [
+              f'Browser pages fetched: {len(page_records)}',
+              f'Observed plus range-expanded game IDs queried: {len(ordered_ids)}',
+              f'Live detail records: {len(live)}',
+              f'Native SE 0.7 live servers: {len(se)}',
+              f'Native SE 0.7 without password: {sum(not d.get("has_password") for d in se)}',
+              f'Native SE 0.7 in 20-150h window: {sum(20 <= d.get("_hours", 0) <= 150 for d in se)}',
+              '',
+              'RANKED NATIVE SE 0.7 SERVERS',
+              '=' * 120,
+          ]
+          for d in ranked:
+              lines.extend([
+                  f"SCORE {d['_stage_score']:6.2f} | {d.get('name')} | id={d.get('game_id')} | {d['_hours']:.2f}h | SE={d.get('_se_version')} | K2={d.get('_k2_version')} | password={d.get('has_password')} | players={len(d.get('players') or [])}/{d.get('max_players')} | mods={d.get('_mod_count_exact')}",
+                  f"host={d.get('host_address')} dedicated={d.get('headless_server')}",
+                  f"players={d.get('players')}",
+                  f"description={d.get('description')!r}",
+                  f"tags={d.get('tags')}",
+                  '',
+              ])
+          (OUT / 'SUMMARY.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:800]))
+          PY
+          python3 /tmp/enumerate_se_servers.py | tee se-all-live-result/console.txt
+
+      - name: Publish results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-all-live-servers-result-20260824
+          rm -rf tmp-se-all-live-servers
+          mkdir -p tmp-se-all-live-servers
+          cp -a se-all-live-result/. tmp-se-all-live-servers/ || true
+          git add -f tmp-se-all-live-servers
+          git commit -m 'Publish complete live SE 0.7 server enumeration' || true
+          git push --force origin HEAD:refs/heads/tmp-se-all-live-servers-result-20260824
