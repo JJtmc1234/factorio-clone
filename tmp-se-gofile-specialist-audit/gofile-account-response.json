@@ -1,0 +1,12 @@
+{
+  "status_code": 200,
+  "payload": {
+    "status": "ok",
+    "data": {
+      "id": "6f31404e-74eb-4374-a03b-2866441f6336",
+      "rootFolder": "28a4c402-24e0-4c03-9d8b-ac98d59a0440",
+      "tier": "guest",
+      "token": "6wuTCKTsjQYVj0iOZR9TX8McRxgQddir"
+    }
+  }
+}
