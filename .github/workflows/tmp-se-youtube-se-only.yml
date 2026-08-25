@@ -1,0 +1,285 @@
+name: Filter YouTube results to actual SE save links
+
+on:
+  push:
+    branches: [tmp-se-youtube-se-only-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Normalize links and isolate Space Exploration videos
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-youtube-se-only-result
+          mkdir -p se-youtube-se-only-result
+          cat > /tmp/filter_se_youtube.py <<'PY'
+          from __future__ import annotations
+
+          import html
+          import json
+          import pathlib
+          import re
+          from collections import defaultdict
+          from urllib.parse import parse_qs, unquote, urlparse
+
+          SRC = pathlib.Path('tmp-se-youtube-alt2/videos.json')
+          OUT = pathlib.Path('se-youtube-se-only-result')
+          OUT.mkdir(exist_ok=True)
+          videos = json.loads(SRC.read_text(encoding='utf-8'))
+
+          URL_RX = re.compile(r'https?://[^\s<>"\\]+', re.I)
+          DRIVE_RX = re.compile(
+              r'(?:drive\.google\.com/(?:file/d/|open\?id=)|'
+              r'drive\.usercontent\.google\.com/download\?id=)([-\w]{15,})', re.I
+          )
+          YOUTUBE_REDIRECT_RX = re.compile(r'https?://(?:www\.)?youtube\.com/redirect\?[^\s<>"\\]+', re.I)
+          SAVE_HOST_RX = re.compile(
+              r'(?i)(drive\.google\.com|drive\.usercontent\.google\.com|docs\.google\.com|'
+              r'dropbox\.com|mediafire\.com|mega\.(?:nz|io)|onedrive\.live\.com|1drv\.ms|'
+              r'github\.com|githubusercontent\.com|gitlab\.com|cdn\.[^/]+|factorio\.com|'
+              r'patreon\.com|ko-fi\.com|gumroad\.com|itch\.io|bit\.ly|tinyurl\.com|'
+              r'linktr\.ee|beacons\.ai|discord\.gg)'
+          )
+          LINK_SIGNAL_RX = re.compile(
+              r'(?i)(save\s*(?:file|game|download|link)|download\s*(?:the\s*)?save|'
+              r'world\s*(?:file|download)|autosave|backup|map\s*download|modpack|\.zip\b)'
+          )
+          SE_STRONG_RX = re.compile(
+              r'(?i)(factorio.{0,25}space\s+exploration|space\s+exploration.{0,25}factorio|'
+              r'\bK2SE\b|\bSE\s*0\.7(?:\.\d+)?\b|space\s+exploration\s+0\.7(?:\.\d+)?)'
+          )
+          SE_STAGE_RX = re.compile(
+              r'(?i)(rocket\s+science|cargo\s+rocket|launch\s+pad|nauvis\s+orbit|'
+              r'first\s+(?:cargo\s+)?rocket|satellite\s+telemetry|rocket\s+sections?)'
+          )
+          LATE_RX = re.compile(
+              r'(?i)(cryonite|vulcanite|holmium|iridium|beryllium|vitamelange|naquium|'
+              r'astronomic\s+science|energy\s+science|material\s+science|biological\s+science|'
+              r'deep\s+space|spaceship|arcosphere|victory)'
+          )
+          NON_SE_RX = re.compile(
+              r'(?i)(factorio\s+space\s+age|space\s+age\s+factorio|satisfactory|dyson\s+sphere|'
+              r'kerbal\s+space|bob.?s?\s*-?\s*angel|pyanodon|seablock|ultracube)'
+          )
+
+          def strip_trailing(url: str) -> str:
+              url = html.unescape(url).strip()
+              # Jina markdown commonly appends prose or closing punctuation.
+              while url and url[-1] in '.,;:!)]}>' + "'\"":
+                  url = url[:-1]
+              return url
+
+          def unwrap_youtube_redirect(url: str) -> list[str]:
+              out = []
+              try:
+                  parsed = urlparse(url)
+                  if parsed.netloc.lower().endswith('youtube.com') and parsed.path == '/redirect':
+                      qs = parse_qs(parsed.query)
+                      for key in ('q', 'url'):
+                          for value in qs.get(key, []):
+                              value = unquote(html.unescape(value)).strip()
+                              if value.startswith('http'):
+                                  out.append(strip_trailing(value))
+              except Exception:
+                  pass
+              return out
+
+          def collect_urls(text: str, preexisting: list[str] | None = None) -> list[str]:
+              candidates = []
+              for raw in preexisting or []:
+                  candidates.append(raw)
+              for raw in URL_RX.findall(text):
+                  candidates.append(raw)
+              # URL_RX sometimes includes Markdown delimiters. Also explicitly scan redirects,
+              # because their q= value is frequently the only untruncated copy of a save URL.
+              for raw in YOUTUBE_REDIRECT_RX.findall(text):
+                  candidates.append(raw)
+              expanded = []
+              for raw in candidates:
+                  clean = strip_trailing(raw)
+                  if not clean:
+                      continue
+                  expanded.append(clean)
+                  expanded.extend(unwrap_youtube_redirect(clean))
+                  # A malformed outer markdown URL can still contain q=https%3A%2F%2F...
+                  for match in re.finditer(r'(?:[?&]|&amp;)(?:q|url)=([^&\s)]+)', clean, re.I):
+                      target = unquote(html.unescape(match.group(1)))
+                      if target.startswith('http'):
+                          expanded.append(strip_trailing(target))
+              # Direct Drive IDs are reconstructed into canonical links even if surrounding
+              # markdown was truncated by a frontend.
+              for match in DRIVE_RX.finditer(text):
+                  expanded.append(f'https://drive.google.com/file/d/{match.group(1)}/view')
+              result = []
+              seen = set()
+              for url in expanded:
+                  url = strip_trailing(url)
+                  if not url or url in seen:
+                      continue
+                  seen.add(url)
+                  result.append(url)
+              return result
+
+          def context_lines(text: str) -> list[str]:
+              lines = [re.sub(r'\s+', ' ', line).strip() for line in text.splitlines()]
+              hits = []
+              for i, line in enumerate(lines):
+                  if LINK_SIGNAL_RX.search(line) or SAVE_HOST_RX.search(line):
+                      lo, hi = max(0, i - 1), min(len(lines), i + 2)
+                      chunk = ' | '.join(x for x in lines[lo:hi] if x)
+                      if chunk and chunk not in hits:
+                          hits.append(chunk[:1200])
+              return hits[:20]
+
+          se_videos = []
+          link_rows = []
+          for rec in videos:
+              title = rec.get('title') or ''
+              desc = rec.get('description') or ''
+              queries = ' | '.join(rec.get('queries') or ([rec.get('query')] if rec.get('query') else []))
+              hay = '\n'.join([title, desc, queries])
+              strong_title = bool(SE_STRONG_RX.search(title))
+              strong_desc = bool(SE_STRONG_RX.search(desc))
+              stage_title = bool(SE_STAGE_RX.search(title))
+              stage_desc = bool(SE_STAGE_RX.search(desc))
+              non_se_title = bool(NON_SE_RX.search(title))
+
+              # Require actual SE evidence in title/description. Search-query provenance alone is
+              # insufficient because YouTube search returned Bob/Angel, Space Age, and random saves.
+              is_se = (strong_title or strong_desc) and not non_se_title
+              # Cargo-rocket or Nauvis-orbit titles are uniquely SE even when they omit the full mod name.
+              if not is_se and stage_title and re.search(r'(?i)(cargo\s+rocket|nauvis\s+orbit|satellite\s+telemetry)', title):
+                  is_se = not non_se_title
+              if not is_se:
+                  continue
+
+              urls = collect_urls(desc, rec.get('links') or [])
+              candidate_urls = []
+              for url in urls:
+                  low = url.lower()
+                  try:
+                      host = urlparse(url).netloc.lower()
+                  except ValueError:
+                      continue
+                  if (
+                      SAVE_HOST_RX.search(host) or '.zip' in low or '/releases/download/' in low or
+                      '/raw/' in low or 'download?' in low
+                  ):
+                      # Drop YouTube/video/social self-links that slipped through host matching.
+                      if any(x in host for x in ('youtube.com', 'youtu.be', 'facebook.com', 'twitter.com', 'x.com', 'twitch.tv')):
+                          continue
+                      candidate_urls.append(url)
+
+              score = 0
+              score += 35 if strong_title else 0
+              score += 15 if strong_desc else 0
+              score += 25 if stage_title else 0
+              score += 10 if stage_desc else 0
+              score += 45 if candidate_urls else 0
+              score += 35 if LINK_SIGNAL_RX.search(desc) else 0
+              score -= 18 * len(LATE_RX.findall(title))
+              score -= 5 * min(6, len(LATE_RX.findall(desc)))
+              if re.search(r'(?i)(tutorial|guide|blueprint)', title) and not LINK_SIGNAL_RX.search(desc):
+                  score -= 25
+              if re.search(r'(?i)(episode|ep\.?\s*\d+|part\s*\d+|#\d+)', title):
+                  score += 3
+
+              out_rec = {
+                  'id': rec.get('id'),
+                  'title': title,
+                  'channel': rec.get('channel'),
+                  'video_url': rec.get('video_url') or f"https://www.youtube.com/watch?v={rec.get('id')}",
+                  'description_source': rec.get('description_source'),
+                  'queries': rec.get('queries') or [],
+                  'score': score,
+                  'strong_title': strong_title,
+                  'strong_desc': strong_desc,
+                  'stage_title': stage_title,
+                  'stage_desc': stage_desc,
+                  'late_terms': sorted(set(x.lower() for x in LATE_RX.findall(hay))),
+                  'candidate_urls': list(dict.fromkeys(candidate_urls)),
+                  'all_urls': urls,
+                  'save_context': context_lines(desc),
+                  'description': desc,
+              }
+              se_videos.append(out_rec)
+              for url in out_rec['candidate_urls']:
+                  link_rows.append({
+                      'score': score,
+                      'video_id': out_rec['id'],
+                      'title': title,
+                      'channel': out_rec['channel'],
+                      'video_url': out_rec['video_url'],
+                      'url': url,
+                      'save_context': out_rec['save_context'],
+                  })
+
+          se_videos.sort(key=lambda r: (-r['score'], r['title'].lower()))
+          link_rows.sort(key=lambda r: (-r['score'], r['title'].lower(), r['url']))
+
+          # Group duplicate links to reveal one shared save posted across multiple videos.
+          grouped: dict[str, list[dict]] = defaultdict(list)
+          for row in link_rows:
+              grouped[row['url']].append(row)
+
+          (OUT / 'se-videos.json').write_text(json.dumps(se_videos, indent=2, ensure_ascii=False), encoding='utf-8')
+          (OUT / 'se-candidate-links.json').write_text(json.dumps(link_rows, indent=2, ensure_ascii=False), encoding='utf-8')
+          (OUT / 'se-links-grouped.json').write_text(json.dumps(grouped, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          lines = [
+              f'Input videos: {len(videos)}',
+              f'Videos with genuine SE evidence: {len(se_videos)}',
+              f'SE videos with candidate off-site links: {sum(bool(v["candidate_urls"]) for v in se_videos)}',
+              f'Candidate link rows: {len(link_rows)}',
+              f'Unique candidate links: {len(grouped)}',
+              '',
+              'SE VIDEOS WITH CANDIDATE LINKS',
+              '=' * 120,
+          ]
+          for v in [x for x in se_videos if x['candidate_urls']]:
+              lines.extend([
+                  f"SCORE {v['score']} | {v.get('channel')} | {v['title']}",
+                  v['video_url'],
+                  f"late_terms={v['late_terms']}",
+                  'Candidate links:',
+                  *['  ' + u for u in v['candidate_urls']],
+                  'Save/link context:',
+                  *['  ' + x for x in v['save_context']],
+                  '',
+              ])
+          lines.extend(['', 'TOP SE VIDEOS WITHOUT CANDIDATE LINKS', '=' * 120])
+          for v in [x for x in se_videos if not x['candidate_urls']][:200]:
+              lines.extend([
+                  f"SCORE {v['score']} | {v.get('channel')} | {v['title']}",
+                  v['video_url'],
+                  f"late_terms={v['late_terms']}",
+                  *['  ' + x for x in v['save_context'][:5]],
+                  '',
+              ])
+          (OUT / 'SE_ONLY_SUMMARY.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:1200]))
+          PY
+          python3 /tmp/filter_se_youtube.py | tee se-youtube-se-only-result/console.txt
+
+      - name: Publish filtered results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-youtube-se-only-result-20260824
+          rm -rf tmp-se-youtube-se-only
+          mkdir -p tmp-se-youtube-se-only
+          cp -a se-youtube-se-only-result/. tmp-se-youtube-se-only/ || true
+          git add -f tmp-se-youtube-se-only
+          git commit -m 'Publish SE-only YouTube link analysis' || true
+          git push --force origin HEAD:refs/heads/tmp-se-youtube-se-only-result-20260824
