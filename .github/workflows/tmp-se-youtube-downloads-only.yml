@@ -1,0 +1,178 @@
+name: Extract actual downloadable SE saves from YouTube results
+
+on:
+  push:
+    branches: [tmp-se-youtube-downloads-only-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Keep real file-host links and classify SE version/stage
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-youtube-downloads-only-result
+          mkdir -p se-youtube-downloads-only-result
+          cat > /tmp/extract_downloads.py <<'PY'
+          from __future__ import annotations
+
+          import json
+          import pathlib
+          import re
+          from urllib.parse import parse_qs, unquote, urlparse
+
+          SRC = pathlib.Path('tmp-se-youtube-se-only/se-videos.json')
+          OUT = pathlib.Path('se-youtube-downloads-only-result')
+          OUT.mkdir(exist_ok=True)
+          videos = json.loads(SRC.read_text(encoding='utf-8'))
+
+          REAL_HOST = re.compile(
+              r'(?i)(drive\.google\.com|drive\.usercontent\.google\.com|docs\.google\.com|'
+              r'dropbox\.com|mediafire\.com|mega\.(?:nz|io)|onedrive\.live\.com|1drv\.ms|'
+              r'github\.com|githubusercontent\.com|gitlab\.com|archive\.org|file\.io|'
+              r'pixeldrain\.com|gofile\.io|sendspace\.com|workupload\.com|catbox\.moe)'
+          )
+          BAD_PATH = re.compile(r'(?i)(\.pdf(?:$|[?#])|blueprint|wiki|issues?|pulls?|mod-list|modlist|mods\.zip)')
+          SAVE_WORD = re.compile(
+              r'(?i)(save\s*(?:file|game|download|link)|download\s*(?:the\s*)?save|'
+              r'world\s*(?:file|download)|autosave|backup|map\s*download|savegame|'
+              r'factorio\s+saves?|\.zip\b)'
+          )
+          STAGE = re.compile(
+              r'(?i)(rocket\s+science|cargo\s+rocket|launch\s+pad|nauvis\s+orbit|'
+              r'first\s+(?:cargo\s+)?rocket|rocket\s+sections?|satellite\s+telemetry)'
+          )
+          LATE = re.compile(
+              r'(?i)(cryonite|vulcanite|holmium|iridium|beryllium|vitamelange|naquium|'
+              r'astronomic\s+science|energy\s+science|material\s+science|biological\s+science|'
+              r'deep\s+space|spaceship|arcosphere|victory)'
+          )
+          EXPLICIT_07 = re.compile(r'(?i)(space\s+exploration\s+0\.7(?:\.\d+)?|\bSE\s*0\.7(?:\.\d+)?\b)')
+          EXPLICIT_06 = re.compile(r'(?i)(space\s+exploration\s+0\.6(?:\.\d+)?|\bSE\s*0\.6(?:\.\d+)?\b)')
+          OLD_FACTORIO = re.compile(r'(?i)(factorio\s+0\.1[6789]|factorio\s+1\.1\b|factorio\s+0\.17\b)')
+          DRIVE_ID = re.compile(r'(?i)(?:/file/d/|[?&]id=)([-\w]{15,})')
+
+          def canonical(url: str) -> str:
+              url = url.strip().rstrip('.,;:!?)\]}>' + "'\"")
+              try:
+                  p = urlparse(url)
+              except ValueError:
+                  return url
+              if p.netloc.lower().endswith('youtube.com') and p.path == '/redirect':
+                  q = parse_qs(p.query)
+                  target = (q.get('q') or q.get('url') or [None])[0]
+                  if target:
+                      return canonical(unquote(target))
+              m = DRIVE_ID.search(url)
+              if m and 'drive.google.com' in p.netloc.lower():
+                  return f'https://drive.google.com/file/d/{m.group(1)}/view'
+              return url
+
+          rows = []
+          for v in videos:
+              title = v.get('title') or ''
+              desc = v.get('description') or ''
+              hay = title + '\n' + desc
+              version = '0.7' if EXPLICIT_07.search(hay) else ('0.6' if EXPLICIT_06.search(hay) else ('old-factorio' if OLD_FACTORIO.search(title) else 'unknown'))
+              save_evidence = bool(SAVE_WORD.search(desc))
+              stage_evidence = bool(STAGE.search(hay))
+              late_count = len(set(x.lower() for x in LATE.findall(hay)))
+              links = []
+              for raw in v.get('candidate_urls') or []:
+                  url = canonical(raw)
+                  if not url or url in links:
+                      continue
+                  try:
+                      parsed = urlparse(url)
+                      host = parsed.netloc.lower()
+                  except ValueError:
+                      continue
+                  low = url.lower()
+                  real = bool(REAL_HOST.search(host) or '.zip' in low or '/releases/download/' in low)
+                  if not real:
+                      continue
+                  if BAD_PATH.search(low) and not SAVE_WORD.search(low):
+                      continue
+                  # Ordinary GitHub repository/home links are documentation unless their path
+                  # strongly resembles a downloadable artifact.
+                  if 'github.com' in host and not re.search(r'(?i)(/releases/download/|/raw/|\.zip(?:$|[?#])|save|factorio)', parsed.path):
+                      continue
+                  links.append(url)
+              if not links:
+                  continue
+
+              score = 0
+              score += 80 if version == '0.7' else 0
+              score -= 90 if version in ('0.6', 'old-factorio') else 0
+              score += 45 if save_evidence else 0
+              score += 25 if stage_evidence else 0
+              score -= min(50, late_count * 8)
+              score += 15 if any('drive.google.com' in x or 'dropbox.com' in x or 'mediafire.com' in x or 'mega.' in x or '1drv.ms' in x for x in links) else 0
+              score += 15 if any('.zip' in x.lower() or '/releases/download/' in x.lower() for x in links) else 0
+
+              contexts = []
+              for line in desc.splitlines():
+                  clean = re.sub(r'\s+', ' ', line).strip()
+                  if clean and (SAVE_WORD.search(clean) or any(x in clean for x in ('drive.google', 'dropbox', 'mediafire', 'mega.nz', '1drv.ms'))):
+                      contexts.append(clean[:1600])
+              rows.append({
+                  'score': score,
+                  'version': version,
+                  'save_evidence': save_evidence,
+                  'stage_evidence': stage_evidence,
+                  'late_count': late_count,
+                  'title': title,
+                  'channel': v.get('channel'),
+                  'video_url': v.get('video_url'),
+                  'links': links,
+                  'contexts': contexts[:20],
+              })
+
+          rows.sort(key=lambda r: (-r['score'], r['title'].lower()))
+          (OUT / 'download-candidates.json').write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding='utf-8')
+
+          lines = [
+              f'SE videos inspected: {len(videos)}',
+              f'Videos with real file-host/download links: {len(rows)}',
+              f'Explicit SE 0.7 rows: {sum(r["version"] == "0.7" for r in rows)}',
+              f'Unknown-version rows: {sum(r["version"] == "unknown" for r in rows)}',
+              '',
+              'DOWNLOAD CANDIDATES',
+              '=' * 120,
+          ]
+          for r in rows:
+              lines.extend([
+                  f"SCORE {r['score']} | version={r['version']} | save_words={r['save_evidence']} | stage={r['stage_evidence']} | late={r['late_count']} | {r.get('channel')} | {r['title']}",
+                  r.get('video_url') or '',
+                  'Links:',
+                  *['  ' + x for x in r['links']],
+                  'Contexts:',
+                  *['  ' + x for x in r['contexts']],
+                  '',
+              ])
+          (OUT / 'DOWNLOAD_CANDIDATES.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:1000]))
+          PY
+          python3 /tmp/extract_downloads.py | tee se-youtube-downloads-only-result/console.txt
+
+      - name: Publish results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-youtube-downloads-only-result-20260824
+          rm -rf tmp-se-youtube-downloads-only
+          mkdir -p tmp-se-youtube-downloads-only
+          cp -a se-youtube-downloads-only-result/. tmp-se-youtube-downloads-only/ || true
+          git add -f tmp-se-youtube-downloads-only
+          git commit -m 'Publish actual downloadable SE YouTube candidates' || true
+          git push --force origin HEAD:refs/heads/tmp-se-youtube-downloads-only-result-20260824
