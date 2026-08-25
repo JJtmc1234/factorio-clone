@@ -1,0 +1,1515 @@
+Input videos: 497
+Videos with genuine SE evidence: 251
+SE videos with candidate off-site links: 58
+Candidate link rows: 285
+Unique candidate links: 109
+
+SE VIDEOS WITH CANDIDATE LINKS
+========================================================================================================================
+SCORE 160 | Xavier Shay | Cargo Rocket Tutorial (Factorio Space Exploration)
+https://www.youtube.com/watch?v=8NBxaq9nbOU
+late_terms=['spaceship']
+Candidate links:
+  https://github.com/xaviershay/sandbox...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnFNSkhOdlZ0N1hLTGlSRXFBcldRMHxBR3JiS2FuV19MTVluQkVHNEs2bzJQUmlHYXVSc2tNV2FnZ1Z3Y0lWWTJqSU5jSFRSOFBheC0wYzhKTmg2cC1NZHFidVlibEhRdF9PLUdva19jSmNmRmk3ejlmUXNvVUdFQVl5&q=https%3A%2F%2Fgithub.com%2Fxaviershay%2Fsandbox%2Fblob%2Fmain%2Ffactorio%2Fcargo-rocket-diagram.pdf&v=8NBxaq9nbOU)[0:00](http://www.youtube.com/watch?v=8NBxaq9nbOU
+  https://github.com/xaviershay/sandbox/blob/main/factorio/cargo-rocket-diagram.pdf
+Save/link context:
+  A couple of different ways to make cargo rockets work for you. I assume basic knowledge of rockets and circuit networks. Blueprints: [https://factorioblueprints.tech/bluep...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVotN0ctVUxVNjQxWUVsVjJBeGxTanxBR3JiS2FrbTlkZWhja2EwMFdPR3BvaG9HSTdLRHRWTFU1VkNsNzZ4clRaeURtcHlGaTdnQ1ZFQy13OEVTTTVHRmk3cmlrMzZ5alRLS2VJVGE0WFA3X0Fhbi1pYk4wVktpUElx&q=https%3A%2F%2Ffactorioblueprints.tech%2Fblueprint%2F11e9c69b-cd0d-40d0-84d7-7cd937683eac%3Fselected%3D67dda0db-c473-4f01-9cd0-082d7571c1ce%26type%3Dbook&v=8NBxaq9nbOU) Diagram: [https://github.com/xaviershay/sandbox...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnFNSkhOdlZ0N1hLTGlSRXFBcldRMHxBR3JiS2FuV19MTVluQkVHNEs2bzJQUmlHYXVSc2tNV2FnZ1Z3Y0lWWTJqSU5jSFRSOFBheC0wYzhKTmg2cC1NZHFidVlibEhRdF9PLUdva19jSmNmRmk3ejlmUXNvVUdFQVl5&q=https%3A%2F%2Fgithub.com%2Fxaviershay%2Fsandbox%2Fblob%2Fmain%2Ffactorio%2Fcargo-rocket-diagram.pdf&v=8NBxaq9nbOU)[0:00](http://www.youtube.com/watch?v=8NBxaq9nbOU) Intro [0:24](http://www.youtube.com/watch?v=8NBxaq9nbOU&t=24s) Single item rocket overview [1:33](http://www.youtube.com/watch?v=8NBxaq9nbOU&t=93s) Sin
+
+SCORE 160 | Bold Viking | Space Exploration 0.7 - Day 11 - Standardizing interplanetary cargo rockets! Last stream before TC!
+https://www.youtube.com/watch?v=QWML18KXRm4
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=QWML18KXRm4) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlV6SldWZ3FIcVBod3NNSE9sSUlVc3xBR3JiS2FtWlRqWXFhN2J4a0hPd0FaUmQzOVd4RE9RQzM3d09VYi02VUx1OGtuTmEyQ0ZrX25JRlpZTlVLS0NsemtpTXBDOW03cElsZVZvb0tNYlNxalVXOWZFOEszR3lzUlA2&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=QWML18KXRm4) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3gyMWpCemx3eThkYXZfWUgzYVNBdHxBR3JiS2FtMlFhTGZzTGNWT1RFUUk1ZGF1d2I5SVI0VXNmT1ZWSGNFRXBSOXdZNE9URGhMdDVkRjB3N3FvSnltQlFrSnBBMFN1M2w4SnZYNlJJNUFkTXllMWt1MG81bFBRWDR1&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=QWML18KXRm4) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3UxMy1tME1mN0VHeXpNWV9TVmo0UHxBR3JiS2FsMEk1ZnRhOW1NOFNpMXRneW9IZjZrYWFyWlg5Mm8zZ1E4M1FLYUZxa2pDRWQzYnJUSnpxemtOTVM2MmVWeDVzdzdBNE1VbjNvbmtQQTBvLTdzTHRwc0gzX2I4OUJC&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=QWML18KXRm4) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlV6SldWZ3FIcVBod3NNSE9sSUlVc3xBR3JiS2FtWlRqWXFhN2J4a0hPd0FaUmQzOVd4RE9RQzM3d09VYi02VUx1OGtuTmEyQ0ZrX25JRlpZTlVLS0NsemtpTXBDOW03cElsZVZvb0tNYlNxalVXOWZFOEszR3lzUlA2&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=QWML18KXRm4) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3gyMWpCemx3eThkYXZfWUgzYVNBdHxBR3JiS2FtMlFhTGZzTGNWT1RFUUk1ZGF1d2I5SVI0VXNmT1ZWSGNFRXBSOXdZNE9URGhMdDVkRjB3N3FvSnltQlFrSnBBMFN1M2w4SnZYNlJJNUFkTXllMWt1MG81bFBRWDR1&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=QWML18KXRm4) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3UxMy1tME1mN0VHeXpNWV9TVmo0UHxBR3JiS2FsMEk1ZnRhOW1NOFNpMXRneW9IZjZrYWFyWlg5Mm8zZ1E4M1FLYUZxa2pDRWQzYnJUSnpxemtOTVM2MmVWeDVzdzdBNE1VbjNvbmtQQTBvLTdzTHRwc0gzX2I4OUJC&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 155 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Nauvis Orbit Methane Space Train x739
+https://www.youtube.com/watch?v=__6eMzammeE
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEhUNjczMENlNURXdTAwbzZiZ2tvTnxBR3JiS2FtazdPUnEteDB5UnFNWlE3X080T2tmclIwVHUwLWM2TVpGb2hfSlhCSHZLWk80RDRwdVBQbUFteU9WUkZFNmF3ajNSY0lERGVTc3RaNnN3RVIxcnlUSUI1djJZRDVi&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=__6eMzammeE
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVENnb25HS21VMERUaF81ZkozY2pNX3xBR3JiS2FrcmgtSkRPdXJjSzJFekIzblE1aERpNGVLQ29QZ1BIZ3I3V2tmSHp2Vy1LeHdFMW9vWDFtNTdZc0FVRkh6Qy15RjMtQlE4Q0RXNEYwaUtfSF80MzNJVDZqbFIxMGl1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=__6eMzammeE
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDRNNktNcDdpZmtabXA3RmpKXzRRVnxBR3JiS2FudVlob1l2X0ViclhHSXBiSlUtZXdqRXAxRVV1MnpYWHh5SS1ObDk3OGJOWXlFalNDXy1ldG9SWTJ3dnByanhSVnJCZWRJU2VfdzZIUzk0V3h0TTBTUFBIWHJGbjRr&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=__6eMzammeE
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEhUNjczMENlNURXdTAwbzZiZ2tvTnxBR3JiS2FtazdPUnEteDB5UnFNWlE3X080T2tmclIwVHUwLWM2TVpGb2hfSlhCSHZLWk80RDRwdVBQbUFteU9WUkZFNmF3ajNSY0lERGVTc3RaNnN3RVIxcnlUSUI1djJZRDVi&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=__6eMzammeE) check the mod creator Earendels Patreon out: [![Image 30](http://www.youtube.com/watch?v=__6eMzammeE)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnBzT1A3Und6VW9HNzRDWmhZTC1mbHxBR3JiS2FtQ1Q5ajV4dV9DalFGVXVoa2xvMHJ5M0dQSEFiZkV3bWc5UzN0UGNrTWRISHVWbUI4eDd4Z0lCQVBabkNWZlpVWXVZajhpWmtRMUQ1S2R2OFFMSUViYUlRejNDaWdZ&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=__6eMzammeE) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 143 | Nilaus | Factorio 0.17 Space Exploration #79 ROCKET LAUNCH FACILITY
+https://www.youtube.com/watch?v=V1yzFLIkIdc
+late_terms=[]
+Candidate links:
+  https://drive.google.com/open?id=1m1f...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEFUMTVnSDJHeTdCcnJPaFZnYmdRNHxBR3JiS2FsVHM2REV3alBpb3NuZnc5LTBlbW5ZX1htcGM1WXJHZXQ1QkxEWkhsR1B3RWpDbWQwVnZmNEczWWIwdjRYRmlTUUphUWlWOHBXWlh5MmdoczZTbTlhWmgybjRNWDJt&q=https%3A%2F%2Fdrive.google.com%2Fopen%3Fid%3D1m1f1hIVSwRv1E7yniFv0uSomco264_5S&v=V1yzFLIkIdc
+  https://drive.google.com/open?id=1m1f1hIVSwRv1E7yniFv0uSomco264_5S
+  https://www.patreon.com/Nilaus
+  http://discord.gg/QuxFXWr
+  https://www.patreon.com/earendel
+  https://discord.gg/nilaus
+  https://www.patreon.com/Nilaus)[Discord](https://www.youtube.com/redirect?event=Watch_SD_EP
+  https://discord.gg/nilaus)[Twitter](https://www.youtube.com/redirect?event=Watch_SD_EP
+Save/link context:
+  Streaming schedule: Monday or Tuesday at [20:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1200s) CEST and Thursday at [20:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1200s). Schedule for the coming week: [/events](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFFCcmo3SWlsYk4zRkplOW5td3ZDX3xBR3JiS2Ftem5YcGNQbHNtSkNiSDBtYXVlSnF5eVQ2Q0dya0hMdDZnenJtQVRWY0JNcXh4ZGtleUlCR05LU3JQS1JPNk05Tlo0SjZmNm9xZTIxWDkycVpRS2NuN0FaN0dPbE9x&q=https%3A%2F%2Fwww.twitch.tv%2Fnilaus%2Fevents&v=V1yzFLIkIdc) VOD schedule: A new episode will be released every day at [18:00](http://www.youtube.com/watch?v=V1yzFLIkIdc&t=1080s) CEST Map Exchange string: [https://nilaus.atlassian.net/wiki/spa...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUN3WXg2UEloclR6cm1VOHVLZGhzeXxBR3JiS2FsSUQ3S3F6U3Y4dUx0NUZxTTh2Z0RoRXVWZ01XY2lxSC05ems0UkVjS3BRTzJWdUhsVkU5S054SW9LMU1tMHNiMzIteHdrRGo5ODVLODV2MjVVTWRLaXo0VDVpQk5X&q=https%3A%2F%2Fnilaus.atlassian.net%2Fwiki%2Fspaces%2FPM%2Fpages%2F1062764568%2FFactorio%2BS28%2B-%2BSpace%2BExploration&v=V1yzFLIkIdc) Mods: [https://drive.google.com/open?id=1m1f...](https://www.youtube.com/redirect?event=video_description&
+  [Videos](http://www.youtube.com/channel/UCD80bzqJh1N7lOqn7n0vKTg/videos)[About](http://www.youtube.com/channel/UCD80bzqJh1N7lOqn7n0vKTg/about)[Patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2JUSHhxcmJvOTVnLUpFanJUQlQ5ZXxBR3JiS2FrbWdKNjVRTnpkQ2VkMzRJa0sxSjhzeTBBVGZFX0dZODl6ME1TQ3RDUWlDS00zSGtsQnREbVJRX0dZMWhuekNYWVhCcFR3cHNXbk55cS03SnJrRExWTDF6MVpqQTFV&q=https%3A%2F%2Fwww.patreon.com%2FNilaus)[Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlgzNktpcmg2Rk5mVjBYaEMtNFBZRHxBR3JiS2FrRnJjR21qQUh0WmdiRjdKLWFzVmwwWU9QOEFoMWhHMFQwSnRPNDRXY3hvVFl3UGxtOUIydXpVUVlCdHFtVklYLXNXdjVRWTEwdkxUTFVZLUN5MVpGSldiNjBtRUg0&q=https%3A%2F%2Fdiscord.gg%2Fnilaus)[Twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTJXb3RFUmdjQjJ6SFE4bTFfMjVlY3xBR3JiS2FsVlh1UmFsVHJXR0lMdmwyd3JzNzZhSmhnc0hpcmxmdkthS0htWnVxZmNBNjVfQWJtVGp0Zy1SU0lucmNvSzZzX2NSRHdSdVJqU0pLNkRTZDNrNmxpbmV3LUg5WG85&q=https%3A%2F%2Ftwitter.com%2FChristianNilaus)[Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3l2OWZlSzk1V3ZOd05DVWdxcENSZnxBR3JiS2Ftdml5a0RUZkxCc2hSVnNtbi1nZGxFVTUzTnlrdTdoZklMb296OUMzeTNaUDRuNXI2X1E2eFZKcjQ5b
+  [Patreon Support the channel on Patreon](https://www.youtube.com/redirect?event=infocard&redir_token=QUM4Zm9rUUFybzdCblYzSVRtbF8tbnF1cGdTanxBR3JiS2FuV0hEaWhlQW1GZ0ItV0xpQzJ3VmZvQ1NtVk5MQTh5M095TGRnQmdKX3JJMThwSmR2RVdzMWtfMEE4QnpUX1dwV2lMb2c0Z0ZnZ2FwcVFmUmR5RzNtbndybF84R3dL&q=https%3A%2F%2Fwww.patreon.com%2FNilaus)
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x021
+https://www.youtube.com/watch?v=QwpiFLHgTjM
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVF9UOU5oay03OUFKbm95RHRVWlh3bnxBR3JiS2FrOEVRcnpkMGUzVVhfMVlfT24zMHVGekFIck1rekxJOXNwSFhnVUZrMEZvNzVZdEp0VEMwUjA4MlZqa3pVV0FCSGFScDFxQUhNYW14al9oT1QtckdWeUdacnJ0OGVF&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=QwpiFLHgTjM
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHZwYUw1bzFfTlNsaXR1d2ZJS0xxd3xBR3JiS2FuQ2x1OHJVeElLX0dEUVlUNFFSUW1YY2t5Y1djdDFZd2xSWlpFNEdKUnJMUEU0Tk8tRDhfUW10M0UteVdmcWdGZDhZb2dkN3FKSncxb1pmUFhWYVdnYml4YWJUMTRV&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=QwpiFLHgTjM
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVENZZVdiYk1yV3JFMk80dVNtdmRkcHxBR3JiS2FuNzRLeUxlcy11Smx1NXRnT1RLQ3hkUWdpXzZYNmI4bEVWbjFOaDFlaVVvMmNqcUE4dUNUcFR5aFJFYnRNaVIwT0s5NkpVWFpaSk45UHdLS3NPVGV3TjVFc3p3bGZD&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=QwpiFLHgTjM
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVF9UOU5oay03OUFKbm95RHRVWlh3bnxBR3JiS2FrOEVRcnpkMGUzVVhfMVlfT24zMHVGekFIck1rekxJOXNwSFhnVUZrMEZvNzVZdEp0VEMwUjA4MlZqa3pVV0FCSGFScDFxQUhNYW14al9oT1QtckdWeUdacnJ0OGVF&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=QwpiFLHgTjM) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=QwpiFLHgTjM)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUzkzNW9Bc3FOMDZtNkE2MUF6SDlqR3xBR3JiS2FuU1A0UGY3cGtDT2p0eFNWRkx3NGlwcXFSWEdpWXhxTG9uZmZKM1lqcVVIMUlYZUxzdWtHM2tkbjA1VXlDX2hXLXpqUGFNcHVoR1JtZTBLYkp6bU9rMlVlS1ZpS0Y5&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=QwpiFLHgTjM) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x029
+https://www.youtube.com/watch?v=ypqQJ2YueeU
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU2pqX002RkV1bnoya3ZQYmxlM3RoWnxBR3JiS2FrWTY5ZEZtN1NVY05ObVRzWnpRblhXYlo4N2dQRWxLRHRsZ0Y4Xy1JeG9JSUVheFNPN3RSQncwX1FGYU5PaVNZbEhkemh2dktETUZlOXV5MWNmRzN6NnVYRnhlekpx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=ypqQJ2YueeU
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU1I3bGZ1QVlaZWZDTWFlMmJsWUQ3NXxBR3JiS2FrY21faElydnpVRDNkMUFmYTdkY2NxUEtBTEJRZEI2bGg4TnMtRFR0TW1kcEc0SmlYdjg5M21qRUZ3WUgtNllnMHN1YXNfcGNGMkRBOW41R09uUVM3T2Q4STRKMVB3&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=ypqQJ2YueeU
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUzBQMV9iU1V1SGtCanM3a2kzbHBBVnxBR3JiS2FrcHZCV3gyNEx3cnhabG00OVZQRTNsUFBaTlJXZDJSS2NUUjlJY3RKbW0yYnNoRFFRa0p1MC1BZ0JhOTNTQlRPaHJBOXFocmoxT1Q0SjJjREJycTZKSk9LVEpkY2NI&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=ypqQJ2YueeU
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU2pqX002RkV1bnoya3ZQYmxlM3RoWnxBR3JiS2FrWTY5ZEZtN1NVY05ObVRzWnpRblhXYlo4N2dQRWxLRHRsZ0Y4Xy1JeG9JSUVheFNPN3RSQncwX1FGYU5PaVNZbEhkemh2dktETUZlOXV5MWNmRzN6NnVYRnhlekpx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=ypqQJ2YueeU) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=ypqQJ2YueeU)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXpaY0lndUFrZ2x1MzFHVm9HU0Z1LXxBR3JiS2FuTm1qQm1tcjI1ZkRBLXpnS1JVeXlEYVVnMGprcXdXa081eDhOV2pqOTRmN1JFdzA0cjhiQ1BSOWpZME9OM1Jva280cUV0ZURDUFhKUTRKdTJ3T21EbmNHbkFpUXFD&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=ypqQJ2YueeU) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x069
+https://www.youtube.com/watch?v=kqFWuyDM2eI
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVFLaENrRkg4Uy1ITWdKcElDNTVncnxBR3JiS2FtbDhtcTBOekxaVmE2LXJLSXk3Q1FtX0hCNUJKNmFvVXJXMjVaS2JhV3JmV3BDSkd0d2JxVTc1RVNueVczS0pfREtPb2l1azdhbXlUSzJON2QxeGpPRkdUVklZZjh1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=kqFWuyDM2eI
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTloclFlcUdQelAwbjVEYW1PcEdKeXxBR3JiS2FsMkJDc29VUzNKZmhvck5kNnExc3FCYmo4OVJzY21yWi0tNTdwVFJ1VlcxWERpYVpieTZSWUhaOHBBLU43dGNldm1hT2xNRVVNb0pMb3VNSDFnMVN5anNNekxVNTZZ&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=kqFWuyDM2eI
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUktlQ0lYdEpfWmJWU2kzVVNJTGV5c3xBR3JiS2FtLVQ1cERNYUZvdFRhTy13alRtd0VvbGp1eG1JdThhLU5pZlpJZ040dXkxbW9BaHhBOE4yM2ktQjdTM05LNjFuRTRiVzZNa1M5ekY5UXpWdU9Rcndnb3dNdWlycTBK&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=kqFWuyDM2eI
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVFLaENrRkg4Uy1ITWdKcElDNTVncnxBR3JiS2FtbDhtcTBOekxaVmE2LXJLSXk3Q1FtX0hCNUJKNmFvVXJXMjVaS2JhV3JmV3BDSkd0d2JxVTc1RVNueVczS0pfREtPb2l1azdhbXlUSzJON2QxeGpPRkdUVklZZjh1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=kqFWuyDM2eI) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=kqFWuyDM2eI)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVG5sQTY2MHppUGQwTDU1UENSWTZsdXxBR3JiS2Ftc3lsNUlLNnlaZ25wUmNGT0QweGhycUdNc2NNdldGSGJiYUthVDFUZUJvd0ZfaTFBNHRmVkVCRlo2eUUwaFAtUkVYUG5vMzJNMThTajVkd1dhblFsblhjNHNZWjM3&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=kqFWuyDM2eI) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x084
+https://www.youtube.com/watch?v=Z-M-6jdvYnU
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkF4Ql9OUVpMb3pOYlNFSzFMSUdMRXxBR3JiS2Fud2hfX2ZlNjJEVy1Mem5LdHRldk9SZFZBZ2N3R3k3ZjE1ZnZTZDg3RmJTTzBCNkNKZXktMzlQTkI1ZEctQkM1enMtUjh2WWR2N1d6eklMdXB2Uy1zV29ZLVdtbmlE&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=Z-M-6jdvYnU
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWd6RFpkM2F1SnRZbHBpeVBiNHRoLXxBR3JiS2FuWkx1R3lPakJFODZmbGNpLUtBazYtQmFmSWd3UXZoZXZCUUpLcEkza2g5YTh2SHpVUEFycVowXzl5dTN6NjgzOFdScEYxYnIycDdMdDZBd280MXdYaWEySXFqeTBm&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=Z-M-6jdvYnU
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVotMmJvY3p6d3JOcXZRbUZtLWFZTnxBR3JiS2FsYzVLU3JrYkdnRUhtZTl2RklVYW9sY211M1RWN3Q2M1VsMjlvQnRnanNFY1ZobGxPdXdmR3gtSWFMTTZwTDhLZGdwaXBfQ2l4bDJpYmt5a1lpLXVMYVlPQTRnREtw&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=Z-M-6jdvYnU
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkF4Ql9OUVpMb3pOYlNFSzFMSUdMRXxBR3JiS2Fud2hfX2ZlNjJEVy1Mem5LdHRldk9SZFZBZ2N3R3k3ZjE1ZnZTZDg3RmJTTzBCNkNKZXktMzlQTkI1ZEctQkM1enMtUjh2WWR2N1d6eklMdXB2Uy1zV29ZLVdtbmlE&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=Z-M-6jdvYnU) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=Z-M-6jdvYnU)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEFNVEpTYnlGREtZeDUzQnV4aFhqZXxBR3JiS2FrSTc0N0NtTDVkdXpBVXNOM2RDYjZMbUdjMnNPbGZkWWY0NlNkVHF4M1dLdUZYLThrdlhyWUY4dF9WVkFwcjFDRFg1OXBTamlFc1hhb25Kd1BUWGtHVkxIaV9nOVA3&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=Z-M-6jdvYnU) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x099
+https://www.youtube.com/watch?v=byyo_rGSVDM
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3NkSjM4aTRiTjl4dDItVm5NcTBObHxBR3JiS2FrcFVsdkM3NWpRVGwyOVpGQWtfNFpiVzlHYXhSc2hWREQtalVKaW8tUFpMZ2xMcnZ4N1FSZkhENk9SMFQ4dHZOY2RhQ2F0aEQ2ZmhJWlhQdDdsYjBVTHJHUnBXWnNi&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=byyo_rGSVDM
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjRId3M0RmhpZDNkUGxTOEY1X1E1U3xBR3JiS2FsdXpJSlgxbWp6XzJCcjlIelV2WFVqbGN3SDNWNHR3T3JlUERVMDhRMHRtTjJIUmliNjhqQkNETUItMDVPSXA1TEZ6T2ZCQjFDZ3pnZVdsM2J0RVU1YXVPeDFjWk4x&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=byyo_rGSVDM
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVZGUXVsVW1xUFAwTE1zTHdCZkRnLXxBR3JiS2FsVjl2Mk55OURNUUNacWlfMEh5NmJHdEdfWS15UE91X2VjWWNZV3NSbFlJS1pfVU83YWQ2Rlc4ZGl4U0tUaTFTNzBDWi15dE1UR2EzS1BLcTVpQVZDY2JzdXZwc2p5&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=byyo_rGSVDM
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3NkSjM4aTRiTjl4dDItVm5NcTBObHxBR3JiS2FrcFVsdkM3NWpRVGwyOVpGQWtfNFpiVzlHYXhSc2hWREQtalVKaW8tUFpMZ2xMcnZ4N1FSZkhENk9SMFQ4dHZOY2RhQ2F0aEQ2ZmhJWlhQdDdsYjBVTHJHUnBXWnNi&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=byyo_rGSVDM) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=byyo_rGSVDM)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVGRUN3lXUlNLQVRTTE5tdWx3b09wUnxBR3JiS2FrYXVwRzNKZ3JZdDY2Tldxc0FOT292YktQTnVnTWdnbmZuT2JDWC1UT243OVBDdjdXUUVCLTRBOXpUaW1MVTNyd25Dbkt0XzBjSWdIUmxIYlNpUTdrdFdiNjVhMVpB&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=byyo_rGSVDM) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x109
+https://www.youtube.com/watch?v=lwRiY_g2AEY
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEdGTm9lSnVrSDV0YTdPaGh2SG5WN3xBR3JiS2FsX2s1dlRJZ29RejBWV1ZqZHNwMEtuZjlHX0U1M1dOc2Jaa0ZReTd3SjZCaUJNSU5mRjY1aHc1cm1SZkZZV2NyME93emE2VDVEb0JSNF9vRTB2WG5NWmQ0OVdlbmxX&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=lwRiY_g2AEY
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkVJOWJ5WmxsbGtEOG94MFg4X3pNdnxBR3JiS2FuNWsxdkx5eWktQk80WFFaRERBNTNhTVdsUXdIVkt5Z1lyVlJjcF9kOEIwMThGMk13ZExSUGR0dVRjNzFoOV96N2dqejBGT1RsQl9ER1Nmb2U5cldVcTh3U0RuaWlo&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=lwRiY_g2AEY
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEk5UmJ3VlR3cTRtRkJFcDBweWdFMXxBR3JiS2FsNUxkbFRNMlc1aWhlN2d6V1dlNllpN2tvUHcxM2xBdFlRWmlhS0licU8wcno0NmVKOUNCbzdSS3hhSERFeTRCemdPMkNVYV8tMFFvdmhXb2VMdTF3WG1oSWM3REZE&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=lwRiY_g2AEY
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEdGTm9lSnVrSDV0YTdPaGh2SG5WN3xBR3JiS2FsX2s1dlRJZ29RejBWV1ZqZHNwMEtuZjlHX0U1M1dOc2Jaa0ZReTd3SjZCaUJNSU5mRjY1aHc1cm1SZkZZV2NyME93emE2VDVEb0JSNF9vRTB2WG5NWmQ0OVdlbmxX&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=lwRiY_g2AEY) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=lwRiY_g2AEY)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWg5a3FVNzZKb2paWVBkS3QzYlo1a3xBR3JiS2FtRFlScXlkdjlMQ1lndFl0bldDRGZLOWNaTDdqVWhmNTluaDNaZ0VpZ2Y3cFNWazl6cmoyVkY2OFJscG1qSkhnRDlfcTZiOUNBcE1KUnJTQ05PZjJMV3AyMlRlaU9I&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=lwRiY_g2AEY) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Constance tweaks x724
+https://www.youtube.com/watch?v=4YbahOio1Rw
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnMxazZSNWVUaVVrX0lyVDN0dXZkTnxBR3JiS2FrTUdPTThvRFZsR0NZb0M5Wk1RSFRtTmtPSlJ2OWFsQ3VwSEUtT25EZ0k4THhCRko1R1lyTm4wVi1LLUxqMGctVHZCSHNTMHV6T1o2VVJoU3dfbmZhd2hwUThwMEhV&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=4YbahOio1Rw
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjlQRkVhNmhtMDU4SXYwZ0JmN3pPMXxBR3JiS2FtY2pKYWlkSEdsQkVlOTJpZjlkRWYwV0NEa0tDNUF5NW9wcFZ3WFdYZURuMUhVVUxIM0wwWDI3S2FfbE81NjJqdXU1Vndsa3BkeHZVLWZ6Tm9MWFBpZGFGQWpiakVi&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=4YbahOio1Rw
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjVfZVB0NDlFa1YtQW5NNV9LLUxNT3xBR3JiS2FsTUJiVFMwN2U2eGdGYkYtSzFnR3pqZFFfSFg4eTNmeklmT0czUzkxZFBPNzVYWGpJNGZ5UFY4N0tMOTQ1RndnaWJQVkZYLVpHS1pibjFmdWxwOUdna2JOM3ZCX1Fy&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=4YbahOio1Rw
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnMxazZSNWVUaVVrX0lyVDN0dXZkTnxBR3JiS2FrTUdPTThvRFZsR0NZb0M5Wk1RSFRtTmtPSlJ2OWFsQ3VwSEUtT25EZ0k4THhCRko1R1lyTm4wVi1LLUxqMGctVHZCSHNTMHV6T1o2VVJoU3dfbmZhd2hwUThwMEhV&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=4YbahOio1Rw) check the mod creator Earendels Patreon out: [![Image 33](http://www.youtube.com/watch?v=4YbahOio1Rw)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWlGbXp6OHhqcG1kYURvdEEzUE00QXxBR3JiS2FrbWU3Y2tpemdqc2syc3JyclFaMHF4dlphNGhkTENyTEd5Z0l1TGMtcFJtZGFERU1yTFlhS0p6VHFXeS1LcjBUcjRYZWU2WEpzMzhFcHVsNzJXMU9NZE5lVHJOeHZo&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=4YbahOio1Rw) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Holminite processing buff x715
+https://www.youtube.com/watch?v=-6HxQcPG0Qk
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU1hQR2E4RHVpUUMzYWdNdVNqTWlJa3xBR3JiS2FrR2FuMUJGS2ZiNXhBTkoyNmtJZzE3LWpDNkhoVXBOeHJkRm4xQmJHYUR2bUNXT0t4d3JFNUJPWlBQUHFXS3BzRk14QUsyNlJoZnFNUGU4WjBKLUFZS0FlTzlVYUFs&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=-6HxQcPG0Qk
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVlCVHhkbzJoZWdUTXFPYWJLV0NMcXxBR3JiS2FrUWNCZ2FpOG9mU0pnSERveEk4VVpVaFNaVU50MEx6N2pRT3I3ejVFbzA1NzdVU0ZyUE5tTFY4U0pkM3hZdUlkMHAtNkhQUHlidzBlblBhQl9UQ28yd1ZPV1hsZ29m&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=-6HxQcPG0Qk
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUmV2eGdoX3Z4NkVkMndCSW1naGFpdHxBR3JiS2FtVEVhLXlHd2hHZG0xOXB6Z2lYZTZmRjZ4aVRDVWQtU1NMdGVnbGE4U2EwMzkwN0dxdml2bW5NZFBfakJ6UXZFNXIxV0xUbHAzQ0JDNXBnM01pUVA2SmFPbVh1aUx6&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=-6HxQcPG0Qk
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU1hQR2E4RHVpUUMzYWdNdVNqTWlJa3xBR3JiS2FrR2FuMUJGS2ZiNXhBTkoyNmtJZzE3LWpDNkhoVXBOeHJkRm4xQmJHYUR2bUNXT0t4d3JFNUJPWlBQUHFXS3BzRk14QUsyNlJoZnFNUGU4WjBKLUFZS0FlTzlVYUFs&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=-6HxQcPG0Qk) check the mod creator Earendels Patreon out: [![Image 32](http://www.youtube.com/watch?v=-6HxQcPG0Qk)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjV6dGswVkNScmh4d0VBNkliXzFaenxBR3JiS2FuWlAwcG56Qm91WEZYM3AyYWdXSzJKbkNMd1IzS1NPdXJNLWhrMk5VcWlyQXFHdzlWeWlhd0lYYUhIWExZXzJ3QkVpcFNheGZ5cmhJUUlNWWRYRmwwNGJfS0Z1c3U5&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=-6HxQcPG0Qk) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Ice World Planet Ganus redo 2 x733
+https://www.youtube.com/watch?v=nCqv0tfiRKg
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTlLTUt5QXFkNEZmRWdwSlZIQnJTdnxBR3JiS2FuUzgtWXdWNHFkY3Jycm1HSHkwOUgzOVp0SVdmWW5TWnQ4QjkzRDA4UHJiZUc4NENiQTREN0U3OVBmMW1haVE3NkRDUmRLUHFBcnNNRkZrMG9hbVkwMGZ4NklWSF9G&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=nCqv0tfiRKg
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3dIYWZjdzlrSGNRbnBaZ3dCVXBkcXxBR3JiS2FtZUJ6U0ZWYVVHc1RnNklKRFVTQlo5VUg4OTlNaDE5Zk56R2Y1LVpFdWtMXzRlZ0dEb01oU1BXVXk2ZGFNSmFmQS1VdU5tVTZnR0pWTHhYblYyM0F6RjZYOEhLRFhW&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=nCqv0tfiRKg
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3FtQ01pX0o0ay1CeTNNb0I5OFBQOHxBR3JiS2FsaFJUUWRRd2h6Q3F6Ynh4NUlseGxEOHRVQk1XbVk0NTJRa2EyRUdjRlRjSktKRGduTHhCVzFTOEk4UlVDT3gxbC1nR2JCRXpPcW1YR1ZvWFdXMTlURkJ2Q2JnbDRh&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=nCqv0tfiRKg
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTlLTUt5QXFkNEZmRWdwSlZIQnJTdnxBR3JiS2FuUzgtWXdWNHFkY3Jycm1HSHkwOUgzOVp0SVdmWW5TWnQ4QjkzRDA4UHJiZUc4NENiQTREN0U3OVBmMW1haVE3NkRDUmRLUHFBcnNNRkZrMG9hbVkwMGZ4NklWSF9G&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=nCqv0tfiRKg) check the mod creator Earendels Patreon out: [![Image 28](http://www.youtube.com/watch?v=nCqv0tfiRKg)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0NPOERNMG5CMnBrNmNWN1pTRU81U3xBR3JiS2Fsb3lqWlBoUUw4eXBsNkNpVGc4SXBRdG14XzhRN3RLMkQyb3A3UUdGTGVMZEl1OTVIbHd4U1dCU3F4TmZiMDJ2YWtwejFENzJid0VEWUtJMkdmZzJWZ0pmLWRHcmta&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=nCqv0tfiRKg) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy life x 749
+https://www.youtube.com/watch?v=zqAGnJRimRM
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnJmdGRrcWhqLVBjTGlQMGIxdW1BUHxBR3JiS2FsbFJ1blpYRjBBYzhyOGpBclJlUlRTR0szeXZaMVdRRERSV0VSeXhIREZjVUUxSVp0ZkdPUjdCRHZkNWM3R0NCN0hTVno2Q1puc1lRN3ppOUR1NjIzb0NrektEMVFB&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=zqAGnJRimRM
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHZWZWxGZHJpR3FJcThqdFZKeDVUenxBR3JiS2Fsay1KS2dZaFhPWE5zdHhfdGloeHVXZndWUFZEdTQwX3J5cDFod1lnb1NkMTJScnVpaWU5VWxHdnRXS0t1TlBTcFZRdk5fOGxjUjBieWgtaDhOcDFndGRUSUVVbnAy&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=zqAGnJRimRM
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXhUVDBMMnd4bVU1RU01MkpmanZEaHxBR3JiS2FtZEE5M1RXS3BWSjBVMmlzcHV3VWJEYm92SUpwQ2lwSzdHdmw5QUpTemdGQmFvWkNhRGdjd0w1bVVjY3BMRGJrbThBNlB2dFI4bWRXekJCWGM5OFRDV2xPWXVKWVJa&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=zqAGnJRimRM
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnJmdGRrcWhqLVBjTGlQMGIxdW1BUHxBR3JiS2FsbFJ1blpYRjBBYzhyOGpBclJlUlRTR0szeXZaMVdRRERSV0VSeXhIREZjVUUxSVp0ZkdPUjdCRHZkNWM3R0NCN0hTVno2Q1puc1lRN3ppOUR1NjIzb0NrektEMVFB&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=zqAGnJRimRM) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=zqAGnJRimRM)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWJkUWZfdGNzUjg4N3RocExGaHdyRnxBR3JiS2FudGM2RkE1V3VZa2lOSVg1Q01VR3YtRzByd1RiVEE0WnVyMGhfM0hXWkVoSFlPd0JIM3VyMml2cW5FbFFlVUl5TDFrRXN4TS1XOGVUajZkMlpDeTRLQ1hzZU95Q1pi&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=zqAGnJRimRM) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy life x 750
+https://www.youtube.com/watch?v=9aUe4Fx0oMI
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUhVbDF0R3JVbUE1NjdXUUktNE1VOHxBR3JiS2FscFIxVGpvNXRBanBmY0FkUkNwYlB5T0RobEdWUTUyM0hLX2xSVHBoWWF3QnU3TDZ5aFVka3NhUENNZkRDdWR0WUV1M0x0dG9jdmpvbFo2SGRxSi03M1FGTmoxc1V1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=9aUe4Fx0oMI
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFJtYkVWQ1pDU0tKeUpqRGdEQWVBQ3xBR3JiS2FtdDJBcldMTTZ6Qlh3SFgtWVhwcU1kQ2lRVmtrelRCTk5KUEJaa0tFaTNQOVlVcm5RSF85NXk5Mkx3SkxrOXVjeGVkOTFhLU5vOHY0a0EwZk5HLTEyYVkxUTl2ME4t&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=9aUe4Fx0oMI
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUklYVzFqYkRvdVdTdlpoS1Y2S3c3R3xBR3JiS2FtRmVtNDZNM0ZUY0t2M2RPd3oxQ3BuWFJlQkc0SUdSbHNjNmpxYzJmcmxuZjZEeHU4QlRLcFlGTVZjUTFQRUFiX0l2VmQ3TzJaRHFQTUx1Z3V4ODJwV0lndy04NDd6&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=9aUe4Fx0oMI
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUhVbDF0R3JVbUE1NjdXUUktNE1VOHxBR3JiS2FscFIxVGpvNXRBanBmY0FkUkNwYlB5T0RobEdWUTUyM0hLX2xSVHBoWWF3QnU3TDZ5aFVka3NhUENNZkRDdWR0WUV1M0x0dG9jdmpvbFo2SGRxSi03M1FGTmoxc1V1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=9aUe4Fx0oMI) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=9aUe4Fx0oMI)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVGtqaUdMZmRISjZ4bjVTOWg3b3hHbXxBR3JiS2FtRWNKQmx0Y3Q2NmxEQkVNTFIxbi1IWUNIaGgtNU5MUURMOFdkYjlSUW9rNUdoQnl6RkhpX3ZPbjAtY0ViUjFqb28wNXdWMTc4RWJ2WEd5UWZiNFVieGRkUU1ZNjZB&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=9aUe4Fx0oMI) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 135 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Planet Krobulus x730
+https://www.youtube.com/watch?v=g6ipZQouEeo
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWtEdHZRMzZzNnF2cUQzRnJjSnlOdnxBR3JiS2FucnJSMjRuNnRXVi1veElnYW5NSDhjNVYtOGIwcVZ4MUx2UjZwdGcwODRHbzJzRUdGZnA5RldlaWxOdzl3c1hCNGJqTzdMdF9NSUV3VERUMGFaSDVlWU1qb3B3MHF4&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=g6ipZQouEeo
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjNPeUREVkhKVXBia3pVREprY0Z1bXxBR3JiS2FrWmVCTUtybDdWeERuR3A1VDVxMEZLMjFDNjZucDRBNnFoaWVMNHItTnpYVms0VWVGTndya0k5bUVfRjhQeHFia1ltYTZURVVWMUNHSE9NN1YwRDJmZVZBZmpqOVlI&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=g6ipZQouEeo
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUS1DVWVxTUlyNGpLN2Z1YkpMRlR1THxBR3JiS2FtcVdDc0NKdUtfLTlzZjNMdTl4R3RYbXFEWGRVLXlPX1dib3M2dFpWeE1IQ2JBRE5INkNyX3hfSk9adVFMT0NkSmxBMk00Nm5wdXlJUGpJZDJONVpTZ2Fya0RxM2VT&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=g6ipZQouEeo
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWtEdHZRMzZzNnF2cUQzRnJjSnlOdnxBR3JiS2FucnJSMjRuNnRXVi1veElnYW5NSDhjNVYtOGIwcVZ4MUx2UjZwdGcwODRHbzJzRUdGZnA5RldlaWxOdzl3c1hCNGJqTzdMdF9NSUV3VERUMGFaSDVlWU1qb3B3MHF4&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=g6ipZQouEeo) check the mod creator Earendels Patreon out: [![Image 31](http://www.youtube.com/watch?v=g6ipZQouEeo)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHBYOXo2WXhrZnZHWmQySV9veFNoeXxBR3JiS2FuNzhFOHU0WXZ1TmlmQTUyVzNBV1NRVEt6WG1HRVBRT0NHdlNBMXcxMVVrZ3Fmc3IwTlAtNlNsdzF4Y2Q5REdnaXpVZkxJZXJNUnIzZlVtQWRDQzViR0FXbDI1cGgz&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=g6ipZQouEeo) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 133 | Pel00 | Factorio 2.0 SE 0.7.34+K2+Extra - Episode 02
+https://www.youtube.com/watch?v=KpBZiSxuS4A
+late_terms=[]
+Candidate links:
+  https://discord.gg/JusvtYBDgK)[![Image
+  https://discord.gg/JusvtYBDgK
+Save/link context:
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs)…...more
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 10](http://www.youtube.com/watch?v=KpBZiSxuS4A) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTAwbHFLODR1YjN6MVljUWpmRUJWT3xBR3JiS2FtRHV5LXctYWF4cXFySGktaFI1ZXFnOElJVDZTQkk2UG5peGdGeDNpMGRxbWpRZUEtNGhqbzdqN0pkX2pFMzFjTGZWYU9hcU90TmV4OS1HZkFZRVIyYWlMcmFyZ3dv&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 11](http://www.youtube.com/watch?v=KpBZiSxuS4A) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHpjQmgwLUZHSjZpNDB5TjJybDlhdHxBR3JiS2FtN3Zrang2RFZvWDdvamwtd0ZtUG9NV3pVZmNDNHZRdTFtdklVTEp4am1UUWxkcGZrejUyX1V2bDc1ZlpXTVdLNjQ1NDVYV2FVcjBJQmNNTzA1enBkRGEyX1lwdG0t&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 12](http://www.youtube.com/watch?v=KpBZiSxuS4A) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVFpEUUtzVmM1UUswYWduSEFnV2l0VnxBR3JiS2FrYnpUZ09zczhvb2VZTVg3WHpZNjBhNld3cVFoblRDT29UMkJFM0wtYlFKSmRGRzNXamlvV3U0R2g0bFF2RFM5SmhnbjF3bDlCRV85VWhtTFF3WGZZc0ZMaXNjQU5G&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs) Factorio 2.0 SE 0.7 + K2 + Extra - S01 EP02 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Game: Factorio ► Game ver.: 2.0 ► Mod / Modpack: Space Exploration + Krastorio 2 + Extra mods ► Mod / Modpack version: 0.7.34 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Date: 2025-10-17 ► Time: 11:57 PM CET (UTC +1) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Broadcasted live on Twitch - Watch li
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 20](http://www.youtube.com/watch?v=KpBZiSxuS4A) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTAwbHFLODR1YjN6MVljUWpmRUJWT3xBR3JiS2FtRHV5LXctYWF4cXFySGktaFI1ZXFnOElJVDZTQkk2UG5peGdGeDNpMGRxbWpRZUEtNGhqbzdqN0pkX2pFMzFjTGZWYU9hcU90TmV4OS1HZkFZRVIyYWlMcmFyZ3dv&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 21](http://www.youtube.com/watch?v=KpBZiSxuS4A) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHpjQmgwLUZHSjZpNDB5TjJybDlhdHxBR3JiS2FtN3Zrang2RFZvWDdvamwtd0ZtUG9NV3pVZmNDNHZRdTFtdklVTEp4am1UUWxkcGZrejUyX1V2bDc1ZlpXTVdLNjQ1NDVYV2FVcjBJQmNNTzA1enBkRGEyX1lwdG0t&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 22](http://www.youtube.com/watch?v=KpBZiSxuS4A) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVFpEUUtzVmM1UUswYWduSEFnV2l0VnxBR3JiS2FrYnpUZ09zczhvb2VZTVg3WHpZNjBhNld3cVFoblRDT29UMkJFM0wtYlFKSmRGRzNXamlvV3U0R2g0bFF2RFM5SmhnbjF3bDlCRV85VWhtTFF3WGZZc0ZMaXNjQU5G&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+
+SCORE 133 | Pel00 | Factorio 2.0 SE 0.7.34+K2+Extra - Episode 05
+https://www.youtube.com/watch?v=lO2d35zrZIM
+late_terms=[]
+Candidate links:
+  https://discord.gg/JusvtYBDgK)[![Image
+  https://discord.gg/JusvtYBDgK
+Save/link context:
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs)…...more
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 10](http://www.youtube.com/watch?v=lO2d35zrZIM) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVENXdHlkakFjZmJIU0JrUTlDbzE4bHxBR3JiS2FtTUdtZklsWmo3dUlTR1VLMHR1WlJiUWxTWGdfVlpURXRERG04aDd6QTUzRXg2OW1NNktIS2VjY2FvUlQ0M25keHE1dkVXM1BMTXg3ekd2VWJDa04zNXJwaWh5NUNO&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 11](http://www.youtube.com/watch?v=lO2d35zrZIM) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmdBSXRTdHFtTm9iUWZxUy1MSGEzV3xBR3JiS2FtYWVLTEdBYlg5WEViVTFORFBRSXJna1NZSFVETk1iVFU2enFNampnbDZCUER1UXU5a2xNM3Q4UUMxWkNub2FaX2c3QmpsQ3pPeTNGckoxYXE1Qjd0blNhbV9Hcl9r&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 12](http://www.youtube.com/watch?v=lO2d35zrZIM) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGVESFVhZ1Q1amtocjhfMENFa0plaHxBR3JiS2FtQ3dxczRTN2FRWlRFUDNJdzcwNVdGR0JCUDRRZjhXQ19SOVpLYlhIY0gwZ2NSWWxGMEJFWEh5MFFqY1prTHE2aGNBMFBmejk2SEVDejFsT3MydUZ5WXl0TnBiaHhf&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs) Factorio 2.0 SE 0.7 + K2 + Extra - S01 EP05 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Game: Factorio ► Game ver.: 2.0 ► Mod / Modpack: Space Exploration + Krastorio 2 + Extra mods ► Mod / Modpack version: 0.7.34 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Date: 2025-10-18 ► Time: 11:00 AM CET (UTC +1) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Broadcasted live on Twitch - Watch li
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 20](http://www.youtube.com/watch?v=lO2d35zrZIM) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVENXdHlkakFjZmJIU0JrUTlDbzE4bHxBR3JiS2FtTUdtZklsWmo3dUlTR1VLMHR1WlJiUWxTWGdfVlpURXRERG04aDd6QTUzRXg2OW1NNktIS2VjY2FvUlQ0M25keHE1dkVXM1BMTXg3ekd2VWJDa04zNXJwaWh5NUNO&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 21](http://www.youtube.com/watch?v=lO2d35zrZIM) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmdBSXRTdHFtTm9iUWZxUy1MSGEzV3xBR3JiS2FtYWVLTEdBYlg5WEViVTFORFBRSXJna1NZSFVETk1iVFU2enFNampnbDZCUER1UXU5a2xNM3Q4UUMxWkNub2FaX2c3QmpsQ3pPeTNGckoxYXE1Qjd0blNhbV9Hcl9r&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 22](http://www.youtube.com/watch?v=lO2d35zrZIM) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGVESFVhZ1Q1amtocjhfMENFa0plaHxBR3JiS2FtQ3dxczRTN2FRWlRFUDNJdzcwNVdGR0JCUDRRZjhXQ19SOVpLYlhIY0gwZ2NSWWxGMEJFWEh5MFFqY1prTHE2aGNBMFBmejk2SEVDejFsT3MydUZ5WXl0TnBiaHhf&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+
+SCORE 133 | Zen Mikey | Factorio Space Exploration Lets Play #77 - Expansion, More City Blocks
+https://www.youtube.com/watch?v=z3nEdJE0TJQ
+late_terms=[]
+Candidate links:
+  https://discord.gg/wtD6WGypjR
+Save/link context:
+  Discord invite for updates, fun banter, and more: [![Image 8](https://www.gstatic.com/youtube/img/watch/social_media/discord_1x.png)/discord](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDNaZGZEMWVQelVvc0hGOGszOFVaQnxBR3JiS2FtX3RYQkJHenhMVFVhRjBzMDBrbUlVc3dtbkVDLWRxWWZLWmpQTlloeU9oelBGbHZCS21lMjl4RExkVTVyRm1pYlphcXBnM3d0anhxMVI5UVhYWVc0MlV4MnRfNFZH&q=https%3A%2F%2Fdiscord.gg%2FwtD6WGypjR&v=z3nEdJE0TJQ) In this Factorio Space Exploration segment, we refresh our knowledge of where we left off and get back to scaling up. We begin to …...more
+  Discord invite for updates, fun banter, and more: [![Image 12](http://www.youtube.com/watch?v=z3nEdJE0TJQ)/discord](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTI2QzRHZzlwUFl3SWZiOVNiSkF1ZnxBR3JiS2Fra0xYWHpwTEc0SFdCcHE5UEtuMlpvU0hTb2EtMko2Z2NIZWJoNFJsUm50bFNZSnJ6Rm1RV0otSVBSSG1jVjhFdXZhV3ROWUhUQmQ4bkJRaHFaT1lIM09YRHV3ZmFX&q=https%3A%2F%2Fdiscord.gg%2FwtD6WGypjR&v=z3nEdJE0TJQ) In this Factorio Space Exploration segment, we refresh our knowledge of where we left off and get back to scaling up. We begin to cast our colonial gaze across the sea. This is one of many Space Exploration mod segments in my SE let's play series. There will be many more vids to come with lots of automation, blueprint analysis, explosions (intended and unintended), and lots more Factorio things.…...more
+
+SCORE 130 | Bold Viking | Space Exploration 0.7 - Day 03 - Time to make some rockets fly!
+https://www.youtube.com/watch?v=Gi8IvP2STew
+late_terms=[]
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=Gi8IvP2STew) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVG1iN1pFUEFBbjdEUlh3ZV9JVFI3YXxBR3JiS2FueWlONUlqWmVNNXBPaXZOdnhDdEZITWdXUklyWGhYbUtGNWhyNmFFUmdvNHotdVhuQ2NKWFVMcVJiZHBVNnFyMzE5NHkzMzFLVy1nQk9qMUE4cGJvUy1wRm5KVlM1&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=Gi8IvP2STew) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXlWcHBlSmlvQjVvdVJ2Q3ZnVW1PdHxBR3JiS2FtU1RFbENYY1N3WEVHRVNiTmJHNVdMY0NqckdBcXBrNWQ0cHUxb2hWNV90M2Z3cUlfTkJ4QS1TekFzeTJldm1IX3MtaGNva2JqZ1RTS1FSZmpOVFhwWXBISTFyN2ZW&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=Gi8IvP2STew) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlZmNlNOdzJVUFpwODJFUGo2S090MXxBR3JiS2FrZFFRbFc5dzhmTjVHU0NzTHZIQzdnMjR1anFsQ1RWcHliRFd3ZXBkSHpoVU9BdG1oejZTeWxYMnJQVjVGVFpJQ3UwcGwtMWZUSHRTcEtFdGZDS3VWV3VFV0hDNGN4&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=Gi8IvP2STew) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVG1iN1pFUEFBbjdEUlh3ZV9JVFI3YXxBR3JiS2FueWlONUlqWmVNNXBPaXZOdnhDdEZITWdXUklyWGhYbUtGNWhyNmFFUmdvNHotdVhuQ2NKWFVMcVJiZHBVNnFyMzE5NHkzMzFLVy1nQk9qMUE4cGJvUy1wRm5KVlM1&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=Gi8IvP2STew) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXlWcHBlSmlvQjVvdVJ2Q3ZnVW1PdHxBR3JiS2FtU1RFbENYY1N3WEVHRVNiTmJHNVdMY0NqckdBcXBrNWQ0cHUxb2hWNV90M2Z3cUlfTkJ4QS1TekFzeTJldm1IX3MtaGNva2JqZ1RTS1FSZmpOVFhwWXBISTFyN2ZW&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=Gi8IvP2STew) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlZmNlNOdzJVUFpwODJFUGo2S090MXxBR3JiS2FrZFFRbFc5dzhmTjVHU0NzTHZIQzdnMjR1anFsQ1RWcHliRFd3ZXBkSHpoVU9BdG1oejZTeWxYMnJQVjVGVFpJQ3UwcGwtMWZUSHRTcEtFdGZDS3VWV3VFV0hDNGN4&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 130 | Bold Viking | Space Exploration 0.7 - Day 20 - Working towards the space elevator! And more outposting!
+https://www.youtube.com/watch?v=9CjtEcfg9mk
+late_terms=[]
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=9CjtEcfg9mk) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUWE0M25IeEdLdUhySzF5MU1sUVUxWXxBR3JiS2FrdktuSkF2SmtObWhnd2MwUTJlazN6OFpwR1l1c09IOEZOWVczZTJlQnRISVVPQVdSQmxjRjROWWdUYkJsZGp0dmQyLXZNQzIyREY4VVpxNjg5WjlvLVNFZWZVRHd1&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=9CjtEcfg9mk) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUdKUzFPU0dQSnItajJabU1RY3JYNnxBR3JiS2FsRXVHTUUzVXlpLUJLUUFaQU0xSkVGcHJHMXVXU1laVGZ1X2FTU2ZIOFBCWU9HRE9XLTJlQTJ2elduWkNvcWhlaldiQWJoTzhpT3V5VVIta0pNWm4ycE0xaHRnMTlH&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=9CjtEcfg9mk) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUW16U05QQ3pNQkd5c3o1U1Q2RFhicHxBR3JiS2FtVXFUbnZ2Q1BBd2dNYjdzTWRyMm81ZUZOaVNhVTk5QjM0N1NZMHlxRm1rTGt6WTRvbVpYZzYxcFdXYmpmLXNkZzh5b0dXbVZHV1BXNHJXbkFHOC12VVNZSU9PQk5l&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=9CjtEcfg9mk) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUWE0M25IeEdLdUhySzF5MU1sUVUxWXxBR3JiS2FrdktuSkF2SmtObWhnd2MwUTJlazN6OFpwR1l1c09IOEZOWVczZTJlQnRISVVPQVdSQmxjRjROWWdUYkJsZGp0dmQyLXZNQzIyREY4VVpxNjg5WjlvLVNFZWZVRHd1&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=9CjtEcfg9mk) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUdKUzFPU0dQSnItajJabU1RY3JYNnxBR3JiS2FsRXVHTUUzVXlpLUJLUUFaQU0xSkVGcHJHMXVXU1laVGZ1X2FTU2ZIOFBCWU9HRE9XLTJlQTJ2elduWkNvcWhlaldiQWJoTzhpT3V5VVIta0pNWm4ycE0xaHRnMTlH&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=9CjtEcfg9mk) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUW16U05QQ3pNQkd5c3o1U1Q2RFhicHxBR3JiS2FtVXFUbnZ2Q1BBd2dNYjdzTWRyMm81ZUZOaVNhVTk5QjM0N1NZMHlxRm1rTGt6WTRvbVpYZzYxcFdXYmpmLXNkZzh5b0dXbVZHV1BXNHJXbkFHOC12VVNZSU9PQk5l&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 130 | Bold Viking | Space Exploration 0.7 - Day 47 + 1 - Now that we finished the game, let's work on that thingy ;).
+https://www.youtube.com/watch?v=0YohJCdCqKY
+late_terms=[]
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 11](http://www.youtube.com/watch?v=0YohJCdCqKY) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1ZINnh3X1M4N3I1UzkzQkJNRVZWSXxBR3JiS2FsV3R0eU5XWnd2dlZvVHdwNmZkMnYtczZYTkhKQnhqOGtmS1V3cUNYeTBDS2RPNnk0VmU4cGNGYXJBcWUwdFJ2Q0VhZUJxdlUyalBzZ1VMNmNYVkx4TnFYOElqVk5T&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=0YohJCdCqKY) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUVA2Sk5Zd0p6ZldnbWhHOTlVajEwWXxBR3JiS2FtdHpMVnNoTWxGTV9yeTZvWHpQMUh2X1ZkdUhmQkJDWTRMQ01ReGJMXzB2V1JOUGNOSjdhMGkxa1FGSWlYTnJUUUREcjJhbEY2ZzhrZzRzMWdwOC1ZWHd1Skl5QUJ2&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 13](http://www.youtube.com/watch?v=0YohJCdCqKY) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnZab0FBSDJzbE1BTFViUkRqaDFYQXxBR3JiS2FsUkNZMjZBUWQwSEhRYnE3RVF0aGR0UkVwSVhVR2xjVTFrd0pVZVMyeTEzSU5kY2JyeFBENzRBZ0s4TENSTERTTUlIa3V1VzVwRzZ5bnlEcENDNGRqMkd2R2tMdENh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 14](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 20](http://www.youtube.com/watch?v=0YohJCdCqKY) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1ZINnh3X1M4N3I1UzkzQkJNRVZWSXxBR3JiS2FsV3R0eU5XWnd2dlZvVHdwNmZkMnYtczZYTkhKQnhqOGtmS1V3cUNYeTBDS2RPNnk0VmU4cGNGYXJBcWUwdFJ2Q0VhZUJxdlUyalBzZ1VMNmNYVkx4TnFYOElqVk5T&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=0YohJCdCqKY) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUVA2Sk5Zd0p6ZldnbWhHOTlVajEwWXxBR3JiS2FtdHpMVnNoTWxGTV9yeTZvWHpQMUh2X1ZkdUhmQkJDWTRMQ01ReGJMXzB2V1JOUGNOSjdhMGkxa1FGSWlYTnJUUUREcjJhbEY2ZzhrZzRzMWdwOC1ZWHd1Skl5QUJ2&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 22](http://www.youtube.com/watch?v=0YohJCdCqKY) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnZab0FBSDJzbE1BTFViUkRqaDFYQXxBR3JiS2FsUkNZMjZBUWQwSEhRYnE3RVF0aGR0UkVwSVhVR2xjVTFrd0pVZVMyeTEzSU5kY2JyeFBENzRBZ0s4TENSTERTTUlIa3V1VzVwRzZ5bnlEcENDNGRqMkd2R2tMdENh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 23](http://www.youtube
+
+SCORE 130 | Bold Viking | Space Exploration 0.7 released today. And the latest Factorio update gives us wire-able splitters :D
+https://www.youtube.com/watch?v=3sfMrGPdL6U
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 11](http://www.youtube.com/watch?v=3sfMrGPdL6U) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVF85WTVFQ2VFY0twcWdhLUY5OHdKd3xBR3JiS2FtY3AtVm1fSG93Vk5ZVnFmUU94bjFnTnNDN0dUa1NZWHBzczAyUndzMXJtOUo1V3d6TngybnFKTWtKRjBoS1hkd2hhSmJpSWNNTmV6WFd1M0JLNzJ1WmVibk1XSUFo&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=3sfMrGPdL6U) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUzI0VFhTSFVFUlgzYWNRdXdNWkxQaHxBR3JiS2FsODQtWFIyQjhtTWVkUTZzcWI3Q3ZRV2RQUzJLYU1hdG5zcFdPb2J6Unh5a1VIWUg4STFTVE5CS2g5V0RIVXoyZlFLY0lRSUNmdFhJOFpac2dLc0pkV1EyYUQxb014&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 13](http://www.youtube.com/watch?v=3sfMrGPdL6U) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm9wbEJ4VnVweWFsQjRwaVBETXBYQXxBR3JiS2FsN0VxME53MnVPRlRmT1h6MDN1dWJQdERsSkx5U1VFZElJRXdRbG5Nc2MtRkcyeHI0RjRtMVowQXJ3UnMxdDNMM1hsOEF3Ml9icHBoSk9KbEF2YlIybnRpN0pzVWZ1&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 14](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 20](http://www.youtube.com/watch?v=3sfMrGPdL6U) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVF85WTVFQ2VFY0twcWdhLUY5OHdKd3xBR3JiS2FtY3AtVm1fSG93Vk5ZVnFmUU94bjFnTnNDN0dUa1NZWHBzczAyUndzMXJtOUo1V3d6TngybnFKTWtKRjBoS1hkd2hhSmJpSWNNTmV6WFd1M0JLNzJ1WmVibk1XSUFo&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=3sfMrGPdL6U) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUzI0VFhTSFVFUlgzYWNRdXdNWkxQaHxBR3JiS2FsODQtWFIyQjhtTWVkUTZzcWI3Q3ZRV2RQUzJLYU1hdG5zcFdPb2J6Unh5a1VIWUg4STFTVE5CS2g5V0RIVXoyZlFLY0lRSUNmdFhJOFpac2dLc0pkV1EyYUQxb014&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 22](http://www.youtube.com/watch?v=3sfMrGPdL6U) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm9wbEJ4VnVweWFsQjRwaVBETXBYQXxBR3JiS2FsN0VxME53MnVPRlRmT1h6MDN1dWJQdERsSkx5U1VFZElJRXdRbG5Nc2MtRkcyeHI0RjRtMVowQXJ3UnMxdDNMM1hsOEF3Ml9icHBoSk9KbEF2YlIybnRpN0pzVWZ1&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 23](http://www.youtube
+
+SCORE 130 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x080
+https://www.youtube.com/watch?v=cU2eaNxOFNI
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTI5NzVSZjdGVElHQUYzdmpnU1NycHxBR3JiS2FuVU5Ma3AtOE9EdTFVYVdTV2xTX1R2TzF2ci1CalZET2l1XzZRcXJWVG56QjA1a0lDWEdkQkhFZmdXcnI3MXJxSzZWSGg5Q2ZSSGRDZ29XZzZHRlhaYVpSXzhpNk1T&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=cU2eaNxOFNI
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUi11S051bkNOSGM5Q3djOW9JUjN2SHxBR3JiS2FuanB5SUVma01xUHlFbGI3eXp5UVBVRW1tWVB5Y2ZBaDV3bDVZV3lZVHp1cjZna0dKTG42cV9TczBkRG9ySS1qU2ozMUF4b0Rka2dHNDRRRzNscjNXOU0wWE9qdWZQ&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=cU2eaNxOFNI
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTNXendEc2FPMk1PQzFnZmowdkhvRXxBR3JiS2FrZktVRkVuc1VBaHJCME1GRjB1V1FsdEw1Y281anEycHpYVUNTUHVZbS14YTZpWTIyTUpFN0pMQmVpVHZseE04b0czR2F3WFZHelVoZ0dkblExajZlU0ZMOGF1ZnJK&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=cU2eaNxOFNI
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTI5NzVSZjdGVElHQUYzdmpnU1NycHxBR3JiS2FuVU5Ma3AtOE9EdTFVYVdTV2xTX1R2TzF2ci1CalZET2l1XzZRcXJWVG56QjA1a0lDWEdkQkhFZmdXcnI3MXJxSzZWSGg5Q2ZSSGRDZ29XZzZHRlhaYVpSXzhpNk1T&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=cU2eaNxOFNI) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=cU2eaNxOFNI)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkd0VXdGV2VQYnYyb1RUSGRVTV9vM3xBR3JiS2FsaTBEZktEbDlVakFLWHhKS2lib0N3SWptN1NfMlgwR2NxcEFpLTZsM0ZvUC1JazRnaENfSDliTW9PUTdxQXVjTDJuSS1jU2JyTC1PdFEyLUJVME1fNEp6WmNCWjda&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=cU2eaNxOFNI) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 130 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Planet Aine Rebuild begins x737
+https://www.youtube.com/watch?v=dLHbwATfHsE
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0V3MjZpczRmMnpfLVFScVNwc1I4Y3xBR3JiS2FuLUtJc3hiVVhvUHUyZUpDeV9VMl9MY3JWSTdWdDFVa3gxSGt5Tk8ySFlrSUZsLTRpTmFQRExTNW1VbzJwT2E5b0paajlKaHBVaVdreUZGMTNUU3pWX0otQW9fS3Y2&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=dLHbwATfHsE
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVEM5UkQtSWxmOTBwZGVoSHRFVFdDdHxBR3JiS2FtMEg4dWdJN0hpazR3TnhVM2luTWdKU25HOUVYaFRGcVp5NllhUEJEenJGWnRBeHo0cWlJelI5QUhQWkYySHZScm56bXJjeEQ0bkN6UjE0alFPb1JTVklhNHZ0QXNt&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=dLHbwATfHsE
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUlJiZGlJVzlMall1Q2hOa1JTSTZFLXxBR3JiS2FuVHhWRHRfSm5vLTNEb3F3cFlRNEhPRGl2M1Uxc3h1S2ZvZ196ajNrcnJMOWZrSDZhM1JHTXpHZnRGX1gzaG11Zm9CTFRpSnpNV1NTVExmTkdiTm9HekZSWks1RUJn&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=dLHbwATfHsE
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0V3MjZpczRmMnpfLVFScVNwc1I4Y3xBR3JiS2FuLUtJc3hiVVhvUHUyZUpDeV9VMl9MY3JWSTdWdDFVa3gxSGt5Tk8ySFlrSUZsLTRpTmFQRExTNW1VbzJwT2E5b0paajlKaHBVaVdreUZGMTNUU3pWX0otQW9fS3Y2&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=dLHbwATfHsE) check the mod creator Earendels Patreon out: [![Image 36](http://www.youtube.com/watch?v=dLHbwATfHsE)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU05DSm1wbnFpb1pEQ01TaUdvZFJQa3xBR3JiS2FuMkMyeWVtcm5tUHlTcjdWQVoyOHpyODNsMTVxczBETE9XRmVUbjJVM0hTYm4tOGh3LTNxc2RDR2hJTkgzd25kTXBKbk1KNkpoOVNaNE9kWWVpU29vbkxYcjdNU3Q4&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=dLHbwATfHsE) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 128 | Pel00 | Factorio 2.0 SE 0.7.34+K2+Extra - Episode 03
+https://www.youtube.com/watch?v=Lxd0rYScoWY
+late_terms=['spaceship']
+Candidate links:
+  https://discord.gg/JusvtYBDgK)[![Image
+  https://discord.gg/JusvtYBDgK
+Save/link context:
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs)…...more
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 10](http://www.youtube.com/watch?v=Lxd0rYScoWY) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjMtNlVONTIyVmpiR2Y1WGNoOWVUeHxBR3JiS2FuWk5pSmhERFZ5dmFrcnhITlYxN2JMNDl6UWR1VE01T0ZxcUJaRUNsVVloZDBzaDVuemtXdjVnRFl5YjU3bWE0MWxzSzBtSjRPaUNXek9uNjVGZ21PZC1mSEdzbmM3&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 11](http://www.youtube.com/watch?v=Lxd0rYScoWY) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUZwSVctSXVtcWdMcE81OW5tWFAtMXxBR3JiS2FuU0k2aHlFdVB1cjlXWldwd0F5YmROREo2VUxPTTliZ3RUMUhxWHFmNmR5aDUtNXRXdUNuZVRHRDJESzgwUHRNRTJiY3VDTHlCM1FRZVRacEpIXzZRS0JQVjNpQWsw&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 12](http://www.youtube.com/watch?v=Lxd0rYScoWY) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGV2QTVVWEJ4MGlTbEc1XzVNTVFJMXxBR3JiS2FtX0FrRmVUbGJEcUtmS0pxa2ZNZWY0aTBmOE0zV0lLM3FDcWlOMWhxMFJteG54eTFBQWtrMHhieGpwNHF6M1QwTnZvSjh4NzQzYUlXZlBGYk9yUl9qSWJCMDVhUXRu&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs) Factorio 2.0 SE 0.7 + K2 + Extra - S01 EP03 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Game: Factorio ► Game ver.: 2.0 ► Mod / Modpack: Space Exploration + Krastorio 2 + Extra mods ► Mod / Modpack version: 0.7.34 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Date: 2025-10-18 ► Time: 01:00 AM CET (UTC +1) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Broadcasted live on Twitch - Watch li
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 20](http://www.youtube.com/watch?v=Lxd0rYScoWY) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjMtNlVONTIyVmpiR2Y1WGNoOWVUeHxBR3JiS2FuWk5pSmhERFZ5dmFrcnhITlYxN2JMNDl6UWR1VE01T0ZxcUJaRUNsVVloZDBzaDVuemtXdjVnRFl5YjU3bWE0MWxzSzBtSjRPaUNXek9uNjVGZ21PZC1mSEdzbmM3&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 21](http://www.youtube.com/watch?v=Lxd0rYScoWY) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUZwSVctSXVtcWdMcE81OW5tWFAtMXxBR3JiS2FuU0k2aHlFdVB1cjlXWldwd0F5YmROREo2VUxPTTliZ3RUMUhxWHFmNmR5aDUtNXRXdUNuZVRHRDJESzgwUHRNRTJiY3VDTHlCM1FRZVRacEpIXzZRS0JQVjNpQWsw&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 22](http://www.youtube.com/watch?v=Lxd0rYScoWY) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGV2QTVVWEJ4MGlTbEc1XzVNTVFJMXxBR3JiS2FtX0FrRmVUbGJEcUtmS0pxa2ZNZWY0aTBmOE0zV0lLM3FDcWlOMWhxMFJteG54eTFBQWtrMHhieGpwNHF6M1QwTnZvSjh4NzQzYUlXZlBGYk9yUl9qSWJCMDVhUXRu&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+
+SCORE 125 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x006
+https://www.youtube.com/watch?v=aIm702fwFss
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUy1BNGRqU3I3aS1yY0VnRmpRR29ubnxBR3JiS2Fuc0p6ckIwUG5kVVRqOVhRUDJvdjgtMTNfR1h5R3BvaVV6T19PaTJmcXNLWTlaZ1VsSURZcHdwejRwdmdsblBoZWpWZWJ3SHB5RUxsWC1UU25zNDVXa2JETXpxMHZk&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=aIm702fwFss
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVdrY244eE9ZWmtwQnM2VkdnTWF4U3xBR3JiS2FsVm5NMnVCOVE0eC0xYjFRaWlac05PNm1tQVU5ODBtZVUwYlVzV2JBTTB3RHJ3cmRDTHRhNHVPWFRSSjhucVp0WC11QXZZejhBV18wVW1nLW81UjdqaGh5WEkzazZO&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=aIm702fwFss
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUmRvVHhjVV9BVFlZRmxMc1ZXc1c5TXxBR3JiS2FuaEJzMFlZMFlDUlV3NlBiQXlUbTRaM0IxZlFnMFdOV0sxZGFUaklOUmFtTEgxRks1Q1dXTWVZWTZMeFh1aFpyZm1lQnh3MjhfNlUtZnpTWmstckR2WDNXaG1ZTG43&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=aIm702fwFss
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUy1BNGRqU3I3aS1yY0VnRmpRR29ubnxBR3JiS2Fuc0p6ckIwUG5kVVRqOVhRUDJvdjgtMTNfR1h5R3BvaVV6T19PaTJmcXNLWTlaZ1VsSURZcHdwejRwdmdsblBoZWpWZWJ3SHB5RUxsWC1UU25zNDVXa2JETXpxMHZk&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=aIm702fwFss) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=aIm702fwFss)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDdOY04yVVlxT1dyb05pNFFWWU1ZWnxBR3JiS2FsYWp4RWI0YXdaYVRndUlCenhRc1N2MWJwSndUZEczU3hhUkM0eFdacGJWNkRKRHJTMXhxYjAxMnVYN2hZWjVEVXJDX0lpc0szVUg5MU41akctTlpCR25oNFFPMVpE&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=aIm702fwFss) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 125 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x085
+https://www.youtube.com/watch?v=fofPY1JciKE
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDZJc2tyQkhwZDhsNjJyNVFJdU9KRHxBR3JiS2FrbU5qWmloWnlzeHdDd2QzV09YRloydjdKZk84WGZMY185M2x0cjIwNm50bXI5SXBxXzZvcGVkc29TVnpzbHVwY1ZoeG1ORXZqSzJoY2c2VThGSHE4SWE4cDZfY1FI&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=fofPY1JciKE
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0JIYVA1N08xdEluUkduVDZJSllEV3xBR3JiS2FtczFpTlpyTGVETUN6THNkYVBTRlVJLTktelAwYkZXd1JLNERDb2FoZlpRMlFDVUdkZTE1dUM5TXJ6VVlFU2x3T214MEhLQ0ZNVzZqLWtTUk9VSU9nMVBZWEh6TWhO&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=fofPY1JciKE
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDdTSkY0VksyZUM4Q3g4UDMzVlJ3SXxBR3JiS2Ftb3NfbWtBMUtfbVpLYW1jUTlFTDExSk5KdFVYMDN1RWF4NVRHNVl5WnpoRWswRU1WVEVWUGJIanNYNy1PdUVYMHZPRmgtN0cwem5udDdXbXNibVlNazdvUk1zV0ZP&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=fofPY1JciKE
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDZJc2tyQkhwZDhsNjJyNVFJdU9KRHxBR3JiS2FrbU5qWmloWnlzeHdDd2QzV09YRloydjdKZk84WGZMY185M2x0cjIwNm50bXI5SXBxXzZvcGVkc29TVnpzbHVwY1ZoeG1ORXZqSzJoY2c2VThGSHE4SWE4cDZfY1FI&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=fofPY1JciKE) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=fofPY1JciKE)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVG1VMU11R0VPaG1ORkJtLXZWVFhFWXxBR3JiS2FsV1BkUWZVc3Z2Vk9Eem1DcWhMV3dDb3VzV2tKdF9hLXdEWWpjUndSay1UU2VTUXFIbkNoZV9YdHctTzk3SDhvYVRGcko1YVVveG9iRFlMb0MzbjJROXNnWEstVFh3&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=fofPY1JciKE) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 125 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x095
+https://www.youtube.com/watch?v=EJ226Ytk7s4
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkVlTVBqNmJrdU9YX2lPTm80TjRqbHxBR3JiS2FrM1B1TkRwTkhFNk9LVGtScHNJVU9NbWNrWEExTnpPazc4aU5hNjdEUUxGTFpxSmZhNzVtVGpmdmc3aVlnRm93blR2Yi1MNnBfX2N5V29Ba0hMd1FtMmNNVjFmbTIx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=EJ226Ytk7s4
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVGtIX2R6SEUyZHRneF80bmduRGlVMHxBR3JiS2FsTzJLUG1DV0tobXhJdkl6S0JERnFiR0tSaFo1Wkd1T3VULXY1MHItckxxY1JMYjlTSnVZaE9XV3BmWGo2V242YVdELWtwMzB6ZFNoUWpJd2E0VFhRT1FRWGpvSkFE&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=EJ226Ytk7s4
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXBkNnNmdENsaG14Uk0xQm1EcUJNcHxBR3JiS2FuLUQwUnBwU0JfS04zeDFpNXlBTzBudzFHZVgwajlTRHpvc0F4WFFQTzdxb1lYTGpvTi1ndXVoNS1jaXJ1YjV4Qk5lN0hzR0pQQktfLTVZNjB3b3FRdHFiTUJCcVlO&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=EJ226Ytk7s4
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkVlTVBqNmJrdU9YX2lPTm80TjRqbHxBR3JiS2FrM1B1TkRwTkhFNk9LVGtScHNJVU9NbWNrWEExTnpPazc4aU5hNjdEUUxGTFpxSmZhNzVtVGpmdmc3aVlnRm93blR2Yi1MNnBfX2N5V29Ba0hMd1FtMmNNVjFmbTIx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=EJ226Ytk7s4) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=EJ226Ytk7s4)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFgwLWp0V0pjVHp1M2EzOW14Nk92b3xBR3JiS2FtOWhGU0JBUmpXcGlMOXJlQTBEUFowT2pjUnZLZEhpSEQ4dlNVb3BoUE9Qb3lRUk9lX1VubV80eHY5czQ5NHpTNU80eENJXzRQUDVVUFBsbGVsTjlSN2NySndNM2Z0&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=EJ226Ytk7s4) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 123 | Pel00 | Factorio 2.0 SE 0.7.34+K2+Extra - Episode 08
+https://www.youtube.com/watch?v=6o5OAmq2Zec
+late_terms=['spaceship']
+Candidate links:
+  https://discord.gg/JusvtYBDgK)[![Image
+  https://discord.gg/JusvtYBDgK
+Save/link context:
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs)…...more
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 10](http://www.youtube.com/watch?v=6o5OAmq2Zec) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2tvakUzd1k5NFpjUzlubHdUaVdnU3xBR3JiS2Ftakg0RFVCYXNrUkJKcFluVldxU2xZcTZScFRzanI4bFdUMTVZOHQ5VHVmbG0wZ3M5am9zYU9hZzU5NFNoSVFFWUFLQlhmenVENlZpUUZOQWVwU2c0Nm9mc2lKMGN2&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 11](http://www.youtube.com/watch?v=6o5OAmq2Zec) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1ZJOUNLLThRc3VUdEQ2cjZlMzVYMHxBR3JiS2FtWW8xM1U4Tk4yY01DX1RUb3EwYUVhX2RGcEpMSnE5ODhodXhkMWdEQnVnaEJyQVVEU3JfY201UXY1OGtZZTMyMm1ULU02Sld2TkxnMWhzRXNsaVdVaFZmTGNIZ1Fr&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 12](http://www.youtube.com/watch?v=6o5OAmq2Zec) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2lCUnltR1RhQlVHMnlHVDBWeU9adHxBR3JiS2FsaWNJM0pfN0ZRN0lpcUptbGc4QVBLRTI0LWV5d2UwNTNhWXdsMDRFdWNQZzdwWjN6MFY2OW53QVJxTHhPczRRZXoxV0p5aDJNZE1YSm5ja0ZEN1JaS3dHWTVZX2Z0&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+  [#pel00](http://www.youtube.com/hashtag/pel00)[#streamer](http://www.youtube.com/hashtag/streamer)[#contentcreator](http://www.youtube.com/hashtag/contentcreator)[#gamer](http://www.youtube.com/hashtag/gamer)[#survival](http://www.youtube.com/hashtag/survival)[#building](http://www.youtube.com/hashtag/building)[#crafting](http://www.youtube.com/hashtag/crafting)[#factorio](http://www.youtube.com/hashtag/factorio)[#space](http://www.youtube.com/hashtag/space)[#galaxy](http://www.youtube.com/hashtag/galaxy)[#spaceexploration](http://www.youtube.com/hashtag/spaceexploration)[#krastorio2](http://www.youtube.com/hashtag/krastorio2)[#modpack](http://www.youtube.com/hashtag/modpack)[#automation](http://www.youtube.com/hashtag/automation)[#factory](http://www.youtube.com/hashtag/factory)[#aliens](http://www.youtube.com/hashtag/aliens)[#bugs](http://www.youtube.com/hashtag/bugs) Factorio 2.0 SE 0.7 + K2 + Extra - S01 EP08 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Game: Factorio ► Game ver.: 2.0 ► Mod / Modpack: Space Exploration + Krastorio 2 + Extra mods ► Mod / Modpack version: 0.7.34 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Date: 2025-10-25 ► Time: 06:00 PM CET (UTC +1) ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ► Broadcasted live on Twitch - Watch li
+  [Videos](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/videos)[About](http://www.youtube.com/channel/UCrzBpQIabfzkvUVhHpP5qLQ/about)[![Image 20](http://www.youtube.com/watch?v=6o5OAmq2Zec) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2tvakUzd1k5NFpjUzlubHdUaVdnU3xBR3JiS2Ftakg0RFVCYXNrUkJKcFluVldxU2xZcTZScFRzanI4bFdUMTVZOHQ5VHVmbG0wZ3M5am9zYU9hZzU5NFNoSVFFWUFLQlhmenVENlZpUUZOQWVwU2c0Nm9mc2lKMGN2&q=http%3A%2F%2Fwww.twitch.tv%2Fpel00)[![Image 21](http://www.youtube.com/watch?v=6o5OAmq2Zec) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1ZJOUNLLThRc3VUdEQ2cjZlMzVYMHxBR3JiS2FtWW8xM1U4Tk4yY01DX1RUb3EwYUVhX2RGcEpMSnE5ODhodXhkMWdEQnVnaEJyQVVEU3JfY201UXY1OGtZZTMyMm1ULU02Sld2TkxnMWhzRXNsaVdVaFZmTGNIZ1Fr&q=https%3A%2F%2Fdiscord.gg%2FJusvtYBDgK)[![Image 22](http://www.youtube.com/watch?v=6o5OAmq2Zec) FB](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2lCUnltR1RhQlVHMnlHVDBWeU9adHxBR3JiS2FsaWNJM0pfN0ZRN0lpcUptbGc4QVBLRTI0LWV5d2UwNTNhWXdsMDRFdWNQZzdwWjN6MFY2OW53QVJxTHhPczRRZXoxV0p5aDJNZE1YSm5ja0ZEN1JaS3dHWTVZX2Z0&q=https%3A%2F%2Fwww.facebook.com%2FPeloo%2F)
+
+SCORE 120 | Bold Viking | Space Exploration 0.7 - Day 06 - Automating Space supply and preparing for the first planet!
+https://www.youtube.com/watch?v=qYfZxJTytd8
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=qYfZxJTytd8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU25XaENvbDkyV29Yd18zeUpmRVpaNHxBR3JiS2FrWnZUd0NCU0M4a2NFXzA0NkIzTWxOLURhYmd1UUdYb0pudVBRdld4ZkJ0TUhVemhGbTZXOVBHbC11SFF4ZFYxMk5yVUJiS3NSWDJObFEwSGJnOEctM1pLNVNLeGdU&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=qYfZxJTytd8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUzdSVFFCSlhOdEk4aHVtb29OUi1rUHxBR3JiS2FuQXhfMjlHSnRFSWhyb0tsOENrc3YyM2dNRWo1UWVyakxYQ0NXSEdMcEI0QmFfM1U4YnBXY0hyWW00cXdoNG1pYXhTMV8zYk9Hc0llcjVFbkRHWkJxNmNwajJ3eDRv&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=qYfZxJTytd8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm15Y0xwYUxweWFnazNWYlg3ZGVmUHxBR3JiS2FuMTdwRmVITnZWa1ZqU0tqN3R0TmJiTDVjTmNMQlpmSkp1R1dvNHRlNFRMbnJCWVRWTnQ5alRHcDlqODloMjJSMHhXNlpIM2xlbXQxY2dFd3VER1V1eDVmcXZ6MWdB&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=qYfZxJTytd8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU25XaENvbDkyV29Yd18zeUpmRVpaNHxBR3JiS2FrWnZUd0NCU0M4a2NFXzA0NkIzTWxOLURhYmd1UUdYb0pudVBRdld4ZkJ0TUhVemhGbTZXOVBHbC11SFF4ZFYxMk5yVUJiS3NSWDJObFEwSGJnOEctM1pLNVNLeGdU&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=qYfZxJTytd8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUzdSVFFCSlhOdEk4aHVtb29OUi1rUHxBR3JiS2FuQXhfMjlHSnRFSWhyb0tsOENrc3YyM2dNRWo1UWVyakxYQ0NXSEdMcEI0QmFfM1U4YnBXY0hyWW00cXdoNG1pYXhTMV8zYk9Hc0llcjVFbkRHWkJxNmNwajJ3eDRv&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=qYfZxJTytd8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm15Y0xwYUxweWFnazNWYlg3ZGVmUHxBR3JiS2FuMTdwRmVITnZWa1ZqU0tqN3R0TmJiTDVjTmNMQlpmSkp1R1dvNHRlNFRMbnJCWVRWTnQ5alRHcDlqODloMjJSMHhXNlpIM2xlbXQxY2dFd3VER1V1eDVmcXZ6MWdB&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 120 | Bold Viking | Space Exploration 0.7 - Day 15 - We are out of stone so let's import some from the asteroid belt!
+https://www.youtube.com/watch?v=ZS88RC7VCrs
+late_terms=['beryllium']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 11](http://www.youtube.com/watch?v=ZS88RC7VCrs) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmI2Vk80aE4xYlltdzFDemM4WTFIUnxBR3JiS2FsT0syZDU0WnpWbWJCbUp2a3JuY05HTXhUSEVTR3IyYjhSOG1JdVRFQVBzanhfMjVueFNfVEhObXFjUy1zX1JUeUlEbENiR082eXFxTUFRcW1ZOFE2ZVM4WElKWHFK&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=ZS88RC7VCrs) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUkdGOXZ0eEVSTTFtcFlQdkVWRkRJYnxBR3JiS2Fsc2NLMzJ3YXhlTDhDSEhKME9Kc3pWOHBKNURoNVRUUjRDVm5qTDltYXBIN043M3M3NGNIVUJneEFMQmZNZkZZM3p2M1BpbElpWXZ6VGprMTFDakhBR0gydHBLQi1l&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 13](http://www.youtube.com/watch?v=ZS88RC7VCrs) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTlrOThvVW9vX29xc2o4UlhuSUJhRHxBR3JiS2FtTUE2S25ibFk1UVpmd2l3a0ZMSDQtMmRQQ3JuNFU2MEVGYWVPWmtwYmVPSGE1NHJRam9FU3NjV0NTbTNjV0l2S216R0JQbjJkbXBQTDBSZjFUNEc3b0pnQ01TaEot&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 14](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 20](http://www.youtube.com/watch?v=ZS88RC7VCrs) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmI2Vk80aE4xYlltdzFDemM4WTFIUnxBR3JiS2FsT0syZDU0WnpWbWJCbUp2a3JuY05HTXhUSEVTR3IyYjhSOG1JdVRFQVBzanhfMjVueFNfVEhObXFjUy1zX1JUeUlEbENiR082eXFxTUFRcW1ZOFE2ZVM4WElKWHFK&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=ZS88RC7VCrs) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUkdGOXZ0eEVSTTFtcFlQdkVWRkRJYnxBR3JiS2Fsc2NLMzJ3YXhlTDhDSEhKME9Kc3pWOHBKNURoNVRUUjRDVm5qTDltYXBIN043M3M3NGNIVUJneEFMQmZNZkZZM3p2M1BpbElpWXZ6VGprMTFDakhBR0gydHBLQi1l&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 22](http://www.youtube.com/watch?v=ZS88RC7VCrs) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTlrOThvVW9vX29xc2o4UlhuSUJhRHxBR3JiS2FtTUE2S25ibFk1UVpmd2l3a0ZMSDQtMmRQQ3JuNFU2MEVGYWVPWmtwYmVPSGE1NHJRam9FU3NjV0NTbTNjV0l2S216R0JQbjJkbXBQTDBSZjFUNEc3b0pnQ01TaEot&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 23](http://www.youtube
+
+SCORE 120 | Bold Viking | Space Exploration 0.7 - Day 34 - Going for more tier 4 science! We make outposts later!
+https://www.youtube.com/watch?v=fV1df2EEbzU
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 11](http://www.youtube.com/watch?v=fV1df2EEbzU) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHg1RWIzU2JscGFpTXJ5dVBUdmpJUHxBR3JiS2FrWUdDa2ZZTG5ETDZuUjgwWXRWMm8zd2tHVk1tUERnSW84R2ljZWFVOE55ZGVTRV9QTWs1SVRJTzVKQTFUbnp3Q09NYTZPRmU1RmRxbElkWEhZcHI0ZURNeVFQQVpq&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=fV1df2EEbzU) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnFOak1uQW1XdTlXODhNWkxpYTRGNnxBR3JiS2FuZXhHSm8xaTNoUDY4cjFGV1ZlSnl0SGdkd1RVNkZybzZZNDd5VzVRWkVESU85cGVxSVhVdmYza1h4UENzd3hOeHprNk5SSEVKNExxRlIwbFRXeWVEQjJhZUVrQUE0&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 13](http://www.youtube.com/watch?v=fV1df2EEbzU) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGh2S0tpV015WS1kbS1MdTJBMGRhQ3xBR3JiS2Fub2xlX01RWUlCZ0ZpRWdZdjU1R3pDSWdoQnlkTXcwX294V19NNU9WbTNlNnRWbi1KWnNtU2Y1WW1ZS2tvaGcxMkM3Ym9UY2tVRjdIRm5fTUpja1pJVF9MVTFCam5z&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 14](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 20](http://www.youtube.com/watch?v=fV1df2EEbzU) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHg1RWIzU2JscGFpTXJ5dVBUdmpJUHxBR3JiS2FrWUdDa2ZZTG5ETDZuUjgwWXRWMm8zd2tHVk1tUERnSW84R2ljZWFVOE55ZGVTRV9QTWs1SVRJTzVKQTFUbnp3Q09NYTZPRmU1RmRxbElkWEhZcHI0ZURNeVFQQVpq&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=fV1df2EEbzU) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnFOak1uQW1XdTlXODhNWkxpYTRGNnxBR3JiS2FuZXhHSm8xaTNoUDY4cjFGV1ZlSnl0SGdkd1RVNkZybzZZNDd5VzVRWkVESU85cGVxSVhVdmYza1h4UENzd3hOeHprNk5SSEVKNExxRlIwbFRXeWVEQjJhZUVrQUE0&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 22](http://www.youtube.com/watch?v=fV1df2EEbzU) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGh2S0tpV015WS1kbS1MdTJBMGRhQ3xBR3JiS2Fub2xlX01RWUlCZ0ZpRWdZdjU1R3pDSWdoQnlkTXcwX294V19NNU9WbTNlNnRWbi1KWnNtU2Y1WW1ZS2tvaGcxMkM3Ym9UY2tVRjdIRm5fTUpja1pJVF9MVTFCam5z&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 23](http://www.youtube
+
+SCORE 120 | Bold Viking | Space Exploration 0.7 - Day 41 - Last stream of the year. First stream next year on January 13th.
+https://www.youtube.com/watch?v=O-Yqot2Y4E8
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=O-Yqot2Y4E8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUhVeWNTQ3lUWWVEVmZTeERDZjRrVHxBR3JiS2FuVlFKcGVUV1dxZGlMMzhTaVQ2VW5oX2oxVUtxaDBWZ3FHSlRQVGtGRGF3RXRHRHJXZW9zRGVaLXJiVmxMN21LamZqRHZ6THd0bFI2T1dwVS1KNkRITkZZc3ZOeDJz&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=O-Yqot2Y4E8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXBQOVhZbmtXNXdGR2VXUnJmTUptaHxBR3JiS2FtTmhlcVEtaFpRbkg1VG5oNXkxOFdqLVI4ZkhLTkwxY3ZUUWVqTkh1SWZwczI5NGlwVjdwN0FKcGJ6NEFZM2ItT28tMndXSjVrUjFTLVBWYlNfczdoR3VCZ01reEUz&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=O-Yqot2Y4E8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0diOUhMWWRXWlZueXZmZXFFdHNWdHxBR3JiS2Fta0c1aVkyV3RqaHJoR1RrY0JRYVAtZGszWWJLUnUza3BuSDgtaUIzOTdfcUtfQ3d3UU5lbmpRSFRIQWpPT3dlenNNd25lM001TkpHZWpKWDF2QTRzMFZWa0FRSUdt&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=O-Yqot2Y4E8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUhVeWNTQ3lUWWVEVmZTeERDZjRrVHxBR3JiS2FuVlFKcGVUV1dxZGlMMzhTaVQ2VW5oX2oxVUtxaDBWZ3FHSlRQVGtGRGF3RXRHRHJXZW9zRGVaLXJiVmxMN21LamZqRHZ6THd0bFI2T1dwVS1KNkRITkZZc3ZOeDJz&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=O-Yqot2Y4E8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXBQOVhZbmtXNXdGR2VXUnJmTUptaHxBR3JiS2FtTmhlcVEtaFpRbkg1VG5oNXkxOFdqLVI4ZkhLTkwxY3ZUUWVqTkh1SWZwczI5NGlwVjdwN0FKcGJ6NEFZM2ItT28tMndXSjVrUjFTLVBWYlNfczdoR3VCZ01reEUz&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=O-Yqot2Y4E8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0diOUhMWWRXWlZueXZmZXFFdHNWdHxBR3JiS2Fta0c1aVkyV3RqaHJoR1RrY0JRYVAtZGszWWJLUnUza3BuSDgtaUIzOTdfcUtfQ3d3UU5lbmpRSFRIQWpPT3dlenNNd25lM001TkpHZWpKWDF2QTRzMFZWa0FRSUdt&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 115 | STHedgehog | Factorio Space Exploration Multiplayer - 04 - Starting A Base
+https://www.youtube.com/watch?v=x0p90ckO8Bs
+late_terms=['deep space']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnMwWmVBZjIxUUZjMWM5eTViQ3g2Q3xBR3JiS2FuZkVkMGdLaDFkSUx6ZTh3c2M3Ulo5LTlCczJ6TXVSUVRDdnFERmYxM0h5ZGVOVWI4VHZBNUp4WGlONVN0dkNiTHgydld5cUhYcmxLUzdpUHJtOE1ZU1FiNF9VVlZy&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=x0p90ckO8Bs)…...more
+  https://mods.factorio.com/mod/space-exploration
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXplTEo4OWltZnFYRjVvUDdJODZfR3xBR3JiS2FuVjhSRTV1cjNVc2dwT0VPd3gySVhFc0U3S2tTd1RwN2VMbk9pTzE3SVhEYUJ5VE1jYTJBdmRiYW9Ta1REU3R2SG43UjZ4NHBVRGF1MGV1ZEhOVUF1OHBidWdXdnpJ&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=x0p90ckO8Bs
+  https://factorio.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUlNsUDhEMzYwcHlaQ2s0SDRyZWVhNnxBR3JiS2FudHNJckdNWGJXRmVtd0M2V28wdklpMmdvN2NoZWhiNXl6NmZfcjJJMFE0elBEdXR0NWk5ZDVKOUduVVBRZmJoaXhEMG51aUJJcmNPX2Z5MFdfdWRoeGZWbzJjUk12&q=https%3A%2F%2Ffactorio.com%2F&v=x0p90ckO8Bs)[#Factorio](http://www.youtube.com/hashtag/factorio)[#SpaceExplorationMod](http://www.youtube.com/hashtag/spaceexplorationmod)…...more
+  https://factorio.com/
+Save/link context:
+  NOG and I are on a brand new adventure out Exploring Space. [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnMwWmVBZjIxUUZjMWM5eTViQ3g2Q3xBR3JiS2FuZkVkMGdLaDFkSUx6ZTh3c2M3Ulo5LTlCczJ6TXVSUVRDdnFERmYxM0h5ZGVOVWI4VHZBNUp4WGlONVN0dkNiTHgydld5cUhYcmxLUzdpUHJtOE1ZU1FiNF9VVlZy&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=x0p90ckO8Bs)…...more
+  NOG and I are on a brand new adventure out Exploring Space. [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXplTEo4OWltZnFYRjVvUDdJODZfR3xBR3JiS2FuVjhSRTV1cjNVc2dwT0VPd3gySVhFc0U3S2tTd1RwN2VMbk9pTzE3SVhEYUJ5VE1jYTJBdmRiYW9Ta1REU3R2SG43UjZ4NHBVRGF1MGV1ZEhOVUF1OHBidWdXdnpJ&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=x0p90ckO8Bs) You can check out NOGs side in his playlist here: [![Image 12](http://www.youtube.com/watch?v=x0p90ckO8Bs)•Factorio Space Exploration Multiplayer(Ca...](http://www.youtube.com/playlist?list=PL_vqX2QIPwwFncRlTDJ2QavwppD8q8R-d) Space Exploration is an overhaul mod about unique experiences and challenges. After you launch a rocket you start discovering new planets, moons, asteroid belts, and other stars. You build an expansive space station as your main research facility, explore new planets and moons, outpost for special resources, and gradually progress into the darkness of deep space as you expand your interstellar empire. A space Exploration game is long. Early game is characterised with basic sciences on your homeworld and launching a satellite rocket into space. Mid 
+
+SCORE 115 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x106
+https://www.youtube.com/watch?v=LwyDn0BYAEk
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFJUUHBFeV9Mck94djlEYWw3X0pNRnxBR3JiS2FrM0hXVTZCNEUtWGtOV1AwSDRGRm10RUVFcUVUZW1PYXJjc2NWd214bHlDZUJSeXpoUmV4cVFVcFFucHJYLTN6NG5FU2VWOUJSem5fajh5YmtKeEFNZEpZOUsyamJ5&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=LwyDn0BYAEk
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDltY2dfTDB5WjYzeE1UVmFUVFdkWHxBR3JiS2FtNmlPanZsWk02Ml9QR1JyNjU5SzBPUUZzcGpITmZXb0poakJZS1BwcFRsS0NqZm44ZmhEazk0Y2k4TkIwWlpVaHlQQUVmM3VjTzBteUE4RWViTXU1RDAyYXJVUFhY&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=LwyDn0BYAEk
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUm5vUFlEbG9TZlVSdlB6aVo2VEsyR3xBR3JiS2FrLWNUdzZOTlhsZUJ2S2hXWlNHYkpVcTh1Vl9XVXBDUXZPQjFpSy1VVC1PUVBOSG5MSlloMy1qTk9YX252YlkyNG1URUtMYVlCYVI5WmZ0VjZxUEEydmxGekJPT01C&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=LwyDn0BYAEk
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFJUUHBFeV9Mck94djlEYWw3X0pNRnxBR3JiS2FrM0hXVTZCNEUtWGtOV1AwSDRGRm10RUVFcUVUZW1PYXJjc2NWd214bHlDZUJSeXpoUmV4cVFVcFFucHJYLTN6NG5FU2VWOUJSem5fajh5YmtKeEFNZEpZOUsyamJ5&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=LwyDn0BYAEk) check the mod creator Earendels Patreon out: [![Image 20](http://www.youtube.com/watch?v=LwyDn0BYAEk)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVGhHZDFRcGFCbExMUERyc0RmZjBmRnxBR3JiS2FtdkJ6bUl5eGx1S2szWkFabnFfQUliRS1fNlRFSEplS0FjT0N0NFBfOHU3NzdSNzNVMm1nMmhBYXlzdHhaNjcxUndxUmpMWkluTkRnNFF0OE1YRWNUWGc5YW1NY2sw&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=LwyDn0BYAEk) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 110 | STHedgehog | Factorio Space Exploration Multiplayer - 38 - Meteor Impact
+https://www.youtube.com/watch?v=jL-mPxbXhks
+late_terms=['deep space', 'spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVNSYUNpN1R1dmEyTzZycW9qQ09rbnxBR3JiS2FtUFg4SUQ1OGNybnY5MWR4U2xBcXN6R2xDX1lNdHF6eVFNaDZ4TDc0OGhlMk93Wkl0WEk4VlNldWFnVkk1cmRqb2FjMVczN3g4U2lodTVWdi1WSU4zSE5Qay1ycVZf&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=jL-mPxbXhks)…...more
+  https://mods.factorio.com/mod/space-exploration
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3lXOF9UTFNfdHdNZy1JU2NaeDRXZnxBR3JiS2FsWVpMeW1VYTZNcnJqQjY2VmY3Q2hwTGlPMWs5VFdFU2ZjX19qcGZua3VYNDFFbnJFMnhZQk5YZWRWYndEcU43ek0zTkZaMWRJcVNkM3YtNE5ocDlaSXE2REhQaUt3&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=jL-mPxbXhks
+  https://factorio.com/](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFc0bEdGcV9RQ2xqWjZyQ2l3bnBzWnxBR3JiS2Fua2kxa1pFM1llSzFKVVF4elRyQ2tTSFVISkRDNnNsNDhsdUIzTXA0LVFCR19FaVdhSHo3RDh4X1BQaTVQM2phYXhlU3ladEh5Q0RoVWtnakxGa3JGM2lOb2lpS25l&q=https%3A%2F%2Ffactorio.com%2F&v=jL-mPxbXhks)[#Factorio](http://www.youtube.com/hashtag/factorio)[#SpaceExplorationMod](http://www.youtube.com/hashtag/spaceexplorationmod)…...more
+  https://factorio.com/
+Save/link context:
+  NOG and I are on a brand new adventure out Exploring Space. [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVNSYUNpN1R1dmEyTzZycW9qQ09rbnxBR3JiS2FtUFg4SUQ1OGNybnY5MWR4U2xBcXN6R2xDX1lNdHF6eVFNaDZ4TDc0OGhlMk93Wkl0WEk4VlNldWFnVkk1cmRqb2FjMVczN3g4U2lodTVWdi1WSU4zSE5Qay1ycVZf&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=jL-mPxbXhks)…...more
+  NOG and I are on a brand new adventure out Exploring Space. [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3lXOF9UTFNfdHdNZy1JU2NaeDRXZnxBR3JiS2FsWVpMeW1VYTZNcnJqQjY2VmY3Q2hwTGlPMWs5VFdFU2ZjX19qcGZua3VYNDFFbnJFMnhZQk5YZWRWYndEcU43ek0zTkZaMWRJcVNkM3YtNE5ocDlaSXE2REhQaUt3&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=jL-mPxbXhks) You can check out NOGs side in his playlist here: [![Image 12](http://www.youtube.com/watch?v=jL-mPxbXhks)•Factorio Space Exploration Multiplayer(Ca...](http://www.youtube.com/playlist?list=PL_vqX2QIPwwFncRlTDJ2QavwppD8q8R-d) Space Exploration is an overhaul mod about unique experiences and challenges. After you launch a rocket you start discovering new planets, moons, asteroid belts, and other stars. You build an expansive space station as your main research facility, explore new planets and moons, outpost for special resources, and gradually progress into the darkness of deep space as you expand your interstellar empire. A space Exploration game is long. Early game is characterised with basic sciences on your homeworld and launching a satellite rocket into space. Mid 
+
+SCORE 110 | Laurence Plays | Interplanetary Logistics guide - Laurence Plays: Factorio Space Exploration
+https://www.youtube.com/watch?v=oG6mUx5ycVw
+late_terms=['spaceship']
+Candidate links:
+  https://discord.gg/B77zqcjsW5)[![Image
+  https://discord.gg/B77zqcjsW5
+  https://ko-fi.com/laurenceplays](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0hrd0VsNWt6ODhkOEZBajVXX05TVHxBR3JiS2FscnZwcmJQZDlnTVlFUlY5ZjFITmxKS2F1TG81Q0VjWU91R1RNT2xLRVJ3YjJROVFGbU0yWU9qOERELWVDWmpnUlI0bDZwVGN3Tkd4SUxmS05EVGJEel9VMW9IOW80&q=https%3A%2F%2Fko-fi.com%2Flaurenceplays&v=oG6mUx5ycVw
+  https://ko-fi.com/laurenceplays
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UC8tloLKwEtygtykSb511qog/videos)[About](http://www.youtube.com/channel/UC8tloLKwEtygtykSb511qog/about)[![Image 18](http://www.youtube.com/watch?v=oG6mUx5ycVw) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVF9sOWJtenVUMXpzelBaRXFrSGU4Y3xBR3JiS2Fub2h0T0NjMHhhX2lXRzJBTllKWTcwMUtFaXBUZ2k3TTB5bzktcEE0Qm1uT2ZaSHd4eUV0bjBnV3pOeTBGU1pYd2dWOTM5R29kaTZLQUR0S1JiTTdSdXZiLThnQUI4&q=https%3A%2F%2Fdiscord.gg%2FB77zqcjsW5)[![Image 19](http://www.youtube.com/watch?v=oG6mUx5ycVw) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlY3RXQ4aWc4TEhtLV9CdGNfSTlrdXxBR3JiS2FsRGFkRGNOdExHcUVXLUZMS3doZFFTX2E3akRpbHU5SndTZ1AyX0FLdmItM0Z4RVQ5YXk5UkE0dkJKR0I3dTNBZW9aelBtbjI0eDZFTUpDZFIxUXlCbjJrS3ZFdzha&q=https%3A%2F%2Ftwitch.tv%2Flaurencestreams)
+  Delivery cannons, rockets, spaceships, elevators and arcolinks. All good ways to get your resources between planets. But, which is best? How do they compare? Which is the cheapest? Let's take a look. Credit to Tristan for proof reading the script and to him, Chloe and Safir for proof watching the videos. Any mistakes are almost certainly still my fault though! Leave a donation: [https://ko-fi.com/laurenceplays](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU0hrd0VsNWt6ODhkOEZBajVXX05TVHxBR3JiS2FscnZwcmJQZDlnTVlFUlY5ZjFITmxKS2F1TG81Q0VjWU91R1RNT2xLRVJ3YjJROVFGbU0yWU9qOERELWVDWmpnUlI0bDZwVGN3Tkd4SUxmS05EVGJEel9VMW9IOW80&q=https%3A%2F%2Fko-fi.com%2Flaurenceplays&v=oG6mUx5ycVw) Join the Discord: [![Image 35](http://www.youtube.com/watch?v=oG6mUx5ycVw)/discord](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWtXYVhISExqMlZFVXM1a1RvRVY0d3xBR3JiS2FrZlN1eUdHRm5DMWFGOWdhV1AzakRaX2xyQkxOS2VfNG5vajBBUlJRYnNLeTNlb1FrRkhmTzRrWTFWVUNXcjAwWGxxTEJHREJYRkl3czNuc3BOcUdUa0NJdkc5VkFQ&q=https%3A%2F%2Fdiscord.gg%2FB77zqcjsW5&v=oG6mUx5ycVw) Follow me on Twitch: [![Image 36](http://www.youtube.com/watch?v=oG6mUx5ycVw)/laurencestreams](https://ww
+  [Videos](http://www.youtube.com/channel/UC8tloLKwEtygtykSb511qog/videos)[About](http://www.youtube.com/channel/UC8tloLKwEtygtykSb511qog/about)[![Image 43](http://www.youtube.com/watch?v=oG6mUx5ycVw) Discord](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVF9sOWJtenVUMXpzelBaRXFrSGU4Y3xBR3JiS2Fub2h0T0NjMHhhX2lXRzJBTllKWTcwMUtFaXBUZ2k3TTB5bzktcEE0Qm1uT2ZaSHd4eUV0bjBnV3pOeTBGU1pYd2dWOTM5R29kaTZLQUR0S1JiTTdSdXZiLThnQUI4&q=https%3A%2F%2Fdiscord.gg%2FB77zqcjsW5)[![Image 44](http://www.youtube.com/watch?v=oG6mUx5ycVw) Twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlY3RXQ4aWc4TEhtLV9CdGNfSTlrdXxBR3JiS2FsRGFkRGNOdExHcUVXLUZMS3doZFFTX2E3akRpbHU5SndTZ1AyX0FLdmItM0Z4RVQ5YXk5UkE0dkJKR0I3dTNBZW9aelBtbjI0eDZFTUpDZFIxUXlCbjJrS3ZFdzha&q=https%3A%2F%2Ftwitch.tv%2Flaurencestreams)
+
+SCORE 110 | Bold Viking | Space Exploration 0.7 - Day 32 - Time to go for Tier 4 science! And probably more outposting!
+https://www.youtube.com/watch?v=FJGMVqRtMe8
+late_terms=['iridium', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=FJGMVqRtMe8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm93dUh1bzRVT3l4V0IweFB4T01RY3xBR3JiS2FsQlBTVkxZRXptTWxoRGYxVzJRUHFSU1J0bGNsSW1yVl9YcWkxTFRVUjd2UUZNV21JTnBHb1BEQ3JDQ3VpajRCYU9ra3NfemxSbUpJNFVFVFN5YkhxR1h1RmVHMVhF&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=FJGMVqRtMe8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVFlzcGZlOURZR3FNYXRTY2hrTDR5eHxBR3JiS2FrNllkNXNqNVphVkwxTlBWbVJGdEpidHhvTW5zR1dyMFRhcldzTFR2QjdDRG5LTFEtdjV5Rm5tTlB5N1d6S1BBQkQ5cjhBTDlkeEFzTFBLSWJwQnBNQWZBTjBiNnpT&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=FJGMVqRtMe8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlduc0YxQm5aeEIxR1RKczNCcmxPenxBR3JiS2FrajlISWgwd0E0VzB2Z1E3c1FrQXNhaXc4eUZybUZfTnlBd19WMWtIa2s5MmdBaU1JUnlFVmd5WVlySzFrYTdxOEJpSFljWEF5UHJHWmtielZXNG5ITzU4a0tEaXJs&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=FJGMVqRtMe8) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUm93dUh1bzRVT3l4V0IweFB4T01RY3xBR3JiS2FsQlBTVkxZRXptTWxoRGYxVzJRUHFSU1J0bGNsSW1yVl9YcWkxTFRVUjd2UUZNV21JTnBHb1BEQ3JDQ3VpajRCYU9ra3NfemxSbUpJNFVFVFN5YkhxR1h1RmVHMVhF&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=FJGMVqRtMe8) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVFlzcGZlOURZR3FNYXRTY2hrTDR5eHxBR3JiS2FrNllkNXNqNVphVkwxTlBWbVJGdEpidHhvTW5zR1dyMFRhcldzTFR2QjdDRG5LTFEtdjV5Rm5tTlB5N1d6S1BBQkQ5cjhBTDlkeEFzTFBLSWJwQnBNQWZBTjBiNnpT&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=FJGMVqRtMe8) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlduc0YxQm5aeEIxR1RKczNCcmxPenxBR3JiS2FrajlISWgwd0E0VzB2Z1E3c1FrQXNhaXc4eUZybUZfTnlBd19WMWtIa2s5MmdBaU1JUnlFVmd5WVlySzFrYTdxOEJpSFljWEF5UHJHWmtielZXNG5ITzU4a0tEaXJs&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 110 | Bold Viking | Space Exploration 0.7 - Day 38 - Going for Deepspace Science 2 by making some cubes!
+https://www.youtube.com/watch?v=RpBBH9o-78A
+late_terms=['arcosphere', 'deep space']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=RpBBH9o-78A) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHlteDBIY09aTDVabVJ6anZoaVNtVXxBR3JiS2FseFBScjFXM0s5NE1KVW9GOFdfZG92TTJpdzFKVVFjWWFUV2s1empPNmRvRmpMTFY5Snh5bWdjLXhzUXItbW1SS1ZzYjZSLUJ3TGlpdTFVd0RzX0pUcUdBSjVyY1h3&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=RpBBH9o-78A) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTl0eGdETGJUNTAyamplNlFHbmc1QXxBR3JiS2FtN1VCLXhSYUw2YnFZQ0VwVzk1SkN5eE9LWDRXSUYzZFVxa0pTeWFJS1dPcEU1UmFhRTdpTmpUektPXzB2ODV6SnA1U0NsVkYwZkN1bllwdC1Jbktta2FfdEc5VTlX&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=RpBBH9o-78A) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVEQwRFFjOVJnbWw2QW4zcHM0dXNKUXxBR3JiS2Ftd1RxNjNzZDk3RFZaS253Si1VZnJrNUdjVmYydXBmV2ZqZFgxRlVlX1JmbE8tTVVqbUpfUEwxLXdVcy02a3o5enFXRTR5N1NOT05nMlBwQUJEWmxodXJ3V0dPY2hF&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=RpBBH9o-78A) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVHlteDBIY09aTDVabVJ6anZoaVNtVXxBR3JiS2FseFBScjFXM0s5NE1KVW9GOFdfZG92TTJpdzFKVVFjWWFUV2s1empPNmRvRmpMTFY5Snh5bWdjLXhzUXItbW1SS1ZzYjZSLUJ3TGlpdTFVd0RzX0pUcUdBSjVyY1h3&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=RpBBH9o-78A) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTl0eGdETGJUNTAyamplNlFHbmc1QXxBR3JiS2FtN1VCLXhSYUw2YnFZQ0VwVzk1SkN5eE9LWDRXSUYzZFVxa0pTeWFJS1dPcEU1UmFhRTdpTmpUektPXzB2ODV6SnA1U0NsVkYwZkN1bllwdC1Jbktta2FfdEc5VTlX&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=RpBBH9o-78A) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVEQwRFFjOVJnbWw2QW4zcHM0dXNKUXxBR3JiS2Ftd1RxNjNzZDk3RFZaS253Si1VZnJrNUdjVmYydXBmV2ZqZFgxRlVlX1JmbE8tTVVqbUpfUEwxLXdVcy02a3o5enFXRTR5N1NOT05nMlBwQUJEWmxodXJ3V0dPY2hF&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 110 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Deleting and Regen planet Maelstrum x727
+https://www.youtube.com/watch?v=JiuG-_7J6Gk
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHlqSFFRdEdjVkhvc1h1VUFQWUNYcXxBR3JiS2FtdjRRMmJGQlVQSFVob2E5RFNZTG1qNjlYeG5FUFE1cDk2VXJpT2dTellwS3F1eWxxVlVYaXFnUTdHcEdldkdqRzZTeElrdGZrWGNWb205eGJqRUUyeG1YMVM4NWYx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=JiuG-_7J6Gk
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUzV4by1GRGpGNjBzdV9OSGZtQ2Nic3xBR3JiS2FtNXBXQmtvczJRMjVDd0JiSjRVUDNXUmxDdk5DQlNBRkZ3QnkwZkNONDR0Wk00bjMtOE1NRW0wbGZnYlRsN3NwdHE3ejVqN3lQLUVYUGpteERJSUtmVnFxdFBQQWhO&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=JiuG-_7J6Gk
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTRFUjZTTUFBdmRvb1pfSWlZbFdMSHxBR3JiS2FrbDdqN3k3T1dkd2dFNDY2bndFa1FNdm53d2NKRWdENXlnUEdMUHZGT21QSGwxTGpFc1kwQ2c4dnFqX0w0V3FRcXlNN0lVOVNpbDVNNTQyTFBOaDh4ZmQ5UEl3eWJu&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=JiuG-_7J6Gk
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHlqSFFRdEdjVkhvc1h1VUFQWUNYcXxBR3JiS2FtdjRRMmJGQlVQSFVob2E5RFNZTG1qNjlYeG5FUFE1cDk2VXJpT2dTellwS3F1eWxxVlVYaXFnUTdHcEdldkdqRzZTeElrdGZrWGNWb205eGJqRUUyeG1YMVM4NWYx&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=JiuG-_7J6Gk) check the mod creator Earendels Patreon out: [![Image 37](http://www.youtube.com/watch?v=JiuG-_7J6Gk)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVE5QaHpQa3hzZzRKODVnTlVXY1FHZXxBR3JiS2FtUFJXeXpDYlZTZXNmRmpvUTdBaWxSZDBualV1MFlzN21HQXlwZzFLUTNmOGVlNGtDQ0d2Y3BwR0dscDRIeEJxLTVjOGFyQk1xZDNiMDJlME5ldzU4REpvX21BVFpJ&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=JiuG-_7J6Gk) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 110 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Ganus Rebuild completed x734
+https://www.youtube.com/watch?v=9mtqqW3gFQ4
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnJiY1h2NFRUSTBKYlVSRDlyLVZxRHxBR3JiS2FrR2g3N1U0QXZ5VjYybWhReDR3UXdZb3p3QzZ0c3dDU3Z0VGxBZHBWQzFBSlNpbTZfRnRpeUdPYkRlbWIxYWg1MEJIZVEzNjYtM3ZaR1dZWWhiRkZtUWNIVkhaVzd1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=9mtqqW3gFQ4
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVG1vMG1laElTZ3JBU3FnUWFsV2FtNnxBR3JiS2FsVHFqeWxjeW1weFZEeGRiaThTQ0tvdEFmSVVYeUxsSnZENjBLX0k2ZnBlckJaS2RYR3cxV0EwOUVkeWhJMFI2SGluVjBHSlFvaFZaY2dKZFlFY1ZNRXN1ZV9CcXBY&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=9mtqqW3gFQ4
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVdKWGEwcGlBVWhneHZBdzhkVHQxM3xBR3JiS2FuLWo4dDJzRDhEOVljTlk3X1Q3MXpWZzFmbjlLc0JJb3pVRjc3b21RbGdOejZTWUNzSWw3RjBINlZnbWpObVFqR2hqNEhZNUozMjRxUG84Y2RXaFlqM0ZFbkppWHRw&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=9mtqqW3gFQ4
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUnJiY1h2NFRUSTBKYlVSRDlyLVZxRHxBR3JiS2FrR2g3N1U0QXZ5VjYybWhReDR3UXdZb3p3QzZ0c3dDU3Z0VGxBZHBWQzFBSlNpbTZfRnRpeUdPYkRlbWIxYWg1MEJIZVEzNjYtM3ZaR1dZWWhiRkZtUWNIVkhaVzd1&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=9mtqqW3gFQ4) check the mod creator Earendels Patreon out: [![Image 30](http://www.youtube.com/watch?v=9mtqqW3gFQ4)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkFzUFZVU1JIV0ZtT1pTM2RHWVJrNHxBR3JiS2FuSmppMURLa0hmMFlCRmdSUEpSRmtiWldYOTQ4RVhDMjVTQld1NXFsRGd5VVl1aDlQdks5dmtHTF9KbkpnTmRzd3luMm9lcVlkdjBxZ0ZHOGlHQmtUVjFZNmliTmFk&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=9mtqqW3gFQ4) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 110 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Planet Aine Core processing build x740
+https://www.youtube.com/watch?v=cF6vL-lZvwc
+late_terms=['spaceship', 'vulcanite']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWxZUk1zTG1yMG96UUZDTjdoYnNEbnxBR3JiS2FtZWhlb01LbWVtX1BPa1NhaktvcXNaQVpCRlQtRHBETW05TWd0dEFBdlE4MTZzU1p0WTFEX2pEaDUwWTZxT2lwaVV6WlJGYjNaY3hxLWJVY3ZIZFZVQ0ZLeTBvVDZF&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=cF6vL-lZvwc
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU05aN3I0S2NIWXB0cVotUnI5cndPQXxBR3JiS2FrZ2Z6dHpWM003SXRLa2Yya2RNbVVYSU1wNXotdXNfbGs2RkJWc1RzcmdfR1pnVnN3V1NDZ1BCRHB5eTRub2J4S3NKbWpheTQ0Ui1jemx2UFdJRFhRQmE3SURWaHc2&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=cF6vL-lZvwc
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDg3WVVrZ3FIUFJLeEFtcGU1cTctOHxBR3JiS2FtT21DLWRLUllxZFJOcmJHRjVoYnBTRVBERDJXRE9nSWxNQnFTVk9Ed3lKVVh2dlFvS1dTU3M0TEFQYzlBbk1oT0dibktPaTlvQXhSNVc2QVJRbnB6UnVLVERqV3hh&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=cF6vL-lZvwc
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWxZUk1zTG1yMG96UUZDTjdoYnNEbnxBR3JiS2FtZWhlb01LbWVtX1BPa1NhaktvcXNaQVpCRlQtRHBETW05TWd0dEFBdlE4MTZzU1p0WTFEX2pEaDUwWTZxT2lwaVV6WlJGYjNaY3hxLWJVY3ZIZFZVQ0ZLeTBvVDZF&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=cF6vL-lZvwc) check the mod creator Earendels Patreon out: [![Image 32](http://www.youtube.com/watch?v=cF6vL-lZvwc)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUXU0dGhheFlLYjdXOFh3OS1hWmZ6OXxBR3JiS2FtRmlZZ2RoWDRfMVRYYXc0VFRLNHY2SG96Y1NlQXhrTFZCMUNKLTF0dHJQdEpRcGtPU09QRkRyUlVxNFdHb0lfcXFaODBMY0FLMHpDUTlYSTNfU2Y5WDBMREZUNzNI&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=cF6vL-lZvwc) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 110 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Planet Liono rebuild for immersite x731
+https://www.youtube.com/watch?v=0sKzxh5V680
+late_terms=['spaceship']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTU3WnR1cTNlWXdpRkVPZTNqa2xEZnxBR3JiS2FuY2RMZFFFa055MzgzQ2l0WHNpQ1EzVkRXVlRFN3BoSVF3SVVmbDNTUXV6bnJrUnMzZTJPbS1FNS01R2lER1Q4WWlJczRIOURoSmltNy02dU9EcUNMR2JKbU0zY1da&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=0sKzxh5V680
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVE9tbC1oWE9BU21tQV93VDA1d1k3anxBR3JiS2FrcThzRlNlSHBrcGV5Rm9YZTVDY0k3WHFrQTlQNlBHZVFhcFBmZ2JqdFFVVlZWQzZwUTVUVmtoRHpYM0tRdk5XeHF5Q2R4alhYRmtPTm1vNDQ3Q2tyekFMOXR2WE13&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=0sKzxh5V680
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUVg5Zml6ZllLbGJXSXZnTU9xMERRR3xBR3JiS2FuUlJkYTJ2Sk5sQVQ5QXRzbmRDRG9Cbm4zVElTdVZQVjJ1Rmc4RnpNaUExamg1UmpwTktLOWJaZERxa1RLUlViZ214Tm5xZ3R5cXZmZk9MR2oyTjdQY1pIZ1FuVEpT&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=0sKzxh5V680
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUTU3WnR1cTNlWXdpRkVPZTNqa2xEZnxBR3JiS2FuY2RMZFFFa055MzgzQ2l0WHNpQ1EzVkRXVlRFN3BoSVF3SVVmbDNTUXV6bnJrUnMzZTJPbS1FNS01R2lER1Q4WWlJczRIOURoSmltNy02dU9EcUNMR2JKbU0zY1da&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=0sKzxh5V680) check the mod creator Earendels Patreon out: [![Image 33](http://www.youtube.com/watch?v=0sKzxh5V680)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU3lzOFA5NDN6cE5KN3ZJbE5PNXJERnxBR3JiS2FrNTBQRlNsYWtZYUk1N0VxU1ZtZ3pWSU9rdE9udXhKcl9mdXR5cWt6MWpYX3pjOFE0NlRzZmdMV09HbmgxR0pQV0tFR2tkUHhXZEk1VHFaOVcwVzgyNm9UMXZxNjF5&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=0sKzxh5V680) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 110 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Quantum Chips x716
+https://www.youtube.com/watch?v=PVYahJ2y1nM
+late_terms=['holmium', 'spaceship', 'vulcanite']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFBYYWlGSDd6WG5TQzBsN2swV3FjRnxBR3JiS2FtM195aGlKend2a1FlVU42dFBEVElZNmd6SHlEM1FBVEt0a2FYLXllOE9SanRmSUx0OE5lT0ZRb3FWSkV6V01XLTdfYnJOUVN2UkFOaWp5ekViWHJoZHZVOHYxTHNS&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=PVYahJ2y1nM
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjR5MFZDUC1TUnVNMU5GemlNRTlnZHxBR3JiS2FuWklwbjdwVFpIemdhUnI2TTZ3Tkc3RTJwMHlxR3JWMUZqT2lrTlp6RTlWX0NQaTRldzlkU3ZzNi1pUHlfcTR0Y20wcDQ3T2FGbWFBRWw2bHVoYVRXR0RlVzVCc25i&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=PVYahJ2y1nM
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVHdrRTZWYmpQclJPdWo4azhqVWNQRHxBR3JiS2FsSFVQR1VEV2ZPSkxfbnlYUF85dkFvRlNvNzNlNTJXdzdIOWtVczVxVGFmc3J2UEl6WTM3ZmUzbVdyNmNRazhKdUpDMi1Sc2tHYWxDNmd1bXNvb3NlV2FyNjhuNnVH&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=PVYahJ2y1nM
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVFBYYWlGSDd6WG5TQzBsN2swV3FjRnxBR3JiS2FtM195aGlKend2a1FlVU42dFBEVElZNmd6SHlEM1FBVEt0a2FYLXllOE9SanRmSUx0OE5lT0ZRb3FWSkV6V01XLTdfYnJOUVN2UkFOaWp5ekViWHJoZHZVOHYxTHNS&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=PVYahJ2y1nM) check the mod creator Earendels Patreon out: [![Image 40](http://www.youtube.com/watch?v=PVYahJ2y1nM)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUWctQXJ3ZE53S21HaEp0LUtSYmJnQXxBR3JiS2FrUHBqNVF6Rm9DTDN1RDBXdDE0YkY3WnhvOHo0VDY1QXYzSnBJRmxOcnpyS1NmeF81RS1vV3BLUGhzQ3BtV2RuUVJSNkRIT2ZmRTUtTUxQQ2FZdlB3eDNtd0hrRnlr&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=PVYahJ2y1nM) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 95 | Bold Viking | Space Exploration 0.7 - Day 27 - Going for Tier 3 science and feeding the spaghetti monster!
+https://www.youtube.com/watch?v=1SPB3RQKcXg
+late_terms=[]
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=1SPB3RQKcXg) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUhwMDJsWnBqSkdtdmFLZHhwa29WdHxBR3JiS2FtVHVZWU5ZeE9aZ2pKMllUOUItbWxxckJibXFPUFRZQ3VWMUVtNVNycURFczlLWmdWMWIzUGZtSVMtY2VUTG1ZNXBWQV82R1RkQzJOMUVRSHdzXzEzbXZBRjkwTHFl&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=1SPB3RQKcXg) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2VKMU5GOXkwR01QNXEyXzF5b0pWWnxBR3JiS2FrbS1GX0NIX2RIRHpsZ3JyWGF3bkRja0IxdEFyWnRkZnM0UEQ3VGc3b2VFOGtwWTBmRDFjbS11RS02bEJRUXByZVd3WjVKbXZ5cHUyb2REVzVPVjdtUy1hblZYZ0lh&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=1SPB3RQKcXg) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnFGNDVXdkVRR2ZCR3VDNE1nYnZ1UnxBR3JiS2FsRUhqNlFCYnpUYWY4Q25PQ0FqLXdvY2R2WEt3TTNydWNfajhZeHE1ajI2ZHFzc3NoWldqUmh3UEg3VG9ndlFPTHpoenloRXh3Q2tfTUJiam5aOFdtUS1Vd19BTTZM&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=1SPB3RQKcXg) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUhwMDJsWnBqSkdtdmFLZHhwa29WdHxBR3JiS2FtVHVZWU5ZeE9aZ2pKMllUOUItbWxxckJibXFPUFRZQ3VWMUVtNVNycURFczlLWmdWMWIzUGZtSVMtY2VUTG1ZNXBWQV82R1RkQzJOMUVRSHdzXzEzbXZBRjkwTHFl&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=1SPB3RQKcXg) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2VKMU5GOXkwR01QNXEyXzF5b0pWWnxBR3JiS2FrbS1GX0NIX2RIRHpsZ3JyWGF3bkRja0IxdEFyWnRkZnM0UEQ3VGc3b2VFOGtwWTBmRDFjbS11RS02bEJRUXByZVd3WjVKbXZ5cHUyb2REVzVPVjdtUy1hblZYZ0lh&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=1SPB3RQKcXg) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnFGNDVXdkVRR2ZCR3VDNE1nYnZ1UnxBR3JiS2FsRUhqNlFCYnpUYWY4Q25PQ0FqLXdvY2R2WEt3TTNydWNfajhZeHE1ajI2ZHFzc3NoWldqUmh3UEg3VG9ndlFPTHpoenloRXh3Q2tfTUJiam5aOFdtUS1Vd19BTTZM&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 95 | Bold Viking | Space Exploration 0.7 - Day 44 - Busting more balls on Tesseracts, there must be a perfect solution!
+https://www.youtube.com/watch?v=n90dLbG1ENE
+late_terms=[]
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 11](http://www.youtube.com/watch?v=n90dLbG1ENE) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmM5NUx4QW8wTTZiTzUxb2VpeEExWXxBR3JiS2FsWDV3b1ZxRGlTcVhPTDRKYXgtRFVTeG1FX0lWU1dUYk02dTR2UzU2RWNRTXNlTG9KUGNmcTNPUFFHMUtOdjB5eEZYdFlwQmdMQ2ctVE9CUjFkZC1wU1BTU0xfVllF&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=n90dLbG1ENE) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0Z4Ti1nOHRNakJ5dmhTWGFob2FRSHxBR3JiS2FuaEVvU2pPTnJ6a2dsWk1lNlNzc3JIOUs2TV80eEg4TEtJSmR5VFRPNGIzMU9EN3F5VWlxVWhDRjdfQ1NDeHBqeDcyQTEtYldCZ01UOHFldVJwZEU5OUNENzlSTlVJ&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 13](http://www.youtube.com/watch?v=n90dLbG1ENE) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnRqMFk4M1YxanJsRHdJTl9CbUJGU3xBR3JiS2FsbFc3cTljZjFoRUF1cVF2am5VeDlwNkZCaDJtTS1WRUZEY0k2WG5tRUpZaEVMUTB6STVKeG5JTEdTWHdlWGxRZ0JocE9JUkZhNVJLb0E0bDRpZU42STZFZVdNZ2Zv&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 14](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 20](http://www.youtube.com/watch?v=n90dLbG1ENE) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmM5NUx4QW8wTTZiTzUxb2VpeEExWXxBR3JiS2FsWDV3b1ZxRGlTcVhPTDRKYXgtRFVTeG1FX0lWU1dUYk02dTR2UzU2RWNRTXNlTG9KUGNmcTNPUFFHMUtOdjB5eEZYdFlwQmdMQ2ctVE9CUjFkZC1wU1BTU0xfVllF&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=n90dLbG1ENE) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0Z4Ti1nOHRNakJ5dmhTWGFob2FRSHxBR3JiS2FuaEVvU2pPTnJ6a2dsWk1lNlNzc3JIOUs2TV80eEg4TEtJSmR5VFRPNGIzMU9EN3F5VWlxVWhDRjdfQ1NDeHBqeDcyQTEtYldCZ01UOHFldVJwZEU5OUNENzlSTlVJ&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 22](http://www.youtube.com/watch?v=n90dLbG1ENE) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUnRqMFk4M1YxanJsRHdJTl9CbUJGU3xBR3JiS2FsbFc3cTljZjFoRUF1cVF2am5VeDlwNkZCaDJtTS1WRUZEY0k2WG5tRUpZaEVMUTB6STVKeG5JTEdTWHdlWGxRZ0JocE9JUkZhNVJLb0E0bDRpZU42STZFZVdNZ2Zv&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 23](http://www.youtube
+
+SCORE 92 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Fluid Spaceships x744
+https://www.youtube.com/watch?v=ZfEVDsjDjoE
+late_terms=['spaceship', 'vitamelange']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUdYWXZ4VjVHaWNqY0FnWWZ2d3NtYXxBR3JiS2FrYWFTdFAxd19KNDNiRi1aa0tnQjBUaUNOS3ctQ3FJUW02eEFyV2FLck0wX2FvOUlxc2tCVlZiaFQtam5GdElCeTB4LUVIZE9GeVdDUkNoc0FYc3RSQTQ2M09hWFdR&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=ZfEVDsjDjoE
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjVRdWF4WkROWXNHeGNLcVZyc0t5MXxBR3JiS2Frc0hEREtOS3MyNmtLNnZiM0M3Q2JHc1lJQ2ZoZ0RrbTQ5eFdvNDhibE5DZ1B1cVdQd3c0OVRGU0hmendmb0N6N1JxRmdTVHdKRGZaaGZINDEzcWxXWkNrM1hYMDhW&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=ZfEVDsjDjoE
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU21mQm1od0V3WmRVeFZ4SGJJcU80U3xBR3JiS2FtM2hlRHFjdHR5OVFoRnFEN1hEY3FVbWg0Nzk2cENwOG1uOUxTQ296U1V0Wk1kVFVsaGhqTWdtSUR4ZmRLZ3VZUXY0ZHd1N2lsMEMtUlpZYWxEQVcteGZvWEU3QUhV&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=ZfEVDsjDjoE
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUUdYWXZ4VjVHaWNqY0FnWWZ2d3NtYXxBR3JiS2FrYWFTdFAxd19KNDNiRi1aa0tnQjBUaUNOS3ctQ3FJUW02eEFyV2FLck0wX2FvOUlxc2tCVlZiaFQtam5GdElCeTB4LUVIZE9GeVdDUkNoc0FYc3RSQTQ2M09hWFdR&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=ZfEVDsjDjoE) check the mod creator Earendels Patreon out: [![Image 31](http://www.youtube.com/watch?v=ZfEVDsjDjoE)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rVDNwaVpTNjdJeEhZemRyVElWUXRwb3xBR3JiS2FsVnJwU01EdHNSMGNzQ2NVd3Jjblk1RU5zNko1VjBUdjJrUEVVdlp3YWVoTHVzYkFhNFZRWS1hYlJ4clZLYXc5R0pEZDZuSDJJRnI4eHBDOUNXY2lqR1FIMTBaXzI1&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=ZfEVDsjDjoE) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 85 | Bold Viking | Space Exploration 0.7 - Day 12 - I am back from Twitch Con! I have no recollection of this place XD!
+https://www.youtube.com/watch?v=IwsrMNyBSig
+late_terms=['iridium']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=IwsrMNyBSig) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVDJGazRkWnNNamhkbWt4ak0yTFlqQXxBR3JiS2FuSUtVTFUxQ0lRQXU0TURjek1NMF9wMFRLNmZwaTc1aGpTM2UtTXdGRXA2dkYtTHFyVkpTMV9KUk1jeF9lYUVSUjFYVEVneTNwVGZlMDFzT1BXdC1uUHZnZS1DaHNw&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=IwsrMNyBSig) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1kzWk5RU2RmWmx4NHF4ZG4zSWtGQ3xBR3JiS2FuLWowUWxaZXgyOG1sRmJWdDlwek9vRF9faUx3UTBkblFpVV9sd19wN0lYR0dadTFabXUzZHZxTnZ4ajIyUFE3b3NwNnd4a2NFNTY4c19KWTAtaGVWOHB5SzExLWRV&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=IwsrMNyBSig) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUk1wQUhNZXRsdW10c3paM1hiaU5GbHxBR3JiS2FrN1NaOHJxbUY5SHRIbUU4T0Rfb3RCQ0d0aUZybUgyczV5dFhKSjNhblNQRW9KU3ZtYWNkaE9wY1RXVDJXT2JqYmJEdG5YbUhwdkJvMi1iZ041ZlZFa255RndYWXR2&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=IwsrMNyBSig) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVDJGazRkWnNNamhkbWt4ak0yTFlqQXxBR3JiS2FuSUtVTFUxQ0lRQXU0TURjek1NMF9wMFRLNmZwaTc1aGpTM2UtTXdGRXA2dkYtTHFyVkpTMV9KUk1jeF9lYUVSUjFYVEVneTNwVGZlMDFzT1BXdC1uUHZnZS1DaHNw&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=IwsrMNyBSig) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1kzWk5RU2RmWmx4NHF4ZG4zSWtGQ3xBR3JiS2FuLWowUWxaZXgyOG1sRmJWdDlwek9vRF9faUx3UTBkblFpVV9sd19wN0lYR0dadTFabXUzZHZxTnZ4ajIyUFE3b3NwNnd4a2NFNTY4c19KWTAtaGVWOHB5SzExLWRV&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=IwsrMNyBSig) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUk1wQUhNZXRsdW10c3paM1hiaU5GbHxBR3JiS2FrN1NaOHJxbUY5SHRIbUU4T0Rfb3RCQ0d0aUZybUgyczV5dFhKSjNhblNQRW9KU3ZtYWNkaE9wY1RXVDJXT2JqYmJEdG5YbUhwdkJvMi1iZ041ZlZFa255RndYWXR2&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 85 | Bold Viking | Space Exploration 0.7 - Day 22 - Making the new rail system work and expanding the orbital platform!
+https://www.youtube.com/watch?v=ctq8xnnkUPg
+late_terms=['spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=ctq8xnnkUPg) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUW94SUdoazg5Vk8yV3ZjOHh5ckJwcnxBR3JiS2FtQi1wamQtdFlwS1dqb2l2dU84aTJzXzRYN3paUmw5TEdPajlQdHJiblNLXzBRaDAxYTR2X01id01ieEg1aDJzVk5YdkRFWXc4VWtvT0FRc3NFcUNaTm8yY0hoQkdl&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=ctq8xnnkUPg) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlgyNmpnd2dhTEdsbjFSTDNTUjV3QnxBR3JiS2FtOGZ6MXl3dGJNclMycHBESWhDRXp1MF9VSnJydGJMZ3o3Ukx3eWJhMWFVdGl2UkVhTERJLXNXYXBXTWZxX2hCSi1kZW14ajdaZHNHU0JORXF4RzB3eVVhZHg1dTEx&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=ctq8xnnkUPg) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1d2TlRoRU1DR0ZFQ0E2bW16bS1ScXxBR3JiS2Fsd0RvbjJiS2xlVS1YX0xJaXRUMzNjMkppYkpCbXFCa0tqNDBSQ2dORjk1RmhWcW81YThtMFJQWk81V2MwbzdaU0pabnMxYXU5S3pLTnpjLVRkM1VSdVlCdU9nS1RF&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=ctq8xnnkUPg) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUW94SUdoazg5Vk8yV3ZjOHh5ckJwcnxBR3JiS2FtQi1wamQtdFlwS1dqb2l2dU84aTJzXzRYN3paUmw5TEdPajlQdHJiblNLXzBRaDAxYTR2X01id01ieEg1aDJzVk5YdkRFWXc4VWtvT0FRc3NFcUNaTm8yY0hoQkdl&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=ctq8xnnkUPg) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlgyNmpnd2dhTEdsbjFSTDNTUjV3QnxBR3JiS2FtOGZ6MXl3dGJNclMycHBESWhDRXp1MF9VSnJydGJMZ3o3Ukx3eWJhMWFVdGl2UkVhTERJLXNXYXBXTWZxX2hCSi1kZW14ajdaZHNHU0JORXF4RzB3eVVhZHg1dTEx&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=ctq8xnnkUPg) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1d2TlRoRU1DR0ZFQ0E2bW16bS1ScXxBR3JiS2Fsd0RvbjJiS2xlVS1YX0xJaXRUMzNjMkppYkpCbXFCa0tqNDBSQ2dORjk1RmhWcW81YThtMFJQWk81V2MwbzdaU0pabnMxYXU5S3pLTnpjLVRkM1VSdVlCdU9nS1RF&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 85 | Bold Viking | Space Exploration 0.7 - Day 23 - Fully operational Orbital Siege Platform!
+https://www.youtube.com/watch?v=AKOqaBxH03I
+late_terms=['spaceship', 'vitamelange']
+Candidate links:
+  https://patreon.com/boldviking
+  https://patreon.com/boldviking)[twitter](https://www.youtube.com/redirect?event=Watch_SD_EP
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUTdyWl9lQmVlRG12Z3JlNWNlNXYxeXxBR3JiS2FuaEZHQ3JOcEJnY3N2NG50NUZnYkxyNjdfZEI1cl9Uck16ZnY5eXp4VDFvcFF0QlRZbURZcm5NeDJLZy1PNEJUY2FhcU5iWHZiMkthZjhwNWU2M2xjaXJMV29lcnBP&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmF6cDdZSkRHWXF4X1MtSXJNeWpCZnxBR3JiS2FrTWJ6VVpOOXdMVEhHaDdES2RXdE9QR0kxUHlpdUhNLTVTVlpKRXd1clJHVS0tNkRUcEx6X0QxNDBuU01IYnJxYmhNOHVIenItMjlzYUtremdoaVBvdWo5YWEyX0l0&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUWhvUjBGZGJFODlNMjUtdll6a3ZoQnxBR3JiS2FtX0hZRzVhb3NlUmVSc1pwMlZsdlNzYVRMQkhSRWRoVXdfN1dZT0xUampNSHlDZ2FFNjJsV1gxTlRxR0taZlg5dXhiUVBrX1p0alNzeXFzaE5wOS1ReHdHVFhJdnM1&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[tiktok](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUzdiMjY2SkgwWTc5LUJXZHhNSWk1VXxBR3JiS2FsejBXM1JWZVNjckNNS3F5eTd4OWlxcHhvcEg1bnkyVFFsMWVhQUxaZ1lveGpYSmtfNzVjekNnR0IwbVB
+
+SCORE 82 | Bold Viking | Space Exploration 0.7 - Day 13 - We are back in the saddle! Time to setup Iridium processing!
+https://www.youtube.com/watch?v=mP2jE49WC6Y
+late_terms=['iridium', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=mP2jE49WC6Y) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUkNJMm9ZMnp3SEFHYlZZRkRzLW5ZcnxBR3JiS2FscjJELTdxQW1UNTJzSjduVzBWM1cwRTBxNHV5WDJ1cTZ5NGZCanF3TU5teU1McHRkaFJ5R20xVWpYbURwemY3TDBKYm1YMnJ4d3lLcEZRck85U1c5T1RIZUVPZ2s4&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=mP2jE49WC6Y) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1d6WDZWUkoycElIUjFTOGJscldwTnxBR3JiS2Frcno1cmR5bU04ZjRuRmZxWnZqS1BJTWpmbjFhODJCMGx2SGtER2ZfdFBVVnJYSERxY1BsLWc3dWdDRFlYLWlrUm9CTFhfaGJjQXZHV0JnbWVSZk9ieUVwQXJablBP&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=mP2jE49WC6Y) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3FOSW9YTmNIUFlmVW1Wc2U0bXJjN3xBR3JiS2FsQ3dDNWsydDZGRTREdHBVV0J3VWF6MEZlaXVmMGdwOFZOdnY3bnQ1V0VDbEc0aTVPTGhLcXlJUGRzVTI5V3p0NjhSdER6TUw1YjZ2aldseEw4UmgxTjlkUUtkUVpP&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=mP2jE49WC6Y) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUkNJMm9ZMnp3SEFHYlZZRkRzLW5ZcnxBR3JiS2FscjJELTdxQW1UNTJzSjduVzBWM1cwRTBxNHV5WDJ1cTZ5NGZCanF3TU5teU1McHRkaFJ5R20xVWpYbURwemY3TDBKYm1YMnJ4d3lLcEZRck85U1c5T1RIZUVPZ2s4&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=mP2jE49WC6Y) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU1d6WDZWUkoycElIUjFTOGJscldwTnxBR3JiS2Frcno1cmR5bU04ZjRuRmZxWnZqS1BJTWpmbjFhODJCMGx2SGtER2ZfdFBVVnJYSERxY1BsLWc3dWdDRFlYLWlrUm9CTFhfaGJjQXZHV0JnbWVSZk9ieUVwQXJablBP&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=mP2jE49WC6Y) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3FOSW9YTmNIUFlmVW1Wc2U0bXJjN3xBR3JiS2FsQ3dDNWsydDZGRTREdHBVV0J3VWF6MEZlaXVmMGdwOFZOdnY3bnQ1V0VDbEc0aTVPTGhLcXlJUGRzVTI5V3p0NjhSdER6TUw1YjZ2aldseEw4UmgxTjlkUUtkUVpP&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 82 | Bold Viking | Space Exploration 0.7 - Day 24 - Setting up Vitamelange processing! Then more science!
+https://www.youtube.com/watch?v=EjgD7Qr0WIk
+late_terms=['vitamelange']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=EjgD7Qr0WIk) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjlyVzQ5NmpVVWYtZVhCRFptTXpfRHxBR3JiS2FuTHJXZTk2RjF5MnU0RWpkbmFoRDlPbHE5LU5ic2VBYkxEMkU5WW93YkNkQ0NkOGJTdV9VeFdwMG1iMlFMYjI3RnhOOXZVVmpxMXFMNHpfbFBUR2taejRzU0kwZVdH&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=EjgD7Qr0WIk) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlBkdTBfQWV2NFNmNGFJYzFGR2l1S3xBR3JiS2Frd3lhV3dnZE45czN5U2dTZnVCc1Q0ZUE2bnhtLXlDR19yYVhnaUI1eVBSZS1rU0ItZUpUTURGbkU5V3EwREhlNVo3YnB0Z2psTlowV1MyZkx3aS1WYWpWN2dYOEdS&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=EjgD7Qr0WIk) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0lLUFduQjFoajFWaFdlWEh1LTNKYXxBR3JiS2FuNVYzNFFrUTI0S0xMTkxfQl83M0duZkJfT3VYLXJkd2UtSE5sMEd2NXJuYkR5WHhNZDFqSkM5ZGIwY1dQMENjR0RyY2Z4N2k3TlkzTkk2aVlkZjdXR3l2c2c2TVlV&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=EjgD7Qr0WIk) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjlyVzQ5NmpVVWYtZVhCRFptTXpfRHxBR3JiS2FuTHJXZTk2RjF5MnU0RWpkbmFoRDlPbHE5LU5ic2VBYkxEMkU5WW93YkNkQ0NkOGJTdV9VeFdwMG1iMlFMYjI3RnhOOXZVVmpxMXFMNHpfbFBUR2taejRzU0kwZVdH&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=EjgD7Qr0WIk) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUlBkdTBfQWV2NFNmNGFJYzFGR2l1S3xBR3JiS2Frd3lhV3dnZE45czN5U2dTZnVCc1Q0ZUE2bnhtLXlDR19yYVhnaUI1eVBSZS1rU0ItZUpUTURGbkU5V3EwREhlNVo3YnB0Z2psTlowV1MyZkx3aS1WYWpWN2dYOEdS&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=EjgD7Qr0WIk) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU0lLUFduQjFoajFWaFdlWEh1LTNKYXxBR3JiS2FuNVYzNFFrUTI0S0xMTkxfQl83M0duZkJfT3VYLXJkd2UtSE5sMEd2NXJuYkR5WHhNZDFqSkM5ZGIwY1dQMENjR0RyY2Z4N2k3TlkzTkk2aVlkZjdXR3l2c2c2TVlV&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 82 | Bold Viking | Space Exploration 0.7 - Day 30 - Going for Biological Science 3 and making better outposts!
+https://www.youtube.com/watch?v=w4X1Vq_ADeA
+late_terms=['biological science', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=w4X1Vq_ADeA) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGtPZ3F4RHJPTWN2dlhacEZBZS03NnxBR3JiS2FsMnp5NVEwTk1HeEl5bkd5aEJoeGYwaHRFbjExUlVZUFBTT1d6a0NFYUVMQ2tSYXladGRIUU9pcHNzbmtLcU1nQm5xaTN2M1gxdmxfQXUzdDdSLVhJMkZwb25ya0Zr&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=w4X1Vq_ADeA) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3dKSFFGTk1tMkw1X3I1UXlJdTZpenxBR3JiS2FuODJwcElHWW5VRlR3TWU2amhiZFRkN0hNQzhNNndDWWtTTExoN3lUVzBUVmR5eHRoY1pQUFE2TzJ1dHZsdncxOVd5UGhreDlRYkc5UGZHU09mb0M5N0d3Q19NbjJv&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=w4X1Vq_ADeA) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUduLW5INXYwQUNIWjM1QVJQdHBrdnxBR3JiS2FuQzBpZkN3QUppU0VVbDdFU1NkcHptWWZQMkpub0tyY1Q0M3pQZWFscnZHSk1NSkJKdjctaEJWZ21uSlZnS3h6X2RkLU1STGt4c09FZkY4QndPNTlGM3k0cE81TURh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=w4X1Vq_ADeA) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVGtPZ3F4RHJPTWN2dlhacEZBZS03NnxBR3JiS2FsMnp5NVEwTk1HeEl5bkd5aEJoeGYwaHRFbjExUlVZUFBTT1d6a0NFYUVMQ2tSYXladGRIUU9pcHNzbmtLcU1nQm5xaTN2M1gxdmxfQXUzdDdSLVhJMkZwb25ya0Zr&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=w4X1Vq_ADeA) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU3dKSFFGTk1tMkw1X3I1UXlJdTZpenxBR3JiS2FuODJwcElHWW5VRlR3TWU2amhiZFRkN0hNQzhNNndDWWtTTExoN3lUVzBUVmR5eHRoY1pQUFE2TzJ1dHZsdncxOVd5UGhreDlRYkc5UGZHU09mb0M5N0d3Q19NbjJv&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=w4X1Vq_ADeA) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUUduLW5INXYwQUNIWjM1QVJQdHBrdnxBR3JiS2FuQzBpZkN3QUppU0VVbDdFU1NkcHptWWZQMkpub0tyY1Q0M3pQZWFscnZHSk1NSkJKdjctaEJWZ21uSlZnS3h6X2RkLU1STGt4c09FZkY4QndPNTlGM3k0cE81TURh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 82 | Bold Viking | Space Exploration 0.7 - Day 33 - Supersizing Iridium Processing! Then the next science 4 pack?
+https://www.youtube.com/watch?v=x1yDoutcGXQ
+late_terms=['iridium', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=x1yDoutcGXQ) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVExpZ2NnTllOWGg0MzBVY0g4dWhQYXxBR3JiS2FsYjNqaVk4T2tFRGxocXZINVEyYTVJTG56ME91T0VKR3ppdkE0azVJaGc2cXE2amJRd1FDeTl3VGI4Z0ZlUWN5bkdpRlhCTGotbHZPOW5zWWdack5LeWs5ZHN4QmhR&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=x1yDoutcGXQ) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2pOUXpTdEtZcHFOZF9CVWpuWUJiVXxBR3JiS2FsUGhrOF9Gd0tjNXdoY3FEMUhhQ2lNblhkNndCY0Mxd1hjTng4Uk1jaktBYU9WTU9HZXd6dVRzRVVMM24zYUphdDF0TEdKUTBpUXhnN3VZaFI5UklWcHVQTTZuQ05s&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=x1yDoutcGXQ) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUk9waDcxY1RNVEhEVHo3My1jS091cHxBR3JiS2FsQjQ0elp0T3FlN05USXNqZzBOVEpRR09nTlRJS2hfYzAyd0U0SlVLSTVsajJoQ1A5bVVlVXhlVV80S2N6dGpDVW5xOTNvV2U4NlNyZkFJMExvTDBuLWoxSzFVQ1Rh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=x1yDoutcGXQ) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVExpZ2NnTllOWGg0MzBVY0g4dWhQYXxBR3JiS2FsYjNqaVk4T2tFRGxocXZINVEyYTVJTG56ME91T0VKR3ppdkE0azVJaGc2cXE2amJRd1FDeTl3VGI4Z0ZlUWN5bkdpRlhCTGotbHZPOW5zWWdack5LeWs5ZHN4QmhR&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=x1yDoutcGXQ) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2pOUXpTdEtZcHFOZF9CVWpuWUJiVXxBR3JiS2FsUGhrOF9Gd0tjNXdoY3FEMUhhQ2lNblhkNndCY0Mxd1hjTng4Uk1jaktBYU9WTU9HZXd6dVRzRVVMM24zYUphdDF0TEdKUTBpUXhnN3VZaFI5UklWcHVQTTZuQ05s&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=x1yDoutcGXQ) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUk9waDcxY1RNVEhEVHo3My1jS091cHxBR3JiS2FsQjQ0elp0T3FlN05USXNqZzBOVEpRR09nTlRJS2hfYzAyd0U0SlVLSTVsajJoQ1A5bVVlVXhlVV80S2N6dGpDVW5xOTNvV2U4NlNyZkFJMExvTDBuLWoxSzFVQ1Rh&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 82 | Bold Viking | Space Exploration 0.7 - Day 37 - Setting up Deep Space Science! And probably unforeseen accidents!
+https://www.youtube.com/watch?v=A-_lE7TVvsA
+late_terms=['deep space', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=A-_lE7TVvsA) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUVo1ZGxPQ0g1T2IwNmNMVE1TeEg4cHxBR3JiS2FtcWd4R240b0dqN2lBbXFiaVpsWW10LW9POWxPVjdiejhDNTF6czNFLWdTVTR6RU5mWEI4NVBfTHpJZ0hQTUkzR0xkZXRldjFBQ0xHSzd5Tl9BZ2JBMnJ0RUUtS0Fx&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=A-_lE7TVvsA) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjhVTERzNUQzMnJEZnd4RnRzZ0dBT3xBR3JiS2FsZEdITjdlQ0xudjlTQ0JJOHNHaHd0bWNHZXZEYnJmMHRxRzVXZTlzaDcwTzFQYS05ZDZrWXJLTU9hUVBsYjRldzVqYW8yQXA3a3M0TlRIS3ZSYWVkWVRXSFc2eVVF&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=A-_lE7TVvsA) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmt0b3lhV3ppdUpGYmM5TVczUnF3VnxBR3JiS2FtVWRQWS1SSHBXVEhPQmctbHdCbDZvVFl1X2FnQzNhWGloZ2dzWmFIdFpOV3BDZlBDQnNtYU9jSFhqSHkzdjNscFdxUWxZc21DcEdsaUpmblNMa2dmOElHc256WEVa&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=A-_lE7TVvsA) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUVo1ZGxPQ0g1T2IwNmNMVE1TeEg4cHxBR3JiS2FtcWd4R240b0dqN2lBbXFiaVpsWW10LW9POWxPVjdiejhDNTF6czNFLWdTVTR6RU5mWEI4NVBfTHpJZ0hQTUkzR0xkZXRldjFBQ0xHSzd5Tl9BZ2JBMnJ0RUUtS0Fx&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=A-_lE7TVvsA) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUjhVTERzNUQzMnJEZnd4RnRzZ0dBT3xBR3JiS2FsZEdITjdlQ0xudjlTQ0JJOHNHaHd0bWNHZXZEYnJmMHRxRzVXZTlzaDcwTzFQYS05ZDZrWXJLTU9hUVBsYjRldzVqYW8yQXA3a3M0TlRIS3ZSYWVkWVRXSFc2eVVF&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=A-_lE7TVvsA) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUmt0b3lhV3ppdUpGYmM5TVczUnF3VnxBR3JiS2FtVWRQWS1SSHBXVEhPQmctbHdCbDZvVFl1X2FnQzNhWGloZ2dzWmFIdFpOV3BDZlBDQnNtYU9jSFhqSHkzdjNscFdxUWxZc21DcEdsaUpmblNMa2dmOElHc256WEVa&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+SCORE 74 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Vitamelange vulcanite train x707
+https://www.youtube.com/watch?v=xoKhZdPhMuo
+late_terms=['spaceship', 'vitamelange', 'vulcanite']
+Candidate links:
+  https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU1laMHFIc0FvUUt0NkZSdGdNek9tWnxBR3JiS2FuYzhBaF81SVlONFI3WUVuaV9XNFdxWnRvSG1yV2JIV1o2RUt4ZjBwX0JobWpORzVzcWQxbUVtNWk2dEpGOEs1NG5YWjRyWmpxTmFzdzh4bWRGVHlibFRlN0haalJ4&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=xoKhZdPhMuo
+  https://mods.factorio.com/mod/space-exploration
+  https://www.patreon.com/earendel
+  https://mods.factorio.com/mod/Krastorio2](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUkRQcnFVdUwtY1dDNUh3SmhXQy1KSXxBR3JiS2FsS3o2M3BlaUx3T2diTGZUc0Jod2lTUjBGZ3V5b0d5NG8tVUZWYl9nYUFYM0lLSEZhT0h6NFRRYnEzS1dLLTFzOWpteHl1a0V4enJGR2dLSXl1TXBjM0VCUFo4S2hv&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2FKrastorio2&v=xoKhZdPhMuo
+  https://mods.factorio.com/mod/Krastorio2
+  https://factorio.com/get-download/2.0...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUjJ2MmF3QlZ2em5lR0hyckU3enpTcnxBR3JiS2FuZ0NXSlFEUGtPYndNZkx1cHhRdDhDZzVzMTcwNXctVXNQcmozREdxYWVPN2ZRaVo5N1lKVlJ3a2tndW9oM1pUbmVHX0xsZVhuczhCVnN6cHBSd3EzYmJlUHk2UGZz&q=https%3A%2F%2Ffactorio.com%2Fget-download%2F2.0.42%2Fdemo%2Fwin64&v=xoKhZdPhMuo
+  https://factorio.com/get-download/2.0.42/demo/win64
+  https://Factorio.com/
+Save/link context:
+  Space exploration and Krastorio 2 and AAI mods, i am giving them a try, this should be fun :) Click "...more" for links to the mod, community resources, and more! 🔗 🔵 A B O U T M O D 🔵 Space Exploration by Earendel : [https://mods.factorio.com/mod/space-e...](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rU1laMHFIc0FvUUt0NkZSdGdNek9tWnxBR3JiS2FuYzhBaF81SVlONFI3WUVuaV9XNFdxWnRvSG1yV2JIV1o2RUt4ZjBwX0JobWpORzVzcWQxbUVtNWk2dEpGOEs1NG5YWjRyWmpxTmFzdzh4bWRGVHlibFRlN0haalJ4&q=https%3A%2F%2Fmods.factorio.com%2Fmod%2Fspace-exploration&v=xoKhZdPhMuo) check the mod creator Earendels Patreon out: [![Image 30](http://www.youtube.com/watch?v=xoKhZdPhMuo)/earendel](https://www.youtube.com/redirect?event=video_description&redir_token=QUM4Zm9rUU5rN3ZtTWc2d0dEeEgtVmNGYVBrUHxBR3JiS2FsRHptNGVwRjhqdGFtSTJ4NFR3NXNJWk0xSTFZUnBJLXVEd1lydmFhSlRuN1V0UkVHU3B3bUppTFZreUh0RW1oVjhGR2FCMUc0VU94VUhGLTNNSFk1RmI3XzRTTFAy&q=https%3A%2F%2Fwww.patreon.com%2Fearendel&v=xoKhZdPhMuo) Build Cargo Rockets to launch stuff into space. Ride a rocket into space yourself and start spacewalking. Build an orbital space platform to develop difficult data-driven space science. Build a spaceship tile by
+
+SCORE 64 | Bold Viking | Space Exploration 0.7 - Day 40 - Picking up more arcospheres to make deep space science 3!
+https://www.youtube.com/watch?v=QFxywVn7kq0
+late_terms=['arcosphere', 'deep space', 'spaceship']
+Candidate links:
+  https://patreon.com/boldviking)[![Image
+  https://patreon.com/boldviking
+Save/link context:
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 10](http://www.youtube.com/watch?v=QFxywVn7kq0) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2RKNVJMX0QyLWdQcGpTZS01SVdTNHxBR3JiS2FrbzRyd3RyX1RnQVNYZU96bnRTRkN4M1pEX1h0ajNLS0JZeWpOVnB5VVZZakxaRFQ4ZEU1Smg5clcwQ2puVFljMnY1YVpvMU9kZld1Yk01YW5wX1dxUVNFbmdEUUZm&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 11](http://www.youtube.com/watch?v=QFxywVn7kq0) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVG1zREkwdndxa2hXQ1NaMWRpZ2NqSHxBR3JiS2Fua081VjBDZmlXbHNiQ0JPbUE5cmRCZlJEVXMxdjV3TkVMZ0ZVSERJTm00cmdCb2JETXdoM1hmbGV2eURXRm5HaU5SLU51T0RCNFhfaDRfam1JdFR2anNvMFhJZzJm&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 12](http://www.youtube.com/watch?v=QFxywVn7kq0) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXcxdlBQLWVaSlR4OGV2eDhiaUwybnxBR3JiS2FsNHF0dlpiaXcxZEtES0Y3UnY5TmVpc0dIRXN3bkpxYUZaQXNhQnhreTJFV2dRckRjaFhpUmhtenI5MGptZEhLMUdSd0g3YVBYVHpDYk1yX2xBaXFXbnVwekhNT0dn&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 13](http://www.youtube
+  [Videos](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/videos)[About](http://www.youtube.com/channel/UCvtCPtoU2P8nYdW6gKDs4gw/about)[![Image 19](http://www.youtube.com/watch?v=QFxywVn7kq0) twitch](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rU2RKNVJMX0QyLWdQcGpTZS01SVdTNHxBR3JiS2FrbzRyd3RyX1RnQVNYZU96bnRTRkN4M1pEX1h0ajNLS0JZeWpOVnB5VVZZakxaRFQ4ZEU1Smg5clcwQ2puVFljMnY1YVpvMU9kZld1Yk01YW5wX1dxUVNFbmdEUUZm&q=https%3A%2F%2Ftwitch.tv%2Fboldviking)[![Image 20](http://www.youtube.com/watch?v=QFxywVn7kq0) patreon](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rVG1zREkwdndxa2hXQ1NaMWRpZ2NqSHxBR3JiS2Fua081VjBDZmlXbHNiQ0JPbUE5cmRCZlJEVXMxdjV3TkVMZ0ZVSERJTm00cmdCb2JETXdoM1hmbGV2eURXRm5HaU5SLU51T0RCNFhfaDRfam1JdFR2anNvMFhJZzJm&q=https%3A%2F%2Fpatreon.com%2Fboldviking)[![Image 21](http://www.youtube.com/watch?v=QFxywVn7kq0) twitter](https://www.youtube.com/redirect?event=Watch_SD_EP&redir_token=QUM4Zm9rUXcxdlBQLWVaSlR4OGV2eDhiaUwybnxBR3JiS2FsNHF0dlpiaXcxZEtES0Y3UnY5TmVpc0dIRXN3bkpxYUZaQXNhQnhreTJFV2dRckRjaFhpUmhtenI5MGptZEhLMUdSd0g3YVBYVHpDYk1yX2xBaXFXbnVwekhNT0dn&q=https%3A%2F%2Ftwitter.com%2Fboldviking2)[![Image 22](http://www.youtube
+
+
+TOP SE VIDEOS WITHOUT CANDIDATE LINKS
+========================================================================================================================
+SCORE 123 | bammalar | Factorio Space Exploration #13 Building Cargo Rockets
+https://www.youtube.com/watch?v=IS_lBRIJMU0
+late_terms=[]
+
+SCORE 118 | BSG | Factorio K2SE: Space Science Pack & Nauvis Orbit | Episode 20
+https://www.youtube.com/watch?v=IKuVjo7CTE0
+late_terms=['deep space']
+
+SCORE 98 | The Curly Coder | Factorio Space Exploration #016 | Satellite launch, Jetpack and Electric Smelters [NO COMMENTARY]
+https://www.youtube.com/watch?v=QgjkKVxmKuw
+late_terms=[]
+  [1:00:53 Factorio Space Exploration #017 | Building a wall on the southern border [NO COMMENTARY]The Curly Coder 18 views • 1 year ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=drJ92pOodYY)[22:51 Subscriptions: Last Week Tonight with John Oliver (HBO)LastWeekTonight 1.1M views • 20 hours ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=Wko-2c7lZL8)[31:44 This is Why They Don't Make These Anymore...Alec Steele 4.1M views • 3 weeks ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=DJVOhX-9X6Q)[43:37 Man Spent Two Years Building HUGE Wooden House for his Family | Start to Finish by @bjornbrenton World Build 4.6M views • 2 months ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=7-NCOGnZjKE)[1:30:01 FACTORIO Modpack Pyanodons Playthrough PART 4 STREAM Compo 15 views • Streamed 12 days ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=vH3MlgQ4CWY)[37:20 How Much Would an AI Crash Destroy?Patrick Boyle 894K views • 2 days ago Live Playlist ()Mix (50+)](http://www.youtube.com/watch?v=wTiYaWFP59Q)[16:11 How Long You’d Last in Every Prehistoric Era Fossil 460K views • 2 weeks ago Live Playlist ()Mix (50+)](http://www.youtube.c
+  ### [FACTORIO Modpack Pyanodons Playthrough PART 4 STREAM](http://www.youtube.com/watch?v=vH3MlgQ4CWY)
+
+SCORE 88 | Gentlemad Scientist | Part 160, where we collect Interstellar Travel Data ! [Factorio Space Exploration Playthrough]
+https://www.youtube.com/watch?v=OC2xPQ3HGE0
+late_terms=[]
+
+SCORE 85 | Hrooch | Factorio Space Exploration 0.7 --- STREAM 12
+https://www.youtube.com/watch?v=Y9mEvjpconU
+late_terms=[]
+
+SCORE 83 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #3 Which is heavier?
+https://www.youtube.com/watch?v=ob79itg_QzY
+late_terms=['deep space']
+
+SCORE 83 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #8 ANYTHING but training 2
+https://www.youtube.com/watch?v=zHtEjE-hxiw
+late_terms=['deep space']
+
+SCORE 83 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #9 Training Montage
+https://www.youtube.com/watch?v=IH6cwaiYxlc
+late_terms=['deep space']
+
+SCORE 83 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? |#6 We Require more minerals
+https://www.youtube.com/watch?v=hNZHdhmQ34E
+late_terms=['deep space']
+
+SCORE 83 | eldee | [FACTORIO] Can i beat Krastorio2 + Space Exploration 0.7 before SE 0.8 release? | #1 in the beningin
+https://www.youtube.com/watch?v=owYW8TGIUR0
+late_terms=['deep space']
+
+SCORE 75 | BSG | Factorio K2SE: Map & Mod Settings!
+https://www.youtube.com/watch?v=fg8i-PfhSsA
+late_terms=['deep space', 'spaceship']
+
+SCORE 73 | BSG | Factorio K2SE: Train fed space utility science! | Episode 129
+https://www.youtube.com/watch?v=1Hiq0VQZ-sI
+late_terms=['deep space', 'energy science']
+
+SCORE 60 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Fixing Cooling Nauvis orbit x706
+https://www.youtube.com/watch?v=m86oAFLWWjU
+late_terms=[]
+
+SCORE 60 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Nauvis Orbit Engeering fixs x705
+https://www.youtube.com/watch?v=mV1pOIJiECA
+late_terms=[]
+
+SCORE 40 | BSG | Factorio K2SE: Astronomic Science Pack 2 | Episode 116
+https://www.youtube.com/watch?v=zq6Y3sWvb8I
+late_terms=['astronomic science', 'deep space', 'holmium', 'spaceship']
+
+SCORE 40 | BSG | Factorio K2SE: Energy Science Pack 3 pt2 | Episode 142
+https://www.youtube.com/watch?v=9KUrDIDuTm4
+late_terms=['deep space', 'energy science']
+
+SCORE 40 | BSG | Factorio K2SE: More Science Rebuild (300 SPM Material Science Pack 1)! | Episode 90
+https://www.youtube.com/watch?v=30XRfLBvS9U
+late_terms=['deep space', 'material science']
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #10 Space?
+https://www.youtube.com/watch?v=c7HR7hLlar8
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #11 Space this time?
+https://www.youtube.com/watch?v=Eqylsoi-DI0
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #13 Science but in Space
+https://www.youtube.com/watch?v=9qyWs6gfZtQ
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #14 Real Steel
+https://www.youtube.com/watch?v=Iz6hBFLT6f8
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #15 Logistics Networks
+https://www.youtube.com/watch?v=SxVCb2anmlc
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #16 Spreading Freedom
+https://www.youtube.com/watch?v=n-a5JAWXkmY
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #17 Intrude,Infest,Thrive
+https://www.youtube.com/watch?v=nNb4HfpoNPw
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #2 Green Tech card
+https://www.youtube.com/watch?v=27uBjswWzxo
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #3 Manifest Destiny
+https://www.youtube.com/watch?v=uhDFyp7Yaik
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #4 Making robots
+https://www.youtube.com/watch?v=vyaTIaLYnHI
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #5 Satellite
+https://www.youtube.com/watch?v=Hj1ZT22MB0o
+late_terms=[]
+
+SCORE 38 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #7 ANYTHING but training
+https://www.youtube.com/watch?v=tGIosmE6vAI
+late_terms=[]
+
+SCORE 38 | GameKeeper | EP60 - Update to Factorio 1.1. and LDS build - Factorio 300 (Krastorio 2 | Space exploration | AAI )
+https://www.youtube.com/watch?v=9QFRJKL9OdA
+late_terms=[]
+
+SCORE 38 | Nilaus | Factorio 0.17 Space Exploration #30 BLUE SCIENCE
+https://www.youtube.com/watch?v=x12ChR17gGI
+late_terms=[]
+
+SCORE 38 | Nilaus | Factorio 0.17 Space Exploration #69 SCIENCE LABS
+https://www.youtube.com/watch?v=y-sH-vyjSeM
+late_terms=[]
+
+SCORE 38 | Pel00 | Factorio 2.0 SE 0.7.34+K2+Extra - Episode 07
+https://www.youtube.com/watch?v=l3XsWr7VGfY
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Early game science throughput! | Episode 5
+https://www.youtube.com/watch?v=Ue7G4sUyb7Q
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: More Science Rebuild (300 SPM Production Science Pack)! | Episode 88
+https://www.youtube.com/watch?v=cyCLEHvKou8
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Optimization Science Pack | Episode 39
+https://www.youtube.com/watch?v=VgRNkoiLu-0
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Replacing rockets to orbit & 300 Space Science Packs per minute  | Episode 86
+https://www.youtube.com/watch?v=d1DrRrpnLoE
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Space Science Laboratory | Episode 42
+https://www.youtube.com/watch?v=ZbQchCfMlMs
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Train Fed Production Science Pack! | Episode 126
+https://www.youtube.com/watch?v=s7-3yho345s
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Train fed science in space! | Episode 123
+https://www.youtube.com/watch?v=P75yJ4PXaY4
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Train fed space optimization science! | Episode 130
+https://www.youtube.com/watch?v=IWfgf-FwTFU
+late_terms=[]
+
+SCORE 38 | BSG | Factorio K2SE: Utility Science Pack | Episode 26
+https://www.youtube.com/watch?v=PIrRwUq7zeo
+late_terms=[]
+
+SCORE 38 | The Curly Coder | Factorio Space Exploration #012 | Glass en masse and solar power automation [NO COMMENTARY]
+https://www.youtube.com/watch?v=-zaWbEYX61E
+late_terms=[]
+
+SCORE 38 | The Curly Coder | Factorio Space Exploration #036 | Up-scaled steel smelting and lubricant production [NO COMMENTARY]
+https://www.youtube.com/watch?v=_WRPLvs5YEg
+late_terms=[]
+
+SCORE 38 | Michael Young | Factorio Space Exploration Part 13 Meteor Defense and Feeding Hungry Factory
+https://www.youtube.com/watch?v=loaVfL7Tyk0
+late_terms=[]
+
+SCORE 38 | KainenFrost | Pave Nauvis, Put up a Factory #83 - Space Science - Factorio Space Exploration
+https://www.youtube.com/watch?v=FaAQCb9ng70
+late_terms=[]
+
+SCORE 35 | Kinger | [K2SE] Factorio Krastorio 2 + Space Exploration Warehouse Auto Mall
+https://www.youtube.com/watch?v=V6SC5Zxs_WU
+late_terms=[]
+
+SCORE 35 | Sauceman | A Brief Review of Space Exploration + K2 | The 500 Hour Factorio Mod
+https://www.youtube.com/watch?v=YQN8hr2MKZA
+late_terms=[]
+
+SCORE 35 | Paxtorio | Factorio Lazy Space Exploration -- 099 -- Delivery Cannon
+https://www.youtube.com/watch?v=iYa8y2UpuAY
+late_terms=[]
+
+SCORE 35 | DoshDoshington | How hard is it to beat SPACE EXPLORATION | The 300 Hour Factorio Mod
+https://www.youtube.com/watch?v=8hRJ-CcwvrI
+late_terms=[]
+
+SCORE 35 | AR Studios Gaming | HOW TO Automate Rocket Launches in Factorio Space Exploration
+https://www.youtube.com/watch?v=1eGB3MPWCOo
+late_terms=[]
+
+SCORE 35 | blackshadow5738 | Iron Mining Is A Go! - Factorio 2.0 Space Exploration Day 4
+https://www.youtube.com/watch?v=ufiMwkocMaI
+late_terms=[]
+
+SCORE 35 | Laurence Plays | S2-E11 pt1 - Telescopic - Laurence Plays Factorio: Space Exploration 0.6 + Krastorio²
+https://www.youtube.com/watch?v=R9LfedIFR6M
+late_terms=[]
+
+SCORE 35 | Bold Viking | Space Exploration 0.7 - Day 26 - Moving up to modules 4. That means tons of machine learning data!
+https://www.youtube.com/watch?v=37k_jEoh-l8
+late_terms=[]
+
+SCORE 35 | Bold Viking | Space Exploration 0.7 - Day 31 - Its vacation time! So much free time, as such we feed the beast!
+https://www.youtube.com/watch?v=u3rZCBXLDtA
+late_terms=[]
+
+SCORE 35 | Bold Viking | Space Exploration 0.7 - Day 46 - Time to finish the ship that will get us to the endgame!
+https://www.youtube.com/watch?v=wPm4mX4NMLk
+late_terms=[]
+
+SCORE 35 | Bold Viking | Space Exploration 0.7 - Day 47 + 5 - Final stream of SE0.7! It was great now lets head for the gate!
+https://www.youtube.com/watch?v=MdudJy288Jc
+late_terms=[]
+
+SCORE 35 | Bold Viking | Space Exploration 0.7 - Day 47 - Its time to finish it! First the normal ending, Then the other one!
+https://www.youtube.com/watch?v=gDLcpFVPYUg
+late_terms=[]
+
+SCORE 35 | blackshadow5738 | The Burner Age - Factorio 2.0 Space Exploration Day 1
+https://www.youtube.com/watch?v=hxaEZ2x7Axw
+late_terms=[]
+
+SCORE 35 | blackshadow5738 | The Planning Itch - Factorio 2.0 Space Exploration Day 2
+https://www.youtube.com/watch?v=-pa215FL7wQ
+late_terms=[]
+
+SCORE 35 | blackshadow5738 | Turrets Of Mass Construction - Factorio 2.0 Space Exploration Day 6
+https://www.youtube.com/watch?v=XhwxoyMO2JE
+late_terms=[]
+
+SCORE 35 | Laurence Plays | What to take on your first trip to space - Laurence Plays: Factorio Space Exploration
+https://www.youtube.com/watch?v=qllEalxOGMY
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space exploration 0.2 Mod✅🏭➡️ Conversion to 0.6 Savegame x05
+https://www.youtube.com/watch?v=8xftHUKZRgM
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Infinite interstellar tech card ship x388
+https://www.youtube.com/watch?v=PRIOWcL8Uz0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Re Researching Arcolinks x403
+https://www.youtube.com/watch?v=9ZzBohN-iB8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x005
+https://www.youtube.com/watch?v=-DkK4vk-pg4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x009
+https://www.youtube.com/watch?v=Rw3wTPUgCyc
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x010
+https://www.youtube.com/watch?v=L0-cHIUAdnQ
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x011
+https://www.youtube.com/watch?v=JM_5F_eCA4c
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x015
+https://www.youtube.com/watch?v=-s0qmnOEBMw
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x017
+https://www.youtube.com/watch?v=M5OZ3tDhv8s
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x019
+https://www.youtube.com/watch?v=0JvXYDiwAFA
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x022
+https://www.youtube.com/watch?v=Yv9ly0QkHgA
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x024
+https://www.youtube.com/watch?v=_37qcgbygRo
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x025
+https://www.youtube.com/watch?v=HIU_xxNXQzg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x026
+https://www.youtube.com/watch?v=hyFS2btLgM8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x027
+https://www.youtube.com/watch?v=zN6kdQr_2ks
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x030
+https://www.youtube.com/watch?v=0UNy8ZmH_j4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x033
+https://www.youtube.com/watch?v=teXLDuneh8s
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x035
+https://www.youtube.com/watch?v=cTNBnY9MrZk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x037
+https://www.youtube.com/watch?v=kzFtZwPmSvg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x038
+https://www.youtube.com/watch?v=NQRo8T9djp0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x039
+https://www.youtube.com/watch?v=Qe1kO1bJ7nI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x041
+https://www.youtube.com/watch?v=LoNyMvXtIf4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x043
+https://www.youtube.com/watch?v=zk3w90a2TSg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x044
+https://www.youtube.com/watch?v=j9T3vaQwA5g
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x045
+https://www.youtube.com/watch?v=WFXBt1Fu35Y
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x046
+https://www.youtube.com/watch?v=9rkEicpz8Yk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x047
+https://www.youtube.com/watch?v=i8G2gDtTGfI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x049
+https://www.youtube.com/watch?v=OBzXIhl0uG0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x050
+https://www.youtube.com/watch?v=wD7q6ziiqWs
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x051
+https://www.youtube.com/watch?v=lxuH5VWFo0s
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x052
+https://www.youtube.com/watch?v=KTvvK_RET-o
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x053
+https://www.youtube.com/watch?v=urMJ3Nz2bZY
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x055
+https://www.youtube.com/watch?v=qwezxXY7zfk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x056
+https://www.youtube.com/watch?v=i3bmujFUMpI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x057
+https://www.youtube.com/watch?v=2rbwQN2GZtk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x058
+https://www.youtube.com/watch?v=vBgT0ew-9K8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x059
+https://www.youtube.com/watch?v=Rrc03Hzc7nc
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x060
+https://www.youtube.com/watch?v=eOWvZDMTZ0E
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x061
+https://www.youtube.com/watch?v=jPP2b3x5amY
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x064
+https://www.youtube.com/watch?v=H9jK_AqLsN8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x065
+https://www.youtube.com/watch?v=wutUOiRZGhc
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x066
+https://www.youtube.com/watch?v=lAv3zlyyqEQ
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x067
+https://www.youtube.com/watch?v=DghE2IvILVM
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x068
+https://www.youtube.com/watch?v=bej11aes1PY
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x070
+https://www.youtube.com/watch?v=9MQHJY2LVfk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x071
+https://www.youtube.com/watch?v=9dW-cYHIg5U
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x075
+https://www.youtube.com/watch?v=hBWwTYJ88r8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x076
+https://www.youtube.com/watch?v=jRrLA7rfFUg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x079
+https://www.youtube.com/watch?v=tuiG63aAAjc
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x087
+https://www.youtube.com/watch?v=JPy-mwZsj1c
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x088
+https://www.youtube.com/watch?v=FKJ6-1pgtOQ
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x090
+https://www.youtube.com/watch?v=eMF6ZOFgbL4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x091
+https://www.youtube.com/watch?v=bH9wPAKiWoU
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x092
+https://www.youtube.com/watch?v=uWOWwy6tuME
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x093
+https://www.youtube.com/watch?v=WC-iEJQWUw8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x094
+https://www.youtube.com/watch?v=oDo0J4RDdx4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x096
+https://www.youtube.com/watch?v=MB181f9FFo8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x097
+https://www.youtube.com/watch?v=8QfKElzvHb0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x100
+https://www.youtube.com/watch?v=dgFN1qVybEI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x101
+https://www.youtube.com/watch?v=XGj32F9RLiY
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x103
+https://www.youtube.com/watch?v=Ris7kk3hiVI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x104
+https://www.youtube.com/watch?v=wUzxEMy4U_4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x105
+https://www.youtube.com/watch?v=NdBhB1stTk0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x107
+https://www.youtube.com/watch?v=nXJnTbBetzA
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Refactor x108
+https://www.youtube.com/watch?v=2ykcvAPvZTI
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Rocket Control Units and Upgrades x401
+https://www.youtube.com/watch?v=fm7FgDFPLn8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space exploration 0.6 Mod✅🏭➡️New Deep Naquitite mining x140
+https://www.youtube.com/watch?v=eMAi_WLncFg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️ASD tech card ship fixs and improvements x714
+https://www.youtube.com/watch?v=0lspxe1Fx1U
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Boosting Science slowly x720
+https://www.youtube.com/watch?v=UIOMMHu9UTs
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Broken everything x701
+https://www.youtube.com/watch?v=__A3Zz4ct5M
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Core ship tweaks x745
+https://www.youtube.com/watch?v=vGRnZA_oh8Y
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Electronic components and fixs x725
+https://www.youtube.com/watch?v=22rBDHP2CGg
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Finishing planet Goibniu base layout x712
+https://www.youtube.com/watch?v=29_B6lUBRf4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Goibniu Delivery Cannon new base layout x711
+https://www.youtube.com/watch?v=IpVZh9sF9MQ
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Ice World Planet Ganus redo x732
+https://www.youtube.com/watch?v=nmNKwrOHhuk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy Rail Replacing space x748
+https://www.youtube.com/watch?v=pqJrXx8d4Cw
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy Rail Replacing x746
+https://www.youtube.com/watch?v=5xeAooog6n8
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy Rail Replacing x747
+https://www.youtube.com/watch?v=cgs3v5Zu9Fs
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Legacy Rail Replacing x747
+https://www.youtube.com/watch?v=7xRe2XjyQAk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Looking for trouble to fix x709
+https://www.youtube.com/watch?v=eXhlgxSOnk4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Maelstrum and Tulip rebuilds x728
+https://www.youtube.com/watch?v=XQHz1b1gBRw
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Migrated save game look x700
+https://www.youtube.com/watch?v=ik9_yK0geV4
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Nauvis Fluid Train setup x718
+https://www.youtube.com/watch?v=Z8Onc1U3S5s
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Nauvis Lithium x742
+https://www.youtube.com/watch?v=X7XGLGvlvR0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Neuro gel fluid fix x736
+https://www.youtube.com/watch?v=9KPfVxnyMwc
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Oil and Mineral water ship fixs x743
+https://www.youtube.com/watch?v=g9Gc00juXGs
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Parameter Mallprint designing x710
+https://www.youtube.com/watch?v=NGhLc2UkSoE
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Planet Aine Rebuilt x738
+https://www.youtube.com/watch?v=UH4uMlryWt0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Post Ganus cleanup x735
+https://www.youtube.com/watch?v=Sg0m9UqZIy0
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Red Green Blue Science pack rebuilds x729
+https://www.youtube.com/watch?v=AOL8BCOfhwQ
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Removing Pumps x723
+https://www.youtube.com/watch?v=HWALiWfmGfo
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Uranium explosives and pipes x722
+https://www.youtube.com/watch?v=9iC4SqggqmM
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️VitaCore Buff x726
+https://www.youtube.com/watch?v=IRogwFBOntk
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Void Probe data card fix x713
+https://www.youtube.com/watch?v=QGwNnlhngOM
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️x721
+https://www.youtube.com/watch?v=GZLHTIT0Vzo
+late_terms=[]
+
+SCORE 35 | Maholic | ⚙️Factorio Space Exploration 0.7 Mod✅🏭➡️Migrated Save Glance at x150
+https://www.youtube.com/watch?v=OS97b_2L89Y
+late_terms=[]
+
+SCORE 20 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #18 Vulcanite not Vulcanus
+https://www.youtube.com/watch?v=rngMGSLsR40
+late_terms=['vulcanite']
+
+SCORE 20 | eldee | [FACTORIO] Can i beat K2 + Space Exploration 0.7 before SE 0.8 release? | #19 Vulcanite for real
+https://www.youtube.com/watch?v=vCXcJurGlxQ
+late_terms=['vulcanite']
+
+SCORE 20 | BSG | Factorio K2SE: Astronomic Science Pack 1 | Episode 76
+https://www.youtube.com/watch?v=6jguYyem2Jc
+late_terms=['astronomic science']
+
+SCORE 20 | BSG | Factorio K2SE: Biological Science Pack 1  | Episode 100
+https://www.youtube.com/watch?v=3UV2tjVuDFA
+late_terms=['biological science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 1 Complete | Episode 60
+https://www.youtube.com/watch?v=f5z6D11GqvE
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 1 Rebuild pt1! | Episode 133
+https://www.youtube.com/watch?v=3eYIGApf6nM
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 1 Rebuild pt2! | Episode 134
+https://www.youtube.com/watch?v=6oDASlBcMVY
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 1 Rebuild pt3! | Episode 135
+https://www.youtube.com/watch?v=-vWlxO5BV4Q
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 2 Rebuild pt1! | Episode 136
+https://www.youtube.com/watch?v=MMuLpk6w8gw
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 2 Rebuild pt2! | Episode 137
+https://www.youtube.com/watch?v=CAM9UThNQDw
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 2 Rebuild pt3! | Episode 138
+https://www.youtube.com/watch?v=uQHrHpeBoS4
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 2 | Episode 93
+https://www.youtube.com/watch?v=s7taluYlWV8
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Energy Science Pack 3 pt1 | Episode 141
+https://www.youtube.com/watch?v=BPGFXZmmv6g
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Material Science 1 | Episode 66
+https://www.youtube.com/watch?v=YOKY9j8lWVU
+late_terms=['material science']
+
+SCORE 20 | BSG | Factorio K2SE: Material Science Pack 1 Revisited! | Episode 146
+https://www.youtube.com/watch?v=kAp_Pj3uJdQ
+late_terms=['material science']
+
+SCORE 20 | BSG | Factorio K2SE: Material Science Pack 2 again... | Episode 113
+https://www.youtube.com/watch?v=W1mOjstkKJA
+late_terms=['material science']
+
+SCORE 20 | BSG | Factorio K2SE: Material Science Pack 2 | Episode 81
+https://www.youtube.com/watch?v=oPJmeLdEHeE
+late_terms=['material science']
+
+SCORE 20 | BSG | Factorio K2SE: More Science Rebuild (300 SPM Astronomic Science Pack 1)! | Episode 92
+https://www.youtube.com/watch?v=9xPx3LJEAWQ
+late_terms=['astronomic science']
+
+SCORE 20 | BSG | Factorio K2SE: More Science Rebuild (300 SPM Energy Science Pack 1)! | Episode 89
+https://www.youtube.com/watch?v=AV6GD_ViCzI
+late_terms=['energy science']
+
+SCORE 20 | BSG | Factorio K2SE: Starting Biological Science Pack 2! | Episode 119
+https://www.youtube.com/watch?v=5SvxBFUT9KQ
+late_terms=['biological science']
+
+SCORE 20 | BSG | Factorio K2SE: Starting on Biological Science Pack 1 | Episode 98
+https://www.youtube.com/watch?v=3ObjtD2zYh8
+late_terms=['biological science']
+
+SCORE 20 | BSG | Factorio K2SE: Starting on energy science pack 1 | Episode 57
+https://www.youtube.com/watch?v=PAC5d12ioCI
+late_terms=['energy science']
+
+SCORE 17 | Zephiryen | [Factorio: Space Exploration] One science pack away from a Spaceship - Early end, Internet Dies
+https://www.youtube.com/watch?v=nHGw8rUnQM0
+late_terms=['spaceship']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration & Krastorio 2 Mod✅🏭➡️Deep Space Asteroid Base x098
+https://www.youtube.com/watch?v=Rp8X3m6QGSg
+late_terms=['deep space']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration & Krastorio 2 Mod✅🏭➡️Factory Spaceship 7  x185
+https://www.youtube.com/watch?v=BeRUrVnbalA
+late_terms=['spaceship']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.6 & Krastorio 2 Mod✅🏭➡️Spaceship Hauler Logics Overhauled x358
+https://www.youtube.com/watch?v=pkdBnD8QWyo
+late_terms=['spaceship']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Broken Arcosphere folders x704
+https://www.youtube.com/watch?v=Arr92nMTgMg
+late_terms=['arcosphere']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Cryonite processing new build on nauvis x719
+https://www.youtube.com/watch?v=8u8-mJXwDao
+late_terms=['cryonite']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Holmium ships and core planets x717
+https://www.youtube.com/watch?v=0e_KRNDbO6I
+late_terms=['holmium']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Mining Spaceship Rescue x708
+https://www.youtube.com/watch?v=FWcdBGzrgI4
+late_terms=['spaceship']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Return to Sender Spaceship Scheduler x702
+https://www.youtube.com/watch?v=z6cbir6I23U
+late_terms=['spaceship']
+
+SCORE 17 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Vulcanite and Lithium x741
+https://www.youtube.com/watch?v=NuLUxVdHU9A
+late_terms=['vulcanite']
+
+SCORE 10 | Maholic | ⚙️Factorio Space Exploration 0.7 & Krastorio 2 Mod✅🏭➡️Delivery Cannon Sender blueprinting x703
+https://www.youtube.com/watch?v=Nfj1E3QFUcs
+late_terms=[]
+
+SCORE -1 | Bold Viking | Space Exploration 0.7 - Day 39 - Starting the arcosphere puzzle to make Tier 3 Deep space science!A
+https://www.youtube.com/watch?v=G7yvxvSH8mU
+late_terms=['arcosphere', 'deep space']
+
+SCORE -8 | Laurence Plays | Spaceship Automation Tutorial - Factorio: Space Exploration - Laurence Plays
+https://www.youtube.com/watch?v=vqCkxfoqzqQ
+late_terms=['spaceship']
