@@ -1,0 +1,38 @@
+archives=7
+saves=7
+errors=0
+
+source=factorissimo_k2se_268 depth=0 size=189973420 sha256=7ea6aba27db843a635b709f103837f830064e2e67aff29b63c8ff3d6252687cd
+lineage=factorissimo_k2se_268.bin
+root=SE3
+path=se-drive-v2/saves/factorissimo_k2se_268__d0__save1__7ea6aba27db8.zip
+
+source=migration_workaround_0754 depth=0 size=84013272 sha256=d311552f80bec81f5561794d3b5d694c75c2622989145a04953056daabccf32a
+lineage=migration_workaround_0754.bin
+root=New beginings-beforemigrate-2
+path=se-drive-v2/saves/migration_workaround_0754__d0__save1__d311552f80be.zip
+
+source=asterixyz_too_early_control depth=0 size=13263560 sha256=7166c1a2108d3b74025a0e3865d289d1b44f2d06dcdeff81f8dcc0f73e258a37
+lineage=asterixyz_too_early_control.bin
+root=Space Exploration 2.0
+path=se-drive-v2/saves/asterixyz_too_early_control__d0__save1__7166c1a2108d.zip
+
+source=miniloader_modlist_current depth=0 size=2233151 sha256=c1720c9a8b4a1aa3ac63dbec1577a685cb18910076f0159839dde3f438a1c379
+lineage=miniloader_modlist_current.bin
+root=phazor_k2se_save_0.7_minimal_modlist
+path=se-drive-v2/saves/miniloader_modlist_current__d0__save1__c1720c9a8b4a.zip
+
+source=factorissimo_245 depth=0 size=47870055 sha256=30f098fb1d73a311c54c2319e680812c3aa8d33dcb1a550d5a2bfc2ea21892b5
+lineage=factorissimo_245.bin
+root=SpaceE-Stuck
+path=se-drive-v2/saves/factorissimo_245__d0__save1__30f098fb1d73.zip
+
+source=miniloader_migration_06146 depth=0 size=290332866 sha256=ebd8af5f1c8f24e451386d863e967f2ce9d500083a397697efc66c500a475daa
+lineage=miniloader_migration_06146.bin
+root=spaceyboys22_v1.x_v0.6_saved
+path=se-drive-v2/saves/miniloader_migration_06146__d0__save1__ebd8af5f1c8f.zip
+
+source=signal_transmitter depth=0 size=2471285 sha256=195b72f6150162455e24c0daba8a2ca2c3c2cb737975591e90746c75fa972a2f
+lineage=signal_transmitter.bin
+root=aai_suggester_test
+path=se-drive-v2/saves/signal_transmitter__d0__save1__195b72f61501.zip

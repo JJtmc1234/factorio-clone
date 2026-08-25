@@ -1,0 +1,552 @@
+===== factorissimo_245__d0__save1__30f098fb1d73 =====
+space-exploration-graphics
+space-exploration-graphics-2
+space-exploration-graphics-3
+space-exploration-graphics-4
+space-exploration-graphics-5
+"space-exploration-menu-simulations
+space-exploration
+space-exploration-postprocess
+'se-space-exploration-logo-black-15tiles
+(se-space-exploration-logo-shadow-15tiles
+(se-space-exploration-logo-shadow-22tiles
+(se-space-exploration-logo-shadow-30tiles
++se-space-exploration-logo-shattered-15tiles
++se-space-exploration-logo-shattered-22tiles
++se-space-exploration-logo-shattered-30tiles
+'se-space-exploration-logo-white-15tiles
+aai-programmable-vehicles$aai-programmable-vehicles.0.6.2.json
+space-exploration
+space-exploration.0.1.146.json
+space-exploration
+space-exploration.0.1.64.json
+space-exploration
+space-exploration.0.1.8.json
+space-exploration
+space-exploration.0.2.5.json
+space-exploration
+space-exploration.0.3.13.json
+space-exploration
+space-exploration.0.3.130.json
+space-exploration
+space-exploration.0.3.21.json
+space-exploration
+space-exploration.0.3.32.json
+space-exploration
+space-exploration.0.5.1.json
+space-exploration
+space-exploration.0.5.84.json
+space-exploration
+space-exploration.0.6.100.json
+space-exploration
+space-exploration.0.6.121.json
+space-exploration
+space-exploration.0.6.58.json
+space-exploration
+space-exploration.0.6.87.json
+space-exploration
+space-exploration0.0.3.45.json
+space-exploration
+space-exploration.0.2.7.lua
+space-exploration
+space-exploration.0.3.126.lua
+se-vulcanite
+se-vulcanite
+se-vulcanite-crushed
+se-vulcanite-crushed
+se-vulcanite-enriched
+se-vulcanite-enriched
+se-vulcanite-block
+se-vulcanite-block
+se-core-fragment-se-vulcanite
+se-vulcanite
+se-vulcanite-crushed
+se-vulcanite-enriched
+se-vulcanite-block
+se-vulcanite-ion-exchange-beads
+se-core-fragment-se-cryonite
+se-cryonite
+se-cryonite-powder
+se-cryonite-crystal
+se-cryonite-rod
+se-cryonite-ion-exchange-beads
+se-core-fragment-se-holmium-ore
+se-holmium-ore
+se-holmium-ore-crushed
+se-holmium-chloride
+se-holmium-powder
+se-holmium-ingot
+se-holmium-plate
+se-core-fragment-se-iridium-ore
+se-iridium-ore
+se-iridium-ore-crushed
+se-iridium-powder
+se-iridium-blastcake
+se-iridium-ingot
+se-iridium-plate
+se-naquium-ore
+se-naquium-ore-crushed
+se-naquium-refined
+se-naquium-powder
+se-naquium-crystal
+se-naquium-ingot
+se-naquium-plate
+se-holmium-cable
+se-holmium-solenoid
+se-naquium-processor
+se-naquium-cube
+se-naquium-tessaract
+	satellite
+se-arcosphere-collector
+se-arcosphere
+se-arcosphere-a
+se-arcosphere-b
+se-arcosphere-c
+se-arcosphere-d
+se-arcosphere-e
+se-arcosphere-f
+se-arcosphere-g
+se-arcosphere-h
+se-cryonite-slush-barrel
+se-rocket-science-pack
+se-satellite-telemetry
+se-astronomic-catalogue-1
+se-astronomic-catalogue-2
+se-astronomic-catalogue-3
+se-astronomic-catalogue-4
+se-astronomic-insight
+se-astronomic-science-pack-1
+se-astronomic-science-pack-2
+se-astronomic-science-pack-3
+se-astronomic-science-pack-4
+se-naquium-structural-data
+se-naquium-energy-data
+se-rocket-launch-pad
+se-rocket-launch-pad-_-seat
+se-rocket-launch-pad-silo
+fluid/se-cryonite-slush
+fluid-name.se-cryonite-slush
+fluid/se-molten-holmium
+fluid-name.se-molten-holmium
+item/se-naquium-heat-pipe
+ entity-name.se-naquium-heat-pipe
+#item/se-naquium-heat-pipe-long--t--
+%entity-name.se-naquium-heat-pipe-long
+)item/se-naquium-heat-pipe-long--t-----t--
+%entity-name.se-naquium-heat-pipe-long
+"item/se-core-fragment-se-vulcanite
+entity-name.se-vulcanite
+item/se-vulcanite
+item-name.se-vulcanite
+item/se-vulcanite-crushed
+item-name.se-vulcanite-crushed
+item/se-vulcanite-enriched
+item-name.se-vulcanite-enriched
+item/se-vulcanite-block
+item-name.se-vulcanite-block
+$item/se-vulcanite-ion-exchange-beads
+)item-name.se-vulcanite-ion-exchange-beads
+=item/se-delivery-cannon-package-se-core-fragment-se-vulcanite
+entity-name.se-vulcanite
+,item/se-delivery-cannon-package-se-vulcanite
+item-name.se-vulcanite
+4item/se-delivery-cannon-package-se-vulcanite-crushed
+item-name.se-vulcanite-crushed
+5item/se-delivery-cannon-package-se-vulcanite-enriched
+item-name.se-vulcanite-enriched
+2item/se-delivery-cannon-package-se-vulcanite-block
+item-name.se-vulcanite-block
+?item/se-delivery-cannon-package-se-vulcanite-ion-exchange-beads
+)item-name.se-vulcanite-ion-exchange-beads
+!item/se-core-fragment-se-cryonite
+entity-name.se-cryonite
+item/se-cryonite
+item-name.se-cryonite
+item/se-cryonite-powder
+item-name.se-cryonite-powder
+item/se-cryonite-crystal
+item-name.se-cryonite-crystal
+item/se-cryonite-rod
+item-name.se-cryonite-rod
+#item/se-cryonite-ion-exchange-beads
+(item-name.se-cryonite-ion-exchange-beads
+<item/se-delivery-cannon-package-se-core-fragment-se-cryonite
+entity-name.se-cryonite
++item/se-delivery-cannon-package-se-cryonite
+item-name.se-cryonite
+2item/se-delivery-cannon-package-se-cryonite-powder
+item-name.se-cryonite-powder
+/item/se-delivery-cannon-package-se-cryonite-rod
+item-name.se-cryonite-rod
+>item/se-delivery-cannon-package-se-cryonite-ion-exchange-beads
+(item-name.se-cryonite-ion-exchange-beads
+$item/se-core-fragment-se-holmium-ore
+entity-name.se-holmium-ore
+item/se-holmium-ore
+item-name.se-holmium-ore
+item/se-holmium-ore-crushed
+ item-name.se-holmium-ore-crushed
+item/se-holmium-chloride
+item-name.se-holmium-chloride
+item/se-holmium-powder
+item-name.se-holmium-powder
+item/se-holmium-ingot
+item-name.se-holmium-ingot
+item/se-holmium-plate
+item-name.se-holmium-plate
+?item/se-delivery-cannon-package-se-core-fragment-se-holmium-ore
+entity-name.se-holmium-ore
+.item/se-delivery-cannon-package-se-holmium-ore
+item-name.se-holmium-ore
+6item/se-delivery-cannon-package-se-holmium-ore-crushed
+ item-name.se-holmium-ore-crushed
+3item/se-delivery-cannon-package-se-holmium-chloride
+item-name.se-holmium-chloride
+0item/se-delivery-cannon-package-se-holmium-ingot
+item-name.se-holmium-ingot
+$item/se-core-fragment-se-iridium-ore
+entity-name.se-iridium-ore
+item/se-iridium-ore
+item-name.se-iridium-ore
+item/se-iridium-ore-crushed
+ item-name.se-iridium-ore-crushed
+item/se-iridium-powder
+item-name.se-iridium-powder
+item/se-iridium-blastcake
+item-name.se-iridium-blastcake
+item/se-iridium-ingot
+item-name.se-iridium-ingot
+item/se-iridium-plate
+item-name.se-iridium-plate
+?item/se-delivery-cannon-package-se-core-fragment-se-iridium-ore
+entity-name.se-iridium-ore
+.item/se-delivery-cannon-package-se-iridium-ore
+item-name.se-iridium-ore
+6item/se-delivery-cannon-package-se-iridium-ore-crushed
+ item-name.se-iridium-ore-crushed
+4item/se-delivery-cannon-package-se-iridium-blastcake
+item-name.se-iridium-blastcake
+0item/se-delivery-cannon-package-se-iridium-ingot
+item-name.se-iridium-ingot
+item/se-naquium-ore
+item-name.se-naquium-ore
+item/se-naquium-ore-crushed
+ item-name.se-naquium-ore-crushed
+item/se-naquium-refined
+item-name.se-naquium-refined
+item/se-naquium-powder
+item-name.se-naquium-powder
+item/se-naquium-crystal
+item-name.se-naquium-crystal
+item/se-naquium-ingot
+item-name.se-naquium-ingot
+item/se-naquium-plate
+item-name.se-naquium-plate
+.item/se-delivery-cannon-package-se-naquium-ore
+item-name.se-naquium-ore
+6item/se-delivery-cannon-package-se-naquium-ore-crushed
+ item-name.se-naquium-ore-crushed
+2item/se-delivery-cannon-package-se-naquium-refined
+item-name.se-naquium-refined
+0item/se-delivery-cannon-package-se-naquium-ingot
+item-name.se-naquium-ingot
+item/se-holmium-cable
+item-name.se-holmium-cable
+item/se-holmium-solenoid
+item-name.se-holmium-solenoid
+item/se-naquium-processor
+item-name.se-naquium-processor
+item/se-naquium-cube
+item-name.se-naquium-cube
+item/se-naquium-tessaract
+item-name.se-naquium-tessaract
+item/satellite
+item-name.satellite
+4item/se-rocket-launch-pad-silo-dummy-ingredient-item
+9item-name.se-rocket-launch-pad-silo-dummy-ingredient-item
+0item/se-rocket-launch-pad-silo-dummy-result-item
+5item-name.se-rocket-launch-pad-silo-dummy-result-item
+item/se-arcosphere-collector
+!item-name.se-arcosphere-collector
+item/se-arcosphere
+item-name.se-arcosphere
+item/se-arcosphere-a
+item-name.se-arcosphere-a
+item/se-arcosphere-b
+item-name.se-arcosphere-b
+item/se-arcosphere-c
+item-name.se-arcosphere-c
+item/se-arcosphere-d
+item-name.se-arcosphere-d
+item/se-arcosphere-e
+item-name.se-arcosphere-e
+item/se-arcosphere-f
+item-name.se-arcosphere-f
+item/se-arcosphere-g
+item-name.se-arcosphere-g
+item/se-arcosphere-h
+item-name.se-arcosphere-h
+item/se-cryonite-slush-barrel
+fluid-name.se-cryonite-slush
+8item/se-delivery-cannon-package-se-cryonite-slush-barrel
+fluid-name.se-cryonite-slush
+item/se-rocket-launch-pad
+ entity-name.se-rocket-launch-pad
+item/se-rocket-science-pack
+ item-name.se-rocket-science-pack
+item/se-satellite-telemetry
+ item-name.se-satellite-telemetry
+item/se-astronomic-catalogue-1
+#item-name.se-astronomic-catalogue-1
+item/se-astronomic-catalogue-2
+#item-name.se-astronomic-catalogue-2
+item/se-astronomic-catalogue-3
+#item-name.se-astronomic-catalogue-3
+item/se-astronomic-catalogue-4
+#item-name.se-astronomic-catalogue-4
+item/se-astronomic-insight
+item-name.se-astronomic-insight
+!item/se-astronomic-science-pack-1
+&item-name.se-astronomic-science-pack-1
+!item/se-astronomic-science-pack-2
+&item-name.se-astronomic-science-pack-2
+!item/se-astronomic-science-pack-3
+&item-name.se-astronomic-science-pack-3
+!item/se-astronomic-science-pack-4
+&item-name.se-astronomic-science-pack-4
+item/se-naquium-structural-data
+$item-name.se-naquium-structural-data
+item/se-naquium-energy-data
+ item-name.se-naquium-energy-data
+item/se-iridium-piledriver
+item-name.se-iridium-piledriver
+<item/se-delivery-cannon-weapon-package-se-iridium-piledriver
+item-name.se-iridium-piledriver
+@item/se-delivery-cannon-artillery-targeter-se-iridium-piledriver
+item-name.se-iridium-piledriver
+fluid/se-cryonite-slush
+Cryonite slush
+fluid/se-molten-holmium
+Molten holmium
+item/se-naquium-heat-pipe
+Naquium heat pipe
+#item/se-naquium-heat-pipe-long--t--
+Naquium heat pipe long --+--
+)item/se-naquium-heat-pipe-long--t-----t--
+"Naquium heat pipe long --+-----+--
+Holmium accumulator
+Naquium accumulator
+"item/se-core-fragment-se-vulcanite
+Core fragment (Vulcanite)
+item/se-vulcanite
+	Vulcanite
+item/se-vulcanite-crushed
+Crushed vulcanite
+item/se-vulcanite-enriched
+Enriched vulcanite
+item/se-vulcanite-block
+Vulcanite block
+$item/se-vulcanite-ion-exchange-beads
+=item/se-delivery-cannon-package-se-core-fragment-se-vulcanite
+2Delivery cannon capsule: Core fragment (Vulcanite)
+,item/se-delivery-cannon-package-se-vulcanite
+"Delivery cannon capsule: Vulcanite
+4item/se-delivery-cannon-package-se-vulcanite-crushed
+*Delivery cannon capsule: Crushed vulcanite
+5item/se-delivery-cannon-package-se-vulcanite-enriched
++Delivery cannon capsule: Enriched vulcanite
+2item/se-delivery-cannon-package-se-vulcanite-block
+(Delivery cannon capsule: Vulcanite block
+?item/se-delivery-cannon-package-se-vulcanite-ion-exchange-beads
+!item/se-core-fragment-se-cryonite
+Core fragment (Cryonite)
+item/se-cryonite
+Cryonite
+item/se-cryonite-powder
+Cryonite powder
+item/se-cryonite-crystal
+Cryonite crystal
+item/se-cryonite-rod
+Cryonite rod
+#item/se-cryonite-ion-exchange-beads
+<item/se-delivery-cannon-package-se-core-fragment-se-cryonite
+1Delivery cannon capsule: Core fragment (Cryonite)
++item/se-delivery-cannon-package-se-cryonite
+!Delivery cannon capsule: Cryonite
+2item/se-delivery-cannon-package-se-cryonite-powder
+(Delivery cannon capsule: Cryonite powder
+/item/se-delivery-cannon-package-se-cryonite-rod
+%Delivery cannon capsule: Cryonite rod
+>item/se-delivery-cannon-package-se-cryonite-ion-exchange-beads
+$item/se-core-fragment-se-holmium-ore
+item/se-holmium-ore
+item/se-holmium-ore-crushed
+item/se-holmium-chloride
+Holmium chloride
+item/se-holmium-powder
+Holmium powder
+item/se-holmium-ingot
+Holmium ingot
+item/se-holmium-plate
+Holmium plate
+?item/se-delivery-cannon-package-se-core-fragment-se-holmium-ore
+.item/se-delivery-cannon-package-se-holmium-ore
+6item/se-delivery-cannon-package-se-holmium-ore-crushed
+3item/se-delivery-cannon-package-se-holmium-chloride
+)Delivery cannon capsule: Holmium chloride
+0item/se-delivery-cannon-package-se-holmium-ingot
+&Delivery cannon capsule: Holmium ingot
+$item/se-core-fragment-se-iridium-ore
+item/se-iridium-ore
+item/se-iridium-ore-crushed
+item/se-iridium-powder
+Iridium powder
+item/se-iridium-blastcake
+Iridium blastcake
+item/se-iridium-ingot
+Iridium ingot
+item/se-iridium-plate
+Iridium plate
+?item/se-delivery-cannon-package-se-core-fragment-se-iridium-ore
+.item/se-delivery-cannon-package-se-iridium-ore
+6item/se-delivery-cannon-package-se-iridium-ore-crushed
+4item/se-delivery-cannon-package-se-iridium-blastcake
+*Delivery cannon capsule: Iridium blastcake
+0item/se-delivery-cannon-package-se-iridium-ingot
+&Delivery cannon capsule: Iridium ingot
+item/se-naquium-ore
+item/se-naquium-ore-crushed
+item/se-naquium-refined
+item/se-naquium-powder
+Naquium powder
+item/se-naquium-crystal
+item/se-naquium-ingot
+Naquium ingot
+item/se-naquium-plate
+Naquium plate
+.item/se-delivery-cannon-package-se-naquium-ore
+6item/se-delivery-cannon-package-se-naquium-ore-crushed
+2item/se-delivery-cannon-package-se-naquium-refined
+0item/se-delivery-cannon-package-se-naquium-ingot
+&Delivery cannon capsule: Naquium ingot
+item/se-holmium-cable
+Holmium cable
+item/se-holmium-solenoid
+Holmium solenoid
+item/se-naquium-processor
+Naquium processor
+item/se-naquium-cube
+Naquium cube
+item/se-naquium-tessaract
+Naquium tesseract
+item/satellite
+Navigation satellite
+Cargo rocket section
+Cargo rocket section packed
+4item/se-rocket-launch-pad-silo-dummy-ingredient-item
+ Cargo rocket (Hidden Ingredient)
+0item/se-rocket-launch-pad-silo-dummy-result-item
+Cargo rocket (Hidden Result)
+item/se-arcosphere-collector
+Arcosphere collector
+item/se-arcosphere
+Arcosphere
+item/se-arcosphere-a
+ Arcosphere lambda
+item/se-arcosphere-b
+ Arcosphere xi
+item/se-arcosphere-c
+ Arcosphere zeta
+item/se-arcosphere-d
+ Arcosphere theta
+item/se-arcosphere-e
+ Arcosphere epsilon
+item/se-arcosphere-f
+ Arcosphere phi
+item/se-arcosphere-g
+ Arcosphere gamma
+item/se-arcosphere-h
+ Arcosphere omega
+item/se-cryonite-slush-barrel
+Cryonite slush barrel
+8item/se-delivery-cannon-package-se-cryonite-slush-barrel
+.Delivery cannon capsule: Cryonite slush barrel
+Satellite rocket silo
+item/se-rocket-launch-pad
+Cargo rocket silo
+item/se-rocket-science-pack
+Rocket science pack
+item/se-satellite-telemetry
+Satellite telemetry
+item/se-astronomic-catalogue-1
+Astronomic catalogue
+item/se-astronomic-catalogue-2
+Broad astronomic catalogue
+item/se-astronomic-catalogue-3
+"Comprehensive astronomic catalogue
+item/se-astronomic-catalogue-4
+Extended astronomic catalogue
+item/se-astronomic-insight
+Astronomic insight
+!item/se-astronomic-science-pack-1
+Astronomic science pack 1
+!item/se-astronomic-science-pack-2
+Astronomic science pack 2
+!item/se-astronomic-science-pack-3
+Astronomic science pack 3
+!item/se-astronomic-science-pack-4
+Astronomic science pack 4
+item/se-naquium-structural-data
+Naquium structural data
+item/se-naquium-energy-data
+Naquium energy data
+item/se-iridium-piledriver
+Iridium piledriver
+<item/se-delivery-cannon-weapon-package-se-iridium-piledriver
++Weapon delivery capsule: Iridium piledriver
+@item/se-delivery-cannon-artillery-targeter-se-iridium-piledriver
+;Weapon delivery cannon targeting remote: Iridium piledriver
+se-rocket-launch-pad
+recipe/landfill-se-holmium-ore
+recipe/landfill-se-holmium-ore
+recipe/landfill-se-iridium-ore
+recipe/landfill-se-iridium-ore
+item/se-naquium-heat-pipe
+ entity-name.se-naquium-heat-pipe
+item/se-naquium-heat-pipe
+recipe/se-naquium-heat-pipe
+ entity-name.se-naquium-heat-pipe
+recipe/se-naquium-heat-pipe
+#item/se-naquium-heat-pipe-long--t--
+%entity-name.se-naquium-heat-pipe-long
+#item/se-naquium-heat-pipe-long--t--
+%recipe/se-naquium-heat-pipe-long--t--
+%entity-name.se-naquium-heat-pipe-long
+%recipe/se-naquium-heat-pipe-long--t--
++recipe/se-naquium-heat-pipe-long--t-----t--
+%entity-name.se-naquium-heat-pipe-long
++recipe/se-naquium-heat-pipe-long--t-----t--
+)item/se-naquium-heat-pipe-long--t-----t--
+%entity-name.se-naquium-heat-pipe-long
+)item/se-naquium-heat-pipe-long--t-----t--
+entity/se-naquium-heat-pipe
+ entity-name.se-naquium-heat-pipe
+entity/se-naquium-heat-pipe
+%entity/se-naquium-heat-pipe-long--t--
+%entity-name.se-naquium-heat-pipe-long
+%entity/se-naquium-heat-pipe-long--t--
++entity/se-naquium-heat-pipe-long--t-----t--
+%entity-name.se-naquium-heat-pipe-long
++entity/se-naquium-heat-pipe-long--t-----t--
+recipe/se-cryonite-lubricant
+recipe/se-cryonite-lubricant
+recipe/se-vulcanite-rocket-fuel
+recipe/se-vulcanite-rocket-fuel
+recipe/se-glass-vulcanite
+recipe/se-glass-vulcanite
+ recipe/se-heat-shielding-iridium
+ recipe/se-heat-shielding-iridium
+$entity/se-core-fragment-se-vulcanite
+entity-name.se-vulcanite
+$entity/se-core-fragment-se-vulcanite
+$recipe/se-core-fragment-se-vulcanite
