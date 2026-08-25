@@ -1,0 +1,236 @@
+name: Census public Factorio SE issue attachments
+
+on:
+  push:
+    branches: [tmp-se-issue-census-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-issue-census-result-20260825
+
+jobs:
+  census:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Search public issue bodies and comments for save-shaped URLs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          python3 - <<'PY'
+          import csv, html, json, os, pathlib, re, time
+          from urllib.parse import unquote, urlparse
+          import requests
+
+          OUT = pathlib.Path('published')
+          token = os.environ['GH_TOKEN']
+          s = requests.Session()
+          s.headers.update({
+              'Accept': 'application/vnd.github+json',
+              'Authorization': f'Bearer {token}',
+              'X-GitHub-Api-Version': '2022-11-28',
+              'User-Agent': 'JJ-SE-save-census/1.0',
+          })
+
+          queries = [
+              '"Space Exploration" Factorio in:title,body,comments is:issue created:>=2025-04-01',
+              '"space-exploration" Factorio in:title,body,comments is:issue created:>=2025-04-01',
+              '"SE 0.7" Factorio in:title,body,comments is:issue created:>=2025-04-01',
+              'K2SE Factorio in:title,body,comments is:issue created:>=2025-04-01',
+              '"Space Exploration" "save file" in:title,body,comments is:issue created:>=2025-04-01',
+              'repo:EarendelDevelopers/factorio-mods is:issue created:>=2025-04-01',
+              'repo:notnotmelon/factorissimo-2-notnotmelon is:issue created:>=2025-04-01',
+              'repo:ClaudeMetz/FactoryPlanner "Space Exploration" is:issue created:>=2025-04-01',
+              'repo:hgschmie/factorio-miniloader-redux "Space Exploration" is:issue created:>=2025-04-01',
+          ]
+
+          def api_get(url, params=None, retries=4):
+              for attempt in range(retries):
+                  r = s.get(url, params=params, timeout=45)
+                  if r.status_code == 403 and 'rate limit' in r.text.lower():
+                      reset = int(r.headers.get('x-ratelimit-reset', '0') or 0)
+                      delay = max(5, min(90, reset - int(time.time()) + 2))
+                      time.sleep(delay)
+                      continue
+                  if r.status_code >= 500:
+                      time.sleep(2 ** attempt)
+                      continue
+                  r.raise_for_status()
+                  return r
+              raise RuntimeError(f'GET failed after retries: {url}')
+
+          issues = {}
+          search_log = []
+          for q in queries:
+              try:
+                  first = api_get('https://api.github.com/search/issues', {'q': q, 'sort': 'created', 'order': 'desc', 'per_page': 100, 'page': 1}).json()
+                  total = int(first.get('total_count', 0))
+                  pages = min(10, max(1, (min(total, 1000) + 99) // 100))
+                  batches = [first]
+                  for page in range(2, pages + 1):
+                      batches.append(api_get('https://api.github.com/search/issues', {'q': q, 'sort': 'created', 'order': 'desc', 'per_page': 100, 'page': page}).json())
+                  count = 0
+                  for batch in batches:
+                      for item in batch.get('items', []):
+                          key = item.get('html_url')
+                          if key:
+                              issues[key] = item
+                              count += 1
+                  search_log.append({'query': q, 'total_count': total, 'pages': pages, 'items_seen': count})
+              except Exception as e:
+                  search_log.append({'query': q, 'error': repr(e)})
+
+          url_re = re.compile(r'https?://[^\s<>"\']+', re.I)
+          image_ext = re.compile(r'\.(?:png|jpe?g|gif|webp|svg)(?:[?#].*)?$', re.I)
+          likely_ext = re.compile(r'\.(?:zip|7z|rar|tar|gz|xz)(?:[?#].*)?$', re.I)
+          file_hosts = ('github.com/user-attachments/files/', 'drive.google.com/', 'dropbox.com/', 'cdn.discordapp.com/attachments/', 'media.discordapp.net/attachments/', 'mega.nz/', 'file.io/', 'we.tl/', 'bammeson.com/')
+          save_terms = ('save', 'factorio', 'space', 'exploration', 'k2se', 'se-', 'rocket', 'world', 'map')
+
+          def clean_url(raw):
+              u = html.unescape(raw).replace('\\_', '_')
+              while u and u[-1] in '.,;:!?)\]}>':
+                  u = u[:-1]
+              return u
+
+          def score_url(u, context):
+              low = unquote(u).lower()
+              ctx = context.lower()
+              score = 0
+              reasons = []
+              if 'github.com/user-attachments/files/' in low:
+                  score += 120; reasons.append('github-file-attachment')
+              if 'drive.google.com/file/d/' in low or 'drive.google.com/open?' in low:
+                  score += 105; reasons.append('google-drive-file')
+              if 'dropbox.com/' in low or 'cdn.discordapp.com/attachments/' in low or 'media.discordapp.net/attachments/' in low:
+                  score += 95; reasons.append('file-host')
+              if likely_ext.search(low):
+                  score += 90; reasons.append('archive-extension')
+              if low.endswith('.zip') or '.zip?' in low:
+                  score += 40
+              if any(t in low for t in save_terms):
+                  score += 25; reasons.append('save-name-term')
+              if any(t in ctx for t in ('save file', 'savegame', 'save game', 'attached save', 'map download', 'factorio-current.log')):
+                  score += 12; reasons.append('save-context')
+              if image_ext.search(low):
+                  score -= 200; reasons.append('image')
+              if any(x in low for x in ('private-user-images.githubusercontent.com', 'user-images.githubusercontent.com', '/assets/')) and not likely_ext.search(low):
+                  score -= 120; reasons.append('image-host')
+              if re.search(r'\.(?:log|txt|json)(?:[?#].*)?$', low) and not likely_ext.search(low):
+                  score -= 75; reasons.append('non-save-text')
+              if any(x in low for x in ('factorio-current.log', 'factorio-previous.log', 'mod-list.json', 'mod-settings.dat')):
+                  score -= 100; reasons.append('known-non-save')
+              return score, reasons
+
+          candidates = []
+          source_records = []
+          errors = []
+          for idx, (issue_url, summary) in enumerate(sorted(issues.items())):
+              try:
+                  issue = api_get(summary['url']).json()
+                  repo_api = issue['repository_url']
+                  repo = '/'.join(repo_api.rstrip('/').split('/')[-2:])
+                  number = issue['number']
+                  texts = [('issue-body', issue.get('body') or '', issue.get('user', {}).get('login'))]
+                  page = 1
+                  while page <= 20:
+                      comments = api_get(issue['comments_url'], {'per_page': 100, 'page': page}).json()
+                      if not comments:
+                          break
+                      for c in comments:
+                          texts.append((f'comment-{c.get("id")}', c.get('body') or '', c.get('user', {}).get('login')))
+                      if len(comments) < 100:
+                          break
+                      page += 1
+                  issue_hits = 0
+                  for source_kind, text, author in texts:
+                      decoded = html.unescape(text)
+                      for m in url_re.finditer(decoded):
+                          u = clean_url(m.group(0))
+                          start = max(0, m.start() - 240)
+                          end = min(len(decoded), m.end() + 240)
+                          context = re.sub(r'\s+', ' ', decoded[start:end])
+                          score, reasons = score_url(u, context)
+                          host_match = any(h in u.lower() for h in file_hosts)
+                          if score >= 45 or host_match or likely_ext.search(u.lower()):
+                              candidates.append({
+                                  'url': u,
+                                  'score': score,
+                                  'reasons': reasons,
+                                  'repo': repo,
+                                  'issue_number': number,
+                                  'issue_url': issue['html_url'],
+                                  'issue_title': issue.get('title'),
+                                  'issue_created_at': issue.get('created_at'),
+                                  'issue_updated_at': issue.get('updated_at'),
+                                  'source_kind': source_kind,
+                                  'author': author,
+                                  'context': context[:1000],
+                              })
+                              issue_hits += 1
+                  source_records.append({'repo': repo, 'number': number, 'url': issue['html_url'], 'title': issue.get('title'), 'text_sources': len(texts), 'candidate_hits': issue_hits})
+                  if idx % 25 == 0:
+                      print(f'processed {idx+1}/{len(issues)} issues; candidates={len(candidates)}', flush=True)
+              except Exception as e:
+                  errors.append({'issue_url': issue_url, 'error': repr(e)})
+
+          # Deduplicate exact URLs while retaining the highest-scored and richest-context occurrence.
+          by_url = {}
+          for c in candidates:
+              old = by_url.get(c['url'])
+              if old is None or (c['score'], len(c['context'])) > (old['score'], len(old['context'])):
+                  by_url[c['url']] = c
+          candidates = sorted(by_url.values(), key=lambda x: (-x['score'], x['issue_created_at'] or '', x['url']))
+
+          (OUT/'search-log.json').write_text(json.dumps(search_log, indent=2), encoding='utf-8')
+          (OUT/'issues.json').write_text(json.dumps(source_records, indent=2), encoding='utf-8')
+          (OUT/'candidates.json').write_text(json.dumps(candidates, indent=2), encoding='utf-8')
+          (OUT/'errors.json').write_text(json.dumps(errors, indent=2), encoding='utf-8')
+
+          with (OUT/'candidates.tsv').open('w', newline='', encoding='utf-8') as f:
+              w = csv.writer(f, delimiter='\t')
+              w.writerow(['score','repo','issue','source','author','url','title','context'])
+              for c in candidates:
+                  w.writerow([c['score'], c['repo'], c['issue_number'], c['source_kind'], c['author'], c['url'], c['issue_title'], c['context']])
+
+          archive_like = [c for c in candidates if c['score'] >= 80 and not image_ext.search(c['url'].lower())]
+          lines = [
+              f'queries={len(queries)}',
+              f'unique_issues={len(issues)}',
+              f'unique_candidate_urls={len(candidates)}',
+              f'high_confidence_archive_or_file_urls={len(archive_like)}',
+              f'errors={len(errors)}',
+              '',
+              'TOP CANDIDATES',
+              '=' * 120,
+          ]
+          for c in candidates[:250]:
+              lines.append(f"score={c['score']} repo={c['repo']} issue={c['issue_number']} source={c['source_kind']} url={c['url']}")
+              lines.append(f"  title={c['issue_title']}")
+              lines.append(f"  context={c['context'][:500]}")
+          (OUT/'SUMMARY.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:80]))
+          PY
+
+      - name: Publish census results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-issue-census
+          mkdir tmp-se-issue-census
+          cp -a published/. tmp-se-issue-census/
+          git add -f tmp-se-issue-census
+          git commit --allow-empty -m 'Census public SE issue attachments'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
