@@ -1,0 +1,124 @@
+{
+  "path": "data/body",
+  "value": "<p name=\"7a627ae3-297c-4ca0-81c1-900c274d0fd3\" id=\"7a627ae3-297c-4ca0-81c1-900c274d0fd3\">引き続き Factorio Space Exploration やっていきます。</p><p name=\"a80898bc-2932-42eb-84b6-8f682d1c52fd\" id=\"a80898bc-2932-42eb-84b6-8f682d1c52fd\">SE のバージョンは 0.7.32 → 0.7.33 に上がりました。</p><p name=\"e4658aad-2dd8-4f1e-93f2-9aeee4275869\" id=\"e4658aad-2dd8-4f1e-93f2-9aeee4275869\">前回は青パックの量産を終え、ロケットサイロを仮置きしたところまででした。</p><hr name=\"8f9d535f-ec4d-4445-b4dc-2608c84a940d\" id=\"8f9d535f-ec4d-4445-b4dc-2608c84a940d\"><p name=\"82f718b5-31ba-4e00-9c92-568dcff1bfb2\" id=\"82f718b5-31ba-4e00-9c92-568dcff1bfb2\">その後、打ち上げのためのロケット部品に必要な、軽量化素材、ロケットコントロールユニット、固体ロケット燃料、断熱材をとりあえず 1/s で量産できるラインを整備しました。あと、ガラスも大量に必要だったので、独立したラインで量産してメインバスに流すようにしました。メインバスの両側に十分な余白をとっていて助かりました…</p><figure name=\"cf4558e5-559d-400b-927b-8d465a4a2851\" id=\"cf4558e5-559d-400b-927b-8d465a4a2851\"><img src=\"https://assets.st-note.com/img/1759313948-VwTugsCionA9K1HdZIUyQtW6.png\" alt=\"\" width=\"620\" height=\"566\"><figcaption>埋立地なしではもう伸ばせない水辺手前ぎりぎりでした</figcaption></figure><p name=\"85ffaba9-850b-4f79-ac53-ec5db29d2524\" id=\"85ffaba9-850b-4f79-ac53-ec5db29d2524\">作った部材を見慣れた見た目のロケットサイロ（正確には観測衛星ロケットサイロ）まで引いて投入。そばで観測衛星もとりあえず手動で材料搬入で製造して、38h ぐらいで初の打ち上げ！</p><p name=\"5ae41bcc-cb48-4cfb-89d0-343f7d83894f\" id=\"5ae41bcc-cb48-4cfb-89d0-343f7d83894f\">スクショは撮り忘れました…</p><hr name=\"7c7ea0b0-30a3-4bd9-979f-511df9a84a5f\" id=\"7c7ea0b0-30a3-4bd9-979f-511df9a84a5f\"><p name=\"7e0949c7-00b0-4a8d-be28-af959aef14df\" id=\"7e0949c7-00b0-4a8d-be28-af959aef14df\">次はナウヴィスで作れそうな橙パック（ロケットサイエンスパック）を作ろうかと材料を確認したところ、観測衛星を打ち上げると手に入る衛星テレメトリが必要と。</p><p name=\"d413ad06-bace-4416-a7c8-6f70ec5f9e9a\" id=\"d413ad06-bace-4416-a7c8-6f70ec5f9e9a\">なので手動でガンガン観測衛星を作ってバンバン打ち上げ！</p><p name=\"98d0426c-38d4-43a9-aa9b-aaf4731cd537\" id=\"98d0426c-38d4-43a9-aa9b-aaf4731cd537\">たのはいいんだけど、衛星テレメトリを積んだ衛星がロケサイの近くに降りてきちゃう。カーゴ降着パッドは置いているのになんでそっちに降りてくれないの？ ちょっと離れたところに置いているからそのせい？</p><figure name=\"9fc1f2bb-804a-4411-986b-18c899a41f01\" id=\"9fc1f2bb-804a-4411-986b-18c899a41f01\"><img src=\"https://assets.st-note.com/img/1759314065-0AFJTh8CPlori4v6p7jZbLDE.png\" alt=\"\" width=\"620\" height=\"409\"><figcaption>なんでそこに落ちるん？</figcaption></figure><p name=\"e2951ccd-2170-4986-8709-57a04d77587c\" id=\"e2951ccd-2170-4986-8709-57a04d77587c\">…とひとしきり悩んだんですが、ロケサイを開いて目的地の位置を設定する必要がありました！</p><figure name=\"151c8e07-932c-401e-aa4a-4264f0a1ecd3\" id=\"151c8e07-932c-401e-aa4a-4264f0a1ecd3\"><img src=\"https://assets.st-note.com/img/1759314095-WLZCu8BIfF4DtUkERazrdyc7.png\" alt=\"\" width=\"620\" height=\"389\"><figcaption>目的地の位置の設定</figcaption></figure><p name=\"728820ed-2bbf-4f2f-91a8-7712a62f7651\" id=\"728820ed-2bbf-4f2f-91a8-7712a62f7651\">ってことは、SA ではできなかった、ロケサイごとに降ろすパッドを指定できるってことなのかな？</p><hr name=\"f913f4c6-d6ef-4887-96d8-17a511911ceb\" id=\"f913f4c6-d6ef-4887-96d8-17a511911ceb\"><p name=\"bfcb6f87-8b7e-4c9b-883e-3a1130eed0f6\" id=\"bfcb6f87-8b7e-4c9b-883e-3a1130eed0f6\">確か2つ目の衛星を打ち上げた後に、発見した惑星などが確認できるユニバース・エクスプローラーが使えるようになりました。</p><p name=\"0715fadc-3be1-4c90-9d6f-3b53d4b34738\" id=\"0715fadc-3be1-4c90-9d6f-3b53d4b34738\">今の所、ナウヴィス以外に 4 つ発見していました。</p><figure name=\"583362ad-43ad-48f7-bb14-9fffc3476d8e\" id=\"583362ad-43ad-48f7-bb14-9fffc3476d8e\"><img src=\"https://assets.st-note.com/img/1759314161-xLlN8H73S2GVPCsjXuzhUWR5.png\" alt=\"\" width=\"620\" height=\"654\"><figcaption>半壊した工場跡がある Nauvis Orbit</figcaption></figure><figure name=\"501a100b-e667-499c-ac86-1a7787656180\" id=\"501a100b-e667-499c-ac86-1a7787656180\"><img src=\"https://assets.st-note.com/img/1759314182-MeOiWA0981DaHw72X63QFLqY.png\" alt=\"\" width=\"620\" height=\"716\"><figcaption>石と鉄鉱石が得られる小惑星がごろごろ落ちてるだけどの Calidus Orbit 。氷も少し掘れそう</figcaption></figure><figure name=\"a4ac3513-cbe4-49a9-b86d-840d9e27a03b\" id=\"a4ac3513-cbe4-49a9-b86d-840d9e27a03b\"><img src=\"https://assets.st-note.com/img/1759314198-6dyGfrn7CbaLHJUt0VgT5pvY.png\" alt=\"\" width=\"620\" height=\"378\"><figcaption>ホルミウム鉱石が掘れる Meditato</figcaption></figure><figure name=\"0efb6f54-ad3e-4adc-9d87-2594fe9dbdf3\" id=\"0efb6f54-ad3e-4adc-9d87-2594fe9dbdf3\"><img src=\"https://assets.st-note.com/img/1759314222-QnI1DfBOPX4j2w7GMZbeEyWR.png\" alt=\"\" width=\"620\" height=\"459\"><figcaption>なーんもない Meditato Orbit</figcaption></figure><p name=\"1dfd4c73-cf47-49ff-8d91-7050735c5ed6\" id=\"1dfd4c73-cf47-49ff-8d91-7050735c5ed6\">SA と勝手が全然違ってどうやって宇宙に行ったらいいかすらわかってないので、Information や Wiki で予習が必要そうです。</p><hr name=\"bb5481df-e499-4ddc-92f9-b35f68d51460\" id=\"bb5481df-e499-4ddc-92f9-b35f68d51460\"><p name=\"6281dd52-e276-4701-b596-46f588b75059\" id=\"6281dd52-e276-4701-b596-46f588b75059\">とりあえず半自動で衛星を打ち上げて、橙パックが必要な研究を進めます。</p><hr name=\"3574eae2-a701-4b99-b289-85321e8d82ca\" id=\"3574eae2-a701-4b99-b289-85321e8d82ca\"><p name=\"dd06ac94-328e-409b-99d7-d0d71713ec02\" id=\"dd06ac94-328e-409b-99d7-d0d71713ec02\">そろそろ各種鉱床の残量が心配になってきたので確認・計算しました。</p><ul name=\"6b217356-3c4c-496a-9614-573fd4d0c9ba\" id=\"6b217356-3c4c-496a-9614-573fd4d0c9ba\"><li><p name=\"ba1303eb-6e22-41de-af9b-bbc445d9102f\" id=\"ba1303eb-6e22-41de-af9b-bbc445d9102f\">名前: 鉱床残量, 直近10時間の最大消費量, 採掘可能時間</p></li><li><p name=\"29784950-7862-480a-b3a5-b2311be27ce4\" id=\"29784950-7862-480a-b3a5-b2311be27ce4\">鉄鉱石: 927k, 1600/m, 9.58h</p></li><li><p name=\"6bcaa00b-649e-4308-83e7-9bf54b0d9abf\" id=\"6bcaa00b-649e-4308-83e7-9bf54b0d9abf\">銅鉱石: 1.8M, 700/m, 42.86h</p></li><li><p name=\"d6429ee0-6b11-4c6a-bc37-ae408c2289ca\" id=\"d6429ee0-6b11-4c6a-bc37-ae408c2289ca\">石炭: 1.1M, 1200/m, 15.28h</p></li><li><p name=\"b64a8332-8663-4860-be7c-442ecec81de1\" id=\"b64a8332-8663-4860-be7c-442ecec81de1\">石: 2.3M, 1600/m, 23.96</p></li></ul><p name=\"f2557a55-d7bf-4df2-a5bf-f31994d6bfad\" id=\"f2557a55-d7bf-4df2-a5bf-f31994d6bfad\">鉄鉱石がちょっとまずいですね。あと発電に必要な石炭も鉱床を追加しておきたいところ。</p><ul name=\"d561736b-5957-4647-b70f-c76841c143e0\" id=\"d561736b-5957-4647-b70f-c76841c143e0\"><li><p name=\"b7c80e26-624b-44d6-8265-9f07f671a7be\" id=\"b7c80e26-624b-44d6-8265-9f07f671a7be\">でもその前に、作れるようになったパワーアーマーに換装して…</p></li></ul><figure name=\"407d90dd-4a13-43c7-b2e5-058fb3b77dea\" id=\"407d90dd-4a13-43c7-b2e5-058fb3b77dea\"><img src=\"https://assets.st-note.com/img/1759314290-79ptY3G2r6V4FdNRJiBLuHko.png\" alt=\"\" width=\"614\" height=\"1136\" style=\"width: 368.4px; height: 681.6px;\"><figcaption>ツインロボステ！</figcaption></figure><ul name=\"42b334e1-5a3d-40a3-b041-6b9d9c50e789\" id=\"42b334e1-5a3d-40a3-b041-6b9d9c50e789\"><li><p name=\"caa5a419-e955-41ed-bec6-9ddc2b826409\" id=\"caa5a419-e955-41ed-bec6-9ddc2b826409\">あと数時間で襲来する <a href=\"https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%AD%E3%83%8A%E8%B3%AA%E9%87%8F%E6%94%BE%E5%87%BA\" target=\"_blank\" rel=\"nofollow noopener\">CME (Coronal mass ejection, コロナ質量放出)</a> に備えてアンブレラを作って…</p></li></ul><figure name=\"178b8e36-1c68-4ab7-9fa8-d71dc2fbdb8b\" id=\"178b8e36-1c68-4ab7-9fa8-d71dc2fbdb8b\"><img src=\"https://assets.st-note.com/img/1759314265-Bfxam10RJgLuQtTFyq7dpiGk.png\" alt=\"\" width=\"620\" height=\"689\"><figcaption>デカイ</figcaption></figure><ul name=\"9b9f126a-5151-4201-96f9-e31a35d6501d\" id=\"9b9f126a-5151-4201-96f9-e31a35d6501d\"><li><p name=\"f4ce157d-0508-4ed4-9979-e431763b4511\" id=\"f4ce157d-0508-4ed4-9979-e431763b4511\">電力が足りなくなりそうになってきたのでボイラーx20＋蒸気機関x40を追加して…</p></li><li><p name=\"aa6001cc-ab71-474a-b198-81181a3414b2\" id=\"aa6001cc-ab71-474a-b198-81181a3414b2\">ポータブルRTGに必要なウランをとりあえず掘り始めて…</p></li></ul><p name=\"22d2e24a-38c6-44aa-a2e8-a662ab9b1f97\" id=\"22d2e24a-38c6-44aa-a2e8-a662ab9b1f97\">とか寄り道していたら… 鉄鉱石の埋蔵量が 748k に！ 急いで鉱床追加せねば！ というところで次回へ！</p>"
+}
+{
+  "path": "data/user/urlname",
+  "value": "lazy_kojocho"
+}
+{
+  "path": "data/user/user_profile_image_path",
+  "value": "https://assets.st-note.com/production/uploads/images/217582364/profile_edeea43a14bca6be1a28cb426b520e94.png?fit=bounds&format=jpeg&quality=85&width=330"
+}
+{
+  "path": "data/user/store_url",
+  "value": ""
+}
+{
+  "path": "data/user/profile",
+  "value": "工場長だけしていたい"
+}
+{
+  "path": "data/user/like_appeal_image",
+  "value": "https://assets.st-note.com/poc-image/manual/production/preset_reaction_0.png"
+}
+{
+  "path": "data/note_share_url",
+  "value": "https://note.com/intent/post?url=https://note.com/lazy_kojocho/n/ncc796712f232"
+}
+{
+  "path": "data/pictures/0/url",
+  "value": "https://assets.st-note.com/img/1759313948-VwTugsCionA9K1HdZIUyQtW6.png"
+}
+{
+  "path": "data/pictures/0/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759313948-VwTugsCionA9K1HdZIUyQtW6.png"
+}
+{
+  "path": "data/pictures/1/url",
+  "value": "https://assets.st-note.com/img/1759314065-0AFJTh8CPlori4v6p7jZbLDE.png"
+}
+{
+  "path": "data/pictures/1/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314065-0AFJTh8CPlori4v6p7jZbLDE.png"
+}
+{
+  "path": "data/pictures/2/url",
+  "value": "https://assets.st-note.com/img/1759314095-WLZCu8BIfF4DtUkERazrdyc7.png"
+}
+{
+  "path": "data/pictures/2/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314095-WLZCu8BIfF4DtUkERazrdyc7.png"
+}
+{
+  "path": "data/pictures/3/url",
+  "value": "https://assets.st-note.com/img/1759314161-xLlN8H73S2GVPCsjXuzhUWR5.png"
+}
+{
+  "path": "data/pictures/3/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314161-xLlN8H73S2GVPCsjXuzhUWR5.png"
+}
+{
+  "path": "data/pictures/4/url",
+  "value": "https://assets.st-note.com/img/1759314182-MeOiWA0981DaHw72X63QFLqY.png"
+}
+{
+  "path": "data/pictures/4/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314182-MeOiWA0981DaHw72X63QFLqY.png"
+}
+{
+  "path": "data/pictures/5/url",
+  "value": "https://assets.st-note.com/img/1759314198-6dyGfrn7CbaLHJUt0VgT5pvY.png"
+}
+{
+  "path": "data/pictures/5/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314198-6dyGfrn7CbaLHJUt0VgT5pvY.png"
+}
+{
+  "path": "data/pictures/6/url",
+  "value": "https://assets.st-note.com/img/1759314222-QnI1DfBOPX4j2w7GMZbeEyWR.png"
+}
+{
+  "path": "data/pictures/6/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314222-QnI1DfBOPX4j2w7GMZbeEyWR.png"
+}
+{
+  "path": "data/pictures/7/url",
+  "value": "https://assets.st-note.com/img/1759314290-79ptY3G2r6V4FdNRJiBLuHko.png"
+}
+{
+  "path": "data/pictures/7/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314290-79ptY3G2r6V4FdNRJiBLuHko.png"
+}
+{
+  "path": "data/pictures/8/url",
+  "value": "https://assets.st-note.com/img/1759314265-Bfxam10RJgLuQtTFyq7dpiGk.png"
+}
+{
+  "path": "data/pictures/8/thumbnail_url",
+  "value": "https://assets.st-note.com/img/1759314265-Bfxam10RJgLuQtTFyq7dpiGk.png"
+}
+{
+  "path": "data/remained_file_num",
+  "value": 0
+}
+{
+  "path": "data/facebook_share_url",
+  "value": "https://www.facebook.com/share.php?u=https://note.com/lazy_kojocho/n/ncc796712f232&t=SE+47h%3A+%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E8%A6%B3%E6%B8%AC%E8%A1%9B%E6%98%9F%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%EF%BD%9Clazy_kojocho%EF%BD%9Cnote%EF%BC%88%E3%83%8E%E3%83%BC%E3%83%88%EF%BC%89"
+}
+{
+  "path": "data/line_share_url",
+  "value": "https://line.naver.jp/R/msg/text/?SE+47h%3A+%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E8%A6%B3%E6%B8%AC%E8%A1%9B%E6%98%9F%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%EF%BD%9Clazy_kojocho%EF%BD%9Cnote%EF%BC%88%E3%83%8E%E3%83%BC%E3%83%88%EF%BC%89%0Ahttps://note.com/lazy_kojocho/n/ncc796712f232"
+}
+{
+  "path": "data/twitter_share_url",
+  "value": "https://twitter.com/intent/tweet?url=https://note.com/lazy_kojocho/n/ncc796712f232&text=SE+47h%3A+%E3%81%AF%E3%81%98%E3%82%81%E3%81%A6%E3%81%AE%E8%A6%B3%E6%B8%AC%E8%A1%9B%E6%98%9F%E6%89%93%E3%81%A1%E4%B8%8A%E3%81%92%EF%BD%9Clazy_kojocho&related=note_PR"
+}
+{
+  "path": "data/note_url",
+  "value": "https://note.com/lazy_kojocho/n/ncc796712f232"
+}
+{
+  "path": "data/content_rating_via",
+  "value": ""
+}
