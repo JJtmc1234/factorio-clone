@@ -1,0 +1,120 @@
+name: Sort Drive saves by exact SE header
+
+on:
+  push:
+    branches: [tmp-se-drive-header-sort-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  headers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download saves and parse level-init headers
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet --upgrade gdown
+          rm -rf se-drive-headers
+          mkdir -p se-drive-headers/downloads se-drive-headers/result
+          cat > /tmp/candidates.tsv <<'EOF'
+          asterixyz_too_early_control	1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq
+          miniloader_modlist_current	1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-
+          miniloader_migration_06146	1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo
+          migration_workaround_0754	1nScbABVE1hugI9Oj5Li6XRotivrJuBsp
+          factorissimo_k2se_268	1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT
+          signal_transmitter	1Oav4cGy1yDWdb4UdcUyzoKm4-ryBFg1S
+          factorissimo_245	1BFktsFpRaH8N5IHgbbquS9YHyNXClQxr
+          EOF
+          while IFS=$'\t' read -r name id; do
+            timeout 1500 gdown "$id" -O "se-drive-headers/downloads/${name}.zip"
+          done < /tmp/candidates.tsv
+
+          cat > /tmp/headers.py <<'PY'
+          from __future__ import annotations
+          import hashlib, json, pathlib, struct, zipfile
+
+          root=pathlib.Path('se-drive-headers')
+          rows=[]
+          for path in sorted((root/'downloads').glob('*.zip')):
+              name=path.stem
+              row={'name':name,'path':str(path),'bytes':path.stat().st_size}
+              h=hashlib.sha256();
+              with path.open('rb') as f:
+                  for chunk in iter(lambda:f.read(1024*1024),b''): h.update(chunk)
+              row['sha256']=h.hexdigest()
+              try:
+                  with zipfile.ZipFile(path) as z:
+                      names=z.namelist()
+                      init=next(n for n in names if n.endswith('/level-init.dat') or n=='level-init.dat')
+                      save_root=init[:-len('/level-init.dat')] if init.endswith('/level-init.dat') else ''
+                      d=z.read(init)
+                      row['save_root']=save_root
+                      row['zip_members']=len(names)
+                      row['level_files']=[{'name':n,'bytes':z.getinfo(n).file_size} for n in names if n.startswith((save_root+'/' if save_root else '')+'level.dat') and '/' not in n[len(save_root)+1 if save_root else 0:]]
+                      row['script_dat_bytes']=z.getinfo((save_root+'/' if save_root else '')+'script.dat').file_size
+                  class R:
+                      def __init__(self,d): self.d=d; self.o=0
+                      def u8(self): v=self.d[self.o]; self.o+=1; return v
+                      def u16(self): v=struct.unpack_from('<H',self.d,self.o)[0]; self.o+=2; return v
+                      def u32(self): v=struct.unpack_from('<I',self.d,self.o)[0]; self.o+=4; return v
+                      def ver(self): return self.u16(),self.u16(),self.u16(),self.u16()
+                      def opt(self,b,fv):
+                          if fv>(0,14,14,0):
+                              x=self.u8()
+                              if x!=255:return x
+                          return self.u16() if b==16 else self.u32()
+                      def text(self,fv):
+                          n=self.opt(32,fv); v=self.d[self.o:self.o+n]; self.o+=n; return v.decode('utf-8','replace')
+                      def v48(self,fv): return self.opt(16,fv),self.opt(16,fv),self.opt(16,fv)
+                  r=R(d); fv=r.ver(); r.u8()
+                  save_name=r.text(fv); campaign=r.text(fv); base_mod=r.text(fv)
+                  r.u8();r.u8();r.u8();r.text(fv);r.u8();r.u8();r.u8();r.u8()
+                  loaded='.'.join(map(str,r.v48(fv))); build=r.u16(); branch=r.u8()
+                  mods={}
+                  count=r.opt(32,fv)
+                  for _ in range(count):
+                      mod=r.text(fv); version='.'.join(map(str,r.v48(fv))); crc=r.u32(); mods[mod]=version
+                  row.update({
+                      'factorio_version':'.'.join(map(str,fv[:3])),
+                      'factorio_version_full':'.'.join(map(str,fv)),
+                      'save_name':save_name,'campaign':campaign,'base_mod':base_mod,
+                      'loaded_from':loaded,'loaded_from_build':build,'branch_version':branch,
+                      'mod_count':len(mods),'space_exploration':mods.get('space-exploration'),
+                      'krastorio2':mods.get('Krastorio2'),'mods':mods,
+                      'native_se07':bool(mods.get('space-exploration','').startswith('0.7.')),
+                  })
+              except Exception as exc:
+                  row['error']=repr(exc)
+              rows.append(row)
+          (root/'result'/'headers.json').write_text(json.dumps(rows,indent=2,ensure_ascii=False))
+          lines=[f'Saves parsed: {len(rows)}','', 'HEADER SUMMARY','='*130]
+          for r in rows:
+              lines += [
+                  f"{r['name']} | bytes={r['bytes']} | sha256={r['sha256']}",
+                  f"  root={r.get('save_root')} factorio={r.get('factorio_version_full')} loaded_from={r.get('loaded_from')} build={r.get('loaded_from_build')}",
+                  f"  SE={r.get('space_exploration')} K2={r.get('krastorio2')} mods={r.get('mod_count')} native_se07={r.get('native_se07')}",
+                  f"  level_files={r.get('level_files')} script_dat_bytes={r.get('script_dat_bytes')}",
+                  f"  error={r.get('error')}",''
+              ]
+          (root/'result'/'SUMMARY.txt').write_text('\n'.join(lines))
+          print('\n'.join(lines))
+          PY
+          python3 /tmp/headers.py
+      - name: Publish result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-drive-header-sort-result-20260824
+          rm -rf tmp-se-drive-header-sort
+          mkdir -p tmp-se-drive-header-sort
+          cp -a se-drive-headers/result/. tmp-se-drive-header-sort/ || true
+          git add -f tmp-se-drive-header-sort
+          git commit -m 'Publish exact headers for Drive-hosted SE saves' || true
+          git push --force origin HEAD:refs/heads/tmp-se-drive-header-sort-result-20260824
