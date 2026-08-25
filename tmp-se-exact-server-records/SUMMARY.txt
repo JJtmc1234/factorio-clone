@@ -1,0 +1,30 @@
+OLD_RECORD_MATCHES: 6
+FILES_WITH_TARGET_TEXT: 5
+EXTRACTED_GAME_IDS: [1261706, 1261724, 1261758, 1261763, 1261778, 1261787, 1261796, 1261804, 1261830, 1261843, 1261845, 1261947, 1261989, 1262019, 1262035, 1262039, 1262136, 1262151, 1262166, 1262192, 1262194, 1262195, 1262212, 1262219, 1262249, 1262253, 1262271, 1262273, 1262300, 1262313, 1262327, 1262342, 1262346, 1262347, 1262352, 1262372, 1262411, 1262412, 1262421, 1262493, 1262504, 1262518, 1262526, 1262536, 1262541, 1262563, 1262592, 1262593, 1262600, 1262630, 1262640, 1262655, 1262669, 1262690, 1262694, 1262717, 1262724, 1262799, 1262829, 1262834, 1262838, 1262848, 1262853, 1262863, 1262864, 1262866, 1262885, 1262897, 1262913, 1262934, 1262940, 1262958, 1262978, 1262989, 1263001, 1263006, 1263007, 1263052, 1263065, 1263098, 1263140, 1263170, 1263188, 1263189, 1263195, 1263197, 1263217, 1263243, 1263246, 1263266, 1263327, 1263335, 1263369, 1263387, 1263404, 1263426, 1263441, 1263463, 1263520, 1263522, 1263544, 1263556, 1263587, 1263589, 1263620, 1263648, 1263660, 1263683, 1263687, 1263709, 1263710, 1263724, 1263744, 1263745, 1263751]
+LIVE_DETAILS: 17
+LIVE_ERRORS: 98
+
+OLD: source=all-servers.json path=16 name=Connavar game 1 - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+OLD: source=all-servers.json path=33 name=The Smelly Factory - Season 15 - K2SE - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+OLD: source=all-servers.json path=72 name=Amogus Inc. - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+OLD: source=se-candidates.json path=1 name=Connavar game 1 - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+OLD: source=se-candidates.json path=3 name=The Smelly Factory - Season 15 - K2SE - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+OLD: source=se-candidates.json path=4 name=Amogus Inc. - Factorio Server Browser game_id=None host=None password=None time=None mods=None
+
+LIVE: name=goose game_id=1262166 host=50.35.62.140:34197 password=True ticks=16626 SE=None K2=None mods=27
+LIVE: name=Flake game_id=1262219 host=86.103.15.75:34197 password=False ticks=11773 SE=None K2=None mods=5
+LIVE: name=Brooks2 game_id=1262342 host=72.84.114.161:34197 password=True ticks=85215 SE=None K2=None mods=5
+LIVE: name=Enx Pyanodon game_id=1262541 host=79.137.76.232:34197 password=True ticks=3319 SE=None K2=None mods=45
+LIVE: name=hax0rjax's server game_id=1262630 host=74.124.188.82:34197 password=True ticks=1400 SE=None K2=None mods=5
+LIVE: name=Tot im Bunker x100 game_id=1262640 host=37.27.226.35:34197 password=True ticks=12927 SE=None K2=None mods=12
+LIVE: name=majoro.cn-[color=red]0.001倍科技享福[/color] game_id=1262863 host=125.116.15.20:34206 password=False ticks=2895 SE=None K2=None mods=6
+LIVE: name=majoro.cn - [color=0,0.8,1]太空时代9[/color] game_id=1262864 host=125.116.15.20:34205 password=True ticks=15329 SE=None K2=None mods=5
+LIVE: name=majoro.cn - [color=0,0.8,1]品质原版[/color] game_id=1262866 host=125.116.15.20:34204 password=False ticks=43139 SE=None K2=None mods=4
+LIVE: name=[entity=entity-ghost]Amogus Inc. game_id=1262913 host=79.240.152.116:25566 password=True ticks=11437 SE=0.7.61 K2=2.1.2 mods=71
+LIVE: name=Jensbots Factorio Server game_id=1263001 host=188.91.16.246:25528 password=True ticks=4075 SE=None K2=None mods=6
+LIVE: name=168er game_id=1263006 host=92.208.116.89:56231 password=False ticks=5858 SE=None K2=None mods=5
+LIVE: name=85er game_id=1263007 host=92.208.116.89:56250 password=False ticks=30982 SE=None K2=None mods=5
+LIVE: name=Factorio Space AGE Server 10x QOL game_id=1263195 host=65.109.59.32:34197 password=True ticks=12038 SE=None K2=None mods=17
+LIVE: name=Chillhouse game_id=1263243 host=90.251.75.197:34197 password=True ticks=31761 SE=None K2=None mods=13
+LIVE: name=leck game_id=1263544 host=138.201.80.143:34197 password=True ticks=33 SE=None K2=None mods=5
+LIVE: name=Da Boiz In Space game_id=1263587 host=73.220.3.116:34197 password=True ticks=13154 SE=None K2=None mods=14

@@ -1,0 +1,1464 @@
+[
+  {
+    "application_version": {
+      "build_mode": "steam",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "",
+    "game_id": 1262166,
+    "game_time_elapsed": 16626,
+    "has_password": true,
+    "headless_server": false,
+    "host_address": "50.35.62.140:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627360.622621,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "enable-all-feature-flags",
+        "version": "1.1.0"
+      },
+      {
+        "name": "pyalienlifegraphics2",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyalienlifegraphics3",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyalternativeenergygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyfusionenergygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyhightechgraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyindustrygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pypetroleumhandlinggraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyraworesgraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "factoryplanner",
+        "version": "2.1.11"
+      },
+      {
+        "name": "FNEI",
+        "version": "0.4.7"
+      },
+      {
+        "name": "pyalienlifegraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pycoalprocessinggraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "pycoalprocessing",
+        "version": "3.1.3"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "pyfusionenergy",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyindustry",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyrawores",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyhightech",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pypetroleumhandling",
+        "version": "3.1.1"
+      },
+      {
+        "name": "pyalienlife",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyalternativeenergy",
+        "version": "3.2.4"
+      },
+      {
+        "name": "pypostprocessing",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pymodpack",
+        "version": "3.1.0"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "goose",
+    "players": [
+      "zerat00l"
+    ],
+    "server_id": "bHugpf2np4IebVAXu6756mYdKFFIYGkvCotergfOrDs=",
+    "steam_id": "76561198043030115",
+    "username": "zerat00l",
+    "_queried_game_id": 1262166
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Server in the Northern of Germany",
+    "game_id": 1262219,
+    "game_time_elapsed": 11773,
+    "has_password": false,
+    "headless_server": true,
+    "host_address": "86.103.15.75:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627339.019685,
+    "max_players": 10,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Flake",
+    "server_id": "S5gtS+o73ISlqt3HTLctzhlzp5octkl6E6YBzD+XT6g=",
+    "tags": [
+      "Deutsch",
+      "Germany",
+      "Kiel",
+      "Vanilla"
+    ],
+    "_queried_game_id": 1262219
+  },
+  {
+    "application_version": {
+      "build_mode": "steam",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "",
+    "game_id": 1262342,
+    "game_time_elapsed": 85215,
+    "has_password": true,
+    "headless_server": false,
+    "host_address": "72.84.114.161:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627358.080536,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Brooks2",
+    "players": [
+      "Imaj"
+    ],
+    "server_id": "uLE8dRFk0QAPOg6GpWKPn/vspHccX/p8KvmXqmeywdQ=",
+    "steam_id": "76561197973096908",
+    "username": "Imaj",
+    "_queried_game_id": 1262342
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Enx empire server",
+    "game_id": 1262541,
+    "game_time_elapsed": 3319,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "79.137.76.232:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627358.888374,
+    "max_players": 20,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "belt-visualizer",
+        "version": "2.1.4"
+      },
+      {
+        "name": "enable-all-feature-flags",
+        "version": "1.1.0"
+      },
+      {
+        "name": "pyalienlifegraphics2",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyalienlifegraphics3",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyalternativeenergygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyfusionenergygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyhightechgraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyindustrygraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pypetroleumhandlinggraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pyraworesgraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "QueueToFrontLimited",
+        "version": "2.1.0"
+      },
+      {
+        "name": "squeak-through-2",
+        "version": "0.2.0"
+      },
+      {
+        "name": "AutoDeconstruct",
+        "version": "1.1.2"
+      },
+      {
+        "name": "automatic-underground-pipe-connectors-fork",
+        "version": "2.1.2"
+      },
+      {
+        "name": "auto_manual_mode",
+        "version": "0.1.1"
+      },
+      {
+        "name": "better-victory-screen",
+        "version": "2.1.0"
+      },
+      {
+        "name": "bobinserters",
+        "version": "3.0.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "even-distribution",
+        "version": "2.1.0"
+      },
+      {
+        "name": "even-pickier-dollies",
+        "version": "3.0.2"
+      },
+      {
+        "name": "extensible-map-overlay-framework",
+        "version": "1.0.1"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "FNEI",
+        "version": "0.4.7"
+      },
+      {
+        "name": "helmod",
+        "version": "2.3.3"
+      },
+      {
+        "name": "informatron",
+        "version": "0.5.0"
+      },
+      {
+        "name": "InserterFuelLeech",
+        "version": "1.0.5"
+      },
+      {
+        "name": "Milestones",
+        "version": "1.5.2"
+      },
+      {
+        "name": "mining-patch-planner",
+        "version": "1.7.21"
+      },
+      {
+        "name": "pump",
+        "version": "2.2.2"
+      },
+      {
+        "name": "pyalienlifegraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "pycoalprocessinggraphics",
+        "version": "3.1.0"
+      },
+      {
+        "name": "Teleporters",
+        "version": "2.1.0"
+      },
+      {
+        "name": "Todo-List",
+        "version": "19.15.3"
+      },
+      {
+        "name": "doodle",
+        "version": "1.0.1"
+      },
+      {
+        "name": "pycoalprocessing",
+        "version": "3.1.3"
+      },
+      {
+        "name": "pyfusionenergy",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyindustry",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyrawores",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyhightech",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pypetroleumhandling",
+        "version": "3.1.1"
+      },
+      {
+        "name": "pyalienlife",
+        "version": "3.1.2"
+      },
+      {
+        "name": "pyalternativeenergy",
+        "version": "3.2.4"
+      },
+      {
+        "name": "pypostprocessing",
+        "version": "3.1.2"
+      },
+      {
+        "name": "cybersyn",
+        "version": "2.1.2"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Enx Pyanodon",
+    "server_id": "5SidLn6dnEBRCK6sC19HTo0VVHtwuwlZhqKJFLFgp5w=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "username": "TheKeyblader",
+    "_queried_game_id": 1262541
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Just a server that's nilla and FFA",
+    "game_id": 1262630,
+    "game_time_elapsed": 1400,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "74.124.188.82:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627346.51483,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "hax0rjax's server",
+    "server_id": "6/laQWNkNWcZlHQj/pW49CAmG1vWyp/MGdLNBjlp7DQ=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1262630
+  },
+  {
+    "application_version": {
+      "build_mode": "full",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "Servertest, ver:2.1.15",
+    "game_id": 1262640,
+    "game_time_elapsed": 12927,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "37.27.226.35:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627361.323,
+    "max_players": 10,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "zk-lib",
+        "version": "0.18.0"
+      },
+      {
+        "name": "diplomacy",
+        "version": "2.15.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "EvenDistributionLite",
+        "version": "1.5.0"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "light-overhaul",
+        "version": "0.3.0"
+      },
+      {
+        "name": "playtime",
+        "version": "1.1.3"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "RateCalculator",
+        "version": "3.4.0"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Tot im Bunker x100",
+    "server_id": "xYfIyGPWv4LN1W6oAGgh8Agq+mUf8ZzFa0wJhFsTGCU=",
+    "tags": [
+      "ver:2.1.15",
+      "Friends only",
+      "Melodie",
+      "Spaceage",
+      "Modded",
+      "100x Tech cost"
+    ],
+    "_queried_game_id": 1262640
+  },
+  {
+    "application_version": {
+      "build_mode": "full",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "注意！！！ mod会导致蓝图箱子的限制全部取消 进入服务器前请备份蓝图  web.majoro.cn 查看其它服务器",
+    "game_id": 1262863,
+    "game_time_elapsed": 2895,
+    "has_password": false,
+    "headless_server": true,
+    "host_address": "125.116.15.20:34206",
+    "host_port": 34206,
+    "last_heartbeat": 1787627352.009258,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      },
+      {
+        "name": "PHI-CL",
+        "version": "3.1.9"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "majoro.cn-[color=red]0.001倍科技享福[/color]",
+    "server_id": "n906VrTPHIQ10TWeA73afLkxlo46awNyM6gg3Dta+0c=",
+    "tags": [
+      "majoro",
+      "phidias"
+    ],
+    "_queried_game_id": 1262863
+  },
+  {
+    "application_version": {
+      "build_mode": "full",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "官网: web.majoro.cn 查看其它服务器",
+    "game_id": 1262864,
+    "game_time_elapsed": 15329,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "125.116.15.20:34205",
+    "host_port": 34205,
+    "last_heartbeat": 1787627357.058422,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "majoro.cn - [color=0,0.8,1]太空时代9[/color]",
+    "server_id": "5fOBr2eNFEOtRxSVd/TllqIW8ndSj2oGCLOFe3nL7iE=",
+    "tags": [
+      "majoro",
+      "DLC"
+    ],
+    "_queried_game_id": 1262864
+  },
+  {
+    "application_version": {
+      "build_mode": "full",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "品质原版目标2w+瓶 官网: web.majoro.cn 查看其它服务器",
+    "game_id": 1262866,
+    "game_time_elapsed": 43139,
+    "has_password": false,
+    "headless_server": true,
+    "host_address": "125.116.15.20:34204",
+    "host_port": 34204,
+    "last_heartbeat": 1787627354.399836,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "PHI-CL",
+        "version": "3.1.10"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "majoro.cn - [color=0,0.8,1]品质原版[/color]",
+    "server_id": "pyCE1tLGz46DVaMETz6O23CG2Uj/4jh9Af/AiROMYuA=",
+    "tags": [
+      "majoro",
+      "2.1"
+    ],
+    "_queried_game_id": 1262866
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "...",
+    "game_id": 1262913,
+    "game_time_elapsed": 11437,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "79.240.152.116:25566",
+    "host_port": 25566,
+    "last_heartbeat": 1787627348.247258,
+    "max_players": 5,
+    "mods": [
+      {
+        "name": "angelsaddons-mobility-graphics-crawler",
+        "version": "2.1.0"
+      },
+      {
+        "name": "angelsaddons-mobility-graphics-petro",
+        "version": "2.1.0"
+      },
+      {
+        "name": "angelsaddons-mobility-graphics-smelting",
+        "version": "2.1.0"
+      },
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "squeak-through-2",
+        "version": "0.2.0"
+      },
+      {
+        "name": "VehicleSnap",
+        "version": "2.0.4"
+      },
+      {
+        "name": "aai-containers",
+        "version": "0.4.0"
+      },
+      {
+        "name": "aai-loaders",
+        "version": "0.3.0"
+      },
+      {
+        "name": "aai-signal-transmission",
+        "version": "0.6.0"
+      },
+      {
+        "name": "aai-signals",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-chaingunner",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-flame-tank",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-flame-tumbler",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-hauler",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-laser-tank",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-miner",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-vehicles-warden",
+        "version": "0.8.0"
+      },
+      {
+        "name": "aai-zones",
+        "version": "0.8.0"
+      },
+      {
+        "name": "alien-biomes-graphics",
+        "version": "0.8.0"
+      },
+      {
+        "name": "angelsaddons-mobility",
+        "version": "2.1.1"
+      },
+      {
+        "name": "AutoDeconstruct",
+        "version": "1.1.2"
+      },
+      {
+        "name": "bullet-trails",
+        "version": "0.8.0"
+      },
+      {
+        "name": "clock",
+        "version": "3.0.0"
+      },
+      {
+        "name": "DiscoScience",
+        "version": "2.1.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "even-distribution",
+        "version": "2.1.0"
+      },
+      {
+        "name": "factoryplanner",
+        "version": "2.1.12"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "FluidMustFlow",
+        "version": "1.5.0"
+      },
+      {
+        "name": "FNEI",
+        "version": "0.4.7"
+      },
+      {
+        "name": "grappling-gun",
+        "version": "0.5.0"
+      },
+      {
+        "name": "helmod",
+        "version": "2.3.3"
+      },
+      {
+        "name": "informatron",
+        "version": "0.5.0"
+      },
+      {
+        "name": "jetpack",
+        "version": "0.5.1"
+      },
+      {
+        "name": "Krastorio2Assets",
+        "version": "2.1.0"
+      },
+      {
+        "name": "Krastorio2MenuSimulations",
+        "version": "2.1.0"
+      },
+      {
+        "name": "LogisticTrainNetwork",
+        "version": "3.1.0"
+      },
+      {
+        "name": "Milestones",
+        "version": "1.5.2"
+      },
+      {
+        "name": "mining-patch-planner",
+        "version": "1.7.21"
+      },
+      {
+        "name": "nixie-tubes",
+        "version": "2.1.0"
+      },
+      {
+        "name": "Placeables",
+        "version": "1.5.5"
+      },
+      {
+        "name": "RampantArsenalFork",
+        "version": "1.2.0"
+      },
+      {
+        "name": "rec-blue-plus",
+        "version": "1.5.2"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "robot_attrition",
+        "version": "0.7.0"
+      },
+      {
+        "name": "shield-projector",
+        "version": "0.3.0"
+      },
+      {
+        "name": "space-exploration-graphics",
+        "version": "0.7.7"
+      },
+      {
+        "name": "space-exploration-graphics-2",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-3",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-4",
+        "version": "0.7.3"
+      },
+      {
+        "name": "space-exploration-graphics-5",
+        "version": "0.7.5"
+      },
+      {
+        "name": "space-exploration-menu-simulations",
+        "version": "0.7.5"
+      },
+      {
+        "name": "textplates",
+        "version": "0.8.0"
+      },
+      {
+        "name": "Todo-List",
+        "version": "19.15.3"
+      },
+      {
+        "name": "valves-lib",
+        "version": "2.0.0"
+      },
+      {
+        "name": "Waterfill_v17",
+        "version": "2.1.1"
+      },
+      {
+        "name": "aai-programmable-structures",
+        "version": "0.9.0"
+      },
+      {
+        "name": "alien-biomes",
+        "version": "0.8.0"
+      },
+      {
+        "name": "ChangeInserterDropLane",
+        "version": "1.3.0"
+      },
+      {
+        "name": "LTN_Combinator_Modernized",
+        "version": "2.5.0"
+      },
+      {
+        "name": "valves",
+        "version": "3.0.0"
+      },
+      {
+        "name": "Krastorio2",
+        "version": "2.1.2"
+      },
+      {
+        "name": "LtnManager",
+        "version": "0.6.0"
+      },
+      {
+        "name": "aai-industry",
+        "version": "0.7.4"
+      },
+      {
+        "name": "aai-programmable-vehicles",
+        "version": "0.9.1"
+      },
+      {
+        "name": "space-exploration",
+        "version": "0.7.61"
+      },
+      {
+        "name": "factorissimo-2-notnotmelon",
+        "version": "3.12.3"
+      },
+      {
+        "name": "GUI_Unifyer",
+        "version": "2.0.2"
+      },
+      {
+        "name": "Hovercrafts",
+        "version": "2.1.4"
+      },
+      {
+        "name": "space-exploration-postprocess",
+        "version": "0.7.6"
+      },
+      {
+        "name": "very-early-requester-new",
+        "version": "1.1.2"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "[entity=entity-ghost]Amogus Inc.",
+    "server_id": "TwZkvbt0j/10CSlrDdQH/szpd+oi5iSMlm8LNdtarrM=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1262913
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Twitch-streamed gameplay world",
+    "game_id": 1263001,
+    "game_time_elapsed": 4075,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "188.91.16.246:25528",
+    "host_port": 25528,
+    "last_heartbeat": 1787627374.669661,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "cheevos_base",
+        "version": "2.1.8"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Jensbots Factorio Server",
+    "server_id": "HeEYMRpKT0+CkG1A60JrlSW2iiIJzSPxHerZkgrQ6/U=",
+    "tags": [
+      "twitch",
+      "factorio",
+      "jenscraft_MC"
+    ],
+    "_queried_game_id": 1263001
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "",
+    "game_id": 1263006,
+    "game_time_elapsed": 5858,
+    "has_password": false,
+    "headless_server": true,
+    "host_address": "92.208.116.89:56231",
+    "host_port": 56231,
+    "last_heartbeat": 1787627359.885684,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "168er",
+    "server_id": "Wnp/xpG1b+CooxHeS7+4SukVetFokif8n20Kv2bu2H8=",
+    "username": "Yenz",
+    "_queried_game_id": 1263006
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "",
+    "game_id": 1263007,
+    "game_time_elapsed": 30982,
+    "has_password": false,
+    "headless_server": true,
+    "host_address": "92.208.116.89:56250",
+    "host_port": 56250,
+    "last_heartbeat": 1787627369.420452,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "85er",
+    "server_id": "nBaHmEdTlpZhKP/aGzOgoPxbZDg+lRcRdWK8fn5urHc=",
+    "_queried_game_id": 1263007
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Another hell begins",
+    "game_id": 1263195,
+    "game_time_elapsed": 12038,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "65.109.59.32:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627351.028126,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "squeak-through-2",
+        "version": "0.2.0"
+      },
+      {
+        "name": "AutoDeconstruct",
+        "version": "1.1.2"
+      },
+      {
+        "name": "blueprint-sandboxes",
+        "version": "3.3.0"
+      },
+      {
+        "name": "ColorblindCircuitNetwork",
+        "version": "1.4.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "Sort-All-Inventories",
+        "version": "1.1.0"
+      },
+      {
+        "name": "TLBE",
+        "version": "2.4.0"
+      },
+      {
+        "name": "Milestones",
+        "version": "1.5.0"
+      },
+      {
+        "name": "MouseOverConstruction",
+        "version": "2.1.1"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "RateCalculator",
+        "version": "3.4.1"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      },
+      {
+        "name": "agricultural-tower-placement-helper",
+        "version": "1.1.0"
+      },
+      {
+        "name": "science-tab",
+        "version": "1.12.2"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Factorio Space AGE Server 10x QOL",
+    "server_id": "3yQj/AtGLRIGqBOzMkA1UT4oKOQJ1Xk0K+A2sKODctA=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1263195
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "Bless this mess",
+    "game_id": 1263243,
+    "game_time_elapsed": 31761,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "90.251.75.197:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627379.226336,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "blueprint-shotgun",
+        "version": "0.3.5"
+      },
+      {
+        "name": "chest-auto-sort",
+        "version": "1.4.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "EvenDistributionLite",
+        "version": "1.5.0"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "Milestones",
+        "version": "1.5.2"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "show-max-underground-distance",
+        "version": "0.1.1"
+      },
+      {
+        "name": "BottleneckLite",
+        "version": "1.4.1"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "RateCalculator",
+        "version": "3.4.1"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Chillhouse",
+    "server_id": "U+UmPI6sAwFu4YwgGXSPRQysJvMBpzs2Lv6b7e3Xnhs=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1263243
+  },
+  {
+    "application_version": {
+      "build_mode": "headless",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "linux64"
+    },
+    "description": "eier",
+    "game_id": 1263544,
+    "game_time_elapsed": 33,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "138.201.80.143:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627386.454284,
+    "max_players": 5,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "leck",
+    "server_id": "ddcncaDJlpF0YgvLw5Up8BX1mXWVPJDi/sPz88zj0cM=",
+    "tags": [
+      "game",
+      "space-age"
+    ],
+    "_queried_game_id": 1263544
+  },
+  {
+    "application_version": {
+      "build_mode": "full",
+      "build_version": 87284,
+      "game_version": "2.1.15",
+      "platform": "win64"
+    },
+    "description": "Da Boiz go to Space.... Age",
+    "game_id": 1263587,
+    "game_time_elapsed": 13154,
+    "has_password": true,
+    "headless_server": true,
+    "host_address": "73.220.3.116:34197",
+    "host_port": 34197,
+    "last_heartbeat": 1787627389.000195,
+    "max_players": 0,
+    "mods": [
+      {
+        "name": "base",
+        "version": "2.1.15"
+      },
+      {
+        "name": "squeak-through-2",
+        "version": "0.2.0"
+      },
+      {
+        "name": "DiscoScience",
+        "version": "2.1.0"
+      },
+      {
+        "name": "elevated-rails",
+        "version": "2.1.15"
+      },
+      {
+        "name": "even-distribution",
+        "version": "2.1.0"
+      },
+      {
+        "name": "far-reach",
+        "version": "2.1.0"
+      },
+      {
+        "name": "flib",
+        "version": "0.17.2"
+      },
+      {
+        "name": "helmod",
+        "version": "2.3.3"
+      },
+      {
+        "name": "inventory-repair",
+        "version": "21.0.0"
+      },
+      {
+        "name": "recycler",
+        "version": "2.1.15"
+      },
+      {
+        "name": "Todo-List",
+        "version": "19.15.3"
+      },
+      {
+        "name": "quality",
+        "version": "2.1.15"
+      },
+      {
+        "name": "RateCalculator",
+        "version": "3.4.1"
+      },
+      {
+        "name": "space-age",
+        "version": "2.1.15"
+      }
+    ],
+    "mods_crc": 0,
+    "name": "Da Boiz In Space",
+    "server_id": "JI+xaL4CWQCEjFmlKyOq0jATC17jlGL8ZGopZXQPCmA=",
+    "tags": [
+      "game",
+      "tags"
+    ],
+    "_queried_game_id": 1263587
+  }
+]
