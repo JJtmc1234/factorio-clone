@@ -1,0 +1,2031 @@
+{
+  "id": "026-01-SE3",
+  "source_url": "https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing",
+  "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+  "source_issue_number": 268,
+  "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/268",
+  "source_issue_title": "This won't work here! This factory building is designed for Factory floor 1. Was instead Nauvis factory floor.",
+  "source_context": "y other context about the problem here. I'm playing with space exploration + krastorio 2 if that helps. **Save file & log** Attach your save file and `factorio-current.log` file. the save is too big so i uploaded it to my google drive: https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing [factorio-current.log](https://github.com/user-attachments/files/24868904/factorio-current.log) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI codin",
+  "factorio_version": "2.0.69.0",
+  "save_root": "SE3",
+  "archive_label": "026-view",
+  "depth": 0,
+  "lineage": [],
+  "download_bytes": 189973420,
+  "download_sha256": "7ea6aba27db843a635b709f103837f830064e2e67aff29b63c8ff3d6252687cd",
+  "script_bytes": 37630459,
+  "level_files": [
+    {
+      "name": "SE3/level.dat0",
+      "bytes": 331683
+    },
+    {
+      "name": "SE3/level.dat1",
+      "bytes": 499665
+    },
+    {
+      "name": "SE3/level.dat2",
+      "bytes": 491028
+    },
+    {
+      "name": "SE3/level.dat3",
+      "bytes": 476635
+    },
+    {
+      "name": "SE3/level.dat4",
+      "bytes": 285982
+    },
+    {
+      "name": "SE3/level.dat5",
+      "bytes": 417260
+    },
+    {
+      "name": "SE3/level.dat6",
+      "bytes": 467860
+    },
+    {
+      "name": "SE3/level.dat7",
+      "bytes": 461974
+    },
+    {
+      "name": "SE3/level.dat8",
+      "bytes": 417793
+    },
+    {
+      "name": "SE3/level.dat11",
+      "bytes": 12722
+    },
+    {
+      "name": "SE3/level.dat12",
+      "bytes": 19362
+    },
+    {
+      "name": "SE3/level.dat9",
+      "bytes": 300722
+    },
+    {
+      "name": "SE3/level.dat10",
+      "bytes": 82104
+    },
+    {
+      "name": "SE3/level.dat13",
+      "bytes": 24869
+    },
+    {
+      "name": "SE3/level.dat15",
+      "bytes": 88493
+    },
+    {
+      "name": "SE3/level.dat14",
+      "bytes": 48253
+    },
+    {
+      "name": "SE3/level.dat19",
+      "bytes": 7990
+    },
+    {
+      "name": "SE3/level.dat20",
+      "bytes": 8635
+    },
+    {
+      "name": "SE3/level.dat18",
+      "bytes": 42466
+    },
+    {
+      "name": "SE3/level.dat22",
+      "bytes": 29626
+    },
+    {
+      "name": "SE3/level.dat21",
+      "bytes": 11043
+    },
+    {
+      "name": "SE3/level.dat23",
+      "bytes": 49552
+    },
+    {
+      "name": "SE3/level.dat27",
+      "bytes": 8684
+    },
+    {
+      "name": "SE3/level.dat28",
+      "bytes": 28642
+    },
+    {
+      "name": "SE3/level.dat24",
+      "bytes": 67638
+    },
+    {
+      "name": "SE3/level.dat16",
+      "bytes": 232529
+    },
+    {
+      "name": "SE3/level.dat29",
+      "bytes": 17437
+    },
+    {
+      "name": "SE3/level.dat25",
+      "bytes": 300528
+    },
+    {
+      "name": "SE3/level.dat30",
+      "bytes": 27005
+    },
+    {
+      "name": "SE3/level.dat31",
+      "bytes": 48254
+    },
+    {
+      "name": "SE3/level.dat35",
+      "bytes": 10208
+    },
+    {
+      "name": "SE3/level.dat32",
+      "bytes": 127605
+    },
+    {
+      "name": "SE3/level.dat36",
+      "bytes": 26271
+    },
+    {
+      "name": "SE3/level.dat34",
+      "bytes": 7871
+    },
+    {
+      "name": "SE3/level.dat39",
+      "bytes": 8445
+    },
+    {
+      "name": "SE3/level.dat26",
+      "bytes": 285079
+    },
+    {
+      "name": "SE3/level.dat38",
+      "bytes": 80582
+    },
+    {
+      "name": "SE3/level.dat40",
+      "bytes": 78833
+    },
+    {
+      "name": "SE3/level.dat37",
+      "bytes": 52230
+    },
+    {
+      "name": "SE3/level.dat17",
+      "bytes": 86522
+    },
+    {
+      "name": "SE3/level.dat42",
+      "bytes": 16280
+    },
+    {
+      "name": "SE3/level.dat41",
+      "bytes": 68934
+    },
+    {
+      "name": "SE3/level.dat45",
+      "bytes": 9883
+    },
+    {
+      "name": "SE3/level.dat33",
+      "bytes": 293362
+    },
+    {
+      "name": "SE3/level.dat46",
+      "bytes": 103171
+    },
+    {
+      "name": "SE3/level.dat49",
+      "bytes": 76274
+    },
+    {
+      "name": "SE3/level.dat50",
+      "bytes": 9226
+    },
+    {
+      "name": "SE3/level.dat51",
+      "bytes": 20291
+    },
+    {
+      "name": "SE3/level.dat47",
+      "bytes": 72587
+    },
+    {
+      "name": "SE3/level.dat48",
+      "bytes": 31681
+    },
+    {
+      "name": "SE3/level.dat43",
+      "bytes": 133100
+    },
+    {
+      "name": "SE3/level.dat44",
+      "bytes": 10530
+    },
+    {
+      "name": "SE3/level.dat52",
+      "bytes": 23338
+    },
+    {
+      "name": "SE3/level.dat55",
+      "bytes": 10691
+    },
+    {
+      "name": "SE3/level.dat53",
+      "bytes": 53139
+    },
+    {
+      "name": "SE3/level.dat56",
+      "bytes": 21266
+    },
+    {
+      "name": "SE3/level.dat58",
+      "bytes": 49582
+    },
+    {
+      "name": "SE3/level.dat57",
+      "bytes": 35150
+    },
+    {
+      "name": "SE3/level.dat61",
+      "bytes": 57789
+    },
+    {
+      "name": "SE3/level.dat63",
+      "bytes": 53729
+    },
+    {
+      "name": "SE3/level.dat54",
+      "bytes": 64299
+    },
+    {
+      "name": "SE3/level.dat67",
+      "bytes": 15030
+    },
+    {
+      "name": "SE3/level.dat62",
+      "bytes": 59236
+    },
+    {
+      "name": "SE3/level.dat64",
+      "bytes": 16321
+    },
+    {
+      "name": "SE3/level.dat65",
+      "bytes": 64906
+    },
+    {
+      "name": "SE3/level.dat66",
+      "bytes": 102014
+    },
+    {
+      "name": "SE3/level.dat68",
+      "bytes": 60754
+    },
+    {
+      "name": "SE3/level.dat71",
+      "bytes": 86120
+    },
+    {
+      "name": "SE3/level.dat70",
+      "bytes": 43098
+    },
+    {
+      "name": "SE3/level.dat72",
+      "bytes": 129949
+    },
+    {
+      "name": "SE3/level.dat69",
+      "bytes": 72674
+    },
+    {
+      "name": "SE3/level.dat59",
+      "bytes": 59428
+    },
+    {
+      "name": "SE3/level.dat60",
+      "bytes": 48720
+    },
+    {
+      "name": "SE3/level.dat73",
+      "bytes": 33518
+    },
+    {
+      "name": "SE3/level.dat75",
+      "bytes": 38038
+    },
+    {
+      "name": "SE3/level.dat74",
+      "bytes": 42123
+    },
+    {
+      "name": "SE3/level.dat76",
+      "bytes": 11461
+    },
+    {
+      "name": "SE3/level.dat77",
+      "bytes": 94680
+    },
+    {
+      "name": "SE3/level.dat78",
+      "bytes": 94968
+    },
+    {
+      "name": "SE3/level.dat82",
+      "bytes": 153578
+    },
+    {
+      "name": "SE3/level.dat83",
+      "bytes": 141292
+    },
+    {
+      "name": "SE3/level.dat84",
+      "bytes": 58677
+    },
+    {
+      "name": "SE3/level.dat79",
+      "bytes": 276721
+    },
+    {
+      "name": "SE3/level.dat81",
+      "bytes": 294355
+    },
+    {
+      "name": "SE3/level.dat80",
+      "bytes": 315028
+    },
+    {
+      "name": "SE3/level.dat85",
+      "bytes": 231505
+    },
+    {
+      "name": "SE3/level.dat86",
+      "bytes": 272586
+    },
+    {
+      "name": "SE3/level.dat87",
+      "bytes": 242426
+    },
+    {
+      "name": "SE3/level.dat88",
+      "bytes": 340805
+    },
+    {
+      "name": "SE3/level.dat89",
+      "bytes": 382990
+    },
+    {
+      "name": "SE3/level.dat90",
+      "bytes": 387452
+    },
+    {
+      "name": "SE3/level.dat91",
+      "bytes": 364257
+    },
+    {
+      "name": "SE3/level.dat92",
+      "bytes": 420393
+    },
+    {
+      "name": "SE3/level.dat93",
+      "bytes": 420296
+    },
+    {
+      "name": "SE3/level.dat94",
+      "bytes": 456647
+    },
+    {
+      "name": "SE3/level.dat95",
+      "bytes": 446314
+    },
+    {
+      "name": "SE3/level.dat96",
+      "bytes": 442758
+    },
+    {
+      "name": "SE3/level.dat97",
+      "bytes": 451857
+    },
+    {
+      "name": "SE3/level.dat98",
+      "bytes": 424931
+    },
+    {
+      "name": "SE3/level.dat99",
+      "bytes": 428079
+    },
+    {
+      "name": "SE3/level.dat100",
+      "bytes": 447962
+    },
+    {
+      "name": "SE3/level.dat101",
+      "bytes": 468117
+    },
+    {
+      "name": "SE3/level.dat102",
+      "bytes": 457145
+    },
+    {
+      "name": "SE3/level.dat103",
+      "bytes": 463405
+    },
+    {
+      "name": "SE3/level.dat104",
+      "bytes": 467396
+    },
+    {
+      "name": "SE3/level.dat105",
+      "bytes": 458942
+    },
+    {
+      "name": "SE3/level.dat106",
+      "bytes": 446232
+    },
+    {
+      "name": "SE3/level.dat107",
+      "bytes": 434238
+    },
+    {
+      "name": "SE3/level.dat108",
+      "bytes": 407383
+    },
+    {
+      "name": "SE3/level.dat109",
+      "bytes": 386697
+    },
+    {
+      "name": "SE3/level.dat110",
+      "bytes": 392002
+    },
+    {
+      "name": "SE3/level.dat111",
+      "bytes": 400365
+    },
+    {
+      "name": "SE3/level.dat112",
+      "bytes": 356227
+    },
+    {
+      "name": "SE3/level.dat113",
+      "bytes": 360401
+    },
+    {
+      "name": "SE3/level.dat114",
+      "bytes": 377310
+    },
+    {
+      "name": "SE3/level.dat115",
+      "bytes": 372232
+    },
+    {
+      "name": "SE3/level.dat116",
+      "bytes": 351849
+    },
+    {
+      "name": "SE3/level.dat117",
+      "bytes": 390166
+    },
+    {
+      "name": "SE3/level.dat118",
+      "bytes": 354864
+    },
+    {
+      "name": "SE3/level.dat119",
+      "bytes": 393926
+    },
+    {
+      "name": "SE3/level.dat120",
+      "bytes": 331727
+    },
+    {
+      "name": "SE3/level.dat121",
+      "bytes": 431457
+    },
+    {
+      "name": "SE3/level.dat122",
+      "bytes": 436828
+    },
+    {
+      "name": "SE3/level.dat123",
+      "bytes": 455932
+    },
+    {
+      "name": "SE3/level.dat124",
+      "bytes": 471597
+    },
+    {
+      "name": "SE3/level.dat125",
+      "bytes": 427270
+    },
+    {
+      "name": "SE3/level.dat126",
+      "bytes": 437594
+    },
+    {
+      "name": "SE3/level.dat127",
+      "bytes": 416485
+    },
+    {
+      "name": "SE3/level.dat128",
+      "bytes": 433225
+    },
+    {
+      "name": "SE3/level.dat129",
+      "bytes": 448005
+    },
+    {
+      "name": "SE3/level.dat130",
+      "bytes": 468605
+    },
+    {
+      "name": "SE3/level.dat131",
+      "bytes": 420550
+    },
+    {
+      "name": "SE3/level.dat132",
+      "bytes": 415236
+    },
+    {
+      "name": "SE3/level.dat134",
+      "bytes": 217327
+    },
+    {
+      "name": "SE3/level.dat133",
+      "bytes": 370754
+    },
+    {
+      "name": "SE3/level.dat135",
+      "bytes": 132126
+    },
+    {
+      "name": "SE3/level.dat136",
+      "bytes": 132406
+    },
+    {
+      "name": "SE3/level.dat137",
+      "bytes": 142229
+    },
+    {
+      "name": "SE3/level.dat138",
+      "bytes": 112153
+    },
+    {
+      "name": "SE3/level.dat139",
+      "bytes": 111516
+    },
+    {
+      "name": "SE3/level.dat140",
+      "bytes": 110524
+    },
+    {
+      "name": "SE3/level.dat141",
+      "bytes": 154358
+    },
+    {
+      "name": "SE3/level.dat142",
+      "bytes": 115096
+    },
+    {
+      "name": "SE3/level.dat143",
+      "bytes": 111095
+    },
+    {
+      "name": "SE3/level.dat144",
+      "bytes": 199761
+    },
+    {
+      "name": "SE3/level.dat145",
+      "bytes": 463011
+    },
+    {
+      "name": "SE3/level.dat146",
+      "bytes": 439545
+    },
+    {
+      "name": "SE3/level.dat147",
+      "bytes": 322536
+    },
+    {
+      "name": "SE3/level.dat148",
+      "bytes": 288207
+    },
+    {
+      "name": "SE3/level.dat149",
+      "bytes": 275107
+    },
+    {
+      "name": "SE3/level.dat150",
+      "bytes": 318575
+    },
+    {
+      "name": "SE3/level.dat151",
+      "bytes": 317554
+    },
+    {
+      "name": "SE3/level.dat152",
+      "bytes": 301333
+    },
+    {
+      "name": "SE3/level.dat153",
+      "bytes": 316286
+    },
+    {
+      "name": "SE3/level.dat154",
+      "bytes": 311296
+    },
+    {
+      "name": "SE3/level.dat155",
+      "bytes": 308513
+    },
+    {
+      "name": "SE3/level.dat156",
+      "bytes": 335134
+    },
+    {
+      "name": "SE3/level.dat157",
+      "bytes": 305608
+    },
+    {
+      "name": "SE3/level.dat159",
+      "bytes": 250415
+    },
+    {
+      "name": "SE3/level.dat158",
+      "bytes": 491776
+    },
+    {
+      "name": "SE3/level.dat161",
+      "bytes": 330997
+    },
+    {
+      "name": "SE3/level.dat160",
+      "bytes": 573909
+    },
+    {
+      "name": "SE3/level.dat165",
+      "bytes": 463508
+    },
+    {
+      "name": "SE3/level.dat163",
+      "bytes": 455451
+    },
+    {
+      "name": "SE3/level.dat164",
+      "bytes": 464310
+    },
+    {
+      "name": "SE3/level.dat167",
+      "bytes": 469183
+    },
+    {
+      "name": "SE3/level.dat168",
+      "bytes": 469177
+    },
+    {
+      "name": "SE3/level.dat171",
+      "bytes": 464948
+    },
+    {
+      "name": "SE3/level.dat162",
+      "bytes": 446696
+    },
+    {
+      "name": "SE3/level.dat173",
+      "bytes": 471688
+    },
+    {
+      "name": "SE3/level.dat169",
+      "bytes": 473442
+    },
+    {
+      "name": "SE3/level.dat172",
+      "bytes": 471167
+    },
+    {
+      "name": "SE3/level.dat166",
+      "bytes": 469416
+    },
+    {
+      "name": "SE3/level.dat170",
+      "bytes": 465702
+    },
+    {
+      "name": "SE3/level.dat176",
+      "bytes": 468182
+    },
+    {
+      "name": "SE3/level.dat174",
+      "bytes": 473749
+    },
+    {
+      "name": "SE3/level.dat179",
+      "bytes": 469965
+    },
+    {
+      "name": "SE3/level.dat175",
+      "bytes": 471637
+    },
+    {
+      "name": "SE3/level.dat180",
+      "bytes": 473771
+    },
+    {
+      "name": "SE3/level.dat178",
+      "bytes": 470120
+    },
+    {
+      "name": "SE3/level.dat181",
+      "bytes": 461247
+    },
+    {
+      "name": "SE3/level.dat182",
+      "bytes": 462111
+    },
+    {
+      "name": "SE3/level.dat177",
+      "bytes": 469675
+    },
+    {
+      "name": "SE3/level.dat183",
+      "bytes": 443470
+    },
+    {
+      "name": "SE3/level.dat184",
+      "bytes": 456679
+    },
+    {
+      "name": "SE3/level.dat185",
+      "bytes": 467052
+    },
+    {
+      "name": "SE3/level.dat186",
+      "bytes": 463109
+    },
+    {
+      "name": "SE3/level.dat188",
+      "bytes": 449919
+    },
+    {
+      "name": "SE3/level.dat187",
+      "bytes": 466478
+    },
+    {
+      "name": "SE3/level.dat189",
+      "bytes": 473349
+    },
+    {
+      "name": "SE3/level.dat190",
+      "bytes": 475306
+    },
+    {
+      "name": "SE3/level.dat191",
+      "bytes": 474458
+    },
+    {
+      "name": "SE3/level.dat192",
+      "bytes": 474136
+    },
+    {
+      "name": "SE3/level.dat193",
+      "bytes": 481280
+    },
+    {
+      "name": "SE3/level.dat194",
+      "bytes": 479809
+    },
+    {
+      "name": "SE3/level.dat195",
+      "bytes": 476600
+    },
+    {
+      "name": "SE3/level.dat196",
+      "bytes": 479958
+    },
+    {
+      "name": "SE3/level.dat197",
+      "bytes": 478638
+    },
+    {
+      "name": "SE3/level.dat198",
+      "bytes": 475219
+    },
+    {
+      "name": "SE3/level.dat200",
+      "bytes": 469863
+    },
+    {
+      "name": "SE3/level.dat199",
+      "bytes": 475452
+    },
+    {
+      "name": "SE3/level.dat201",
+      "bytes": 472469
+    },
+    {
+      "name": "SE3/level.dat202",
+      "bytes": 468162
+    },
+    {
+      "name": "SE3/level.dat203",
+      "bytes": 465292
+    },
+    {
+      "name": "SE3/level.dat204",
+      "bytes": 466676
+    },
+    {
+      "name": "SE3/level.dat205",
+      "bytes": 461147
+    },
+    {
+      "name": "SE3/level.dat206",
+      "bytes": 465817
+    },
+    {
+      "name": "SE3/level.dat207",
+      "bytes": 470424
+    },
+    {
+      "name": "SE3/level.dat208",
+      "bytes": 464807
+    },
+    {
+      "name": "SE3/level.dat210",
+      "bytes": 458311
+    },
+    {
+      "name": "SE3/level.dat209",
+      "bytes": 469672
+    },
+    {
+      "name": "SE3/level.dat211",
+      "bytes": 453299
+    },
+    {
+      "name": "SE3/level.dat213",
+      "bytes": 313613
+    },
+    {
+      "name": "SE3/level.dat212",
+      "bytes": 446482
+    },
+    {
+      "name": "SE3/level.dat214",
+      "bytes": 310721
+    },
+    {
+      "name": "SE3/level.dat215",
+      "bytes": 416233
+    },
+    {
+      "name": "SE3/level.dat216",
+      "bytes": 412196
+    },
+    {
+      "name": "SE3/level.dat217",
+      "bytes": 417431
+    },
+    {
+      "name": "SE3/level.dat218",
+      "bytes": 457259
+    },
+    {
+      "name": "SE3/level.dat219",
+      "bytes": 469644
+    },
+    {
+      "name": "SE3/level.dat220",
+      "bytes": 487545
+    },
+    {
+      "name": "SE3/level.dat221",
+      "bytes": 467908
+    },
+    {
+      "name": "SE3/level.dat222",
+      "bytes": 482333
+    },
+    {
+      "name": "SE3/level.dat223",
+      "bytes": 470629
+    },
+    {
+      "name": "SE3/level.dat224",
+      "bytes": 460206
+    },
+    {
+      "name": "SE3/level.dat225",
+      "bytes": 433572
+    },
+    {
+      "name": "SE3/level.dat226",
+      "bytes": 459438
+    },
+    {
+      "name": "SE3/level.dat227",
+      "bytes": 484699
+    },
+    {
+      "name": "SE3/level.dat228",
+      "bytes": 488889
+    },
+    {
+      "name": "SE3/level.dat229",
+      "bytes": 475547
+    },
+    {
+      "name": "SE3/level.dat230",
+      "bytes": 468518
+    },
+    {
+      "name": "SE3/level.dat231",
+      "bytes": 487825
+    },
+    {
+      "name": "SE3/level.dat232",
+      "bytes": 483655
+    },
+    {
+      "name": "SE3/level.dat233",
+      "bytes": 504622
+    },
+    {
+      "name": "SE3/level.dat234",
+      "bytes": 472148
+    },
+    {
+      "name": "SE3/level.dat235",
+      "bytes": 436237
+    },
+    {
+      "name": "SE3/level.dat236",
+      "bytes": 359436
+    },
+    {
+      "name": "SE3/level.dat237",
+      "bytes": 218031
+    },
+    {
+      "name": "SE3/level.dat238",
+      "bytes": 334287
+    },
+    {
+      "name": "SE3/level.dat239",
+      "bytes": 470321
+    },
+    {
+      "name": "SE3/level.dat240",
+      "bytes": 479097
+    },
+    {
+      "name": "SE3/level.dat241",
+      "bytes": 499915
+    },
+    {
+      "name": "SE3/level.dat242",
+      "bytes": 495009
+    },
+    {
+      "name": "SE3/level.dat243",
+      "bytes": 485603
+    },
+    {
+      "name": "SE3/level.dat244",
+      "bytes": 478567
+    },
+    {
+      "name": "SE3/level.dat245",
+      "bytes": 477539
+    },
+    {
+      "name": "SE3/level.dat246",
+      "bytes": 490171
+    },
+    {
+      "name": "SE3/level.dat247",
+      "bytes": 479298
+    },
+    {
+      "name": "SE3/level.dat248",
+      "bytes": 490957
+    },
+    {
+      "name": "SE3/level.dat249",
+      "bytes": 490105
+    },
+    {
+      "name": "SE3/level.dat250",
+      "bytes": 483627
+    },
+    {
+      "name": "SE3/level.dat251",
+      "bytes": 482608
+    },
+    {
+      "name": "SE3/level.dat252",
+      "bytes": 486686
+    },
+    {
+      "name": "SE3/level.dat253",
+      "bytes": 489194
+    },
+    {
+      "name": "SE3/level.dat254",
+      "bytes": 497350
+    },
+    {
+      "name": "SE3/level.dat256",
+      "bytes": 488564
+    },
+    {
+      "name": "SE3/level.dat255",
+      "bytes": 502738
+    },
+    {
+      "name": "SE3/level.dat257",
+      "bytes": 490847
+    },
+    {
+      "name": "SE3/level.dat258",
+      "bytes": 500545
+    },
+    {
+      "name": "SE3/level.dat259",
+      "bytes": 495107
+    },
+    {
+      "name": "SE3/level.dat260",
+      "bytes": 493178
+    },
+    {
+      "name": "SE3/level.dat261",
+      "bytes": 484660
+    },
+    {
+      "name": "SE3/level.dat262",
+      "bytes": 484150
+    },
+    {
+      "name": "SE3/level.dat263",
+      "bytes": 480429
+    },
+    {
+      "name": "SE3/level.dat264",
+      "bytes": 482577
+    },
+    {
+      "name": "SE3/level.dat265",
+      "bytes": 478817
+    },
+    {
+      "name": "SE3/level.dat266",
+      "bytes": 482816
+    },
+    {
+      "name": "SE3/level.dat267",
+      "bytes": 479763
+    },
+    {
+      "name": "SE3/level.dat268",
+      "bytes": 478329
+    },
+    {
+      "name": "SE3/level.dat269",
+      "bytes": 484757
+    },
+    {
+      "name": "SE3/level.dat270",
+      "bytes": 486391
+    },
+    {
+      "name": "SE3/level.dat271",
+      "bytes": 485366
+    },
+    {
+      "name": "SE3/level.dat272",
+      "bytes": 481309
+    },
+    {
+      "name": "SE3/level.dat273",
+      "bytes": 469756
+    },
+    {
+      "name": "SE3/level.dat274",
+      "bytes": 463416
+    },
+    {
+      "name": "SE3/level.dat275",
+      "bytes": 473883
+    },
+    {
+      "name": "SE3/level.dat276",
+      "bytes": 483057
+    },
+    {
+      "name": "SE3/level.dat277",
+      "bytes": 471934
+    },
+    {
+      "name": "SE3/level.dat278",
+      "bytes": 482154
+    },
+    {
+      "name": "SE3/level.dat279",
+      "bytes": 462713
+    },
+    {
+      "name": "SE3/level.dat280",
+      "bytes": 468711
+    },
+    {
+      "name": "SE3/level.dat281",
+      "bytes": 453887
+    },
+    {
+      "name": "SE3/level.dat282",
+      "bytes": 450228
+    },
+    {
+      "name": "SE3/level.dat283",
+      "bytes": 468494
+    },
+    {
+      "name": "SE3/level.dat284",
+      "bytes": 476960
+    },
+    {
+      "name": "SE3/level.dat285",
+      "bytes": 475139
+    },
+    {
+      "name": "SE3/level.dat286",
+      "bytes": 473733
+    },
+    {
+      "name": "SE3/level.dat287",
+      "bytes": 476965
+    },
+    {
+      "name": "SE3/level.dat288",
+      "bytes": 475161
+    },
+    {
+      "name": "SE3/level.dat289",
+      "bytes": 475235
+    },
+    {
+      "name": "SE3/level.dat290",
+      "bytes": 468049
+    },
+    {
+      "name": "SE3/level.dat291",
+      "bytes": 465532
+    },
+    {
+      "name": "SE3/level.dat292",
+      "bytes": 459877
+    },
+    {
+      "name": "SE3/level.dat293",
+      "bytes": 460039
+    },
+    {
+      "name": "SE3/level.dat294",
+      "bytes": 465452
+    },
+    {
+      "name": "SE3/level.dat295",
+      "bytes": 469337
+    },
+    {
+      "name": "SE3/level.dat296",
+      "bytes": 471406
+    },
+    {
+      "name": "SE3/level.dat297",
+      "bytes": 461713
+    },
+    {
+      "name": "SE3/level.dat298",
+      "bytes": 477557
+    },
+    {
+      "name": "SE3/level.dat299",
+      "bytes": 487332
+    },
+    {
+      "name": "SE3/level.dat300",
+      "bytes": 488267
+    },
+    {
+      "name": "SE3/level.dat301",
+      "bytes": 493550
+    },
+    {
+      "name": "SE3/level.dat302",
+      "bytes": 492318
+    },
+    {
+      "name": "SE3/level.dat303",
+      "bytes": 487498
+    },
+    {
+      "name": "SE3/level.dat304",
+      "bytes": 483319
+    },
+    {
+      "name": "SE3/level.dat306",
+      "bytes": 484221
+    },
+    {
+      "name": "SE3/level.dat305",
+      "bytes": 495334
+    },
+    {
+      "name": "SE3/level.dat307",
+      "bytes": 491300
+    },
+    {
+      "name": "SE3/level.dat308",
+      "bytes": 487416
+    },
+    {
+      "name": "SE3/level.dat310",
+      "bytes": 487725
+    },
+    {
+      "name": "SE3/level.dat311",
+      "bytes": 476208
+    },
+    {
+      "name": "SE3/level.dat309",
+      "bytes": 494305
+    },
+    {
+      "name": "SE3/level.dat312",
+      "bytes": 475643
+    },
+    {
+      "name": "SE3/level.dat313",
+      "bytes": 480908
+    },
+    {
+      "name": "SE3/level.dat314",
+      "bytes": 494249
+    },
+    {
+      "name": "SE3/level.dat315",
+      "bytes": 516198
+    },
+    {
+      "name": "SE3/level.dat316",
+      "bytes": 516237
+    },
+    {
+      "name": "SE3/level.dat317",
+      "bytes": 521834
+    },
+    {
+      "name": "SE3/level.dat318",
+      "bytes": 505579
+    },
+    {
+      "name": "SE3/level.dat319",
+      "bytes": 498185
+    },
+    {
+      "name": "SE3/level.dat320",
+      "bytes": 484702
+    },
+    {
+      "name": "SE3/level.dat321",
+      "bytes": 429771
+    },
+    {
+      "name": "SE3/level.dat323",
+      "bytes": 175363
+    },
+    {
+      "name": "SE3/level.dat322",
+      "bytes": 391405
+    },
+    {
+      "name": "SE3/level.dat324",
+      "bytes": 228752
+    },
+    {
+      "name": "SE3/level.dat325",
+      "bytes": 290457
+    },
+    {
+      "name": "SE3/level.dat326",
+      "bytes": 422585
+    },
+    {
+      "name": "SE3/level.dat327",
+      "bytes": 488291
+    },
+    {
+      "name": "SE3/level.dat328",
+      "bytes": 488372
+    },
+    {
+      "name": "SE3/level.dat329",
+      "bytes": 480762
+    },
+    {
+      "name": "SE3/level.dat330",
+      "bytes": 489471
+    },
+    {
+      "name": "SE3/level.dat331",
+      "bytes": 476862
+    },
+    {
+      "name": "SE3/level.dat332",
+      "bytes": 484703
+    },
+    {
+      "name": "SE3/level.dat333",
+      "bytes": 486862
+    },
+    {
+      "name": "SE3/level.dat334",
+      "bytes": 480346
+    },
+    {
+      "name": "SE3/level.dat335",
+      "bytes": 485876
+    },
+    {
+      "name": "SE3/level.dat336",
+      "bytes": 488658
+    },
+    {
+      "name": "SE3/level.dat337",
+      "bytes": 503532
+    },
+    {
+      "name": "SE3/level.dat338",
+      "bytes": 505278
+    },
+    {
+      "name": "SE3/level.dat339",
+      "bytes": 507324
+    },
+    {
+      "name": "SE3/level.dat340",
+      "bytes": 508152
+    },
+    {
+      "name": "SE3/level.dat341",
+      "bytes": 507015
+    },
+    {
+      "name": "SE3/level.dat342",
+      "bytes": 493346
+    },
+    {
+      "name": "SE3/level.dat343",
+      "bytes": 506377
+    },
+    {
+      "name": "SE3/level.dat344",
+      "bytes": 515028
+    },
+    {
+      "name": "SE3/level.dat346",
+      "bytes": 489033
+    },
+    {
+      "name": "SE3/level.dat345",
+      "bytes": 512570
+    },
+    {
+      "name": "SE3/level.dat347",
+      "bytes": 473784
+    },
+    {
+      "name": "SE3/level.dat348",
+      "bytes": 464738
+    },
+    {
+      "name": "SE3/level.dat349",
+      "bytes": 494414
+    },
+    {
+      "name": "SE3/level.dat350",
+      "bytes": 474264
+    },
+    {
+      "name": "SE3/level.dat351",
+      "bytes": 476814
+    },
+    {
+      "name": "SE3/level.dat352",
+      "bytes": 484463
+    },
+    {
+      "name": "SE3/level.dat353",
+      "bytes": 490019
+    },
+    {
+      "name": "SE3/level.dat354",
+      "bytes": 481769
+    },
+    {
+      "name": "SE3/level.dat355",
+      "bytes": 497367
+    },
+    {
+      "name": "SE3/level.dat356",
+      "bytes": 499567
+    },
+    {
+      "name": "SE3/level.dat357",
+      "bytes": 506153
+    },
+    {
+      "name": "SE3/level.dat358",
+      "bytes": 486608
+    },
+    {
+      "name": "SE3/level.dat359",
+      "bytes": 469474
+    },
+    {
+      "name": "SE3/level.dat360",
+      "bytes": 472558
+    },
+    {
+      "name": "SE3/level.dat361",
+      "bytes": 461341
+    },
+    {
+      "name": "SE3/level.dat362",
+      "bytes": 489832
+    },
+    {
+      "name": "SE3/level.dat363",
+      "bytes": 503146
+    },
+    {
+      "name": "SE3/level.dat364",
+      "bytes": 473416
+    },
+    {
+      "name": "SE3/level.dat365",
+      "bytes": 469785
+    },
+    {
+      "name": "SE3/level.dat366",
+      "bytes": 455440
+    },
+    {
+      "name": "SE3/level.dat367",
+      "bytes": 481882
+    },
+    {
+      "name": "SE3/level.dat371",
+      "bytes": 247896
+    },
+    {
+      "name": "SE3/level.dat368",
+      "bytes": 517086
+    },
+    {
+      "name": "SE3/level.dat370",
+      "bytes": 371747
+    },
+    {
+      "name": "SE3/level.dat369",
+      "bytes": 479155
+    },
+    {
+      "name": "SE3/level.dat372",
+      "bytes": 289135
+    },
+    {
+      "name": "SE3/level.dat374",
+      "bytes": 336030
+    },
+    {
+      "name": "SE3/level.dat373",
+      "bytes": 522664
+    },
+    {
+      "name": "SE3/level.dat375",
+      "bytes": 369001
+    },
+    {
+      "name": "SE3/level.dat376",
+      "bytes": 401887
+    },
+    {
+      "name": "SE3/level.dat377",
+      "bytes": 441079
+    },
+    {
+      "name": "SE3/level.dat378",
+      "bytes": 452294
+    },
+    {
+      "name": "SE3/level.dat379",
+      "bytes": 460838
+    },
+    {
+      "name": "SE3/level.dat380",
+      "bytes": 456116
+    },
+    {
+      "name": "SE3/level.dat381",
+      "bytes": 464450
+    },
+    {
+      "name": "SE3/level.dat382",
+      "bytes": 447792
+    },
+    {
+      "name": "SE3/level.dat383",
+      "bytes": 461065
+    },
+    {
+      "name": "SE3/level.dat384",
+      "bytes": 464095
+    },
+    {
+      "name": "SE3/level.dat385",
+      "bytes": 455284
+    },
+    {
+      "name": "SE3/level.dat386",
+      "bytes": 461883
+    },
+    {
+      "name": "SE3/level.dat387",
+      "bytes": 462808
+    },
+    {
+      "name": "SE3/level.dat388",
+      "bytes": 456930
+    },
+    {
+      "name": "SE3/level.dat389",
+      "bytes": 453741
+    },
+    {
+      "name": "SE3/level.dat391",
+      "bytes": 463029
+    },
+    {
+      "name": "SE3/level.dat390",
+      "bytes": 450850
+    },
+    {
+      "name": "SE3/level.dat392",
+      "bytes": 459173
+    },
+    {
+      "name": "SE3/level.dat393",
+      "bytes": 458162
+    },
+    {
+      "name": "SE3/level.dat394",
+      "bytes": 456191
+    },
+    {
+      "name": "SE3/level.dat395",
+      "bytes": 464846
+    },
+    {
+      "name": "SE3/level.dat397",
+      "bytes": 461734
+    },
+    {
+      "name": "SE3/level.dat396",
+      "bytes": 466137
+    },
+    {
+      "name": "SE3/level.dat398",
+      "bytes": 474215
+    },
+    {
+      "name": "SE3/level.dat399",
+      "bytes": 488134
+    },
+    {
+      "name": "SE3/level.dat400",
+      "bytes": 485633
+    },
+    {
+      "name": "SE3/level.dat401",
+      "bytes": 468458
+    },
+    {
+      "name": "SE3/level.dat402",
+      "bytes": 459824
+    },
+    {
+      "name": "SE3/level.dat403",
+      "bytes": 471219
+    },
+    {
+      "name": "SE3/level.dat404",
+      "bytes": 475933
+    },
+    {
+      "name": "SE3/level.dat405",
+      "bytes": 456377
+    },
+    {
+      "name": "SE3/level.dat406",
+      "bytes": 460388
+    },
+    {
+      "name": "SE3/level.dat407",
+      "bytes": 446932
+    },
+    {
+      "name": "SE3/level.dat408",
+      "bytes": 466348
+    },
+    {
+      "name": "SE3/level.dat409",
+      "bytes": 475274
+    },
+    {
+      "name": "SE3/level.dat410",
+      "bytes": 463917
+    },
+    {
+      "name": "SE3/level.dat411",
+      "bytes": 466983
+    },
+    {
+      "name": "SE3/level.dat412",
+      "bytes": 406566
+    },
+    {
+      "name": "SE3/level.dat413",
+      "bytes": 417994
+    },
+    {
+      "name": "SE3/level.dat414",
+      "bytes": 427492
+    },
+    {
+      "name": "SE3/level.dat415",
+      "bytes": 421325
+    },
+    {
+      "name": "SE3/level.dat416",
+      "bytes": 436701
+    },
+    {
+      "name": "SE3/level.dat417",
+      "bytes": 433099
+    },
+    {
+      "name": "SE3/level.dat418",
+      "bytes": 432464
+    },
+    {
+      "name": "SE3/level.dat419",
+      "bytes": 433092
+    },
+    {
+      "name": "SE3/level.dat420",
+      "bytes": 457474
+    },
+    {
+      "name": "SE3/level.dat421",
+      "bytes": 452170
+    },
+    {
+      "name": "SE3/level.dat425",
+      "bytes": 166240
+    },
+    {
+      "name": "SE3/level.dat423",
+      "bytes": 454029
+    },
+    {
+      "name": "SE3/level.dat422",
+      "bytes": 451483
+    },
+    {
+      "name": "SE3/level.dat424",
+      "bytes": 391578
+    },
+    {
+      "name": "SE3/level.dat426",
+      "bytes": 240258
+    },
+    {
+      "name": "SE3/level.dat427",
+      "bytes": 239044
+    },
+    {
+      "name": "SE3/level.dat428",
+      "bytes": 257884
+    },
+    {
+      "name": "SE3/level.dat429",
+      "bytes": 246453
+    },
+    {
+      "name": "SE3/level.dat430",
+      "bytes": 249231
+    },
+    {
+      "name": "SE3/level.dat431",
+      "bytes": 257204
+    },
+    {
+      "name": "SE3/level.dat432",
+      "bytes": 376016
+    },
+    {
+      "name": "SE3/level.dat433",
+      "bytes": 438192
+    },
+    {
+      "name": "SE3/level.dat434",
+      "bytes": 484859
+    },
+    {
+      "name": "SE3/level.dat435",
+      "bytes": 467751
+    },
+    {
+      "name": "SE3/level.dat436",
+      "bytes": 491846
+    },
+    {
+      "name": "SE3/level.dat437",
+      "bytes": 436932
+    },
+    {
+      "name": "SE3/level.dat438",
+      "bytes": 461617
+    },
+    {
+      "name": "SE3/level.dat439",
+      "bytes": 451804
+    },
+    {
+      "name": "SE3/level.dat441",
+      "bytes": 241899
+    },
+    {
+      "name": "SE3/level.dat440",
+      "bytes": 367007
+    },
+    {
+      "name": "SE3/level.dat442",
+      "bytes": 277058
+    },
+    {
+      "name": "SE3/level.dat443",
+      "bytes": 384177
+    },
+    {
+      "name": "SE3/level.dat444",
+      "bytes": 435437
+    },
+    {
+      "name": "SE3/level.dat445",
+      "bytes": 377776
+    },
+    {
+      "name": "SE3/level.dat446",
+      "bytes": 427503
+    },
+    {
+      "name": "SE3/level.dat447",
+      "bytes": 618947
+    },
+    {
+      "name": "SE3/level.dat448",
+      "bytes": 634619
+    },
+    {
+      "name": "SE3/level.dat449",
+      "bytes": 644845
+    },
+    {
+      "name": "SE3/level.dat450",
+      "bytes": 658254
+    },
+    {
+      "name": "SE3/level.dat451",
+      "bytes": 658329
+    },
+    {
+      "name": "SE3/level.dat452",
+      "bytes": 664832
+    },
+    {
+      "name": "SE3/level.dat453",
+      "bytes": 666672
+    },
+    {
+      "name": "SE3/level.dat454",
+      "bytes": 668225
+    },
+    {
+      "name": "SE3/level.dat455",
+      "bytes": 668940
+    },
+    {
+      "name": "SE3/level.dat456",
+      "bytes": 658466
+    },
+    {
+      "name": "SE3/level.dat457",
+      "bytes": 663048
+    },
+    {
+      "name": "SE3/level.dat458",
+      "bytes": 656481
+    },
+    {
+      "name": "SE3/level.dat459",
+      "bytes": 655276
+    },
+    {
+      "name": "SE3/level.dat460",
+      "bytes": 638203
+    },
+    {
+      "name": "SE3/level.dat461",
+      "bytes": 629575
+    },
+    {
+      "name": "SE3/level.dat462",
+      "bytes": 574615
+    },
+    {
+      "name": "SE3/level.dat463",
+      "bytes": 376731
+    },
+    {
+      "name": "SE3/level.dat465",
+      "bytes": 347426
+    },
+    {
+      "name": "SE3/level.dat464",
+      "bytes": 520910
+    },
+    {
+      "name": "SE3/level.dat468",
+      "bytes": 230864
+    },
+    {
+      "name": "SE3/level.dat466",
+      "bytes": 458128
+    },
+    {
+      "name": "SE3/level.dat467",
+      "bytes": 430060
+    },
+    {
+      "name": "SE3/level.dat469",
+      "bytes": 254965
+    },
+    {
+      "name": "SE3/level.dat470",
+      "bytes": 240922
+    },
+    {
+      "name": "SE3/level.dat471",
+      "bytes": 244785
+    },
+    {
+      "name": "SE3/level.dat472",
+      "bytes": 255144
+    },
+    {
+      "name": "SE3/level.dat473",
+      "bytes": 251337
+    },
+    {
+      "name": "SE3/level.dat474",
+      "bytes": 260421
+    },
+    {
+      "name": "SE3/level.dat475",
+      "bytes": 263825
+    },
+    {
+      "name": "SE3/level.dat476",
+      "bytes": 265127
+    },
+    {
+      "name": "SE3/level.dat477",
+      "bytes": 276356
+    },
+    {
+      "name": "SE3/level.dat478",
+      "bytes": 267241
+    },
+    {
+      "name": "SE3/level.dat479",
+      "bytes": 263725
+    },
+    {
+      "name": "SE3/level.dat480",
+      "bytes": 265701
+    },
+    {
+      "name": "SE3/level.dat481",
+      "bytes": 263013
+    },
+    {
+      "name": "SE3/level.dat482",
+      "bytes": 268990
+    },
+    {
+      "name": "SE3/level.dat483",
+      "bytes": 248389
+    },
+    {
+      "name": "SE3/level.dat485",
+      "bytes": 382374
+    },
+    {
+      "name": "SE3/level.dat486",
+      "bytes": 370060
+    },
+    {
+      "name": "SE3/level.dat484",
+      "bytes": 439280
+    },
+    {
+      "name": "SE3/level.dat488",
+      "bytes": 364280
+    },
+    {
+      "name": "SE3/level.dat487",
+      "bytes": 379478
+    },
+    {
+      "name": "SE3/level.dat489",
+      "bytes": 26747
+    },
+    {
+      "name": "SE3/level.datmetadata",
+      "bytes": 8
+    }
+  ],
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 6605861,
+  "mod_count": 31,
+  "mod_names": [
+    "level",
+    "mod-aai-signal-transmission",
+    "mod-ammo-loader",
+    "mod-bobinserters",
+    "mod-botReplacer",
+    "mod-Fill4Me",
+    "mod-FNEI",
+    "mod-informatron",
+    "mod-jetpack",
+    "mod-LogisticTrainNetwork",
+    "mod-manual-inventory-sort",
+    "mod-notepad",
+    "mod-resourceMarker",
+    "mod-robot_attrition",
+    "mod-shield-projector",
+    "mod-valves-lib",
+    "mod-Aircraft-space-age",
+    "mod-alien-biomes",
+    "mod-BlueprintTools",
+    "mod-ChangeInserterDropLane",
+    "mod-factoryplanner",
+    "mod-fast_trans",
+    "mod-LTN_Combinator_Modernized",
+    "mod-solar-calc",
+    "mod-Krastorio2",
+    "mod-aai-industry",
+    "mod-boblogistics",
+    "mod-space-exploration",
+    "mod-factorissimo-2-notnotmelon",
+    "mod-LtnManager",
+    "mod-se-ltn-glue"
+  ],
+  "target_mods": [
+    "mod-space-exploration"
+  ],
+  "se_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  },
+  "se_hit_count": 19
+}

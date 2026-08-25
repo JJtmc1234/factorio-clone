@@ -1,0 +1,1280 @@
+{
+  "id": "029-01-K2SE-0.7_Vulcanite_Prep_3.3",
+  "source_url": "https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip",
+  "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+  "source_issue_number": 274,
+  "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/274",
+  "source_issue_title": "Unable to place packed factory on other surfaces",
+  "source_context": " Attach your save file and `factorio-current.log` file. [factorio-current.log](https://github.com/user-attachments/files/26132466/factorio-current.log) Save file is apparently too large, I added it to my webserver and is accessible [here](https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI coding tools.) - [X] I need someone else to solve this issue please.",
+  "factorio_version": "2.0.69.0",
+  "save_root": "K2SE-0.7 Vulcanite Prep 3.3",
+  "archive_label": "029-K2SE-0.7-Factorissimo-Issue.zip",
+  "depth": 0,
+  "lineage": [],
+  "download_bytes": 118524212,
+  "download_sha256": "67a11ba3e48e68c39b4f43135a081cc4af06a7d37338ee402c27a918232060b7",
+  "script_bytes": 35637179,
+  "level_files": [
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat0",
+      "bytes": 317263
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat1",
+      "bytes": 481633
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat2",
+      "bytes": 437938
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat3",
+      "bytes": 430290
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat4",
+      "bytes": 383788
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat5",
+      "bytes": 453458
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat6",
+      "bytes": 460162
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat7",
+      "bytes": 467075
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat8",
+      "bytes": 453997
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat9",
+      "bytes": 453680
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat10",
+      "bytes": 464524
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat11",
+      "bytes": 452911
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat12",
+      "bytes": 441174
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat13",
+      "bytes": 451055
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat14",
+      "bytes": 480373
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat15",
+      "bytes": 493724
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat16",
+      "bytes": 494433
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat17",
+      "bytes": 502546
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat20",
+      "bytes": 13861
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat21",
+      "bytes": 22733
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat18",
+      "bytes": 500943
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat25",
+      "bytes": 8170
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat26",
+      "bytes": 9282
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat22",
+      "bytes": 39139
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat27",
+      "bytes": 21775
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat24",
+      "bytes": 92196
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat23",
+      "bytes": 107664
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat28",
+      "bytes": 41613
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat29",
+      "bytes": 29112
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat32",
+      "bytes": 15107
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat30",
+      "bytes": 92234
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat33",
+      "bytes": 46820
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat34",
+      "bytes": 15523
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat35",
+      "bytes": 10197
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat19",
+      "bytes": 365610
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat36",
+      "bytes": 19770
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat37",
+      "bytes": 43581
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat31",
+      "bytes": 209007
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat38",
+      "bytes": 90909
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat39",
+      "bytes": 89516
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat40",
+      "bytes": 89202
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat41",
+      "bytes": 89902
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat42",
+      "bytes": 89609
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat43",
+      "bytes": 88878
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat44",
+      "bytes": 89708
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat45",
+      "bytes": 89732
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat46",
+      "bytes": 99557
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat47",
+      "bytes": 195004
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat48",
+      "bytes": 203900
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat49",
+      "bytes": 218389
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat50",
+      "bytes": 267903
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat51",
+      "bytes": 336710
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat52",
+      "bytes": 440029
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat53",
+      "bytes": 439587
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat54",
+      "bytes": 423554
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat55",
+      "bytes": 418957
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat56",
+      "bytes": 414814
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat57",
+      "bytes": 448343
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat58",
+      "bytes": 424426
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat59",
+      "bytes": 430726
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat60",
+      "bytes": 436193
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat61",
+      "bytes": 447552
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat62",
+      "bytes": 462273
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat63",
+      "bytes": 422705
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat64",
+      "bytes": 414338
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat65",
+      "bytes": 418829
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat66",
+      "bytes": 393640
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat67",
+      "bytes": 402506
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat68",
+      "bytes": 386645
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat69",
+      "bytes": 424634
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat70",
+      "bytes": 371400
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat71",
+      "bytes": 412423
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat72",
+      "bytes": 376778
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat73",
+      "bytes": 360502
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat74",
+      "bytes": 441434
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat75",
+      "bytes": 450328
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat76",
+      "bytes": 465456
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat77",
+      "bytes": 462976
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat79",
+      "bytes": 298285
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat80",
+      "bytes": 204287
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat78",
+      "bytes": 447973
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat81",
+      "bytes": 124802
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat82",
+      "bytes": 124886
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat83",
+      "bytes": 143208
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat84",
+      "bytes": 147610
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat85",
+      "bytes": 152465
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat86",
+      "bytes": 132136
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat87",
+      "bytes": 292334
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat88",
+      "bytes": 503984
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat90",
+      "bytes": 390644
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat92",
+      "bytes": 379395
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat89",
+      "bytes": 497700
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat93",
+      "bytes": 436156
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat94",
+      "bytes": 444211
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat91",
+      "bytes": 305790
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat95",
+      "bytes": 450210
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat96",
+      "bytes": 467214
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat97",
+      "bytes": 479884
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat98",
+      "bytes": 464399
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat99",
+      "bytes": 464248
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat100",
+      "bytes": 443492
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat101",
+      "bytes": 427108
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat103",
+      "bytes": 322055
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat102",
+      "bytes": 404749
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat104",
+      "bytes": 329666
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat105",
+      "bytes": 468158
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat106",
+      "bytes": 499322
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat107",
+      "bytes": 525378
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat108",
+      "bytes": 545384
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat109",
+      "bytes": 507853
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat110",
+      "bytes": 497850
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat111",
+      "bytes": 279100
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat112",
+      "bytes": 250142
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat113",
+      "bytes": 360658
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat114",
+      "bytes": 401883
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat115",
+      "bytes": 414652
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat116",
+      "bytes": 406852
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat117",
+      "bytes": 441707
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat118",
+      "bytes": 445596
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat119",
+      "bytes": 444295
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat120",
+      "bytes": 448599
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat122",
+      "bytes": 462684
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat121",
+      "bytes": 437477
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat123",
+      "bytes": 466028
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat124",
+      "bytes": 484746
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat125",
+      "bytes": 486834
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat126",
+      "bytes": 458855
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat127",
+      "bytes": 459602
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat128",
+      "bytes": 475843
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat129",
+      "bytes": 481967
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat130",
+      "bytes": 488276
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat131",
+      "bytes": 481121
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat132",
+      "bytes": 489336
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat133",
+      "bytes": 473731
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat135",
+      "bytes": 471817
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat134",
+      "bytes": 483731
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat136",
+      "bytes": 490670
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat137",
+      "bytes": 492610
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat138",
+      "bytes": 512738
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat139",
+      "bytes": 510144
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat140",
+      "bytes": 490840
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat141",
+      "bytes": 482230
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat142",
+      "bytes": 491966
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat143",
+      "bytes": 474436
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat144",
+      "bytes": 467671
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat145",
+      "bytes": 466686
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat146",
+      "bytes": 479604
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat147",
+      "bytes": 460639
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat148",
+      "bytes": 460953
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat149",
+      "bytes": 466184
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat150",
+      "bytes": 477801
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat151",
+      "bytes": 476775
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat152",
+      "bytes": 472149
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat154",
+      "bytes": 410945
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat153",
+      "bytes": 428167
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat155",
+      "bytes": 388290
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat156",
+      "bytes": 394010
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat159",
+      "bytes": 121520
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat158",
+      "bytes": 276937
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat157",
+      "bytes": 388438
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat160",
+      "bytes": 429149
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat161",
+      "bytes": 438598
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat162",
+      "bytes": 440698
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat163",
+      "bytes": 431555
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat164",
+      "bytes": 440827
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat165",
+      "bytes": 455055
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat166",
+      "bytes": 455274
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat167",
+      "bytes": 453748
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat168",
+      "bytes": 438977
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat169",
+      "bytes": 444618
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat170",
+      "bytes": 440035
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat171",
+      "bytes": 454900
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat174",
+      "bytes": 459702
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat173",
+      "bytes": 451601
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat172",
+      "bytes": 420923
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat175",
+      "bytes": 464421
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat176",
+      "bytes": 460402
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat177",
+      "bytes": 463950
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat178",
+      "bytes": 465155
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat179",
+      "bytes": 466164
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat180",
+      "bytes": 463431
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat181",
+      "bytes": 471299
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat182",
+      "bytes": 466658
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat183",
+      "bytes": 473718
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat185",
+      "bytes": 479843
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat184",
+      "bytes": 477201
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat186",
+      "bytes": 478336
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat187",
+      "bytes": 475361
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat190",
+      "bytes": 477551
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat188",
+      "bytes": 473419
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat191",
+      "bytes": 474437
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat189",
+      "bytes": 472953
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat192",
+      "bytes": 473861
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat194",
+      "bytes": 473013
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat193",
+      "bytes": 471446
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat195",
+      "bytes": 471257
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat196",
+      "bytes": 469697
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat197",
+      "bytes": 468956
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat198",
+      "bytes": 472626
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat199",
+      "bytes": 472704
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat200",
+      "bytes": 467447
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat201",
+      "bytes": 459953
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat204",
+      "bytes": 464645
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat202",
+      "bytes": 469317
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat203",
+      "bytes": 475426
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat206",
+      "bytes": 469703
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat205",
+      "bytes": 464409
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat207",
+      "bytes": 461807
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat209",
+      "bytes": 465337
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat208",
+      "bytes": 463068
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat210",
+      "bytes": 461558
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat211",
+      "bytes": 452779
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat213",
+      "bytes": 239421
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat212",
+      "bytes": 444239
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat214",
+      "bytes": 395208
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat215",
+      "bytes": 415049
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat216",
+      "bytes": 464544
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat217",
+      "bytes": 459673
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat218",
+      "bytes": 454320
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat219",
+      "bytes": 461537
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat220",
+      "bytes": 474021
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat221",
+      "bytes": 459932
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat222",
+      "bytes": 458252
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat223",
+      "bytes": 464292
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat224",
+      "bytes": 456145
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat225",
+      "bytes": 447560
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat227",
+      "bytes": 452923
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat226",
+      "bytes": 450866
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat228",
+      "bytes": 466000
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat229",
+      "bytes": 479115
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat230",
+      "bytes": 469071
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat231",
+      "bytes": 449925
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat232",
+      "bytes": 450503
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat233",
+      "bytes": 452306
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat234",
+      "bytes": 477996
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat235",
+      "bytes": 490598
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat236",
+      "bytes": 485186
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat237",
+      "bytes": 479090
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat238",
+      "bytes": 489029
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat239",
+      "bytes": 488411
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat240",
+      "bytes": 494068
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat241",
+      "bytes": 488427
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat242",
+      "bytes": 483718
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat243",
+      "bytes": 494968
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat244",
+      "bytes": 498122
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat246",
+      "bytes": 506221
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat245",
+      "bytes": 499986
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat247",
+      "bytes": 492951
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat248",
+      "bytes": 477909
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat249",
+      "bytes": 479592
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat250",
+      "bytes": 468115
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat251",
+      "bytes": 464975
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat252",
+      "bytes": 476676
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat253",
+      "bytes": 478524
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat254",
+      "bytes": 484616
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat255",
+      "bytes": 491654
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat256",
+      "bytes": 477944
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat257",
+      "bytes": 482133
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat258",
+      "bytes": 475809
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat259",
+      "bytes": 470236
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat260",
+      "bytes": 461902
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat261",
+      "bytes": 468275
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat262",
+      "bytes": 463209
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat263",
+      "bytes": 454329
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat264",
+      "bytes": 475248
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat265",
+      "bytes": 451391
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat266",
+      "bytes": 452353
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat267",
+      "bytes": 450974
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat269",
+      "bytes": 258610
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat268",
+      "bytes": 449507
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat270",
+      "bytes": 480436
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat271",
+      "bytes": 514482
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat272",
+      "bytes": 520962
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat274",
+      "bytes": 279029
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat273",
+      "bytes": 509309
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat275",
+      "bytes": 288087
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat276",
+      "bytes": 292379
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat277",
+      "bytes": 298902
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat278",
+      "bytes": 204030
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat279",
+      "bytes": 154149
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat280",
+      "bytes": 131448
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat281",
+      "bytes": 120845
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat282",
+      "bytes": 119682
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat283",
+      "bytes": 100411
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat285",
+      "bytes": 75182
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat284",
+      "bytes": 96115
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat286",
+      "bytes": 108889
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat287",
+      "bytes": 160340
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat288",
+      "bytes": 197798
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat290",
+      "bytes": 380601
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat289",
+      "bytes": 392868
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat291",
+      "bytes": 218331
+    },
+    {
+      "name": "K2SE-0.7 Vulcanite Prep 3.3/level.datmetadata",
+      "bytes": 8
+    }
+  ],
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 5144495,
+  "mod_count": 64,
+  "mod_names": [
+    "level",
+    "mod-belt-visualizer",
+    "mod-VehicleSnap",
+    "mod-YARM",
+    "mod-aai-loaders",
+    "mod-aai-signal-transmission",
+    "mod-aai-vehicles-ironclad",
+    "mod-AutoDeconstruct",
+    "mod-better-train-system",
+    "mod-bigger-artillery",
+    "mod-change-recipe-quality-without-re-selecting-recipe",
+    "mod-ChunkyChunks",
+    "mod-click2move",
+    "mod-DiscoScience",
+    "mod-even-distribution",
+    "mod-FactorySearch",
+    "mod-far-reach",
+    "mod-FluidMustFlow",
+    "mod-ghost-mode",
+    "mod-grappling-gun",
+    "mod-helmod",
+    "mod-informatron",
+    "mod-inserter-throughput",
+    "mod-Inventory Sensor",
+    "mod-jetpack",
+    "mod-mining-patch-planner",
+    "mod-ModuleInserterSimplified",
+    "mod-Placeables",
+    "mod-pump",
+    "mod-robot_attrition",
+    "mod-SchallRadarAlignment",
+    "mod-Sort-All-Inventories",
+    "mod-textplates",
+    "mod-valves",
+    "mod-yafla",
+    "mod-alien-biomes",
+    "mod-beacon-interface",
+    "mod-BuilderBotStart",
+    "mod-ChangeInserterDropLane",
+    "mod-CircuitHUD-V2",
+    "mod-equipment-gantry",
+    "mod-factoryplanner",
+    "mod-Milestones",
+    "mod-PipeVisualizer-Updated",
+    "mod-RateCalculator",
+    "mod-Smart_Inserters",
+    "mod-StatsGui",
+    "mod-TaskList",
+    "mod-WideChests",
+    "mod-Krastorio2",
+    "mod-quality-condenser",
+    "mod-shield-projector",
+    "mod-aai-industry",
+    "mod-autodrive",
+    "mod-space-exploration",
+    "mod-cybersyn",
+    "mod-factorissimo-2-notnotmelon",
+    "mod-silent-filter-combinator",
+    "mod-space-exploration-scripts",
+    "mod-underground-pipe-pack",
+    "mod-cybersyn-combinator",
+    "mod-Kux-CoreLib",
+    "mod-se-core-miner-output-helper",
+    "mod-Kux-BlueprintExtensions"
+  ],
+  "target_mods": [
+    "mod-Milestones",
+    "mod-space-exploration"
+  ],
+  "se_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  },
+  "se_hit_count": 35,
+  "milestones_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": true,
+    "contains_space_science_pack": true,
+    "contains_satellite_telemetry": false
+  },
+  "milestones_hit_count": 80
+}

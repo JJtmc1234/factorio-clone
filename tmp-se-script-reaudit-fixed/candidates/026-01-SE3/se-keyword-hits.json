@@ -1,0 +1,1380 @@
+{
+  "stats": {
+    "nodes": 2525,
+    "dicts": 924,
+    "lists": 155,
+    "scalars": 1446,
+    "max_depth": 19
+  },
+  "hit_count": 19,
+  "hits": [
+    {
+      "kind": "pair",
+      "path": "dump/data/1",
+      "key": "spaceship_projectile_speeds",
+      "value": []
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/key",
+      "value": "spaceship_projectile_speeds"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/2",
+      "key": "basic_rocket_silos",
+      "value": [
+        {
+          "key": 394346.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "basic-rocket-silo"
+            },
+            {
+              "key": "valid",
+              "value": true
+            },
+            {
+              "key": "force_name",
+              "value": "player"
+            },
+            {
+              "key": "unit_number",
+              "value": 394346.0
+            },
+            {
+              "key": "entity",
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            }
+          ]
+        },
+        {
+          "key": {
+            "type": 7,
+            "data": null
+          },
+          "value": {
+            "type": 175,
+            "data": null
+          }
+        },
+        {
+          "key": "",
+          "value": "zone"
+        },
+        {
+          "key": [
+            {
+              "key": "name",
+              "value": "Nauvis"
+            },
+            {
+              "key": "radius_multiplier",
+              "value": 0.48584782135888804
+            },
+            {
+              "key": "children",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 19,
+                "data": null
+              },
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 20,
+                "data": null
+              }
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 21,
+                "data": null
+              },
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 22,
+                "data": null
+              }
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 23,
+                "data": null
+              },
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 24,
+                "data": null
+              }
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "kr-rare-metal-ore"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "uranium-ore"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "iron-ore"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "se-water-ice"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "copper-ore"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "se-methane-ice"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "stone"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "coal"
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": "crude-oil"
+            },
+            {
+              "__truncated__": 1
+            }
+          ],
+          "value": [
+            {
+              "key": "frequency",
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "key": "se-cryonite",
+          "value": [
+            {
+              "key": "frequency",
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/key",
+      "value": "basic_rocket_silos"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/0/value/0/value",
+      "value": "basic-rocket-silo"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/2/value",
+      "value": "zone"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/3/key/0/value",
+      "value": "Nauvis"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/2/value/3/key/2/value/0/value/11",
+      "key": "orbit",
+      "value": [
+        {
+          "key": "type",
+          "value": "orbit"
+        },
+        {
+          "key": "name",
+          "value": "Respitia Orbit"
+        },
+        {
+          "key": "parent",
+          "value": {
+            "type": 6,
+            "data": 8
+          }
+        },
+        {
+          "key": "seed",
+          "value": 2878921002.0
+        },
+        {
+          "key": "index",
+          "value": 1253.0
+        },
+        {
+          "key": "base_bot_attrition",
+          "value": 6.463749052943593
+        },
+        {
+          "key": "controls",
+          "value": [
+            {
+              "key": "tree",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 1,
+                "data": null
+              }
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": true,
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": 1.74570355133142e+238
+            },
+            {
+              "key": {
+                "type": 117,
+                "data": null
+              },
+              "value": {
+                "type": 101,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 110,
+                "data": null
+              },
+              "value": {
+                "type": 99,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 121,
+                "data": null
+              },
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": "\u0003\u0004\tfr"
+            },
+            {
+              "key": {
+                "type": 101,
+                "data": null
+              },
+              "value": {
+                "type": 113,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 117,
+                "data": null
+              },
+              "value": {
+                "type": 101,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 110,
+                "data": null
+              },
+              "value": {
+                "type": 99,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 121,
+                "data": null
+              },
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "__truncated__": 7
+            }
+          ]
+        },
+        {
+          "key": {
+            "type": 7,
+            "data": null
+          },
+          "value": {
+            "type": 49,
+            "data": null
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "data": null
+          },
+          "value": {
+            "type": 0,
+            "data": null
+          }
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/3/key/2/value/0/value/11/key",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/3/key/2/value/0/value/11/value/0/value",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/3/key/2/value/0/value/11/value/1/value",
+      "value": "Respitia Orbit"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/17/value/27",
+      "key": "nauvis_cliff",
+      "value": [
+        {
+          "key": "frequency",
+          "value": 0.8655359353443487
+        },
+        {
+          "key": "size",
+          "value": 0.31872629597783086
+        },
+        {
+          "key": "richness",
+          "value": 0.49312613997608423
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/17/value/27/key",
+      "value": "nauvis_cliff"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/27",
+      "key": "deleted_surface",
+      "value": [
+        {
+          "key": "tick",
+          "value": 50844230.0
+        },
+        {
+          "key": "player_index",
+          "value": 1.0
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/27/key",
+      "value": "deleted_surface"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/28/value/6",
+      "key": "orbit",
+      "value": [
+        {
+          "key": "type",
+          "value": "orbit"
+        },
+        {
+          "key": "name",
+          "value": "Leto Orbit"
+        },
+        {
+          "key": "parent",
+          "value": {
+            "type": 6,
+            "data": 137
+          }
+        },
+        {
+          "key": "index",
+          "value": 212.0
+        },
+        {
+          "key": "seed",
+          "value": 1866445425.0
+        },
+        {
+          "key": "controls",
+          "value": [
+            {
+              "key": "tree",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 1,
+                "data": null
+              }
+            },
+            {
+              "key": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ],
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": true,
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": 1.74570355133142e+238
+            },
+            {
+              "key": {
+                "type": 117,
+                "data": null
+              },
+              "value": {
+                "type": 101,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 110,
+                "data": null
+              },
+              "value": {
+                "type": 99,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 121,
+                "data": null
+              },
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": "\u0003\u0004\tfr"
+            },
+            {
+              "key": {
+                "type": 101,
+                "data": null
+              },
+              "value": {
+                "type": 113,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 117,
+                "data": null
+              },
+              "value": {
+                "type": 101,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 110,
+                "data": null
+              },
+              "value": {
+                "type": 99,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 121,
+                "data": null
+              },
+              "value": 1.0
+            },
+            {
+              "key": "size",
+              "value": 0.0
+            },
+            {
+              "key": "richness",
+              "value": 0.0
+            },
+            {
+              "key": {
+                "type": 7,
+                "data": null
+              },
+              "value": {
+                "type": 49,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": {
+                "type": 49,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "__truncated__": 7
+            }
+          ]
+        },
+        {
+          "key": {
+            "type": 7,
+            "data": null
+          },
+          "value": {
+            "type": 49,
+            "data": null
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "data": null
+          },
+          "value": {
+            "type": 0,
+            "data": null
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "data": null
+          },
+          "value": {
+            "type": 14,
+            "data": null
+          }
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/28/value/6/key",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/28/value/6/value/0/value",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/28/value/6/value/1/value",
+      "value": "Leto Orbit"
+    }
+  ],
+  "signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  }
+}

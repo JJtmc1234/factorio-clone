@@ -1,0 +1,253 @@
+{
+  "id": "002-01-Space_Exploration_Creative_Test_world",
+  "source_url": "https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip",
+  "source_repo": "EarendelDevelopers/factorio-mods",
+  "source_issue_number": 387,
+  "source_issue_url": "https://github.com/EarendelDevelopers/factorio-mods/issues/387",
+  "source_issue_title": "Space Exploration Utility Science textures default to base game yellow when in item form on belts or on ground",
+  "source_context": " src=\"https://github.com/user-attachments/assets/5bda7903-5535-4c90-a175-d7547505de3a\" /> Mod List: [mod-list.json](https://github.com/user-attachments/files/25063068/mod-list.json) Test world: [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip)",
+  "factorio_version": "2.0.66.1",
+  "save_root": "Space Exploration Creative Test world",
+  "archive_label": "002-Space.Exploration.Creative.Test.world.zip",
+  "depth": 0,
+  "lineage": [],
+  "download_bytes": 16133139,
+  "download_sha256": "7ac567c92ac11dffeb9578b0eb78c80531c4ba8d1629defd002595dff13424df",
+  "script_bytes": 7122489,
+  "level_files": [
+    {
+      "name": "Space Exploration Creative Test world/level.dat2",
+      "bytes": 32008
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat3",
+      "bytes": 30374
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat1",
+      "bytes": 123829
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat4",
+      "bytes": 18461
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat5",
+      "bytes": 15200
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat0",
+      "bytes": 295230
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat7",
+      "bytes": 10217
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat6",
+      "bytes": 15007
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat9",
+      "bytes": 13551
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat10",
+      "bytes": 29268
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat8",
+      "bytes": 19977
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat11",
+      "bytes": 98465
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat12",
+      "bytes": 343570
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat13",
+      "bytes": 430036
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat14",
+      "bytes": 360821
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat15",
+      "bytes": 432234
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat16",
+      "bytes": 485253
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat17",
+      "bytes": 239142
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat18",
+      "bytes": 413689
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat19",
+      "bytes": 475104
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat20",
+      "bytes": 474131
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat21",
+      "bytes": 501195
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat22",
+      "bytes": 506634
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat23",
+      "bytes": 475602
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat24",
+      "bytes": 473204
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat25",
+      "bytes": 477388
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat26",
+      "bytes": 435651
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat27",
+      "bytes": 423766
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat28",
+      "bytes": 470119
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat29",
+      "bytes": 465906
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat30",
+      "bytes": 550014
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat31",
+      "bytes": 437554
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat32",
+      "bytes": 601341
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat34",
+      "bytes": 410732
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat33",
+      "bytes": 395223
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat35",
+      "bytes": 409812
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat36",
+      "bytes": 373864
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat37",
+      "bytes": 443594
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat38",
+      "bytes": 396644
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat39",
+      "bytes": 477647
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat41",
+      "bytes": 300008
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat40",
+      "bytes": 438761
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat42",
+      "bytes": 152900
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.datmetadata",
+      "bytes": 8
+    }
+  ],
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 1446218,
+  "mod_count": 33,
+  "mod_names": [
+    "level",
+    "mod-Robocharger-Updated",
+    "mod-aai-signal-transmission",
+    "mod-atomic-artillery-reborn",
+    "mod-AutoGhostBuilder",
+    "mod-chest-auto-sort",
+    "mod-deadlock-beltboxes-loaders",
+    "mod-DiscoScience",
+    "mod-even-distribution",
+    "mod-ExtraZoom",
+    "mod-FactorySearch",
+    "mod-fast_trans",
+    "mod-FluidWagonColorMask",
+    "mod-FNEI",
+    "mod-helmod",
+    "mod-informatron",
+    "mod-jetpack",
+    "mod-MaxRateCalculator",
+    "mod-robot_attrition",
+    "mod-SchallRechargingWeapon",
+    "mod-shield-projector",
+    "mod-tarantulator",
+    "mod-textplates",
+    "mod-valves",
+    "mod-aai-industry",
+    "mod-alien-biomes",
+    "mod-Automatic_Train_Painter",
+    "mod-ChangeInserterDropLane",
+    "mod-diurnal-dynamics",
+    "mod-Milestones",
+    "mod-reverse-factory",
+    "mod-space-exploration",
+    "mod-factorissimo-2-notnotmelon"
+  ],
+  "target_mods": [
+    "mod-Milestones",
+    "mod-space-exploration"
+  ],
+  "se_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  },
+  "se_hit_count": 12,
+  "milestones_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": true,
+    "contains_space_science_pack": true,
+    "contains_satellite_telemetry": false
+  },
+  "milestones_hit_count": 72
+}

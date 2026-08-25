@@ -1,0 +1,69 @@
+{
+  "id": "003-01-phazor_k2se_save_0.7_minimal_modlist",
+  "source_url": "https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing",
+  "source_repo": "hgschmie/factorio-miniloader-redux",
+  "source_issue_number": 31,
+  "source_issue_url": "https://github.com/hgschmie/factorio-miniloader-redux/issues/31",
+  "source_issue_title": "Issue running migration on Space Exploration save game",
+  "source_context": "Migration with a Space Exploration save does no work when Miniloaders (Redux) factorio 1.1 migration setting is switched on. ### To reproduce 1. Have factorio 2.0. 2. Load this modlist save, and sync mods and settings https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing. 3. Confirm Quality and Space Age are switched off in the modlist. 4. Confirm \"Use the new space rail graphics\" mod setting is switched off. 5. Confirm that the 'migrate factorio 1.1 miniloaders' mod setting is switched on. 6. Load the SE 0",
+  "factorio_version": "2.0.69.0",
+  "save_root": "phazor_k2se_save_0.7_minimal_modlist",
+  "archive_label": "003-view",
+  "depth": 0,
+  "lineage": [],
+  "download_bytes": 2233151,
+  "download_sha256": "c1720c9a8b4a1aa3ac63dbec1577a685cb18910076f0159839dde3f438a1c379",
+  "script_bytes": 5229103,
+  "level_files": [
+    {
+      "name": "phazor_k2se_save_0.7_minimal_modlist/level.dat0",
+      "bytes": 201388
+    },
+    {
+      "name": "phazor_k2se_save_0.7_minimal_modlist/level.dat1",
+      "bytes": 359213
+    },
+    {
+      "name": "phazor_k2se_save_0.7_minimal_modlist/level.datmetadata",
+      "bytes": 8
+    }
+  ],
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 5275883,
+  "mod_count": 21,
+  "mod_names": [
+    "level",
+    "mod-aai-loaders",
+    "mod-aai-signal-transmission",
+    "mod-aai-vehicles-ironclad",
+    "mod-FluidMustFlow",
+    "mod-grappling-gun",
+    "mod-informatron",
+    "mod-jetpack",
+    "mod-regenerate-terrain",
+    "mod-robot_attrition",
+    "mod-textplates",
+    "mod-alien-biomes",
+    "mod-ChangeInserterDropLane",
+    "mod-equipment-gantry",
+    "mod-RecipeBook",
+    "mod-StatsGui",
+    "mod-Krastorio2",
+    "mod-shield-projector",
+    "mod-aai-industry",
+    "mod-miniloader-redux",
+    "mod-space-exploration"
+  ],
+  "target_mods": [
+    "mod-space-exploration"
+  ],
+  "se_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  },
+  "se_hit_count": 17
+}

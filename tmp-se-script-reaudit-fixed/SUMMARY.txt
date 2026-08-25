@@ -1,0 +1,64 @@
+FACTORIO 2.0 SCRIPT.DAT RE-AUDIT
+========================================================================================================================
+Factorio 2.0 save records: 31
+unique source downloads attempted: 31
+decoded save records: 31
+saves whose script registry contains mod-space-exploration: 6
+download errors: 0
+decode/fatal errors: 2
+
+SPACE EXPLORATION CANDIDATES
+------------------------------------------------------------------------------------------------------------------------
+id=001-01-Modlist_Test repo=EarendelDevelopers/factorio-mods issue=385 url=https://github.com/user-attachments/files/24435949/Modlist.Test.zip
+  title=Unable to generate Asteroid belt
+  factorio=2.0.72.0 root=Modlist Test archive=001-Modlist.Test.zip
+  bytes=8738243 sha256=7d65834b6113b2816e391dc19aa38c8d5319045a0cd79b8ce5bc60bc78f1ae0d script=50890878 json=14524633
+  mods=205 targets=['mod-Milestones', 'mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=17
+  Milestones signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': True, 'contains_space_science_pack': True, 'contains_satellite_telemetry': False} hits=82
+  context="518" height="551" alt="Image" src="https://github.com/user-attachments/assets/a2903bb2-1a09-402f-8828-d8c17e81fe7e" /> [factorio-current.log](https://github.com/user-attachments/files/24435879/factorio-current.log) [Modlist Test World](https://github.com/user-attachments/files/24435949/Modlist.Test.zip)
+
+id=002-01-Space_Exploration_Creative_Test_world repo=EarendelDevelopers/factorio-mods issue=387 url=https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip
+  title=Space Exploration Utility Science textures default to base game yellow when in item form on belts or on ground
+  factorio=2.0.66.1 root=Space Exploration Creative Test world archive=002-Space.Exploration.Creative.Test.world.zip
+  bytes=16133139 sha256=7ac567c92ac11dffeb9578b0eb78c80531c4ba8d1629defd002595dff13424df script=7122489 json=1446218
+  mods=33 targets=['mod-Milestones', 'mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=12
+  Milestones signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': True, 'contains_space_science_pack': True, 'contains_satellite_telemetry': False} hits=72
+  context= src="https://github.com/user-attachments/assets/5bda7903-5535-4c90-a175-d7547505de3a" /> Mod List: [mod-list.json](https://github.com/user-attachments/files/25063068/mod-list.json) Test world: [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip)
+
+id=003-01-phazor_k2se_save_0.7_minimal_modlist repo=hgschmie/factorio-miniloader-redux issue=31 url=https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing
+  title=Issue running migration on Space Exploration save game
+  factorio=2.0.69.0 root=phazor_k2se_save_0.7_minimal_modlist archive=003-view
+  bytes=2233151 sha256=c1720c9a8b4a1aa3ac63dbec1577a685cb18910076f0159839dde3f438a1c379 script=5229103 json=5275883
+  mods=21 targets=['mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=17
+  Milestones signals=None hits=None
+  context=Migration with a Space Exploration save does no work when Miniloaders (Redux) factorio 1.1 migration setting is switched on. ### To reproduce 1. Have factorio 2.0. 2. Load this modlist save, and sync mods and settings https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing. 3. Confirm Quality and Space Age are switched off in the modlist. 4. Confirm "Use the new space rail graphics" mod setting is switched off. 5. Confirm that the 'migrate factorio 1.1 miniloaders' mod setting is switched on. 6. Load the SE 0
+
+id=023-01-Space_Exploration_Creative_Test_world repo=notnotmelon/factorissimo-2-notnotmelon issue=250 url=https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip
+  title=Remote view edit does not work with Space Exploration
+  factorio=2.0.66.1 root=Space Exploration Creative Test world archive=023-Space.Exploration.Creative.Test.world.zip
+  bytes=11628416 sha256=7982dad3dd525e2404afba125389777facbae9b36796f25aee6c0638c86875c2 script=6746503 json=1418007
+  mods=31 targets=['mod-Milestones', 'mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=12
+  Milestones signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': True, 'contains_space_science_pack': True, 'contains_satellite_telemetry': False} hits=71
+  context=* https://github.com/user-attachments/assets/d4dc4d18-4d14-4be7-a00f-36504c830ea2 **Additional context** I can only chalk it up to something about how SE handles surfaces. **Save file & log** [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip) [factorio-current.log](https://github.com/user-attachments/files/23176865/factorio-current.log)
+
+id=026-01-SE3 repo=notnotmelon/factorissimo-2-notnotmelon issue=268 url=https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing
+  title=This won't work here! This factory building is designed for Factory floor 1. Was instead Nauvis factory floor.
+  factorio=2.0.69.0 root=SE3 archive=026-view
+  bytes=189973420 sha256=7ea6aba27db843a635b709f103837f830064e2e67aff29b63c8ff3d6252687cd script=37630459 json=6605861
+  mods=31 targets=['mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=19
+  Milestones signals=None hits=None
+  context=y other context about the problem here. I'm playing with space exploration + krastorio 2 if that helps. **Save file & log** Attach your save file and `factorio-current.log` file. the save is too big so i uploaded it to my google drive: https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing [factorio-current.log](https://github.com/user-attachments/files/24868904/factorio-current.log) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI codin
+
+id=029-01-K2SE-0.7_Vulcanite_Prep_3.3 repo=notnotmelon/factorissimo-2-notnotmelon issue=274 url=https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip
+  title=Unable to place packed factory on other surfaces
+  factorio=2.0.69.0 root=K2SE-0.7 Vulcanite Prep 3.3 archive=029-K2SE-0.7-Factorissimo-Issue.zip
+  bytes=118524212 sha256=67a11ba3e48e68c39b4f43135a081cc4af06a7d37338ee402c27a918232060b7 script=35637179 json=5144495
+  mods=64 targets=['mod-Milestones', 'mod-space-exploration']
+  SE signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': False, 'contains_space_science_pack': False, 'contains_satellite_telemetry': False} hits=35
+  Milestones signals={'contains_nauvis_orbit': False, 'contains_rocket_science_pack': True, 'contains_space_science_pack': True, 'contains_satellite_telemetry': False} hits=80
+  context= Attach your save file and `factorio-current.log` file. [factorio-current.log](https://github.com/user-attachments/files/26132466/factorio-current.log) Save file is apparently too large, I added it to my webserver and is accessible [here](https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI coding tools.) - [X] I need someone else to solve this issue please.

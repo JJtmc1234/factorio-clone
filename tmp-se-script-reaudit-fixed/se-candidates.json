@@ -1,0 +1,4143 @@
+[
+  {
+    "id": "001-01-Modlist_Test",
+    "source_url": "https://github.com/user-attachments/files/24435949/Modlist.Test.zip",
+    "source_repo": "EarendelDevelopers/factorio-mods",
+    "source_issue_number": 385,
+    "source_issue_url": "https://github.com/EarendelDevelopers/factorio-mods/issues/385",
+    "source_issue_title": "Unable to generate Asteroid belt",
+    "source_context": "\"518\" height=\"551\" alt=\"Image\" src=\"https://github.com/user-attachments/assets/a2903bb2-1a09-402f-8828-d8c17e81fe7e\" /> [factorio-current.log](https://github.com/user-attachments/files/24435879/factorio-current.log) [Modlist Test World](https://github.com/user-attachments/files/24435949/Modlist.Test.zip)",
+    "factorio_version": "2.0.72.0",
+    "save_root": "Modlist Test",
+    "archive_label": "001-Modlist.Test.zip",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 8738243,
+    "download_sha256": "7d65834b6113b2816e391dc19aa38c8d5319045a0cd79b8ce5bc60bc78f1ae0d",
+    "script_bytes": 50890878,
+    "level_files": [
+      {
+        "name": "Modlist Test/level.dat1",
+        "bytes": 100027
+      },
+      {
+        "name": "Modlist Test/level.dat2",
+        "bytes": 59124
+      },
+      {
+        "name": "Modlist Test/level.dat0",
+        "bytes": 252209
+      },
+      {
+        "name": "Modlist Test/level.dat3",
+        "bytes": 88073
+      },
+      {
+        "name": "Modlist Test/level.dat4",
+        "bytes": 111872
+      },
+      {
+        "name": "Modlist Test/level.dat5",
+        "bytes": 188566
+      },
+      {
+        "name": "Modlist Test/level.dat6",
+        "bytes": 201372
+      },
+      {
+        "name": "Modlist Test/level.dat7",
+        "bytes": 211615
+      },
+      {
+        "name": "Modlist Test/level.dat8",
+        "bytes": 193907
+      },
+      {
+        "name": "Modlist Test/level.dat10",
+        "bytes": 205434
+      },
+      {
+        "name": "Modlist Test/level.dat9",
+        "bytes": 211114
+      },
+      {
+        "name": "Modlist Test/level.dat11",
+        "bytes": 205673
+      },
+      {
+        "name": "Modlist Test/level.dat12",
+        "bytes": 91200
+      },
+      {
+        "name": "Modlist Test/level.dat13",
+        "bytes": 101510
+      },
+      {
+        "name": "Modlist Test/level.dat15",
+        "bytes": 38303
+      },
+      {
+        "name": "Modlist Test/level.dat14",
+        "bytes": 145169
+      },
+      {
+        "name": "Modlist Test/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 14524633,
+    "mod_count": 205,
+    "mod_names": [
+      "level",
+      "mod-belt-visualizer",
+      "mod-First_One_Is_Free",
+      "mod-force-inventory-insert",
+      "mod-no--inventory-is-full--corpse-pickup-troubles",
+      "mod-repair-from-vehicle",
+      "mod-se-prevent-accidental-generation-of-orbit-surface",
+      "mod-se-signal-transmitter-new-channel-name-suggester",
+      "mod-show-missing-bottles-for-current-research",
+      "mod-VehicleSnap",
+      "mod-aai-loaders",
+      "mod-aai-signal-transmission",
+      "mod-aai-vehicles-ironclad",
+      "mod-aai-vehicles-miner",
+      "mod-aai-zones",
+      "mod-AdditionalPasteSettings",
+      "mod-atan-air-scrubbing",
+      "mod-AutoDeconstruct",
+      "mod-automatic-underground-pipe-connectors",
+      "mod-auto_manual_mode",
+      "mod-belt-immunity-with-benefits",
+      "mod-better-victory-screen",
+      "mod-biterexpansionnotifier",
+      "mod-bobinserters",
+      "mod-Burner-Leech-Fork",
+      "mod-calculator-ui",
+      "mod-chest-auto-sort",
+      "mod-chunk-count",
+      "mod-circuit-wire-poles",
+      "mod-configurable-valves",
+      "mod-Death_Counter",
+      "mod-DiscoScience",
+      "mod-DisplayPlatesForked",
+      "mod-easy-roboport-placement-updated",
+      "mod-EditMapSettings",
+      "mod-energy-combinator",
+      "mod-even-pickier-dollies",
+      "mod-EvenDistributionLite",
+      "mod-even_earlier_entity_ghosts",
+      "mod-expandtooltip",
+      "mod-FactorySearch",
+      "mod-FilterHelper",
+      "mod-floating-damage-text",
+      "mod-FluidMustFlow",
+      "mod-FluidWagonColorMask",
+      "mod-flushable-fluid-wagons",
+      "mod-ghost-counter",
+      "mod-grappling-gun",
+      "mod-Gun_Turret_Alerts",
+      "mod-heat-visualizer",
+      "mod-helmod",
+      "mod-Honk",
+      "mod-informatron",
+      "mod-inserter-throughput",
+      "mod-inventory-repair",
+      "mod-inventory-sensor-improved",
+      "mod-its-about-time",
+      "mod-jetpack",
+      "mod-lo-combinator-defaults",
+      "mod-Mined-Inserters-Dont-Leave-Items",
+      "mod-mining-patch-planner",
+      "mod-more-minimap-autohide-017",
+      "mod-ore-eraser-2",
+      "mod-osha_hot_swap",
+      "mod-perel",
+      "mod-pipe-visualization-overlay",
+      "mod-pollution-scaling",
+      "mod-PollutionCombinator-JamieFork",
+      "mod-Pro-Flashlight",
+      "mod-RailSignalPlanner",
+      "mod-RealisticOres",
+      "mod-research-automation-combinator",
+      "mod-research-counter-fixed",
+      "mod-robot_attrition",
+      "mod-Shortcuts-ick",
+      "mod-some-corpsemarker",
+      "mod-stack-combinator-redux",
+      "mod-statistics-combinator-updated",
+      "mod-textplates",
+      "mod-Todo-List",
+      "mod-train-trails",
+      "mod-trainsaver",
+      "mod-UndergroundIndicatorsFixed",
+      "mod-utility-combinators-quality",
+      "mod-UtilityDPS",
+      "mod-UT_BP_Circuit_Connector",
+      "mod-WhereIsMyBody",
+      "mod-windowed-cameras",
+      "mod-Wr_Enhanced_Map_Colors",
+      "mod-aai-programmable-structures",
+      "mod-aai-signal-transmission-luarendered-channel-label",
+      "mod-Aircraft-space-age",
+      "mod-alien-biomes",
+      "mod-autofuel",
+      "mod-Automatic_Train_Painter",
+      "mod-ChangeInserterDropLane",
+      "mod-CircuitHUD-V2",
+      "mod-circuit_visualizer",
+      "mod-default-settings",
+      "mod-diode-combinator",
+      "mod-equipment-gantry",
+      "mod-factorio-codex",
+      "mod-factoripedia",
+      "mod-factoryplanner",
+      "mod-filter-combinator-improved",
+      "mod-fluid-connection-indicators",
+      "mod-Milestones",
+      "mod-ModuleInserterEx",
+      "mod-ModuleInserterSimplified",
+      "mod-MouseOverConstruction",
+      "mod-PipeVisualizer-Updated",
+      "mod-power-grid-comb",
+      "mod-RateCalculator",
+      "mod-recipe_combinator",
+      "mod-signal-display",
+      "mod-solar-calc",
+      "mod-spoilage-scanner",
+      "mod-StatsGui",
+      "mod-Tapeline",
+      "mod-tile-upgrade-planner-redux",
+      "mod-toolbars-mod",
+      "mod-train-log",
+      "mod-UltimateResearchQueue2",
+      "mod-UPSFriendlyNixieTubeDisplayFixed",
+      "mod-AsphaltRoadsPatched",
+      "mod-automatic-station-painter",
+      "mod-Cold_biters",
+      "mod-Krastorio2",
+      "mod-pump",
+      "mod-SearchlightAssault",
+      "mod-shield-projector",
+      "mod-StatsGui-HandcraftTimer",
+      "mod-StatsGui-MovementSpeed",
+      "mod-Toxic_biters",
+      "mod-Transport_Drones_Meglinge_Fork",
+      "mod-aai-industry",
+      "mod-Bio_Industries_2",
+      "mod-color-coded-pipes",
+      "mod-Explosive_biters",
+      "mod-aai-programmable-vehicles",
+      "mod-color-coded-pipe-planner",
+      "mod-Krastorio2-roboport-mode-ghost-by-hand-keeps-mode",
+      "mod-space-exploration",
+      "mod-Avatars",
+      "mod-black-rubber-belts-remastered",
+      "mod-blueprint-sandboxes",
+      "mod-bztitanium2",
+      "mod-cargo-ships",
+      "mod-ch-concentrated-solar",
+      "mod-cme-detector-station",
+      "mod-CursorEnhancements",
+      "mod-cybersyn",
+      "mod-deep-storage-unit-se-fox",
+      "mod-nco-SpaceShuttle",
+      "mod-PlutoniumEnergy",
+      "mod-resourcehighlighter-dark",
+      "mod-rocket-log",
+      "mod-router",
+      "mod-se-rocket-landing-pad-label",
+      "mod-se-see-info-about-the-newly-unlocked-zone-in-chat",
+      "mod-se-spacepipe-does-not-require-a-huge-mall-anymore",
+      "mod-se-there-are-still-hostiles-detected",
+      "mod-skins-factored",
+      "mod-space-exploration-scripts",
+      "mod-spaceexplorationdatachipaugmenter",
+      "mod-spidertron-dock",
+      "mod-SpidertronEnhancements",
+      "mod-YARM",
+      "mod-bzsilicon2",
+      "mod-cybersyn-combinator",
+      "mod-Cybersyn-Content-Reader",
+      "mod-discovery_tree",
+      "mod-DoingThingsByHand",
+      "mod-glutenfree-se-rocket-launch-pad-label",
+      "mod-plutonium-energy-k2-bz-compat",
+      "mod-preconfigure-placement",
+      "mod-science-pack-dependencies",
+      "mod-se-core-miner-efficiency-updated-event",
+      "mod-se-core-miner-output-helper",
+      "mod-se-little-inferno",
+      "mod-se-universe-explorer-highlight-zones-new-to-you",
+      "mod-se-universe-explorer-show-chunk-count",
+      "mod-se-zone-can-be-given-description-like-module-city",
+      "mod-space-exploration-jetpack-gui",
+      "mod-space-spidertron",
+      "mod-SpidertronPatrols",
+      "mod-train-tracker",
+      "mod-bzlead2",
+      "mod-elevated-pipes",
+      "mod-GUI_Unifyer",
+      "mod-bztungsten2",
+      "mod-hd-plasma-duct",
+      "mod-bzzirconium2",
+      "mod-bzcarbon2",
+      "mod-bzaluminum2",
+      "mod-bztin2",
+      "mod-bzgas2",
+      "mod-bzchlorine2",
+      "mod-BrassTacks-Updated",
+      "mod-fluid_permutations_fixed",
+      "mod-IfNickel-Updated",
+      "mod-ThemTharHills-Updated",
+      "mod-BrimStuff-Updated",
+      "mod-LasingAround-Updated",
+      "mod-MetalsForYou2"
+    ],
+    "target_mods": [
+      "mod-Milestones",
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 17,
+    "milestones_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": true,
+      "contains_space_science_pack": true,
+      "contains_satellite_telemetry": false
+    },
+    "milestones_hit_count": 82
+  },
+  {
+    "id": "002-01-Space_Exploration_Creative_Test_world",
+    "source_url": "https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip",
+    "source_repo": "EarendelDevelopers/factorio-mods",
+    "source_issue_number": 387,
+    "source_issue_url": "https://github.com/EarendelDevelopers/factorio-mods/issues/387",
+    "source_issue_title": "Space Exploration Utility Science textures default to base game yellow when in item form on belts or on ground",
+    "source_context": " src=\"https://github.com/user-attachments/assets/5bda7903-5535-4c90-a175-d7547505de3a\" /> Mod List: [mod-list.json](https://github.com/user-attachments/files/25063068/mod-list.json) Test world: [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/25063059/Space.Exploration.Creative.Test.world.zip)",
+    "factorio_version": "2.0.66.1",
+    "save_root": "Space Exploration Creative Test world",
+    "archive_label": "002-Space.Exploration.Creative.Test.world.zip",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 16133139,
+    "download_sha256": "7ac567c92ac11dffeb9578b0eb78c80531c4ba8d1629defd002595dff13424df",
+    "script_bytes": 7122489,
+    "level_files": [
+      {
+        "name": "Space Exploration Creative Test world/level.dat2",
+        "bytes": 32008
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat3",
+        "bytes": 30374
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat1",
+        "bytes": 123829
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat4",
+        "bytes": 18461
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat5",
+        "bytes": 15200
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat0",
+        "bytes": 295230
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat7",
+        "bytes": 10217
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat6",
+        "bytes": 15007
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat9",
+        "bytes": 13551
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat10",
+        "bytes": 29268
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat8",
+        "bytes": 19977
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat11",
+        "bytes": 98465
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat12",
+        "bytes": 343570
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat13",
+        "bytes": 430036
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat14",
+        "bytes": 360821
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat15",
+        "bytes": 432234
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat16",
+        "bytes": 485253
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat17",
+        "bytes": 239142
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat18",
+        "bytes": 413689
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat19",
+        "bytes": 475104
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat20",
+        "bytes": 474131
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat21",
+        "bytes": 501195
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat22",
+        "bytes": 506634
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat23",
+        "bytes": 475602
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat24",
+        "bytes": 473204
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat25",
+        "bytes": 477388
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat26",
+        "bytes": 435651
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat27",
+        "bytes": 423766
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat28",
+        "bytes": 470119
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat29",
+        "bytes": 465906
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat30",
+        "bytes": 550014
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat31",
+        "bytes": 437554
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat32",
+        "bytes": 601341
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat34",
+        "bytes": 410732
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat33",
+        "bytes": 395223
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat35",
+        "bytes": 409812
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat36",
+        "bytes": 373864
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat37",
+        "bytes": 443594
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat38",
+        "bytes": 396644
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat39",
+        "bytes": 477647
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat41",
+        "bytes": 300008
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat40",
+        "bytes": 438761
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat42",
+        "bytes": 152900
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 1446218,
+    "mod_count": 33,
+    "mod_names": [
+      "level",
+      "mod-Robocharger-Updated",
+      "mod-aai-signal-transmission",
+      "mod-atomic-artillery-reborn",
+      "mod-AutoGhostBuilder",
+      "mod-chest-auto-sort",
+      "mod-deadlock-beltboxes-loaders",
+      "mod-DiscoScience",
+      "mod-even-distribution",
+      "mod-ExtraZoom",
+      "mod-FactorySearch",
+      "mod-fast_trans",
+      "mod-FluidWagonColorMask",
+      "mod-FNEI",
+      "mod-helmod",
+      "mod-informatron",
+      "mod-jetpack",
+      "mod-MaxRateCalculator",
+      "mod-robot_attrition",
+      "mod-SchallRechargingWeapon",
+      "mod-shield-projector",
+      "mod-tarantulator",
+      "mod-textplates",
+      "mod-valves",
+      "mod-aai-industry",
+      "mod-alien-biomes",
+      "mod-Automatic_Train_Painter",
+      "mod-ChangeInserterDropLane",
+      "mod-diurnal-dynamics",
+      "mod-Milestones",
+      "mod-reverse-factory",
+      "mod-space-exploration",
+      "mod-factorissimo-2-notnotmelon"
+    ],
+    "target_mods": [
+      "mod-Milestones",
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 12,
+    "milestones_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": true,
+      "contains_space_science_pack": true,
+      "contains_satellite_telemetry": false
+    },
+    "milestones_hit_count": 72
+  },
+  {
+    "id": "003-01-phazor_k2se_save_0.7_minimal_modlist",
+    "source_url": "https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing",
+    "source_repo": "hgschmie/factorio-miniloader-redux",
+    "source_issue_number": 31,
+    "source_issue_url": "https://github.com/hgschmie/factorio-miniloader-redux/issues/31",
+    "source_issue_title": "Issue running migration on Space Exploration save game",
+    "source_context": "Migration with a Space Exploration save does no work when Miniloaders (Redux) factorio 1.1 migration setting is switched on. ### To reproduce 1. Have factorio 2.0. 2. Load this modlist save, and sync mods and settings https://drive.google.com/file/d/1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-/view?usp=sharing. 3. Confirm Quality and Space Age are switched off in the modlist. 4. Confirm \"Use the new space rail graphics\" mod setting is switched off. 5. Confirm that the 'migrate factorio 1.1 miniloaders' mod setting is switched on. 6. Load the SE 0",
+    "factorio_version": "2.0.69.0",
+    "save_root": "phazor_k2se_save_0.7_minimal_modlist",
+    "archive_label": "003-view",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 2233151,
+    "download_sha256": "c1720c9a8b4a1aa3ac63dbec1577a685cb18910076f0159839dde3f438a1c379",
+    "script_bytes": 5229103,
+    "level_files": [
+      {
+        "name": "phazor_k2se_save_0.7_minimal_modlist/level.dat0",
+        "bytes": 201388
+      },
+      {
+        "name": "phazor_k2se_save_0.7_minimal_modlist/level.dat1",
+        "bytes": 359213
+      },
+      {
+        "name": "phazor_k2se_save_0.7_minimal_modlist/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 5275883,
+    "mod_count": 21,
+    "mod_names": [
+      "level",
+      "mod-aai-loaders",
+      "mod-aai-signal-transmission",
+      "mod-aai-vehicles-ironclad",
+      "mod-FluidMustFlow",
+      "mod-grappling-gun",
+      "mod-informatron",
+      "mod-jetpack",
+      "mod-regenerate-terrain",
+      "mod-robot_attrition",
+      "mod-textplates",
+      "mod-alien-biomes",
+      "mod-ChangeInserterDropLane",
+      "mod-equipment-gantry",
+      "mod-RecipeBook",
+      "mod-StatsGui",
+      "mod-Krastorio2",
+      "mod-shield-projector",
+      "mod-aai-industry",
+      "mod-miniloader-redux",
+      "mod-space-exploration"
+    ],
+    "target_mods": [
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 17
+  },
+  {
+    "id": "023-01-Space_Exploration_Creative_Test_world",
+    "source_url": "https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip",
+    "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "source_issue_number": 250,
+    "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/250",
+    "source_issue_title": "Remote view edit does not work with Space Exploration",
+    "source_context": "* https://github.com/user-attachments/assets/d4dc4d18-4d14-4be7-a00f-36504c830ea2 **Additional context** I can only chalk it up to something about how SE handles surfaces. **Save file & log** [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip) [factorio-current.log](https://github.com/user-attachments/files/23176865/factorio-current.log)",
+    "factorio_version": "2.0.66.1",
+    "save_root": "Space Exploration Creative Test world",
+    "archive_label": "023-Space.Exploration.Creative.Test.world.zip",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 11628416,
+    "download_sha256": "7982dad3dd525e2404afba125389777facbae9b36796f25aee6c0638c86875c2",
+    "script_bytes": 6746503,
+    "level_files": [
+      {
+        "name": "Space Exploration Creative Test world/level.dat1",
+        "bytes": 15704
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat2",
+        "bytes": 15558
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat4",
+        "bytes": 17407
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat3",
+        "bytes": 15813
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat0",
+        "bytes": 236702
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat5",
+        "bytes": 28869
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat6",
+        "bytes": 190393
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat8",
+        "bytes": 453556
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat7",
+        "bytes": 437440
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat9",
+        "bytes": 473604
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat11",
+        "bytes": 287543
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat10",
+        "bytes": 386665
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat12",
+        "bytes": 475563
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat13",
+        "bytes": 473525
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat16",
+        "bytes": 475300
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat15",
+        "bytes": 492718
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat14",
+        "bytes": 469306
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat17",
+        "bytes": 475317
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat18",
+        "bytes": 476999
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat19",
+        "bytes": 409476
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat20",
+        "bytes": 501590
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat22",
+        "bytes": 450443
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat21",
+        "bytes": 543027
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat24",
+        "bytes": 374186
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat25",
+        "bytes": 433726
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat23",
+        "bytes": 601044
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat27",
+        "bytes": 106779
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.dat26",
+        "bytes": 347735
+      },
+      {
+        "name": "Space Exploration Creative Test world/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 1418007,
+    "mod_count": 31,
+    "mod_names": [
+      "level",
+      "mod-Robocharger-Updated",
+      "mod-aai-signal-transmission",
+      "mod-atomic-artillery-reborn",
+      "mod-AutoGhostBuilder",
+      "mod-chest-auto-sort",
+      "mod-deadlock-beltboxes-loaders",
+      "mod-DiscoScience",
+      "mod-even-distribution",
+      "mod-ExtraZoom",
+      "mod-FactorySearch",
+      "mod-fast_trans",
+      "mod-FluidWagonColorMask",
+      "mod-FNEI",
+      "mod-helmod",
+      "mod-informatron",
+      "mod-jetpack",
+      "mod-MaxRateCalculator",
+      "mod-robot_attrition",
+      "mod-SchallRechargingWeapon",
+      "mod-shield-projector",
+      "mod-textplates",
+      "mod-aai-industry",
+      "mod-alien-biomes",
+      "mod-Automatic_Train_Painter",
+      "mod-ChangeInserterDropLane",
+      "mod-diurnal-dynamics",
+      "mod-Milestones",
+      "mod-reverse-factory",
+      "mod-space-exploration",
+      "mod-factorissimo-2-notnotmelon"
+    ],
+    "target_mods": [
+      "mod-Milestones",
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 12,
+    "milestones_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": true,
+      "contains_space_science_pack": true,
+      "contains_satellite_telemetry": false
+    },
+    "milestones_hit_count": 71
+  },
+  {
+    "id": "026-01-SE3",
+    "source_url": "https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing",
+    "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "source_issue_number": 268,
+    "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/268",
+    "source_issue_title": "This won't work here! This factory building is designed for Factory floor 1. Was instead Nauvis factory floor.",
+    "source_context": "y other context about the problem here. I'm playing with space exploration + krastorio 2 if that helps. **Save file & log** Attach your save file and `factorio-current.log` file. the save is too big so i uploaded it to my google drive: https://drive.google.com/file/d/1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT/view?usp=sharing [factorio-current.log](https://github.com/user-attachments/files/24868904/factorio-current.log) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI codin",
+    "factorio_version": "2.0.69.0",
+    "save_root": "SE3",
+    "archive_label": "026-view",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 189973420,
+    "download_sha256": "7ea6aba27db843a635b709f103837f830064e2e67aff29b63c8ff3d6252687cd",
+    "script_bytes": 37630459,
+    "level_files": [
+      {
+        "name": "SE3/level.dat0",
+        "bytes": 331683
+      },
+      {
+        "name": "SE3/level.dat1",
+        "bytes": 499665
+      },
+      {
+        "name": "SE3/level.dat2",
+        "bytes": 491028
+      },
+      {
+        "name": "SE3/level.dat3",
+        "bytes": 476635
+      },
+      {
+        "name": "SE3/level.dat4",
+        "bytes": 285982
+      },
+      {
+        "name": "SE3/level.dat5",
+        "bytes": 417260
+      },
+      {
+        "name": "SE3/level.dat6",
+        "bytes": 467860
+      },
+      {
+        "name": "SE3/level.dat7",
+        "bytes": 461974
+      },
+      {
+        "name": "SE3/level.dat8",
+        "bytes": 417793
+      },
+      {
+        "name": "SE3/level.dat11",
+        "bytes": 12722
+      },
+      {
+        "name": "SE3/level.dat12",
+        "bytes": 19362
+      },
+      {
+        "name": "SE3/level.dat9",
+        "bytes": 300722
+      },
+      {
+        "name": "SE3/level.dat10",
+        "bytes": 82104
+      },
+      {
+        "name": "SE3/level.dat13",
+        "bytes": 24869
+      },
+      {
+        "name": "SE3/level.dat15",
+        "bytes": 88493
+      },
+      {
+        "name": "SE3/level.dat14",
+        "bytes": 48253
+      },
+      {
+        "name": "SE3/level.dat19",
+        "bytes": 7990
+      },
+      {
+        "name": "SE3/level.dat20",
+        "bytes": 8635
+      },
+      {
+        "name": "SE3/level.dat18",
+        "bytes": 42466
+      },
+      {
+        "name": "SE3/level.dat22",
+        "bytes": 29626
+      },
+      {
+        "name": "SE3/level.dat21",
+        "bytes": 11043
+      },
+      {
+        "name": "SE3/level.dat23",
+        "bytes": 49552
+      },
+      {
+        "name": "SE3/level.dat27",
+        "bytes": 8684
+      },
+      {
+        "name": "SE3/level.dat28",
+        "bytes": 28642
+      },
+      {
+        "name": "SE3/level.dat24",
+        "bytes": 67638
+      },
+      {
+        "name": "SE3/level.dat16",
+        "bytes": 232529
+      },
+      {
+        "name": "SE3/level.dat29",
+        "bytes": 17437
+      },
+      {
+        "name": "SE3/level.dat25",
+        "bytes": 300528
+      },
+      {
+        "name": "SE3/level.dat30",
+        "bytes": 27005
+      },
+      {
+        "name": "SE3/level.dat31",
+        "bytes": 48254
+      },
+      {
+        "name": "SE3/level.dat35",
+        "bytes": 10208
+      },
+      {
+        "name": "SE3/level.dat32",
+        "bytes": 127605
+      },
+      {
+        "name": "SE3/level.dat36",
+        "bytes": 26271
+      },
+      {
+        "name": "SE3/level.dat34",
+        "bytes": 7871
+      },
+      {
+        "name": "SE3/level.dat39",
+        "bytes": 8445
+      },
+      {
+        "name": "SE3/level.dat26",
+        "bytes": 285079
+      },
+      {
+        "name": "SE3/level.dat38",
+        "bytes": 80582
+      },
+      {
+        "name": "SE3/level.dat40",
+        "bytes": 78833
+      },
+      {
+        "name": "SE3/level.dat37",
+        "bytes": 52230
+      },
+      {
+        "name": "SE3/level.dat17",
+        "bytes": 86522
+      },
+      {
+        "name": "SE3/level.dat42",
+        "bytes": 16280
+      },
+      {
+        "name": "SE3/level.dat41",
+        "bytes": 68934
+      },
+      {
+        "name": "SE3/level.dat45",
+        "bytes": 9883
+      },
+      {
+        "name": "SE3/level.dat33",
+        "bytes": 293362
+      },
+      {
+        "name": "SE3/level.dat46",
+        "bytes": 103171
+      },
+      {
+        "name": "SE3/level.dat49",
+        "bytes": 76274
+      },
+      {
+        "name": "SE3/level.dat50",
+        "bytes": 9226
+      },
+      {
+        "name": "SE3/level.dat51",
+        "bytes": 20291
+      },
+      {
+        "name": "SE3/level.dat47",
+        "bytes": 72587
+      },
+      {
+        "name": "SE3/level.dat48",
+        "bytes": 31681
+      },
+      {
+        "name": "SE3/level.dat43",
+        "bytes": 133100
+      },
+      {
+        "name": "SE3/level.dat44",
+        "bytes": 10530
+      },
+      {
+        "name": "SE3/level.dat52",
+        "bytes": 23338
+      },
+      {
+        "name": "SE3/level.dat55",
+        "bytes": 10691
+      },
+      {
+        "name": "SE3/level.dat53",
+        "bytes": 53139
+      },
+      {
+        "name": "SE3/level.dat56",
+        "bytes": 21266
+      },
+      {
+        "name": "SE3/level.dat58",
+        "bytes": 49582
+      },
+      {
+        "name": "SE3/level.dat57",
+        "bytes": 35150
+      },
+      {
+        "name": "SE3/level.dat61",
+        "bytes": 57789
+      },
+      {
+        "name": "SE3/level.dat63",
+        "bytes": 53729
+      },
+      {
+        "name": "SE3/level.dat54",
+        "bytes": 64299
+      },
+      {
+        "name": "SE3/level.dat67",
+        "bytes": 15030
+      },
+      {
+        "name": "SE3/level.dat62",
+        "bytes": 59236
+      },
+      {
+        "name": "SE3/level.dat64",
+        "bytes": 16321
+      },
+      {
+        "name": "SE3/level.dat65",
+        "bytes": 64906
+      },
+      {
+        "name": "SE3/level.dat66",
+        "bytes": 102014
+      },
+      {
+        "name": "SE3/level.dat68",
+        "bytes": 60754
+      },
+      {
+        "name": "SE3/level.dat71",
+        "bytes": 86120
+      },
+      {
+        "name": "SE3/level.dat70",
+        "bytes": 43098
+      },
+      {
+        "name": "SE3/level.dat72",
+        "bytes": 129949
+      },
+      {
+        "name": "SE3/level.dat69",
+        "bytes": 72674
+      },
+      {
+        "name": "SE3/level.dat59",
+        "bytes": 59428
+      },
+      {
+        "name": "SE3/level.dat60",
+        "bytes": 48720
+      },
+      {
+        "name": "SE3/level.dat73",
+        "bytes": 33518
+      },
+      {
+        "name": "SE3/level.dat75",
+        "bytes": 38038
+      },
+      {
+        "name": "SE3/level.dat74",
+        "bytes": 42123
+      },
+      {
+        "name": "SE3/level.dat76",
+        "bytes": 11461
+      },
+      {
+        "name": "SE3/level.dat77",
+        "bytes": 94680
+      },
+      {
+        "name": "SE3/level.dat78",
+        "bytes": 94968
+      },
+      {
+        "name": "SE3/level.dat82",
+        "bytes": 153578
+      },
+      {
+        "name": "SE3/level.dat83",
+        "bytes": 141292
+      },
+      {
+        "name": "SE3/level.dat84",
+        "bytes": 58677
+      },
+      {
+        "name": "SE3/level.dat79",
+        "bytes": 276721
+      },
+      {
+        "name": "SE3/level.dat81",
+        "bytes": 294355
+      },
+      {
+        "name": "SE3/level.dat80",
+        "bytes": 315028
+      },
+      {
+        "name": "SE3/level.dat85",
+        "bytes": 231505
+      },
+      {
+        "name": "SE3/level.dat86",
+        "bytes": 272586
+      },
+      {
+        "name": "SE3/level.dat87",
+        "bytes": 242426
+      },
+      {
+        "name": "SE3/level.dat88",
+        "bytes": 340805
+      },
+      {
+        "name": "SE3/level.dat89",
+        "bytes": 382990
+      },
+      {
+        "name": "SE3/level.dat90",
+        "bytes": 387452
+      },
+      {
+        "name": "SE3/level.dat91",
+        "bytes": 364257
+      },
+      {
+        "name": "SE3/level.dat92",
+        "bytes": 420393
+      },
+      {
+        "name": "SE3/level.dat93",
+        "bytes": 420296
+      },
+      {
+        "name": "SE3/level.dat94",
+        "bytes": 456647
+      },
+      {
+        "name": "SE3/level.dat95",
+        "bytes": 446314
+      },
+      {
+        "name": "SE3/level.dat96",
+        "bytes": 442758
+      },
+      {
+        "name": "SE3/level.dat97",
+        "bytes": 451857
+      },
+      {
+        "name": "SE3/level.dat98",
+        "bytes": 424931
+      },
+      {
+        "name": "SE3/level.dat99",
+        "bytes": 428079
+      },
+      {
+        "name": "SE3/level.dat100",
+        "bytes": 447962
+      },
+      {
+        "name": "SE3/level.dat101",
+        "bytes": 468117
+      },
+      {
+        "name": "SE3/level.dat102",
+        "bytes": 457145
+      },
+      {
+        "name": "SE3/level.dat103",
+        "bytes": 463405
+      },
+      {
+        "name": "SE3/level.dat104",
+        "bytes": 467396
+      },
+      {
+        "name": "SE3/level.dat105",
+        "bytes": 458942
+      },
+      {
+        "name": "SE3/level.dat106",
+        "bytes": 446232
+      },
+      {
+        "name": "SE3/level.dat107",
+        "bytes": 434238
+      },
+      {
+        "name": "SE3/level.dat108",
+        "bytes": 407383
+      },
+      {
+        "name": "SE3/level.dat109",
+        "bytes": 386697
+      },
+      {
+        "name": "SE3/level.dat110",
+        "bytes": 392002
+      },
+      {
+        "name": "SE3/level.dat111",
+        "bytes": 400365
+      },
+      {
+        "name": "SE3/level.dat112",
+        "bytes": 356227
+      },
+      {
+        "name": "SE3/level.dat113",
+        "bytes": 360401
+      },
+      {
+        "name": "SE3/level.dat114",
+        "bytes": 377310
+      },
+      {
+        "name": "SE3/level.dat115",
+        "bytes": 372232
+      },
+      {
+        "name": "SE3/level.dat116",
+        "bytes": 351849
+      },
+      {
+        "name": "SE3/level.dat117",
+        "bytes": 390166
+      },
+      {
+        "name": "SE3/level.dat118",
+        "bytes": 354864
+      },
+      {
+        "name": "SE3/level.dat119",
+        "bytes": 393926
+      },
+      {
+        "name": "SE3/level.dat120",
+        "bytes": 331727
+      },
+      {
+        "name": "SE3/level.dat121",
+        "bytes": 431457
+      },
+      {
+        "name": "SE3/level.dat122",
+        "bytes": 436828
+      },
+      {
+        "name": "SE3/level.dat123",
+        "bytes": 455932
+      },
+      {
+        "name": "SE3/level.dat124",
+        "bytes": 471597
+      },
+      {
+        "name": "SE3/level.dat125",
+        "bytes": 427270
+      },
+      {
+        "name": "SE3/level.dat126",
+        "bytes": 437594
+      },
+      {
+        "name": "SE3/level.dat127",
+        "bytes": 416485
+      },
+      {
+        "name": "SE3/level.dat128",
+        "bytes": 433225
+      },
+      {
+        "name": "SE3/level.dat129",
+        "bytes": 448005
+      },
+      {
+        "name": "SE3/level.dat130",
+        "bytes": 468605
+      },
+      {
+        "name": "SE3/level.dat131",
+        "bytes": 420550
+      },
+      {
+        "name": "SE3/level.dat132",
+        "bytes": 415236
+      },
+      {
+        "name": "SE3/level.dat134",
+        "bytes": 217327
+      },
+      {
+        "name": "SE3/level.dat133",
+        "bytes": 370754
+      },
+      {
+        "name": "SE3/level.dat135",
+        "bytes": 132126
+      },
+      {
+        "name": "SE3/level.dat136",
+        "bytes": 132406
+      },
+      {
+        "name": "SE3/level.dat137",
+        "bytes": 142229
+      },
+      {
+        "name": "SE3/level.dat138",
+        "bytes": 112153
+      },
+      {
+        "name": "SE3/level.dat139",
+        "bytes": 111516
+      },
+      {
+        "name": "SE3/level.dat140",
+        "bytes": 110524
+      },
+      {
+        "name": "SE3/level.dat141",
+        "bytes": 154358
+      },
+      {
+        "name": "SE3/level.dat142",
+        "bytes": 115096
+      },
+      {
+        "name": "SE3/level.dat143",
+        "bytes": 111095
+      },
+      {
+        "name": "SE3/level.dat144",
+        "bytes": 199761
+      },
+      {
+        "name": "SE3/level.dat145",
+        "bytes": 463011
+      },
+      {
+        "name": "SE3/level.dat146",
+        "bytes": 439545
+      },
+      {
+        "name": "SE3/level.dat147",
+        "bytes": 322536
+      },
+      {
+        "name": "SE3/level.dat148",
+        "bytes": 288207
+      },
+      {
+        "name": "SE3/level.dat149",
+        "bytes": 275107
+      },
+      {
+        "name": "SE3/level.dat150",
+        "bytes": 318575
+      },
+      {
+        "name": "SE3/level.dat151",
+        "bytes": 317554
+      },
+      {
+        "name": "SE3/level.dat152",
+        "bytes": 301333
+      },
+      {
+        "name": "SE3/level.dat153",
+        "bytes": 316286
+      },
+      {
+        "name": "SE3/level.dat154",
+        "bytes": 311296
+      },
+      {
+        "name": "SE3/level.dat155",
+        "bytes": 308513
+      },
+      {
+        "name": "SE3/level.dat156",
+        "bytes": 335134
+      },
+      {
+        "name": "SE3/level.dat157",
+        "bytes": 305608
+      },
+      {
+        "name": "SE3/level.dat159",
+        "bytes": 250415
+      },
+      {
+        "name": "SE3/level.dat158",
+        "bytes": 491776
+      },
+      {
+        "name": "SE3/level.dat161",
+        "bytes": 330997
+      },
+      {
+        "name": "SE3/level.dat160",
+        "bytes": 573909
+      },
+      {
+        "name": "SE3/level.dat165",
+        "bytes": 463508
+      },
+      {
+        "name": "SE3/level.dat163",
+        "bytes": 455451
+      },
+      {
+        "name": "SE3/level.dat164",
+        "bytes": 464310
+      },
+      {
+        "name": "SE3/level.dat167",
+        "bytes": 469183
+      },
+      {
+        "name": "SE3/level.dat168",
+        "bytes": 469177
+      },
+      {
+        "name": "SE3/level.dat171",
+        "bytes": 464948
+      },
+      {
+        "name": "SE3/level.dat162",
+        "bytes": 446696
+      },
+      {
+        "name": "SE3/level.dat173",
+        "bytes": 471688
+      },
+      {
+        "name": "SE3/level.dat169",
+        "bytes": 473442
+      },
+      {
+        "name": "SE3/level.dat172",
+        "bytes": 471167
+      },
+      {
+        "name": "SE3/level.dat166",
+        "bytes": 469416
+      },
+      {
+        "name": "SE3/level.dat170",
+        "bytes": 465702
+      },
+      {
+        "name": "SE3/level.dat176",
+        "bytes": 468182
+      },
+      {
+        "name": "SE3/level.dat174",
+        "bytes": 473749
+      },
+      {
+        "name": "SE3/level.dat179",
+        "bytes": 469965
+      },
+      {
+        "name": "SE3/level.dat175",
+        "bytes": 471637
+      },
+      {
+        "name": "SE3/level.dat180",
+        "bytes": 473771
+      },
+      {
+        "name": "SE3/level.dat178",
+        "bytes": 470120
+      },
+      {
+        "name": "SE3/level.dat181",
+        "bytes": 461247
+      },
+      {
+        "name": "SE3/level.dat182",
+        "bytes": 462111
+      },
+      {
+        "name": "SE3/level.dat177",
+        "bytes": 469675
+      },
+      {
+        "name": "SE3/level.dat183",
+        "bytes": 443470
+      },
+      {
+        "name": "SE3/level.dat184",
+        "bytes": 456679
+      },
+      {
+        "name": "SE3/level.dat185",
+        "bytes": 467052
+      },
+      {
+        "name": "SE3/level.dat186",
+        "bytes": 463109
+      },
+      {
+        "name": "SE3/level.dat188",
+        "bytes": 449919
+      },
+      {
+        "name": "SE3/level.dat187",
+        "bytes": 466478
+      },
+      {
+        "name": "SE3/level.dat189",
+        "bytes": 473349
+      },
+      {
+        "name": "SE3/level.dat190",
+        "bytes": 475306
+      },
+      {
+        "name": "SE3/level.dat191",
+        "bytes": 474458
+      },
+      {
+        "name": "SE3/level.dat192",
+        "bytes": 474136
+      },
+      {
+        "name": "SE3/level.dat193",
+        "bytes": 481280
+      },
+      {
+        "name": "SE3/level.dat194",
+        "bytes": 479809
+      },
+      {
+        "name": "SE3/level.dat195",
+        "bytes": 476600
+      },
+      {
+        "name": "SE3/level.dat196",
+        "bytes": 479958
+      },
+      {
+        "name": "SE3/level.dat197",
+        "bytes": 478638
+      },
+      {
+        "name": "SE3/level.dat198",
+        "bytes": 475219
+      },
+      {
+        "name": "SE3/level.dat200",
+        "bytes": 469863
+      },
+      {
+        "name": "SE3/level.dat199",
+        "bytes": 475452
+      },
+      {
+        "name": "SE3/level.dat201",
+        "bytes": 472469
+      },
+      {
+        "name": "SE3/level.dat202",
+        "bytes": 468162
+      },
+      {
+        "name": "SE3/level.dat203",
+        "bytes": 465292
+      },
+      {
+        "name": "SE3/level.dat204",
+        "bytes": 466676
+      },
+      {
+        "name": "SE3/level.dat205",
+        "bytes": 461147
+      },
+      {
+        "name": "SE3/level.dat206",
+        "bytes": 465817
+      },
+      {
+        "name": "SE3/level.dat207",
+        "bytes": 470424
+      },
+      {
+        "name": "SE3/level.dat208",
+        "bytes": 464807
+      },
+      {
+        "name": "SE3/level.dat210",
+        "bytes": 458311
+      },
+      {
+        "name": "SE3/level.dat209",
+        "bytes": 469672
+      },
+      {
+        "name": "SE3/level.dat211",
+        "bytes": 453299
+      },
+      {
+        "name": "SE3/level.dat213",
+        "bytes": 313613
+      },
+      {
+        "name": "SE3/level.dat212",
+        "bytes": 446482
+      },
+      {
+        "name": "SE3/level.dat214",
+        "bytes": 310721
+      },
+      {
+        "name": "SE3/level.dat215",
+        "bytes": 416233
+      },
+      {
+        "name": "SE3/level.dat216",
+        "bytes": 412196
+      },
+      {
+        "name": "SE3/level.dat217",
+        "bytes": 417431
+      },
+      {
+        "name": "SE3/level.dat218",
+        "bytes": 457259
+      },
+      {
+        "name": "SE3/level.dat219",
+        "bytes": 469644
+      },
+      {
+        "name": "SE3/level.dat220",
+        "bytes": 487545
+      },
+      {
+        "name": "SE3/level.dat221",
+        "bytes": 467908
+      },
+      {
+        "name": "SE3/level.dat222",
+        "bytes": 482333
+      },
+      {
+        "name": "SE3/level.dat223",
+        "bytes": 470629
+      },
+      {
+        "name": "SE3/level.dat224",
+        "bytes": 460206
+      },
+      {
+        "name": "SE3/level.dat225",
+        "bytes": 433572
+      },
+      {
+        "name": "SE3/level.dat226",
+        "bytes": 459438
+      },
+      {
+        "name": "SE3/level.dat227",
+        "bytes": 484699
+      },
+      {
+        "name": "SE3/level.dat228",
+        "bytes": 488889
+      },
+      {
+        "name": "SE3/level.dat229",
+        "bytes": 475547
+      },
+      {
+        "name": "SE3/level.dat230",
+        "bytes": 468518
+      },
+      {
+        "name": "SE3/level.dat231",
+        "bytes": 487825
+      },
+      {
+        "name": "SE3/level.dat232",
+        "bytes": 483655
+      },
+      {
+        "name": "SE3/level.dat233",
+        "bytes": 504622
+      },
+      {
+        "name": "SE3/level.dat234",
+        "bytes": 472148
+      },
+      {
+        "name": "SE3/level.dat235",
+        "bytes": 436237
+      },
+      {
+        "name": "SE3/level.dat236",
+        "bytes": 359436
+      },
+      {
+        "name": "SE3/level.dat237",
+        "bytes": 218031
+      },
+      {
+        "name": "SE3/level.dat238",
+        "bytes": 334287
+      },
+      {
+        "name": "SE3/level.dat239",
+        "bytes": 470321
+      },
+      {
+        "name": "SE3/level.dat240",
+        "bytes": 479097
+      },
+      {
+        "name": "SE3/level.dat241",
+        "bytes": 499915
+      },
+      {
+        "name": "SE3/level.dat242",
+        "bytes": 495009
+      },
+      {
+        "name": "SE3/level.dat243",
+        "bytes": 485603
+      },
+      {
+        "name": "SE3/level.dat244",
+        "bytes": 478567
+      },
+      {
+        "name": "SE3/level.dat245",
+        "bytes": 477539
+      },
+      {
+        "name": "SE3/level.dat246",
+        "bytes": 490171
+      },
+      {
+        "name": "SE3/level.dat247",
+        "bytes": 479298
+      },
+      {
+        "name": "SE3/level.dat248",
+        "bytes": 490957
+      },
+      {
+        "name": "SE3/level.dat249",
+        "bytes": 490105
+      },
+      {
+        "name": "SE3/level.dat250",
+        "bytes": 483627
+      },
+      {
+        "name": "SE3/level.dat251",
+        "bytes": 482608
+      },
+      {
+        "name": "SE3/level.dat252",
+        "bytes": 486686
+      },
+      {
+        "name": "SE3/level.dat253",
+        "bytes": 489194
+      },
+      {
+        "name": "SE3/level.dat254",
+        "bytes": 497350
+      },
+      {
+        "name": "SE3/level.dat256",
+        "bytes": 488564
+      },
+      {
+        "name": "SE3/level.dat255",
+        "bytes": 502738
+      },
+      {
+        "name": "SE3/level.dat257",
+        "bytes": 490847
+      },
+      {
+        "name": "SE3/level.dat258",
+        "bytes": 500545
+      },
+      {
+        "name": "SE3/level.dat259",
+        "bytes": 495107
+      },
+      {
+        "name": "SE3/level.dat260",
+        "bytes": 493178
+      },
+      {
+        "name": "SE3/level.dat261",
+        "bytes": 484660
+      },
+      {
+        "name": "SE3/level.dat262",
+        "bytes": 484150
+      },
+      {
+        "name": "SE3/level.dat263",
+        "bytes": 480429
+      },
+      {
+        "name": "SE3/level.dat264",
+        "bytes": 482577
+      },
+      {
+        "name": "SE3/level.dat265",
+        "bytes": 478817
+      },
+      {
+        "name": "SE3/level.dat266",
+        "bytes": 482816
+      },
+      {
+        "name": "SE3/level.dat267",
+        "bytes": 479763
+      },
+      {
+        "name": "SE3/level.dat268",
+        "bytes": 478329
+      },
+      {
+        "name": "SE3/level.dat269",
+        "bytes": 484757
+      },
+      {
+        "name": "SE3/level.dat270",
+        "bytes": 486391
+      },
+      {
+        "name": "SE3/level.dat271",
+        "bytes": 485366
+      },
+      {
+        "name": "SE3/level.dat272",
+        "bytes": 481309
+      },
+      {
+        "name": "SE3/level.dat273",
+        "bytes": 469756
+      },
+      {
+        "name": "SE3/level.dat274",
+        "bytes": 463416
+      },
+      {
+        "name": "SE3/level.dat275",
+        "bytes": 473883
+      },
+      {
+        "name": "SE3/level.dat276",
+        "bytes": 483057
+      },
+      {
+        "name": "SE3/level.dat277",
+        "bytes": 471934
+      },
+      {
+        "name": "SE3/level.dat278",
+        "bytes": 482154
+      },
+      {
+        "name": "SE3/level.dat279",
+        "bytes": 462713
+      },
+      {
+        "name": "SE3/level.dat280",
+        "bytes": 468711
+      },
+      {
+        "name": "SE3/level.dat281",
+        "bytes": 453887
+      },
+      {
+        "name": "SE3/level.dat282",
+        "bytes": 450228
+      },
+      {
+        "name": "SE3/level.dat283",
+        "bytes": 468494
+      },
+      {
+        "name": "SE3/level.dat284",
+        "bytes": 476960
+      },
+      {
+        "name": "SE3/level.dat285",
+        "bytes": 475139
+      },
+      {
+        "name": "SE3/level.dat286",
+        "bytes": 473733
+      },
+      {
+        "name": "SE3/level.dat287",
+        "bytes": 476965
+      },
+      {
+        "name": "SE3/level.dat288",
+        "bytes": 475161
+      },
+      {
+        "name": "SE3/level.dat289",
+        "bytes": 475235
+      },
+      {
+        "name": "SE3/level.dat290",
+        "bytes": 468049
+      },
+      {
+        "name": "SE3/level.dat291",
+        "bytes": 465532
+      },
+      {
+        "name": "SE3/level.dat292",
+        "bytes": 459877
+      },
+      {
+        "name": "SE3/level.dat293",
+        "bytes": 460039
+      },
+      {
+        "name": "SE3/level.dat294",
+        "bytes": 465452
+      },
+      {
+        "name": "SE3/level.dat295",
+        "bytes": 469337
+      },
+      {
+        "name": "SE3/level.dat296",
+        "bytes": 471406
+      },
+      {
+        "name": "SE3/level.dat297",
+        "bytes": 461713
+      },
+      {
+        "name": "SE3/level.dat298",
+        "bytes": 477557
+      },
+      {
+        "name": "SE3/level.dat299",
+        "bytes": 487332
+      },
+      {
+        "name": "SE3/level.dat300",
+        "bytes": 488267
+      },
+      {
+        "name": "SE3/level.dat301",
+        "bytes": 493550
+      },
+      {
+        "name": "SE3/level.dat302",
+        "bytes": 492318
+      },
+      {
+        "name": "SE3/level.dat303",
+        "bytes": 487498
+      },
+      {
+        "name": "SE3/level.dat304",
+        "bytes": 483319
+      },
+      {
+        "name": "SE3/level.dat306",
+        "bytes": 484221
+      },
+      {
+        "name": "SE3/level.dat305",
+        "bytes": 495334
+      },
+      {
+        "name": "SE3/level.dat307",
+        "bytes": 491300
+      },
+      {
+        "name": "SE3/level.dat308",
+        "bytes": 487416
+      },
+      {
+        "name": "SE3/level.dat310",
+        "bytes": 487725
+      },
+      {
+        "name": "SE3/level.dat311",
+        "bytes": 476208
+      },
+      {
+        "name": "SE3/level.dat309",
+        "bytes": 494305
+      },
+      {
+        "name": "SE3/level.dat312",
+        "bytes": 475643
+      },
+      {
+        "name": "SE3/level.dat313",
+        "bytes": 480908
+      },
+      {
+        "name": "SE3/level.dat314",
+        "bytes": 494249
+      },
+      {
+        "name": "SE3/level.dat315",
+        "bytes": 516198
+      },
+      {
+        "name": "SE3/level.dat316",
+        "bytes": 516237
+      },
+      {
+        "name": "SE3/level.dat317",
+        "bytes": 521834
+      },
+      {
+        "name": "SE3/level.dat318",
+        "bytes": 505579
+      },
+      {
+        "name": "SE3/level.dat319",
+        "bytes": 498185
+      },
+      {
+        "name": "SE3/level.dat320",
+        "bytes": 484702
+      },
+      {
+        "name": "SE3/level.dat321",
+        "bytes": 429771
+      },
+      {
+        "name": "SE3/level.dat323",
+        "bytes": 175363
+      },
+      {
+        "name": "SE3/level.dat322",
+        "bytes": 391405
+      },
+      {
+        "name": "SE3/level.dat324",
+        "bytes": 228752
+      },
+      {
+        "name": "SE3/level.dat325",
+        "bytes": 290457
+      },
+      {
+        "name": "SE3/level.dat326",
+        "bytes": 422585
+      },
+      {
+        "name": "SE3/level.dat327",
+        "bytes": 488291
+      },
+      {
+        "name": "SE3/level.dat328",
+        "bytes": 488372
+      },
+      {
+        "name": "SE3/level.dat329",
+        "bytes": 480762
+      },
+      {
+        "name": "SE3/level.dat330",
+        "bytes": 489471
+      },
+      {
+        "name": "SE3/level.dat331",
+        "bytes": 476862
+      },
+      {
+        "name": "SE3/level.dat332",
+        "bytes": 484703
+      },
+      {
+        "name": "SE3/level.dat333",
+        "bytes": 486862
+      },
+      {
+        "name": "SE3/level.dat334",
+        "bytes": 480346
+      },
+      {
+        "name": "SE3/level.dat335",
+        "bytes": 485876
+      },
+      {
+        "name": "SE3/level.dat336",
+        "bytes": 488658
+      },
+      {
+        "name": "SE3/level.dat337",
+        "bytes": 503532
+      },
+      {
+        "name": "SE3/level.dat338",
+        "bytes": 505278
+      },
+      {
+        "name": "SE3/level.dat339",
+        "bytes": 507324
+      },
+      {
+        "name": "SE3/level.dat340",
+        "bytes": 508152
+      },
+      {
+        "name": "SE3/level.dat341",
+        "bytes": 507015
+      },
+      {
+        "name": "SE3/level.dat342",
+        "bytes": 493346
+      },
+      {
+        "name": "SE3/level.dat343",
+        "bytes": 506377
+      },
+      {
+        "name": "SE3/level.dat344",
+        "bytes": 515028
+      },
+      {
+        "name": "SE3/level.dat346",
+        "bytes": 489033
+      },
+      {
+        "name": "SE3/level.dat345",
+        "bytes": 512570
+      },
+      {
+        "name": "SE3/level.dat347",
+        "bytes": 473784
+      },
+      {
+        "name": "SE3/level.dat348",
+        "bytes": 464738
+      },
+      {
+        "name": "SE3/level.dat349",
+        "bytes": 494414
+      },
+      {
+        "name": "SE3/level.dat350",
+        "bytes": 474264
+      },
+      {
+        "name": "SE3/level.dat351",
+        "bytes": 476814
+      },
+      {
+        "name": "SE3/level.dat352",
+        "bytes": 484463
+      },
+      {
+        "name": "SE3/level.dat353",
+        "bytes": 490019
+      },
+      {
+        "name": "SE3/level.dat354",
+        "bytes": 481769
+      },
+      {
+        "name": "SE3/level.dat355",
+        "bytes": 497367
+      },
+      {
+        "name": "SE3/level.dat356",
+        "bytes": 499567
+      },
+      {
+        "name": "SE3/level.dat357",
+        "bytes": 506153
+      },
+      {
+        "name": "SE3/level.dat358",
+        "bytes": 486608
+      },
+      {
+        "name": "SE3/level.dat359",
+        "bytes": 469474
+      },
+      {
+        "name": "SE3/level.dat360",
+        "bytes": 472558
+      },
+      {
+        "name": "SE3/level.dat361",
+        "bytes": 461341
+      },
+      {
+        "name": "SE3/level.dat362",
+        "bytes": 489832
+      },
+      {
+        "name": "SE3/level.dat363",
+        "bytes": 503146
+      },
+      {
+        "name": "SE3/level.dat364",
+        "bytes": 473416
+      },
+      {
+        "name": "SE3/level.dat365",
+        "bytes": 469785
+      },
+      {
+        "name": "SE3/level.dat366",
+        "bytes": 455440
+      },
+      {
+        "name": "SE3/level.dat367",
+        "bytes": 481882
+      },
+      {
+        "name": "SE3/level.dat371",
+        "bytes": 247896
+      },
+      {
+        "name": "SE3/level.dat368",
+        "bytes": 517086
+      },
+      {
+        "name": "SE3/level.dat370",
+        "bytes": 371747
+      },
+      {
+        "name": "SE3/level.dat369",
+        "bytes": 479155
+      },
+      {
+        "name": "SE3/level.dat372",
+        "bytes": 289135
+      },
+      {
+        "name": "SE3/level.dat374",
+        "bytes": 336030
+      },
+      {
+        "name": "SE3/level.dat373",
+        "bytes": 522664
+      },
+      {
+        "name": "SE3/level.dat375",
+        "bytes": 369001
+      },
+      {
+        "name": "SE3/level.dat376",
+        "bytes": 401887
+      },
+      {
+        "name": "SE3/level.dat377",
+        "bytes": 441079
+      },
+      {
+        "name": "SE3/level.dat378",
+        "bytes": 452294
+      },
+      {
+        "name": "SE3/level.dat379",
+        "bytes": 460838
+      },
+      {
+        "name": "SE3/level.dat380",
+        "bytes": 456116
+      },
+      {
+        "name": "SE3/level.dat381",
+        "bytes": 464450
+      },
+      {
+        "name": "SE3/level.dat382",
+        "bytes": 447792
+      },
+      {
+        "name": "SE3/level.dat383",
+        "bytes": 461065
+      },
+      {
+        "name": "SE3/level.dat384",
+        "bytes": 464095
+      },
+      {
+        "name": "SE3/level.dat385",
+        "bytes": 455284
+      },
+      {
+        "name": "SE3/level.dat386",
+        "bytes": 461883
+      },
+      {
+        "name": "SE3/level.dat387",
+        "bytes": 462808
+      },
+      {
+        "name": "SE3/level.dat388",
+        "bytes": 456930
+      },
+      {
+        "name": "SE3/level.dat389",
+        "bytes": 453741
+      },
+      {
+        "name": "SE3/level.dat391",
+        "bytes": 463029
+      },
+      {
+        "name": "SE3/level.dat390",
+        "bytes": 450850
+      },
+      {
+        "name": "SE3/level.dat392",
+        "bytes": 459173
+      },
+      {
+        "name": "SE3/level.dat393",
+        "bytes": 458162
+      },
+      {
+        "name": "SE3/level.dat394",
+        "bytes": 456191
+      },
+      {
+        "name": "SE3/level.dat395",
+        "bytes": 464846
+      },
+      {
+        "name": "SE3/level.dat397",
+        "bytes": 461734
+      },
+      {
+        "name": "SE3/level.dat396",
+        "bytes": 466137
+      },
+      {
+        "name": "SE3/level.dat398",
+        "bytes": 474215
+      },
+      {
+        "name": "SE3/level.dat399",
+        "bytes": 488134
+      },
+      {
+        "name": "SE3/level.dat400",
+        "bytes": 485633
+      },
+      {
+        "name": "SE3/level.dat401",
+        "bytes": 468458
+      },
+      {
+        "name": "SE3/level.dat402",
+        "bytes": 459824
+      },
+      {
+        "name": "SE3/level.dat403",
+        "bytes": 471219
+      },
+      {
+        "name": "SE3/level.dat404",
+        "bytes": 475933
+      },
+      {
+        "name": "SE3/level.dat405",
+        "bytes": 456377
+      },
+      {
+        "name": "SE3/level.dat406",
+        "bytes": 460388
+      },
+      {
+        "name": "SE3/level.dat407",
+        "bytes": 446932
+      },
+      {
+        "name": "SE3/level.dat408",
+        "bytes": 466348
+      },
+      {
+        "name": "SE3/level.dat409",
+        "bytes": 475274
+      },
+      {
+        "name": "SE3/level.dat410",
+        "bytes": 463917
+      },
+      {
+        "name": "SE3/level.dat411",
+        "bytes": 466983
+      },
+      {
+        "name": "SE3/level.dat412",
+        "bytes": 406566
+      },
+      {
+        "name": "SE3/level.dat413",
+        "bytes": 417994
+      },
+      {
+        "name": "SE3/level.dat414",
+        "bytes": 427492
+      },
+      {
+        "name": "SE3/level.dat415",
+        "bytes": 421325
+      },
+      {
+        "name": "SE3/level.dat416",
+        "bytes": 436701
+      },
+      {
+        "name": "SE3/level.dat417",
+        "bytes": 433099
+      },
+      {
+        "name": "SE3/level.dat418",
+        "bytes": 432464
+      },
+      {
+        "name": "SE3/level.dat419",
+        "bytes": 433092
+      },
+      {
+        "name": "SE3/level.dat420",
+        "bytes": 457474
+      },
+      {
+        "name": "SE3/level.dat421",
+        "bytes": 452170
+      },
+      {
+        "name": "SE3/level.dat425",
+        "bytes": 166240
+      },
+      {
+        "name": "SE3/level.dat423",
+        "bytes": 454029
+      },
+      {
+        "name": "SE3/level.dat422",
+        "bytes": 451483
+      },
+      {
+        "name": "SE3/level.dat424",
+        "bytes": 391578
+      },
+      {
+        "name": "SE3/level.dat426",
+        "bytes": 240258
+      },
+      {
+        "name": "SE3/level.dat427",
+        "bytes": 239044
+      },
+      {
+        "name": "SE3/level.dat428",
+        "bytes": 257884
+      },
+      {
+        "name": "SE3/level.dat429",
+        "bytes": 246453
+      },
+      {
+        "name": "SE3/level.dat430",
+        "bytes": 249231
+      },
+      {
+        "name": "SE3/level.dat431",
+        "bytes": 257204
+      },
+      {
+        "name": "SE3/level.dat432",
+        "bytes": 376016
+      },
+      {
+        "name": "SE3/level.dat433",
+        "bytes": 438192
+      },
+      {
+        "name": "SE3/level.dat434",
+        "bytes": 484859
+      },
+      {
+        "name": "SE3/level.dat435",
+        "bytes": 467751
+      },
+      {
+        "name": "SE3/level.dat436",
+        "bytes": 491846
+      },
+      {
+        "name": "SE3/level.dat437",
+        "bytes": 436932
+      },
+      {
+        "name": "SE3/level.dat438",
+        "bytes": 461617
+      },
+      {
+        "name": "SE3/level.dat439",
+        "bytes": 451804
+      },
+      {
+        "name": "SE3/level.dat441",
+        "bytes": 241899
+      },
+      {
+        "name": "SE3/level.dat440",
+        "bytes": 367007
+      },
+      {
+        "name": "SE3/level.dat442",
+        "bytes": 277058
+      },
+      {
+        "name": "SE3/level.dat443",
+        "bytes": 384177
+      },
+      {
+        "name": "SE3/level.dat444",
+        "bytes": 435437
+      },
+      {
+        "name": "SE3/level.dat445",
+        "bytes": 377776
+      },
+      {
+        "name": "SE3/level.dat446",
+        "bytes": 427503
+      },
+      {
+        "name": "SE3/level.dat447",
+        "bytes": 618947
+      },
+      {
+        "name": "SE3/level.dat448",
+        "bytes": 634619
+      },
+      {
+        "name": "SE3/level.dat449",
+        "bytes": 644845
+      },
+      {
+        "name": "SE3/level.dat450",
+        "bytes": 658254
+      },
+      {
+        "name": "SE3/level.dat451",
+        "bytes": 658329
+      },
+      {
+        "name": "SE3/level.dat452",
+        "bytes": 664832
+      },
+      {
+        "name": "SE3/level.dat453",
+        "bytes": 666672
+      },
+      {
+        "name": "SE3/level.dat454",
+        "bytes": 668225
+      },
+      {
+        "name": "SE3/level.dat455",
+        "bytes": 668940
+      },
+      {
+        "name": "SE3/level.dat456",
+        "bytes": 658466
+      },
+      {
+        "name": "SE3/level.dat457",
+        "bytes": 663048
+      },
+      {
+        "name": "SE3/level.dat458",
+        "bytes": 656481
+      },
+      {
+        "name": "SE3/level.dat459",
+        "bytes": 655276
+      },
+      {
+        "name": "SE3/level.dat460",
+        "bytes": 638203
+      },
+      {
+        "name": "SE3/level.dat461",
+        "bytes": 629575
+      },
+      {
+        "name": "SE3/level.dat462",
+        "bytes": 574615
+      },
+      {
+        "name": "SE3/level.dat463",
+        "bytes": 376731
+      },
+      {
+        "name": "SE3/level.dat465",
+        "bytes": 347426
+      },
+      {
+        "name": "SE3/level.dat464",
+        "bytes": 520910
+      },
+      {
+        "name": "SE3/level.dat468",
+        "bytes": 230864
+      },
+      {
+        "name": "SE3/level.dat466",
+        "bytes": 458128
+      },
+      {
+        "name": "SE3/level.dat467",
+        "bytes": 430060
+      },
+      {
+        "name": "SE3/level.dat469",
+        "bytes": 254965
+      },
+      {
+        "name": "SE3/level.dat470",
+        "bytes": 240922
+      },
+      {
+        "name": "SE3/level.dat471",
+        "bytes": 244785
+      },
+      {
+        "name": "SE3/level.dat472",
+        "bytes": 255144
+      },
+      {
+        "name": "SE3/level.dat473",
+        "bytes": 251337
+      },
+      {
+        "name": "SE3/level.dat474",
+        "bytes": 260421
+      },
+      {
+        "name": "SE3/level.dat475",
+        "bytes": 263825
+      },
+      {
+        "name": "SE3/level.dat476",
+        "bytes": 265127
+      },
+      {
+        "name": "SE3/level.dat477",
+        "bytes": 276356
+      },
+      {
+        "name": "SE3/level.dat478",
+        "bytes": 267241
+      },
+      {
+        "name": "SE3/level.dat479",
+        "bytes": 263725
+      },
+      {
+        "name": "SE3/level.dat480",
+        "bytes": 265701
+      },
+      {
+        "name": "SE3/level.dat481",
+        "bytes": 263013
+      },
+      {
+        "name": "SE3/level.dat482",
+        "bytes": 268990
+      },
+      {
+        "name": "SE3/level.dat483",
+        "bytes": 248389
+      },
+      {
+        "name": "SE3/level.dat485",
+        "bytes": 382374
+      },
+      {
+        "name": "SE3/level.dat486",
+        "bytes": 370060
+      },
+      {
+        "name": "SE3/level.dat484",
+        "bytes": 439280
+      },
+      {
+        "name": "SE3/level.dat488",
+        "bytes": 364280
+      },
+      {
+        "name": "SE3/level.dat487",
+        "bytes": 379478
+      },
+      {
+        "name": "SE3/level.dat489",
+        "bytes": 26747
+      },
+      {
+        "name": "SE3/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 6605861,
+    "mod_count": 31,
+    "mod_names": [
+      "level",
+      "mod-aai-signal-transmission",
+      "mod-ammo-loader",
+      "mod-bobinserters",
+      "mod-botReplacer",
+      "mod-Fill4Me",
+      "mod-FNEI",
+      "mod-informatron",
+      "mod-jetpack",
+      "mod-LogisticTrainNetwork",
+      "mod-manual-inventory-sort",
+      "mod-notepad",
+      "mod-resourceMarker",
+      "mod-robot_attrition",
+      "mod-shield-projector",
+      "mod-valves-lib",
+      "mod-Aircraft-space-age",
+      "mod-alien-biomes",
+      "mod-BlueprintTools",
+      "mod-ChangeInserterDropLane",
+      "mod-factoryplanner",
+      "mod-fast_trans",
+      "mod-LTN_Combinator_Modernized",
+      "mod-solar-calc",
+      "mod-Krastorio2",
+      "mod-aai-industry",
+      "mod-boblogistics",
+      "mod-space-exploration",
+      "mod-factorissimo-2-notnotmelon",
+      "mod-LtnManager",
+      "mod-se-ltn-glue"
+    ],
+    "target_mods": [
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 19
+  },
+  {
+    "id": "029-01-K2SE-0.7_Vulcanite_Prep_3.3",
+    "source_url": "https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip",
+    "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "source_issue_number": 274,
+    "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/274",
+    "source_issue_title": "Unable to place packed factory on other surfaces",
+    "source_context": " Attach your save file and `factorio-current.log` file. [factorio-current.log](https://github.com/user-attachments/files/26132466/factorio-current.log) Save file is apparently too large, I added it to my webserver and is accessible [here](https://bammeson.com/K2SE-0.7-Factorissimo-Issue.zip) **Help wanted?** - [ ] I am familiar with programming and will submit a pull request to resolve this issue. (Note: Please do not use AI coding tools.) - [X] I need someone else to solve this issue please.",
+    "factorio_version": "2.0.69.0",
+    "save_root": "K2SE-0.7 Vulcanite Prep 3.3",
+    "archive_label": "029-K2SE-0.7-Factorissimo-Issue.zip",
+    "depth": 0,
+    "lineage": [],
+    "download_bytes": 118524212,
+    "download_sha256": "67a11ba3e48e68c39b4f43135a081cc4af06a7d37338ee402c27a918232060b7",
+    "script_bytes": 35637179,
+    "level_files": [
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat0",
+        "bytes": 317263
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat1",
+        "bytes": 481633
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat2",
+        "bytes": 437938
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat3",
+        "bytes": 430290
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat4",
+        "bytes": 383788
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat5",
+        "bytes": 453458
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat6",
+        "bytes": 460162
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat7",
+        "bytes": 467075
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat8",
+        "bytes": 453997
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat9",
+        "bytes": 453680
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat10",
+        "bytes": 464524
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat11",
+        "bytes": 452911
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat12",
+        "bytes": 441174
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat13",
+        "bytes": 451055
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat14",
+        "bytes": 480373
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat15",
+        "bytes": 493724
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat16",
+        "bytes": 494433
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat17",
+        "bytes": 502546
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat20",
+        "bytes": 13861
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat21",
+        "bytes": 22733
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat18",
+        "bytes": 500943
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat25",
+        "bytes": 8170
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat26",
+        "bytes": 9282
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat22",
+        "bytes": 39139
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat27",
+        "bytes": 21775
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat24",
+        "bytes": 92196
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat23",
+        "bytes": 107664
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat28",
+        "bytes": 41613
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat29",
+        "bytes": 29112
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat32",
+        "bytes": 15107
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat30",
+        "bytes": 92234
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat33",
+        "bytes": 46820
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat34",
+        "bytes": 15523
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat35",
+        "bytes": 10197
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat19",
+        "bytes": 365610
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat36",
+        "bytes": 19770
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat37",
+        "bytes": 43581
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat31",
+        "bytes": 209007
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat38",
+        "bytes": 90909
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat39",
+        "bytes": 89516
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat40",
+        "bytes": 89202
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat41",
+        "bytes": 89902
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat42",
+        "bytes": 89609
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat43",
+        "bytes": 88878
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat44",
+        "bytes": 89708
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat45",
+        "bytes": 89732
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat46",
+        "bytes": 99557
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat47",
+        "bytes": 195004
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat48",
+        "bytes": 203900
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat49",
+        "bytes": 218389
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat50",
+        "bytes": 267903
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat51",
+        "bytes": 336710
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat52",
+        "bytes": 440029
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat53",
+        "bytes": 439587
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat54",
+        "bytes": 423554
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat55",
+        "bytes": 418957
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat56",
+        "bytes": 414814
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat57",
+        "bytes": 448343
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat58",
+        "bytes": 424426
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat59",
+        "bytes": 430726
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat60",
+        "bytes": 436193
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat61",
+        "bytes": 447552
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat62",
+        "bytes": 462273
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat63",
+        "bytes": 422705
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat64",
+        "bytes": 414338
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat65",
+        "bytes": 418829
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat66",
+        "bytes": 393640
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat67",
+        "bytes": 402506
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat68",
+        "bytes": 386645
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat69",
+        "bytes": 424634
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat70",
+        "bytes": 371400
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat71",
+        "bytes": 412423
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat72",
+        "bytes": 376778
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat73",
+        "bytes": 360502
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat74",
+        "bytes": 441434
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat75",
+        "bytes": 450328
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat76",
+        "bytes": 465456
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat77",
+        "bytes": 462976
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat79",
+        "bytes": 298285
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat80",
+        "bytes": 204287
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat78",
+        "bytes": 447973
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat81",
+        "bytes": 124802
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat82",
+        "bytes": 124886
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat83",
+        "bytes": 143208
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat84",
+        "bytes": 147610
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat85",
+        "bytes": 152465
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat86",
+        "bytes": 132136
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat87",
+        "bytes": 292334
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat88",
+        "bytes": 503984
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat90",
+        "bytes": 390644
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat92",
+        "bytes": 379395
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat89",
+        "bytes": 497700
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat93",
+        "bytes": 436156
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat94",
+        "bytes": 444211
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat91",
+        "bytes": 305790
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat95",
+        "bytes": 450210
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat96",
+        "bytes": 467214
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat97",
+        "bytes": 479884
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat98",
+        "bytes": 464399
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat99",
+        "bytes": 464248
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat100",
+        "bytes": 443492
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat101",
+        "bytes": 427108
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat103",
+        "bytes": 322055
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat102",
+        "bytes": 404749
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat104",
+        "bytes": 329666
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat105",
+        "bytes": 468158
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat106",
+        "bytes": 499322
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat107",
+        "bytes": 525378
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat108",
+        "bytes": 545384
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat109",
+        "bytes": 507853
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat110",
+        "bytes": 497850
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat111",
+        "bytes": 279100
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat112",
+        "bytes": 250142
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat113",
+        "bytes": 360658
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat114",
+        "bytes": 401883
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat115",
+        "bytes": 414652
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat116",
+        "bytes": 406852
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat117",
+        "bytes": 441707
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat118",
+        "bytes": 445596
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat119",
+        "bytes": 444295
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat120",
+        "bytes": 448599
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat122",
+        "bytes": 462684
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat121",
+        "bytes": 437477
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat123",
+        "bytes": 466028
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat124",
+        "bytes": 484746
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat125",
+        "bytes": 486834
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat126",
+        "bytes": 458855
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat127",
+        "bytes": 459602
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat128",
+        "bytes": 475843
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat129",
+        "bytes": 481967
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat130",
+        "bytes": 488276
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat131",
+        "bytes": 481121
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat132",
+        "bytes": 489336
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat133",
+        "bytes": 473731
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat135",
+        "bytes": 471817
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat134",
+        "bytes": 483731
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat136",
+        "bytes": 490670
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat137",
+        "bytes": 492610
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat138",
+        "bytes": 512738
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat139",
+        "bytes": 510144
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat140",
+        "bytes": 490840
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat141",
+        "bytes": 482230
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat142",
+        "bytes": 491966
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat143",
+        "bytes": 474436
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat144",
+        "bytes": 467671
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat145",
+        "bytes": 466686
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat146",
+        "bytes": 479604
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat147",
+        "bytes": 460639
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat148",
+        "bytes": 460953
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat149",
+        "bytes": 466184
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat150",
+        "bytes": 477801
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat151",
+        "bytes": 476775
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat152",
+        "bytes": 472149
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat154",
+        "bytes": 410945
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat153",
+        "bytes": 428167
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat155",
+        "bytes": 388290
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat156",
+        "bytes": 394010
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat159",
+        "bytes": 121520
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat158",
+        "bytes": 276937
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat157",
+        "bytes": 388438
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat160",
+        "bytes": 429149
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat161",
+        "bytes": 438598
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat162",
+        "bytes": 440698
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat163",
+        "bytes": 431555
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat164",
+        "bytes": 440827
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat165",
+        "bytes": 455055
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat166",
+        "bytes": 455274
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat167",
+        "bytes": 453748
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat168",
+        "bytes": 438977
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat169",
+        "bytes": 444618
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat170",
+        "bytes": 440035
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat171",
+        "bytes": 454900
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat174",
+        "bytes": 459702
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat173",
+        "bytes": 451601
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat172",
+        "bytes": 420923
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat175",
+        "bytes": 464421
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat176",
+        "bytes": 460402
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat177",
+        "bytes": 463950
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat178",
+        "bytes": 465155
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat179",
+        "bytes": 466164
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat180",
+        "bytes": 463431
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat181",
+        "bytes": 471299
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat182",
+        "bytes": 466658
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat183",
+        "bytes": 473718
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat185",
+        "bytes": 479843
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat184",
+        "bytes": 477201
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat186",
+        "bytes": 478336
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat187",
+        "bytes": 475361
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat190",
+        "bytes": 477551
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat188",
+        "bytes": 473419
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat191",
+        "bytes": 474437
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat189",
+        "bytes": 472953
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat192",
+        "bytes": 473861
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat194",
+        "bytes": 473013
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat193",
+        "bytes": 471446
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat195",
+        "bytes": 471257
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat196",
+        "bytes": 469697
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat197",
+        "bytes": 468956
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat198",
+        "bytes": 472626
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat199",
+        "bytes": 472704
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat200",
+        "bytes": 467447
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat201",
+        "bytes": 459953
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat204",
+        "bytes": 464645
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat202",
+        "bytes": 469317
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat203",
+        "bytes": 475426
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat206",
+        "bytes": 469703
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat205",
+        "bytes": 464409
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat207",
+        "bytes": 461807
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat209",
+        "bytes": 465337
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat208",
+        "bytes": 463068
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat210",
+        "bytes": 461558
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat211",
+        "bytes": 452779
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat213",
+        "bytes": 239421
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat212",
+        "bytes": 444239
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat214",
+        "bytes": 395208
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat215",
+        "bytes": 415049
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat216",
+        "bytes": 464544
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat217",
+        "bytes": 459673
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat218",
+        "bytes": 454320
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat219",
+        "bytes": 461537
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat220",
+        "bytes": 474021
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat221",
+        "bytes": 459932
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat222",
+        "bytes": 458252
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat223",
+        "bytes": 464292
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat224",
+        "bytes": 456145
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat225",
+        "bytes": 447560
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat227",
+        "bytes": 452923
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat226",
+        "bytes": 450866
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat228",
+        "bytes": 466000
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat229",
+        "bytes": 479115
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat230",
+        "bytes": 469071
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat231",
+        "bytes": 449925
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat232",
+        "bytes": 450503
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat233",
+        "bytes": 452306
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat234",
+        "bytes": 477996
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat235",
+        "bytes": 490598
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat236",
+        "bytes": 485186
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat237",
+        "bytes": 479090
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat238",
+        "bytes": 489029
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat239",
+        "bytes": 488411
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat240",
+        "bytes": 494068
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat241",
+        "bytes": 488427
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat242",
+        "bytes": 483718
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat243",
+        "bytes": 494968
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat244",
+        "bytes": 498122
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat246",
+        "bytes": 506221
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat245",
+        "bytes": 499986
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat247",
+        "bytes": 492951
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat248",
+        "bytes": 477909
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat249",
+        "bytes": 479592
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat250",
+        "bytes": 468115
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat251",
+        "bytes": 464975
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat252",
+        "bytes": 476676
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat253",
+        "bytes": 478524
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat254",
+        "bytes": 484616
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat255",
+        "bytes": 491654
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat256",
+        "bytes": 477944
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat257",
+        "bytes": 482133
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat258",
+        "bytes": 475809
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat259",
+        "bytes": 470236
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat260",
+        "bytes": 461902
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat261",
+        "bytes": 468275
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat262",
+        "bytes": 463209
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat263",
+        "bytes": 454329
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat264",
+        "bytes": 475248
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat265",
+        "bytes": 451391
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat266",
+        "bytes": 452353
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat267",
+        "bytes": 450974
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat269",
+        "bytes": 258610
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat268",
+        "bytes": 449507
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat270",
+        "bytes": 480436
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat271",
+        "bytes": 514482
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat272",
+        "bytes": 520962
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat274",
+        "bytes": 279029
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat273",
+        "bytes": 509309
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat275",
+        "bytes": 288087
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat276",
+        "bytes": 292379
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat277",
+        "bytes": 298902
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat278",
+        "bytes": 204030
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat279",
+        "bytes": 154149
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat280",
+        "bytes": 131448
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat281",
+        "bytes": 120845
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat282",
+        "bytes": 119682
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat283",
+        "bytes": 100411
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat285",
+        "bytes": 75182
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat284",
+        "bytes": 96115
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat286",
+        "bytes": 108889
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat287",
+        "bytes": 160340
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat288",
+        "bytes": 197798
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat290",
+        "bytes": 380601
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat289",
+        "bytes": 392868
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.dat291",
+        "bytes": 218331
+      },
+      {
+        "name": "K2SE-0.7 Vulcanite Prep 3.3/level.datmetadata",
+        "bytes": 8
+      }
+    ],
+    "decoder_returncode": 0,
+    "decoder_stdout": "",
+    "decoder_stderr": "",
+    "json_bytes": 5144495,
+    "mod_count": 64,
+    "mod_names": [
+      "level",
+      "mod-belt-visualizer",
+      "mod-VehicleSnap",
+      "mod-YARM",
+      "mod-aai-loaders",
+      "mod-aai-signal-transmission",
+      "mod-aai-vehicles-ironclad",
+      "mod-AutoDeconstruct",
+      "mod-better-train-system",
+      "mod-bigger-artillery",
+      "mod-change-recipe-quality-without-re-selecting-recipe",
+      "mod-ChunkyChunks",
+      "mod-click2move",
+      "mod-DiscoScience",
+      "mod-even-distribution",
+      "mod-FactorySearch",
+      "mod-far-reach",
+      "mod-FluidMustFlow",
+      "mod-ghost-mode",
+      "mod-grappling-gun",
+      "mod-helmod",
+      "mod-informatron",
+      "mod-inserter-throughput",
+      "mod-Inventory Sensor",
+      "mod-jetpack",
+      "mod-mining-patch-planner",
+      "mod-ModuleInserterSimplified",
+      "mod-Placeables",
+      "mod-pump",
+      "mod-robot_attrition",
+      "mod-SchallRadarAlignment",
+      "mod-Sort-All-Inventories",
+      "mod-textplates",
+      "mod-valves",
+      "mod-yafla",
+      "mod-alien-biomes",
+      "mod-beacon-interface",
+      "mod-BuilderBotStart",
+      "mod-ChangeInserterDropLane",
+      "mod-CircuitHUD-V2",
+      "mod-equipment-gantry",
+      "mod-factoryplanner",
+      "mod-Milestones",
+      "mod-PipeVisualizer-Updated",
+      "mod-RateCalculator",
+      "mod-Smart_Inserters",
+      "mod-StatsGui",
+      "mod-TaskList",
+      "mod-WideChests",
+      "mod-Krastorio2",
+      "mod-quality-condenser",
+      "mod-shield-projector",
+      "mod-aai-industry",
+      "mod-autodrive",
+      "mod-space-exploration",
+      "mod-cybersyn",
+      "mod-factorissimo-2-notnotmelon",
+      "mod-silent-filter-combinator",
+      "mod-space-exploration-scripts",
+      "mod-underground-pipe-pack",
+      "mod-cybersyn-combinator",
+      "mod-Kux-CoreLib",
+      "mod-se-core-miner-output-helper",
+      "mod-Kux-BlueprintExtensions"
+    ],
+    "target_mods": [
+      "mod-Milestones",
+      "mod-space-exploration"
+    ],
+    "se_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": false,
+      "contains_space_science_pack": false,
+      "contains_satellite_telemetry": false
+    },
+    "se_hit_count": 35,
+    "milestones_signals": {
+      "contains_nauvis_orbit": false,
+      "contains_rocket_science_pack": true,
+      "contains_space_science_pack": true,
+      "contains_satellite_telemetry": false
+    },
+    "milestones_hit_count": 80
+  }
+]

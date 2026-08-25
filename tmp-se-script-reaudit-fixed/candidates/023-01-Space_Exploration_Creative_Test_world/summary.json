@@ -1,0 +1,191 @@
+{
+  "id": "023-01-Space_Exploration_Creative_Test_world",
+  "source_url": "https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip",
+  "source_repo": "notnotmelon/factorissimo-2-notnotmelon",
+  "source_issue_number": 250,
+  "source_issue_url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/250",
+  "source_issue_title": "Remote view edit does not work with Space Exploration",
+  "source_context": "* https://github.com/user-attachments/assets/d4dc4d18-4d14-4be7-a00f-36504c830ea2 **Additional context** I can only chalk it up to something about how SE handles surfaces. **Save file & log** [Space Exploration Creative Test world.zip](https://github.com/user-attachments/files/23176857/Space.Exploration.Creative.Test.world.zip) [factorio-current.log](https://github.com/user-attachments/files/23176865/factorio-current.log)",
+  "factorio_version": "2.0.66.1",
+  "save_root": "Space Exploration Creative Test world",
+  "archive_label": "023-Space.Exploration.Creative.Test.world.zip",
+  "depth": 0,
+  "lineage": [],
+  "download_bytes": 11628416,
+  "download_sha256": "7982dad3dd525e2404afba125389777facbae9b36796f25aee6c0638c86875c2",
+  "script_bytes": 6746503,
+  "level_files": [
+    {
+      "name": "Space Exploration Creative Test world/level.dat1",
+      "bytes": 15704
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat2",
+      "bytes": 15558
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat4",
+      "bytes": 17407
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat3",
+      "bytes": 15813
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat0",
+      "bytes": 236702
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat5",
+      "bytes": 28869
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat6",
+      "bytes": 190393
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat8",
+      "bytes": 453556
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat7",
+      "bytes": 437440
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat9",
+      "bytes": 473604
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat11",
+      "bytes": 287543
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat10",
+      "bytes": 386665
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat12",
+      "bytes": 475563
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat13",
+      "bytes": 473525
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat16",
+      "bytes": 475300
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat15",
+      "bytes": 492718
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat14",
+      "bytes": 469306
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat17",
+      "bytes": 475317
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat18",
+      "bytes": 476999
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat19",
+      "bytes": 409476
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat20",
+      "bytes": 501590
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat22",
+      "bytes": 450443
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat21",
+      "bytes": 543027
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat24",
+      "bytes": 374186
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat25",
+      "bytes": 433726
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat23",
+      "bytes": 601044
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat27",
+      "bytes": 106779
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.dat26",
+      "bytes": 347735
+    },
+    {
+      "name": "Space Exploration Creative Test world/level.datmetadata",
+      "bytes": 8
+    }
+  ],
+  "decoder_returncode": 0,
+  "decoder_stdout": "",
+  "decoder_stderr": "",
+  "json_bytes": 1418007,
+  "mod_count": 31,
+  "mod_names": [
+    "level",
+    "mod-Robocharger-Updated",
+    "mod-aai-signal-transmission",
+    "mod-atomic-artillery-reborn",
+    "mod-AutoGhostBuilder",
+    "mod-chest-auto-sort",
+    "mod-deadlock-beltboxes-loaders",
+    "mod-DiscoScience",
+    "mod-even-distribution",
+    "mod-ExtraZoom",
+    "mod-FactorySearch",
+    "mod-fast_trans",
+    "mod-FluidWagonColorMask",
+    "mod-FNEI",
+    "mod-helmod",
+    "mod-informatron",
+    "mod-jetpack",
+    "mod-MaxRateCalculator",
+    "mod-robot_attrition",
+    "mod-SchallRechargingWeapon",
+    "mod-shield-projector",
+    "mod-textplates",
+    "mod-aai-industry",
+    "mod-alien-biomes",
+    "mod-Automatic_Train_Painter",
+    "mod-ChangeInserterDropLane",
+    "mod-diurnal-dynamics",
+    "mod-Milestones",
+    "mod-reverse-factory",
+    "mod-space-exploration",
+    "mod-factorissimo-2-notnotmelon"
+  ],
+  "target_mods": [
+    "mod-Milestones",
+    "mod-space-exploration"
+  ],
+  "se_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  },
+  "se_hit_count": 12,
+  "milestones_signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": true,
+    "contains_space_science_pack": true,
+    "contains_satellite_telemetry": false
+  },
+  "milestones_hit_count": 71
+}

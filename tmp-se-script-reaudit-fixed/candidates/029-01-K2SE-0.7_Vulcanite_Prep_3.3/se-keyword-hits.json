@@ -1,0 +1,817 @@
+{
+  "stats": {
+    "nodes": 2042,
+    "dicts": 755,
+    "lists": 117,
+    "scalars": 1170,
+    "max_depth": 16
+  },
+  "hit_count": 35,
+  "hits": [
+    {
+      "kind": "pair",
+      "path": "dump/data/1",
+      "key": "spaceship_projectile_speeds",
+      "value": []
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/key",
+      "value": "spaceship_projectile_speeds"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/2",
+      "key": "basic_rocket_silos",
+      "value": [
+        {
+          "key": 646945.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "basic-rocket-silo"
+            },
+            {
+              "key": "valid",
+              "value": true
+            },
+            {
+              "key": "force_name",
+              "value": "player"
+            },
+            {
+              "key": "unit_number",
+              "value": 646945.0
+            },
+            {
+              "key": "entity",
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 0,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/key",
+      "value": "basic_rocket_silos"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/2/value/0/value/0/value",
+      "value": "basic-rocket-silo"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/4/value",
+      "value": "zone"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/0/value",
+      "value": "Nauvis"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/11",
+      "key": "orbit",
+      "value": [
+        {
+          "key": "type",
+          "value": "orbit"
+        },
+        {
+          "key": "name",
+          "value": "Solsolace Orbit"
+        },
+        {
+          "key": "parent",
+          "value": {
+            "type": 6,
+            "data": 8
+          }
+        },
+        {
+          "key": "seed",
+          "value": 813429987.0
+        },
+        {
+          "key": "index",
+          "value": 1255.0
+        },
+        {
+          "key": "base_bot_attrition",
+          "value": 6.528233268400355
+        },
+        {
+          "key": "controls",
+          "value": [
+            {
+              "key": "uranium-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-methane-ice",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "copper-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "iron-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "stone",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "kr-rare-metal-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-water-ice",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "coal",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "crude-oil",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-vulcanite",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-cryonite",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-vitamelange",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-naquium-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-beryllium-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-iridium-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "se-holmium-ore",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "kr-imersite",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "kr-mineral-water",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "water",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "trees",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "rocks",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "enemy-base",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "nauvis_cliff",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "starting_area_moisture",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "hot",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "cold",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "moisture",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "aux",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "cliff",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "primary_resource",
+          "value": "uranium-ore"
+        },
+        {
+          "key": "hierarchy_index",
+          "value": 410.0
+        },
+        {
+          "key": "surface_index",
+          "value": 10.0
+        },
+        {
+          "key": "inhabited_chunks",
+          "value": []
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/11/key",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/11/value/0/value",
+      "value": "orbit"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/11/value/1/value",
+      "value": "Solsolace Orbit"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/11/value/6/value/22",
+      "key": "nauvis_cliff",
+      "value": [
+        {
+          "key": "frequency",
+          "value": 1.5240379223829594
+        },
+        {
+          "key": "size",
+          "value": 0.6274875702336431
+        },
+        {
+          "key": "richness",
+          "value": 0.6350615300238133
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/11/value/6/value/22/key",
+      "value": "nauvis_cliff"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/11/value/9",
+      "key": "surface_index",
+      "value": 10.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/11/value/9/key",
+      "value": "surface_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/17/value/27",
+      "key": "nauvis_cliff",
+      "value": [
+        {
+          "key": "frequency",
+          "value": 0.48551358894446617
+        },
+        {
+          "key": "size",
+          "value": 0.3612709434702993
+        },
+        {
+          "key": "richness",
+          "value": 0.4230506006628275
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/17/value/27/key",
+      "value": "nauvis_cliff"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/20",
+      "key": "surface_index",
+      "value": 9.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/20/key",
+      "value": "surface_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/25/value/0/value/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/25/value/0/value/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/2/value/0/value/25/value/13/value/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/2/value/0/value/25/value/13/value/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/11/value/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/11/value/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/5/key/24/value/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/5/key/24/value/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/13/key/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/13/key/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/26/key/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/26/key/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/39/key/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/39/key/1/key",
+      "value": "zone_index"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/52/key/1",
+      "key": "zone_index",
+      "value": 1254.0
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/52/key/1/key",
+      "value": "zone_index"
+    }
+  ],
+  "signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": false,
+    "contains_space_science_pack": false,
+    "contains_satellite_telemetry": false
+  }
+}

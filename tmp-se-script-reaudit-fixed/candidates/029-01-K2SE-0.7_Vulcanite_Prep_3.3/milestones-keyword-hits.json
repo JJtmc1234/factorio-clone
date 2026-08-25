@@ -1,0 +1,2827 @@
+{
+  "stats": {
+    "nodes": 2107,
+    "dicts": 744,
+    "lists": 90,
+    "scalars": 1273,
+    "max_depth": 13
+  },
+  "hit_count": 80,
+  "hits": [
+    {
+      "kind": "scalar",
+      "path": "name",
+      "value": "mod-Milestones"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/1",
+      "key": "forces",
+      "value": [
+        {
+          "key": "player",
+          "value": [
+            {
+              "key": "complete_milestones",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "incomplete_milestones",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "__truncated__": 28
+                }
+              ]
+            },
+            {
+              "key": "milestones_by_group",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": "item_stats",
+              "value": [
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                },
+                {
+                  "type": "dict",
+                  "length": 2
+                }
+              ]
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 7,
+                "data": null
+              }
+            },
+            {
+              "key": {
+                "type": 36,
+                "data": null
+              },
+              "value": {
+                "type": 0,
+                "data": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/1/value/0/value/0",
+      "key": "complete_milestones",
+      "value": [
+        {
+          "key": 1.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-basic-tech-card"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 2.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 17580.0
+            }
+          ]
+        },
+        {
+          "key": 2.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "automation-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 3.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 152460.0
+            }
+          ]
+        },
+        {
+          "key": 3.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "logistic-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 4.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 468480.0
+            }
+          ]
+        },
+        {
+          "key": 4.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "fluid"
+            },
+            {
+              "key": "name",
+              "value": "petroleum-gas"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 39.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            },
+            {
+              "key": "completion_tick",
+              "value": 1102048.0
+            }
+          ]
+        },
+        {
+          "key": 5.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-silicon"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 40.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            },
+            {
+              "key": "completion_tick",
+              "value": 1222349.0
+            }
+          ]
+        },
+        {
+          "key": 6.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "chemical-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 6.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 1354621.0
+            }
+          ]
+        },
+        {
+          "key": 7.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "military-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 5.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 1466820.0
+            }
+          ]
+        },
+        {
+          "key": 8.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "construction-robot"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 55.0
+            },
+            {
+              "key": "group",
+              "value": "Progress"
+            },
+            {
+              "key": "completion_tick",
+              "value": 1811980.0
+            }
+          ]
+        },
+        {
+          "key": 9.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "kill"
+            },
+            {
+              "key": "name",
+              "value": "medium-biter"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 68.0
+            },
+            {
+              "key": "group",
+              "value": "Kills"
+            },
+            {
+              "key": "completion_tick",
+              "value": 3417350.0
+            }
+          ]
+        },
+        {
+          "key": 10.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-rocket-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 7.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 4951140.0
+            }
+          ]
+        },
+        {
+          "key": 11.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-rare-metals"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 49.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            },
+            {
+              "key": "completion_tick",
+              "value": 6194316.0
+            }
+          ]
+        },
+        {
+          "key": 12.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "locomotive"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 54.0
+            },
+            {
+              "key": "group",
+              "value": "Progress"
+            },
+            {
+              "key": "completion_tick",
+              "value": 6390099.0
+            }
+          ]
+        },
+        {
+          "key": 13.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-rocket-launch-pad-silo-dummy-result-item"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "next",
+              "value": "x10"
+            },
+            {
+              "key": "sort_index",
+              "value": 56.0
+            },
+            {
+              "key": "group",
+              "value": "Progress"
+            },
+            {
+              "key": "completion_tick",
+              "value": 6927940.0
+            }
+          ]
+        },
+        {
+          "key": 14.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "space-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 8.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            },
+            {
+              "key": "completion_tick",
+              "value": 7820940.0
+            }
+          ]
+        },
+        {
+          "key": 15.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "fluid"
+            },
+            {
+              "key": "name",
+              "value": "kr-mineral-water"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 48.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            },
+            {
+              "key": "completion_tick",
+              "value": 10738776.0
+            }
+          ]
+        },
+        {
+          "key": 16.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "kill"
+            },
+            {
+              "key": "name",
+              "value": "character"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "next",
+              "value": "x5"
+            },
+            {
+              "key": "hidden",
+              "value": true
+            },
+            {
+              "key": "sort_index",
+              "value": 73.0
+            },
+            {
+              "key": "group",
+              "value": "Kills"
+            },
+            {
+              "key": "completion_tick",
+              "value": 13131413.0
+            }
+          ]
+        },
+        {
+          "key": 17.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "quality-module-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "quality",
+              "value": "epic"
+            },
+            {
+              "key": "sort_index",
+              "value": 77.0
+            },
+            {
+              "key": "group",
+              "value": "Quality"
+            },
+            {
+              "key": "completion_tick",
+              "value": 21983095.0
+            }
+          ]
+        },
+        {
+          "key": 18.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-rocket-launch-pad-silo-dummy-result-item"
+            },
+            {
+              "key": "quantity",
+              "value": 10.0
+            },
+            {
+              "key": "next",
+              "value": "x10"
+            },
+            {
+              "key": "sort_index",
+              "value": 56.0001
+            },
+            {
+              "key": "group",
+              "value": "Progress"
+            },
+            {
+              "key": "completion_tick",
+              "value": 22985398.0
+            }
+          ]
+        },
+        {
+          "key": 19.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-core-fragment-omni"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 41.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            },
+            {
+              "key": "completion_tick",
+              "value": 23484450.0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/key",
+      "value": "complete_milestones"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/0/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/1/value/1/value",
+      "value": "automation-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/1/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/2/value/1/value",
+      "value": "logistic-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/2/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/5/value/1/value",
+      "value": "chemical-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/5/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/6/value/1/value",
+      "value": "military-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/6/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/9/value/1/value",
+      "value": "se-rocket-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/9/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/12/value/1/value",
+      "value": "se-rocket-launch-pad-silo-dummy-result-item"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/13/value/1/value",
+      "value": "space-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/13/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/0/value/17/value/1/value",
+      "value": "se-rocket-launch-pad-silo-dummy-result-item"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/1/value/0/value/1",
+      "key": "incomplete_milestones",
+      "value": [
+        {
+          "key": 1.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-optimization-tech-card"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 9.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 2.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "production-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 10.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 3.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "utility-science-pack"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 11.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 4.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-significant-data"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 12.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 5.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-astronomic-science-pack-1"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 13.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 6.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-astronomic-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 14.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 7.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-astronomic-science-pack-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 15.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 8.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-astronomic-science-pack-4"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 16.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 9.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-biological-science-pack-1"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 17.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 10.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-biological-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 18.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 11.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-biological-science-pack-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 19.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 12.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-biological-science-pack-4"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 20.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 13.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-energy-science-pack-1"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 21.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 14.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-energy-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 22.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 15.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-energy-science-pack-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 23.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 16.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-energy-science-pack-4"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 24.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 17.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-material-science-pack-1"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 25.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 18.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-material-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 26.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 19.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-material-science-pack-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 27.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 20.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-material-science-pack-4"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 28.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 21.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-matter-tech-card"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 29.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 22.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-kr-matter-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 30.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 23.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-advanced-tech-card"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 31.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 24.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "kr-singularity-tech-card"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 32.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 25.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-deep-space-science-pack-1"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 33.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 26.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-deep-space-science-pack-2"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 34.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 27.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-deep-space-science-pack-3"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 35.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 28.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-deep-space-science-pack-4"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 36.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 29.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-significant-data"
+            },
+            {
+              "key": "quantity",
+              "value": 1000.0
+            },
+            {
+              "key": "next",
+              "value": "x10"
+            },
+            {
+              "key": "sort_index",
+              "value": 37.0
+            },
+            {
+              "key": "group",
+              "value": "Science"
+            }
+          ]
+        },
+        {
+          "key": 30.0,
+          "value": [
+            {
+              "key": "type",
+              "value": "item"
+            },
+            {
+              "key": "name",
+              "value": "se-vulcanite-block"
+            },
+            {
+              "key": "quantity",
+              "value": 1.0
+            },
+            {
+              "key": "sort_index",
+              "value": 42.0
+            },
+            {
+              "key": "group",
+              "value": "Resources"
+            }
+          ]
+        },
+        {
+          "__truncated__": 28
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/key",
+      "value": "incomplete_milestones"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/0/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/1/value/1/value",
+      "value": "production-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/1/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/2/value/1/value",
+      "value": "utility-science-pack"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/2/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/3/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/4/value/1/value",
+      "value": "se-astronomic-science-pack-1"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/4/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/5/value/1/value",
+      "value": "se-astronomic-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/5/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/6/value/1/value",
+      "value": "se-astronomic-science-pack-3"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/6/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/7/value/1/value",
+      "value": "se-astronomic-science-pack-4"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/7/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/8/value/1/value",
+      "value": "se-biological-science-pack-1"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/8/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/9/value/1/value",
+      "value": "se-biological-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/9/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/10/value/1/value",
+      "value": "se-biological-science-pack-3"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/10/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/11/value/1/value",
+      "value": "se-biological-science-pack-4"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/11/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/12/value/1/value",
+      "value": "se-energy-science-pack-1"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/12/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/13/value/1/value",
+      "value": "se-energy-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/13/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/14/value/1/value",
+      "value": "se-energy-science-pack-3"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/14/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/15/value/1/value",
+      "value": "se-energy-science-pack-4"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/15/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/16/value/1/value",
+      "value": "se-material-science-pack-1"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/16/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/17/value/1/value",
+      "value": "se-material-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/17/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/18/value/1/value",
+      "value": "se-material-science-pack-3"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/18/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/19/value/1/value",
+      "value": "se-material-science-pack-4"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/19/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/20/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/21/value/1/value",
+      "value": "se-kr-matter-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/21/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/22/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/23/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/24/value/1/value",
+      "value": "se-deep-space-science-pack-1"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/24/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/25/value/1/value",
+      "value": "se-deep-space-science-pack-2"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/25/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/26/value/1/value",
+      "value": "se-deep-space-science-pack-3"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/26/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/27/value/1/value",
+      "value": "se-deep-space-science-pack-4"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/27/value/4/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/28/value/5/value",
+      "value": "Science"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/39/value/1/value",
+      "value": "se-spaceship"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/47/value/1/value",
+      "value": "se-spaceship-victory"
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/1/value/57/value/1/value",
+      "value": "se-rocket-launch-pad-silo-dummy-result-item"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/1/value/0/value/2",
+      "key": "milestones_by_group",
+      "value": [
+        {
+          "key": "Science",
+          "value": [
+            {
+              "key": 1.0,
+              "value": {
+                "type": 6,
+                "data": 5
+              }
+            },
+            {
+              "key": 2.0,
+              "value": {
+                "type": 6,
+                "data": 6
+              }
+            },
+            {
+              "key": 3.0,
+              "value": {
+                "type": 6,
+                "data": 7
+              }
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 6,
+                "data": 10
+              }
+            },
+            {
+              "key": 5.0,
+              "value": {
+                "type": 6,
+                "data": 11
+              }
+            },
+            {
+              "key": 6.0,
+              "value": {
+                "type": 6,
+                "data": 14
+              }
+            },
+            {
+              "key": 7.0,
+              "value": {
+                "type": 6,
+                "data": 18
+              }
+            },
+            {
+              "key": 8.0,
+              "value": {
+                "type": 6,
+                "data": 25
+              }
+            },
+            {
+              "key": 9.0,
+              "value": {
+                "type": 6,
+                "data": 26
+              }
+            },
+            {
+              "key": 10.0,
+              "value": {
+                "type": 6,
+                "data": 27
+              }
+            },
+            {
+              "key": 11.0,
+              "value": {
+                "type": 6,
+                "data": 28
+              }
+            },
+            {
+              "key": 12.0,
+              "value": {
+                "type": 6,
+                "data": 29
+              }
+            },
+            {
+              "key": 13.0,
+              "value": {
+                "type": 6,
+                "data": 30
+              }
+            },
+            {
+              "key": 14.0,
+              "value": {
+                "type": 6,
+                "data": 31
+              }
+            },
+            {
+              "key": 15.0,
+              "value": {
+                "type": 6,
+                "data": 32
+              }
+            },
+            {
+              "key": 16.0,
+              "value": {
+                "type": 6,
+                "data": 33
+              }
+            },
+            {
+              "key": 17.0,
+              "value": {
+                "type": 6,
+                "data": 34
+              }
+            },
+            {
+              "key": 18.0,
+              "value": {
+                "type": 6,
+                "data": 35
+              }
+            },
+            {
+              "key": 19.0,
+              "value": {
+                "type": 6,
+                "data": 36
+              }
+            },
+            {
+              "key": 20.0,
+              "value": {
+                "type": 6,
+                "data": 37
+              }
+            },
+            {
+              "key": 21.0,
+              "value": {
+                "type": 6,
+                "data": 38
+              }
+            },
+            {
+              "key": 22.0,
+              "value": {
+                "type": 6,
+                "data": 39
+              }
+            },
+            {
+              "key": 23.0,
+              "value": {
+                "type": 6,
+                "data": 40
+              }
+            },
+            {
+              "key": 24.0,
+              "value": {
+                "type": 6,
+                "data": 41
+              }
+            },
+            {
+              "key": 25.0,
+              "value": {
+                "type": 6,
+                "data": 42
+              }
+            },
+            {
+              "key": 26.0,
+              "value": {
+                "type": 6,
+                "data": 43
+              }
+            },
+            {
+              "key": 27.0,
+              "value": {
+                "type": 6,
+                "data": 44
+              }
+            },
+            {
+              "key": 28.0,
+              "value": {
+                "type": 6,
+                "data": 45
+              }
+            },
+            {
+              "key": 29.0,
+              "value": {
+                "type": 6,
+                "data": 46
+              }
+            },
+            {
+              "key": 30.0,
+              "value": {
+                "type": 6,
+                "data": 47
+              }
+            },
+            {
+              "__truncated__": 6
+            }
+          ]
+        },
+        {
+          "key": "Resources",
+          "value": [
+            {
+              "key": 1.0,
+              "value": {
+                "type": 6,
+                "data": 8
+              }
+            },
+            {
+              "key": 2.0,
+              "value": {
+                "type": 6,
+                "data": 9
+              }
+            },
+            {
+              "key": 3.0,
+              "value": {
+                "type": 6,
+                "data": 15
+              }
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 6,
+                "data": 19
+              }
+            },
+            {
+              "key": 5.0,
+              "value": {
+                "type": 6,
+                "data": 23
+              }
+            },
+            {
+              "key": 6.0,
+              "value": {
+                "type": 6,
+                "data": 54
+              }
+            },
+            {
+              "key": 7.0,
+              "value": {
+                "type": 6,
+                "data": 55
+              }
+            },
+            {
+              "key": 8.0,
+              "value": {
+                "type": 6,
+                "data": 56
+              }
+            },
+            {
+              "key": 9.0,
+              "value": {
+                "type": 6,
+                "data": 57
+              }
+            },
+            {
+              "key": 10.0,
+              "value": {
+                "type": 6,
+                "data": 58
+              }
+            },
+            {
+              "key": 11.0,
+              "value": {
+                "type": 6,
+                "data": 59
+              }
+            },
+            {
+              "key": 12.0,
+              "value": {
+                "type": 6,
+                "data": 60
+              }
+            },
+            {
+              "key": 13.0,
+              "value": {
+                "type": 6,
+                "data": 61
+              }
+            },
+            {
+              "key": 14.0,
+              "value": {
+                "type": 6,
+                "data": 62
+              }
+            }
+          ]
+        },
+        {
+          "key": "Progress",
+          "value": [
+            {
+              "key": 1.0,
+              "value": {
+                "type": 6,
+                "data": 12
+              }
+            },
+            {
+              "key": 2.0,
+              "value": {
+                "type": 6,
+                "data": 16
+              }
+            },
+            {
+              "key": 3.0,
+              "value": {
+                "type": 6,
+                "data": 17
+              }
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 6,
+                "data": 22
+              }
+            },
+            {
+              "key": 5.0,
+              "value": {
+                "type": 6,
+                "data": 82
+              }
+            },
+            {
+              "key": 6.0,
+              "value": {
+                "type": 6,
+                "data": 63
+              }
+            },
+            {
+              "key": 7.0,
+              "value": {
+                "type": 6,
+                "data": 64
+              }
+            },
+            {
+              "key": 8.0,
+              "value": {
+                "type": 6,
+                "data": 65
+              }
+            },
+            {
+              "key": 9.0,
+              "value": {
+                "type": 6,
+                "data": 66
+              }
+            },
+            {
+              "key": 10.0,
+              "value": {
+                "type": 6,
+                "data": 67
+              }
+            },
+            {
+              "key": 11.0,
+              "value": {
+                "type": 6,
+                "data": 68
+              }
+            },
+            {
+              "key": 12.0,
+              "value": {
+                "type": 6,
+                "data": 69
+              }
+            },
+            {
+              "key": 13.0,
+              "value": {
+                "type": 6,
+                "data": 70
+              }
+            },
+            {
+              "key": 14.0,
+              "value": {
+                "type": 6,
+                "data": 71
+              }
+            },
+            {
+              "key": 15.0,
+              "value": {
+                "type": 6,
+                "data": 72
+              }
+            }
+          ]
+        },
+        {
+          "key": "Kills",
+          "value": [
+            {
+              "key": 1.0,
+              "value": {
+                "type": 6,
+                "data": 13
+              }
+            },
+            {
+              "key": 2.0,
+              "value": {
+                "type": 6,
+                "data": 20
+              }
+            },
+            {
+              "key": 3.0,
+              "value": {
+                "type": 6,
+                "data": 73
+              }
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 6,
+                "data": 74
+              }
+            },
+            {
+              "key": 5.0,
+              "value": {
+                "type": 6,
+                "data": 75
+              }
+            },
+            {
+              "key": 6.0,
+              "value": {
+                "type": 6,
+                "data": 76
+              }
+            },
+            {
+              "key": 7.0,
+              "value": {
+                "type": 6,
+                "data": 81
+              }
+            }
+          ]
+        },
+        {
+          "key": "Quality",
+          "value": [
+            {
+              "key": 1.0,
+              "value": {
+                "type": 6,
+                "data": 21
+              }
+            },
+            {
+              "key": 2.0,
+              "value": {
+                "type": 6,
+                "data": 77
+              }
+            },
+            {
+              "key": 3.0,
+              "value": {
+                "type": 6,
+                "data": 78
+              }
+            },
+            {
+              "key": 4.0,
+              "value": {
+                "type": 6,
+                "data": 79
+              }
+            },
+            {
+              "key": 5.0,
+              "value": {
+                "type": 6,
+                "data": 80
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/2/key",
+      "value": "milestones_by_group"
+    },
+    {
+      "kind": "pair",
+      "path": "dump/data/1/value/0/value/2/value/0",
+      "key": "Science",
+      "value": [
+        {
+          "key": 1.0,
+          "value": {
+            "type": 6,
+            "data": 5
+          }
+        },
+        {
+          "key": 2.0,
+          "value": {
+            "type": 6,
+            "data": 6
+          }
+        },
+        {
+          "key": 3.0,
+          "value": {
+            "type": 6,
+            "data": 7
+          }
+        },
+        {
+          "key": 4.0,
+          "value": {
+            "type": 6,
+            "data": 10
+          }
+        },
+        {
+          "key": 5.0,
+          "value": {
+            "type": 6,
+            "data": 11
+          }
+        },
+        {
+          "key": 6.0,
+          "value": {
+            "type": 6,
+            "data": 14
+          }
+        },
+        {
+          "key": 7.0,
+          "value": {
+            "type": 6,
+            "data": 18
+          }
+        },
+        {
+          "key": 8.0,
+          "value": {
+            "type": 6,
+            "data": 25
+          }
+        },
+        {
+          "key": 9.0,
+          "value": {
+            "type": 6,
+            "data": 26
+          }
+        },
+        {
+          "key": 10.0,
+          "value": {
+            "type": 6,
+            "data": 27
+          }
+        },
+        {
+          "key": 11.0,
+          "value": {
+            "type": 6,
+            "data": 28
+          }
+        },
+        {
+          "key": 12.0,
+          "value": {
+            "type": 6,
+            "data": 29
+          }
+        },
+        {
+          "key": 13.0,
+          "value": {
+            "type": 6,
+            "data": 30
+          }
+        },
+        {
+          "key": 14.0,
+          "value": {
+            "type": 6,
+            "data": 31
+          }
+        },
+        {
+          "key": 15.0,
+          "value": {
+            "type": 6,
+            "data": 32
+          }
+        },
+        {
+          "key": 16.0,
+          "value": {
+            "type": 6,
+            "data": 33
+          }
+        },
+        {
+          "key": 17.0,
+          "value": {
+            "type": 6,
+            "data": 34
+          }
+        },
+        {
+          "key": 18.0,
+          "value": {
+            "type": 6,
+            "data": 35
+          }
+        },
+        {
+          "key": 19.0,
+          "value": {
+            "type": 6,
+            "data": 36
+          }
+        },
+        {
+          "key": 20.0,
+          "value": {
+            "type": 6,
+            "data": 37
+          }
+        },
+        {
+          "key": 21.0,
+          "value": {
+            "type": 6,
+            "data": 38
+          }
+        },
+        {
+          "key": 22.0,
+          "value": {
+            "type": 6,
+            "data": 39
+          }
+        },
+        {
+          "key": 23.0,
+          "value": {
+            "type": 6,
+            "data": 40
+          }
+        },
+        {
+          "key": 24.0,
+          "value": {
+            "type": 6,
+            "data": 41
+          }
+        },
+        {
+          "key": 25.0,
+          "value": {
+            "type": 6,
+            "data": 42
+          }
+        },
+        {
+          "key": 26.0,
+          "value": {
+            "type": 6,
+            "data": 43
+          }
+        },
+        {
+          "key": 27.0,
+          "value": {
+            "type": 6,
+            "data": 44
+          }
+        },
+        {
+          "key": 28.0,
+          "value": {
+            "type": 6,
+            "data": 45
+          }
+        },
+        {
+          "key": 29.0,
+          "value": {
+            "type": 6,
+            "data": 46
+          }
+        },
+        {
+          "key": 30.0,
+          "value": {
+            "type": 6,
+            "data": 47
+          }
+        },
+        {
+          "__truncated__": 6
+        }
+      ]
+    },
+    {
+      "kind": "scalar",
+      "path": "dump/data/1/value/0/value/2/value/0/key",
+      "value": "Science"
+    }
+  ],
+  "signals": {
+    "contains_nauvis_orbit": false,
+    "contains_rocket_science_pack": true,
+    "contains_space_science_pack": true,
+    "contains_satellite_telemetry": false
+  }
+}
