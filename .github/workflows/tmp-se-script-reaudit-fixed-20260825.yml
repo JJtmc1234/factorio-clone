@@ -1,0 +1,66 @@
+name: Run corrected Factorio 2.0 script.dat re-audit
+
+on:
+  push:
+    branches: [tmp-se-script-reaudit-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-script-reaudit-fixed-result-20260825
+
+jobs:
+  decode-fixed:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Extract, patch, and run the audit program
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published work matches
+          mkdir -p published/candidates work matches
+          python3 -m pip install --quiet --upgrade requests gdown hornwitser.factorio_tools==0.0.7
+          python3 - <<'PY'
+          from pathlib import Path
+          source = Path('.github/workflows/tmp-se-script-reaudit-20260825.yml').read_text(encoding='utf-8')
+          marker = "          python3 - <<'PY'\n"
+          start = source.index(marker) + len(marker)
+          end = source.index("\n          PY\n", start)
+          lines = source[start:end].splitlines()
+          code = '\n'.join(line[10:] if line.startswith('          ') else line for line in lines) + '\n'
+          code = code.replace('import subprocess\n', 'import subprocess\nimport sys\n', 1)
+          Path('/tmp/se_script_reaudit.py').write_text(code, encoding='utf-8')
+          compile(code, '/tmp/se_script_reaudit.py', 'exec')
+          print(f'extracted and compiled {len(code.splitlines())} Python lines')
+          PY
+          python3 /tmp/se_script_reaudit.py
+
+      - name: Upload all script-confirmed current-SE save archives
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: script-confirmed-current-se-saves-fixed
+          path: matches/*
+          if-no-files-found: ignore
+          retention-days: 7
+          compression-level: 0
+
+      - name: Publish corrected re-audit metadata
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-script-reaudit-fixed
+          mkdir tmp-se-script-reaudit-fixed
+          cp -a published/. tmp-se-script-reaudit-fixed/
+          git add -f tmp-se-script-reaudit-fixed
+          git commit --allow-empty -m 'Publish corrected Factorio 2.0 script registry re-audit'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
