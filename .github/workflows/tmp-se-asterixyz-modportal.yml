@@ -1,0 +1,300 @@
+name: Crawl Asterixyz mod-portal SE save trail
+
+on:
+  push:
+    branches: [tmp-se-asterixyz-modportal-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Crawl exact mods from the known SE 0.7 save
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-asterixyz-result
+          mkdir -p se-asterixyz-result
+          python3 -m pip install --quiet requests beautifulsoup4 lxml
+          cat > /tmp/crawl_asterixyz.py <<'PY'
+          from __future__ import annotations
+
+          import concurrent.futures
+          import hashlib
+          import html
+          import json
+          import pathlib
+          import re
+          import time
+          from urllib.parse import quote_plus, urljoin, urlparse
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          USER = "Asterixyz"
+          BASE = "https://mods.factorio.com"
+          OUT = pathlib.Path("se-asterixyz-result")
+          RAW = OUT / "raw"
+          RAW.mkdir(parents=True, exist_ok=True)
+
+          # Exact non-built-in mods recovered from Asterixyz's public SE 0.7.34 save.
+          MODS = [
+              "belt-visualizer", "CleanFloor", "squeak-through-2", "aai-containers",
+              "aai-loaders", "aai-signal-transmission", "aai-vehicles-ironclad",
+              "AutoDeconstruct", "AutoGhostBuilder", "bobinserters", "Bottleneck",
+              "DiscoScience", "dqol-resource-monitor", "even-distribution",
+              "even-pickier-dollies", "FactorySearch", "FilterHelper", "flib", "helmod",
+              "informatron", "inserter-throughput", "jetpack", "mining-patch-planner",
+              "noangledcables", "pump", "robot_attrition", "shield-projector",
+              "some-autoresearch", "textplates", "Todo-List", "Warehousing",
+              "aai-industry", "alien-biomes", "diurnal-dynamics", "factoryplanner",
+              "Milestones", "RateCalculator", "solar-calc", "fire-lights",
+              "space-exploration", "se-space-trains", "space-exploration-postprocess",
+          ]
+
+          session = requests.Session()
+          session.headers.update({
+              "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/126 Safari/537.36",
+              "Accept-Language": "en-US,en;q=0.9",
+          })
+
+          URL_RX = re.compile(r"https?://[^\s<>\"'\\]+", re.I)
+          DISC_RX = re.compile(r"/mod/([^/]+)/discussion/([0-9a-f]{20,})", re.I)
+          DRIVE_RX = re.compile(r"(?:drive\.google\.com/(?:file/d/|open\?id=)|drive\.usercontent\.google\.com/download\?id=)([-\w]{20,})", re.I)
+          SAVE_WORDS = re.compile(r"(?i)(save\s*(?:file|game)|latest\s+save|autosave|\.zip\b|space\s+exploration|\bSE\b|rocket|orbit|satellite|cargo)")
+
+          def get(url: str, timeout: int = 30) -> tuple[int | None, str, str | None]:
+              last = None
+              for attempt in range(4):
+                  try:
+                      r = session.get(url, timeout=timeout, allow_redirects=True)
+                      if r.status_code == 200:
+                          return r.status_code, r.text, r.url
+                      last = f"HTTP {r.status_code}"
+                      if r.status_code in (403, 404):
+                          break
+                  except Exception as exc:
+                      last = repr(exc)
+                  time.sleep(0.7 * (attempt + 1))
+              return None, last or "unknown error", None
+
+          def clean_url(raw: str) -> str:
+              return html.unescape(raw).rstrip(".,;:!?)\]}>'\"")
+
+          def extract_discussion_urls(page: str, base_url: str) -> set[str]:
+              out = set()
+              soup = BeautifulSoup(page, "lxml")
+              for a in soup.select('a[href*="/discussion/"]'):
+                  href = a.get("href")
+                  if href and DISC_RX.search(href):
+                      out.add(urljoin(base_url, href).split("#", 1)[0])
+              for m in DISC_RX.finditer(page):
+                  out.add(urljoin(BASE, m.group(0)))
+              return out
+
+          def discussion_urls_near_user(page: str, base_url: str) -> set[str]:
+              soup = BeautifulSoup(page, "lxml")
+              result = set()
+              # Climb from every username text node until reaching a card/row that contains a thread link.
+              for text_node in soup.find_all(string=re.compile(re.escape(USER), re.I)):
+                  node = text_node.parent
+                  for _ in range(10):
+                      if node is None:
+                          break
+                      links = node.select('a[href*="/discussion/"]') if hasattr(node, "select") else []
+                      for a in links:
+                          href = a.get("href")
+                          if href and DISC_RX.search(href):
+                              result.add(urljoin(base_url, href).split("#", 1)[0])
+                      if links:
+                          break
+                      node = node.parent
+              # HTML around the username is a useful fallback when the DOM is peculiar.
+              lower = page.lower()
+              needle = USER.lower()
+              start = 0
+              while True:
+                  at = lower.find(needle, start)
+                  if at < 0:
+                      break
+                  segment = page[max(0, at - 6000): min(len(page), at + 6000)]
+                  result.update(extract_discussion_urls(segment, base_url))
+                  start = at + len(needle)
+              return result
+
+          errors = []
+          listing_hits = []
+          thread_urls: set[str] = set()
+
+          # Profile and guessed API endpoints can expose posts or authored mods.
+          misc_urls = [
+              f"{BASE}/user/{USER}",
+              f"{BASE}/api/user/{USER}",
+              f"{BASE}/api/users/{USER}",
+              f"{BASE}/api/mods?username={USER}",
+          ]
+          for url in misc_urls:
+              status, text, final = get(url)
+              name = "misc_" + hashlib.sha256(url.encode()).hexdigest()[:12] + ".html"
+              (RAW / name).write_text(text, encoding="utf-8", errors="replace")
+              if status == 200:
+                  thread_urls.update(extract_discussion_urls(text, final or url))
+              else:
+                  errors.append({"url": url, "error": text})
+
+          # Search-engine fallback. This catches pages on mods no longer present in the save.
+          queries = [
+              f'"{USER}" site:mods.factorio.com/mod/*/discussion',
+              f'"{USER}" "drive.google.com/file/d/" Factorio',
+              f'"{USER}" "save file" Factorio',
+              f'"{USER}" "Space Exploration" Factorio',
+          ]
+          for query in queries:
+              for endpoint in (
+                  "https://html.duckduckgo.com/html/?q=" + quote_plus(query),
+                  "https://www.google.com/search?q=" + quote_plus(query) + "&num=100",
+                  "https://www.bing.com/search?q=" + quote_plus(query) + "&count=50",
+              ):
+                  status, text, final = get(endpoint)
+                  name = "search_" + hashlib.sha256(endpoint.encode()).hexdigest()[:12] + ".html"
+                  (RAW / name).write_text(text, encoding="utf-8", errors="replace")
+                  if status == 200:
+                      thread_urls.update(extract_discussion_urls(text, final or endpoint))
+                      for raw in URL_RX.findall(text):
+                          url = clean_url(raw)
+                          if DISC_RX.search(url):
+                              thread_urls.add(url.split("#", 1)[0])
+                  else:
+                      errors.append({"url": endpoint, "error": text})
+
+          # Crawl recent discussion listings for every exact mod. We only fetch matching threads,
+          # rather than carpet-bombing the portal with thousands of requests.
+          for mod in MODS:
+              seen_page_threads: set[str] = set()
+              empty_streak = 0
+              for page_num in range(1, 13):
+                  url = f"{BASE}/mod/{mod}/discussion" + ("" if page_num == 1 else f"?page={page_num}")
+                  status, text, final = get(url)
+                  if status != 200:
+                      errors.append({"url": url, "error": text})
+                      break
+                  all_urls = extract_discussion_urls(text, final or url)
+                  new_urls = all_urls - seen_page_threads
+                  if not new_urls:
+                      empty_streak += 1
+                  else:
+                      empty_streak = 0
+                      seen_page_threads.update(new_urls)
+                  if USER.lower() in text.lower():
+                      nearby = discussion_urls_near_user(text, final or url)
+                      thread_urls.update(nearby)
+                      listing_hits.append({
+                          "mod": mod,
+                          "page": page_num,
+                          "url": url,
+                          "nearby_threads": sorted(nearby),
+                      })
+                      filename = f"listing_{re.sub(r'[^A-Za-z0-9_.-]', '_', mod)}_{page_num}.html"
+                      (RAW / filename).write_text(text, encoding="utf-8", errors="replace")
+                  if empty_streak >= 2:
+                      break
+
+          # Fetch every candidate thread concurrently and retain only actual username matches.
+          def inspect_thread(url: str) -> dict:
+              status, text, final = get(url)
+              if status != 200:
+                  return {"url": url, "error": text}
+              soup = BeautifulSoup(text, "lxml")
+              plain = soup.get_text("\n", strip=True)
+              title = ""
+              h = soup.find(["h1", "h2"])
+              if h:
+                  title = h.get_text(" ", strip=True)
+              urls = []
+              for a in soup.find_all("a", href=True):
+                  href = clean_url(urljoin(final or url, a["href"]))
+                  if href not in urls:
+                      urls.append(href)
+              for raw in URL_RX.findall(text):
+                  href = clean_url(raw)
+                  if href not in urls:
+                      urls.append(href)
+              drive_ids = []
+              for candidate in urls + [plain]:
+                  for match in DRIVE_RX.finditer(candidate):
+                      if match.group(1) not in drive_ids:
+                          drive_ids.append(match.group(1))
+              rec = {
+                  "url": final or url,
+                  "title": title,
+                  "contains_user": USER.lower() in plain.lower(),
+                  "contains_save_words": bool(SAVE_WORDS.search(plain)),
+                  "drive_ids": drive_ids,
+                  "links": urls,
+                  "text": plain,
+              }
+              if rec["contains_user"]:
+                  filename = "thread_" + hashlib.sha256(url.encode()).hexdigest()[:16] + ".html"
+                  (RAW / filename).write_text(text, encoding="utf-8", errors="replace")
+              return rec
+
+          inspected = []
+          with concurrent.futures.ThreadPoolExecutor(max_workers=12) as pool:
+              futures = {pool.submit(inspect_thread, url): url for url in sorted(thread_urls)}
+              for fut in concurrent.futures.as_completed(futures):
+                  inspected.append(fut.result())
+
+          matches = [r for r in inspected if r.get("contains_user")]
+          matches.sort(key=lambda r: (0 if r.get("drive_ids") else 1, 0 if r.get("contains_save_words") else 1, r.get("title") or ""))
+
+          (OUT / "listing_hits.json").write_text(json.dumps(listing_hits, indent=2, ensure_ascii=False))
+          (OUT / "threads_inspected.json").write_text(json.dumps(inspected, indent=2, ensure_ascii=False))
+          (OUT / "matches.json").write_text(json.dumps(matches, indent=2, ensure_ascii=False))
+          (OUT / "errors.json").write_text(json.dumps(errors, indent=2, ensure_ascii=False))
+
+          lines = [
+              f"Exact mods checked: {len(MODS)}",
+              f"Discussion-list pages containing {USER}: {len(listing_hits)}",
+              f"Candidate threads fetched: {len(inspected)}",
+              f"Confirmed threads containing {USER}: {len(matches)}",
+              f"Confirmed threads with Drive IDs: {sum(bool(r.get('drive_ids')) for r in matches)}",
+              "",
+              "MATCHES",
+              "=" * 100,
+          ]
+          for rec in matches:
+              lines.extend([
+                  rec.get("title") or "(untitled)",
+                  rec.get("url") or "",
+                  "Drive IDs: " + ", ".join(rec.get("drive_ids") or []),
+                  "Relevant links:",
+                  *["  " + u for u in rec.get("links", []) if ("drive.google" in u or ".zip" in u.lower() or "dropbox" in u or "mediafire" in u or "mega." in u)],
+                  "",
+                  rec.get("text", "")[:12000],
+                  "",
+                  "-" * 100,
+              ])
+          (OUT / "SUMMARY.txt").write_text("\n".join(lines), encoding="utf-8")
+          print("\n".join(lines[:400]))
+          PY
+          python3 /tmp/crawl_asterixyz.py | tee se-asterixyz-result/console.txt
+
+      - name: Publish crawler results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-asterixyz-modportal-result-20260824
+          rm -rf tmp-se-asterixyz-modportal
+          mkdir -p tmp-se-asterixyz-modportal
+          cp -a se-asterixyz-result/. tmp-se-asterixyz-modportal/ || true
+          git add -f tmp-se-asterixyz-modportal
+          git commit -m 'Publish Asterixyz mod-portal SE trail results' || true
+          git push --force origin HEAD:refs/heads/tmp-se-asterixyz-modportal-result-20260824
