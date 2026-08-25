@@ -1,0 +1,314 @@
+name: Deep-audit SE3 Space Exploration state
+
+on:
+  push:
+    branches: [tmp-se-se3-deep-audit-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-se3-deep-audit-result-20260825
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Decompress and structurally inspect SE3 storage
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          python3 - <<'PY'
+          from __future__ import annotations
+
+          import gzip
+          import json
+          import pathlib
+          import re
+          from collections import Counter, defaultdict
+          from typing import Any
+          from urllib.request import Request, urlopen
+
+          OUT = pathlib.Path('published')
+          URL = 'https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-script-reaudit-fixed-result-20260825/tmp-se-script-reaudit-fixed/candidates/026-01-SE3/space-exploration.json.gz'
+          req = Request(URL, headers={'User-Agent':'JJ-SE3-deep-audit/1.0'})
+          raw = urlopen(req, timeout=60).read()
+          obj = json.loads(gzip.decompress(raw).decode('utf-8'))
+          OUT.joinpath('space-exploration.pretty.json').write_text(
+              json.dumps(obj, ensure_ascii=False, indent=2), encoding='utf-8'
+          )
+
+          def is_pair_list(v: Any) -> bool:
+              return isinstance(v, list) and all(
+                  isinstance(e, dict) and 'key' in e and 'value' in e for e in v
+              )
+
+          def type_length(v: Any) -> dict[str, Any]:
+              return {
+                  'type': type(v).__name__,
+                  'length': len(v) if isinstance(v, (list, dict, str)) else None,
+              }
+
+          def compact(v: Any, depth: int = 0, max_depth: int = 5, max_items: int = 80) -> Any:
+              if depth >= max_depth:
+                  if isinstance(v, (list, dict)):
+                      return type_length(v)
+                  return v[:1000] if isinstance(v, str) else v
+              if isinstance(v, dict):
+                  out = {}
+                  for i, (k, x) in enumerate(v.items()):
+                      if i >= max_items:
+                          out['__truncated__'] = len(v) - max_items
+                          break
+                      out[str(k)[:300]] = compact(x, depth + 1, max_depth, max_items)
+                  return out
+              if isinstance(v, list):
+                  out = [compact(x, depth + 1, max_depth, max_items) for x in v[:max_items]]
+                  if len(v) > max_items:
+                      out.append({'__truncated__': len(v) - max_items})
+                  return out
+              if isinstance(v, str):
+                  return v[:4000]
+              return v
+
+          def path_text(path: tuple[Any, ...]) -> str:
+              return '/'.join(str(x) for x in path)
+
+          all_pairs: list[dict[str, Any]] = []
+          all_strings: list[dict[str, Any]] = []
+          pair_key_counts: Counter[str] = Counter()
+          nodes = 0
+
+          def walk(v: Any, path: tuple[Any, ...] = ()) -> None:
+              global nodes
+              nodes += 1
+              if isinstance(v, dict):
+                  if 'key' in v and 'value' in v:
+                      key = v.get('key')
+                      value = v.get('value')
+                      rec = {'path': path_text(path), 'key': key, 'value': value}
+                      all_pairs.append(rec)
+                      if isinstance(key, str):
+                          pair_key_counts[key] += 1
+                  for k, x in v.items():
+                      walk(x, path + (k,))
+              elif isinstance(v, list):
+                  for i, x in enumerate(v):
+                      walk(x, path + (i,))
+              elif isinstance(v, str):
+                  all_strings.append({'path': path_text(path), 'value': v})
+
+          walk(obj)
+
+          dump = obj.get('dump', {}) if isinstance(obj, dict) else {}
+          top_data = dump.get('data', []) if isinstance(dump, dict) else []
+          top_entries = []
+          if is_pair_list(top_data):
+              for index, entry in enumerate(top_data):
+                  key = entry.get('key')
+                  value = entry.get('value')
+                  top_entries.append({
+                      'index': index,
+                      'key': compact(key, max_depth=4),
+                      'key_type': type(key).__name__,
+                      'value_shape': type_length(value),
+                      'value': compact(value, max_depth=8, max_items=140),
+                  })
+
+          exact_keys = {
+              'rocket_launch_pads', 'basic_rocket_silos', 'cargo_rockets_launched',
+              'satellites_launched', 'rocket_launch_pad_silos', 'launch_pads',
+              'rocket_sections', 'cargo_rocket_launches', 'satellite_launches',
+              'total_launches', 'launch_count', 'launches', 'forces', 'force_data',
+              'force_name', 'zones_discovered', 'discovered', 'visited',
+              'player_visits', 'zone_index', 'surface_index', 'surface_name',
+              'spaceships', 'playerdata', 'rocket_science', 'rocket_science_pack',
+              'se-rocket-science-pack', 'space-science-pack', 'satellite-telemetry',
+              'cargo_rocket', 'cargo_rockets', 'rocket_silos', 'orbit',
+          }
+          term_re = re.compile(
+              r'rocket|satellite|orbit|surface|zone|launch|science|cargo|spaceship|discover|visit|telemetry|force',
+              re.I,
+          )
+
+          relevant_pairs = []
+          for p in all_pairs:
+              key = p['key']
+              if isinstance(key, str) and (key.lower() in exact_keys or term_re.search(key)):
+                  relevant_pairs.append({
+                      'path': p['path'], 'key': key,
+                      'value_shape': type_length(p['value']),
+                      'value': compact(p['value'], max_depth=10, max_items=180),
+                  })
+
+          strings_matching = []
+          for s in all_strings:
+              if term_re.search(s['value']) or re.search(r'Nauvis|Orbit|Respitia', s['value'], re.I):
+                  strings_matching.append(s)
+
+          # Detect Lua-table-shaped lists containing common zone fields.
+          zone_records = []
+          force_records = []
+          table_count = 0
+
+          def scalar_map(v: Any) -> dict[str, Any] | None:
+              if not is_pair_list(v):
+                  return None
+              out: dict[str, Any] = {}
+              for e in v:
+                  key = e.get('key')
+                  if isinstance(key, str):
+                      out.setdefault(key, e.get('value'))
+              return out
+
+          def scan_tables(v: Any, path: tuple[Any, ...] = ()) -> None:
+              nonlocal_state[0] += 1
+              m = scalar_map(v)
+              if m:
+                  keys = set(m)
+                  if 'name' in keys and ('type' in keys or 'index' in keys or 'surface_index' in keys):
+                      name, typ = m.get('name'), m.get('type')
+                      if isinstance(name, str) or isinstance(typ, str):
+                          selected = {
+                              k: compact(m[k], max_depth=7, max_items=100)
+                              for k in (
+                                  'name','type','index','zone_index','surface_index','surface_name',
+                                  'parent','orbit','discovered','visited','player_visits',
+                                  'is_homeworld','is_solid','radius','radius_multiplier','seed',
+                                  'force_name','launch_count','launches','cargo_rockets_launched',
+                                  'satellites_launched','rocket_sections'
+                              ) if k in m
+                          }
+                          selected['path'] = path_text(path)
+                          zone_records.append(selected)
+                  if 'force_name' in keys or any(k in keys for k in ('cargo_rockets_launched','satellites_launched','zones_discovered')):
+                      selected = {
+                          k: compact(x, max_depth=7, max_items=120)
+                          for k, x in m.items()
+                          if isinstance(k, str) and (
+                              k in exact_keys or term_re.search(k) or k in ('name','type','index')
+                          )
+                      }
+                      selected['path'] = path_text(path)
+                      force_records.append(selected)
+              if isinstance(v, dict):
+                  for k, x in v.items():
+                      scan_tables(x, path + (k,))
+              elif isinstance(v, list):
+                  for i, x in enumerate(v):
+                      scan_tables(x, path + (i,))
+
+          nonlocal_state = [0]
+          scan_tables(obj)
+          table_count = nonlocal_state[0]
+
+          # Deduplicate zone/force summaries.
+          def dedupe(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+              seen = set(); out = []
+              for item in items:
+                  key = json.dumps(item, sort_keys=True, ensure_ascii=False, default=str)
+                  if key not in seen:
+                      seen.add(key); out.append(item)
+              return out
+
+          zone_records = dedupe(zone_records)
+          force_records = dedupe(force_records)
+          named_zones = [z for z in zone_records if isinstance(z.get('name'), str)]
+          nauvis_orbit_zones = [
+              z for z in named_zones
+              if 'nauvis' in z.get('name','').lower() or 'orbit' in z.get('name','').lower()
+          ]
+          generated_zones = [z for z in named_zones if z.get('surface_index') not in (None, 0, 0.0, '')]
+
+          # Direct top-level values by string key.
+          top_by_key: dict[str, list[Any]] = defaultdict(list)
+          if is_pair_list(top_data):
+              for e in top_data:
+                  if isinstance(e.get('key'), str):
+                      top_by_key[e['key']].append(e.get('value'))
+          direct_state = {
+              key: [compact(v, max_depth=12, max_items=240) for v in values]
+              for key, values in top_by_key.items()
+              if key.lower() in exact_keys or term_re.search(key)
+          }
+
+          analysis = {
+              'source_url': URL,
+              'gzip_bytes': len(raw),
+              'nodes_walked': nodes,
+              'table_scan_nodes': table_count,
+              'top_entry_count': len(top_entries),
+              'top_entries': top_entries,
+              'pair_key_counts': pair_key_counts.most_common(),
+              'relevant_pair_count': len(relevant_pairs),
+              'relevant_pairs': relevant_pairs,
+              'matching_string_count': len(strings_matching),
+              'matching_strings': strings_matching,
+              'zone_record_count': len(zone_records),
+              'zone_records': zone_records,
+              'nauvis_orbit_zone_records': nauvis_orbit_zones,
+              'generated_zone_records': generated_zones,
+              'force_records': force_records,
+              'direct_state': direct_state,
+          }
+          OUT.joinpath('analysis.json').write_text(
+              json.dumps(analysis, ensure_ascii=False, indent=2), encoding='utf-8'
+          )
+
+          lines = [
+              'SE3 DEEP SPACE EXPLORATION STATE AUDIT',
+              '=' * 120,
+              f'gzip_bytes={len(raw)}',
+              f'nodes_walked={nodes}',
+              f'top_entry_count={len(top_entries)}',
+              f'relevant_pair_count={len(relevant_pairs)}',
+              f'matching_string_count={len(strings_matching)}',
+              f'zone_records={len(zone_records)} named_zones={len(named_zones)} generated_zones={len(generated_zones)}',
+              '',
+              'TOP-LEVEL STORAGE ENTRIES',
+              '-' * 120,
+          ]
+          for e in top_entries:
+              lines.append(f"[{e['index']}] key={e['key']!r} key_type={e['key_type']} value_shape={e['value_shape']}")
+          lines += ['', 'DIRECT ROCKET / SURFACE / FORCE STATE', '-' * 120]
+          for key, values in direct_state.items():
+              lines.append(f'{key}: {json.dumps(values, ensure_ascii=False)[:12000]}')
+          lines += ['', 'NAUVIS / ORBIT ZONE RECORDS', '-' * 120]
+          for z in nauvis_orbit_zones:
+              lines.append(json.dumps(z, ensure_ascii=False, sort_keys=True))
+          lines += ['', 'ALL GENERATED ZONE RECORDS', '-' * 120]
+          for z in generated_zones:
+              lines.append(json.dumps(z, ensure_ascii=False, sort_keys=True))
+          lines += ['', 'FORCE / LAUNCH RECORDS', '-' * 120]
+          for f in force_records:
+              lines.append(json.dumps(f, ensure_ascii=False, sort_keys=True)[:12000])
+          lines += ['', 'RELEVANT PAIRS', '-' * 120]
+          for p in relevant_pairs:
+              lines.append(f"path={p['path']} key={p['key']!r} shape={p['value_shape']} value={json.dumps(p['value'],ensure_ascii=False)[:8000]}")
+          lines += ['', 'MATCHING STRINGS', '-' * 120]
+          for s in strings_matching:
+              lines.append(f"{s['path']}: {s['value']}")
+          OUT.joinpath('SUMMARY.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:220]))
+          PY
+
+      - name: Publish deep audit
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-se3-deep-audit
+          mkdir tmp-se-se3-deep-audit
+          cp -a published/. tmp-se-se3-deep-audit/
+          git add -f tmp-se-se3-deep-audit
+          git commit --allow-empty -m 'Publish SE3 deep state audit'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
