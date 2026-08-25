@@ -1,0 +1,251 @@
+name: Audit RedMew SE post-space pre-specialist window
+
+on:
+  push:
+    branches: [tmp-se-redmew-science-window-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-redmew-science-window-result-20260825
+  SAVE_URL: "https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip"
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download save, Factorio, and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/mods published
+          curl -fL --retry 8 --retry-all-errors --max-time 1800 -o work/candidate.zip "$SAVE_URL"
+          unzip -t work/candidate.zip > published/unzip-test.txt
+          sha256sum work/candidate.zip > published/save-sha256.txt
+          cp work/candidate.zip published/RedMew-SE07-se_crash.zip
+
+          cat > work/setup.py <<'PY'
+          import json, pathlib, random, tarfile, urllib.parse, urllib.request, zipfile
+          P=pathlib.Path
+          mods={
+            'RateCalculator':'3.3.7','aai-containers':'0.3.1','aai-industry':'0.6.11','aai-loaders':'0.2.7',
+            'aai-signal-transmission':'0.5.1','alien-biomes':'0.7.4','alien-biomes-graphics':'0.7.1',
+            'bullet-trails':'0.7.1','combat-mechanics-overhaul':'0.7.2','equipment-gantry':'0.2.3',
+            'factoryplanner':'2.0.35','flib':'0.16.3','grappling-gun':'0.4.1','informatron':'0.4.0',
+            'jetpack':'0.4.12','logistic-helper':'2.1.0','robot_attrition':'0.6.3','shield-projector':'0.2.2',
+            'space-exploration':'0.7.27','space-exploration-graphics':'0.7.5',
+            'space-exploration-graphics-2':'0.7.2','space-exploration-graphics-3':'0.7.2',
+            'space-exploration-graphics-4':'0.7.2','space-exploration-graphics-5':'0.7.2',
+            'space-exploration-menu-simulations':'0.7.4','space-exploration-postprocess':'0.7.3','textplates':'0.7.2'
+          }
+          def download(url,dst,timeout=1200):
+            req=urllib.request.Request(url,headers={'User-Agent':'FactorioModDownloader/0.5.0'})
+            with urllib.request.urlopen(req,timeout=timeout) as r,open(dst,'wb') as f:
+              while True:
+                b=r.read(1024*1024)
+                if not b:break
+                f.write(b)
+          download('https://factorio.com/get-download/2.0.66/headless/linux64','work/factorio.tar.xz')
+          with tarfile.open('work/factorio.tar.xz','r:xz') as a:a.extractall('work')
+          report=[]
+          for name,version in mods.items():
+            dst=P('work/mods')/f'{name}_{version}.zip'
+            qn=urllib.parse.quote(name,safe='');qv=urllib.parse.quote(version,safe='')
+            urls=[f'https://mods-storage.re146.dev/{qn}/{qv}.zip?anticache={random.random()}',f'https://dl-mod.factorio.com/{qn}/{qv}.zip']
+            error=None
+            for url in urls:
+              try:
+                download(url,dst)
+                with zipfile.ZipFile(dst) as z:
+                  if not z.namelist():raise RuntimeError('empty zip')
+                report.append({'name':name,'version':version,'bytes':dst.stat().st_size,'status':'ok','url':url});error=None;break
+              except Exception as exc:
+                error=repr(exc);dst.unlink(missing_ok=True)
+            if error:report.append({'name':name,'version':version,'status':'failed','error':error})
+          P('published/mod-downloads.json').write_text(json.dumps(report,indent=2))
+          failures=[x for x in report if x['status']=='failed']
+          enabled=[{'name':'base','enabled':True}]+[{'name':n,'enabled':True} for n in mods]
+          enabled += [{'name':'space-age','enabled':False},{'name':'quality','enabled':False},{'name':'elevated-rails','enabled':False}]
+          P('work/mods/mod-list.json').write_text(json.dumps({'mods':enabled},indent=2))
+          if failures:raise SystemExit(f'{len(failures)} mod downloads failed: {failures[:5]}')
+          PY
+          python3 work/setup.py
+
+      - name: Start save and audit all science packs
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/server-settings.json <<'JSON'
+          {"name":"inspection","description":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          JSON
+          work/factorio/bin/x64/factorio --start-server work/candidate.zip --mod-directory work/mods \
+            --server-settings work/server-settings.json --rcon-port 27521 --rcon-password inspect \
+            > published/server.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          for _ in $(seq 1 1200); do
+            grep -q 'Starting RCON interface' published/server.log && break
+            kill -0 $PID 2>/dev/null || { tail -500 published/server.log; exit 1; }
+            sleep 1
+          done
+          grep -q 'Starting RCON interface' published/server.log
+
+          cat > work/query.py <<'PY'
+          import json,pathlib,socket,struct
+          P=pathlib.Path
+          def packet(i,t,b):
+            p=struct.pack('<ii',i,t)+b.encode()+b'\0\0';return struct.pack('<i',len(p))+p
+          def receive(s):
+            h=s.recv(4)
+            if len(h)!=4:raise RuntimeError('short header')
+            n=struct.unpack('<i',h)[0];d=b''
+            while len(d)<n:
+              c=s.recv(n-len(d))
+              if not c:raise RuntimeError('closed')
+              d+=c
+            return struct.unpack_from('<ii',d,0)+(d[8:-2].decode('utf-8','replace'),)
+          lua=r'''
+          local out={tick=game.tick,hours=game.tick/216000,forces={},players={},surfaces={},recipes={},science_items={}}
+          local science={}
+          local protos=(prototypes and prototypes.item) or game.item_prototypes
+          for n,_ in pairs(protos) do if string.find(n,"science-pack",1,true) then science[n]=true end end
+          local specialist={}
+          for _,branch in pairs({"astronomic","biological","energy","material"}) do
+            for tier=1,4 do specialist["se-"..branch.."-science-pack-"..tier]=true end
+          end
+          local realforces={}
+          for _,f in pairs(game.forces) do if f.name~="enemy" and f.name~="neutral" then realforces[f.name]=true end end
+          for _,f in pairs(game.forces) do
+            if realforces[f.name] then
+              local fr={name=f.name,rockets_launched=f.rockets_launched or 0,science={},researched_using_space={},researched_using_specialist={},current_research=f.current_research and f.current_research.name or nil}
+              for n,_ in pairs(science) do
+                local ok1,o=pcall(function()return f.item_production_statistics.get_output_count(n)end)
+                local ok2,i=pcall(function()return f.item_production_statistics.get_input_count(n)end)
+                if (ok1 and o and o>0) or (ok2 and i and i>0) then fr.science[n]={output=ok1 and o or 0,input=ok2 and i or 0} end
+              end
+              for n,t in pairs(f.technologies) do
+                if t.researched then
+                  local ok,ings=pcall(function()return t.prototype.research_unit_ingredients end)
+                  if not ok then ok,ings=pcall(function()return t.research_unit_ingredients end) end
+                  if ok and ings then
+                    local uses_space=false;local uses_specialist=false;local used={}
+                    for _,ing in pairs(ings) do
+                      local iname=ing.name or ing[1]
+                      if iname then
+                        if iname=="se-space-science-pack" or iname=="space-science-pack" then uses_space=true end
+                        if specialist[iname] then uses_specialist=true end
+                        if uses_space or specialist[iname] then table.insert(used,iname) end
+                      end
+                    end
+                    if uses_space then table.insert(fr.researched_using_space,{technology=n,packs=used}) end
+                    if uses_specialist then table.insert(fr.researched_using_specialist,{technology=n,packs=used}) end
+                  end
+                end
+              end
+              table.insert(out.forces,fr)
+            end
+          end
+          for _,p in pairs(game.players) do table.insert(out.players,{name=p.name,force=p.force.name,surface=p.surface.name}) end
+          for _,s in pairs(game.surfaces) do
+            local row={name=s.name,index=s.index,player_entities=0,chunks=0,science_machines={},entities={}}
+            for _ in s.get_chunks() do row.chunks=row.chunks+1 end
+            for fn,_ in pairs(realforces) do local ok,v=pcall(function()return s.count_entities_filtered{force=fn}end);if ok then row.player_entities=row.player_entities+v end end
+            for _,n in pairs({"se-rocket-launch-pad","se-rocket-landing-pad","se-space-science-lab","se-space-assembling-machine","se-space-manufactory","rocket-silo"}) do
+              local ok,v=pcall(function()return s.count_entities_filtered{name=n}end);row.entities[n]=ok and v or -1
+            end
+            local okents,ents=pcall(function()return s.find_entities_filtered{type={"assembling-machine","furnace","rocket-silo"}}end)
+            if okents then
+              for _,e in pairs(ents) do
+                local ok,recipe=pcall(function()return e.get_recipe()end)
+                if ok and recipe then
+                  out.recipes[recipe.name]=(out.recipes[recipe.name] or 0)+1
+                  if science[recipe.name] then row.science_machines[recipe.name]=(row.science_machines[recipe.name] or 0)+1 end
+                end
+              end
+            end
+            table.insert(out.surfaces,row)
+          end
+          rcon.print(helpers.table_to_json(out))
+          '''
+          with socket.create_connection(('127.0.0.1',27521),timeout=30) as s:
+            s.settimeout(240);s.sendall(packet(1,3,'inspect'));a=receive(s)
+            if a[0]==-1:raise RuntimeError('auth')
+            s.sendall(packet(2,2,'/sc '+lua));body=receive(s)[2].strip()
+          P('published/rcon-raw.txt').write_text(body)
+          i,j=body.find('{'),body.rfind('}')
+          if i<0 or j<i:raise RuntimeError(body[:4000])
+          data=json.loads(body[i:j+1]);P('published/progression.json').write_text(json.dumps(data,indent=2,sort_keys=True))
+
+          merged={};space_researched=[];specialist_researched=[];rockets=0
+          for f in data.get('forces',[]):
+            rockets=max(rockets,f.get('rockets_launched',0) or 0)
+            for n,v in f.get('science',{}).items():
+              x=merged.setdefault(n,{'output':0,'input':0});x['output']=max(x['output'],v.get('output',0) or 0);x['input']=max(x['input'],v.get('input',0) or 0)
+            space_researched.extend(f.get('researched_using_space',[]));specialist_researched.extend(f.get('researched_using_specialist',[]))
+          recipes=data.get('recipes',{})
+          specialists=[f'se-{branch}-science-pack-{tier}' for branch in ('astronomic','biological','energy','material') for tier in range(1,5)]
+          space_names=('se-space-science-pack','space-science-pack')
+          space_output=max([merged.get(n,{}).get('output',0) or 0 for n in space_names] or [0])
+          space_input=max([merged.get(n,{}).get('input',0) or 0 for n in space_names] or [0])
+          space_machines=sum(recipes.get(n,0) or 0 for n in space_names)
+          specialist_output=sum(merged.get(n,{}).get('output',0) or 0 for n in specialists)
+          specialist_input=sum(merged.get(n,{}).get('input',0) or 0 for n in specialists)
+          specialist_machines=sum(recipes.get(n,0) or 0 for n in specialists)
+          prod=merged.get('production-science-pack',{});util=merged.get('utility-science-pack',{})
+          grade={
+            'hours':data.get('hours'),'rockets_launched':rockets,
+            'space_science_output':space_output,'space_science_input':space_input,'space_science_machines':space_machines,
+            'researched_technologies_using_space_science':space_researched,
+            'specialist_science_output':specialist_output,'specialist_science_input':specialist_input,'specialist_science_machines':specialist_machines,
+            'researched_technologies_using_specialist_science':specialist_researched,
+            'production_science_output':prod.get('output',0) or 0,'production_science_input':prod.get('input',0) or 0,
+            'utility_science_output':util.get('output',0) or 0,'utility_science_input':util.get('input',0) or 0,
+            'science_items':merged
+          }
+          grade['after_space_science']=space_output>0 or space_input>0 or space_machines>0 or len(space_researched)>0
+          grade['before_specialist_sciences']=specialist_output==0 and specialist_input==0 and specialist_machines==0 and len(specialist_researched)==0
+          grade['practical_before_specialist_sciences']=specialist_output==0 and specialist_input==0 and specialist_machines==0
+          grade['target_match']=grade['after_space_science'] and grade['practical_before_specialist_sciences']
+          P('published/grade.json').write_text(json.dumps(grade,indent=2,sort_keys=True))
+          lines=['# RedMew SE 0.7 science-window audit','',f"## Verdict: {'MATCH' if grade['target_match'] else 'NOT A MATCH'}",'',
+            f"- Save time: **{grade['hours']:.2f} hours**",f"- Satellite rockets launched: **{grade['rockets_launched']}**",
+            f"- Space Science output: **{grade['space_science_output']}**",f"- Space Science consumed: **{grade['space_science_input']}**",f"- Space Science machines: **{grade['space_science_machines']}**",
+            f"- Specialist output: **{grade['specialist_science_output']}**",f"- Specialist consumed: **{grade['specialist_science_input']}**",f"- Specialist machines: **{grade['specialist_science_machines']}**",
+            f"- Production Science output: **{grade['production_science_output']}**",f"- Utility Science output: **{grade['utility_science_output']}**",
+            f"- After Space Science: **{grade['after_space_science']}**",f"- Before specialist sciences: **{grade['before_specialist_sciences']}**",f"- Practical pre-specialist: **{grade['practical_before_specialist_sciences']}**"]
+          P('published/VERDICT.md').write_text('\n'.join(lines)+'\n')
+          print('\n'.join(lines))
+          PY
+          python3 work/query.py | tee published/console.txt
+
+      - name: Upload actual save and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se07-science-window-audit
+          path: published/
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Publish small audit result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f published/RedMew-SE07-se_crash.zip
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-redmew-science-window
+          mkdir -p tmp-se-redmew-science-window
+          cp -a published/. tmp-se-redmew-science-window/
+          git add -f tmp-se-redmew-science-window
+          git commit -m 'Publish RedMew science-window audit' || true
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
