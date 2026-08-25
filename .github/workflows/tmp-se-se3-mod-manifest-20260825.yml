@@ -1,0 +1,91 @@
+name: Extract SE3 exact mod manifest from issue log
+
+on:
+  push:
+    branches: [tmp-se-se3-mod-manifest-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-se3-mod-manifest-result-20260825
+
+jobs:
+  extract:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download attached Factorio log and parse mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          curl -L --fail-with-body --retry 4 -A 'Mozilla/5.0 JJ-SE3-mod-manifest/1.0' \
+            'https://github.com/user-attachments/files/24868904/factorio-current.log' \
+            -o published/factorio-current.log
+          python3 - <<'PY'
+          import json, pathlib, re
+          p=pathlib.Path('published/factorio-current.log')
+          text=p.read_text(encoding='utf-8',errors='replace')
+          manifests=[]
+          current={}
+          # Explicit data-stage load lines are authoritative and simple.
+          load_re=re.compile(r'Loading mod (.+?) ([0-9]+(?:\.[0-9]+){1,3}) \((?:settings(?:-final-fixes)?|data(?:-updates|-final-fixes)?|control)\.lua\)')
+          for m in load_re.finditer(text):
+              current[m.group(1)]=m.group(2)
+          # Also parse Lua table blocks printed by mods, retaining any names missed above.
+          block_re=re.compile(r'Log mods once:\s*\{(.*?)\n\}',re.S)
+          table_re=re.compile(r'\[?"([^"\]]+)"\]?\s*=\s*"([^"]+)"|\b([A-Za-z0-9_-]+)\s*=\s*"([^"]+)"')
+          for block in block_re.findall(text):
+              parsed={}
+              for m in table_re.finditer(block):
+                  name=m.group(1) or m.group(3)
+                  version=m.group(2) or m.group(4)
+                  parsed[name]=version
+                  current.setdefault(name,version)
+              manifests.append(parsed)
+          # Keep base/core for evidence but mark actual external mods separately.
+          external={k:v for k,v in current.items() if k not in {'base','core','elevated-rails','quality','space-age'}}
+          result={
+              'log_bytes':p.stat().st_size,
+              'factorio_version_lines':re.findall(r'Factorio [0-9.]+[^\n]*',text)[:20],
+              'all_loaded':dict(sorted(current.items(),key=lambda kv:kv[0].lower())),
+              'external_mods':dict(sorted(external.items(),key=lambda kv:kv[0].lower())),
+              'printed_manifests':manifests,
+          }
+          pathlib.Path('published/mod-manifest.json').write_text(json.dumps(result,indent=2),encoding='utf-8')
+          lines=['SE3 EXACT MOD MANIFEST','='*100]
+          lines += result['factorio_version_lines']
+          lines += ['',f'external_mod_count={len(external)}','']
+          for name,version in result['external_mods'].items():
+              lines.append(f'{name}\t{version}\t{name}_{version}.zip')
+          pathlib.Path('published/MOD_MANIFEST.txt').write_text('\n'.join(lines),encoding='utf-8')
+          # Extra progression/context hits from the runtime log.
+          patterns=('Loading map','Map version','Loading script.dat','space-exploration','Krastorio','Nauvis','Orbit','rocket','science','surface','save')
+          hit_lines=[]
+          for line in text.splitlines():
+              low=line.lower()
+              if any(x.lower() in low for x in patterns):
+                  hit_lines.append(line)
+          pathlib.Path('published/CONTEXT_HITS.txt').write_text('\n'.join(hit_lines),encoding='utf-8')
+          print('\n'.join(lines))
+          PY
+
+      - name: Publish manifest
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-se3-mod-manifest
+          mkdir tmp-se-se3-mod-manifest
+          cp -a published/. tmp-se-se3-mod-manifest/
+          git add -f tmp-se-se3-mod-manifest
+          git commit --allow-empty -m 'Publish SE3 exact mod manifest'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
