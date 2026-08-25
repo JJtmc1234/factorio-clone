@@ -1,0 +1,188 @@
+name: Temporary SE parser fetch and candidate decode
+
+on:
+  push:
+    branches: [tmp-se-parser-fetch-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-parser-fetch-result-20260825
+
+jobs:
+  decode:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch parser and decode public candidate
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work published/parser published/SpaceE-Stuck
+
+          python3 -m pip install --quiet --upgrade gdown construct hornwitser.factorio_tools==0.0.7
+          python3 -m pip download --quiet --no-deps --dest published/parser hornwitser.factorio_tools==0.0.7
+
+          python3 - <<'PY'
+          import importlib.metadata as md
+          import json, pathlib, shutil
+          import hornwitser.factorio_tools as package
+          root = pathlib.Path(package.__file__).resolve().parent
+          shutil.copytree(root, pathlib.Path('published/parser/package_source'), dirs_exist_ok=True)
+          meta = {
+              'distribution_version': md.version('hornwitser.factorio_tools'),
+              'package_root': str(root),
+              'files': sorted(str(p.relative_to(root)) for p in root.rglob('*') if p.is_file()),
+          }
+          pathlib.Path('published/parser/metadata.json').write_text(json.dumps(meta, indent=2))
+          PY
+
+          gdown --no-cookies -O work/SpaceE-Stuck.zip 1BFktsFpRaH8N5IHgbbquS9YHyNXClQxr
+
+          python3 - <<'PY'
+          import json, pathlib, subprocess, zipfile, traceback
+          P = pathlib.Path
+          out = P('published/SpaceE-Stuck')
+          rec = {}
+          try:
+              save = P('work/SpaceE-Stuck.zip')
+              with zipfile.ZipFile(save) as z:
+                  rec['zip_bytes'] = save.stat().st_size
+                  rec['zip_entries'] = len(z.namelist())
+                  script_name = next(n for n in z.namelist() if n.endswith('/script.dat') or n == 'script.dat')
+                  level_init_name = next(n for n in z.namelist() if n.endswith('/level-init.dat') or n == 'level-init.dat')
+                  script = P('work/SpaceE-Stuck.script.dat')
+                  script.write_bytes(z.read(script_name))
+                  level_init = P('work/SpaceE-Stuck.level-init.dat')
+                  level_init.write_bytes(z.read(level_init_name))
+                  rec['script_name'] = script_name
+                  rec['script_bytes'] = script.stat().st_size
+                  rec['level_init_name'] = level_init_name
+                  rec['level_init_bytes'] = level_init.stat().st_size
+
+              parsed = P('work/SpaceE-Stuck.script.json')
+              proc = subprocess.run([
+                  'python3', '-m', 'hornwitser.factorio_tools', 'dat2json',
+                  '--input-format', 'script', '-i', str(script), '-o', str(parsed)
+              ], text=True, capture_output=True, timeout=1800)
+              rec['decoder_returncode'] = proc.returncode
+              rec['decoder_stdout'] = proc.stdout[-8000:]
+              rec['decoder_stderr'] = proc.stderr[-12000:]
+              if proc.returncode != 0 or not parsed.exists():
+                  raise RuntimeError('dat2json failed')
+
+              rec['json_bytes'] = parsed.stat().st_size
+              data = json.loads(parsed.read_text())
+              rec['top_type'] = type(data).__name__
+              rec['top_keys'] = list(data)[:100] if isinstance(data, dict) else None
+
+              mods = data.get('data', []) if isinstance(data, dict) else []
+              rec['mod_count'] = len(mods) if isinstance(mods, list) else None
+              rec['mod_names'] = [m.get('name') for m in mods if isinstance(m, dict)]
+
+              targets = {}
+              for m in mods if isinstance(mods, list) else []:
+                  if not isinstance(m, dict):
+                      continue
+                  name = str(m.get('name', ''))
+                  low = name.lower()
+                  if 'space-exploration' in low or 'milestone' in low:
+                      targets[name] = m
+              rec['target_mods'] = list(targets)
+
+              terms = (
+                  'se-rocket-science-pack', 'rocket-science', 'rocket science',
+                  'se-rocket-launch-pad', 'cargo rocket', 'launch pad',
+                  'nauvis orbit', 'orbit', 'satellite', 'surface', 'zone',
+                  'spaceship', 'landing pad', 'rocket section', 'milestone'
+              )
+              key_terms = (
+                  'rocket', 'science', 'launch', 'landing', 'orbit', 'satellite',
+                  'surface', 'zone', 'spaceship', 'milestone', 'visited', 'discovered'
+              )
+              hits = []
+              stats = {'nodes': 0, 'dicts': 0, 'lists': 0, 'scalars': 0, 'max_depth': 0}
+
+              def scalar_preview(v):
+                  if isinstance(v, str):
+                      return v[:1000]
+                  if isinstance(v, (int, float, bool)) or v is None:
+                      return v
+                  return None
+
+              def walk(v, path, depth=0):
+                  stats['nodes'] += 1
+                  stats['max_depth'] = max(stats['max_depth'], depth)
+                  if len(hits) >= 100000 or depth > 80:
+                      return
+                  if isinstance(v, dict):
+                      stats['dicts'] += 1
+                      for k, x in v.items():
+                          p2 = path + [str(k)]
+                          kl = str(k).lower()
+                          if any(t in kl for t in key_terms):
+                              h = {'path': '/'.join(p2), 'match': 'key', 'type': type(x).__name__}
+                              if isinstance(x, (str, int, float, bool)) or x is None:
+                                  h['value'] = scalar_preview(x)
+                              elif hasattr(x, '__len__'):
+                                  h['length'] = len(x)
+                              hits.append(h)
+                          walk(x, p2, depth + 1)
+                  elif isinstance(v, list):
+                      stats['lists'] += 1
+                      for i, x in enumerate(v):
+                          walk(x, path + [str(i)], depth + 1)
+                  else:
+                      stats['scalars'] += 1
+                      if isinstance(v, str):
+                          vl = v.lower()
+                          matching = [t for t in terms if t in vl]
+                          if matching:
+                              hits.append({
+                                  'path': '/'.join(path), 'match': 'value',
+                                  'terms': matching, 'type': 'str', 'value': v[:2000]
+                              })
+
+              for name, root in targets.items():
+                  walk(root, [name])
+
+              rec['walk_stats'] = stats
+              rec['hit_count'] = len(hits)
+              (out / 'keyword-hits.json').write_text(json.dumps(hits, indent=2))
+
+              # Preserve shallow shape of each target root without flooding the result branch.
+              def shape(v, depth=0):
+                  if depth >= 5:
+                      return {'type': type(v).__name__, 'length': len(v) if hasattr(v, '__len__') else None}
+                  if isinstance(v, dict):
+                      return {str(k): shape(x, depth + 1) for k, x in list(v.items())[:500]}
+                  if isinstance(v, list):
+                      return [shape(x, depth + 1) for x in v[:100]]
+                  return scalar_preview(v)
+              (out / 'target-shapes.json').write_text(json.dumps({k: shape(v) for k, v in targets.items()}, indent=2))
+
+          except Exception as e:
+              rec['error'] = repr(e)
+              rec['traceback'] = traceback.format_exc()
+          (out / 'summary.json').write_text(json.dumps(rec, indent=2))
+          PY
+
+      - name: Publish temporary results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-parser-fetch
+          mkdir tmp-se-parser-fetch
+          cp -a published/. tmp-se-parser-fetch/
+          git add -f tmp-se-parser-fetch
+          git commit -m 'Fetch Factorio 2.0 parser and decode SpaceE-Stuck'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
