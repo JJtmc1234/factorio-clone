@@ -1,0 +1,1834 @@
+[
+  {
+    "repo": "A-iCan/AiCan_2.0",
+    "number": 216,
+    "url": "https://github.com/A-iCan/AiCan_2.0/issues/216",
+    "title": "BUS Protocol Loop: Automated Coordination, Evidence Monitoring, Scientific Summary",
+    "text_sources": 2001,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "A-iCan/AiCan_2.0",
+    "number": 525,
+    "url": "https://github.com/A-iCan/AiCan_2.0/issues/525",
+    "title": "Team Bus (Issue #216 Rotation) - Coordination SSOT",
+    "text_sources": 2001,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Anuken/Mindustry-Suggestions",
+    "number": 6316,
+    "url": "https://github.com/Anuken/Mindustry-Suggestions/issues/6316",
+    "title": "No Landing Pads Challenge",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "AtomChen0425/Global_Trends",
+    "number": 155,
+    "url": "https://github.com/AtomChen0425/Global_Trends/issues/155",
+    "title": "\ud83c\udf10 Global Tech Briefing - 2026-07-22",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "AuraFrameFxDev/A_AIAOSPOS_PROJECT-REGenesis",
+    "number": 11,
+    "url": "https://github.com/AuraFrameFxDev/A_AIAOSPOS_PROJECT-REGenesis/issues/11",
+    "title": "GoogleNoteBookLm",
+    "text_sources": 52,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 617,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/617",
+    "title": "Non-recoverable error (exporting ingredients to constant combinator in SE)",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 623,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/623",
+    "title": "Linearly dependent recipes",
+    "text_sources": 9,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 626,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/626",
+    "title": "Crash on load without Quality mod",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 657,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/657",
+    "title": "crash when opening factory.",
+    "text_sources": 3,
+    "candidate_hits": 3
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 661,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/661",
+    "title": "catalyst does not follow the recipe (space exploration holmium)",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 662,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/662",
+    "title": "Error after updating to 2.0",
+    "text_sources": 11,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 668,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/668",
+    "title": "Support the new API feature related to recipe categories",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 673,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/673",
+    "title": "Trying to repair old factory floors crashes game",
+    "text_sources": 4,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 674,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/674",
+    "title": "Temperature not fully configured on repaired floor",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 698,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/698",
+    "title": "inconsistent \"linearly dependent recipes\" detection",
+    "text_sources": 15,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 711,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/711",
+    "title": "Crash in very complicated SE recipe",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 712,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/712",
+    "title": "Efficieny modules in beacons affect recipes that don't allow efficiency",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ClaudeMetz/FactoryPlanner",
+    "number": 832,
+    "url": "https://github.com/ClaudeMetz/FactoryPlanner/issues/832",
+    "title": "Implement integration for SE's scripted resource generation",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "DanielKote/Foreman2",
+    "number": 154,
+    "url": "https://github.com/DanielKote/Foreman2/issues/154",
+    "title": "Foreman2 fails to export when importing a large number of mods (~140) with error: \"possible mod conflict detected\"",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 359,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/359",
+    "title": "[Regenerate Terrain] Error running on Vulcanus",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 360,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/360",
+    "title": "Robot attrition selects the wrong recipe from the flying-robot-frame signal",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 361,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/361",
+    "title": "[Big Mining Drill] Crash on start-up",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 362,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/362",
+    "title": "[AAI Containers and Warehouses] Conflict from Schall Minor Tweaks",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 363,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/363",
+    "title": "game start crashing due to this",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 364,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/364",
+    "title": "[AAI: Loaders] Krastorio 2 compatibility",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 365,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/365",
+    "title": "[AAI Warden] Asteroid warning",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 366,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/366",
+    "title": "AAI Loaders, expensive version is not stacking?",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 367,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/367",
+    "title": "[Equipment Gantry 0.2.3] Quality of vehicle is ignored and is then duplicated",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 368,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/368",
+    "title": "Alien Biomes disables Shotgun Damage to All Trees ( vanilla included )",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 369,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/369",
+    "title": "Error while running event space-exploration::on_gui_opened",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 370,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/370",
+    "title": "Random Crash when I accessed my inventory while in a car.",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 371,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/371",
+    "title": "Rocket and nuclear plant fuel disappears from the backpack",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 372,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/372",
+    "title": "[SE] Incompatibility with Elevated Rail Recolor",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 373,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/373",
+    "title": "Delivery cannon resets freshness when delivering spoilage payload",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 374,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/374",
+    "title": "processed-chemical is not added correctly to entity from other mod that accept chemical",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 375,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/375",
+    "title": "Game crashes when placing down satellite rocket silo",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 376,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/376",
+    "title": "Space Elevator placement issue",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 377,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/377",
+    "title": "SE 0.7.36 Crash: Lost the stashed character",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 378,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/378",
+    "title": "SE 0.76 Lockup on space elevator if second locomotive is occupied but has no fuel",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 379,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/379",
+    "title": "Modded ores don't spawn on SE planets",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 380,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/380",
+    "title": "Bio upgrades missing Deep Space Science Pack 1 dependency in tech tree",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 381,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/381",
+    "title": "Iridite incorrectly shows as requiring 0.0x sulfuric acid per mining operation",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 382,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/382",
+    "title": "AAI Industry K2SO compatibility",
+    "text_sources": 7,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 384,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/384",
+    "title": "AAI Loaders proper K2SO integration patch",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 385,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/385",
+    "title": "Unable to generate Asteroid belt",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 386,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/386",
+    "title": "Crash when wanting to see surface while sitting in a space capsule",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 387,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/387",
+    "title": "Space Exploration Utility Science textures default to base game yellow when in item form on belts or on ground",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 388,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/388",
+    "title": "Crash when open space capsule after placing it in orbit",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 389,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/389",
+    "title": "Normal Rail Ramps cannot be placed on lab tiles when in a editor extensions world",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 390,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/390",
+    "title": "Jetpack Crash for Pyanodons",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 391,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/391",
+    "title": "AAI Programmable Vehicles, error using Aircraft mod with Aircraft Realism present",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 392,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/392",
+    "title": "Migration to 0.7 migration crash and a workaround",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 393,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/393",
+    "title": "[0.7.56] can not listen to creation events for space elevators",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 394,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/394",
+    "title": "Enabling a mod setting of Alien Biomes prevents the mod from loading",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 395,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/395",
+    "title": "(Regenerate Terrain) No new biomes appear, and the generation settings do not change.",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "EarendelDevelopers/factorio-mods",
+    "number": 396,
+    "url": "https://github.com/EarendelDevelopers/factorio-mods/issues/396",
+    "title": "[Warden] Warden control scripts do not target PlanetsLib variants of the Warden",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "GTNewHorizons/GT-New-Horizons-Modpack",
+    "number": 20227,
+    "url": "https://github.com/GTNewHorizons/GT-New-Horizons-Modpack/issues/20227",
+    "title": "Endgame Suggestion : A special \"Tesseract\" system (could be tweaked around)",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "JJtmc1234/JJtorio",
+    "number": 3,
+    "url": "https://github.com/JJtmc1234/JJtorio/issues/3",
+    "title": "Mini-report & presentation after each project",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "KBVE/kbve",
+    "number": 11138,
+    "url": "https://github.com/KBVE/kbve/issues/11138",
+    "title": "[Plan] Agones-managed Factorio dedicated server",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "OmniBlocks/monorepo",
+    "number": 552,
+    "url": "https://github.com/OmniBlocks/monorepo/issues/552",
+    "title": "General Discussion Issue 3",
+    "text_sources": 936,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "OmniBlocks/scratch-gui",
+    "number": 549,
+    "url": "https://github.com/OmniBlocks/scratch-gui/issues/549",
+    "title": "pr linting not working",
+    "text_sources": 22,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Polka37/Krastorio2-spaced-out",
+    "number": 105,
+    "url": "https://github.com/Polka37/Krastorio2-spaced-out/issues/105",
+    "title": "Muluna Compatiblity Issues",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Polka37/Krastorio2-spaced-out",
+    "number": 98,
+    "url": "https://github.com/Polka37/Krastorio2-spaced-out/issues/98",
+    "title": "Loading error with muluna",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Quezler/glutenfree",
+    "number": 58,
+    "url": "https://github.com/Quezler/glutenfree/issues/58",
+    "title": "[se-cargo-rocket-construction-helper] Error in silo.lua:53: attempt to index field 'value' (a nil value)",
+    "text_sources": 1,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "Quezler/glutenfree",
+    "number": 63,
+    "url": "https://github.com/Quezler/glutenfree/issues/63",
+    "title": "[elevated-pipes] Compatibility with Krastorio 2, specifically with steel pipes",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Quix0r/AbandonedRuins",
+    "number": 3,
+    "url": "https://github.com/Quix0r/AbandonedRuins/issues/3",
+    "title": "Space Explotation .7.x incompatability",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ReikaKalseki/Reika_FactorioMods_Issues",
+    "number": 458,
+    "url": "https://github.com/ReikaKalseki/Reika_FactorioMods_Issues/issues/458",
+    "title": "Space Epxloration incompatibility",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "SWeini/sw-rates",
+    "number": 18,
+    "url": "https://github.com/SWeini/sw-rates/issues/18",
+    "title": "Crash when used on Chemical Plant with SE 0.7",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "SYNCC-IN/hyperscanning-signal-analysis",
+    "number": 60,
+    "url": "https://github.com/SYNCC-IN/hyperscanning-signal-analysis/issues/60",
+    "title": "Exploratory spectral parameterization of dyadic EEG",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Syen-ce/Planetaris-Unbounded",
+    "number": 15,
+    "url": "https://github.com/Syen-ce/Planetaris-Unbounded/issues/15",
+    "title": "I encountered a bug",
+    "text_sources": 6,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "TheEckelmonster/configurable-nukes",
+    "number": 71,
+    "url": "https://github.com/TheEckelmonster/configurable-nukes/issues/71",
+    "title": "Starup crash error.",
+    "text_sources": 8,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "VLSIDA/OpenRAM",
+    "number": 286,
+    "url": "https://github.com/VLSIDA/OpenRAM/issues/286",
+    "title": "Can mock ASAP7 .lib and .lef files be generated?",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Wiwiweb/FactorioSpaceExplorationCMECombinator",
+    "number": 2,
+    "url": "https://github.com/Wiwiweb/FactorioSpaceExplorationCMECombinator/issues/2",
+    "title": "Compatibility with Factorio 2.0 and updated Space Exploration mod",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Xman1109/Atomic_Overhaul",
+    "number": 77,
+    "url": "https://github.com/Xman1109/Atomic_Overhaul/issues/77",
+    "title": "[Game Crash]",
+    "text_sources": 1,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "Xman1109/Atomic_Overhaul",
+    "number": 78,
+    "url": "https://github.com/Xman1109/Atomic_Overhaul/issues/78",
+    "title": "[Game Crash]",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "Yafc-CE/yafc-ce",
+    "number": 507,
+    "url": "https://github.com/Yafc-CE/yafc-ce/issues/507",
+    "title": "Space Exploration \"item with same key has already been added\")",
+    "text_sources": 3,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "Yafc-CE/yafc-ce",
+    "number": 695,
+    "url": "https://github.com/Yafc-CE/yafc-ce/issues/695",
+    "title": "YAFC not respecting data.script_enabled ores/resources (current source build)",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "aboucher51/metal-and-stars",
+    "number": 37,
+    "url": "https://github.com/aboucher51/metal-and-stars/issues/37",
+    "title": "Muluna compatibility: space science locked behind Advanced Space Research",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "acoliver/uqm",
+    "number": 2,
+    "url": "https://github.com/acoliver/uqm/issues/2",
+    "title": "[META] Rust Modernization Project - Master Tracking Issue",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "acoliver/uqm",
+    "number": 6,
+    "url": "https://github.com/acoliver/uqm/issues/6",
+    "title": "Phase 4: Gameplay Systems Modernization - Ships, Planets, Communication, Combat, Super Melee, Save/Load",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "apkasten906/witcherSmartSaveManager",
+    "number": 101,
+    "url": "https://github.com/apkasten906/witcherSmartSaveManager/issues/101",
+    "title": "Phase 2: Intelligent Test Automation & ML Integration",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "atyrode/turret_xp",
+    "number": 55,
+    "url": "https://github.com/atyrode/turret_xp/issues/55",
+    "title": "Replace label display-panel color grid with runtime text rendering",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "az3/factorio-visible-planets-settings",
+    "number": 1,
+    "url": "https://github.com/az3/factorio-visible-planets-settings/issues/1",
+    "title": "Stuck on one image - log",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "briann-git/psychic-octo-train",
+    "number": 25,
+    "url": "https://github.com/briann-git/psychic-octo-train/issues/25",
+    "title": "Iteration 13 Spec",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "coilyco-flight-deck/infrastructure",
+    "number": 77,
+    "url": "https://github.com/coilyco-flight-deck/infrastructure/issues/77",
+    "title": "Host Factorio dedicated server in homelab",
+    "text_sources": 11,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "coilyco-flight-deck/infrastructure",
+    "number": 92,
+    "url": "https://github.com/coilyco-flight-deck/infrastructure/issues/92",
+    "title": "factorio: install existing mod stack from mod portal (short-term)",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "danielbrauer/DiscoScience",
+    "number": 19,
+    "url": "https://github.com/danielbrauer/DiscoScience/issues/19",
+    "title": "Crash",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "diqp2001/base_infrastructure",
+    "number": 9,
+    "url": "https://github.com/diqp2001/base_infrastructure/issues/9",
+    "title": "create new backtesting tool",
+    "text_sources": 24,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "endless-sky/endless-sky",
+    "number": 12149,
+    "url": "https://github.com/endless-sky/endless-sky/issues/12149",
+    "title": "Cannot buy local map without a ship",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "eng-cc/oasis7",
+    "number": 2785,
+    "url": "https://github.com/eng-cc/oasis7/issues/2785",
+    "title": "[PM] Clarify final game vision ambiguities",
+    "text_sources": 202,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "facebook/astryx",
+    "number": 958,
+    "url": "https://github.com/facebook/astryx/issues/958",
+    "title": "Edge compensation: deriving spacing/radius/size relationships from visual intent",
+    "text_sources": 18,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "factoriocenter/factorio-admin-command-center",
+    "number": 22,
+    "url": "https://github.com/factoriocenter/factorio-admin-command-center/issues/22",
+    "title": "Entity deep-iron-ore is not autoplacable",
+    "text_sources": 12,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "factoriotools/factorio-docker",
+    "number": 589,
+    "url": "https://github.com/factoriotools/factorio-docker/issues/589",
+    "title": "Space Exploration & Elevated Rails",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "flowersteam/adtool",
+    "number": 15,
+    "url": "https://github.com/flowersteam/adtool/issues/15",
+    "title": "More visual improvement",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "harag-on-steam/se-recycling-extras",
+    "number": 5,
+    "url": "https://github.com/harag-on-steam/se-recycling-extras/issues/5",
+    "title": "Update to 2.0",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "hgschmie/factorio-LogisticTrainNetwork",
+    "number": 20,
+    "url": "https://github.com/hgschmie/factorio-LogisticTrainNetwork/issues/20",
+    "title": "Possible misuse of code against license terms",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "hgschmie/factorio-LogisticTrainNetwork",
+    "number": 35,
+    "url": "https://github.com/hgschmie/factorio-LogisticTrainNetwork/issues/35",
+    "title": "Issue with Factorio 2.0.69 and SE - LTN 2.4.2 - Stations with the same name",
+    "text_sources": 7,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "hgschmie/factorio-LogisticTrainNetwork",
+    "number": 36,
+    "url": "https://github.com/hgschmie/factorio-LogisticTrainNetwork/issues/36",
+    "title": "2.5.0 bug",
+    "text_sources": 10,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "hgschmie/factorio-LogisticTrainNetwork",
+    "number": 60,
+    "url": "https://github.com/hgschmie/factorio-LogisticTrainNetwork/issues/60",
+    "title": "Temporary stops are only created on the same surface as depo",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "hgschmie/factorio-LogisticTrainNetwork",
+    "number": 67,
+    "url": "https://github.com/hgschmie/factorio-LogisticTrainNetwork/issues/67",
+    "title": "Fluid trains don't make space elevator stops due to fluid_name/fluidIdentifier conflict",
+    "text_sources": 8,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "hgschmie/factorio-miniloader-redux",
+    "number": 28,
+    "url": "https://github.com/hgschmie/factorio-miniloader-redux/issues/28",
+    "title": "Space Exploration 0.7 compatibility",
+    "text_sources": 6,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "hgschmie/factorio-miniloader-redux",
+    "number": 31,
+    "url": "https://github.com/hgschmie/factorio-miniloader-redux/issues/31",
+    "title": "Issue running migration on Space Exploration save game",
+    "text_sources": 5,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "hgschmie/factorio-miniloader-redux",
+    "number": 36,
+    "url": "https://github.com/hgschmie/factorio-miniloader-redux/issues/36",
+    "title": "Express Miniloader Not Working with Multiple Resources",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "izanbard/willsofwords",
+    "number": 53,
+    "url": "https://github.com/izanbard/willsofwords/issues/53",
+    "title": "Word list alignment to search grid for single page puzzles noticed in manuscript",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "jpanther/dectorio",
+    "number": 273,
+    "url": "https://github.com/jpanther/dectorio/issues/273",
+    "title": "Circular dependency when loading with aai industry",
+    "text_sources": 6,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "jqr/power-charger",
+    "number": 1,
+    "url": "https://github.com/jqr/power-charger/issues/1",
+    "title": "crash on Space Exploration",
+    "text_sources": 1,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "justarandomgeek/vscode-factoriomod-debug",
+    "number": 191,
+    "url": "https://github.com/justarandomgeek/vscode-factoriomod-debug/issues/191",
+    "title": "[2.0.9] Debug adapter hookData=true results in mod failing to load at data stage",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "mamoniot/project-cybersyn",
+    "number": 317,
+    "url": "https://github.com/mamoniot/project-cybersyn/issues/317",
+    "title": "[Compatibility Request] Seeking guidance on a generic cross-surface scheduling hook for an AI-developed portal mod",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "modded-factorio/bobsmods",
+    "number": 555,
+    "url": "https://github.com/modded-factorio/bobsmods/issues/555",
+    "title": "Mod Portal descriptions not updated",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "mrilikecoding/llm-orc",
+    "number": 24,
+    "url": "https://github.com/mrilikecoding/llm-orc/issues/24",
+    "title": "Add script-based model/agent support",
+    "text_sources": 8,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "municipaltoolawsuit/triggertonesthird",
+    "number": 2,
+    "url": "https://github.com/municipaltoolawsuit/triggertonesthird/issues/2",
+    "title": "Playlist Creator for SanDisk Sansa View \u2013 User Settings Not Saving Properly",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "nenshoukei/disco-science-lite",
+    "number": 10,
+    "url": "https://github.com/nenshoukei/disco-science-lite/issues/10",
+    "title": "Add Shattered Planet mod support",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "nicholasgower/planet-muluna",
+    "number": 263,
+    "url": "https://github.com/nicholasgower/planet-muluna/issues/263",
+    "title": "Bug With Mod Hot Metal",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "nicholasgower/planet-muluna",
+    "number": 319,
+    "url": "https://github.com/nicholasgower/planet-muluna/issues/319",
+    "title": "Cannot craft Exploration Science on Assembly Machine 3 with Assembly-Reskin mod enabled",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "nicholasgower/planet-muluna",
+    "number": 419,
+    "url": "https://github.com/nicholasgower/planet-muluna/issues/419",
+    "title": "Krastorio 2 Spaced out Research server doesn't accept Exploration tech card recipe on Muluna",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 188,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/188",
+    "title": "copying a building doesnt copy the stuff inside",
+    "text_sources": 4,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 189,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/189",
+    "title": "Raise `script_raised_teleported` when entering buildings",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 190,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/190",
+    "title": "error with bob's logistics and factorissimo 3",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 192,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/192",
+    "title": "Fulgara",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 193,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/193",
+    "title": "Crash on load",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 194,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/194",
+    "title": "Cerys compatibility issue,",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 195,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/195",
+    "title": "Can't get inside new placed factories",
+    "text_sources": 3,
+    "candidate_hits": 5
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 196,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/196",
+    "title": "Disable GUI element in top-left corner?",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 197,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/197",
+    "title": "Quality belts doesnt work",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 198,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/198",
+    "title": "blueprints of buildings not working correctly",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 199,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/199",
+    "title": "Elevated pipes support",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 200,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/200",
+    "title": "not able to enter the factory after i pick it up and  place it again with something in it",
+    "text_sources": 3,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 201,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/201",
+    "title": "Edge case -- Repair bots can't get inside",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 202,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/202",
+    "title": "Just to say.....THANKS!",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 203,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/203",
+    "title": "Crash on entity died",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 204,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/204",
+    "title": "Can't get inside in factory factories or place working ones.",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 205,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/205",
+    "title": "Global Power Network compatibility",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 206,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/206",
+    "title": "Fluid connections stop working",
+    "text_sources": 4,
+    "candidate_hits": 3
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 207,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/207",
+    "title": "Modular Life Crash",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 208,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/208",
+    "title": "Incompatibility with 2.0.60",
+    "text_sources": 10,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 209,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/209",
+    "title": "The entire factory surface is buildable as if it were a normal world",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 210,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/210",
+    "title": "Factory floors in \"drop to a planet\"",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 211,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/211",
+    "title": "Factory Building Dissapear.",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 212,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/212",
+    "title": "Graphical bug with stacked belts.",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 213,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/213",
+    "title": "Add option for free alt-view",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 214,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/214",
+    "title": "Doesnt load up",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 215,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/215",
+    "title": "Mapoverlay is floating up and down",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 217,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/217",
+    "title": "Crashes upon picking up building",
+    "text_sources": 1,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 218,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/218",
+    "title": "Unable to unlock Entry Technology",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 219,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/219",
+    "title": "Crash when research is finished",
+    "text_sources": 3,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 220,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/220",
+    "title": "Please return the old factory version, the new one is inconvenient.",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 221,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/221",
+    "title": "Random crush went into the building",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 222,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/222",
+    "title": "Working even though it shouldn't",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 223,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/223",
+    "title": "Dissaapearing bots",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 224,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/224",
+    "title": "Destroy factory from other mod or add planet whitelist/blacklist where factories are allowed",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 225,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/225",
+    "title": "Unable to leave factory building placed in Factorio 1.1 save",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 226,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/226",
+    "title": "Factorissimo crash on entity died with quantum fabricator",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 227,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/227",
+    "title": "Factorissimo prevents building solar panels on Planet Vesta",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 228,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/228",
+    "title": "Cannot paste blueprint from different game.",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 229,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/229",
+    "title": "Items from factory chest periodically sent outside",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 233,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/233",
+    "title": "Error running event.",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 234,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/234",
+    "title": "Error when placing Factorissimo building in Blueprint Sandbox",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 235,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/235",
+    "title": "Multiplay Crash",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 236,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/236",
+    "title": "[BUG] Cant Place a Factorissimo Building on a Space Exploration Planet (not Nauvis)",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 237,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/237",
+    "title": "Cut / Control + X to move building doesnt seem to work at all.",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 238,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/238",
+    "title": "Deleting a huge box inside Factorissimo causes a tremendous load.",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 239,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/239",
+    "title": "[v3.10.3 / Factorio 2.0.66] Factory on space platform cannot connect to external power grid",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 240,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/240",
+    "title": "Biters destroyed Main Factory Building",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 241,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/241",
+    "title": "Conflict with Bulk Rail Loader 2.0",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 242,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/242",
+    "title": "Random Skript Crash",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 243,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/243",
+    "title": "space factories 1 2 3 still not placeable on spaceship floor",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 244,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/244",
+    "title": "Space Factories can be placed in Space Exploration but space recipes are not selectable",
+    "text_sources": 5,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 245,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/245",
+    "title": "Can't exit factory after entering",
+    "text_sources": 4,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 247,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/247",
+    "title": "how im i supposed to place packed factories in space? and why can't I use factory circuit connectors in space?",
+    "text_sources": 6,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 248,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/248",
+    "title": "Rotating a blueprint with a factory building does not rotate the contents of the factory building",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 249,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/249",
+    "title": "Broken belt connections",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 250,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/250",
+    "title": "Remote view edit does not work with Space Exploration",
+    "text_sources": 6,
+    "candidate_hits": 3
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 251,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/251",
+    "title": "Factory buildings inside factory buildings create a new surface called nauvis-factory-floor-factory-floor",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 254,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/254",
+    "title": "construction bots looping depossiting and removing items from Factorissimo factory.",
+    "text_sources": 8,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 255,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/255",
+    "title": "incompatable with  Warptorio garedn",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 256,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/256",
+    "title": "Can not plant Yumako Seeds in Greenhouse on surface \"factory floor 0\" on Gleba: Pressure to low",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 258,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/258",
+    "title": "Bioluminescent Tenebris structures can't be placed in nested factory",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 259,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/259",
+    "title": "\"Space Factory (packed) Cannot Be Placed and stays in cargo forever\"",
+    "text_sources": 3,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 260,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/260",
+    "title": "Desync issue",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 261,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/261",
+    "title": "Not enough empty roboport slots",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 262,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/262",
+    "title": "Crash on building Space Factory 3",
+    "text_sources": 2,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 264,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/264",
+    "title": "Error",
+    "text_sources": 5,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 265,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/265",
+    "title": "When I try to place a Factory the game crashes",
+    "text_sources": 4,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 267,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/267",
+    "title": "Error on Maraxis",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 268,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/268",
+    "title": "This won't work here! This factory building is designed for Factory floor 1. Was instead Nauvis factory floor.",
+    "text_sources": 4,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 269,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/269",
+    "title": "More Error",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 270,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/270",
+    "title": "Compatibility with Carna mod",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 271,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/271",
+    "title": "Cannot enter factories after migration to Factorio 2/Factorissimo 3",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 272,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/272",
+    "title": "Connection research not respected",
+    "text_sources": 1,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 273,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/273",
+    "title": "Conflict with Everything on Nauvis",
+    "text_sources": 1,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 274,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/274",
+    "title": "Unable to place packed factory on other surfaces",
+    "text_sources": 6,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 275,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/275",
+    "title": "Conflict with \"The Factory Must Grow\"",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 276,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/276",
+    "title": "Aquilo factories concrete floor can be removed, revealing Nauvis ocean",
+    "text_sources": 1,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 277,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/277",
+    "title": "conflict with \"everything on navis\"",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 278,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/278",
+    "title": "2.1 Update ?",
+    "text_sources": 6,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 279,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/279",
+    "title": "Mod recipes disappeared from crafting options.",
+    "text_sources": 2,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 280,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/280",
+    "title": "Destroyed Space Factories are still on the floor",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 281,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/281",
+    "title": "Negative pollution",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 282,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/282",
+    "title": "Crash on rotating underground belt inside factory",
+    "text_sources": 3,
+    "candidate_hits": 2
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 283,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/283",
+    "title": "Space Factory (packed) Cannot Be Placed and stays in cargo or construction chest  forever",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 284,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/284",
+    "title": "Allow tile placement on factory building entrance",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 285,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/285",
+    "title": "Ground recognition bug of orbital factories",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 286,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/286",
+    "title": "Bug On load version factorio experimental",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 287,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/287",
+    "title": "Error while loading ambient-sound prototype",
+    "text_sources": 7,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/factorissimo-2-notnotmelon",
+    "number": 289,
+    "url": "https://github.com/notnotmelon/factorissimo-2-notnotmelon/issues/289",
+    "title": "ver 3.12.2 crash when game loading, factorio 2.1.14.87180",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "notnotmelon/maraxsis",
+    "number": 344,
+    "url": "https://github.com/notnotmelon/maraxsis/issues/344",
+    "title": "Compatibility issues with Promethium is Quality",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "oppia/oppia",
+    "number": 23667,
+    "url": "https://github.com/oppia/oppia/issues/23667",
+    "title": "[BUG]: Typographical issue - Missing space after period in Oppia welcome message",
+    "text_sources": 28,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "pabienko/Exteros-QoL-System",
+    "number": 2,
+    "url": "https://github.com/pabienko/Exteros-QoL-System/issues/2",
+    "title": "[\ud83d\udd34UNFIXABLE\ud83d\udd34] Error ClientMultiplayerManager.cpp:86: MultiplayerManager failed: \"\" + multiplayer.script-event-mismatch + \"",
+    "text_sources": 4,
+    "candidate_hits": 1
+  },
+  {
+    "repo": "protocol-1903/loader-utils",
+    "number": 5,
+    "url": "https://github.com/protocol-1903/loader-utils/issues/5",
+    "title": "space exploration buildable surfaces",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "protocol-1903/no-pipe-touching",
+    "number": 21,
+    "url": "https://github.com/protocol-1903/no-pipe-touching/issues/21",
+    "title": "Crash: Data-final-fixes.lua:173: bad argument",
+    "text_sources": 7,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "protocol-1903/parallel-piping",
+    "number": 62,
+    "url": "https://github.com/protocol-1903/parallel-piping/issues/62",
+    "title": "Pipes unplaceable with Space Exploration (no tomwub): placeholder collides with its own variant \u2192 refund + find_entities_filtered error",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "rakib06/mini-github",
+    "number": 2,
+    "url": "https://github.com/rakib06/mini-github/issues/2",
+    "title": "Test",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "redruin1/factorio-draftsman",
+    "number": 214,
+    "url": "https://github.com/redruin1/factorio-draftsman/issues/214",
+    "title": "Draftsman should use Factorio's Lua 5.2 instead of regular Lua 5.2",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "rmrresearch/bsse_db",
+    "number": 46,
+    "url": "https://github.com/rmrresearch/bsse_db/issues/46",
+    "title": "Revised Task List",
+    "text_sources": 17,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "rollthecloudinc/hedge",
+    "number": 227,
+    "url": "https://github.com/rollthecloudinc/hedge/issues/227",
+    "title": "Drone2",
+    "text_sources": 35,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "rulehunt/rulehunt",
+    "number": 179,
+    "url": "https://github.com/rulehunt/rulehunt/issues/179",
+    "title": "Integrate foundation models for automatic novelty detection and pattern suggestions",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "ruvnet/ruflo",
+    "number": 821,
+    "url": "https://github.com/ruvnet/ruflo/issues/821",
+    "title": "\ud83d\udcda Claude Flow Skills: Complete Introduction Tutorial New Skill Builder & Flow Skills",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "snivilised/jaywalk",
+    "number": 457,
+    "url": "https://github.com/snivilised/jaywalk/issues/457",
+    "title": "add an easy way to preview known themes",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "stbenjam/skillsaw",
+    "number": 444,
+    "url": "https://github.com/stbenjam/skillsaw/issues/444",
+    "title": "Align skillsaw with Anthropic's Claude 5 context-engineering guidance (gap analysis vs #429)",
+    "text_sources": 4,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "stoatchat/self-hosted",
+    "number": 141,
+    "url": "https://github.com/stoatchat/self-hosted/issues/141",
+    "title": "feature request: Allow connecting to self-hosted instances through the client applications",
+    "text_sources": 35,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "tmancal74/quantarhei",
+    "number": 181,
+    "url": "https://github.com/tmancal74/quantarhei/issues/181",
+    "title": "Tracking: Developer Experience & Packaging improvements",
+    "text_sources": 17,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "tmancal74/quantarhei",
+    "number": 273,
+    "url": "https://github.com/tmancal74/quantarhei/issues/273",
+    "title": "Exploration: API redesign \u2014 responsibility map and design space",
+    "text_sources": 8,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trisiak/factorio-blueprint-editor",
+    "number": 29,
+    "url": "https://github.com/trisiak/factorio-blueprint-editor/issues/29",
+    "title": "Idle-state entity animations (editor-wide extension)",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trisiak/factorio-blueprint-editor",
+    "number": 9,
+    "url": "https://github.com/trisiak/factorio-blueprint-editor/issues/9",
+    "title": "Exporter support for per-pack data generation",
+    "text_sources": 3,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trulsjo/realistic-fusion-refreshed",
+    "number": 59,
+    "url": "https://github.com/trulsjo/realistic-fusion-refreshed/issues/59",
+    "title": "Decide: pin the 2.0 releases, or follow the mods to 2.1?",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trulsjo/realistic-fusion-refreshed",
+    "number": 6,
+    "url": "https://github.com/trulsjo/realistic-fusion-refreshed/issues/6",
+    "title": "Which mods are compatibility targets?",
+    "text_sources": 2,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trulsjo/realistic-fusion-refreshed",
+    "number": 60,
+    "url": "https://github.com/trulsjo/realistic-fusion-refreshed/issues/60",
+    "title": "Bring portal mods into the load-check",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "trulsjo/realistic-fusion-refreshed",
+    "number": 61,
+    "url": "https://github.com/trulsjo/realistic-fusion-refreshed/issues/61",
+    "title": "Coexistence verification across the overhaul mod sets",
+    "text_sources": 1,
+    "candidate_hits": 0
+  },
+  {
+    "repo": "vllm-project/vllm-ascend",
+    "number": 2859,
+    "url": "https://github.com/vllm-project/vllm-ascend/issues/2859",
+    "title": "[Release]: Release checklist for v0.10.2rc1",
+    "text_sources": 8,
+    "candidate_hits": 0
+  }
+]

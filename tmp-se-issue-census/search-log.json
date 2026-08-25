@@ -1,0 +1,56 @@
+[
+  {
+    "query": "\"Space Exploration\" Factorio in:title,body,comments is:issue created:>=2025-04-01",
+    "total_count": 66,
+    "pages": 1,
+    "items_seen": 66
+  },
+  {
+    "query": "\"space-exploration\" Factorio in:title,body,comments is:issue created:>=2025-04-01",
+    "total_count": 66,
+    "pages": 1,
+    "items_seen": 66
+  },
+  {
+    "query": "\"SE 0.7\" Factorio in:title,body,comments is:issue created:>=2025-04-01",
+    "total_count": 6,
+    "pages": 1,
+    "items_seen": 6
+  },
+  {
+    "query": "K2SE Factorio in:title,body,comments is:issue created:>=2025-04-01",
+    "total_count": 3,
+    "pages": 1,
+    "items_seen": 3
+  },
+  {
+    "query": "\"Space Exploration\" \"save file\" in:title,body,comments is:issue created:>=2025-04-01",
+    "total_count": 46,
+    "pages": 1,
+    "items_seen": 46
+  },
+  {
+    "query": "repo:EarendelDevelopers/factorio-mods is:issue created:>=2025-04-01",
+    "total_count": 37,
+    "pages": 1,
+    "items_seen": 37
+  },
+  {
+    "query": "repo:notnotmelon/factorissimo-2-notnotmelon is:issue created:>=2025-04-01",
+    "total_count": 90,
+    "pages": 1,
+    "items_seen": 90
+  },
+  {
+    "query": "repo:ClaudeMetz/FactoryPlanner \"Space Exploration\" is:issue created:>=2025-04-01",
+    "total_count": 10,
+    "pages": 1,
+    "items_seen": 10
+  },
+  {
+    "query": "repo:hgschmie/factorio-miniloader-redux \"Space Exploration\" is:issue created:>=2025-04-01",
+    "total_count": 3,
+    "pages": 1,
+    "items_seen": 3
+  }
+]
