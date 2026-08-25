@@ -1,0 +1,196 @@
+name: Recursive Drive SE audit v2
+
+on:
+  push:
+    branches: [tmp-se-recursive-drive-audit2-20260824]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 110
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file golang-go
+          python3 -m pip install --quiet --upgrade gdown
+          git clone --depth 1 https://github.com/raiguard/fmm.git /tmp/fmm
+          (cd /tmp/fmm && go build -o /tmp/fmm-bin .)
+          gdown --version
+
+      - name: Download, recurse, and classify saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf se-drive-v2
+          mkdir -p se-drive-v2/downloads se-drive-v2/saves se-drive-v2/results/per-save
+
+          cat > /tmp/candidates.tsv <<'EOF'
+          asterixyz_too_early_control	1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq
+          miniloader_modlist_current	1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-
+          miniloader_migration_06146	1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo
+          migration_workaround_0754	1nScbABVE1hugI9Oj5Li6XRotivrJuBsp
+          factorissimo_k2se_268	1vjkxLhfwbmAmB_EA3MEdLSJ5PfK1JYzT
+          signal_transmitter	1Oav4cGy1yDWdb4UdcUyzoKm4-ryBFg1S
+          factorissimo_245	1BFktsFpRaH8N5IHgbbquS9YHyNXClQxr
+          EOF
+
+          : > se-drive-v2/results/downloads.tsv
+          failures=0
+          while IFS=$'\t' read -r name id; do
+            out="se-drive-v2/downloads/${name}.bin"
+            echo "===== $name / $id ====="
+            if timeout 1500 gdown "$id" -O "$out"; then
+              size=$(stat -c %s "$out")
+              sha=$(sha256sum "$out" | cut -d' ' -f1)
+              kind=$(file -b "$out")
+              printf '%s\t%s\t%s\t%s\t%s\n' "$name" "$id" "$size" "$sha" "$kind" | tee -a se-drive-v2/results/downloads.tsv
+            else
+              printf '%s\t%s\tFAILED\n' "$name" "$id" | tee -a se-drive-v2/results/downloads.tsv
+              rm -f "$out"
+              failures=$((failures+1))
+            fi
+          done < /tmp/candidates.tsv
+          echo "download_failures=$failures" | tee se-drive-v2/results/download-status.txt
+
+          cat > /tmp/scan.py <<'PY'
+          from __future__ import annotations
+          import hashlib, io, json, pathlib, re, zipfile
+          from collections import deque
+
+          root = pathlib.Path('se-drive-v2')
+          downloads = root / 'downloads'
+          saves = root / 'saves'
+          results = root / 'results'
+          saves.mkdir(exist_ok=True)
+
+          def safe(s: str) -> str:
+              return re.sub(r'[^A-Za-z0-9_.-]+', '_', s)[:150]
+
+          def roots(names: list[str]) -> list[str]:
+              files = {n.rstrip('/') for n in names if not n.endswith('/')}
+              found = []
+              for n in files:
+                  if not n.endswith('/level-init.dat'):
+                      continue
+                  r = n[:-len('/level-init.dat')]
+                  if f'{r}/script.dat' not in files:
+                      continue
+                  if not any(x == f'{r}/level.dat' or x.startswith(f'{r}/level.dat') for x in files):
+                      continue
+                  found.append(r)
+              return sorted(set(found))
+
+          def repack(zf: zipfile.ZipFile, r: str) -> bytes:
+              out = io.BytesIO()
+              prefix = r + '/'
+              with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=6) as dest:
+                  for info in zf.infolist():
+                      if info.is_dir() or not info.filename.startswith(prefix):
+                          continue
+                      dest.writestr(info.filename, zf.read(info))
+              return out.getvalue()
+
+          queue = deque()
+          for p in downloads.glob('*'):
+              if p.is_file():
+                  queue.append((p.stem, p.name, 0, p.read_bytes()))
+          seen = set(); archives = []; findings = []; errors = []
+          total_nested = 0
+          while queue:
+              source, lineage, depth, blob = queue.popleft()
+              sha = hashlib.sha256(blob).hexdigest()
+              if sha in seen:
+                  continue
+              seen.add(sha)
+              if not zipfile.is_zipfile(io.BytesIO(blob)):
+                  errors.append({'source': source, 'lineage': lineage, 'depth': depth, 'sha256': sha, 'size': len(blob), 'error': 'not_zip'})
+                  continue
+              try:
+                  with zipfile.ZipFile(io.BytesIO(blob)) as zf:
+                      names = zf.namelist(); rs = roots(names)
+                      archives.append({'source': source, 'lineage': lineage, 'depth': depth, 'sha256': sha, 'size': len(blob), 'members': len(names), 'save_roots': rs})
+                      for i, r in enumerate(rs, 1):
+                          own = all(n == r or n.startswith(r + '/') for n in names)
+                          data = blob if len(rs) == 1 and own else repack(zf, r)
+                          ssha = hashlib.sha256(data).hexdigest()
+                          name = f'{safe(source)}__d{depth}__save{i}__{ssha[:12]}.zip'
+                          path = saves / name; path.write_bytes(data)
+                          findings.append({'source': source, 'lineage': lineage, 'depth': depth, 'root': r, 'path': str(path), 'size': len(data), 'sha256': ssha})
+                      if depth < 5:
+                          for info in zf.infolist():
+                              low = info.filename.lower()
+                              if info.is_dir() or info.file_size <= 0 or info.file_size > 800_000_000:
+                                  continue
+                              if not low.endswith(('.zip', '.sav')):
+                                  continue
+                              if total_nested + info.file_size > 3_000_000_000:
+                                  continue
+                              data = zf.read(info); total_nested += len(data)
+                              queue.append((source, lineage + ' -> ' + info.filename, depth + 1, data))
+              except Exception as exc:
+                  errors.append({'source': source, 'lineage': lineage, 'depth': depth, 'sha256': sha, 'error': repr(exc)})
+
+          (results / 'archives.json').write_text(json.dumps(archives, indent=2))
+          (results / 'findings.json').write_text(json.dumps(findings, indent=2))
+          (results / 'scan-errors.json').write_text(json.dumps(errors, indent=2))
+          lines = [f'archives={len(archives)}', f'saves={len(findings)}', f'errors={len(errors)}', '']
+          for f in findings:
+              lines += [f"source={f['source']} depth={f['depth']} size={f['size']} sha256={f['sha256']}", f"lineage={f['lineage']}", f"root={f['root']}", f"path={f['path']}", '']
+          (results / 'SCAN_SUMMARY.txt').write_text('\n'.join(lines))
+          print('\n'.join(lines))
+          PY
+          python3 /tmp/scan.py
+
+          : > se-drive-v2/results/MOD_LISTS.txt
+          : > se-drive-v2/results/STAGE_STRINGS.txt
+          for save in se-drive-v2/saves/*.zip; do
+            [ -e "$save" ] || continue
+            base=$(basename "$save" .zip)
+            outdir="se-drive-v2/results/per-save/$base"
+            mkdir -p "$outdir"
+            echo "===== $base =====" | tee -a se-drive-v2/results/MOD_LISTS.txt
+            FACTORIO_PATH=/tmp/none FACTORIO_MODS_PATH=/tmp/none /tmp/fmm-bin list "$save" > "$outdir/mods.txt" 2> "$outdir/mods.err" || true
+            cat "$outdir/mods.txt" "$outdir/mods.err" | tee -a se-drive-v2/results/MOD_LISTS.txt
+            python3 - "$save" "$outdir" <<'PY'
+          import pathlib, sys, zipfile
+          save = pathlib.Path(sys.argv[1]); out = pathlib.Path(sys.argv[2])
+          with zipfile.ZipFile(save) as z:
+              names = z.namelist()
+              rs = sorted({n[:-len('/level-init.dat')] for n in names if n.endswith('/level-init.dat')})
+              r = rs[0]
+              for rel in ('level-init.dat', 'script.dat'):
+                  (out / rel).write_bytes(z.read(r + '/' + rel))
+          PY
+            {
+              echo "===== $base ====="
+              strings -a -n 4 "$outdir/level-init.dat" | grep -Eai 'space-exploration|Krastorio2|0\.7\.[0-9]+|0\.6\.[0-9]+' | head -200 || true
+              strings -a -n 5 "$outdir/script.dat" | grep -Eai 'se-rocket-science-pack|rocket.science|nauvis orbit|se-rocket-launch-pad|cargo rocket|satellite|astronomic|cryonite|vulcanite|holmium|iridium|naquium|arcosphere' | head -500 || true
+            } > "$outdir/stage.txt"
+            cat "$outdir/stage.txt" >> se-drive-v2/results/STAGE_STRINGS.txt
+          done
+
+          cat se-drive-v2/results/downloads.tsv se-drive-v2/results/SCAN_SUMMARY.txt se-drive-v2/results/MOD_LISTS.txt se-drive-v2/results/STAGE_STRINGS.txt > se-drive-v2/results/SUMMARY.txt
+          sed -n '1,2000p' se-drive-v2/results/SUMMARY.txt
+
+      - name: Publish results
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-recursive-drive-audit2-result-20260824
+          rm -rf tmp-se-recursive-drive-audit2
+          mkdir -p tmp-se-recursive-drive-audit2
+          cp -a se-drive-v2/results/. tmp-se-recursive-drive-audit2/ || true
+          git add -f tmp-se-recursive-drive-audit2
+          git commit -m 'Publish recursive Drive audit v2 results' || true
+          git push --force origin HEAD:refs/heads/tmp-se-recursive-drive-audit2-result-20260824
