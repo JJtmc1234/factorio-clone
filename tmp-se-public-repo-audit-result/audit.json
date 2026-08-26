@@ -1,0 +1,6764 @@
+[
+  {
+    "repo": "VogelEric/Space-Exploration-Save",
+    "branch": "master",
+    "path": "SE_Save.zip",
+    "declared_size": 42759054,
+    "size": 42759054,
+    "sha256": "1519bfd2661d1fb5dfe17236f2554f69d4f81c636572950d1d37eae1836f4bed",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "SE_Save",
+        "has_se": true,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 12,
+          "se-rocket-launch-pad": 2,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 1251,
+          "vulcanite": 1253,
+          "holmium": 1257,
+          "iridium": 1257
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "123.zip",
+    "declared_size": 9793796,
+    "size": 9793796,
+    "sha256": "c3bd192b4888a1344cee3488a750795ecd14bfb28bdcbc6f19368f17887b4697",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "123",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "1234.zip",
+    "declared_size": 25573475,
+    "size": 25573475,
+    "sha256": "ccce0220110413bebde78e2778a693a6be56ba13d66a3dacf59f09f53b93320c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "1234",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "123412.zip",
+    "declared_size": 6359650,
+    "size": 6359650,
+    "sha256": "ba882cd5d143ab1c23875cecf213fe207f67ffe2b9863b054b19ac329d7a81ff",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "123412",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "1234123123124.zip",
+    "declared_size": 20108460,
+    "size": 20108460,
+    "sha256": "b38d78425797af857e874e032caa522aa08cb68dffcd4870d54c61a0bc9dd678",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "1234123123124",
+        "has_se": true,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 3,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "1234123123124423.zip",
+    "declared_size": 14904276,
+    "size": 14904276,
+    "sha256": "1c14020dfc96358227f969575fbbe2b57cbac9611666bdd91010c369d723e774",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "1234123123124423",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1552,
+          "vulcanite": 1603,
+          "holmium": 1601,
+          "iridium": 1539
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "123441241241.zip",
+    "declared_size": 4401749,
+    "size": 4401749,
+    "sha256": "baf5afb6a58dac06db208096ee280011cd026cf3a598de277456ee72f6ecd7e4",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "123441241241",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "Space Exploration 2-1.zip",
+    "declared_size": 14620531,
+    "size": 14620531,
+    "sha256": "5ceb1d31050eb97f8d795138dd6af6e95f185ebce3cdfd32a11ce8d39578a948",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Space Exploration 2-1",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1556,
+          "vulcanite": 1607,
+          "holmium": 1605,
+          "iridium": 1543
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "Space Exploration 2.zip",
+    "declared_size": 16456807,
+    "size": 16456807,
+    "sha256": "2c047ddc8370d851bab4a0bfa38d55b2526ee5cb33b3038e6da0a9d6c0029f96",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Space Exploration 2",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1552,
+          "vulcanite": 1603,
+          "holmium": 1601,
+          "iridium": 1539
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "Space Exploration 2_afterremovemods.zip",
+    "declared_size": 9884276,
+    "size": 9884276,
+    "sha256": "a1219b34a6cf7896a3b080a915d8d7fad3a464c93905b933791cd8bd8155010f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Space Exploration 2_afterremovemods",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1592,
+          "vulcanite": 1643,
+          "holmium": 1641,
+          "iridium": 1579
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "Space Exploration 2_afterremovemods_1.zip",
+    "declared_size": 9884710,
+    "size": 9884710,
+    "sha256": "132d4e878245f8ef77a953b9be7f6942c2a0b8c46f63241dc6aed421a85d5341",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Space Exploration 2_afterremovemods_1",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1592,
+          "vulcanite": 1643,
+          "holmium": 1641,
+          "iridium": 1579
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave-leave.zip",
+    "declared_size": 1827811,
+    "size": 1827811,
+    "sha256": "8f862f28865c11d3d9c57601aa8a2b95bf077f4ea8e9b453099a4d52b2cc1d53",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-leave",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave-prepare-evacuation.zip",
+    "declared_size": 1808688,
+    "size": 1808688,
+    "sha256": "9320559dbecec0fa09572b1e1bdb116ac1e223fa606fd1fb01dd5fe836c1440f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-prepare-evacuation",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave-rebuild.zip",
+    "declared_size": 1876129,
+    "size": 1876129,
+    "sha256": "493bc8a72abe102df0fb8398181541e409362d0dbd7e5c91c31672f7d896e121",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-rebuild",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave-repair-assembler.zip",
+    "declared_size": 1748639,
+    "size": 1748639,
+    "sha256": "7431eaea33d0c0f6d23ac0e8fa89d80b0306fff2d8ea13f4e66b2e7a2f356f27",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-repair-assembler",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave-scan-wreck.zip",
+    "declared_size": 1774932,
+    "size": 1774932,
+    "sha256": "bd976c6b01f66b62911dffffeef35fafd736a9abcd90f1906d8d36c846668c2f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-scan-wreck",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave1.zip",
+    "declared_size": 14734999,
+    "size": 14734999,
+    "sha256": "f3adbc876fd9169a95847b84ef36cc6184052b576a9dd689e2804497c1fa9960",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1552,
+          "vulcanite": 1603,
+          "holmium": 1601,
+          "iridium": 1539
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave2.zip",
+    "declared_size": 14970469,
+    "size": 14970469,
+    "sha256": "cd6ac7ee4063ee12b808ccdce57799e1894d18b5b7f197671e5c0085933eed32",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1552,
+          "vulcanite": 1603,
+          "holmium": 1601,
+          "iridium": 1539
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave3.zip",
+    "declared_size": 14927388,
+    "size": 14927388,
+    "sha256": "7da59b3ec2d4d57da0b4fac56495bfa55a05abe5e3985c7bf3b3c8c06b0c4355",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": true,
+        "near_versions": [
+          "0.6.2"
+        ],
+        "all_06_07_versions": [
+          "0.6.2"
+        ],
+        "terms": {
+          "se-rocket-science-pack": 14,
+          "nauvis orbit": 2,
+          "se-rocket-launch-pad": 74,
+          "cargo rocket": 0,
+          "space-science-pack": 50,
+          "astronomic-science": 85,
+          "cryonite": 1552,
+          "vulcanite": 1603,
+          "holmium": 1601,
+          "iridium": 1539
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "_autosave3123123123213.zip",
+    "declared_size": 8025548,
+    "size": 8025548,
+    "sha256": "d7f5dc20b1aba084481bf1afc9a5796f0481f22305b43c911e1693842c8d488e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3123123123213",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Lexi4/Factorio_Space_Exploration_Saves",
+    "branch": "master",
+    "path": "ilya.zip",
+    "declared_size": 3994323,
+    "size": 3994323,
+    "sha256": "774746f6dcd764b5669668998af8a130920e0d5ea94ed76b96223e98e80fb665",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "ilya",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "HappyMaki/FactorioSaves",
+    "branch": "main",
+    "path": "saves/_autosave1.zip",
+    "declared_size": 14867645,
+    "size": 14867645,
+    "sha256": "f80df095cd419bf442833a8802461e3971f8ad26da35a32f9ed98265b58c88b0",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "HappyMaki/FactorioSaves",
+    "branch": "main",
+    "path": "saves/_autosave2.zip",
+    "declared_size": 15149030,
+    "size": 15149030,
+    "sha256": "33b2dcb5e5a4d153cffc48e1e84b23c9a7936ff6e27fba185d2795567ff49bc6",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "HappyMaki/FactorioSaves",
+    "branch": "main",
+    "path": "saves/_autosave3.zip",
+    "declared_size": 15083699,
+    "size": 15083699,
+    "sha256": "a59e2da20f80489c5116b817a05042ac4ac3c8275840826e79cb82525bd046da",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "HappyMaki/FactorioSaves",
+    "branch": "main",
+    "path": "saves/yumi-world.zip",
+    "declared_size": 15182522,
+    "size": 15182522,
+    "sha256": "c3ba530dc8a86ae9b88391f03397b71495a4f0652a7433c879934857cb8a6029",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "yumi-world",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "BUDHA 10.zip",
+    "declared_size": 14274000,
+    "size": 14274000,
+    "sha256": "0923303cbfadd2ed0656bad1d21e84cbadf4262f9f28b49890ed90d3d5b82992",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "BUDHA 10",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "BUDHA 8.zip",
+    "declared_size": 14531695,
+    "size": 14531695,
+    "sha256": "63f3585d424369bdd39f6dc20ff97427a6f02f802b02b0f324cbb9a548855efe",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "BUDHA 8",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "BUDHA 9.zip",
+    "declared_size": 14245073,
+    "size": 14245073,
+    "sha256": "dcf2d85edc14172cd6c74baaf46ec7eb84e18ec5ff79c9ae7213d3316b2a76f1",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "BUDHA 9",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "_autosave-platform-1s-first-trip-to-vulcanus.zip",
+    "declared_size": 23530138,
+    "size": 23530138,
+    "sha256": "945d345c008e30fed64e8a45d82e5a7505e75d2a99bd42ca35b6e22e123eee9c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-platform-1s-first-trip-to-vulcanus",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "_autosave-platform-3s-first-trip-to-vulcanus.zip",
+    "declared_size": 24150932,
+    "size": 24150932,
+    "sha256": "e6f848136252bbb82005ec782bfa6ce60377a6ead3998809c47a97e48e2b8ff8",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-platform-3s-first-trip-to-vulcanus",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "_autosave1.zip",
+    "declared_size": 34116452,
+    "size": 34116452,
+    "sha256": "7b4c723b03e4c9c4070ac797e4c882c69f01922d9c73f40a9d4b0864eab24f9e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "_autosave2.zip",
+    "declared_size": 34096905,
+    "size": 34096905,
+    "sha256": "6b33b5cdb4035954759ebf59af3effd94bf1fb98225bf233577ebe93ba144861",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "_autosave3.zip",
+    "declared_size": 34162665,
+    "size": 34162665,
+    "sha256": "34e9d5c7892231945e464428749efef7cd7ba9c6d9ae4f19fd91eab1d5b97a26",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 1.zip",
+    "declared_size": 8122831,
+    "size": 8122831,
+    "sha256": "488e56680020e683d623108cc2ee69366ebc39765bf9c03415d6991293af0b10",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 10.zip",
+    "declared_size": 9009673,
+    "size": 9009673,
+    "sha256": "31ffc9717f5625eb98f3a834ba8880b474f6af6a7404e2081cd2f39d6fef976a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 10",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 11.zip",
+    "declared_size": 9341982,
+    "size": 9341982,
+    "sha256": "4fc22fc42368d587ea2311f7a1c92a83d1a0feebdb1a32683085a6bf63941f0a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 11",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 12.zip",
+    "declared_size": 9440973,
+    "size": 9440973,
+    "sha256": "117d645c167494e267b4be50b6e66c1bec7d255704d1dbdb865d716f48692645",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 12",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 13.zip",
+    "declared_size": 9618114,
+    "size": 9618114,
+    "sha256": "c3d8f6d1c320cf2f9414b05069279066082bd6c731b3bfa401fc44925c231c18",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 13",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 14.zip",
+    "declared_size": 11104058,
+    "size": 11104058,
+    "sha256": "0e6b1d34ed602856a95f06c82011bbe6b36e46a06f289d14657f48077fb6c08b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 14",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 15.zip",
+    "declared_size": 11107765,
+    "size": 11107765,
+    "sha256": "6fe95543a4aab8298aa955b5242e732e9752a1850fe837123b3530498b582975",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 15",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 16.zip",
+    "declared_size": 11261243,
+    "size": 11261243,
+    "sha256": "69829e46d234bac1b14689d4c09f77ea79fd911eb114df88191645daed4c4d50",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 16",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 17[item=spidertron].zip",
+    "declared_size": 11424451,
+    "size": 11424451,
+    "sha256": "04960a41d457a5fa38f6e148e895c48daf54ae30ec2e3d5b47a079473d52af18",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 17[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 18[item=roboport].zip",
+    "declared_size": 11868208,
+    "size": 11868208,
+    "sha256": "7d31b4673a57c51dc93ac6863944f18a4d508467344646f579d03c87655a42ee",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 18[item=roboport]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 19[item=artillery-wagon].zip",
+    "declared_size": 11832798,
+    "size": 11832798,
+    "sha256": "a3007bc92bcfa1ef0fc8c4dbce9955c77e9ddd3e8c571a28a639b6b47bffcec7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 19[item=artillery-wagon]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 2.zip",
+    "declared_size": 8485146,
+    "size": 8485146,
+    "sha256": "be7f831d181aae7b0588cd67d102148ed4ca350c349e18b1152c3db3103c6773",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 20[item=artillery-wagon].zip",
+    "declared_size": 11943367,
+    "size": 11943367,
+    "sha256": "a71bc74c3c0f361fcdd8dd66688de76b100ad5b3e0968b7ba1d8854ce12b5e55",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 20[item=artillery-wagon]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 21[item=artillery-wagon].zip",
+    "declared_size": 12071208,
+    "size": 12071208,
+    "sha256": "5c363b31f78344fed8012e07c2086ed9380fe335e3c6af3d2a667cbbfcc3358f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 21[item=artillery-wagon]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 22 [item=spidertron].zip",
+    "declared_size": 12136571,
+    "size": 12136571,
+    "sha256": "d792dd0d5c9bbdfca9dcb3c5ba5895e4a5b83999e49f8dd5e7d612c2c80b8706",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 22 [item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 23[item=spidertron].zip",
+    "declared_size": 12157997,
+    "size": 12157997,
+    "sha256": "828ba717274fd42803fb682986c44c0eb20af8265a649e37f207a3b9a4c875b6",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 23[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 24.zip",
+    "declared_size": 12145714,
+    "size": 12145714,
+    "sha256": "f937f6fcf27252f12e446059b44592e5d273fdd759739435349da9d9d476d900",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 24",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 25 [item=artillery-turret].zip",
+    "declared_size": 11987072,
+    "size": 11987072,
+    "sha256": "fe819a22d5645c5803e5a3b94f88ec5796be2f36726d0e4daf38050418a020fd",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 25 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 26 [item=artillery-turret].zip",
+    "declared_size": 12340914,
+    "size": 12340914,
+    "sha256": "c07a83940f8d5847ba7584832877146b05f6d93608a243d9f57f78928d3034ce",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 26 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 27 [item=artillery-turret].zip",
+    "declared_size": 12088410,
+    "size": 12088410,
+    "sha256": "3708dcac396d72fec15e38ab15d308ee9d0727a3b21f4cd63476f20d5ecd3993",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 27 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 28 [item=artillery-turret].zip",
+    "declared_size": 12384476,
+    "size": 12384476,
+    "sha256": "eb7ca76dea86883817c437f23268cd8147b59e894f086ed1f19f51ddd6d63375",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 28 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 29[item=artillery-turret].zip",
+    "declared_size": 12616868,
+    "size": 12616868,
+    "sha256": "6266c887a24a4954f1dd6d46c95a7926885184821e313c51cd02b539e2fc88ea",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 29[item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 3.zip",
+    "declared_size": 8491832,
+    "size": 8491832,
+    "sha256": "96ec06ddba7411fb3d5dd28b5e163335f86b1c1ba54769cae2c0fdb63e4ac266",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 30[item=artillery-turret].zip",
+    "declared_size": 12322779,
+    "size": 12322779,
+    "sha256": "8ae376d5ee59409de407882fd3ede07f2d8d104ed57a7b825a2bb09267770c68",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 30[item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 31 [item=artillery-turret].zip",
+    "declared_size": 12779313,
+    "size": 12779313,
+    "sha256": "1f110004bd733b00911dc1c2acb2609e1ce5f702681bd593a242c928555533dd",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 31 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 32 [item=artillery-turret].zip",
+    "declared_size": 12674392,
+    "size": 12674392,
+    "sha256": "a81956fbc3def268702a89e85fe2fe8e16fb70b14a44bb58c4d7f8176423e166",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 32 [item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 33[item=artillery-turret].zip",
+    "declared_size": 12619479,
+    "size": 12619479,
+    "sha256": "2b2cb03eb4f87bf9cbfab6eff04842ed81a550e61be0af93547aad0645a54da3",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 33[item=artillery-turret]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 34.zip",
+    "declared_size": 12827389,
+    "size": 12827389,
+    "sha256": "ff9f925005a3bbc93715053ca6de975a19948cc51ad7907bb93e03409ce657f9",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 34",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 35.zip",
+    "declared_size": 12452026,
+    "size": 12452026,
+    "sha256": "efe26c61f9ba0bb8595c214708fe7f27691e7fce2977b326b9373979fcf8e29f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 35",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 36[item=spidertron].zip",
+    "declared_size": 12614838,
+    "size": 12614838,
+    "sha256": "f8dba65c65048a83b8734059c82602a4043d0f65c848eeeb68b1f1176d54d3fc",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 36[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 37[item=spidertron].zip",
+    "declared_size": 12806413,
+    "size": 12806413,
+    "sha256": "c69155ac4b1c139ba294ac312d4cfaf5d817806471987ec0f712baaa53de5b1e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 37[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 38[item=spidertron].zip",
+    "declared_size": 12698825,
+    "size": 12698825,
+    "sha256": "aa7f467bad94cb0b7c2ec5af354642c6824532af1c7e687b5427ce689ca0102c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 38[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 39[item=spidertron].zip",
+    "declared_size": 13009205,
+    "size": 13009205,
+    "sha256": "54f01a546b75743f57c9d662ca18d3ea1cb95b4b7432e6780a9f96f80a3d13bd",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 39[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 4.zip",
+    "declared_size": 8589158,
+    "size": 8589158,
+    "sha256": "da2c95c1d04c6c04bb1ed3fee78011b998abf18f720ff1c5407c1aa8c0bfcb33",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 40[item=spidertron].zip",
+    "declared_size": 13006988,
+    "size": 13006988,
+    "sha256": "7ad400a48e4b346444743d815c6406683b6d3984109018277b08317d57946ec7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 40[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 41[item=spidertron].zip",
+    "declared_size": 12845342,
+    "size": 12845342,
+    "sha256": "7c8d4437cdc7ba7973cf87a4fe87701647fa6f1b8a81dd148e1cbf255aa20d75",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 41[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 42[item=spidertron].zip",
+    "declared_size": 13137338,
+    "size": 13137338,
+    "sha256": "86d0036dd839dc06d21ead0abaf2c127bd0c3045bc5c4a5498c56fc80ad2e603",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 42[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 43[item=spidertron].zip",
+    "declared_size": 13092045,
+    "size": 13092045,
+    "sha256": "4825d8b97ab65a75f3a90596c2c1da5ba9d964ba2a6b18bf22590a0a419bfa51",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 43[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 44[item=spidertron].zip",
+    "declared_size": 13184742,
+    "size": 13184742,
+    "sha256": "44836aab71c747855746c29e7736c210e8ab0176dd60a2df8b5e83861fecc81b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 44[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 45[item=spidertron].zip",
+    "declared_size": 13548180,
+    "size": 13548180,
+    "sha256": "b6e227a2b9f9400fce54de921429bd9a5dbd323c10db0bbb63754d95e3c30e43",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 45[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 46[item=spidertron].zip",
+    "declared_size": 13422109,
+    "size": 13422109,
+    "sha256": "0c17ac4286d38df40874e1c9c271eb24180177924777c413fe9683dfe7917457",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 46[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 47[item=spidertron].zip",
+    "declared_size": 13452267,
+    "size": 13452267,
+    "sha256": "d3c8d575a2e0494e44ffecbf8ca93bb6a7044549d0d855daac26e7b2b82d072e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 47[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 48[item=spidertron].zip",
+    "declared_size": 13427905,
+    "size": 13427905,
+    "sha256": "3cab951ce74ea27425613bf5ed8437bf61878e09d2c2f415fe4cab858ee2a145",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 48[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 49[item=spidertron].zip",
+    "declared_size": 13284112,
+    "size": 13284112,
+    "sha256": "015820530f14540056588bb5c31658e07b1474ec6f4f7104197ad72a39362e21",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 49[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 5.zip",
+    "declared_size": 8678614,
+    "size": 8678614,
+    "sha256": "624fc2393a1a8bf627b25265d108ba8349e56d58d9a79fbb38d4a5375176943c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 50[item=spidertron].zip",
+    "declared_size": 13576450,
+    "size": 13576450,
+    "sha256": "6f8b353529f9a919ebe7d67bbd1bdafc82df61f0cede8a0e5674fdb5ea20b8ed",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 50[item=spidertron]",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 6.zip",
+    "declared_size": 8661481,
+    "size": 8661481,
+    "sha256": "a66573c27ffcd691d52ad8e88dd69700aeb205746a6c208177e04e0f49577a5e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 7.zip",
+    "declared_size": 9122112,
+    "size": 9122112,
+    "sha256": "3ea58110c0ed63cffe14e1343229051746ae263f1908fe9c99e26c32900bc343",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 7",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 8.zip",
+    "declared_size": 9159737,
+    "size": 9159737,
+    "sha256": "3c06de37b16c7ff80c71090c1e554eb6e17e4b05d28cc7e228f81ae12faecdeb",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 8",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah 9.zip",
+    "declared_size": 9055633,
+    "size": 9055633,
+    "sha256": "7cd5e70fe67941690fd19eed98a650664f81b84a40168f12378259fce053f764",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah 9",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah A1.zip",
+    "declared_size": 7357187,
+    "size": 7357187,
+    "sha256": "afbb8c70df87876d14da460613dfa571d9785f02ad65b7d2bc5f22c6a15d6c3c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah A1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allah.zip",
+    "declared_size": 7306048,
+    "size": 7306048,
+    "sha256": "592f509e18ffcb64fcfeac690c24cfc609a03a9f572881d59583c21a9e47a97f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allah",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "allaj 52.zip",
+    "declared_size": 13886309,
+    "size": 13886309,
+    "sha256": "134b6022447bb56a2d7e1b2687d19d356b58a361f622bed0f2efcb2fbbeba8fe",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "allaj 52",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "bitkata na shipka.zip",
+    "declared_size": 9579607,
+    "size": 9579607,
+    "sha256": "2bf2652ac416d6d1621b4c6df51dd8e9d387c9d1479646107ef2da00003397b5",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "bitkata na shipka",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 1.zip",
+    "declared_size": 2613397,
+    "size": 2613397,
+    "sha256": "e875e41b776f74bc73ac5e8e55985293e5aedc8a93d4ee404479a31dfb834add",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 2.zip",
+    "declared_size": 10317249,
+    "size": 10317249,
+    "sha256": "9f37cc18f68f5a67230407a18f26a4fea913d8d2bf780c0c0034ef338821109e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 3.zip",
+    "declared_size": 10744384,
+    "size": 10744384,
+    "sha256": "1c3bef7f79871e2cc54bcdb1db16473ceb37534ad51614b3afad98e745a6080e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 4.zip",
+    "declared_size": 10971797,
+    "size": 10971797,
+    "sha256": "a31eaea000885a6ddb9e7bd75923f94b4ffe4da1a351e7791c25b36251fd990c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 42.zip",
+    "declared_size": 16356597,
+    "size": 16356597,
+    "sha256": "42da05cad1fd9805dc95ed1cce07ab92c6409d0339a07e4d4d51845eb00e8010",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 42",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 43.zip",
+    "declared_size": 16333973,
+    "size": 16333973,
+    "sha256": "8bf280b1ede19f418908815cd8a5cd278d97c00363be5a9f42bab7f80a0422a7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 43",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 44.zip",
+    "declared_size": 16394165,
+    "size": 16394165,
+    "sha256": "8928281a5e7cb67b652da96468a087e43319837caff0213bd5ce689bbfe07429",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 44",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 45.zip",
+    "declared_size": 22035234,
+    "size": 22035234,
+    "sha256": "f0311b46cf754ccf47997b7efa693f0f2eddfbd3d5708038844fef047014f343",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 45",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 46.zip",
+    "declared_size": 21049572,
+    "size": 21049572,
+    "sha256": "5c7d59f1740ae94fc67947930a85fa1ffde143873814fc9da45edb94983c4527",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 46",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 47.zip",
+    "declared_size": 21962392,
+    "size": 21962392,
+    "sha256": "b0097e2421e2b2f9a6e12d17dfd8066abc5f94d204b4db1d2b637bd4b1973e0f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 47",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 48.zip",
+    "declared_size": 22343352,
+    "size": 22343352,
+    "sha256": "bbf3a8e8d453b45fd0bb871d79cd879044c8633a6e92e5270472abbc32b37bef",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 48",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 49.zip",
+    "declared_size": 23664879,
+    "size": 23664879,
+    "sha256": "7ffcd4145faa78e9c6215001769183e5ffefa7881c0be2652c95d76ad73a1514",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 49",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 5.zip",
+    "declared_size": 11489163,
+    "size": 11489163,
+    "sha256": "11ea0b1181291a3b1ea12485e88b838a34206be17170afb699674781f2352190",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 50.zip",
+    "declared_size": 23436036,
+    "size": 23436036,
+    "sha256": "13a433e8eb31e45c39dfd220a8e0f19045504af8f043acdfb8bb8de22f2d7702",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 50",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 51  NEDELQ 27.04 15 I 33.zip",
+    "declared_size": 23908498,
+    "size": 23908498,
+    "sha256": "30aa7c5525ec69f061c8dad69a0ab9928608a67e6a3aa0228fde555d9cbc93ef",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 51  NEDELQ 27.04 15 I 33",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 51  NEDELQ 27.04 20 00.zip",
+    "declared_size": 23648463,
+    "size": 23648463,
+    "sha256": "86febab08d387e4589c49f7787e2d15b95a82a8407df4cd9e6f2e35326640783",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 51  NEDELQ 27.04 20 00",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 52.zip",
+    "declared_size": 24071724,
+    "size": 24071724,
+    "sha256": "5e3acf4e9ccea7d0be39a67c9ce9d28aa0c85cf006af7886b760a6b084567a33",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 52",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Frogo-o/factorio-saves",
+    "branch": "main",
+    "path": "buda 6.zip",
+    "declared_size": 11712024,
+    "size": 11712024,
+    "sha256": "5f33537aaaf7fbb9732e70e485cf3bc4d04dfa4dc170ff17a5f50a6bf4cc7753",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "buda 6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "123.zip",
+    "declared_size": 1940254,
+    "size": 1940254,
+    "sha256": "8d18a5dba5c25c9761e63b746367f1534c79aa824d0a0682efab94e59df41318",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "123",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave-platform-1s-first-trip-to-gleba.zip",
+    "declared_size": 22142691,
+    "size": 22142691,
+    "sha256": "9c645f4071bca6f2ccd873d620cc16861406f144e73d05b28c92f4a16c94d36c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-platform-1s-first-trip-to-gleba",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave-platform-1s-first-trip-to-nauvis.zip",
+    "declared_size": 35346104,
+    "size": 35346104,
+    "sha256": "58715ea0ef1fb7aba0d1f1871219c19402a704bba67ddfe464512134cc02554b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-platform-1s-first-trip-to-nauvis",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave-platform-3s-first-trip-to-vulcanus.zip",
+    "declared_size": 35571799,
+    "size": 35571799,
+    "sha256": "ea69ec2b23d10d988a3ad8f016dc07c3e3e7958adc85077ad369b6fccfcbeb6b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave-platform-3s-first-trip-to-vulcanus",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave1.zip",
+    "declared_size": 62299557,
+    "size": 62299557,
+    "sha256": "5e26e217a30429599599e1095481a6fa6342ba7d84445a365990507c2aaed670",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave2.zip",
+    "declared_size": 44150076,
+    "size": 44150076,
+    "sha256": "6a2fccb1be96116deb18f966eeb877f0c42715a9ba6768bd12bfae895cbfe235",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "_autosave3.zip",
+    "declared_size": 45551067,
+    "size": 45551067,
+    "sha256": "442c70df885d1761aaa246b2b9282dac0fcc72ca83b31723f38fc89184f64b23",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ChristineZhiMei/FACTORIO_SAVES",
+    "branch": "main",
+    "path": "mysave.zip",
+    "declared_size": 53807330,
+    "size": 53807330,
+    "sha256": "40ac41d0c4f231c4dbec415627e7b413a6fd445b8f54d26b168a11e3f2dffaa5",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "mysave",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "lilly-lizard/factorio-saves",
+    "branch": "main",
+    "path": "beam.zip",
+    "declared_size": 59248427,
+    "size": 59248427,
+    "sha256": "c9fb19426f301719f762b0b6e2c84a1776b20b9f394f7fb9663ececb86e8c310",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "beam",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 16,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 17,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "lilly-lizard/factorio-saves",
+    "branch": "main",
+    "path": "minx.zip",
+    "declared_size": 12397764,
+    "size": 12397764,
+    "sha256": "d4ae85158c71ff6b525eea0107d8120f98909514acf97f128f977a9bb1519cb2",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "minx",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 26,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "lilly-lizard/factorio-saves",
+    "branch": "main",
+    "path": "sphinx.zip",
+    "declared_size": 23964726,
+    "size": 23964726,
+    "sha256": "74b48f274e3e8081de11aad79b804310372be7911350accfc47822d13680ad96",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "sphinx",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 26,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed1.zip",
+    "declared_size": 12205669,
+    "size": 12205669,
+    "sha256": "257f34e8a54b9f72ccf11866616eb0890793a134a7b7cefae8fa1a71f77adecb",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed2.zip",
+    "declared_size": 11995908,
+    "size": 11995908,
+    "sha256": "a4460c4407de8c2e4303d32be4d40e05a398f450c5cbda8bc6fc02c1e8b45f4e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed3.zip",
+    "declared_size": 12194804,
+    "size": 12194804,
+    "sha256": "cb418d79ee46aaa4aa67aecfee1c70aa4437167e6293b744ed066e916a41c5a6",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed4.zip",
+    "declared_size": 12229538,
+    "size": 12229538,
+    "sha256": "8fcda666ef149c0f50125b046751807f061224c518dc004e1f54d6f23d3751b0",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed5.zip",
+    "declared_size": 12087430,
+    "size": 12087430,
+    "sha256": "8d321b5c9168dca9f6abd06fbdb319be8eabe6acdca1e6ee61ab4d9df163606e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed6.zip",
+    "declared_size": 12080292,
+    "size": 12080292,
+    "sha256": "b0dd254e200f122ebcb173c8074f4f3e19cee5be30900d1f2320b142f666236e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Artillery deployed7.zip",
+    "declared_size": 12117522,
+    "size": 12117522,
+    "sha256": "d19975cdeef86d42b2c4b24f858d29b8474a12d2236d41f264de2294c7aa1f8f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Artillery deployed7",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten1.zip",
+    "declared_size": 12088638,
+    "size": 12088638,
+    "sha256": "ab602707d20fc7e4a538f5db572cff4896989dd62f3f15985600a71fc7892a70",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten10.zip",
+    "declared_size": 12437195,
+    "size": 12437195,
+    "sha256": "a3bb26d7a1dd22c99334d79e94df4b86bc6bc5ded51c827f2530792640144ffd",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten10",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten11.zip",
+    "declared_size": 12503856,
+    "size": 12503856,
+    "sha256": "c015183bd41f0daffb5605ee0528b7a057130fa46db68b54cedd42e887eb1e8f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten11",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten12.zip",
+    "declared_size": 12570536,
+    "size": 12570536,
+    "sha256": "724a00323bcfb0494334d567691c27bfae9c53c6a980b5aa429a9633d8994df0",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten12",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten13.zip",
+    "declared_size": 13117666,
+    "size": 13117666,
+    "sha256": "508f886f496e07e971e67c2887b8297b8ea3d314e70dee6aaa42d938c3fd6457",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten13",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten14.zip",
+    "declared_size": 13339581,
+    "size": 13339581,
+    "sha256": "a4e19f0e11ea707d55c2b213c49d2682eede1e3a45869ab2776e9e0e6deb06bf",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten14",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten2.zip",
+    "declared_size": 12014098,
+    "size": 12014098,
+    "sha256": "238e108043b9d76678bb4096e0ede727315fde5bf1bc7cb80461628e95193ad1",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten3.zip",
+    "declared_size": 11957139,
+    "size": 11957139,
+    "sha256": "c3b76d1c61504ea211478deace97dc632bf2b3dd3f46dcf2eed7bb7e305efad5",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten4.zip",
+    "declared_size": 12086256,
+    "size": 12086256,
+    "sha256": "50a31d2ebc0909685e9940ac78e5890f1334caf1b8e077b38cda021872d8d3ce",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten5.zip",
+    "declared_size": 12023184,
+    "size": 12023184,
+    "sha256": "0499f6a2f3ae697d8d9d525f832abff6753a31fc29df7298e5ba84b96bb58229",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten6.zip",
+    "declared_size": 12319328,
+    "size": 12319328,
+    "sha256": "eb69135449ca6ec6e13162264cb79ef8105525af02a4a91af4198dbb7c5cead9",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten7.zip",
+    "declared_size": 12464896,
+    "size": 12464896,
+    "sha256": "6dee6c05acfc532c1d7d82a0a27dbb502cdff62a84e8a40e41ca5605af2d1f73",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten7",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten8.zip",
+    "declared_size": 12335010,
+    "size": 12335010,
+    "sha256": "ac2bf5d19e8260a6af30f2a092cd80f989bc32dd9955f91de3bcc97525fefe9e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten8",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "Satelite launched - game beaten9.zip",
+    "declared_size": 12358973,
+    "size": 12358973,
+    "sha256": "98225ca39fac4f947d704047de42ccd697b5647bc57fb92210db2bb09ff11b88",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Satelite launched - game beaten9",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 11.zip",
+    "declared_size": 11484503,
+    "size": 11484503,
+    "sha256": "04b2b5bf7411d207621951d66df79771668e047818a5c361bd63231f4a26ee40",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 11",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 12.zip",
+    "declared_size": 11330992,
+    "size": 11330992,
+    "sha256": "b8d875951905754be8ccdd7e8596b5b9d8dfd3bdbb87190df8e3b7505e2a6a04",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 12",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 13.zip",
+    "declared_size": 10966366,
+    "size": 10966366,
+    "sha256": "a0b12b5124b0d8ebfdf9b9e3f053db309af51400cb6c672f5080b38d4465708e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 13",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 14.zip",
+    "declared_size": 11148717,
+    "size": 11148717,
+    "sha256": "866f4ebcd7b8aac76cfff461d739a3e45058aff946f9a50d64da40419342bbca",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 14",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 15.zip",
+    "declared_size": 11294726,
+    "size": 11294726,
+    "sha256": "fa046b6299f6d503e22dc7cd94dee10e522284b0a440645630f7edb6b7ac7fc7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 15",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 16.zip",
+    "declared_size": 11098414,
+    "size": 11098414,
+    "sha256": "81a6eaac049c492528211ba8eab3dd9b696c670949eeb87bff8894297814d48c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 16",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 17.zip",
+    "declared_size": 11609354,
+    "size": 11609354,
+    "sha256": "abf52a20aac00caabaaf8a9a144cc89c860c4e7dbbd8bb338e611af437e06b3c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 17",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 18.zip",
+    "declared_size": 11416525,
+    "size": 11416525,
+    "sha256": "ea6b4b8e6b35e151001330b8f9c217dd2bff23916f08892ca925a64976f97bae",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 18",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 19.zip",
+    "declared_size": 11102526,
+    "size": 11102526,
+    "sha256": "930e4cc780fc909e4b2504e92bc1bf10c3317068f7ab40f3f43039c7ab57a995",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 19",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 20.zip",
+    "declared_size": 11391259,
+    "size": 11391259,
+    "sha256": "90572b9b45447cd4bdf4af1b6c7095cb99b7c0aec7d1a9d0ac095ce602a49e23",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 20",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 21.zip",
+    "declared_size": 11601763,
+    "size": 11601763,
+    "sha256": "a30ec979d9e219982b4ee95a869cdf99467c6ebedbc06d36c9600ab7ab5c419a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 21",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 22.zip",
+    "declared_size": 11334014,
+    "size": 11334014,
+    "sha256": "8c5ba886555ca8c5a4da04ce236adda92e895e0c4e06362a12039faeef963d1d",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 22",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 23.zip",
+    "declared_size": 11381451,
+    "size": 11381451,
+    "sha256": "1439be38eb77c013ce1013e6129d3d5b8cc13eeb890ee962030f52a94ab4644e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 23",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 24.zip",
+    "declared_size": 11325254,
+    "size": 11325254,
+    "sha256": "3e36879de46210c9322dfa1540f5cc97a6be5678a093a4ef8f50c56cff58228c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 24",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 25.zip",
+    "declared_size": 11177929,
+    "size": 11177929,
+    "sha256": "aad16130139b7c5f330079199b04d9a80272b380687c4bec18d88eafda0f4ce1",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 25",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 26.zip",
+    "declared_size": 11082448,
+    "size": 11082448,
+    "sha256": "57911002e5854422706c5f2ab0cce5c8aafd0d87fec9df045abe7f4821ca5ff2",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 26",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 27.zip",
+    "declared_size": 11378988,
+    "size": 11378988,
+    "sha256": "9a697fae368d30854b8537d7a77daaaf5478d36374e8ebef2da66ff63fd0586b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 27",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 28.zip",
+    "declared_size": 11294942,
+    "size": 11294942,
+    "sha256": "664db87db9259019f79beb3b4b0efa0267f43fadfc63e94163baee815d5d337f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 28",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 29.zip",
+    "declared_size": 11260681,
+    "size": 11260681,
+    "sha256": "55ee940ba60f05962b4a25ff750b0b17346170cea9c94580aca608a627dfb2a7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 29",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 30.zip",
+    "declared_size": 11102516,
+    "size": 11102516,
+    "sha256": "5f96be75052eebead62c6e978d04535472f4f237afe6aebb2eef1bd7bb8b5bae",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 30",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 31.zip",
+    "declared_size": 11272155,
+    "size": 11272155,
+    "sha256": "330fc8f71d39b06510542e3b2b20cc42e8fb40179ee210ac9478377a2e23f154",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 31",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 32.zip",
+    "declared_size": 11174380,
+    "size": 11174380,
+    "sha256": "9e3c4d4a78e075269cbf0318b6ac7dc1f82b0dcbd07660ece6e11468b7f3056e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 32",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "attemp to save base 33.zip",
+    "declared_size": 11698024,
+    "size": 11698024,
+    "sha256": "6d7a919a76968351839fe2db9a028abe0904d8f996d667fe621b3220e283614a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "attemp to save base 33",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better.zip",
+    "declared_size": 11352056,
+    "size": 11352056,
+    "sha256": "7597333aa2f1a41bb156094018eaae4e125a38b83732db4bdcea121fa7951cb1",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better1.zip",
+    "declared_size": 11215778,
+    "size": 11215778,
+    "sha256": "d7c7e3772b4fc6f7995973e95791a9575ad834dca0c38ae9ede92a5b959c9ca6",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better2.zip",
+    "declared_size": 11394408,
+    "size": 11394408,
+    "sha256": "a332f66c02d7bcb647d94ace472f639ad19900e5cedbb2942f2532f2fbafa994",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better3.zip",
+    "declared_size": 11263997,
+    "size": 11263997,
+    "sha256": "903fda2011451cc06b1c7517b7f9deaf70ac219c34e62ed90f68efeaecd2e9f7",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better4.zip",
+    "declared_size": 10848104,
+    "size": 10848104,
+    "sha256": "46ae4249c57080bd9578aeb2ff542546d31ec836f8b1e66844549dc3ff067d9b",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better5.zip",
+    "declared_size": 11101093,
+    "size": 11101093,
+    "sha256": "9a5319dc62ab31cfe3b5b9ccebe1ff27151e8d7b428aeb605c5c24c6bad49b6a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better6.zip",
+    "declared_size": 11154105,
+    "size": 11154105,
+    "sha256": "d85240c3689fe8d0282de28a1366231725a70bbee9d3ce2064807f4ddf1112ad",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better7.zip",
+    "declared_size": 11202973,
+    "size": 11202973,
+    "sha256": "6b31d2abdd3ec65e08e383f53b701b5f4c5fd39c9fda22571bdffe5a5c74df46",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better7",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better8.zip",
+    "declared_size": 11092588,
+    "size": 11092588,
+    "sha256": "9ffa6233e571ff2ebc9f2b09aabb1500401881706a3bec1fab0f586ab25b4e93",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better8",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base beginning to get better9.zip",
+    "declared_size": 11109702,
+    "size": 11109702,
+    "sha256": "35b37d695b3dd0299cefeeef0f01c145ddfe3b022f359239d399d2ce8deaac8f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base beginning to get better9",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base in crisis.zip",
+    "declared_size": 10633251,
+    "size": 10633251,
+    "sha256": "c60473050b22518aad9569d1eda50fd2fc06127d063851abb8d7854e0d446b01",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base in crisis",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base in crisis2.zip",
+    "declared_size": 10848310,
+    "size": 10848310,
+    "sha256": "c8c4b1b6d1818e3e9b77138e58f303b18ab40b6e03b000864fb3f959e3f70e0c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base in crisis2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base in crisis987.zip",
+    "declared_size": 10582130,
+    "size": 10582130,
+    "sha256": "caa651be57adf492732e98103b3a45cb5d8f31e6193c65710f2a8e3409db06fb",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base in crisis987",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 1.zip",
+    "declared_size": 11669342,
+    "size": 11669342,
+    "sha256": "b0a0c5fbb889d995d39ed4bc8bc7fbc832d30b057065020d9b62a7603fdfa728",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 2.zip",
+    "declared_size": 11726670,
+    "size": 11726670,
+    "sha256": "671216abcc25a470b5a3d473ea41ebbac969b3ad651efa64361431b3f8e29747",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 3.zip",
+    "declared_size": 11528343,
+    "size": 11528343,
+    "sha256": "dcd76c3f5fc1d9295da3834d2a4e2645995da2c442cbca6adba16cbeebbad56a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 4.zip",
+    "declared_size": 11528343,
+    "size": 11528343,
+    "sha256": "d1bd9c3004c01f950290cb23af1190dbdefa79924484e40ba64c6c85fcbbc1ce",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 5.zip",
+    "declared_size": 11255722,
+    "size": 11255722,
+    "sha256": "342ce67c3aea516bb3ff3b396ec38f8d2012cc56e4ca4a47b59b319bf651409f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "base saved from constant attacks 6.zip",
+    "declared_size": 11385149,
+    "size": 11385149,
+    "sha256": "bee89ab7d934cd256f87d3a5ab023f7b6bd978b53d38fdd6484c80d8a0ac645c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "base saved from constant attacks 6",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 1.zip",
+    "declared_size": 11253724,
+    "size": 11253724,
+    "sha256": "00ed4fdf8655ac2b844529eeee966f952b36783182e48c0c3ba01ea51b080f96",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 10.zip",
+    "declared_size": 11629565,
+    "size": 11629565,
+    "sha256": "2853f5baf7c070590b5100423151cf22e74f1edebff3603a6240d66942750d4f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 10",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 11.zip",
+    "declared_size": 11535037,
+    "size": 11535037,
+    "sha256": "2be8c5274459178c541d028ff6fbf3a8e11e110d79ad8c5b5dd64f8499c150a6",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 11",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 12.zip",
+    "declared_size": 11417443,
+    "size": 11417443,
+    "sha256": "31d545613af0f982d0384d5005bce2a152cb3a47766809b89f212761fd73edeb",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 12",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 13.zip",
+    "declared_size": 12073471,
+    "size": 12073471,
+    "sha256": "90a5c01adcd3d418262a6e96c741ca393d53c84a487beebcd494e6c7705fa0b2",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 13",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 14.zip",
+    "declared_size": 11998316,
+    "size": 11998316,
+    "sha256": "4d3d10088f356d346aa212e627720fda26e9795dbe49581f4d5ce0429d17e373",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 14",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 15.zip",
+    "declared_size": 11851256,
+    "size": 11851256,
+    "sha256": "dc88a122aac058dd5f75832068e1290d5710c9f678cdf1683cdd3a8bfbaccd96",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 15",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 16.zip",
+    "declared_size": 11839855,
+    "size": 11839855,
+    "sha256": "cba67addb8f36f47cd5f2a844c4a4f39c80dc9ab6edec01dd52b1d33e6e2960f",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 16",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 17.zip",
+    "declared_size": 11980590,
+    "size": 11980590,
+    "sha256": "abd750ab08bd8c15bf03adc4b58a1107a7e2e387c153a240f257508cee7f6066",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 17",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 18.zip",
+    "declared_size": 12170442,
+    "size": 12170442,
+    "sha256": "948f370e779beb5e206de45e233f2c171c7c078878fbbf9710fb8939ea79a7df",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 18",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 19.zip",
+    "declared_size": 12208048,
+    "size": 12208048,
+    "sha256": "0f5c310b1b8e3821d4e655b52e1664904024ad037fc2dd6d898db1e00f2a9104",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 19",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 2.zip",
+    "declared_size": 11616739,
+    "size": 11616739,
+    "sha256": "18260c61c581b16b17af2f0a988f859394e14980c8f14e2ae1de3fb3dfda5e6e",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 20.zip",
+    "declared_size": 12106654,
+    "size": 12106654,
+    "sha256": "223ef873112f0d9a59556597a77a6d0bae8e9fc50cee454c7715ca8d84b1db08",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 20",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 21.zip",
+    "declared_size": 12136057,
+    "size": 12136057,
+    "sha256": "f1df984c57c631938ffc3c3154c7471f54ef0fb38ec23689fba168951b724b8c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 21",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 3.zip",
+    "declared_size": 11577410,
+    "size": 11577410,
+    "sha256": "df7a645311651e478233754c32c77af183c851516c2780fc64623ab0356eff94",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 4.zip",
+    "declared_size": 11700711,
+    "size": 11700711,
+    "sha256": "fea582e042491ee5bd611cbb3d75fe0e9a6ae704ce094cfe3b7e4cd09cfaff39",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 4",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "syedimran23/factorio-multiplayer-saves",
+    "branch": "main",
+    "path": "expanding base 5.zip",
+    "declared_size": 11679609,
+    "size": 11679609,
+    "sha256": "bf0eeefb83322d86e00f2f8f6da5a60bcc6eb1a55fe5258c845828983724d523",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "expanding base 5",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "j4yu22/factorio-save",
+    "branch": "main",
+    "path": "squidgame.zip",
+    "declared_size": 59039172,
+    "size": 59039172,
+    "sha256": "7c3f56c99b1a45df9131644e6d7b8757ff356b144b72c17380818daccd005100",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "squidgame",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "Test_autosave_0.sav",
+    "declared_size": 133201,
+    "size": 133201,
+    "sha256": "6ef7e13ee2458c13a58c192b19234a5373143881d514d3c597b4c0b821f8cb97",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "Test_autosave_1.sav",
+    "declared_size": 131779,
+    "size": 131779,
+    "sha256": "4cdbf68ef4c29290f3bd4557c27ce4f9f673a092184c54e9a4899981ae8d8b51",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "Test_autosave_2.sav",
+    "declared_size": 132674,
+    "size": 132674,
+    "sha256": "91df7e914d551c7968f6d8c7f6c1f72a5fe038996b847ed1aa63231d1697e42c",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "mansSaves.sav",
+    "declared_size": 1192237,
+    "size": 1192237,
+    "sha256": "49d31f9e5f6ba1edb0539758385521135c0e43c5c8fa4994a261a06ce89d48de",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041a\u043e\u0440\u043e\u0442\u044b\u0448\u043a\u0438 \u043d\u0430 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0438_autosave_0.sav",
+    "declared_size": 1852408,
+    "size": 1852408,
+    "sha256": "e6bf25a7438e87491a35e89a9c3e12586a3d1b625997f1b9d920263586bb1f8c",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041a\u043e\u0440\u043e\u0442\u044b\u0448\u043a\u0438 \u043d\u0430 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0438_autosave_1.sav",
+    "declared_size": 1852135,
+    "size": 1852135,
+    "sha256": "3ccbacf444d8581a5bf8d58926b7810724712f2b6490be56029e75091f3ab95d",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041a\u043e\u0440\u043e\u0442\u044b\u0448\u043a\u0438 \u043d\u0430 \u043f\u043e\u0432\u0435\u0440\u0445\u043d\u043e\u0441\u0442\u0438_autosave_2.sav",
+    "declared_size": 1851787,
+    "size": 1851787,
+    "sha256": "4559e0663556e7fa659f2858a06a760ccab6a4b3116cff677cfab98c02887c46",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041f\u0435\u0440\u0432\u044b\u0439 \u043c\u0438\u0440_autosave_0.sav",
+    "declared_size": 207877,
+    "size": 207877,
+    "sha256": "1762019b568745a54a4d42744a4dcbba5e3f7a64dd38d33526e7f00b8b4e65b5",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041f\u0435\u0440\u0432\u044b\u0439 \u043c\u0438\u0440_autosave_1.sav",
+    "declared_size": 200399,
+    "size": 200399,
+    "sha256": "5e64528d20458ef4e96a396acb844d6415059c60ab4590f918b08e0a44e8a760",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "mans-debug/factorio_saves",
+    "branch": "master",
+    "path": "\u041f\u0435\u0440\u0432\u044b\u0439 \u043c\u0438\u0440_autosave_2.sav",
+    "declared_size": 204384,
+    "size": 204384,
+    "sha256": "a1f966a2d63220155345d54b7e35639ab6b9cb6241a851ddfbeb6e947a50ae40",
+    "is_zip": false,
+    "saves": []
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "Pripli Green Circit.zip",
+    "declared_size": 2561146,
+    "size": 2561146,
+    "sha256": "85226594cd7c8fc9d5747c4328583905af98c045c75f93ee6c458d337c4ba599",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Pripli Green Circit",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "Pripli saturated iron plates.zip",
+    "declared_size": 2515643,
+    "size": 2515643,
+    "sha256": "9bfc3610aa4fdb8b8780117238298a4ec20e4a549696bb7b690459b0b3f1966d",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Pripli saturated iron plates",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "Pripli.zip",
+    "declared_size": 2565620,
+    "size": 2565620,
+    "sha256": "4306a7f5dc65f156aa72b1cef4f33075af6e6d02d53610c767535bdab3be16d3",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "Pripli",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "_autosave1.zip",
+    "declared_size": 2645235,
+    "size": 2645235,
+    "sha256": "5697d0acbeda77544a8ab342d8cfc563488a52bf5c917f7c5ab335002a10fffb",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "_autosave2.zip",
+    "declared_size": 2801546,
+    "size": 2801546,
+    "sha256": "a4c89079aa36f496b4c8e336f8a51ffb35988f8c313dec3f243220f38c8823dc",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "_autosave3.zip",
+    "declared_size": 2501315,
+    "size": 2501315,
+    "sha256": "c51948eb309bb5cee26f54c53517364fc028fbaa2d16204733affdb3bf0c1a07",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "luis-navarro1/factorio_saves",
+    "branch": "main",
+    "path": "frep.zip",
+    "declared_size": 5708979,
+    "size": 5708979,
+    "sha256": "97ebd2df1720c4c4102e2dee017553747e1a00260e7489112268a33f5b5ee110",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "frep",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Sebastian-Schuchmann/factorio-saves",
+    "branch": "main",
+    "path": "_backup.zip",
+    "declared_size": 15740294,
+    "size": 15740294,
+    "sha256": "37ef7a3c03f46add70aa8c58aff5f839ee302902fbd553d2825906c58e1924e9",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_backup",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 52,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 103,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "Sebastian-Schuchmann/factorio-saves",
+    "branch": "main",
+    "path": "_backup3.zip",
+    "declared_size": 15859491,
+    "size": 15859491,
+    "sha256": "09f8dab1b36161616256b9a8b216fd7a7df10854df8ed1e26f0a35803fdc5041",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_backup3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 27,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 55,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "jakedcrampton/factorio",
+    "branch": "master",
+    "path": "SpaceAge.zip",
+    "declared_size": 24170606,
+    "size": 24170606,
+    "sha256": "b5afeacc5a467c78f5c71c25f3c75baf7be0ab0f5839c648c7aabcbaa1483b88",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "SpaceAge",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "ianic-dev/factorio-saves",
+    "branch": "master",
+    "path": "blank_spaceage.zip",
+    "declared_size": 1190056,
+    "size": 1190056,
+    "sha256": "bf8befb6550b574fab063ec581f23a0694dcd5b02eef1368fbc0035293a053e3",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "blank_spaceage",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "_autosave1.zip",
+    "declared_size": 4987402,
+    "size": 4987402,
+    "sha256": "dff1f7e7abfb66d72cf51baef392a89ace0631534583a8c331a22bccf817a307",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "_autosave2.zip",
+    "declared_size": 5083715,
+    "size": 5083715,
+    "sha256": "63d284aa7925c066b5f421135341b46488e98e3dd95d8514a88ae332cf73a7de",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "_autosave3.zip",
+    "declared_size": 4663079,
+    "size": 4663079,
+    "sha256": "f400ddd0f29a1ad29ff34a074f7497107757cf6163100f838f834bcc609416d4",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "amspaceage.zip",
+    "declared_size": 2337982,
+    "size": 2337982,
+    "sha256": "0b382a029a6b7bbeb08a1ae9bd9528e8f9590643ee6e778f9994ef9f673367b1",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "amspaceage",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "amspaceage2.zip",
+    "declared_size": 4635373,
+    "size": 4635373,
+    "sha256": "0298b84841824820208a61eda3ba56c1c621d46665e3f871f0299a8f6937aac2",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "amspaceage2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "amaro-gameplays36/saves",
+    "branch": "master",
+    "path": "tutor.zip",
+    "declared_size": 8320737,
+    "size": 8320737,
+    "sha256": "bcd7b1f8903b074fdb6641130c405bf5c6b79df9c7f1212d064fb08041b82564",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "tutor",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "_autosave1.zip",
+    "declared_size": 478683,
+    "size": 478683,
+    "sha256": "2040cf6e69ea942565fe877528f1f90fc48ee880b9563c8712da1925eff50986",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "_autosave2.zip",
+    "declared_size": 508339,
+    "size": 508339,
+    "sha256": "c508d08157aadb284dfb0baf96b79f16eb159b96c8ecf78d4c06bdae49bcdc91",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "_autosave3.zip",
+    "declared_size": 500371,
+    "size": 500371,
+    "sha256": "e8b13ccffd478ae5f6c14dd910dc42809af913dfe2ae74099806897a4e42b290",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "_autosave3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "niggatokenbelting.zip",
+    "declared_size": 501814,
+    "size": 501814,
+    "sha256": "059780ff7995b9a1b40df78152488dded1cf102d86d7617d187e885088c07d0a",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "niggatokenbelting",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "unnamed1.zip",
+    "declared_size": 2218647,
+    "size": 2218647,
+    "sha256": "d688f48760c4d62d2e82dd42a630d9c07c34172d67aa3ebde7cd0138fa88c682",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "unnamed1",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "unnamed2.zip",
+    "declared_size": 3025771,
+    "size": 3025771,
+    "sha256": "dcc9504578daa997552576dd0b5a99f46e3e102aa7d9c70f355694773f2fd39c",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "unnamed2",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  },
+  {
+    "repo": "yoihai22/factorio-save",
+    "branch": "main",
+    "path": "unnamed3.zip",
+    "declared_size": 3093135,
+    "size": 3093135,
+    "sha256": "456106c600ea55d9b69cf9f34d204ac75796e63d3d4dcf2b573feeb10e3d9dc0",
+    "is_zip": true,
+    "saves": [
+      {
+        "root": "unnamed3",
+        "has_se": false,
+        "near_versions": [],
+        "all_06_07_versions": [],
+        "terms": {
+          "se-rocket-science-pack": 0,
+          "nauvis orbit": 0,
+          "se-rocket-launch-pad": 0,
+          "cargo rocket": 0,
+          "space-science-pack": 0,
+          "astronomic-science": 0,
+          "cryonite": 0,
+          "vulcanite": 0,
+          "holmium": 0,
+          "iridium": 0
+        },
+        "likely_se07": false
+      }
+    ]
+  }
+]
