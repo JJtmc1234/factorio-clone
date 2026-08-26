@@ -1,0 +1,177 @@
+name: Audit RedMew SE crash save
+
+on:
+  push:
+    branches: [tmp-redmew-se-crash-audit-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download save and Factorio
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-all-errors \
+            -A 'Mozilla/5.0 GitHub-Actions-SE-save-verifier' \
+            -o save.zip \
+            'https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip'
+          unzip -t save.zip
+          sha256sum save.zip | tee save-sha256.txt
+          stat -c 'save_bytes=%s' save.zip | tee save-size.txt
+          curl -fL --retry 5 --retry-all-errors \
+            -o factorio.tar.xz \
+            'https://www.factorio.com/get-download/2.0.72/headless/linux64'
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          mkdir -p factorio/mods factorio/script-output
+
+      - name: Extract exact save mod list
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          mkdir -p fake-factorio/data/base fake-factorio/mods mirror-logs
+          printf '%s\n' '{"name":"base","version":"2.0.72","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" \
+            ./fmm list save.zip | tee exact-mod-list.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' exact-mod-list.txt > mod-versions.tsv
+          test -s mod-versions.tsv
+          echo "expected_downloadable_mods=$(wc -l < mod-versions.tsv)" | tee mod-count.txt
+
+      - name: Download exact mod versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          export MOD_DIR="$PWD/factorio/mods"
+          download_one() {
+            mod="$1"; version="$2"
+            out="$MOD_DIR/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 900 \
+              -A 'factorio-mod-downloader/1.0' \
+              -o "$out" \
+              "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          }
+          export -f download_one
+          xargs -P 8 -n 2 bash -c 'download_one "$0" "$1"' < mod-versions.tsv
+          find factorio/mods -maxdepth 1 -type f -name '*.zip' -printf '%f\n' | sort > downloaded-mod-files.txt
+          expected=$(wc -l < mod-versions.tsv)
+          actual=$(wc -l < downloaded-mod-files.txt)
+          echo "downloaded_mods=$actual expected_mods=$expected" | tee downloaded-mod-count.txt
+          test "$actual" -eq "$expected"
+          du -sh factorio/mods | tee mods-size.txt
+
+      - name: Configure exact mods and read-only auditor
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor_0.3.0
+          cp tmp-se-auditor/info.json factorio/mods/jj-se-stage-auditor_0.3.0/info.json
+          cp tmp-se-auditor/control.lua factorio/mods/jj-se-stage-auditor_0.3.0/control.lua
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mods = [
+              {'name': 'base', 'enabled': True},
+              {'name': 'quality', 'enabled': False},
+              {'name': 'space-age', 'enabled': False},
+              {'name': 'elevated-rails', 'enabled': False},
+          ]
+          for line in Path('mod-versions.tsv').read_text().splitlines():
+              name, version = line.split('\t', 1)
+              if (Path('factorio/mods') / f'{name}_{version}.zip').exists():
+                  mods.append({'name': name, 'enabled': True})
+          mods.append({'name': 'jj-se-stage-auditor', 'enabled': True})
+          Path('factorio/mods/mod-list.json').write_text(json.dumps({'mods': mods}, indent=2) + '\n')
+          PY
+          cp factorio/mods/mod-list.json final-mod-list.json
+          grep -A1 -B1 -E 'quality|space-age|elevated-rails|Krastorio2|space-exploration' final-mod-list.json || true
+
+      - name: Load save and audit
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 18m factorio/bin/x64/factorio \
+            --mod-directory "$PWD/factorio/mods" \
+            --benchmark "$PWD/save.zip" \
+            --benchmark-ticks 600 \
+            --benchmark-runs 1 \
+            2>&1 | tee factorio-live-audit.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          find "$PWD" -type f -name jj-se-live-audit.json -print -exec cp '{}' ./jj-se-live-audit.json \; || true
+          exit "$status"
+
+      - name: Summarize verdict
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "factorio_live_status=${{ steps.live.outputs.status }}" | tee workflow-status.txt
+          if test -f jj-se-live-audit.json; then
+            python3 -m json.tool jj-se-live-audit.json | tee jj-se-live-audit.pretty.json
+            python3 - <<'PY' | tee concise-verdict.txt
+          import json
+          d=json.load(open('jj-se-live-audit.json'))
+          r=d.get('rocket_science',{})
+          c=d.get('cargo_rocket',{})
+          print('factorio_version=',d.get('factorio_version'))
+          print('space_exploration_version=',d.get('space_exploration_version'))
+          print('krastorio_2_version=',d.get('krastorio_2_version'))
+          print('rocket_science_researched=',r.get('researched'))
+          print('rocket_science_lifetime_produced=',r.get('lifetime_produced'))
+          print('rocket_science_machine_count=',r.get('count'))
+          print('rocket_science_working_now=',r.get('working_now'))
+          print('rocket_science_machines_with_output=',r.get('machines_with_automatic_output'))
+          print('rocket_science_machines_with_logistics=',r.get('machines_with_logistics'))
+          print('rocket_science_upstream_fraction=',r.get('upstream_automation_fraction'))
+          print('rocket_science_estimated_packs_per_second=',r.get('estimated_packs_per_second_before_productivity'))
+          print('cargo_launch_pads_on_nauvis=',c.get('launch_pads_on_nauvis'))
+          print('cargo_landing_pads_on_nauvis=',c.get('landing_pads_on_nauvis'))
+          print('cargo_sections_in_storage=',c.get('cargo_sections_in_storage'))
+          print('non_nauvis_surfaces=',len(d.get('non_nauvis_surfaces',[])))
+          print('orbit_like_surfaces=',json.dumps(d.get('orbit_like_surfaces',[]), separators=(',',':')))
+          print('full_scale_heuristic_pass=',d.get('full_scale_heuristic_pass'))
+          print('orbit_untouched_heuristic_pass=',d.get('orbit_untouched_heuristic_pass'))
+          PY
+          else
+            echo AUDIT_FILE_NOT_PRODUCED | tee jj-se-live-audit-missing.txt
+          fi
+
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se-crash-live-audit-results
+          path: |
+            save-sha256.txt
+            save-size.txt
+            factorio-version.txt
+            exact-mod-list.txt
+            mod-versions.tsv
+            mod-count.txt
+            downloaded-mod-files.txt
+            downloaded-mod-count.txt
+            mods-size.txt
+            final-mod-list.json
+            factorio-live-audit.log
+            workflow-status.txt
+            jj-se-live-audit.json
+            jj-se-live-audit.pretty.json
+            concise-verdict.txt
+            jj-se-live-audit-missing.txt
+          if-no-files-found: warn
+          compression-level: 6
+          retention-days: 7
