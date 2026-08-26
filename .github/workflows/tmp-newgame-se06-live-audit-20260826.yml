@@ -1,0 +1,196 @@
+name: Live-audit second public SE 0.6 candidate
+
+on:
+  push:
+    branches: [tmp-newgame-se06-live-audit-20260826]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download save, Factorio, and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip zip binutils golang-go
+          curl -fL --retry 5 --retry-all-errors -A 'Mozilla/5.0 Factorio-save-auditor' \
+            -o save.zip 'https://github.com/user-attachments/files/21559231/New.Game.zip'
+          unzip -t save.zip
+          sha256sum save.zip | tee save-sha256.txt
+          stat -c 'save_bytes=%s' save.zip | tee save-size.txt
+          curl -fL --retry 5 --retry-all-errors -o factorio.tar.xz \
+            'https://www.factorio.com/get-download/1.1.110/headless/linux64'
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          mkdir -p factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods mirror-logs
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"1.1.110","title":"Base","author":"Wube","factorio_version":"1.1"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip | tee exact-mod-list.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' exact-mod-list.txt > mod-versions.tsv
+          export MOD_DIR="$PWD/factorio/mods"
+          download_one() {
+            mod="$1"; version="$2"; out="$MOD_DIR/${mod}_${version}.zip"
+            curl -fL --retry 4 --retry-all-errors --max-time 900 -A 'factorio-mod-downloader/1.0' \
+              -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          }
+          export -f download_one
+          set +e
+          xargs -P 8 -n 2 bash -c 'download_one "$0" "$1"' < mod-versions.tsv
+          echo $? > mirror-download-status.txt
+          set -e
+
+          # The mirror dropped this release, but the author's exact release tag remains public.
+          if ! test -s factorio/mods/LSlib_2023.3.24.zip; then
+            rm -rf /tmp/lslib /tmp/lslib.zip
+            curl -fL --retry 5 --retry-all-errors \
+              -o /tmp/lslib.zip 'https://github.com/LovelySanta/FactorioModLib/archive/refs/tags/v2023.03.24.zip'
+            mkdir -p /tmp/lslib
+            unzip -q /tmp/lslib.zip -d /tmp/lslib
+            src=$(find /tmp/lslib -mindepth 1 -maxdepth 1 -type d | head -1)
+            mv "$src" /tmp/lslib/LSlib_2023.03.24
+            (cd /tmp/lslib && zip -qr "$OLDPWD/factorio/mods/LSlib_2023.3.24.zip" LSlib_2023.03.24)
+            unzip -t factorio/mods/LSlib_2023.3.24.zip
+          fi
+
+          find factorio/mods -maxdepth 1 -type f -name '*.zip' -printf '%f\n' | sort > downloaded-mod-files.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          expected=[]
+          for line in Path('mod-versions.tsv').read_text().splitlines():
+              n,v=line.split('\t',1); expected.append(f'{n}_{v}.zip')
+          got={p.name for p in Path('factorio/mods').glob('*.zip')}
+          Path('missing-mod-files.txt').write_text('\n'.join(sorted(set(expected)-got))+'\n')
+          PY
+          echo '--- missing exact mods ---'
+          cat missing-mod-files.txt
+
+      - name: Add read-only stage auditor
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-legacy_0.1.0
+          cat > factorio/mods/jj-se-stage-auditor-legacy_0.1.0/info.json <<'JSON'
+          {"name":"jj-se-stage-auditor-legacy","version":"0.1.0","title":"JJ SE Stage Auditor Legacy","author":"JJ search audit","factorio_version":"1.1","dependencies":["base >= 1.1"]}
+          JSON
+          cat > factorio/mods/jj-se-stage-auditor-legacy_0.1.0/control.lua <<'LUA'
+          local OUT="jj-newgame-se06-audit.json"
+          local function safe(fn,fallback) local ok,v=pcall(fn); if ok then return v end; return fallback end
+          local function recipe(e) return safe(function() return e.get_recipe() end,nil) end
+          local natural={character=true,resource=true,tree=true,cliff=true,corpse=true,["entity-ghost"]=true,["tile-ghost"]=true,["item-entity"]=true,particle=true,projectile=true,smoke=true,["simple-entity"]=true,["simple-entity-with-force"]=true,["simple-entity-with-owner"]=true}
+          local function surface_state(s,f)
+            local built,by_name,generated,charted=0,{},0,0
+            for _,e in pairs(s.find_entities_filtered{force=f}) do if e.valid and not natural[e.type] then built=built+1; by_name[e.name]=(by_name[e.name] or 0)+1 end end
+            for c in s.get_chunks() do generated=generated+1; if safe(function() return f.is_chunk_charted(s,c) end,false) then charted=charted+1 end end
+            return {name=s.name,index=s.index,player_built_entities=built,player_entity_names=by_name,generated_chunks=generated,charted_chunks=charted,characters=#s.find_entities_filtered{type="character",force=f}}
+          end
+          local function output_count(m)
+            local b=m.bounding_box; local area={{b.left_top.x-4,b.left_top.y-4},{b.right_bottom.x+4,b.right_bottom.y+4}}; local n=0
+            for _,i in pairs(m.surface.find_entities_filtered{area=area,type="inserter",force=m.force}) do
+              local p=safe(function() return i.pickup_position end,nil); local d=safe(function() return i.drop_position end,nil)
+              if p and d and p.x>=b.left_top.x-.4 and p.x<=b.right_bottom.x+.4 and p.y>=b.left_top.y-.4 and p.y<=b.right_bottom.y+.4 and not(d.x>=b.left_top.x-.4 and d.x<=b.right_bottom.x+.4 and d.y>=b.left_top.y-.4 and d.y<=b.right_bottom.y+.4) then n=n+1 end
+            end
+            return n
+          end
+          local function logistics(m)
+            local p=m.position; local area={{p.x-7,p.y-7},{p.x+7,p.y+7}}; local total=0
+            for _,t in pairs{"inserter","loader","loader-1x1","transport-belt","underground-belt","splitter","container","logistic-container","pipe","pipe-to-ground","pump"} do total=total+#m.surface.find_entities_filtered{area=area,type=t,force=m.force} end
+            local net=safe(function() return m.surface.find_logistic_network_by_position(m.position,m.force) end,nil)
+            return total,net~=nil
+          end
+          local function audit()
+            local f=game.forces.player; local n=game.surfaces.Nauvis or game.surfaces.nauvis or game.surfaces[1]; local active=script.active_mods
+            local out={factorio_version=active.base,space_exploration_version=active["space-exploration"],krastorio2_version=active.Krastorio2,tick=game.tick,technologies={},rocket_science={machines={},count=0,working=0,output_machines=0,logistics_machines=0,total_speed=0,estimated_pps=0,lifetime_produced=nil},non_nauvis_surfaces={},orbit_like_surfaces={},orbit_untouched=true,launch_pads=0}
+            if not n then out.error="Nauvis missing"; game.write_file(OUT,game.table_to_json(out),false); return end
+            for _,name in pairs{"se-rocket-science-pack","se-rocket-launch-pad","space-science-pack","se-space-science-lab","se-space-platform-scaffold"} do local t=f.technologies[name]; out.technologies[name]=t and t.researched or false end
+            out.rocket_science.researched=out.technologies["se-rocket-science-pack"]
+            out.rocket_science.lifetime_produced=safe(function() return f.item_production_statistics.get_input_count("se-rocket-science-pack") end,nil)
+            local rp=game.recipe_prototypes["se-rocket-science-pack"]; local amount,energy=8,80
+            if rp then energy=rp.energy or energy; for _,p in pairs(rp.products or {}) do if p.name=="se-rocket-science-pack" then amount=p.amount or amount end end end
+            for _,m in pairs(n.find_entities_filtered{type="assembling-machine",force=f}) do
+              local r=recipe(m)
+              if r and r.name=="se-rocket-science-pack" then
+                local o=output_count(m); local l,net=logistics(m); local speed=m.crafting_speed or 0
+                out.rocket_science.count=out.rocket_science.count+1; out.rocket_science.total_speed=out.rocket_science.total_speed+speed; out.rocket_science.estimated_pps=out.rocket_science.estimated_pps+speed*amount/energy
+                if m.status==defines.entity_status.working then out.rocket_science.working=out.rocket_science.working+1 end
+                if o>0 or net then out.rocket_science.output_machines=out.rocket_science.output_machines+1 end
+                if l>=4 or net then out.rocket_science.logistics_machines=out.rocket_science.logistics_machines+1 end
+                table.insert(out.rocket_science.machines,{name=m.name,position={x=m.position.x,y=m.position.y},status=tostring(m.status),speed=speed,output_inserters=o,nearby_logistics=l,logistic_network=net})
+              end
+            end
+            if game.entity_prototypes["se-rocket-launch-pad"] then out.launch_pads=#n.find_entities_filtered{name="se-rocket-launch-pad",force=f} end
+            for _,s in pairs(game.surfaces) do
+              if s.index~=n.index then
+                local e=surface_state(s,f); table.insert(out.non_nauvis_surfaces,e); local lower=string.lower(s.name)
+                if string.find(lower,"orbit",1,true) or string.find(lower,"asteroid",1,true) or string.find(lower,"space",1,true) then table.insert(out.orbit_like_surfaces,e); if e.player_built_entities>0 or e.charted_chunks>0 or e.characters>0 then out.orbit_untouched=false end end
+              end
+            end
+            out.full_scale=(out.rocket_science.count>=4 and out.rocket_science.output_machines>=3 and out.rocket_science.logistics_machines>=3) or (out.rocket_science.estimated_pps>=0.5 and out.rocket_science.output_machines>=1 and out.rocket_science.logistics_machines>=1)
+            game.write_file(OUT,game.table_to_json(out),false)
+          end
+          local target=nil
+          script.on_init(function() target=game.tick+120 end)
+          script.on_configuration_changed(function() target=game.tick+120 end)
+          script.on_event(defines.events.on_tick,function(e) if target and e.tick>=target then target=nil; audit() end end)
+          LUA
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mods=[{'name':'base','enabled':True}]
+          for line in Path('mod-versions.tsv').read_text().splitlines():
+              n,v=line.split('\t',1)
+              if any(Path('factorio/mods').glob(f'{n}_*.zip')): mods.append({'name':n,'enabled':True})
+          mods.append({'name':'jj-se-stage-auditor-legacy','enabled':True})
+          Path('factorio/mods/mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          PY
+          cp factorio/mods/mod-list.json final-mod-list.json
+
+      - name: Live-load and audit
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 30m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 2>&1 | tee factorio-live-audit.log
+          status=${PIPESTATUS[0]}; echo "status=$status" >> "$GITHUB_OUTPUT"
+          find "$PWD" -type f -name jj-newgame-se06-audit.json -print -exec cp '{}' ./jj-newgame-se06-audit.json \; || true
+          exit "$status"
+
+      - name: Summarize and upload
+        if: always()
+        shell: bash
+        run: |
+          echo "factorio_live_status=${{ steps.live.outputs.status }}" > workflow-status.txt
+          if test -f jj-newgame-se06-audit.json; then python3 -m json.tool jj-newgame-se06-audit.json > jj-newgame-se06-audit.pretty.json; cat jj-newgame-se06-audit.pretty.json; else echo AUDIT_FILE_NOT_PRODUCED > audit-missing.txt; tail -300 factorio-live-audit.log || true; fi
+      - name: Upload evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newgame-se06-live-audit-20260826
+          path: |
+            save-sha256.txt
+            save-size.txt
+            factorio-version.txt
+            exact-mod-list.txt
+            mod-versions.tsv
+            downloaded-mod-files.txt
+            missing-mod-files.txt
+            mirror-download-status.txt
+            final-mod-list.json
+            factorio-live-audit.log
+            workflow-status.txt
+            jj-newgame-se06-audit.json
+            jj-newgame-se06-audit.pretty.json
+            audit-missing.txt
+            mirror-logs/
+          if-no-files-found: warn
+          retention-days: 7
