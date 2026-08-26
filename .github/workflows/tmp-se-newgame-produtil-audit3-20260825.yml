@@ -1,0 +1,155 @@
+name: New Game SE prod-util audit, mirror retry 3
+
+on:
+  push:
+    branches: [tmp-se-newgame-produtil-audit3-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-newgame-produtil-audit3-result-20260825
+  SAVE_URL: https://github.com/user-attachments/files/21559231/New.Game.zip
+  SOURCE_WORKFLOW: https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-newgame-produtil-audit-20260825/.github/workflows/tmp-se-newgame-produtil-audit-20260825.yml
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare save, game, and exact mirrored mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/mods published
+          curl -fL --retry 10 --retry-all-errors --max-time 1800 -o work/candidate.zip "$SAVE_URL"
+          unzip -t work/candidate.zip > published/unzip-test.txt
+          sha256sum work/candidate.zip > published/save-sha256.txt
+          cp work/candidate.zip published/New.Game.original.zip
+          curl -fsSL "$SOURCE_WORKFLOW" -o work/source.yml
+          python3 - <<'PY'
+          from pathlib import Path
+          import textwrap
+          text=Path('work/source.yml').read_text()
+          def extract(target):
+              marker=f"cat > work/{target} <<'PY'\n"
+              start=text.index(marker)+len(marker)
+              end=text.index("\n          PY",start)
+              return textwrap.dedent(text[start:end]).lstrip()
+          setup=extract('setup.py')
+          query=extract('query.py')
+          lines=setup.splitlines()
+          hit=next(i for i,line in enumerate(lines) if "api='https://mods.factorio.com/api/mods/'" in line)
+          start=hit-1
+          end=next(i for i in range(hit+1,len(lines)) if lines[i].lstrip().startswith('except Exception as exc:'))+2
+          indent=lines[start][:len(lines[start])-len(lines[start].lstrip())]
+          inner=indent+'    '
+          replacement=[
+              indent+'try:',
+              inner+"url='https://mods-storage.re146.dev/'+urllib.parse.quote(name,safe='')+'/'+urllib.parse.quote(ver,safe='')+'.zip?anticache=0.7319'",
+              inner+"dest=P('work/mods')/f'{name}_{ver}.zip'",
+              inner+'download(url,dest)',
+              inner+"report.append({'name':name,'version':ver,'status':'downloaded-mirror','bytes':dest.stat().st_size,'url':url})",
+              inner+'enabled.append(name)',
+              indent+'except Exception as exc:',
+              inner+"report.append({'name':name,'version':ver,'status':'failed-disabled','error':repr(exc)})",
+          ]
+          setup='\n'.join(lines[:start]+replacement+lines[end:])+'\n'
+          Path('work/setup.py').write_text(setup)
+          Path('work/query.py').write_text(query)
+          PY
+          python3 work/setup.py | tee published/setup-console.txt
+
+      - name: Load and query save
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > work/server-settings.json <<'JSON'
+          {"name":"inspection","description":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          JSON
+          sed -i 's/27531/27533/g' work/query.py
+          work/factorio/bin/x64/factorio --start-server work/candidate.zip --mod-directory work/mods \
+            --server-settings work/server-settings.json --rcon-port 27533 --rcon-password inspect \
+            > published/server.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          for _ in $(seq 1 1200); do
+              grep -q 'Starting RCON interface' published/server.log && break
+              kill -0 "$PID" 2>/dev/null || { tail -600 published/server.log; exit 1; }
+              sleep 1
+          done
+          grep -q 'Starting RCON interface' published/server.log
+          python3 work/query.py | tee published/progression-console.txt
+
+      - name: Grade target stage
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          d=json.loads(Path('published/progression.json').read_text())
+          items={}; researched=[]
+          for f in d.get('forces',[]):
+              for n,v in (f.get('items') or {}).items():
+                  cur=items.setdefault(n,{'output':0,'input':0});cur['output']+=v.get('output',0) or 0;cur['input']+=v.get('input',0) or 0
+              researched += f.get('researched_specialist') or []
+          recipes=d.get('science_recipes') or {}; universe=set(items)|set(recipes)
+          def stat(names): return (sum(items.get(n,{}).get('output',0) or 0 for n in names),sum(items.get(n,{}).get('input',0) or 0 for n in names),sum(recipes.get(n,0) or 0 for n in names))
+          prod_n=[n for n in universe if n in ('production-science-pack','se-production-science-pack')]
+          util_n=[n for n in universe if n in ('utility-science-pack','se-utility-science-pack')]
+          rocket_n=[n for n in universe if n=='se-rocket-science-pack']
+          space_n=[n for n in universe if n in ('space-science-pack','se-space-science-pack')]
+          spec_n=[n for n in universe if any(x in n for x in ('astronomic-science-pack','biological-science-pack','energy-science-pack','material-science-pack','deep-space-science-pack'))]
+          prod=stat(prod_n);util=stat(util_n);rocket=stat(rocket_n);space=stat(space_n);spec=stat(spec_n)
+          grade={'hours':d.get('hours'),'rockets_launched':max([f.get('rockets_launched',0) or 0 for f in d.get('forces',[])] or [0]),
+            'production_names':prod_n,'production_output':prod[0],'production_input':prod[1],'production_machines':prod[2],
+            'utility_names':util_n,'utility_output':util[0],'utility_input':util[1],'utility_machines':util[2],
+            'rocket_science_output':rocket[0],'rocket_science_input':rocket[1],'rocket_science_machines':rocket[2],
+            'space_science_output':space[0],'space_science_input':space[1],'space_science_machines':space[2],
+            'specialist_names':spec_n,'specialist_output':spec[0],'specialist_input':spec[1],'specialist_machines':spec[2],
+            'researched_specialist':sorted(set(researched))}
+          grade['prod_present']=prod[0]>0 or prod[1]>0 or prod[2]>0;grade['util_present']=util[0]>0 or util[1]>0 or util[2]>0
+          grade['specialist_absent']=spec[0]==0 and spec[1]==0 and spec[2]==0
+          grade['target_match']=grade['prod_present'] and grade['util_present'] and grade['specialist_absent']
+          Path('published/grade.json').write_text(json.dumps(grade,indent=2,sort_keys=True))
+          lines=['# New Game prod-util audit','',f"## Verdict: {'MATCH' if grade['target_match'] else 'NOT A MATCH'}",'',
+            f"- Hours: **{grade['hours']}**",f"- Rockets launched: **{grade['rockets_launched']}**",
+            f"- Production Science: output **{prod[0]}**, consumed **{prod[1]}**, machines **{prod[2]}**",
+            f"- Utility Science: output **{util[0]}**, consumed **{util[1]}**, machines **{util[2]}**",
+            f"- Rocket Science: output **{rocket[0]}**, consumed **{rocket[1]}**, machines **{rocket[2]}**",
+            f"- Space Science: output **{space[0]}**, consumed **{space[1]}**, machines **{space[2]}**",
+            f"- Specialist Science: output **{spec[0]}**, consumed **{spec[1]}**, machines **{spec[2]}**",
+            f"- Researched specialist technologies: **{len(grade['researched_specialist'])}**"]
+          Path('published/VERDICT.md').write_text('\n'.join(lines)+'\n');print('\n'.join(lines))
+          PY
+
+      - name: Upload actual save and evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: newgame-se-produtil-audit3
+          path: published/
+          compression-level: 0
+          retention-days: 7
+          if-no-files-found: error
+
+      - name: Publish small result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f published/New.Game.original.zip
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-newgame-produtil-audit3
+          mkdir -p tmp-se-newgame-produtil-audit3
+          cp -a published/. tmp-se-newgame-produtil-audit3/
+          git add -f tmp-se-newgame-produtil-audit3
+          git commit -m 'Publish New Game mirror audit 3' || true
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
