@@ -1,4 +1,4 @@
-name: Download RedMew SE crash save artifact
+name: Audit stubborn native SE 0.7 saves
 
 on:
   push:
@@ -8,47 +8,183 @@ permissions:
   contents: read
 
 jobs:
-  download:
+  audit:
     if: github.actor != 'github-actions[bot]'
+    name: audit-${{ matrix.id }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 75
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: rk-se-2
+            url: https://forums.factorio.com/download/file.php?id=109074
+          - id: spaceexploration-108368
+            url: https://forums.factorio.com/download/file.php?id=108368
+    env:
+      CANDIDATE_ID: ${{ matrix.id }}
+      SOURCE_URL: ${{ matrix.url }}
     steps:
-      - name: Download and validate save
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-se07-salvage-minimal-v2-20260826
+
+      - name: Download save and identify exact mods
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p published
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file golang-go
+          mkdir -p reports attempts match factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'Mozilla/5.0 Factorio-save-auditor' -o save.zip "$SOURCE_URL"
+          file save.zip | tee reports/file.txt
+          stat -c 'save_bytes=%s' save.zip | tee reports/save-size.txt
+          sha256sum save.zip | tee reports/save-sha256.txt
+          unzip -t save.zip > reports/unzip-test.txt 2>&1
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"2.0.99","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip > reports/exact-mod-list.txt 2>reports/fmm-stderr.txt
+          cat reports/exact-mod-list.txt
+          awk 'NF==2 && $1!="base" {print $1 "\t" $2}' reports/exact-mod-list.txt > reports/mod-versions.tsv
+          se=$(awk '$1=="space-exploration"{print $2}' reports/exact-mod-list.txt | head -1)
+          k2=$(awk '$1=="Krastorio2"{print $2}' reports/exact-mod-list.txt | head -1)
+          printf 'space_exploration=%s\nkrastorio2=%s\n' "$se" "$k2" > reports/identity.txt
+          case "$se" in 0.7.*) ;; *) echo 'Not native SE 0.7'; exit 2 ;; esac
+          test -z "$k2"
+
+      - name: Download Factorio and exact mod versions
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -o factorio.tar.xz https://www.factorio.com/get-download/2.0.76/headless/linux64
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee reports/factorio-version.txt
+          while IFS=$'\t' read -r mod version; do
+            case "$mod" in quality|space-age|elevated-rails) continue ;; esac
+            out="factorio/mods/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'factorio-mod-downloader/1.0' -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?x=$RANDOM-$RANDOM"
+            unzip -t "$out" >/dev/null
+          done < reports/mod-versions.tsv
+
+      - name: Build minimal required mod closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-v3_0.1.0
+          cp tmp-se-auditor-v3/control.lua factorio/mods/jj-se-stage-auditor-v3_0.1.0/control.lua
+          cp tmp-se-auditor-v3/info.json factorio/mods/jj-se-stage-auditor-v3_0.1.0/info.json
           python3 - <<'PY'
-          import requests, pathlib, zipfile, hashlib, json
-          urls = [
-              'https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip',
-              'https://redmew.com/FactorioWebInterface/V5/downloadSave?directory=public/final&saveName=se_crash.zip',
-          ]
-          out = pathlib.Path('published/se_crash.zip')
-          errors=[]
-          for url in urls:
+          import json, re, zipfile
+          from pathlib import Path
+          md=Path('factorio/mods'); infos={}; versions={}
+          for line in Path('reports/mod-versions.tsv').read_text().splitlines():
+              name,version=line.split('\t',1); versions[name]=version
+          for z in md.glob('*.zip'):
               try:
-                  r=requests.get(url,headers={'User-Agent':'Mozilla/5.0 Factorio-save-auditor'},timeout=180,allow_redirects=True)
-                  r.raise_for_status()
-                  out.write_bytes(r.content)
-                  with zipfile.ZipFile(out) as z:
-                      names=z.namelist()
-                      assert any(n.endswith('/level-init.dat') for n in names)
-                      assert any('/level.dat' in n for n in names)
-                  meta={'source_url':url,'final_url':r.url,'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'zip_entries':len(names)}
-                  pathlib.Path('published/metadata.json').write_text(json.dumps(meta,indent=2))
-                  print(json.dumps(meta,indent=2))
-                  break
+                  with zipfile.ZipFile(z) as f:
+                      p=next(x for x in f.namelist() if x.count('/')==1 and x.endswith('/info.json'))
+                      info=json.loads(f.read(p)); infos[info['name']]=info
               except Exception as exc:
-                  errors.append({'url':url,'error':repr(exc)})
-                  if out.exists(): out.unlink()
-          else:
-              raise SystemExit(json.dumps(errors,indent=2))
+                  print('INFO_READ_ERROR', z, exc)
+          infos['jj-se-stage-auditor-v3']=json.loads((md/'jj-se-stage-auditor-v3_0.1.0/info.json').read_text())
+          def dep_name(raw):
+              s=raw.strip()
+              if s.startswith('(?)') or s[:1] in {'?','!'}: return None
+              if s[:1]=='~': s=s[1:].strip()
+              m=re.match(r'[A-Za-z0-9_.-]+',s)
+              return m.group(0) if m else None
+          required={'space-exploration','jj-se-stage-auditor-v3'}; queue=list(required)
+          while queue:
+              info=infos.get(queue.pop(),{}); deps=info.get('dependencies',[]) or []
+              if isinstance(deps,str): deps=[deps]
+              for raw in deps:
+                  d=dep_name(raw)
+                  if d and d!='base' and d not in required:
+                      required.add(d); queue.append(d)
+          Path('reports/required-mod-closure.txt').write_text('\n'.join(sorted(required))+'\n')
+          builtins={'quality','space-age','elevated-rails'}
+          mods=[{'name':'base','enabled':True}]
+          mods += [{'name':b,'enabled':b in required} for b in sorted(builtins)]
+          for name,version in sorted(versions.items()):
+              if name not in builtins and (md/f'{name}_{version}.zip').exists():
+                  mods.append({'name':name,'enabled':name in required})
+          mods.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          (md/'mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
           PY
-      - name: Upload save artifact
+          cp factorio/data/server-settings.example.json server-settings.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('server-settings.json'); d=json.loads(p.read_text())
+          d['name']='JJ SE audit'; d['visibility']={'public':False,'lan':False}; d['require_user_verification']=False; d['autosave_interval']=0; d['max_players']=1
+          p.write_text(json.dumps(d,indent=2)+'\n')
+          PY
+
+      - name: Load and audit with clean retries
+        shell: bash
+        continue-on-error: true
+        run: |
+          set +e
+          clean() {
+            pkill -9 -f 'factorio/bin/x64/factorio' >/dev/null 2>&1 || true
+            sleep 1
+            rm -f factorio/.lock factorio/temp/*.lock factorio/script-output/jj-se-live-audit-v3.json reports/jj-se-live-audit.json
+          }
+          grab() {
+            f=$(find factorio -type f -name jj-se-live-audit-v3.json 2>/dev/null | head -1)
+            if test -n "$f"; then cp "$f" reports/jj-se-live-audit.json; return 0; fi
+            return 1
+          }
+          clean
+          timeout --signal=TERM --kill-after=20s 25m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 >attempts/minimal-benchmark.log 2>&1
+          echo $? >attempts/minimal-benchmark.status
+          grab && exit 0
+          clean
+          timeout --signal=TERM --kill-after=20s 180s factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" --start-server "$PWD/save.zip" --server-settings "$PWD/server-settings.json" >attempts/minimal-server.log 2>&1
+          echo $? >attempts/minimal-server.status
+          grab || true
+          clean
+
+      - name: Classify and preserve a winner
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, pathlib, shutil
+          p=pathlib.Path('reports/jj-se-live-audit.json')
+          result={'candidate':os.environ['CANDIDATE_ID'],'source':os.environ['SOURCE_URL'],'audit_succeeded':p.exists(),'exact_match':False}
+          if p.exists():
+              d=json.loads(p.read_text()); r=d.get('rocket_science',{})
+              produced=r.get('lifetime_produced') or 0; count=r.get('count') or 0
+              output=r.get('machines_with_automatic_output') or 0; logistics=r.get('machines_with_logistics') or 0
+              pps=r.get('estimated_packs_per_second_before_productivity') or 0
+              full=bool(d.get('full_scale_machine_heuristic_pass') or d.get('full_scale_throughput_heuristic_pass') or (((count>=4 and output>=3 and logistics>=3) or (pps>=0.5 and output>=1 and logistics>=1)) and produced>0))
+              untouched=bool(d.get('orbit_untouched_heuristic_pass'))
+              result.update(space_exploration=d.get('space_exploration_version'),krastorio2=d.get('krastorio2_version'),rocket_science_researched=r.get('researched'),rocket_science_lifetime=produced,rocket_science_machines=count,rocket_science_output_machines=output,rocket_science_logistics_machines=logistics,rocket_science_pps=pps,full_scale=full,orbit_untouched=untouched,orbit_like_surfaces=d.get('orbit_like_surfaces'),exact_match=bool(full and untouched and not d.get('krastorio2_version')))
+              pathlib.Path('reports/live-audit.pretty.json').write_text(json.dumps(d,indent=2)+'\n')
+          else:
+              result['error']='minimal_load_failed'
+          pathlib.Path('reports/classification.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          if result['exact_match']:
+              m=pathlib.Path('match'); m.mkdir(exist_ok=True)
+              shutil.copy2('save.zip',m/f"JJ_SE07_MATCH_{os.environ['CANDIDATE_ID']}.zip")
+              shutil.copy2('reports/classification.json',m/'verification.json')
+              shutil.copy2('reports/live-audit.pretty.json',m/'live-audit.json')
+          PY
+
+      - name: Upload result
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: se-crash-save
-          path: published/
-          if-no-files-found: error
+          name: stubborn-se07-${{ matrix.id }}
+          path: |
+            reports/
+            attempts/
+            match/
+          if-no-files-found: warn
           retention-days: 7
+          compression-level: 6
