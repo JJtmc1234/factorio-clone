@@ -22,25 +22,39 @@ jobs:
           sudo apt-get install -y -qq unzip file binutils
           python3 -m pip install --quiet --upgrade requests beautifulsoup4 lxml gdown
 
-      - name: Crawl, download, and classify public saves
+      - name: Compile-check and run crawler
         id: crawl
         continue-on-error: true
         shell: bash
         run: |
-          set -o pipefail
-          rm -rf se-broad-work
-          python3 tmp-se-broad-crawler/crawl.py 2>&1 | tee broad-crawler-console.txt
-          status=${PIPESTATUS[0]}
+          set +e
+          rm -rf se-broad-work broad-crawler-console.txt
           mkdir -p se-broad-work
+          {
+            echo '=== PYTHON COMPILE CHECK ==='
+            python3 -m py_compile tmp-se-broad-crawler/crawl.py
+            compile_status=$?
+            echo "compile_status=$compile_status"
+            if [ "$compile_status" -eq 0 ]; then
+              echo '=== CRAWLER RUN ==='
+              python3 tmp-se-broad-crawler/crawl.py
+              run_status=$?
+            else
+              run_status=$compile_status
+            fi
+            echo "run_status=$run_status"
+          } > broad-crawler-console.txt 2>&1
+          status=$?
           cp broad-crawler-console.txt se-broad-work/console.txt
-          echo "$status" > se-broad-work/exit-status.txt
-          exit "$status"
+          echo "$status" > se-broad-work/step-status.txt
+          cat broad-crawler-console.txt
+          exit 0
 
       - name: Upload crawler artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: se-broad-crawler-20260825
+          name: se-broad-crawler-20260825-rerun
           path: |
             se-broad-work/SUMMARY.md
             se-broad-work/*.json
@@ -50,7 +64,7 @@ jobs:
           retention-days: 10
           compression-level: 0
 
-      - name: Publish reports and manageable candidate saves
+      - name: Publish reports, console, and manageable candidates
         if: always()
         shell: bash
         run: |
@@ -78,5 +92,5 @@ jobs:
           (pathlib.Path('tmp-se-broad-crawler-result') / 'published-candidate-bytes.txt').write_text(str(total) + '\n')
           PY
           git add -f tmp-se-broad-crawler-result
-          git commit -m 'Publish broad SE 0.7 save crawl results' || true
+          git commit -m 'Publish broad SE 0.7 save crawl rerun' || true
           git push --force origin HEAD:refs/heads/tmp-se-broad-crawler-result-20260825
