@@ -1,0 +1,84 @@
+name: Inspect RedMew SE final save header
+
+on:
+  push:
+    branches: [tmp-se-redmew-produtil-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-redmew-produtil-result-20260825
+  SAVE_URL: "https://refactorio.de/saves?directory=public%2Ffinal&file=2025_10_Space_Exploration_v07.zip"
+
+jobs:
+  inspect:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and parse save header
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          curl -fL --retry 10 --retry-all-errors --max-time 3600 -o published/RedMew-SE07-final.zip "$SAVE_URL"
+          unzip -t published/RedMew-SE07-final.zip > published/unzip-test.txt
+          sha256sum published/RedMew-SE07-final.zip > published/save-sha256.txt
+          python3 - <<'PY'
+          import json, struct, zipfile
+          from pathlib import Path
+          p=Path('published/RedMew-SE07-final.zip')
+          with zipfile.ZipFile(p) as z:
+              n=next(x for x in z.namelist() if x.endswith('/level-init.dat') or x=='level-init.dat')
+              d=z.read(n)
+          class R:
+              def __init__(self,d): self.d=d; self.o=0
+              def u8(self): v=self.d[self.o]; self.o+=1; return v
+              def u16(self): v=struct.unpack_from('<H',self.d,self.o)[0]; self.o+=2; return v
+              def u32(self): v=struct.unpack_from('<I',self.d,self.o)[0]; self.o+=4; return v
+              def ver(self): return self.u16(),self.u16(),self.u16(),self.u16()
+              def opt(self,b,fv):
+                  if fv>(0,14,14,0):
+                      x=self.u8()
+                      if x!=255: return x
+                  return self.u16() if b==16 else self.u32()
+              def text(self,fv):
+                  n=self.opt(32,fv); v=self.d[self.o:self.o+n]; self.o+=n; return v.decode('utf-8','replace')
+              def v48(self,fv): return self.opt(16,fv),self.opt(16,fv),self.opt(16,fv)
+          r=R(d); fv=r.ver(); r.u8(); save_name=r.text(fv); campaign=r.text(fv); base_mod=r.text(fv)
+          r.u8();r.u8();r.u8();r.text(fv);r.u8();r.u8();r.u8();r.u8()
+          loaded='.'.join(map(str,r.v48(fv))); build=r.u32() if fv[0]>=2 else r.u16(); r.u8()
+          if fv[0]>=2: r.o += 4
+          mods={}
+          for _ in range(r.opt(32,fv)):
+              name=r.text(fv); version='.'.join(map(str,r.v48(fv))); r.u32(); mods[name]=version
+          out={'bytes':p.stat().st_size,'factorio_version':'.'.join(map(str,fv)),'download_version':'.'.join(map(str,fv[:3])),'save_name':save_name,'campaign':campaign,'base_mod':base_mod,'loaded_from':loaded,'loaded_from_build':build,'mods':mods}
+          Path('published/header.json').write_text(json.dumps(out,indent=2,sort_keys=True))
+          Path('published/SUMMARY.md').write_text('# RedMew final header\n\n- Size: **{:,} bytes**\n- Factorio: **{}**\n- Space Exploration: **{}**\n- Mods: **{}**\n'.format(out['bytes'],out['factorio_version'],mods.get('space-exploration'),len(mods)))
+          print(json.dumps(out,indent=2,sort_keys=True))
+          PY
+      - name: Upload save and header
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se07-final-header
+          path: published/
+          compression-level: 0
+          retention-days: 7
+      - name: Publish small result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f published/RedMew-SE07-final.zip
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-redmew-produtil
+          mkdir -p tmp-se-redmew-produtil
+          cp -a published/. tmp-se-redmew-produtil/
+          git add -f tmp-se-redmew-produtil
+          git commit -m 'Publish RedMew final header audit' || true
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
