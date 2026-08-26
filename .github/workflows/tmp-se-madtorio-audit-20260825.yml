@@ -1,0 +1,110 @@
+name: Audit Madtorio saves for SE 0.7
+
+on:
+  push:
+    branches: [tmp-se-madtorio-audit-20260825]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download and inspect all public Madtorio saves
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf madtorio-audit
+          mkdir -p madtorio-audit/downloads madtorio-audit/results madtorio-audit/candidates
+          cat > /tmp/urls.tsv <<'EOF'
+          2026-02-03	https://madtorio.com/api/downloads/7b63e982-63c6-4735-904a-3a4c9a3a26ab.zip
+          2026-01-20	https://madtorio.com/api/downloads/d7140581-61dc-4a4e-a697-e69208efe2b3.zip
+          2025-11-24	https://madtorio.com/api/downloads/be037e5f-6a36-429a-83ea-bbf6bee73d1a.zip
+          end-game-3	https://madtorio.com/api/downloads/61314b1a-fb3e-46a3-9d1a-fb036021f140.zip
+          end-game-2	https://madtorio.com/api/downloads/4f86aa21-42d0-49f9-8fd1-6f962c344bac.zip
+          end-game	https://madtorio.com/api/downloads/0497fe9a-bd61-42fd-a911-9b168129613e.zip
+          EOF
+          while IFS=$'\t' read -r name url; do
+            echo "Downloading $name"
+            curl --fail --location --retry 3 --connect-timeout 20 --max-time 1800 "$url" -o "madtorio-audit/downloads/$name.zip" || true
+          done < /tmp/urls.tsv
+          cat > /tmp/audit.py <<'PY'
+          import hashlib, io, json, pathlib, re, zipfile
+          root = pathlib.Path('madtorio-audit')
+          rows=[]
+          def strings(data, n=4):
+              return [m.group().decode('latin1','replace') for m in re.finditer(rb'[\x20-\x7e]{%d,}'%n,data)]
+          for p in sorted((root/'downloads').glob('*.zip')):
+              rec={'name':p.name,'size':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+              if not zipfile.is_zipfile(p):
+                  rec['error']='not zip'; rows.append(rec); continue
+              try:
+                  with zipfile.ZipFile(p) as z:
+                      names=z.namelist()
+                      roots=sorted({n[:-len('/level-init.dat')] for n in names if n.endswith('/level-init.dat')})
+                      rec['roots']=roots
+                      rec['members']=len(names)
+                      rec['saves']=[]
+                      for r in roots:
+                          if r+'/script.dat' not in names: continue
+                          init=z.read(r+'/level-init.dat'); script=z.read(r+'/script.dat')
+                          ss=strings(init)
+                          has_se=any('space-exploration' in s.lower() for s in ss)
+                          has_sa=any('space-age' in s.lower() for s in ss)
+                          near=[]
+                          for i,s in enumerate(ss):
+                              if 'space-exploration' in s.lower():
+                                  for x in ss[max(0,i-20):i+21]:
+                                      near += re.findall(r'\b0\.[67]\.\d{1,3}\b',x)
+                          allv=sorted(set(re.findall(rb'\b0\.[67]\.\d{1,3}\b',init)))
+                          allv=[x.decode() for x in allv]
+                          lower=script.lower()
+                          terms={t.decode():lower.count(t) for t in [b'se-rocket-science-pack',b'nauvis orbit',b'se-rocket-launch-pad',b'cargo rocket',b'space-science-pack',b'astronomic-science',b'cryonite',b'vulcanite']}
+                          srec={'root':r,'has_se':has_se,'has_space_age':has_sa,'se_versions_near_name':sorted(set(near)),'all_06_07_versions':allv,'script_terms':terms}
+                          rec['saves'].append(srec)
+                          if has_se and any(v.startswith('0.7.') for v in near+allv) and p.stat().st_size<99_000_000:
+                              (root/'candidates'/p.name).write_bytes(p.read_bytes())
+                      rows.append(rec)
+              except Exception as e:
+                  rec['error']=repr(e); rows.append(rec)
+          (root/'results'/'audit.json').write_text(json.dumps(rows,indent=2))
+          lines=['# Madtorio save audit','']
+          for r in rows:
+              lines += [f"## {r['name']}",f"- size: {r['size']}",f"- sha256: `{r['sha256']}`"]
+              if r.get('error'): lines.append(f"- error: {r['error']}")
+              for s in r.get('saves',[]):
+                  lines += [f"- root: `{s['root']}`",f"- Space Exploration: {s['has_se']}",f"- Space Age: {s['has_space_age']}",f"- near SE versions: {s['se_versions_near_name']}",f"- all 0.6/0.7 strings: {s['all_06_07_versions']}",f"- terms: `{s['script_terms']}`"]
+              lines.append('')
+          (root/'results'/'SUMMARY.md').write_text('\n'.join(lines))
+          print('\n'.join(lines))
+          PY
+          python3 /tmp/audit.py
+      - name: Upload candidates and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: madtorio-se-audit-20260825
+          path: |
+            madtorio-audit/results/*
+            madtorio-audit/candidates/*.zip
+          if-no-files-found: warn
+          retention-days: 10
+          compression-level: 0
+      - name: Publish report
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-madtorio-audit-result-20260825
+          rm -rf tmp-se-madtorio-audit-result
+          mkdir -p tmp-se-madtorio-audit-result/candidates
+          cp -a madtorio-audit/results/. tmp-se-madtorio-audit-result/ || true
+          for f in madtorio-audit/candidates/*.zip; do [ -f "$f" ] && cp "$f" tmp-se-madtorio-audit-result/candidates/; done
+          git add -f tmp-se-madtorio-audit-result
+          git commit -m 'Publish Madtorio SE audit' || true
+          git push --force origin HEAD:refs/heads/tmp-se-madtorio-audit-result-20260825
