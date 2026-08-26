@@ -53,6 +53,13 @@ jobs:
               pathlib.Path('published/errors.json').write_text(json.dumps(errors,indent=2))
               raise SystemExit(json.dumps(errors,indent=2))
           PY
+      - name: Upload save artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se-crash-save
+          path: published/
+          compression-level: 0
+          retention-days: 7
       - name: Publish result branch
         shell: bash
         run: |
