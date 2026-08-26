@@ -1,0 +1,38 @@
+name: Temporary SE attachment fetch
+
+on:
+  push:
+    branches:
+      - tmp-se-attachment-fetch-20260825
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download public issue attachment
+        shell: bash
+        run: |
+          set -euo pipefail
+          url='https://github.com/user-attachments/files/23688004/SPACE.EXPLORATION.0.7.zip'
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'Mozilla/5.0 GitHub-Actions-SE-save-verifier' \
+            --output SPACE.EXPLORATION.0.7.zip "$url"
+          test -s SPACE.EXPLORATION.0.7.zip
+          file SPACE.EXPLORATION.0.7.zip
+          unzip -t SPACE.EXPLORATION.0.7.zip
+          sha256sum SPACE.EXPLORATION.0.7.zip | tee SHA256SUMS.txt
+          ls -lh SPACE.EXPLORATION.0.7.zip
+      - name: Upload downloaded save
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-public-issue-attachment
+          path: |
+            SPACE.EXPLORATION.0.7.zip
+            SHA256SUMS.txt
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 1
