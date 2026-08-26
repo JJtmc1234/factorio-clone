@@ -79,6 +79,28 @@ jobs:
           cp tmp-se-auditor/info.json factorio/mods/jj-se-stage-auditor_0.3.0/info.json
           cp tmp-se-auditor/control.lua factorio/mods/jj-se-stage-auditor_0.3.0/control.lua
           python3 - <<'PY'
+          from pathlib import Path
+          p = Path('factorio/mods/jj-se-stage-auditor_0.3.0/control.lua')
+          text = p.read_text()
+          old = '''  report.cargo_rocket.launch_pads_on_nauvis =
+            #nauvis.find_entities_filtered{name = "se-rocket-launch-pad", force = force}
+          report.cargo_rocket.landing_pads_on_nauvis =
+            #nauvis.find_entities_filtered{name = "se-rocket-landing-pad", force = force}
+          '''
+          new = '''  if prototypes.entity["se-rocket-launch-pad"] then
+            report.cargo_rocket.launch_pads_on_nauvis =
+              #nauvis.find_entities_filtered{name = "se-rocket-launch-pad", force = force}
+          end
+          if prototypes.entity["se-rocket-landing-pad"] then
+            report.cargo_rocket.landing_pads_on_nauvis =
+              #nauvis.find_entities_filtered{name = "se-rocket-landing-pad", force = force}
+          end
+          '''
+          if old not in text:
+              raise SystemExit('expected cargo-pad audit block not found')
+          p.write_text(text.replace(old, new))
+          PY
+          python3 - <<'PY'
           import json
           from pathlib import Path
           mods = [
