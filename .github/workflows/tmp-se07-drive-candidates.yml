@@ -1,0 +1,140 @@
+name: Identify public SE save candidates
+
+on:
+  push:
+    branches: [tmp-se07-drive-candidates-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 -m pip install --quiet gdown
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          mkdir -p fake-factorio/data/base fake-factorio/mods candidates reports
+          printf '%s\n' '{"name":"base","version":"2.0.72","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+
+      - name: Download public candidate files
+        shell: bash
+        run: |
+          set -uo pipefail
+          python3 - <<'PY'
+          import pathlib, subprocess, json, requests, re, urllib.parse, traceback, os
+          out=pathlib.Path('candidates'); out.mkdir(exist_ok=True)
+          result=[]
+          drives={
+            'migration_earendel_392':'1nScbABVE1hugI9Oj5Li6XRotivrJuBsp',
+            'miniloader_modlist_save':'1gFuWk1QHVe4Jha4DD8eS57bzniwbyrn-',
+            'miniloader_se06146_save':'1Tin_CrL075mHPVhDVdZtFErzZb86Hxbo',
+            'factorissimo_migration_245':'1BFktsFpRaH8N5IHgbbquS9YHyNXClQxr',
+            'factorissimo_issue250_comment':'1QdbvZ0kMRC3rd6IEHToag3MeR8p0v0Cc',
+          }
+          for name,fid in drives.items():
+            target=out/(name+'.bin')
+            rec={'name':name,'kind':'gdrive','id':fid}
+            try:
+              p=subprocess.run(['gdown','--fuzzy',f'https://drive.google.com/file/d/{fid}/view','-O',str(target)],capture_output=True,text=True,timeout=1200)
+              rec.update(returncode=p.returncode,stdout=p.stdout[-4000:],stderr=p.stderr[-4000:])
+              if target.exists(): rec['bytes']=target.stat().st_size
+            except Exception as e: rec['error']=repr(e)
+            result.append(rec)
+
+          # OneDrive share. First try normal redirect with download=1; then inspect page for download URL.
+          name='ltn_se_only_longrunning_35'
+          share='https://1drv.ms/u/c/2727bd721db2bdba/Efym695sJfpDv-5JVHyLeWcB0TTNre4JkTT-vKOaCbNhVA?e=C8oS1n'
+          target=out/(name+'.bin')
+          rec={'name':name,'kind':'onedrive','url':share}
+          try:
+            s=requests.Session(); s.headers['User-Agent']='Mozilla/5.0'
+            sep='&' if '?' in share else '?'
+            r=s.get(share+sep+'download=1',timeout=120,allow_redirects=True,stream=True)
+            rec.update(status=r.status_code,final_url=r.url,content_type=r.headers.get('Content-Type'),content_length=r.headers.get('Content-Length'))
+            ctype=(r.headers.get('Content-Type') or '').lower()
+            if r.ok and ('zip' in ctype or 'octet-stream' in ctype or 'content-disposition' in {k.lower() for k in r.headers}):
+              with target.open('wb') as f:
+                for chunk in r.iter_content(1024*1024):
+                  if chunk: f.write(chunk)
+              rec['bytes']=target.stat().st_size
+            else:
+              text=r.text
+              (out/(name+'.html')).write_text(text,errors='replace')
+              patterns=[
+                r'"downloadUrl"\s*:\s*"([^"]+)"',
+                r'"@content.downloadUrl"\s*:\s*"([^"]+)"',
+                r'https://[^"<>]+download[^"<>]+',
+              ]
+              dl=None
+              for pat in patterns:
+                m=re.search(pat,text)
+                if m:
+                  dl=m.group(1) if m.lastindex else m.group(0)
+                  dl=bytes(dl,'utf-8').decode('unicode_escape').replace('\\u0026','&')
+                  break
+              rec['found_download_url']=bool(dl)
+              if dl:
+                rr=s.get(dl,timeout=120,allow_redirects=True,stream=True)
+                rec.update(download_status=rr.status_code,download_final_url=rr.url,download_content_type=rr.headers.get('Content-Type'),download_content_length=rr.headers.get('Content-Length'))
+                if rr.ok:
+                  with target.open('wb') as f:
+                    for chunk in rr.iter_content(1024*1024):
+                      if chunk:f.write(chunk)
+                  rec['bytes']=target.stat().st_size
+          except Exception as e:
+            rec['error']=repr(e); rec['traceback']=traceback.format_exc()
+          result.append(rec)
+          pathlib.Path('reports/downloads.json').write_text(json.dumps(result,indent=2))
+          print(json.dumps(result,indent=2))
+          PY
+
+      - name: Detect file types, normalize ZIPs, and extract mod lists
+        shell: bash
+        run: |
+          set -uo pipefail
+          python3 - <<'PY'
+          import pathlib, subprocess, json, zipfile, hashlib, shutil, os, re, traceback
+          root=pathlib.Path('candidates'); rep=pathlib.Path('reports')
+          rows=[]
+          for p in sorted(root.glob('*.bin')):
+            row={'candidate':p.stem,'path':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+            try:
+              f=subprocess.run(['file','-b',str(p)],capture_output=True,text=True).stdout.strip(); row['file_type']=f
+              if zipfile.is_zipfile(p):
+                zpath=root/(p.stem+'.zip'); shutil.copy2(p,zpath); row['zip_path']=str(zpath)
+                with zipfile.ZipFile(zpath) as z:
+                  names=z.namelist(); row['zip_entries']=len(names); row['root_names']=sorted(set(x.split('/')[0] for x in names))[:30]
+                  row['has_level_init']=any(n.endswith('/level-init.dat') for n in names)
+                  row['has_level_dat']=any('/level.dat' in n or n.endswith('/level.dat') for n in names)
+                  row['has_script_dat']=any(n.endswith('/script.dat') for n in names)
+                  row['largest_entries']=sorted([{'name':i.filename,'size':i.file_size} for i in z.infolist()],key=lambda x:-x['size'])[:15]
+                env=os.environ.copy(); env['FACTORIO_PATH']=str(pathlib.Path('fake-factorio').resolve()); env['FACTORIO_MODS_PATH']=str(pathlib.Path('fake-factorio/mods').resolve())
+                proc=subprocess.run(['./fmm','list',str(zpath)],capture_output=True,text=True,env=env,timeout=180)
+                row['fmm_returncode']=proc.returncode; row['fmm_stdout']=proc.stdout; row['fmm_stderr']=proc.stderr
+                (rep/(p.stem+'.mods.txt')).write_text(proc.stdout+'\nSTDERR:\n'+proc.stderr)
+              else:
+                row['prefix_hex']=p.read_bytes()[:64].hex()
+            except Exception as e:
+              row['error']=repr(e); row['traceback']=traceback.format_exc()
+            rows.append(row)
+          rep.joinpath('identities.json').write_text(json.dumps(rows,indent=2))
+          print(json.dumps(rows,indent=2))
+          PY
+
+      - name: Upload identification results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-public-drive-candidate-identities
+          path: reports/
+          if-no-files-found: warn
+          retention-days: 7
