@@ -1,0 +1,209 @@
+name: Crawl GitHub for SE 0.7 save attachments
+
+on:
+  push:
+    branches: [tmp-se07-github-save-crawl-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: read
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search issues, comments, and attachment links
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p github-save-crawl
+          cat > github-save-crawl/crawl.py <<'PY'
+          import os, re, json, csv, time, pathlib, urllib.parse
+          import requests
+          from collections import defaultdict
+
+          OUT=pathlib.Path('github-save-crawl')
+          token=os.environ.get('GH_TOKEN','')
+          S=requests.Session()
+          S.headers.update({
+              'Accept':'application/vnd.github+json',
+              'X-GitHub-Api-Version':'2022-11-28',
+              'User-Agent':'SE07-public-save-research',
+          })
+          if token: S.headers['Authorization']='Bearer '+token
+
+          def get(url,params=None,timeout=60):
+              for attempt in range(6):
+                  r=S.get(url,params=params,timeout=timeout)
+                  if r.status_code in (403,429) and ('rate limit' in r.text.lower() or r.headers.get('Retry-After')):
+                      wait=int(r.headers.get('Retry-After','0') or 0) or min(60,2**attempt)
+                      time.sleep(wait); continue
+                  if r.status_code in (500,502,503,504):
+                      time.sleep(2**attempt); continue
+                  return r
+              return r
+
+          queries=[
+              '"space-exploration" in:body is:issue created:>=2025-09-01',
+              '"Space Exploration" in:body is:issue created:>=2025-09-01',
+              '"SE 0.7" Factorio in:body is:issue',
+              '"space exploration 0.7" Factorio in:body is:issue',
+              '"space-exploration 0.7" in:body is:issue',
+              '"Space Exploration (0.7" in:body is:issue',
+              'Factorio "Save file & log" "Space Exploration" is:issue created:>=2025-09-01',
+              'Factorio "save file" "space-exploration" is:issue created:>=2025-09-01',
+              'Factorio "Nauvis Orbit" is:issue created:>=2025-09-01',
+              'Factorio "cargo rocket" "save" is:issue created:>=2025-09-01',
+          ]
+
+          issues={}
+          query_stats=[]
+          errors=[]
+          for q in queries:
+              count=0
+              for page in range(1,11):
+                  r=get('https://api.github.com/search/issues',{'q':q,'per_page':100,'page':page,'sort':'created','order':'asc'})
+                  if not r.ok:
+                      errors.append({'stage':'search','query':q,'page':page,'status':r.status_code,'text':r.text[:500]}); break
+                  data=r.json(); items=data.get('items',[])
+                  for item in items:
+                      repo=item['repository_url'].split('/repos/',1)[-1]
+                      key=f'{repo}#{item["number"]}'
+                      item['_repo']=repo; item['_queries']=sorted(set(item.get('_queries',[])+[q]))
+                      if key in issues:
+                          issues[key]['_queries']=sorted(set(issues[key].get('_queries',[])+[q]))
+                      else: issues[key]=item
+                  count+=len(items)
+                  if len(items)<100: break
+                  time.sleep(.15)
+              query_stats.append({'query':q,'returned':count})
+
+          url_re=re.compile(r'https?://[^\s<>"\]\)]+',re.I)
+          md_re=re.compile(r'\[[^\]]*\]\((https?://[^\s\)]+)\)',re.I)
+          interesting_hosts={
+              'github.com','objects.githubusercontent.com','drive.google.com','docs.google.com',
+              'dropbox.com','www.dropbox.com','dl.dropboxusercontent.com','mega.nz','mediafire.com',
+              'www.mediafire.com','gofile.io','file.io','transfer.sh','1drv.ms','onedrive.live.com',
+              'we.tl','wetransfer.com','discord.com','cdn.discordapp.com','cdn.discordapp.net',
+          }
+          def extract_urls(text):
+              text=text or ''
+              vals=md_re.findall(text)+url_re.findall(text)
+              return sorted(set(v.rstrip('.,;:!') for v in vals))
+          def attachmentish(url):
+              p=urllib.parse.urlsplit(url)
+              host=p.netloc.lower()
+              low=urllib.parse.unquote(url).lower()
+              return (
+                  '/user-attachments/files/' in low or
+                  low.endswith(('.zip','.7z','.rar','.tar.gz','.sav')) or
+                  any(x in low for x in ('.zip?','.7z?','.rar?','download?','uc?id=','/file/d/')) or
+                  host in interesting_hosts and any(x in low for x in ('drive.google','dropbox','mediafire','mega.nz','gofile','file.io','transfer.sh','1drv.ms','wetransfer','cdn.discordapp'))
+              )
+
+          def stage_score(text):
+              t=(text or '').lower(); score=0; reasons=[]
+              def add(term,val):
+                  nonlocal score
+                  if term in t: score+=val; reasons.append(term)
+              add('space exploration',5); add('space-exploration',5); add('0.7.',6); add('factorio 2.0',5)
+              add('rocket science',8); add('se-rocket-science',8); add('satellite telemetry',5)
+              add('cargo rocket',5); add('launch pad',3); add('rocket silo',2)
+              add('nauvis orbit',2); add('pre-orbit',10); add('before orbit',10); add('untouched orbit',12)
+              add('save file',4); add('savefile',4); add('.zip',4)
+              add('cryonite',-7); add('vulcanite',-5); add('astronomic science',-10); add('energy science',-10)
+              add('material science',-10); add('biological science',-10); add('deep space',-15)
+              add('krastorio',-12); add('k2se',-12); add('creative',-8); add('editor',-4)
+              return score,reasons
+
+          candidates=[]
+          comments_cache={}
+          for i,(key,item) in enumerate(issues.items()):
+              repo=item['_repo']; num=item['number']; body=item.get('body') or ''; title=item.get('title') or ''
+              texts=[{'source':'issue','author':(item.get('user') or {}).get('login'),'text':body}]
+              body_urls=extract_urls(body)
+              should_comments=(
+                  item.get('comments',0)>0 and
+                  ('factorio' in (title+' '+body).lower() or 'space exploration' in (title+' '+body).lower() or 'space-exploration' in body.lower())
+              )
+              if should_comments:
+                  all_comments=[]
+                  for page in range(1,11):
+                      r=get(f'https://api.github.com/repos/{repo}/issues/{num}/comments',{'per_page':100,'page':page})
+                      if not r.ok:
+                          errors.append({'stage':'comments','issue':key,'status':r.status_code,'text':r.text[:300]}); break
+                      arr=r.json(); all_comments.extend(arr)
+                      if len(arr)<100: break
+                  comments_cache[key]=all_comments
+                  for c in all_comments:
+                      texts.append({'source':'comment','author':(c.get('user') or {}).get('login'),'text':c.get('body') or '', 'created_at':c.get('created_at')})
+              combined='\n'.join(x['text'] for x in texts)
+              score,reasons=stage_score(title+'\n'+combined)
+              for tx in texts:
+                  for url in extract_urls(tx['text']):
+                      if attachmentish(url):
+                          candidates.append({
+                              'issue_key':key,'repo':repo,'number':num,'issue_url':item.get('html_url'),
+                              'title':title,'issue_created_at':item.get('created_at'),'issue_updated_at':item.get('updated_at'),
+                              'source':tx['source'],'source_author':tx.get('author'),'source_created_at':tx.get('created_at'),
+                              'url':url,'score':score,'score_reasons':reasons,
+                              'mentions_krastorio':'krastorio' in combined.lower() or 'k2se' in combined.lower(),
+                              'body_excerpt':combined[:5000]
+                          })
+              if i%50==0: print('processed',i,'of',len(issues))
+
+          # Dedupe same URL while preserving best issue context.
+          dedup={}
+          for c in candidates:
+              u=c['url']
+              if u not in dedup or c['score']>dedup[u]['score']: dedup[u]=c
+          candidates=sorted(dedup.values(),key=lambda x:(-x['score'],x['url']))
+
+          # Gentle metadata probe, no large downloads.
+          for i,c in enumerate(candidates):
+              try:
+                  r=S.get(c['url'],stream=True,allow_redirects=True,timeout=30,headers={'Range':'bytes=0-0',**({'Authorization':'Bearer '+token} if token and 'api.github.com' in c['url'] else {})})
+                  c['probe_status']=r.status_code; c['probe_final_url']=r.url
+                  c['probe_content_type']=r.headers.get('Content-Type'); c['probe_content_length']=r.headers.get('Content-Length')
+                  c['probe_content_range']=r.headers.get('Content-Range')
+                  r.close()
+              except Exception as e: c['probe_error']=repr(e)
+              if i>=250: break
+
+          issue_export=[]
+          for key,item in issues.items():
+              score,reasons=stage_score((item.get('title') or '')+'\n'+(item.get('body') or ''))
+              issue_export.append({
+                  'key':key,'repo':item['_repo'],'number':item['number'],'url':item.get('html_url'),
+                  'title':item.get('title'),'created_at':item.get('created_at'),'updated_at':item.get('updated_at'),
+                  'comments':item.get('comments'),'score':score,'score_reasons':reasons,'queries':item.get('_queries'),
+                  'body':item.get('body')
+              })
+
+          (OUT/'issues.json').write_text(json.dumps(issue_export,indent=2))
+          (OUT/'candidates.json').write_text(json.dumps(candidates,indent=2))
+          (OUT/'comments.json').write_text(json.dumps(comments_cache,indent=2))
+          with (OUT/'candidates.csv').open('w',newline='') as f:
+              cols=['score','repo','number','title','source','source_author','url','probe_status','probe_content_type','probe_content_length','mentions_krastorio','issue_url']
+              w=csv.DictWriter(f,fieldnames=cols,extrasaction='ignore'); w.writeheader(); w.writerows(candidates)
+          summary={
+              'query_stats':query_stats,'unique_issues':len(issues),'candidate_urls':len(candidates),
+              'top_candidates':[{k:c.get(k) for k in ('score','repo','number','title','url','probe_status','probe_content_type','probe_content_length','mentions_krastorio')} for c in candidates[:100]],
+              'errors':errors
+          }
+          (OUT/'SUMMARY.json').write_text(json.dumps(summary,indent=2))
+          print(json.dumps(summary,indent=2))
+          PY
+          python3 github-save-crawl/crawl.py
+      - name: Upload crawler results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-github-save-crawl
+          path: github-save-crawl/
+          retention-days: 7
