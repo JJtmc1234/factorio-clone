@@ -1,0 +1,159 @@
+name: Continue exhaustive SE 0.7 save search
+
+on:
+  push:
+    branches: [tmp-se-search-continuation-20260826]
+
+permissions:
+  contents: read
+
+jobs:
+  repaired-broad-crawler:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Recover and repair crawler
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file binutils
+          python3 -m pip install --quiet --upgrade requests beautifulsoup4 lxml gdown
+          git fetch origin tmp-se-broad-crawler-result-20260825 --depth=1
+          mkdir -p repaired-crawler se-broad-work
+          git show FETCH_HEAD:tmp-se-broad-crawler/crawl.py > repaired-crawler/crawl.py
+          python3 - <<'PY'
+          from pathlib import Path
+          p=Path('repaired-crawler/crawl.py')
+          s=p.read_text()
+          replacements={
+              'for x in found_links)': 'for x in list(found_links))',
+              'for u in found_links if': 'for u in list(found_links) if',
+              'for u in found_links\n': 'for u in list(found_links)\n',
+              'found_links.items()': 'list(found_links.items())',
+              'found_links.values()': 'list(found_links.values())',
+          }
+          for old,new in replacements.items():
+              s=s.replace(old,new)
+          p.write_text(s)
+          print('Remaining iteration sites:')
+          for i,line in enumerate(s.splitlines(),1):
+              if 'found_links' in line:
+                  print(f'{i}: {line}')
+          PY
+          python3 -m py_compile repaired-crawler/crawl.py
+      - name: Run repaired crawler
+        continue-on-error: true
+        shell: bash
+        run: |
+          set +e
+          python3 repaired-crawler/crawl.py > se-broad-work/console.txt 2>&1
+          status=$?
+          echo "$status" > se-broad-work/run-status.txt
+          tail -300 se-broad-work/console.txt
+          exit 0
+      - name: Upload repaired crawl
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se-broad-crawler-fixed-20260826
+          path: |
+            se-broad-work/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 0
+
+  focused-candidate-sieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install identification tools
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file binutils golang-go
+          python3 -m pip install --quiet --upgrade gdown requests
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          mkdir -p fake-factorio/data/base fake-factorio/mods candidates reports
+          printf '%s\n' '{"name":"base","version":"2.0.72","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+      - name: Download overlooked public candidates
+        shell: bash
+        run: |
+          set +e
+          gdown --no-cookies -O candidates/moduleinserterex_downsized.bin 1PUFevtOpF8XzMJSC9lGGiOitH2Zsg2Hs > reports/moduleinserterex-download.txt 2>&1
+          echo $? > reports/moduleinserterex-status.txt
+          gdown --no-cookies -O candidates/jetpack_gui_save.bin 1sCtCVTDN_gk2hW0kdgrQf4Fm6g9I0vjq > reports/jetpack-download.txt 2>&1
+          echo $? > reports/jetpack-status.txt
+          python3 - <<'PY'
+          import requests, pathlib
+          url='https://github.com/user-attachments/files/21559231/New.Game.zip'
+          r=requests.get(url,timeout=300,allow_redirects=True,headers={'User-Agent':'Mozilla/5.0 Factorio-save-auditor'})
+          pathlib.Path('reports/new-game-http.txt').write_text(f'status={r.status_code}\nfinal={r.url}\ntype={r.headers.get("content-type")}\nbytes={len(r.content)}\n')
+          if r.ok: pathlib.Path('candidates/new_game_yafc.bin').write_bytes(r.content)
+          PY
+      - name: Identify exact save headers and nested archives
+        shell: bash
+        run: |
+          set +e
+          python3 - <<'PY'
+          import pathlib, zipfile, shutil, subprocess, hashlib, json, os, traceback, re
+          root=pathlib.Path('candidates'); rep=pathlib.Path('reports'); extracted=pathlib.Path('extracted'); extracted.mkdir()
+          rows=[]
+          def inspect_save(p,label):
+              row={'label':label,'path':str(p),'bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()}
+              row['file_type']=subprocess.run(['file','-b',str(p)],capture_output=True,text=True).stdout.strip()
+              if not zipfile.is_zipfile(p):
+                  row['factorio_save']=False; row['prefix_hex']=p.read_bytes()[:64].hex(); return row
+              with zipfile.ZipFile(p) as z:
+                  names=z.namelist(); row['zip_entries']=len(names); row['roots']=sorted(set(n.split('/')[0] for n in names))[:100]
+                  level_inits=[n for n in names if n.endswith('/level-init.dat')]
+                  row['level_init_entries']=level_inits
+                  row['factorio_save']=bool(level_inits and any('/level.dat' in n or n.endswith('/level.dat') for n in names))
+                  if row['factorio_save']:
+                      li=z.read(level_inits[0])
+                      row['level_init_bytes']=len(li)
+                      text=subprocess.run(['strings','-a'],input=li,capture_output=True).stdout.decode('utf-8','replace')
+                      row['string_hits']=[x for x in text.splitlines() if re.search(r'(?i)(space-exploration|krastorio|factorio|0\.7\.|0\.6\.|rocket-science|cargo-rocket)',x)][:300]
+              if row['factorio_save']:
+                  env=os.environ.copy(); env['FACTORIO_PATH']=str(pathlib.Path('fake-factorio').resolve()); env['FACTORIO_MODS_PATH']=str(pathlib.Path('fake-factorio/mods').resolve())
+                  q=pathlib.Path('extracted')/(re.sub(r'[^A-Za-z0-9_.-]','_',label)+'.zip'); shutil.copy2(p,q)
+                  proc=subprocess.run(['./fmm','list',str(q)],capture_output=True,text=True,env=env,timeout=240)
+                  row['fmm_returncode']=proc.returncode; row['fmm_stdout']=proc.stdout; row['fmm_stderr']=proc.stderr
+              return row
+          for p in sorted(root.glob('*.bin')):
+              try:
+                  base=inspect_save(p,p.stem); rows.append(base)
+                  if zipfile.is_zipfile(p) and not base.get('factorio_save'):
+                      d=extracted/p.stem; d.mkdir(exist_ok=True)
+                      with zipfile.ZipFile(p) as z: z.extractall(d)
+                      for nested in d.rglob('*'):
+                          if nested.is_file() and zipfile.is_zipfile(nested):
+                              try: rows.append(inspect_save(nested,p.stem+'::'+nested.name))
+                              except Exception as e: rows.append({'label':p.stem+'::'+nested.name,'error':repr(e),'traceback':traceback.format_exc()})
+              except Exception as e:
+                  rows.append({'label':p.stem,'error':repr(e),'traceback':traceback.format_exc()})
+          rep.joinpath('focused-identities.json').write_text(json.dumps(rows,indent=2))
+          with rep.joinpath('focused-summary.txt').open('w') as f:
+              for r in rows:
+                  f.write(f"{r.get('label')} save={r.get('factorio_save')} bytes={r.get('bytes')}\n")
+                  if r.get('fmm_stdout'): f.write(r['fmm_stdout']+'\n')
+                  if r.get('fmm_stderr'): f.write('STDERR '+r['fmm_stderr']+'\n')
+                  if r.get('error'): f.write('ERROR '+r['error']+'\n')
+                  f.write('\n')
+          print(rep.joinpath('focused-summary.txt').read_text())
+          PY
+      - name: Upload focused candidates and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se-overlooked-public-candidates-20260826
+          path: |
+            reports/
+            candidates/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 0
