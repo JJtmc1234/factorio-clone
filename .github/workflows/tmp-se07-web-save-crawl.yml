@@ -1,0 +1,205 @@
+name: Crawl public web for SE 0.7 saves
+
+on:
+  push:
+    branches: [tmp-se07-web-save-crawl-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+      - name: Search Reddit, Factorio forums, and public web
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p web-save-crawl
+          cat > web-save-crawl/crawl.py <<'PY'
+          import requests,re,json,csv,time,pathlib,urllib.parse,html
+          from bs4 import BeautifulSoup
+          from collections import defaultdict
+
+          OUT=pathlib.Path('web-save-crawl')
+          S=requests.Session(); S.headers.update({'User-Agent':'Mozilla/5.0 (compatible; SE07SaveResearch/1.0)'})
+          errors=[]
+          def get(url,params=None,timeout=45,headers=None):
+              h=dict(S.headers); h.update(headers or {})
+              for attempt in range(5):
+                  try:
+                      r=requests.get(url,params=params,timeout=timeout,headers=h,allow_redirects=True)
+                      if r.status_code in (429,500,502,503,504): time.sleep(min(30,2**attempt)); continue
+                      return r
+                  except Exception:
+                      if attempt==4: raise
+                      time.sleep(2**attempt)
+
+          url_re=re.compile(r'https?://[^\s<>"\]\)]+',re.I)
+          md_re=re.compile(r'\[[^\]]*\]\((https?://[^\s\)]+)\)',re.I)
+          def urls(text):
+              vals=md_re.findall(text or '')+url_re.findall(text or '')
+              return sorted(set(html.unescape(v).rstrip('.,;:!') for v in vals))
+          def candidate_url(u):
+              low=urllib.parse.unquote(u).lower(); host=urllib.parse.urlsplit(u).netloc.lower()
+              return (
+                '/user-attachments/files/' in low or '/download/file.php' in low or
+                low.endswith(('.zip','.7z','.rar','.sav')) or any(x in low for x in ('.zip?','.7z?','/file/d/','uc?id=','download=')) or
+                any(x in host for x in ('drive.google.com','dropbox.com','mediafire.com','mega.nz','gofile.io','cdn.discordapp.com','1drv.ms','wetransfer.com'))
+              )
+          def score(text):
+              t=(text or '').lower(); s=0; tags=[]
+              for term,val in [
+                ('space exploration',6),('space-exploration',6),('factorio',3),('0.7.',7),('se 0.7',7),
+                ('rocket science',10),('cargo rocket',6),('satellite telemetry',5),('rocket silo',2),
+                ('pre-orbit',14),('before orbit',14),('untouched orbit',18),('nauvis orbit',2),
+                ('save',3),('.zip',4),('download',2),('krastorio',-14),('k2se',-14),
+                ('cryonite',-7),('vulcanite',-5),('astronomic science',-12),('energy science',-12),
+                ('material science',-12),('biological science',-12),('deep space',-18),('creative',-10),('editor',-4)
+              ]:
+                  if term in t: s+=val; tags.append(term)
+              return s,tags
+
+          records=[]; candidates=[]
+          def add_record(source,url,title,text,meta=None):
+              sc,tags=score((title or '')+'\n'+(text or ''))
+              rec={'source':source,'page_url':url,'title':title,'text':text,'score':sc,'score_tags':tags,'meta':meta or {}}
+              records.append(rec)
+              for u in urls(text or ''):
+                  if candidate_url(u): candidates.append({**{k:rec[k] for k in ('source','page_url','title','score','score_tags')},'url':u,'context':(text or '')[:6000]})
+
+          # Reddit searches and complete comment trees.
+          reddit_queries=[
+            '"Space Exploration 0.7" save','"SE 0.7" save','"Space Exploration" save download',
+            '"rocket science" "Space Exploration" save','"cargo rocket" save','"Nauvis Orbit" save',
+            'Space Exploration save file','Space Exploration starter save'
+          ]
+          reddit_posts={}
+          for q in reddit_queries:
+              for sort in ('new','relevance'):
+                  try:
+                      r=get('https://www.reddit.com/r/factorio/search.json',{'q':q,'restrict_sr':'on','sort':sort,'t':'all','limit':100,'raw_json':1})
+                      if not r.ok: errors.append({'stage':'reddit-search','q':q,'status':r.status_code,'text':r.text[:200]}); continue
+                      for child in r.json().get('data',{}).get('children',[]):
+                          d=child.get('data',{}); reddit_posts[d.get('id')]=d
+                  except Exception as e: errors.append({'stage':'reddit-search','q':q,'error':repr(e)})
+          for pid,d in list(reddit_posts.items()):
+              permalink=d.get('permalink'); page='https://www.reddit.com'+permalink if permalink else d.get('url')
+              text=(d.get('selftext') or '')+'\n'+(d.get('url') or '')
+              add_record('reddit-post',page,d.get('title'),text,{'id':pid,'author':d.get('author'),'created_utc':d.get('created_utc')})
+              if permalink:
+                  try:
+                      r=get('https://www.reddit.com'+permalink+'.json',{'limit':500,'depth':10,'raw_json':1})
+                      if not r.ok: continue
+                      data=r.json()
+                      def walk(node):
+                          if isinstance(node,list):
+                              for x in node: walk(x)
+                          elif isinstance(node,dict):
+                              if node.get('kind')=='t1':
+                                  c=node.get('data',{}); body=c.get('body') or ''
+                                  if body: add_record('reddit-comment','https://www.reddit.com'+(c.get('permalink') or permalink),d.get('title'),body,{'post_id':pid,'author':c.get('author'),'created_utc':c.get('created_utc')})
+                              walk(node.get('data',{}).get('replies'))
+                              walk(node.get('data',{}).get('children'))
+                      walk(data)
+                  except Exception as e: errors.append({'stage':'reddit-comments','id':pid,'error':repr(e)})
+                  time.sleep(.3)
+
+          # DuckDuckGo HTML searches, then fetch result pages likely related to Factorio.
+          search_queries=[
+            '"Space Exploration 0.7" Factorio save download',
+            '"SE 0.7" Factorio save zip',
+            'Factorio "rocket science" "Space Exploration" save',
+            'Factorio "cargo rocket" save download',
+            'Factorio "untouched orbit" save',
+            'Factorio "pre-orbit" "Space Exploration"',
+            'site:forums.factorio.com "Space Exploration 0.7" save',
+            'site:mods.factorio.com "Space Exploration 0.7" save',
+            'site:reddit.com/r/factorio "Space Exploration 0.7" save',
+            'site:drive.google.com Factorio "Space Exploration" save',
+            'Factorio SE0.7 save file',
+            'Factorio Space Exploration starter save rocket science',
+          ]
+          result_urls={}
+          for q in search_queries:
+              try:
+                  r=get('https://html.duckduckgo.com/html/',{'q':q})
+                  (OUT/('ddg_'+str(abs(hash(q)))+'.html')).write_text(r.text,errors='replace')
+                  soup=BeautifulSoup(r.text,'html.parser')
+                  for a in soup.select('a.result__a, a.result-link'):
+                      href=a.get('href',''); title=a.get_text(' ',strip=True)
+                      if 'uddg=' in href:
+                          href=urllib.parse.parse_qs(urllib.parse.urlsplit(href).query).get('uddg',[href])[0]
+                      if href.startswith('http'): result_urls[href]={'title':title,'queries':sorted(set(result_urls.get(href,{}).get('queries',[])+[q]))}
+              except Exception as e: errors.append({'stage':'ddg','q':q,'error':repr(e)})
+              time.sleep(.5)
+          for i,(u,meta) in enumerate(result_urls.items()):
+              if i>=250: break
+              try:
+                  r=get(u)
+                  ctype=r.headers.get('Content-Type','')
+                  if 'text' not in ctype and 'html' not in ctype: continue
+                  txt=r.text[:1000000]
+                  soup=BeautifulSoup(txt,'html.parser')
+                  plain=soup.get_text('\n',strip=True)
+                  merged=plain+'\n'+'\n'.join(urls(txt))
+                  add_record('web-result',r.url,meta['title'],merged,{'queries':meta['queries'],'status':r.status_code,'content_type':ctype})
+              except Exception as e: errors.append({'stage':'fetch-result','url':u,'error':repr(e)})
+
+          # Factorio forum native search.
+          forum_queries=['Space Exploration 0.7','SE 0.7 Space Exploration','rocket science Space Exploration','cargo rocket Space Exploration']
+          topic_urls={}
+          for q in forum_queries:
+              for start in (0,50,100,150,200):
+                  try:
+                      params={'keywords':q,'terms':'all','author':'','fid[]':'','sc':'1','sf':'all','sr':'posts','sk':'t','sd':'d','st':'0','ch':'300','start':start}
+                      r=get('https://forums.factorio.com/search.php',params)
+                      soup=BeautifulSoup(r.text,'html.parser')
+                      for a in soup.select('a.topictitle, a[href*="viewtopic.php"]'):
+                          href=urllib.parse.urljoin(r.url,a.get('href',''))
+                          if 'viewtopic.php' in href: topic_urls[href.split('&start=')[0]]={'title':a.get_text(' ',strip=True),'query':q}
+                      if not soup.select('a.topictitle'): break
+                  except Exception as e: errors.append({'stage':'forum-search','q':q,'start':start,'error':repr(e)})
+          for i,(u,meta) in enumerate(topic_urls.items()):
+              if i>=300: break
+              try:
+                  r=get(u); soup=BeautifulSoup(r.text,'html.parser')
+                  chunks=[]
+                  for post in soup.select('.post, .postbody'):
+                      chunks.append(post.get_text('\n',strip=True))
+                      for a in post.select('a[href]'):
+                          chunks.append(urllib.parse.urljoin(r.url,a.get('href')))
+                  add_record('factorio-forum',r.url,meta['title'],'\n'.join(chunks),meta)
+              except Exception as e: errors.append({'stage':'forum-topic','url':u,'error':repr(e)})
+
+          # Deduplicate candidate URLs and probe metadata without downloading whole files.
+          dedup={}
+          for c in candidates:
+              if c['url'] not in dedup or c['score']>dedup[c['url']]['score']: dedup[c['url']]=c
+          candidates=sorted(dedup.values(),key=lambda c:(-c['score'],c['url']))
+          for c in candidates[:300]:
+              try:
+                  r=get(c['url'],timeout=30,headers={'Range':'bytes=0-0'})
+                  c['probe_status']=r.status_code;c['probe_final_url']=r.url;c['probe_content_type']=r.headers.get('Content-Type');c['probe_length']=r.headers.get('Content-Length');c['probe_range']=r.headers.get('Content-Range')
+              except Exception as e:c['probe_error']=repr(e)
+
+          (OUT/'records.json').write_text(json.dumps(records,indent=2))
+          (OUT/'candidates.json').write_text(json.dumps(candidates,indent=2))
+          with (OUT/'candidates.csv').open('w',newline='') as f:
+              cols=['score','source','title','url','probe_status','probe_content_type','probe_length','page_url']
+              w=csv.DictWriter(f,fieldnames=cols,extrasaction='ignore');w.writeheader();w.writerows(candidates)
+          summary={'reddit_posts':len(reddit_posts),'web_results':len(result_urls),'forum_topics':len(topic_urls),'records':len(records),'candidate_urls':len(candidates),'top_candidates':[{k:c.get(k) for k in ('score','source','title','url','probe_status','probe_content_type','probe_length','page_url')} for c in candidates[:100]],'errors':errors}
+          (OUT/'SUMMARY.json').write_text(json.dumps(summary,indent=2));print(json.dumps(summary,indent=2))
+          PY
+          python3 -m pip install --quiet beautifulsoup4
+          python3 web-save-crawl/crawl.py
+      - name: Upload results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-public-web-save-crawl
+          path: web-save-crawl/
+          retention-days: 7
