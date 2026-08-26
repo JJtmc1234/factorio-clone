@@ -1,0 +1,337 @@
+[
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-zignal-transmission-luarendered-channel-label",
+    "status": "failed-disabled",
+    "version": "1.0.0"
+  },
+  {
+    "name": "base",
+    "status": "builtin",
+    "version": "1.1.110"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-containers",
+    "status": "failed-disabled",
+    "version": "0.2.11"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-loaders",
+    "status": "failed-disabled",
+    "version": "0.1.6"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-signal-transmission",
+    "status": "failed-disabled",
+    "version": "0.4.9"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-signals",
+    "status": "failed-disabled",
+    "version": "0.6.1"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-zones",
+    "status": "failed-disabled",
+    "version": "0.6.4"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "alien-biomes-hr-terrain",
+    "status": "failed-disabled",
+    "version": "0.6.1"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "bobinserters",
+    "status": "failed-disabled",
+    "version": "1.2.0"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "bullet-trails",
+    "status": "failed-disabled",
+    "version": "0.6.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "CleanedConcreteCompatibility",
+    "status": "failed-disabled",
+    "version": "1.0.0"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "FNEI",
+    "status": "failed-disabled",
+    "version": "0.4.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "grappling-gun",
+    "status": "failed-disabled",
+    "version": "0.3.3"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "helmod",
+    "status": "failed-disabled",
+    "version": "1.0.14"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "informatron",
+    "status": "failed-disabled",
+    "version": "0.3.4"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "InserterFuelLeech",
+    "status": "failed-disabled",
+    "version": "0.2.7"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "jetpack",
+    "status": "failed-disabled",
+    "version": "0.3.14"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "longer-poles",
+    "status": "failed-disabled",
+    "version": "1.0.0"
+  },
+  {
+    "error": "RuntimeError('exact release missing')",
+    "name": "LSlib",
+    "status": "failed-disabled",
+    "version": "2023.3.24"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "MaxRateCalculator",
+    "status": "failed-disabled",
+    "version": "3.4.48"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "nicefill-scriptfix",
+    "status": "failed-disabled",
+    "version": "0.1.21"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "nixie-tubes",
+    "status": "failed-disabled",
+    "version": "1.1.5"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "NoRespawnGun-Updated",
+    "status": "failed-disabled",
+    "version": "1.18.5"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "No_Friendly_Fire",
+    "status": "failed-disabled",
+    "version": "1.0.0"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "robot_attrition",
+    "status": "failed-disabled",
+    "version": "0.5.15"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "shield-projector",
+    "status": "failed-disabled",
+    "version": "0.1.6"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "Shortcuts-ick",
+    "status": "failed-disabled",
+    "version": "1.1.29"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "show-max-underground-distance",
+    "status": "failed-disabled",
+    "version": "0.0.9"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-graphics",
+    "status": "failed-disabled",
+    "version": "0.6.18"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-graphics-2",
+    "status": "failed-disabled",
+    "version": "0.6.1"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-graphics-3",
+    "status": "failed-disabled",
+    "version": "0.6.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-graphics-4",
+    "status": "failed-disabled",
+    "version": "0.6.3"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-graphics-5",
+    "status": "failed-disabled",
+    "version": "0.6.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-menu-simulations",
+    "status": "failed-disabled",
+    "version": "0.6.10"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "Squeak Through",
+    "status": "failed-disabled",
+    "version": "1.8.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "stdlib",
+    "status": "failed-disabled",
+    "version": "1.4.8"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "UMSupersonicTrains",
+    "status": "failed-disabled",
+    "version": "1.0.1"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "Waterfill_v17",
+    "status": "failed-disabled",
+    "version": "1.1.0"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-industry",
+    "status": "failed-disabled",
+    "version": "0.5.22"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-loaders-electric",
+    "status": "failed-disabled",
+    "version": "0.1.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-programmable-structures",
+    "status": "failed-disabled",
+    "version": "0.7.4"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "aai-signal-transmission-luarendered-channel-label",
+    "status": "failed-disabled",
+    "version": "1.0.3"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "AAITransmitterssNoPower",
+    "status": "failed-disabled",
+    "version": "1.0.0"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "alien-biomes",
+    "status": "failed-disabled",
+    "version": "0.6.8"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "combat-mechanics-overhaul",
+    "status": "failed-disabled",
+    "version": "0.6.24"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "CompressedFluids",
+    "status": "failed-disabled",
+    "version": "0.1.23"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "equipment-gantry",
+    "status": "failed-disabled",
+    "version": "0.1.5"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration",
+    "status": "failed-disabled",
+    "version": "0.6.145"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "extended-descriptions",
+    "status": "failed-disabled",
+    "version": "1.3.4"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-postprocess",
+    "status": "failed-disabled",
+    "version": "0.6.30"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-scripts",
+    "status": "failed-disabled",
+    "version": "1.1.2"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "underground-pipe-pack",
+    "status": "failed-disabled",
+    "version": "1.1.3"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "fluid_permutations_fixed",
+    "status": "failed-disabled",
+    "version": "0.5.4"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "space-exploration-jetpack-gui",
+    "status": "failed-disabled",
+    "version": "1.0.7"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "Transport_Drones",
+    "status": "failed-disabled",
+    "version": "1.0.16"
+  },
+  {
+    "error": "<HTTPError 403: 'Forbidden'>",
+    "name": "steam-drones",
+    "status": "failed-disabled",
+    "version": "1.2.0"
+  }
+]
