@@ -1,0 +1,82 @@
+name: Broad Space Exploration 0.7 save crawler
+
+on:
+  push:
+    branches: [tmp-se-broad-crawler-20260825]
+
+permissions:
+  contents: write
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install crawler dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file binutils
+          python3 -m pip install --quiet --upgrade requests beautifulsoup4 lxml gdown
+
+      - name: Crawl, download, and classify public saves
+        id: crawl
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          rm -rf se-broad-work
+          python3 tmp-se-broad-crawler/crawl.py 2>&1 | tee broad-crawler-console.txt
+          status=${PIPESTATUS[0]}
+          mkdir -p se-broad-work
+          cp broad-crawler-console.txt se-broad-work/console.txt
+          echo "$status" > se-broad-work/exit-status.txt
+          exit "$status"
+
+      - name: Upload crawler artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se-broad-crawler-20260825
+          path: |
+            se-broad-work/SUMMARY.md
+            se-broad-work/*.json
+            se-broad-work/*.txt
+            se-broad-work/candidate-saves/*.zip
+          if-no-files-found: warn
+          retention-days: 10
+          compression-level: 0
+
+      - name: Publish reports and manageable candidate saves
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-broad-crawler-result-20260825
+          rm -rf tmp-se-broad-crawler-result
+          mkdir -p tmp-se-broad-crawler-result/candidates
+          for f in se-broad-work/SUMMARY.md se-broad-work/*.json se-broad-work/*.txt; do
+            [ -f "$f" ] && cp "$f" tmp-se-broad-crawler-result/
+          done
+          python3 - <<'PY'
+          import pathlib, shutil
+          src = pathlib.Path('se-broad-work/candidate-saves')
+          dst = pathlib.Path('tmp-se-broad-crawler-result/candidates')
+          total = 0
+          if src.exists():
+              for p in sorted(src.glob('*.zip'), key=lambda x: x.stat().st_size):
+                  size = p.stat().st_size
+                  if size >= 94_000_000 or total + size > 185_000_000:
+                      continue
+                  shutil.copy2(p, dst / p.name)
+                  total += size
+          (pathlib.Path('tmp-se-broad-crawler-result') / 'published-candidate-bytes.txt').write_text(str(total) + '\n')
+          PY
+          git add -f tmp-se-broad-crawler-result
+          git commit -m 'Publish broad SE 0.7 save crawl results' || true
+          git push --force origin HEAD:refs/heads/tmp-se-broad-crawler-result-20260825
