@@ -1,0 +1,119 @@
+name: Audit RedMew SE crash save v3
+
+on:
+  push:
+    branches: [tmp-redmew-se-crash-audit-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download save and exact runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fL --retry 5 --retry-all-errors -A 'Mozilla/5.0 SE-save-verifier' \
+            -o save.zip 'https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip'
+          unzip -t save.zip
+          sha256sum save.zip | tee save-sha256.txt
+          curl -fL --retry 5 --retry-all-errors -o factorio.tar.xz \
+            'https://www.factorio.com/get-download/2.0.72/headless/linux64'
+          tar -xJf factorio.tar.xz
+          mkdir -p factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods mirror-logs
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"2.0.72","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" \
+            ./fmm list save.zip | tee exact-mod-list.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' exact-mod-list.txt > mod-versions.tsv
+          export MOD_DIR="$PWD/factorio/mods"
+          download_one() {
+            mod="$1"; version="$2"; out="$MOD_DIR/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 900 \
+              -A 'factorio-mod-downloader/1.0' -o "$out" \
+              "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          }
+          export -f download_one
+          xargs -P 8 -n 2 bash -c 'download_one "$0" "$1"' < mod-versions.tsv
+          find factorio/mods -maxdepth 1 -type f -name '*.zip' -printf '%f\n' | sort > downloaded-mod-files.txt
+          test "$(wc -l < downloaded-mod-files.txt)" -eq "$(wc -l < mod-versions.tsv)"
+
+      - name: Configure read-only auditor
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-v3_0.1.0
+          cp tmp-se-auditor-v3/info.json factorio/mods/jj-se-stage-auditor-v3_0.1.0/info.json
+          cp tmp-se-auditor-v3/control.lua factorio/mods/jj-se-stage-auditor-v3_0.1.0/control.lua
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mods=[
+              {'name':'base','enabled':True},
+              {'name':'quality','enabled':False},
+              {'name':'space-age','enabled':False},
+              {'name':'elevated-rails','enabled':False},
+          ]
+          for line in Path('mod-versions.tsv').read_text().splitlines():
+              name,version=line.split('\t',1)
+              mods.append({'name':name,'enabled':True})
+          mods.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          Path('factorio/mods/mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          PY
+          cp factorio/mods/mod-list.json final-mod-list.json
+
+      - name: Live-load and audit
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 18m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" \
+            --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 \
+            2>&1 | tee factorio-live-audit-v3.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          find "$PWD" -type f -name jj-se-live-audit-v3.json -print -exec cp '{}' ./jj-se-live-audit-v3.json \; || true
+          exit "$status"
+
+      - name: Summarize
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "factorio_live_status=${{ steps.live.outputs.status }}" > workflow-status-v3.txt
+          if test -f jj-se-live-audit-v3.json; then
+            python3 -m json.tool jj-se-live-audit-v3.json > jj-se-live-audit-v3.pretty.json
+          else
+            echo AUDIT_FILE_NOT_PRODUCED > audit-missing-v3.txt
+          fi
+
+      - name: Upload v3 results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-se-crash-live-audit-v3-results
+          path: |
+            save-sha256.txt
+            factorio-version.txt
+            exact-mod-list.txt
+            mod-versions.tsv
+            downloaded-mod-files.txt
+            final-mod-list.json
+            factorio-live-audit-v3.log
+            workflow-status-v3.txt
+            jj-se-live-audit-v3.json
+            jj-se-live-audit-v3.pretty.json
+            audit-missing-v3.txt
+          if-no-files-found: warn
+          retention-days: 7

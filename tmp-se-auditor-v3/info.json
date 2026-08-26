@@ -1,0 +1,9 @@
+{
+  "name": "jj-se-stage-auditor-v3",
+  "version": "0.1.0",
+  "title": "JJ SE Stage Auditor v3",
+  "author": "OpenAI",
+  "factorio_version": "2.0",
+  "dependencies": ["base >= 2.0", "space-exploration >= 0.7.0"],
+  "description": "Read-only audit of Rocket Science automation and orbital development."
+}
