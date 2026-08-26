@@ -1,0 +1,54 @@
+name: Download RedMew SE crash save artifact
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  download:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Download and validate save
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p published
+          python3 - <<'PY'
+          import requests, pathlib, zipfile, hashlib, json
+          urls = [
+              'https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip',
+              'https://redmew.com/FactorioWebInterface/V5/downloadSave?directory=public/final&saveName=se_crash.zip',
+          ]
+          out = pathlib.Path('published/se_crash.zip')
+          errors=[]
+          for url in urls:
+              try:
+                  r=requests.get(url,headers={'User-Agent':'Mozilla/5.0 Factorio-save-auditor'},timeout=180,allow_redirects=True)
+                  r.raise_for_status()
+                  out.write_bytes(r.content)
+                  with zipfile.ZipFile(out) as z:
+                      names=z.namelist()
+                      assert any(n.endswith('/level-init.dat') for n in names)
+                      assert any('/level.dat' in n for n in names)
+                  meta={'source_url':url,'final_url':r.url,'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'zip_entries':len(names)}
+                  pathlib.Path('published/metadata.json').write_text(json.dumps(meta,indent=2))
+                  print(json.dumps(meta,indent=2))
+                  break
+              except Exception as exc:
+                  errors.append({'url':url,'error':repr(exc)})
+                  if out.exists(): out.unlink()
+          else:
+              raise SystemExit(json.dumps(errors,indent=2))
+          PY
+      - name: Upload save artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: se-crash-save
+          path: published/
+          if-no-files-found: error
+          retention-days: 7
