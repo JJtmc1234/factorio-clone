@@ -1,0 +1,1 @@
+Trigger the recognized workflow after replacing it with the standalone-script version.
