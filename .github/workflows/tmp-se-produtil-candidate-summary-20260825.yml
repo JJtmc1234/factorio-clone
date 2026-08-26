@@ -1,0 +1,93 @@
+name: Summarize SE issue-save candidates
+
+on:
+  push:
+    branches: [tmp-se-produtil-candidate-summary-20260825]
+
+permissions:
+  contents: write
+
+env:
+  RESULT_BRANCH: tmp-se-produtil-candidate-summary-result-20260825
+  SOURCE_JSON: https://raw.githubusercontent.com/JJtmc1234/factorio-clone/tmp-se-issue-sieve-result-20260825/tmp-se-issue-sieve/saves.json
+
+jobs:
+  summarize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract compact candidate data
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf published
+          mkdir -p published
+          curl -fsSL "$SOURCE_JSON" -o published/all-saves.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          rows=json.loads(Path('published/all-saves.json').read_text())
+          out=[]
+          for r in rows:
+              se=(r.get('mods') or {}).get('space-exploration') or r.get('se_version')
+              if not se:
+                  continue
+              levels=r.get('level_files') or []
+              out.append({
+                  'archive_label':r.get('archive_label'),
+                  'depth':r.get('depth'),
+                  'lineage':r.get('lineage'),
+                  'save_root':r.get('save_root'),
+                  'zip_members':r.get('zip_members'),
+                  'surface_level_files':len(levels),
+                  'level_uncompressed_bytes':sum((x.get('bytes') or 0) for x in levels),
+                  'script_dat_bytes':r.get('script_dat_bytes'),
+                  'factorio_version':r.get('factorio_version'),
+                  'loaded_from':r.get('loaded_from'),
+                  'se_version':se,
+                  'mod_count':len(r.get('mods') or {}),
+                  'mods':r.get('mods') or {},
+                  'source_url':r.get('source_url'),
+                  'source_repo':r.get('source_repo'),
+                  'source_issue_number':r.get('source_issue_number'),
+                  'source_issue_url':r.get('source_issue_url'),
+                  'source_issue_title':r.get('source_issue_title'),
+                  'source_context':r.get('source_context'),
+                  'download_sha256':r.get('download_sha256'),
+                  'download_bytes':r.get('download_bytes'),
+              })
+          Path('published/candidates.json').write_text(json.dumps(out,indent=2,sort_keys=True))
+          lines=['# Real Space Exploration issue-save candidates','']
+          for i,r in enumerate(out,1):
+              lines += [
+                  f"## {i}. {r['save_root']}",
+                  f"- Factorio: `{r['factorio_version']}`",
+                  f"- SE: `{r['se_version']}`",
+                  f"- Source: {r['source_url']}",
+                  f"- Issue: {r['source_issue_url']}",
+                  f"- Download bytes: `{r['download_bytes']}`",
+                  f"- Surface level files: `{r['surface_level_files']}`",
+                  f"- ZIP members: `{r['zip_members']}`",
+                  f"- Script.dat bytes: `{r['script_dat_bytes']}`",
+                  f"- Mods: `{r['mod_count']}`",
+                  f"- Context: {r['source_context']}",
+                  ''
+              ]
+          Path('published/REPORT.md').write_text('\n'.join(lines))
+          print(json.dumps(out,indent=2))
+          PY
+          rm published/all-saves.json
+      - name: Publish result
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B "$RESULT_BRANCH"
+          rm -rf tmp-se-produtil-candidate-summary
+          mkdir -p tmp-se-produtil-candidate-summary
+          cp -a published/. tmp-se-produtil-candidate-summary/
+          git add -f tmp-se-produtil-candidate-summary
+          git commit -m 'Publish compact SE candidate summary'
+          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
