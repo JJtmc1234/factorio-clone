@@ -69,7 +69,7 @@ jobs:
         run: |
           set -euo pipefail
           cat > work/server-settings.json <<'JSON'
-          {"name":"inspection","description":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":true}
+          {"name":"inspection","description":"inspection","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"true"}
           JSON
           sed -i 's/27531/27533/g' work/query.py
           work/factorio/bin/x64/factorio --start-server work/candidate.zip --mod-directory work/mods \
