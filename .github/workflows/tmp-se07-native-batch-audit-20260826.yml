@@ -1,0 +1,264 @@
+name: Batch-audit newly found native SE 0.7 saves
+
+on:
+  push:
+    branches: [tmp-se07-native-batch-audit-20260826]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: audit-${{ matrix.id }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include:
+          - id: biocum
+            source_url: https://files.catbox.moe/pyylnx.zip
+            drive_id: ''
+          - id: spaceage2nd
+            source_url: https://drive.google.com/file/d/1qsf0_rWhCRkrTx-Ejsh-wRbpKgzwVQze/view?usp=sharing
+            drive_id: 1qsf0_rWhCRkrTx-Ejsh-wRbpKgzwVQze
+          - id: bookswarm
+            source_url: https://drive.google.com/file/d/1nMip4ceTgxMbiR745H40FauzEmLFWP6R/view?usp=drive_link
+            drive_id: 1nMip4ceTgxMbiR745H40FauzEmLFWP6R
+          - id: test35
+            source_url: https://forums.factorio.com/download/file.php?id=103299
+            drive_id: ''
+          - id: spaceexploration-108368
+            source_url: https://forums.factorio.com/download/file.php?id=108368
+            drive_id: ''
+          - id: glave-test
+            source_url: https://forums.factorio.com/download/file.php?id=110127
+            drive_id: ''
+          - id: ship-landing-test
+            source_url: https://forums.factorio.com/download/file.php?id=110128
+            drive_id: ''
+          - id: artillery-test
+            source_url: https://forums.factorio.com/download/file.php?id=110132
+            drive_id: ''
+          - id: rk-se-2
+            source_url: https://forums.factorio.com/download/file.php?id=109074
+            drive_id: ''
+          - id: feb-ready
+            source_url: https://forums.factorio.com/download/file.php?id=110618
+            drive_id: ''
+          - id: se-mega
+            source_url: https://forums.factorio.com/download/file.php?id=115002
+            drive_id: ''
+
+    env:
+      CANDIDATE_ID: ${{ matrix.id }}
+      SOURCE_URL: ${{ matrix.source_url }}
+      DRIVE_ID: ${{ matrix.drive_id }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools and download candidate
+        id: download
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file binutils golang-go
+          python3 -m pip install --quiet --upgrade gdown
+          mkdir -p reports mirror-logs match fake-factorio/data/base fake-factorio/mods factorio/mods factorio/script-output
+          if test -n "$DRIVE_ID"; then
+            gdown --no-cookies "$DRIVE_ID" -O save.zip 2>&1 | tee reports/download.log
+          else
+            curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'Mozilla/5.0 Factorio-save-auditor' \
+              -o save.zip "$SOURCE_URL" 2>&1 | tee reports/download.log
+          fi
+          file save.zip | tee reports/file.txt
+          stat -c 'save_bytes=%s' save.zip | tee reports/save-size.txt
+          sha256sum save.zip | tee reports/save-sha256.txt
+          unzip -t save.zip > reports/unzip-test.txt 2>&1
+          python3 - <<'PY'
+          import zipfile, pathlib, sys
+          p=pathlib.Path('save.zip')
+          with zipfile.ZipFile(p) as z:
+              names=z.namelist()
+          ok=any(n.endswith('/level-init.dat') for n in names) and any(n.endswith('/level.dat') or '/level.dat' in n for n in names)
+          pathlib.Path('reports/factorio-save-structure.txt').write_text(f'factorio_save={ok}\nentries={len(names)}\n')
+          if not ok: raise SystemExit('not a Factorio save')
+          PY
+
+      - name: Identify exact Factorio and mod versions
+        id: identify
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"2.0.99","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          set +e
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip > reports/exact-mod-list.txt 2> reports/fmm-stderr.txt
+          rc=$?
+          set -e
+          echo "fmm_returncode=$rc" > reports/identity-status.txt
+          cat reports/exact-mod-list.txt || true
+          if test "$rc" -ne 0; then
+            echo 'eligible=false' >> "$GITHUB_OUTPUT"
+            echo 'reason=fmm_failed' >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          base_version=$(awk '$1=="base"{print $2}' reports/exact-mod-list.txt | head -1)
+          se_version=$(awk '$1=="space-exploration"{print $2}' reports/exact-mod-list.txt | head -1)
+          k2_version=$(awk '$1=="Krastorio2"{print $2}' reports/exact-mod-list.txt | head -1)
+          printf 'base_version=%s\nse_version=%s\nk2_version=%s\n' "$base_version" "$se_version" "$k2_version" | tee -a reports/identity-status.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' reports/exact-mod-list.txt > reports/mod-versions.tsv
+          reason=eligible
+          eligible=true
+          if test -z "$base_version"; then eligible=false; reason=no_base_version; fi
+          if test -z "$se_version"; then eligible=false; reason=not_space_exploration; fi
+          case "$se_version" in 0.7.*) ;; *) if test -n "$se_version"; then eligible=false; reason=not_se_0_7; fi ;; esac
+          if test -n "$k2_version"; then eligible=false; reason=krastorio2; fi
+          echo "eligible=$eligible" >> "$GITHUB_OUTPUT"
+          echo "reason=$reason" >> "$GITHUB_OUTPUT"
+          echo "base_version=$base_version" >> "$GITHUB_OUTPUT"
+          echo "se_version=$se_version" >> "$GITHUB_OUTPUT"
+          echo "k2_version=$k2_version" >> "$GITHUB_OUTPUT"
+          printf 'eligible=%s\nreason=%s\n' "$eligible" "$reason" | tee -a reports/identity-status.txt
+
+      - name: Download exact Factorio and mods
+        if: steps.identify.outputs.eligible == 'true'
+        id: setup
+        shell: bash
+        run: |
+          set -euo pipefail
+          base_version='${{ steps.identify.outputs.base_version }}'
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -o factorio.tar.xz \
+            "https://www.factorio.com/get-download/${base_version}/headless/linux64"
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee reports/factorio-version.txt
+          export MOD_DIR="$PWD/factorio/mods"
+          download_one() {
+            mod="$1"; version="$2"; out="$MOD_DIR/${mod}_${version}.zip"
+            case "$mod" in quality|space-age|elevated-rails) return 0 ;; esac
+            curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'factorio-mod-downloader/1.0' \
+              -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          }
+          export -f download_one
+          set +e
+          xargs -P 8 -n 2 bash -c 'download_one "$0" "$1"' < reports/mod-versions.tsv
+          dl_status=$?
+          set -e
+          echo "mod_download_status=$dl_status" | tee reports/mod-download-status.txt
+          find factorio/mods -maxdepth 1 -type f -name '*.zip' -printf '%f\n' | sort > reports/downloaded-mod-files.txt
+          python3 - <<'PY'
+          from pathlib import Path
+          expected=[]
+          for line in Path('reports/mod-versions.tsv').read_text().splitlines():
+              n,v=line.split('\t',1)
+              if n not in {'quality','space-age','elevated-rails'}: expected.append(f'{n}_{v}.zip')
+          got={p.name for p in Path('factorio/mods').glob('*.zip')}
+          missing=sorted(set(expected)-got)
+          Path('reports/missing-mod-files.txt').write_text('\n'.join(missing)+('\n' if missing else ''))
+          print('missing:',missing)
+          PY
+
+      - name: Configure read-only SE stage auditor
+        if: steps.identify.outputs.eligible == 'true'
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-v3_0.1.0
+          cp tmp-se-auditor-v3/info.json factorio/mods/jj-se-stage-auditor-v3_0.1.0/info.json
+          cp tmp-se-auditor-v3/control.lua factorio/mods/jj-se-stage-auditor-v3_0.1.0/control.lua
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mods=[{'name':'base','enabled':True},{'name':'quality','enabled':False},{'name':'space-age','enabled':False},{'name':'elevated-rails','enabled':False}]
+          for line in Path('reports/mod-versions.tsv').read_text().splitlines():
+              n,v=line.split('\t',1)
+              if n in {'quality','space-age','elevated-rails'}: continue
+              if Path(f'factorio/mods/{n}_{v}.zip').exists(): mods.append({'name':n,'enabled':True})
+          mods.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          Path('factorio/mods/mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          Path('reports/final-mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          PY
+
+      - name: Live-load and audit candidate
+        if: steps.identify.outputs.eligible == 'true'
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 35m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" \
+            --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 \
+            2>&1 | tee reports/factorio-live-audit.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          echo "factorio_live_status=$status" > reports/workflow-status.txt
+          find "$PWD" -type f -name jj-se-live-audit-v3.json -print -exec cp '{}' reports/jj-se-live-audit.json \; || true
+          exit "$status"
+
+      - name: Classify candidate
+        if: always()
+        shell: bash
+        env:
+          ELIGIBLE: ${{ steps.identify.outputs.eligible }}
+          IDENTITY_REASON: ${{ steps.identify.outputs.reason }}
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, pathlib, os, shutil
+          reports=pathlib.Path('reports'); audit=reports/'jj-se-live-audit.json'
+          result={
+            'candidate_id':os.environ['CANDIDATE_ID'],
+            'source_url':os.environ['SOURCE_URL'],
+            'identity_eligible':os.environ.get('ELIGIBLE')=='true',
+            'identity_reason':os.environ.get('IDENTITY_REASON',''),
+            'exact_match':False,
+          }
+          if audit.exists():
+              d=json.loads(audit.read_text()); r=d.get('rocket_science',{}); launch=d.get('launch_support',{})
+              produced=r.get('lifetime_produced') or 0
+              count=r.get('count') or 0
+              output=r.get('machines_with_automatic_output') or 0
+              logistics=r.get('machines_with_logistics') or 0
+              pps=r.get('estimated_packs_per_second_before_productivity') or 0
+              full=((count>=4 and output>=3 and logistics>=3) or (pps>=0.5 and output>=1 and logistics>=1)) and produced>0
+              untouched=bool(d.get('orbit_untouched_heuristic_pass'))
+              result.update({
+                'factorio_version':d.get('factorio_version'),'space_exploration_version':d.get('space_exploration_version'),'krastorio2_version':d.get('krastorio2_version'),
+                'rocket_science_researched':r.get('researched'),'rocket_science_lifetime_produced':produced,'rocket_science_machine_count':count,
+                'rocket_science_working_now':r.get('working_now'),'rocket_science_output_machines':output,'rocket_science_logistics_machines':logistics,
+                'rocket_science_estimated_pps':pps,'upstream_automation_fraction':r.get('upstream_automation_fraction'),
+                'cargo_launch_pads_nauvis':launch.get('launch_pads_on_nauvis'),'non_nauvis_surface_count':len(d.get('non_nauvis_surfaces',[])),
+                'orbit_like_surfaces':d.get('orbit_like_surfaces'),'orbit_untouched':untouched,'full_scale_rocket_science':full,
+                'exact_match':bool(full and untouched and not d.get('krastorio2_version')),
+              })
+              (reports/'jj-se-live-audit.pretty.json').write_text(json.dumps(d,indent=2))
+          elif result['identity_eligible']:
+              result['audit_error']='audit_file_not_produced'
+          (reports/'classification.json').write_text(json.dumps(result,indent=2))
+          (reports/'classification.txt').write_text('\n'.join(f'{k}={v}' for k,v in result.items())+'\n')
+          print(json.dumps(result,indent=2))
+          if result.get('exact_match'):
+              m=pathlib.Path('match'); m.mkdir(exist_ok=True)
+              shutil.copy2('save.zip',m/f"JJ_SE07_rocket_science_preorbit_{os.environ['CANDIDATE_ID']}.zip")
+              shutil.copy2(reports/'classification.json',m/'verification.json')
+              shutil.copy2(reports/'jj-se-live-audit.pretty.json',m/'live-audit.json')
+          PY
+
+      - name: Upload compact audit result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-native-audit-${{ matrix.id }}
+          path: |
+            reports/
+            match/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 6
