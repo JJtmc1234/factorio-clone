@@ -1,0 +1,141 @@
+=== PYTHON COMPILE CHECK ===
+tmp-se-broad-crawler/crawl.py:118: SyntaxWarning: invalid escape sequence '\]'
+  u = html.unescape(raw).replace("\\u0026", "&").rstrip(".,;:!?)\]}>'\"")
+compile_status=0
+=== CRAWLER RUN ===
+/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py:118: SyntaxWarning: invalid escape sequence '\]'
+  u = html.unescape(raw).replace("\\u0026", "&").rstrip(".,;:!?)\]}>'\"")
+/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py:149: XMLParsedAsHTMLWarning: It looks like you're using an HTML parser to parse an XML document.
+
+Assuming this really is an XML document, what you're doing might work, but you should know that using an XML parser will be more reliable. To parse this document as XML, make sure you have the Python package 'lxml' installed, and pass the keyword argument `features="xml"` into the BeautifulSoup constructor.
+
+If you want or need to use an HTML parser on this document, you can make this warning go away by filtering it. To do that, run this code before calling the BeautifulSoup constructor:
+
+    from bs4 import XMLParsedAsHTMLWarning
+    import warnings
+
+    warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+  soup = BeautifulSoup(text, "lxml")
+/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py:182: XMLParsedAsHTMLWarning: It looks like you're using an HTML parser to parse an XML document.
+
+Assuming this really is an XML document, what you're doing might work, but you should know that using an XML parser will be more reliable. To parse this document as XML, make sure you have the Python package 'lxml' installed, and pass the keyword argument `features="xml"` into the BeautifulSoup constructor.
+
+If you want or need to use an HTML parser on this document, you can make this warning go away by filtering it. To do that, run this code before calling the BeautifulSoup constructor:
+
+    from bs4 import XMLParsedAsHTMLWarning
+    import warnings
+
+    warnings.filterwarnings("ignore", category=XMLParsedAsHTMLWarning)
+
+  soup = BeautifulSoup(text, "lxml")
+search 1/30 links=160
+search 2/30 links=184
+search 3/30 links=216
+search 4/30 links=263
+search 5/30 links=283
+search 6/30 links=330
+search 7/30 links=380
+search 8/30 links=428
+search 9/30 links=448
+search 10/30 links=468
+search 11/30 links=488
+search 12/30 links=508
+search 13/30 links=528
+search 14/30 links=568
+search 15/30 links=588
+search 16/30 links=637
+search 17/30 links=657
+search 18/30 links=677
+search 19/30 links=697
+search 20/30 links=717
+search 21/30 links=737
+search 22/30 links=757
+search 23/30 links=787
+search 24/30 links=807
+search 25/30 links=827
+search 26/30 links=847
+search 27/30 links=867
+search 28/30 links=903
+search 29/30 links=923
+search 30/30 links=943
+mod 1/64 threads=1
+mod 2/64 threads=1
+mod 3/64 threads=51
+mod 4/64 threads=51
+mod 5/64 threads=101
+mod 6/64 threads=151
+mod 7/64 threads=173
+mod 8/64 threads=223
+mod 9/64 threads=273
+mod 10/64 threads=323
+mod 11/64 threads=373
+mod 12/64 threads=379
+mod 13/64 threads=429
+mod 14/64 threads=429
+mod 15/64 threads=429
+mod 16/64 threads=429
+mod 17/64 threads=479
+mod 18/64 threads=505
+mod 19/64 threads=556
+mod 20/64 threads=556
+mod 21/64 threads=605
+mod 22/64 threads=650
+mod 23/64 threads=666
+mod 24/64 threads=716
+mod 25/64 threads=766
+mod 26/64 threads=767
+mod 27/64 threads=767
+mod 28/64 threads=767
+mod 29/64 threads=767
+mod 30/64 threads=768
+mod 31/64 threads=768
+mod 32/64 threads=818
+mod 33/64 threads=842
+mod 34/64 threads=892
+mod 35/64 threads=915
+mod 36/64 threads=960
+mod 37/64 threads=990
+mod 38/64 threads=1027
+mod 39/64 threads=1027
+mod 40/64 threads=1077
+mod 41/64 threads=1127
+mod 42/64 threads=1127
+mod 43/64 threads=1127
+mod 44/64 threads=1151
+mod 45/64 threads=1160
+mod 46/64 threads=1162
+mod 47/64 threads=1171
+mod 48/64 threads=1171
+mod 49/64 threads=1171
+mod 50/64 threads=1171
+mod 51/64 threads=1171
+mod 52/64 threads=1171
+mod 53/64 threads=1171
+mod 54/64 threads=1221
+mod 55/64 threads=1221
+mod 56/64 threads=1239
+mod 57/64 threads=1289
+mod 58/64 threads=1321
+mod 59/64 threads=1371
+mod 60/64 threads=1421
+mod 61/64 threads=1471
+mod 62/64 threads=1471
+mod 63/64 threads=1513
+mod 64/64 threads=1513
+mod threads 100/1513 filelinks=79
+mod threads 200/1513 filelinks=85
+mod threads 300/1513 filelinks=90
+Traceback (most recent call last):
+  File "/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py", line 630, in <module>
+    main()
+  File "/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py", line 619, in main
+    crawl_mod_portal()
+  File "/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py", line 257, in crawl_mod_portal
+    print(f"mod threads {i}/{len(thread_list)} filelinks={sum(bool(FILEISH_RX.search(x)) for x in found_links)}", flush=True)
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/factorio-clone/factorio-clone/tmp-se-broad-crawler/crawl.py", line 257, in <genexpr>
+    print(f"mod threads {i}/{len(thread_list)} filelinks={sum(bool(FILEISH_RX.search(x)) for x in found_links)}", flush=True)
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: dictionary changed size during iteration
+run_status=1
