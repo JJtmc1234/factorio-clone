@@ -1,0 +1,5096 @@
+{
+  "after_space_science": true,
+  "before_specialist_sciences": false,
+  "hours": 236.49521296296297,
+  "practical_before_specialist_sciences": false,
+  "prod_util_strict_match": false,
+  "prod_util_target_match": false,
+  "production_science_input": 0,
+  "production_science_output": 0,
+  "researched_technologies_using_space_science": [
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "artillery"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "artillery-shell-range-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "artillery-shell-range-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "artillery-shell-range-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "artillery-shell-speed-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "artillery-shell-speed-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "atomic-bomb"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "automation-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "battery-mk2-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "braking-force-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "braking-force-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "braking-force-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "braking-force-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "braking-force-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "coal-liquefaction"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "destroyer"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "effect-transmission"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "efficiency-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "follower-robot-count-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "follower-robot-count-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "follower-robot-count-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "follower-robot-count-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "follower-robot-count-9"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "inserter-capacity-bonus-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "inserter-capacity-bonus-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "inserter-capacity-bonus-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "inserter-capacity-bonus-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "kovarex-enrichment-process"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-shooting-speed-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-shooting-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "laser-shooting-speed-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "laser-shooting-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "laser-shooting-speed-7"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-weapons-damage-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "laser-weapons-damage-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "laser-weapons-damage-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "laser-weapons-damage-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "laser-weapons-damage-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "laser-weapons-damage-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "laser-weapons-damage-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "logistic-system"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "logistics-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "mining-productivity-10"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "mining-productivity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "mining-productivity-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "mining-productivity-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "mining-productivity-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "mining-productivity-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "mining-productivity-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "mining-productivity-9"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "nuclear-fuel-reprocessing"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "personal-roboport-mk2-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "physical-projectile-damage-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "physical-projectile-damage-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "physical-projectile-damage-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "power-armor-mk2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "production-science-pack"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "productivity-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "refined-flammables-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "refined-flammables-5"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "research-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "research-speed-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "research-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "speed-module-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "spidertron"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "stronger-explosives-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "stronger-explosives-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "stronger-explosives-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "stronger-explosives-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "stronger-explosives-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "stronger-explosives-9"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "uranium-ammo"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "weapon-shooting-speed-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "weapon-shooting-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "worker-robots-speed-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "worker-robots-speed-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "worker-robots-speed-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "worker-robots-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "worker-robots-speed-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "worker-robots-speed-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "worker-robots-speed-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "worker-robots-storage-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "worker-robots-storage-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "aai-storehouse-logistic"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "aai-strongbox-logistic"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "aai-warehouse-logistic"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "industrial-furnace"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-medpack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-medpack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "area-mining-drill"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "toolbelt-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "toolbelt-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "toolbelt-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "aai-express-loader"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "aai-se-space-loader"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "aai-se-deep-space-loader"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "jetpack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "jetpack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "jetpack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-adaptive-armour-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-adaptive-armour-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-adaptive-armour-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-addon-power-pole"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-aeroframe-bulkhead"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-aeroframe-pole"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-aeroframe-scaffold"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-engine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-production"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-reactor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-arcosphere"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-arcosphere-folding"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-astronomic-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-astronomic-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-astronomic-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-astronomic-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-big-heat-exchanger"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-big-turbine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-agility-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-agility-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-agility-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-agility-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-agility-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-constitution-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-constitution-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-constitution-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-constitution-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-constitution-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-dexterity-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-dexterity-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-dexterity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-dexterity-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-dexterity-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-intelligence-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-intelligence-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-intelligence-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-intelligence-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-intelligence-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-strength-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-strength-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-strength-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-strength-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-strength-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-biogun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-biological-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-biological-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-biological-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-biological-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bioscrubber"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-capsule-behemoth-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-capsule-behemoth-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-capsule-big-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-capsule-big-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-capsule-medium-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-capsule-medium-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-capsule-small-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-capsule-small-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-cargo-rocket-section-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-compact-beacon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-compact-beacon-2"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-condenser-turbine"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-cryonite-lubricant"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-deep-catalogue-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-deep-catalogue-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-deep-catalogue-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-deep-catalogue-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-deep-space-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-deep-space-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-deep-space-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-deep-space-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-deep-space-transport-belt"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-delivery-cannon-capsule-iridium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-delivery-cannon-weapon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-dimensional-anchor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "se-dynamic-emitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-energy-beaming"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-energy-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-energy-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-energy-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-energy-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-fluid-burner-generator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-heat-shielding-iridium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-heavy-assembly"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-heavy-bearing"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-heavy-composite"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-heavy-girder"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-holmium-cable"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-holmium-solenoid"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-ion-engine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4"
+      ],
+      "technology": "se-lattice-pressure-vessel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-lifesupport-equipment-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-lifesupport-equipment-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-linked-container"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-low-density-structure-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-material-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-material-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-material-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-material-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-nanomaterial"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-naquium-cube"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-naquium-processor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-naquium-tessaract"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-nexus"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-cryonite"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-processing-iridium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-methane-ice"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-processing-naquium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-processing-unit-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-vitamelange"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-vulcanite"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-processing-water-ice"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-pylon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-pylon-construction"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-pylon-construction-radar"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-pylon-substation"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-pyroflux-smelting-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-quantum-processor"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-cargo-safety-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-rocket-cargo-safety-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-reusability-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-rocket-reusability-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-rocket-survivability-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-rocket-survivability-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-self-sealing-gel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-astrometrics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-biochemical-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-capsule-navigation"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-catalogue-astronomic-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-astronomic-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-astronomic-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-astronomic-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-space-catalogue-biological-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-biological-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-biological-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-biological-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-catalogue-energy-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-energy-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-energy-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-energy-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-space-catalogue-material-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-material-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-material-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-material-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-data-card"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-electromagnetics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-elevator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-space-elevator-cable-nano"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-space-genetics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-gravimetrics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-space-growth-facility"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-hypercooling-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-hypercooling-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-hypercooling-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-laser-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-manufactory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-material-fabricator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-matter-fusion"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "se-space-mechanical-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-particle-accelerator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-particle-collider"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-plasma-generator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-platform-plating"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-platform-scaffold"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-space-probe"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-radiating-efficiency"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-radiating-speed"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-radiation-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-radiator-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-space-radiator-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-rail"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-space-simulation-ab"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-abm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-am"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-as"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asb"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asbm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-bm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sb"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sbm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sm"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-solar-panel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-solar-panel-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-space-solar-panel-3"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-supercomputer-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "se-space-telescope"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-telescope-gammaray"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-telescope-microwave"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-telescope-radio"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-telescope-xray"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-space-thermodynamics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-spaceship-clamps"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-supercharger"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-teleportation"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-vitalic-acid"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-vitalic-epoxy"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-vitalic-reagent"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "se-vulcanite-rocket-fuel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-wide-beacon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-wide-beacon-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-3"
+      ],
+      "technology": "shield-projector"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "fission-reactor-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-antimatter-reactor-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-cryogun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-factory-spaceship-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-factory-spaceship-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-factory-spaceship-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-factory-spaceship-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "se-fusion-reactor-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-plague"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-railgun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-accumulator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-space-accumulator-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-spaceship"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-spaceship-integrity-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-spaceship-integrity-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-superconductive-cable"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-tesla-gun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-thruster-suit-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-thruster-suit-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-thruster-suit-4"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "utility-science-pack"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "energy-shield-mk5-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "energy-shield-mk6-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "speed-module-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "speed-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "speed-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "speed-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "speed-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "speed-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack"
+      ],
+      "technology": "productivity-module-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "productivity-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "productivity-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "productivity-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "productivity-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "productivity-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack"
+      ],
+      "technology": "efficiency-module-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "efficiency-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "efficiency-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "efficiency-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "efficiency-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "efficiency-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-spaceship-victory"
+    },
+    {
+      "packs": [
+        "space-science-pack"
+      ],
+      "technology": "artillery"
+    }
+  ],
+  "researched_technologies_using_specialist_science": [
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "artillery-shell-range-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "artillery-shell-range-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "artillery-shell-speed-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "battery-mk2-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "braking-force-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "braking-force-7"
+    },
+    {
+      "packs": [
+        "se-energy-science-pack-1"
+      ],
+      "technology": "energy-shield-equipment"
+    },
+    {
+      "packs": [
+        "se-energy-science-pack-2",
+        "se-material-science-pack-1"
+      ],
+      "technology": "energy-shield-mk2-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "follower-robot-count-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "follower-robot-count-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "follower-robot-count-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "follower-robot-count-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "inserter-capacity-bonus-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "inserter-capacity-bonus-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "laser-shooting-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "laser-shooting-speed-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "laser-weapons-damage-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "laser-weapons-damage-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "laser-weapons-damage-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "laser-weapons-damage-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "mining-productivity-10"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "mining-productivity-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "mining-productivity-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "mining-productivity-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "mining-productivity-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "physical-projectile-damage-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "physical-projectile-damage-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "research-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "spidertron"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "stronger-explosives-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "stronger-explosives-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "stronger-explosives-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "stronger-explosives-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "weapon-shooting-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "worker-robots-speed-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "worker-robots-speed-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "worker-robots-speed-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "worker-robots-speed-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "worker-robots-storage-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-medpack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-medpack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "toolbelt-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "aai-se-deep-space-loader"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "jetpack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "jetpack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-adaptive-armour-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-adaptive-armour-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-addon-power-pole"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-aeroframe-bulkhead"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-aeroframe-pole"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-aeroframe-scaffold"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-engine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-production"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-antimatter-reactor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-astronomic-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-astronomic-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-astronomic-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-big-heat-exchanger"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-big-turbine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-agility-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-agility-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-agility-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-agility-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-agility-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-constitution-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-constitution-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-constitution-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-constitution-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-constitution-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-dexterity-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-dexterity-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-dexterity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-dexterity-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-dexterity-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-intelligence-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-intelligence-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-intelligence-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-intelligence-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-intelligence-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-strength-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-bio-upgrade-strength-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-bio-upgrade-strength-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-bio-upgrade-strength-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-bio-upgrade-strength-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-biogun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-biological-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-biological-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-biological-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-bioscrubber"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-capsule-behemoth-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-capsule-behemoth-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-capsule-big-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-capsule-big-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-capsule-medium-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-capsule-medium-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-capsule-small-biter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-capsule-small-spitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-compact-beacon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-compact-beacon-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-deep-catalogue-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-deep-space-science-pack-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-deep-space-transport-belt"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-delivery-cannon-capsule-iridium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-delivery-cannon-weapon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-1",
+        "se-deep-space-science-pack-2",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-dimensional-anchor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "se-dynamic-emitter"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-energy-beaming"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-energy-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-energy-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-energy-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-heavy-assembly"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-heavy-bearing"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-heavy-composite"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-heavy-girder"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-holmium-cable"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-holmium-solenoid"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-ion-engine"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4"
+      ],
+      "technology": "se-lattice-pressure-vessel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-lifesupport-equipment-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-lifesupport-equipment-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-linked-container"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-low-density-structure-beryllium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-material-science-pack-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-material-science-pack-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-material-science-pack-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-nanomaterial"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-naquium-cube"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-naquium-processor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-naquium-tessaract"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-nexus"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-processing-naquium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-processing-unit-holmium"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-pylon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-pylon-construction"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-pylon-construction-radar"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-pylon-substation"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-quantum-processor"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-self-sealing-gel"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-astronomic-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-astronomic-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-astronomic-science-pack-2",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-astronomic-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-biological-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-biological-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-biological-science-pack-2",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-biological-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-energy-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-energy-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1",
+        "se-energy-science-pack-2",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-energy-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-catalogue-material-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-catalogue-material-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1",
+        "se-material-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-space-catalogue-material-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-elevator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-space-elevator-cable-nano"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-gravimetrics-laboratory"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-hypercooling-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-material-fabricator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-matter-fusion"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-particle-collider"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-platform-plating"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-space-probe"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-radiating-efficiency"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-radiating-speed"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-material-science-pack-4"
+      ],
+      "technology": "se-space-radiator-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-rail"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-space-simulation-ab"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-abm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-am"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-as"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asb"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asbm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-asm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-bm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sb"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sbm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-space-simulation-sm"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-space-solar-panel-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-space-solar-panel-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-space-supercomputer-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-telescope-gammaray"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-telescope-microwave"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-2"
+      ],
+      "technology": "se-space-telescope-radio"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-space-telescope-xray"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-spaceship-clamps"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-2",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-supercharger"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-teleportation"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "se-vitalic-acid"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "se-vitalic-epoxy"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "se-vitalic-reagent"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "se-wide-beacon"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-wide-beacon-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-3"
+      ],
+      "technology": "shield-projector"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "fission-reactor-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-1"
+      ],
+      "technology": "se-cryogun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-factory-spaceship-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-factory-spaceship-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-2"
+      ],
+      "technology": "se-factory-spaceship-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-factory-spaceship-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "se-fusion-reactor-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "se-plague"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-railgun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-space-accumulator"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "se-space-accumulator-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-3"
+      ],
+      "technology": "se-spaceship"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-spaceship-integrity-1"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-2"
+      ],
+      "technology": "se-spaceship-integrity-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-1",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-4"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-2",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-spaceship-integrity-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-superconductive-cable"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "se-tesla-gun"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "se-thruster-suit-2"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-3",
+        "se-biological-science-pack-1",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-3"
+      ],
+      "technology": "se-thruster-suit-3"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "se-thruster-suit-4"
+    },
+    {
+      "packs": [
+        "se-energy-science-pack-3",
+        "se-material-science-pack-1"
+      ],
+      "technology": "energy-shield-mk3-equipment"
+    },
+    {
+      "packs": [
+        "se-energy-science-pack-4",
+        "se-material-science-pack-3"
+      ],
+      "technology": "energy-shield-mk4-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "energy-shield-mk5-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-energy-science-pack-3",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-3"
+      ],
+      "technology": "energy-shield-mk6-equipment"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-1"
+      ],
+      "technology": "speed-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-2"
+      ],
+      "technology": "speed-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-3"
+      ],
+      "technology": "speed-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4"
+      ],
+      "technology": "speed-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "speed-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-1"
+      ],
+      "technology": "productivity-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-2"
+      ],
+      "technology": "productivity-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-3"
+      ],
+      "technology": "productivity-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4"
+      ],
+      "technology": "productivity-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "production-science-pack",
+        "se-biological-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "productivity-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-1"
+      ],
+      "technology": "efficiency-module-5"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-2"
+      ],
+      "technology": "efficiency-module-6"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-3"
+      ],
+      "technology": "efficiency-module-7"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4"
+      ],
+      "technology": "efficiency-module-8"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "se-energy-science-pack-4",
+        "se-deep-space-science-pack-1"
+      ],
+      "technology": "efficiency-module-9"
+    },
+    {
+      "packs": [
+        "space-science-pack",
+        "utility-science-pack",
+        "production-science-pack",
+        "se-astronomic-science-pack-4",
+        "se-biological-science-pack-4",
+        "se-energy-science-pack-4",
+        "se-material-science-pack-4",
+        "se-deep-space-science-pack-4"
+      ],
+      "technology": "se-spaceship-victory"
+    }
+  ],
+  "rockets_launched": 669,
+  "science_items": {},
+  "space_science_input": 0,
+  "space_science_machines": 4,
+  "space_science_output": 0,
+  "specialist_science_input": 0,
+  "specialist_science_machines": 16,
+  "specialist_science_output": 0,
+  "target_match": false,
+  "utility_science_input": 0,
+  "utility_science_output": 0
+}
