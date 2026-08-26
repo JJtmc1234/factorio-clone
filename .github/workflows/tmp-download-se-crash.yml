@@ -1,43 +1,173 @@
-name: Audit stubborn native SE 0.7 saves
+name: Extract lazy_kojocho SE save attachment
 
 on:
   push:
-    branches: [main]
+    branches: [tmp-lazy-note-fetch-20260826]
 
 permissions:
   contents: read
 
 jobs:
-  audit:
-    if: github.actor != 'github-actions[bot]'
-    name: audit-${{ matrix.id }}
+  fetch:
     runs-on: ubuntu-latest
-    timeout-minutes: 75
-    continue-on-error: true
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - id: rk-se-2
-            url: https://forums.factorio.com/download/file.php?id=109074
-          - id: spaceexploration-108368
-            url: https://forums.factorio.com/download/file.php?id=108368
+    timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-        with:
-          ref: tmp-se07-salvage-minimal-v2-20260826
-      - name: Audit candidate
+      - name: Fetch Note article API and attachment
         shell: bash
-        run: bash scripts/stubborn-se07-audit.sh '${{ matrix.id }}' '${{ matrix.url }}'
-      - name: Upload audit
+        run: |
+          set -euo pipefail
+          mkdir -p result/downloads
+          python3 - <<'PY'
+          import html
+          import json
+          import os
+          import pathlib
+          import re
+          import urllib.parse
+          import zipfile
+
+          import requests
+
+          out = pathlib.Path('result')
+          dld = out / 'downloads'
+          note_key = 'nff719a8e0603'
+          article_url = f'https://note.com/lazy_kojocho/n/{note_key}'
+          api_url = f'https://note.com/api/v3/notes/{note_key}'
+          headers = {
+              'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131 Safari/537.36',
+              'Accept': 'application/json,text/html,application/xhtml+xml,*/*',
+              'Referer': article_url,
+          }
+          s = requests.Session()
+          records = []
+          texts = []
+
+          for label, url in [('api', api_url), ('article', article_url)]:
+              r = s.get(url, headers=headers, timeout=90, allow_redirects=True)
+              records.append({
+                  'kind': label, 'url': url, 'status': r.status_code,
+                  'final_url': r.url, 'content_type': r.headers.get('content-type'),
+                  'bytes': len(r.content),
+              })
+              r.raise_for_status()
+              suffix = 'json' if label == 'api' else 'html'
+              (out / f'note-{label}.{suffix}').write_bytes(r.content)
+              texts.append(r.text)
+              if label == 'api':
+                  try:
+                      data = r.json()
+                      (out / 'note-api.pretty.json').write_text(json.dumps(data, ensure_ascii=False, indent=2))
+                  except Exception:
+                      pass
+
+          combined = html.unescape('\n'.join(texts))
+          try:
+              combined += '\n' + urllib.parse.unquote(combined)
+          except Exception:
+              pass
+          (out / 'combined-decoded.txt').write_text(combined)
+
+          urls = set()
+          keys = set()
+
+          for m in re.finditer(r'https?://[^\s"\'<>\\]+', combined):
+              u = m.group(0).rstrip('),.;]')
+              urls.add(u)
+
+          for pat in [
+              r'/api/v2/attachments/download/([A-Za-z0-9_-]{8,128})',
+              r'attachments?/download/([A-Za-z0-9_-]{8,128})',
+              r'(?:attachment|file)(?:Key|_key|Id|_id|Hash|_hash)["\'=:\s]+([A-Za-z0-9_-]{8,128})',
+              r'data-(?:attachment|file)-(?:key|id|hash)=["\']([^"\']+)',
+          ]:
+              for m in re.finditer(pat, combined, re.I):
+                  keys.add(m.group(1))
+
+          for m in re.finditer(r'(?i)(?:attachment|download|file|zip).{0,180}?\b([0-9a-f]{32})\b', combined, re.S):
+              keys.add(m.group(1))
+          for m in re.finditer(r'(?i)\b([0-9a-f]{32})\b.{0,180}?(?:attachment|download|file|zip)', combined, re.S):
+              keys.add(m.group(1))
+
+          # Add direct attachment routes for all plausible keys.
+          for key in list(keys):
+              urls.add(f'https://note.com/api/v2/attachments/download/{key}')
+
+          # Keep only URLs with a chance of being the file or a redirect to it.
+          likely = []
+          for u in sorted(urls):
+              lu = u.lower()
+              if any(x in lu for x in ('attachment', 'download', '.zip', 'drive.google', 'dropbox', 'onedrive', 'storage.googleapis', 'amazonaws', 'assets.st-note', 'cdn-ak.f.st-hatena')):
+                  likely.append(u)
+
+          (out / 'candidate-keys.txt').write_text('\n'.join(sorted(keys)) + ('\n' if keys else ''))
+          (out / 'candidate-urls.txt').write_text('\n'.join(likely) + ('\n' if likely else ''))
+
+          attempts = []
+          valid_saves = []
+          for idx, url in enumerate(likely[:80], 1):
+              try:
+                  r = s.get(url, headers=headers, timeout=180, allow_redirects=True)
+                  disp = r.headers.get('content-disposition', '')
+                  ctype = r.headers.get('content-type', '')
+                  name = None
+                  m = re.search(r"filename\*=UTF-8''([^;]+)", disp, re.I)
+                  if m:
+                      name = urllib.parse.unquote(m.group(1))
+                  if not name:
+                      m = re.search(r'filename=["\']?([^"\';]+)', disp, re.I)
+                      if m:
+                          name = m.group(1).strip()
+                  if not name:
+                      name = pathlib.PurePosixPath(urllib.parse.urlparse(r.url).path).name or f'candidate-{idx}.bin'
+                  name = re.sub(r'[^A-Za-z0-9._()\- ]+', '_', name)[:160]
+                  if not name:
+                      name = f'candidate-{idx}.bin'
+                  path = dld / f'{idx:02d}-{name}'
+                  path.write_bytes(r.content)
+                  rec = {
+                      'url': url, 'status': r.status_code, 'final_url': r.url,
+                      'content_type': ctype, 'content_disposition': disp,
+                      'bytes': len(r.content), 'saved_as': str(path),
+                  }
+                  try:
+                      with zipfile.ZipFile(path) as z:
+                          names = z.namelist()
+                          rec['zip_entries'] = len(names)
+                          rec['has_level_init'] = any(n.endswith('/level-init.dat') for n in names)
+                          rec['has_script_dat'] = any(n.endswith('/script.dat') for n in names)
+                          rec['has_level_chunks'] = any('/level.dat' in n for n in names)
+                          if rec['has_level_init'] and rec['has_script_dat'] and rec['has_level_chunks']:
+                              rec['valid_factorio_save'] = True
+                              valid_saves.append(str(path))
+                          else:
+                              rec['valid_factorio_save'] = False
+                  except Exception as exc:
+                      rec['zip_error'] = repr(exc)
+                  attempts.append(rec)
+              except Exception as exc:
+                  attempts.append({'url': url, 'error': repr(exc)})
+
+          summary = {
+              'note_key': note_key,
+              'article_url': article_url,
+              'api_url': api_url,
+              'fetches': records,
+              'candidate_key_count': len(keys),
+              'candidate_url_count': len(likely),
+              'valid_factorio_saves': valid_saves,
+              'attempts': attempts,
+          }
+          (out / 'summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+          print(json.dumps(summary, ensure_ascii=False, indent=2))
+          if not valid_saves:
+              raise SystemExit('No valid Factorio save attachment found')
+          PY
+      - name: Upload extracted save and evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: stubborn-se07-${{ matrix.id }}
-          path: |
-            reports/
-            attempts/
-            match/
-          if-no-files-found: warn
+          name: lazy-kojocho-53h-note-attachment
+          path: result/
+          if-no-files-found: error
           retention-days: 7
-          compression-level: 6
+          compression-level: 0
