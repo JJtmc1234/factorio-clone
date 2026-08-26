@@ -1,0 +1,133 @@
+﻿
+<html>
+
+  <head>
+    <meta name="og:image" content="https://i.factoriomaps.com/hlvav.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Browse - FactorioMaps.com</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.css" rel="stylesheet" />
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.default.min.css" rel="stylesheet" /> -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css" rel="stylesheet" /> 
+<!--    <link href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.legacy.min.css" rel="stylesheet" />  -->
+    <link href="https://factoriomaps.com/assets/css/browse.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/11.1.0/nouislider.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery_lazyload/1.9.7/jquery.lazyload.min.js" type="text/javascript"></script>
+    <script src="https://factoriomaps.com/assets/js/browse.js" type="text/javascript"></script>
+    
+  </head>
+  <body>
+    <nav id="head-nav">
+      <ul>
+          <li>
+              <a style="background-color: chocolate;" href="https://factoriomaps.com/submit">Submit Save</a>
+          </li>
+      
+          <li>
+              <a href="https://factoriomaps.com/browse.html">Browse Maps</a>
+          </li>
+          <li>
+              <a href="https://blog.factoriomaps.com/about/">About</a>
+          </li>
+      </ul>
+      </nav>
+      <script type="text/javascript">BurgerKing(document.getElementById('head-nav'));</script>
+    <div id="root-container">
+      Loading maps...
+    </div>
+    <script type="text/javascript">
+      // Removed https://i.factoriomaps.com/img/crop?width=300&height=300&url=
+      Browse("https://factoriomaps.com/assets/config/maplist.json", "root-container", "", window.location.search);
+    </script>
+    <link href="https://factoriomaps.com/assets/css/nav/BurgerKing.css" rel="stylesheet"/>
+    <style>
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            z-index: 100;
+        }
+    
+        nav li {
+            float: left;
+            border-right: 1px solid #bbb;
+        }
+    
+        nav li:last-child {
+            border-right: none;
+        }
+    
+        nav li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 4px 12px;
+            text-decoration: none;
+            font-family: sans-serif;
+            text-rendering: optimizespeed;
+        }
+    
+        nav li a:hover {
+            background-color: #111;
+        }
+    img.patreon {
+        position: absolute;
+        margin-top: 0px;
+        right: 0px;
+        width: 200px;
+        z-index: 10;
+    }
+    
+    nav.burger img.patreon {
+        width: 100px;
+    }
+    nav.burger {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+    }
+    </style>
+    <script type="text/javascript">
+    "use strict";
+    (function (window, document) {
+        window.BurgerKing = window.BurgerKing || function (element) {
+            var menu = document.createElement("span"), state = false;
+            menu.classList.add("menu-new");
+            menu.appendChild(document.createTextNode("Menu"));
+            element.insertBefore(menu, element.firstChild);
+            menu.addEventListener("click", function () {
+                if (!state) {
+                    element.classList.remove("closed");
+                    element.classList.add("opened");
+                } else {
+                    element.classList.remove("opened");
+                    element.classList.add("closed");
+                }
+                state = !state;
+            });
+    
+            var addFries = function () {
+                if (window.matchMedia("(max-width: 700px)").matches) {
+                    element.classList.add("burger");
+                    element.classList.add(state?"opened":"closed");
+                } else {
+                    element.classList.remove("burger");
+                    element.classList.remove("opened");
+                    element.classList.remove("closed");
+                }
+            };
+    
+            window.addEventListener("resize", function () {
+                addFries();
+            });
+            addFries();
+        };
+    })(window, document);
+    </script>
+  </body>
+</html>

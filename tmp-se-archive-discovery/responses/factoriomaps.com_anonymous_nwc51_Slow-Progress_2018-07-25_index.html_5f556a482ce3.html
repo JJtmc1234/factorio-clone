@@ -1,0 +1,292 @@
+<!DOCTYPE html><html><head>
+    <title>Slow Progress (low Resources with extra biters on the side) - FactorioMaps</title>
+    <meta name="og:image" content="https://i.factoriomaps.com/pkdgd.png">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.css" integrity="sha256-iYUgmrapfDGvBrePJPrMWQZDcObdAcStKBpjP3Az+3s=" crossorigin="anonymous">
+
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #map {
+            height: 100%;
+            z-index: 0;
+            background-color: rgb(27, 44, 51) !important;
+        }
+
+        #gmnoprint {
+            width: auto;
+        }
+
+        /* DOWN BUTTON CSS */
+        #downBtn {
+            position: fixed;
+            /* Fixed/sticky position */
+            bottom: 0px;
+            /* Place the button at the bottom of the page */
+            right: 50%;
+            transform: translate(50%, 0);
+            z-index: 99;
+            /* Make sure it does not overlap */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: chocolate;
+            /* Set a background color */
+            color: white;
+            /* Text color */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 5px;
+            /* Some padding */
+            border-radius: 7px;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+        }
+
+        #downBtn:hover {
+            background-color: #555;
+            /* Add a dark-grey background on hover */
+        }
+
+        /* FANCY DOWNLOAD CSS */
+        #modal {
+            display: none;
+            position: absolute;
+            top: 150px;
+            bottom: 30px;
+            background-color: rgb(27, 45, 51);
+            padding: 20px;
+            z-index: 100;
+            width: 400px;
+            right: 50%;
+            margin-right: -200px;
+            border: none;
+            border-radius: 5px;
+            color: #C6FFFD;
+        }
+
+        #modal.open {
+            display: block;
+        }
+
+        #modal ul li {
+            list-style-type: none;
+            margin-bottom: 5px;
+        }
+
+        #modal .close {
+            cursor: pointer;
+            float: right;
+            margin-top: -20px;
+        }
+
+        #modal .title {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        #modal .mapLayerLink {
+            float: right;
+            padding: 0px 25px;
+            background-color: chocolate;
+            color: #CFFFFD;
+            border-radius: 8px;
+            line-height: 35px;
+        }
+
+        #modal .mapLayerLink.disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        #modal .mapLayerLink:hover {
+            background-color: #555;
+        }
+
+        hr.clear {
+            clear: both;
+            float: none;
+            border: 0;
+            width: 0;
+            height: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        #modal .body {
+            overflow-y: auto;
+            max-height: 92%;
+        }
+
+        /* END FANCY DOWNLOAD CSS */
+        
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.3.3/leaflet.js" integrity="sha256-lwWHyfIX653fxmxYjZUYOSM7ufWv6dMT8ISVuTWwoOY=" crossorigin="anonymous"></script>
+    <script src="https://factoriomaps.com/assets/js/leaflet/plugins/leaflet-fullHash/0.1.0/leaflet-fullHash.min.js"></script>
+    <link href="https://factoriomaps.com/assets/js/leaflet/plugins/leaflet-fullscreen/1.0.1/leaflet.fullscreen.css" rel="stylesheet">
+    <script src="https://factoriomaps.com/assets/js/leaflet/plugins/leaflet-fullscreen/1.0.1/Leaflet.fullscreen.min.js"></script>
+</head>
+
+<body>
+    <!-- FANCY DOWNLOAD -->
+    <div id="buttonAnchor"><a id="downBtn" href="https://dl.factoriomaps.com/saves/jyrm1/Slow-Progress-2018-07-25.zip" target="_blank">Download Save</a></div>
+    <div id="modal">
+        <div class="title">
+            Download the world saves <span class="close" title="Close">x</span>
+        </div>
+        <div class="body">
+            This maps has multiple layers available, which means there can be multiple saves available. Please select the one you wish
+            to download :
+            <ul id="save-download-container"></ul>
+        </div>
+    </div>
+    <!-- END FANCY DOWNLOAD -->
+    
+    <div id="map" style="background: rgb(27, 45, 51); position: relative;" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 20; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/-1/-1.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(288px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/0/-1.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(800px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/-1/0.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(288px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/0/0.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(800px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/-2/-1.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile" style="width: 512px; height: 512px; transform: translate3d(-224px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/1/-1.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(1312px, -12px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/-2/0.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile" style="width: 512px; height: 512px; transform: translate3d(-224px, 500px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/Day/13/1/0.jpg?z=13&amp;b2=13-20&amp;gcs=13-19&amp;id=tr1rf" class="leaflet-tile leaflet-tile-loaded" style="width: 512px; height: 512px; transform: translate3d(1312px, 500px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(0px, 0px, 0px) scale(4096);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-fullscreen leaflet-bar leaflet-control"><a class="leaflet-control-fullscreen-button leaflet-bar-part" href="#" title="View Fullscreen"></a></div><div class="leaflet-control-attribution leaflet-control"><a href="http://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | <a href="https://mods.factorio.com/mods/credomane/FactorioMaps">FactorioMaps</a></div></div></div></div>
+    <script>
+        var m = JSON.parse('{"version":5,"links":{"url":"https://factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/index.html","preview":"https://i.factoriomaps.com/pkdgd.png","save":"https://dl.factoriomaps.com/saves/jyrm1/Slow-Progress-2018-07-25.zip"},"meta":{"source":{"user":{"username":"anonymous"},"submission":{"date":"2018-11-05T02:37:41.0000000","id":"tr1rf"}},"map":{"version":1,"contributors":[{"username":"anonymous"}],"details":{"playTime":{"ticks":35829364,"hours":165,"minutes":52,"seconds":36},"mods":[{"name":"base","version":"0.16.51"},{"name":"bullet-trails","version":"0.3.1"},{"name":"Epic-Artillery-Sounds","version":"1.0.0"},{"name":"EvoGUI","version":"0.4.302"},{"name":"folk-fill","version":"0.2.2"},{"name":"GrenadeLauncher","version":"0.2.0"},{"name":"Honk","version":"2.1.4"},{"name":"L0laapk3_FactorioMaps","version":"2.2.1"},{"name":"Laser_Beam_Turrets","version":"0.2.0"},{"name":"NapalmArtillery","version":"0.16.4"},{"name":"Natural_Evolution_Expansion","version":"8.0.2"},{"name":"Nuclear_Artillery_Shell","version":"1.0.0"},{"name":"ore-eraser","version":"1.4.1"},{"name":"PoisonArtilleryShell","version":"0.1.0"},{"name":"Power Armor MK3","version":"0.1.7"},{"name":"Power Armor MK4","version":"0.0.6"},{"name":"qol_research","version":"2.2.6"},{"name":"Squeak Through","version":"1.2.2"},{"name":"tree_collision","version":"0.4.2"},{"name":"Vehicle_Radar","version":"0.4.3"}],"gen":{"spawn":{"x":0,"y":0},"seed":1547834180,"exchangeString":"\u003e\u003e\u003eeNpjYBBgMGZgYGBk5WFJzk/MYWJk5krOLyhILdLNL0plZGTmTC4qTUnVzc/MYWRlZUtJLU4tKmFmZmZJyQTTXKl5qbmVukmJxamsQJBelFhcDBTmyCzKz4OawFKcmJcCFGMtLsnPS2UBMkqKUlNBqrhLixLzMktzwQpZWRkYXYSdYhpa5BhA+H89g8H//yAMZF0AOhGEgYCZgREoAAOsyTmZaWkMDAqOIMzIyFgtss79YdUSe0aIvJ0DlPEBKhKxGyryoBXKiFgNZXQchjIc5sMY9TBGvwOjMRh8tkcwIHaVAE2GWsLhgGBAJFtAkoyMvW+3Lvh+7IAdo66zzOtHZlr2jPzX/luemf7dDigpAAp/Rjhx9gwIPNnPmAYG3+yhjD8wkX/7oWre2EP01oAIBwsgccAbGDwCfEDWgh4goSDDAHVaQyTMaWoOjLNmggAnzEuPYV66bI/uDxUHRhuQ4XIg4gQ4nTDAjASGCiMjIpzAEpIIWaBWIwQPGA8pIB7E6pMwGw8jWY3mBhWYG0wc0ONSBENEBSnguUD2pMCJF8xwRzywZ7zADuMB3czMgAAf7AuOfVcAACOcm9o=\u003c\u003c\u003c","factorioVersion":"0.16.51"}},"options":{"timeline":false,"imageCompression":true,"modded":true,"layers":0,"collapseLayerList":false,"beta":false,"anonymous":true,"publicServer":false,"deprecatedTopUser":false,"normalUser":false},"markers":[],"layers":[{"name":"Day","zoom":{"extraZoomOut":2,"min":13,"max":20},"tiles":{"size":512,"url":"Images/{id}/{z}/{x}/{y}.jpg","backend":{"remotes":[{"name":"b2","enabled":true,"zoom":{"min":13,"max":20}},{"name":"gcs","enabled":true,"zoom":{"min":13,"max":19}}],"useMapImagesUrl":true,"fullUrl":"https://map-images.factoriomaps.com/anonymous/nwc51/Slow-Progress/2018-07-25/Images/{id}/{z}/{x}/{y}.jpg?z={z}\u0026b2=13-20\u0026gcs=13-19\u0026id=tr1rf"},"chunks":"AAwn/vcAwnAwJBwOBwaBwoBwtBwMCwPCw=BAwn/vbAwnAwJBwPBwZBwDCwPCw=CAwm/vbAwnAwIBwPBwZBwBCwPCw=DAwm/vaAwnAwIBwRBwXBwACwPCw=EAwl/vaAwoAwHBw/BwGCwJCwPCw=FAwk/vaAwoAwHBwvBwECwJCwOCw=GAwk/vaAwqAwIBwtBwDCwICwOCw=HAwj/vaAwrAwIBwtBwDCwICwOCw=IAwj/vaAwrAwJBwsBwPCw=JAwj/vdAwtAwJBwsBwRCw=KAwj/veAwtAwDBwFBwJBwsBwRCw=LAwj/vfAwsAwDBwFBwJBwsBwSCw=MAwj/vBBwFBwNBwsBwSCw=NAwk/v/AwDBwPBwsBwSCw=OAwk/v/AwDBwPBwtBwSCw=PAwl/v/AwCBwQBwtBwSCw=QAwl/vMAwOAweAwjAw/AwCBwQBwvBwRCw=RAwm/vKAwQAweAwkAw/AwBBwQBwACwRCw=SAwm/vJAwQAweAwkAwQBwCCwPCw=TAwo/vHAwRAweAwlAwQBw=UAwq/vFAwRAwdAwmAwQBw=VAwt/vDAwSAwdAwmAwQBw=WAwy/vDAwUAwbAwnAwPBw=XAwz/vBAwoAw8Aw/AwPBw=YAw1/v7/voAw8AwBBwNBw=ZAwoAw8AwBBwKBw=aAwoAw+AwABwGBw=bAwoAwFBw=cAwoAwFBw=dAwoAwGBw=eAwpAwHBw=fAwpAwJBw=gAwpAwCBwEBwKBw=hAwcAwgAwkAwCBwGBwMBw=iAwcAwhAwjAwCBwHBwNBw=jAwcAw8Aw/AwCBwJBwPBw=kAwdAw7Aw/AwCBwKBwPBw=lAwfAwnAwsAw7Aw/AwCBwLBwTBw=mAwfAwmAwsAw5AwNBwVBw=nAweAwlAwsAw4AwNBwWBw=oAwWAwkAwrAwvAwxAw3AwSBwdBw=pAwUAwjAwrAwvAw0Aw3AwTBwfBw=qAwUAwiAwrAwvAw0Aw3AwVBwfBw=rAwTAwhAw0Aw4AwbBwfBw=sAwTAwgAw0Aw5AwbBwfBw=tAwTAwfAw0Aw5AwbBwfBw=uAwTAwfAw0Aw7Aw9AwABwbBwfBw=vAwTAwfAwzAwABwbBwfBw=wAwTAwfAwzAwABwbBwfBw=xAwUAweAwzAw3Aw5AwABwcBwlBw=yAwUAweAwcBwnBw=zAwWAwcAwcBwnBw=0AwYAwcAwbBwoBw=1AwYAwcAwbBwoBw=2AwYAwcAwaBwoBw=3AwYAwcAwaBwoBw=4AwYAwcAwaBwoBw=5AwYAwcAwaBwoBw=6AwYAwcAwaBwoBw=7AwYAwcAwlAwuAwbBwnBw=8AwYAwcAwjAwwAwbBwnBw=9AwYAwcAwiAwwAwdBwlBw=+AwYAwcAwiAwxAw=/AwYAwcAwhAwxAw=ABwYAwcAwgAwxAw=BBwYAwxAw=CBwYAwxAw=DBwYAwwAw=EBwYAwwAw=FBwYAwcAwfAwvAw=GBwYAwcAwfAwtAw=HBwYAwcAwfAwsAw=IBwYAwcAwfAwsAw=JBwYAwcAwfAwsAw=KBwYAwcAwgAwrAw=LBwYAwcAwgAwrAw=MBwYAwcAwiAwpAw=NBwYAwcAw=OBwYAwcAw=PBwYAwcAw=QBwYAwcAw=RBwYAwcAw=SBwYAwcAw=TBwYAwcAw=UBwYAwcAw=VBwYAwcAw=WBwYAwcAw=XBwYAwcAw=YBwYAwcAw=ZBwYAwcAw=aBwYAwcAw=bBwYAwcAw=cBwYAwcAw=dBwYAwcAw=eBwYAwcAw=fBwYAwcAw=gBwYAwcAw=hBwYAwcAw=iBwYAwcAw=jBwYAwcAw=kBwYAwcAw=lBwYAwcAw=mBwYAwcAw=nBwYAwcAw=oBwYAwcAw=pBwYAwcAw=qBwYAwcAw=rBwYAwcAw=sBwYAwcAw=tBwYAwcAw=uBwYAwcAw=vBwYAwcAw=wBwYAwcAw=xBwYAwcAw=yBwYAwcAw=zBwYAwcAw=0BwWAwcAw=1BwAAwGAwOAwdAw=2Bw+/vIAwMAweAw=3Bw+/vIAwKAwfAw=4Bw9/vfAw=5Bw9/vgAw=6Bw9/vgAw=7Bw9/vgAw=8Bw9/vgAw=9Bw+/vgAw=+Bw+/vfAw0Aw6Aw=/BwAAwGAwIAwfAwyAw8Aw=ACwIAwfAwyAw8Aw=BCwHAwfAwxAw9Aw=CCwHAwgAwxAw9Aw=DCw4/v9/vHAwjAwxAw9Aw=ECw2/v//vHAwVAwYAwlAwxAw9Aw=FCw2/vAAwHAwSAwYAwmAwxAw9Aw=GCw1/vCAwIAwRAwYAwcAwhAwnAwyAw8Aw=HCw1/vCAwIAwRAwYAwcAwiAwoAwyAw8Aw=ICw1/vDAwKAwPAwXAwcAwkAwoAw0Aw6Aw=JCw1/vDAwWAwcAwkAwpAw=KCw1/vDAwVAwcAwlAwpAw=LCw1/vDAwUAweAwlAwpAw=MCw1/vDAwJAwgAwmAwqAw=NCwq/vv/v1/vDAwHAwgAwmAwqAw=OCwo/vx/v2/vDAwGAwhAwnAwqAw=PCwo/vx/v2/vCAwFAwhAwnAwqAw=QCwn/vy/v3/vCAwFAwhAwnAwqAw=RCwn/vy/v3/vhAwnAwqAw=SCwn/vy/v3/vhAwnAwqAw=TCwn/vy/v3/vhAwnAwqAw=UCwn/vy/v4/vgAwnAwqAw=VCwo/vx/v4/vBAwDAwgAwlAwqAw=WCwo/vx/v6/v//vEAweAwlAwqAwvAw0Aw=XCwq/vv/vEAwcAwlAwqAwtAw2Aw=YCwEAwcAwlAwqAwtAw2Aw=ZCwDAwcAwnAwqAwsAw3Aw=aCwDAwcAwnAwqAwsAw3Aw=bCwCAwcAwnAwqAwsAw3Aw=cCwu/vz/vBAwcAwnAwqAwsAw3Aw=dCws/v1/vBAwbAwnAwqAwsAw3Aw=eCws/v1/vAAwLAwQAwbAwnAwqAwtAw2Aw=fCwr/v2/v//vKAwRAwZAwnAwqAwtAw2Aw=gCwr/v2/v+/vJAwSAwZAwnAwqAwvAw0Aw=hCwr/v2/v9/vJAwTAwaAwnAwqAw=iCwr/v2/v9/vOAwUAwbAwnAwqAw=jCwr/v5/v8/vOAwVAwcAw=kCws/vRAwWAwdAw=lCws/vEAwKAwTAwXAweAw=mCwr/vDAwKAwTAwYAwfAw=nCwr/vDAwJAwUAwZAwgAw=oCwr/vBAwJAwUAwaAwvAw=pCwr/vAAwJAwUAwbAwvAw=qCwr/v//vJAwUAwcAwvAw=rCwq/v//vJAwUAwdAwlAwsAwvAw=sCwq/v9/vJAwUAweAwlAw=tCwp/v8/vJAwUAwfAwmAw=uCwp/v8/vKAwTAwgAwnAw=vCwp/v8/vKAwTAwgAwoAw=wCwp/v8/vMAwTAwdAwpAw=xCwp/v7/vMAwTAwbAwqAw=yCwp/v7/vLAwVAwbAwrAw=zCwp/v6/vLAwVAwaAwsAw=0Cwp/v6/vFAwWAwaAwtAw=1Cwp/v6/vDAwWAwaAwuAw=2Cwq/v6/vDAwWAwaAwvAw=3Cwq/v6/vCAwWAwaAwwAw=4Cwr/v6/vCAwWAwbAwkAwmAwxAw=5Cwt/v6/vCAwVAwbAwkAwmAwpAwrAwyAw=6Cwu/v5/vCAwVAwdAwiAwmAwpAwsAwzAw=7Cwv/v5/vCAwTAwmAwpAwtAw0Aw7AwABw=8Cwx/v3/vDAwOAwmAwpAwuAw1Aw5AwCBw=9CwDAwOAwhAwpAwvAw2Aw5AwCBw=+CwFAwMAwaAwpAwvAwDBwKBwPBw=/CwYAwpAwuAwDBwIBwRBwVBwaBw=ADwXAwrAwuAwDBwIBwRBwTBwcBw=BDwXAwdAwkAwDBwHBwcBw=CDwXAwbAwkAwDBwHBwdBw=DDwXAwaAwlAwCBwHBwdBw=EDwlAwoAwrAwCBwHBwdBw=FDwtAwABwHBwdBw=GDwtAwABwIBwdBw=HDwtAwABwIBwRBwTBwcBwgBwzBw=IDwuAwEBwKBwPBwTBwcBweBw1Bw=JDwuAwGBwVBwaBweBw1Bw=KDwwAwGBwdBw2Bw=LDw0AwHBwdBw2Bw=MDw0AwHBwdBw2Bw=NDw2AwHBwdBw2Bw=ODw8AwHBwdBw2Bw=PDwsAwxAw8AwIBweBw2Bw=QDwqAwzAw9AwJBweBw2Bw=RDwqAwzAw9AwKBwgBw2Bw=SDwpAw0Aw/AwLBwWBwbBwrBw2Bw=TDwpAw0AwFBwMBwUBwdBwrBw2Bw=UDwpAw0AwGBwNBwUBwdBwrBw2Bw=VDwpAw0Aw+AwDBwHBwOBwTBweBwrBwACw=WDwpAw0Aw8AwFBwHBwPBwTBweBwrBwCCw=XDwqAwzAw8AwQBwTBweBwrBwCCw=YDwqAwzAw2AwRBwTBwiBwrBwDCw=ZDwsAwxAw0AwDCw=aDw0AwDCw=bDwzAwDCw=cDwzAwlBwrBwDCw=dDwzAwNBwPBwUBwWBwlBwrBwDCwLCwSCw=eDwzAwNBwQBwUBwWBwlBwrBwDCwJCwUCw=fDwzAwNBwQBwUBwWBwlBwrBwDCwJCwUCw=gDw0Aw9AwDBwUBwWBwlBwrBwDCwICwVCw=hDw0Aw9AwFBwUBwWBwkBwrBwDCwICwVCw=iDw2Aw7AwHBwUBwWBwkBwrBwCCwICwVCw=jDwHBwiBwrBwCCwICwVCw=kDwHBwgBwrBwACwICwVCw=lDwHBwgBwrBw2BwICwVCw=mDwHBwhBwrBw2BwICwVCw=nDwHBwhBwrBw2BwICwVCw=oDwHBwhBwrBw2BwICwVCw=pDwHBwlBwrBw2BwICwVCw=qDwHBwnBwrBw2BwICwVCw=rDw2Aw8AwFBwnBwrBw2BwICwVCw=sDw0Aw+AwFBwoBwrBw2BwICwVCw=tDw0Aw+AwEBwoBwrBw2BwICwVCw=uDwzAw/AwEBwoBwrBw2BwICwVCw=vDwzAwoBwrBw2BwICwVCw=wDwzAwoBwrBw2BwICwVCw=xDwzAwoBwrBw2BwICwVCw=yDwzAw/AwBBwnBwrBw3BwICwVCw=zDwzAw/AwBBwnBwrBwFCwICwVCw=0DwzAw/AwGBwmBwrBwVCw=1DwzAw/AwIBwmBwrBwVCw=2DwzAw/AwRBwmBwrBw4BwECwVCw=3DwzAw/AwRBwhBwsBw4BwFCwVCw=4DwzAw/AwRBwhBwsBw4BwHCwVCw=5DwzAw/AwRBwfBwsBw4BwICwVCw=6DwzAwLBwRBwUBwsBw4BwICwVCw=7DwzAwNBwRBwUBwtBw4BwICwVCw=8DwzAwNBwRBwUBwtBw4BwICwVCw=9Dw0Aw4BwICwVCw=+Dw0Aw5BwICwVCw=/Dw2Aw5BwICwVCw=AEw3Aw5BwJCwUCw=BEw3Aw5BwJCwUCw=CEw4Aw6BwLCwSCw=DEwqAwvAw4Aw7Bw=EEwoAwxAw6Aw7Bw=FEwoAwxAwCBw8Bw=GEwnAwyAwCBw8Bw=HEwnAwyAwCBw8Bw=IEwnAw8Bw=JEwnAwHBwsBw8Bw=KEwnAwHBwsBw8Bw=LEwnAwyAwEBwHBwsBwvBwxBw7Bw=MEwnAwxAwEBwHBwsBwvBwyBw7Bw=NEwnAwxAwEBwRBwsBwvBw0Bw5Bw=OEwnAwrAwEBwTBwsBwvBw=PEwnAwqAwEBwTBwsBwvBw=QEwnAwqAwFBwUBwsBwvBw=REwnAwqAwFBwUBwrBwvBw=SEwnAwqAwGBwUBwrBwvBw=TEwnAwqAwGBwUBwpBwuBw=UEwnAwqAwGBwUBwpBwsBw=VEwnAwqAwGBwUBwpBwsBw=WEwnAwqAwGBwUBwpBwsBw=XEwnAwqAwGBwUBwpBwsBw=YEwnAwqAwsAwxAwGBwUBwpBwsBw=ZEwnAwzAwHBwTBwpBwsBw=aEwdAw0AwHBwTBwpBwtBw=bEwbAwwBw=cEwbAwyBw=dEwaAwyBw=eEwaAwzBw=fEwaAwzBw=gEwaAwzBw=hEwaAwzBw=iEwaAwzBw=jEwaAwzBw=kEwbAwzBw=lEwbAwyBw=mEwcAwyBw=nEweAwwBw=//vo/vcAwnAwJBwOBwaBwjBwvBwMCwPCw=08vXBwhBw=18vVBwjBw=28vVBwjBw=38vUBwkBw=48vUBwkBw=58vUBwkBw=68vUBwkBw=78vUBwkBw=88vUBwkBw=98vUBwkBw=+8vUBwkBw=/8vUBwkBw=A9vTBwkBw=B9vTBwjBw=C9vSBwjBw=D9vSBwhBw=E9vSBwgBw=F9vSBwgBw=G9vSBwhBw=H9vSBwhBw=I9vSBwhBw=J9vSBwhBw=K9vSBwhBw=L9vSBwgBw=M9vSBwgBw=N9vTBweBw=O9vTBwdBw=P9vVBwbBw=Q9vXBwaBw=R9vXBwaBw=S9vXBwaBw=T9vXBwaBw=U9vXBwaBw=V9vXBwaBw=W9vXBwaBw=X9vXBwaBw=Y9vXBwaBw=Z9vXBwaBw=a9vXBwaBw=b9vXBwaBw=c9vXBwaBw=d9vXBwaBw=e9vXBwaBw=f9vXBwaBw=g9vXBwaBw=h9vXBwaBw=i9vXBwaBw=j9vXBwaBw=k9vXBwaBw=l9vXBwaBw=m9vXBwaBw=n9vXBwaBw=o9vXBwaBw=p9vXBwaBw=q9vXBwaBw=r9vXBwaBw=s9vXBwaBw=t9vXBwaBw=u9vXBwaBw=v9vXBwaBw=w9vXBwaBw=x9vXBwaBw=y9vXBwaBw=z9vXBwaBw=09vWBwbBw=19vUBwdBw=29vUBwdBw=39vTBweBw=49vTBwgBw=59vTBwgBw=69vTBwgBw=79vTBwgBw=89vUBwgBw=99vUBwdBw=+9vWBwbBw=/9vXBwaBw=A+vXBwaBw=B+vXBwaBw=C+vXBwaBw=D+vXBwaBw=E+vXBwaBw=F+vXBwcBw=G+vXBwcBw=H+vXBwcBw=I+vXBwaBw=J+vXBwaBw=K+vXBwaBw=L+vXBwaBw=M+vXBwaBw=N+vXBwaBw=O+vXBwaBw=P+vXBwaBw=Q+vXBwaBw=R+vXBwaBw=S+vXBwaBw=T+vXBwaBw=U+vXBwaBw=V+vXBwaBw=W+vXBwaBw=X+vXBwaBw=Y+vXBwaBw=Z+vXBwaBw=a+vXBwaBw=b+vXBwaBw=c+vXBwaBw=d+vXBwaBw=e+vXBwaBw=f+vXBwaBw=g+vXBwaBw=h+vXBwaBw=i+vXBwaBw=j+vXBwaBw=k+vXBwaBw=l+vXBwaBw=m+vXBwaBw=n+vXBwaBw=o+vXBwaBw=p+vXBwaBw=q+vXBwaBw=r+vXBwaBw=s+vXBwaBw=t+vXBwaBw=u+vXBwaBw=v+vXBwaBw=w+vXBwaBw=x+vXBwaBw=y+vXBwaBw=z+vXBwaBw=0+vXBwaBw=1+vXBwaBw=2+vXBwaBw=3+vXBwaBw=4+vXBwaBw=5+vXBwaBw=6+vXBwaBw=7+vXBwaBw=8+vXBwaBwaCwfCw=9+vXBwaBwYCwhCw=++vXBwaBwYCwhCw=/+vXBwaBwXCwiCw=A/vXBwaBwXCwiCw=B/vXBwaBwXCwiCw=C/vXBwaBwkBwpBwXCwiCw=D/vXBwaBwiBwrBwXCwiCw=E/vXBwbBwiBwrBwXCwiCw=F/vXBwbBwhBwsBwXCwhCw=G/vXBwbBwhBwsBwXCwhCw=H/vXBwcBwhBwsBwXCwfCw=I/vYBwdBwhBwsBwXCwaCw=J/vYBweBwhBwsBwXCwaCw=K/vYBwsBw+BwECwXCwaCw=L/vYBwECwXCwaCw=M/vWBwECwXCwaCw=N/vWBwECwXCwaCw=O/vIBwNBwVBwsBw/BwDCwXCwaCw=P/vIBwNBwVBwsBw/BwDCwXCwaCw=Q/vIBwNBwVBwsBw/BwDCwXCwaCw=R/vIBwLBwUBwsBw/BwDCwXCwaCw=S/vIBwLBwSBwtBw0Bw6Bw/BwDCwXCwbCw=T/vIBwNBwSBwvBwyBw8Bw/BwDCwXCwfCw=U/vIBwNBwRBwvBwyBwDCwXCwhCw=V/vIBwNBwRBwHCwXCwhCw=W/vKBwNBwRBwiCw=X/vKBwNBwRBwiCw=Y/vKBwNBwRBwiCw=Z/vKBwOBwRBwICwWCwiCw=a/vKBwPBwRBwvBwyBwICwWCwiCw=b/vKBwvBwyBwJCwWCwiCw=c/vLBwtBw0BwJCwWCwiCw=d/vMBwpBw4BwJCwWCwiCw=e/v9AwBBwMBwpBw4BwJCwWCwiCw=f/v9AwCBwLBwqBw4BwJCwWCwiCw=g/v9AwDBwKBwqBw5BwJCwWCwiCw=h/v9AwEBwKBwqBw5BwJCwWCwiCw=i/v/AwEBwJBwqBw6BwJCwWCwhCw=j/vABwGBwIBwqBw7BwICwWCwhCw=k/vBBwqBw7BwICwWCwgCw=l/vz/v6/vCBwpBw9BwHCwWCwgCw=m/vx/v8/vDBwWBwbBwpBwACwHCwWCwiCw=n/vv/v8/vEBwWBwbBwpBwACwHCwWCwiCw=o/vv/v9/vEBwpBwACwHCwWCwjCw=p/vt/v//vCAwKAw2Aw5AwEBwqBwACwHCwWCwjCw=q/vs/vMAw2Aw6AwEBwSBwUBwqBwACwHCwWCwjCw=r/vs/vNAw2Aw7AwEBwSBwUBwqBwACwHCwXCwjCw=s/vr/vOAw2Aw8AwDBwSBwUBwqBwACwHCwXCwjCw=t/vr/vQAw4Aw9AwCBwTBwUBwqBwACwHCwXCwjCw=u/vr/vTAw5Aw+AwBBwTBwUBwqBwACwHCwXCwiCw=v/vr/vXAw6AwTBwUBwqBw+BwHCwWCwiCw=w/vp/vZAwtAw1Aw6AwTBwUBwqBw8BwHCwVCwgCw=x/vp/vZAwrAw3Aw7AwTBwVBwrBw7BwHCwUCwaCw=y/vo/vaAwrAw3Aw8AwEBwGBwTBwVBwsBw7BwICwUCwZCw=z/vo/vaAwqAw4Aw8AwDBwHBweBwgBwtBw6BwICwTCwYCw=0/vo/vaAwqAw4Aw7AwDBwIBweBwgBwtBw6BwICwSCwXCw=1/vo/vbAwqAw4Aw6AwDBwJBweBwgBwuBw6BwICwSCwXCw=2/vo/vbAwqAwEBwKBweBwgBwuBw6BwICwRCwWCw=3/vo/vcAwqAwFBwLBweBwgBwvBw6BwICwQCwVCw=4/vo/vcAwqAwGBwMBweBwgBwvBw7BwICwPCwUCw=5/vo/vcAwqAwHBwMBweBwgBwwBw7BwICwPCwUCw=6/vo/vcAwqAwwBw8BwHCwOCwTCw=7/vo/vcAwqAwwBw9BwHCwNCwSCw=8/vp/vcAwoAwwBw/BwFCwNCwRCw=9/vp/vcAwoAwwBwMCwRCw=+/vo/vcAwnAwJBwOBwaBwhBwvBwMCwQCw"},"playTime":{"ticks":35829364,"hours":165,"minutes":52,"seconds":36},"save":{"download":"","name":""},"playerPosition":{"x":-87.94140625,"y":110.953125,"known":true}}],"saveDate":"2018-07-25T00:00:00.0000000","title":"Slow Progress (low Resources with extra biters on the side)","path":"anonymous/nwc51/Slow-Progress/2018-07-25"},"tags":[]},"generation":{"index":"index.html","leaflet":{"crsSimple":true,"startCoords":{"x":0,"y":0}},"css":[],"buttons":[]}}')
+
+        var layers = {}, saves = [], countAvailableSaves = 0;
+        for (i = 0; i < m.meta.map.layers.length; i++) {
+            layer = m.meta.map.layers[i];
+            var minZoom = layer.zoom.min - layer.zoom.extraZoomOut;
+            if (minZoom < 1) {
+                minZoom = 1;
+            }
+            var tileUrl = layer.tiles.url;
+            if (location.host !== "") {
+                tileUrl = "https://factoriomaps.com/" + m.meta.map.path + "/" + tileUrl;
+            }
+            if(location.host !== "" && layer.tiles.backend && layer.tiles.backend.fullUrl && layer.tiles.backend.useMapImagesUrl){
+                tileUrl = layer.tiles.backend.fullUrl
+            }
+            layers[layer.name] = L.tileLayer(tileUrl, {
+                id: layer.name,
+                attribution: '<a href="https://mods.factorio.com/mods/credomane/FactorioMaps">FactorioMaps</a>',
+                minNativeZoom: layer.zoom.min,
+                maxNativeZoom: layer.zoom.max,
+                minZoom: minZoom,
+                maxZoom: layer.zoom.max,
+                noWrap: true,
+                tileSize: layer.tiles.size, // This breaks leaflet-fullHash:  / window.devicePixelRatio,
+                keepBuffer: 3
+            });
+            /* EDIT */
+            if (layer.save.download !== null && layer.save.download !== "") {
+                saves.push({
+                    layer: layer.save.name || layer.name,
+                    url: layer.save.url
+                });
+                if (layer.save.url) {
+                    countAvailableSaves++;
+                }
+            }
+
+            /* END EDIT */
+        }
+        /* EDIT */
+        if (countAvailableSaves > 0 || m.links.save) {
+            var btn = document.createElement("a"), modal = document.getElementById("modal"), ulContainer = document.getElementById("save-download-container"), modalClose = modal.getElementsByClassName("close")[0], opened = false, built = false;
+            btn.id = 'downBtn';
+            btn.appendChild(document.createTextNode("Download Save"))
+            if (saves.length <= 1) {
+                //Act like a download link
+                btn.href = saves.length === 1 ? saves[0].url : m.links.save;
+                btn.target = '_blank';
+            } else {
+                btn.addEventListener('click', function () {
+                    if (!opened) {
+                        if (!built) {
+                            //Empty the modal, re-create modal content and display it
+                            while (ulContainer.lastChild) {
+                                ulContainer.removeChild(ulContainer.lastChild);
+                            }
+                            for (var i in saves) {
+                                if (saves.hasOwnProperty(i)) {
+                                    var saveObj = saves[i];
+                                    var li = document.createElement("li"), a = document.createElement("a"), span = document.createElement("span"), hr = document.createElement("hr");
+                                    hr.classList.add("clear");
+                                    a.classList.add("mapLayerLink");
+                                    li.classList.add("mapLayer");
+                                    a.appendChild(document.createTextNode("Download"));
+
+                                    a.target = "_blank";
+                                    if (!saveObj.url) {
+                                        a.setAttribute("disabled", "disabled");
+                                        a.classList.add("disabled");
+                                    } else {
+                                        a.href = saveObj.url;
+                                    }
+                                    span.classList.add("mapLayerName")
+                                    span.appendChild(document.createTextNode(saveObj.layer));
+                                    li.appendChild(span);
+                                    li.appendChild(a);
+                                    li.appendChild(hr);
+                                    ulContainer.appendChild(li);
+                                }
+                            }
+                            modal.classList.add("open");
+                            opened = true;
+                        }
+                    }
+                });
+                modalClose.addEventListener("click", function () {
+                    if (opened) {
+                        modal.classList.remove("open");
+                        opened = false;
+                    }
+                });
+            }
+            document.getElementById("buttonAnchor").appendChild(btn);
+        }
+
+        /* END EDIT */
+        var startZoom = m.meta.map.layers[0].zoom.min;
+        var startCoords = [m.generation.leaflet.startCoords.x, m.generation.leaflet.startCoords.y];
+        var map;
+        if(m.generation.leaflet.crsSimple){
+            map = L.map('map', {
+                layers: [layers[m.meta.map.layers[0].name]],
+                fadeAnimation: true,
+                zoomAnimation: true,
+                updateWhenZooming: true,
+                crs: L.CRS.Simple
+            }).setView(startCoords, startZoom);
+        }else{
+            map = L.map('map', {
+                layers: [layers[m.meta.map.layers[0].name]],
+                fadeAnimation: true,
+                zoomAnimation: true,
+                updateWhenZooming: true
+            }).setView(startCoords, startZoom);
+        }
+        if (m.meta.map.layers.length > 1) {
+            L.control.layers(layers, {}, { collapsed: m.meta.map.options.collapseLayerList }).addTo(map).setPosition('bottomright');
+        }
+        map.addControl(new L.Control.Fullscreen().setPosition('bottomright'));
+        map.zoomControl.setPosition('bottomleft')
+        if (m.meta.map.markers !== null && m.meta.map.markers !== undefined) {
+            for (i = 0; i < m.meta.map.markers.length; i++) {
+                var markerData = m.meta.map.markers[i], div = document.createElement('div'), title = document.createElement('h3');
+                div.innerHTML = '<h3>' + markerData.title + '</h3>' + markerData.text;
+                L.marker(markerData.coords, { title: markerData.title }).addTo(map).bindPopup(div);
+            }
+        }
+        new L.Hash(map, layers);
+    </script>
+
+
+
+</body></html>
