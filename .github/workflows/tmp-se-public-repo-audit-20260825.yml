@@ -1,0 +1,56 @@
+name: Audit public Factorio save repositories for SE 0.7
+
+on:
+  push:
+    branches: [tmp-se-public-repo-audit-20260825]
+
+permissions:
+  contents: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: python3 -m pip install --quiet requests
+      - name: Audit repositories
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tmp-se-public-repo-audit/audit.py 2>&1 | tee public-repo-console.txt
+      - name: Upload candidates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: public-repo-se-audit-20260825
+          path: |
+            public-repo-work/SUMMARY.md
+            public-repo-work/*.json
+            public-repo-work/candidates/*.zip
+            public-repo-console.txt
+          if-no-files-found: warn
+          retention-days: 10
+          compression-level: 0
+      - name: Publish reports and manageable candidates
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-public-repo-audit-result-20260825
+          rm -rf tmp-se-public-repo-audit-result
+          mkdir -p tmp-se-public-repo-audit-result/candidates
+          cp public-repo-console.txt tmp-se-public-repo-audit-result/ || true
+          cp public-repo-work/SUMMARY.md public-repo-work/*.json tmp-se-public-repo-audit-result/ 2>/dev/null || true
+          total=0
+          for f in public-repo-work/candidates/*.zip; do
+            [ -f "$f" ] || continue
+            size=$(stat -c %s "$f")
+            if [ "$size" -lt 94000000 ] && [ $((total+size)) -lt 185000000 ]; then cp "$f" tmp-se-public-repo-audit-result/candidates/; total=$((total+size)); fi
+          done
+          echo "$total" > tmp-se-public-repo-audit-result/published-candidate-bytes.txt
+          git add -f tmp-se-public-repo-audit-result
+          git commit -m 'Publish public save repository audit' || true
+          git push --force origin HEAD:refs/heads/tmp-se-public-repo-audit-result-20260825
