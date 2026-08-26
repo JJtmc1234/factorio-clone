@@ -1,0 +1,230 @@
+name: Retry stubborn SE saves with minimal required mods
+
+on:
+  push:
+    branches: [tmp-se07-salvage-minimal-v2-20260826]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: minimal-${{ matrix.id }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: rk-se-2
+            source_url: https://forums.factorio.com/download/file.php?id=109074
+            runtime_version: 2.0.76
+          - id: spaceexploration-108368
+            source_url: https://forums.factorio.com/download/file.php?id=108368
+            runtime_version: 2.0.76
+
+    env:
+      CANDIDATE_ID: ${{ matrix.id }}
+      SOURCE_URL: ${{ matrix.source_url }}
+      RUNTIME_VERSION: ${{ matrix.runtime_version }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download save, runtime, and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file binutils golang-go
+          mkdir -p reports attempts match factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods mirror-logs
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'Mozilla/5.0 Factorio-save-auditor' -o save.zip "$SOURCE_URL"
+          file save.zip | tee reports/file.txt
+          sha256sum save.zip | tee reports/save-sha256.txt
+          stat -c 'save_bytes=%s' save.zip | tee reports/save-size.txt
+          unzip -t save.zip > reports/unzip-test.txt 2>&1
+
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"2.0.99","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip > reports/exact-mod-list.txt 2>reports/fmm-stderr.txt
+          cat reports/exact-mod-list.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' reports/exact-mod-list.txt > reports/mod-versions.tsv
+          se_version=$(awk '$1=="space-exploration"{print $2}' reports/exact-mod-list.txt | head -1)
+          k2_version=$(awk '$1=="Krastorio2"{print $2}' reports/exact-mod-list.txt | head -1)
+          printf 'se_version=%s\nk2_version=%s\nruntime=%s\n' "$se_version" "$k2_version" "$RUNTIME_VERSION" > reports/identity.txt
+          case "$se_version" in 0.7.*) ;; *) echo 'not native SE 0.7'; exit 2 ;; esac
+          test -z "$k2_version"
+
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -o factorio.tar.xz \
+            "https://www.factorio.com/get-download/${RUNTIME_VERSION}/headless/linux64"
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee reports/factorio-version.txt
+
+          while IFS=$'\t' read -r mod version; do
+            case "$mod" in quality|space-age|elevated-rails) continue ;; esac
+            out="factorio/mods/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'factorio-mod-downloader/1.0' \
+              -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          done < reports/mod-versions.tsv
+
+      - name: Install auditor and compute required dependency closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-v3_0.1.0
+          cp tmp-se-auditor-v3/control.lua factorio/mods/jj-se-stage-auditor-v3_0.1.0/control.lua
+          cp tmp-se-auditor-v3/info.json factorio/mods/jj-se-stage-auditor-v3_0.1.0/info.json
+          python3 - <<'PY'
+          import json, re, zipfile
+          from pathlib import Path
+
+          moddir=Path('factorio/mods')
+          infos={}
+          versions={}
+          for line in Path('reports/mod-versions.tsv').read_text().splitlines():
+              if not line.strip(): continue
+              name,version=line.split('\t',1); versions[name]=version
+          for z in moddir.glob('*.zip'):
+              try:
+                  with zipfile.ZipFile(z) as f:
+                      p=next(n for n in f.namelist() if n.count('/')==1 and n.endswith('/info.json'))
+                      info=json.loads(f.read(p))
+                      infos[info['name']]=info
+              except Exception as e:
+                  print('INFO_READ_ERROR',z,e)
+          infos['jj-se-stage-auditor-v3']=json.loads((moddir/'jj-se-stage-auditor-v3_0.1.0/info.json').read_text())
+
+          def dep_name(raw):
+              s=raw.strip()
+              if s.startswith('(?)'): return None
+              if s[:1] in {'?','!'}: return None
+              if s[:1]=='~': s=s[1:].strip()
+              m=re.match(r'([A-Za-z0-9_.-]+)',s)
+              return m.group(1) if m else None
+
+          required={'space-exploration','jj-se-stage-auditor-v3'}
+          queue=list(required)
+          while queue:
+              name=queue.pop()
+              info=infos.get(name)
+              if not info: continue
+              deps=info.get('dependencies',[]) or []
+              if isinstance(deps,str): deps=[deps]
+              for raw in deps:
+                  d=dep_name(raw)
+                  if d and d!='base' and d not in required:
+                      required.add(d); queue.append(d)
+          Path('reports/required-mod-closure.txt').write_text('\n'.join(sorted(required))+'\n')
+
+          builtins={'quality','space-age','elevated-rails'}
+          mods=[{'name':'base','enabled':True}]
+          for b in sorted(builtins): mods.append({'name':b,'enabled':b in required})
+          for name,version in sorted(versions.items()):
+              if name in builtins: continue
+              if (moddir/f'{name}_{version}.zip').exists():
+                  mods.append({'name':name,'enabled':name in required})
+          mods.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          (moddir/'mod-list.minimal.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+
+          full=[{'name':'base','enabled':True}]
+          for b in sorted(builtins): full.append({'name':b,'enabled':False})
+          for name,version in sorted(versions.items()):
+              if name in builtins: continue
+              if (moddir/f'{name}_{version}.zip').exists(): full.append({'name':name,'enabled':True})
+          full.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          (moddir/'mod-list.full.json').write_text(json.dumps({'mods':full},indent=2)+'\n')
+          PY
+          cp factorio/data/server-settings.example.json server-settings.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('server-settings.json'); d=json.loads(p.read_text())
+          d['name']='JJ audit'; d['visibility']={'public':False,'lan':False}; d['require_user_verification']=False; d['autosave_interval']=0; d['max_players']=1
+          p.write_text(json.dumps(d,indent=2)+'\n')
+          PY
+
+      - name: Attempt full and minimal loads with lock cleanup
+        shell: bash
+        continue-on-error: true
+        run: |
+          set +e
+          cleanup() {
+            pkill -9 -f 'factorio/bin/x64/factorio' >/dev/null 2>&1 || true
+            sleep 2
+            rm -f factorio/.lock factorio/temp/*.lock factorio/script-output/jj-se-live-audit-v3.json reports/jj-se-live-audit.json
+          }
+          capture() {
+            f=$(find "$PWD/factorio" -type f -name jj-se-live-audit-v3.json 2>/dev/null | head -1)
+            if test -n "$f"; then cp "$f" reports/jj-se-live-audit.json; return 0; fi
+            return 1
+          }
+          benchmark() {
+            label="$1"; list="$2"
+            cleanup
+            cp "$list" factorio/mods/mod-list.json
+            timeout --signal=TERM --kill-after=20s 20m factorio/bin/x64/factorio \
+              --mod-directory "$PWD/factorio/mods" --benchmark "$PWD/save.zip" \
+              --benchmark-ticks 600 --benchmark-runs 1 >"attempts/$label.log" 2>&1
+            echo $? >"attempts/$label.status"
+            capture
+          }
+          server() {
+            label="$1"; list="$2"
+            cleanup
+            cp "$list" factorio/mods/mod-list.json
+            timeout --signal=TERM --kill-after=20s 150s factorio/bin/x64/factorio \
+              --mod-directory "$PWD/factorio/mods" --start-server "$PWD/save.zip" \
+              --server-settings "$PWD/server-settings.json" >"attempts/$label.log" 2>&1
+            echo $? >"attempts/$label.status"
+            capture
+          }
+          benchmark full-benchmark factorio/mods/mod-list.full.json && exit 0
+          benchmark minimal-benchmark factorio/mods/mod-list.minimal.json && exit 0
+          server minimal-server factorio/mods/mod-list.minimal.json && exit 0
+          cleanup
+          exit 0
+
+      - name: Classify
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json, os, pathlib, shutil
+          p=pathlib.Path('reports/jj-se-live-audit.json')
+          result={'candidate_id':os.environ['CANDIDATE_ID'],'source_url':os.environ['SOURCE_URL'],'audit_succeeded':p.exists(),'exact_match':False}
+          if p.exists():
+              d=json.loads(p.read_text()); r=d.get('rocket_science',{}); launch=d.get('launch_support',{})
+              produced=r.get('lifetime_produced') or 0; count=r.get('count') or 0; output=r.get('machines_with_automatic_output') or 0; logistics=r.get('machines_with_logistics') or 0; pps=r.get('estimated_packs_per_second_before_productivity') or 0
+              full=bool(d.get('full_scale_machine_heuristic_pass') or d.get('full_scale_throughput_heuristic_pass') or (((count>=4 and output>=3 and logistics>=3) or (pps>=0.5 and output>=1 and logistics>=1)) and produced>0))
+              untouched=bool(d.get('orbit_untouched_heuristic_pass'))
+              result.update({'factorio_version':d.get('factorio_version'),'space_exploration_version':d.get('space_exploration_version'),'krastorio2_version':d.get('krastorio2_version'),'rocket_science_researched':r.get('researched'),'rocket_science_lifetime_produced':produced,'rocket_science_machine_count':count,'rocket_science_working_now':r.get('working_now'),'rocket_science_output_machines':output,'rocket_science_logistics_machines':logistics,'rocket_science_estimated_pps':pps,'upstream_automation_fraction':r.get('upstream_automation_fraction'),'satellite_telemetry_lifetime_produced':launch.get('satellite_telemetry_lifetime_produced'),'cargo_launch_pads_nauvis':launch.get('launch_pads_on_nauvis'),'orbit_like_surfaces':d.get('orbit_like_surfaces'),'orbit_untouched':untouched,'full_scale_rocket_science':full,'exact_match':bool(full and untouched and not d.get('krastorio2_version'))})
+              pathlib.Path('reports/jj-se-live-audit.pretty.json').write_text(json.dumps(d,indent=2)+'\n')
+          else: result['audit_error']='all_v2_attempts_failed'
+          pathlib.Path('reports/classification.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          if result.get('exact_match'):
+              m=pathlib.Path('match'); m.mkdir(exist_ok=True)
+              shutil.copy2('save.zip',m/f"JJ_SE07_MATCH_{os.environ['CANDIDATE_ID']}.zip")
+              shutil.copy2('reports/classification.json',m/'verification.json')
+              shutil.copy2('reports/jj-se-live-audit.pretty.json',m/'live-audit.json')
+          PY
+          cp factorio/mods/mod-list.json reports/final-mod-list.json 2>/dev/null || true
+          find attempts -maxdepth 1 -type f -printf '%f\t%s bytes\n' | sort > reports/attempt-files.txt || true
+
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-minimal-v2-${{ matrix.id }}
+          path: |
+            reports/
+            attempts/
+            match/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 6
