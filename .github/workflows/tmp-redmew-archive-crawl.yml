@@ -1,0 +1,184 @@
+name: Crawl RedMew historical save archives
+
+on:
+  push:
+    branches: [tmp-redmew-archive-crawl-20260826]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  crawl:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - name: Query public web archives
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p archive-crawl
+          cat > archive-crawl/crawl.py <<'PY'
+          import requests, json, re, html, time, pathlib, urllib.parse, traceback
+          from collections import defaultdict
+
+          OUT = pathlib.Path('archive-crawl')
+          S = requests.Session()
+          S.headers.update({'User-Agent':'Mozilla/5.0 (compatible; FactorioSaveArchiveResearch/1.0; public archive research)'})
+
+          def get(url, **kwargs):
+              kwargs.setdefault('timeout', 60)
+              for attempt in range(5):
+                  try:
+                      r=S.get(url, **kwargs)
+                      if r.status_code in (429,500,502,503,504):
+                          time.sleep(2**attempt)
+                          continue
+                      return r
+                  except Exception:
+                      if attempt==4: raise
+                      time.sleep(2**attempt)
+
+          errors=[]
+          cdx_results={}
+          queries=[
+              ('refactorio_saves_page','https://web.archive.org/cdx/search/cdx?url=refactorio.de%2Fsaves&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode%3A200&from=2024&to=2026&collapse=digest'),
+              ('refactorio_saves_wild','https://web.archive.org/cdx/search/cdx?url=refactorio.de%2Fsaves*&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode%3A200&from=2024&to=2026&collapse=urlkey'),
+              ('refactorio_all_zip','https://web.archive.org/cdx/search/cdx?url=refactorio.de%2F*&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode%3A200&filter=urlkey%3A.*%5C.zip.*&from=2024&to=2026&collapse=urlkey'),
+              ('redmew_downloadsave','https://web.archive.org/cdx/search/cdx?url=redmew.com%2FFactorioWebInterface%2FV5%2FdownloadSave*&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode%3A200&from=2024&to=2026&collapse=urlkey'),
+              ('redmew_all_zip','https://web.archive.org/cdx/search/cdx?url=redmew.com%2F*&output=json&fl=timestamp,original,statuscode,mimetype,digest,length&filter=statuscode%3A200&filter=urlkey%3A.*%5C.zip.*&from=2024&to=2026&collapse=urlkey'),
+          ]
+          for name,url in queries:
+              try:
+                  r=get(url)
+                  (OUT/f'{name}.status.txt').write_text(f'{r.status_code}\n{r.url}\n{r.text[:1000]}')
+                  if r.ok:
+                      try: data=r.json()
+                      except Exception: data=[]
+                      cdx_results[name]=data
+                      (OUT/f'{name}.json').write_text(json.dumps(data,indent=2))
+                  else: errors.append({'stage':'cdx','name':name,'status':r.status_code,'text':r.text[:500]})
+              except Exception as e:
+                  errors.append({'stage':'cdx','name':name,'error':repr(e)})
+
+          snapshots=[]
+          page_data=cdx_results.get('refactorio_saves_page') or []
+          if page_data and isinstance(page_data[0],list):
+              headers=page_data[0]
+              for row in page_data[1:]: snapshots.append(dict(zip(headers,row)))
+
+          all_links=[]
+          snapshot_files={}
+          for i,rec in enumerate(snapshots):
+              ts=rec.get('timestamp'); orig=rec.get('original')
+              if not ts or not orig: continue
+              url=f'https://web.archive.org/web/{ts}id_/{orig}'
+              try:
+                  r=get(url)
+                  text=r.text if r.ok else ''
+                  (OUT/f'snapshot_{ts}.html').write_text(text,errors='replace')
+                  links=[]
+                  for m in re.finditer(r'''(?:href=["']([^"']+)["']|https?://[^\s"'<>]+)''',text,re.I):
+                      v=m.group(1) or m.group(0)
+                      v=html.unescape(v)
+                      if '.zip' in v.lower() or 'downloadsave' in v.lower() or 'directory=' in v.lower(): links.append(v)
+                  names=sorted(set(re.findall(r'(?i)([A-Za-z0-9_.%+()\- ]+\.zip)',urllib.parse.unquote(text))))
+                  snapshot_files[ts]={'original':orig,'status':r.status_code,'links':sorted(set(links)),'zip_names':names}
+                  all_links.extend(links)
+              except Exception as e:
+                  errors.append({'stage':'snapshot','timestamp':ts,'error':repr(e)})
+              time.sleep(.3)
+          (OUT/'snapshot_files.json').write_text(json.dumps(snapshot_files,indent=2))
+
+          archived_urls=[]
+          for name,data in cdx_results.items():
+              if data and isinstance(data[0],list):
+                  hdr=data[0]
+                  for row in data[1:]:
+                      rec=dict(zip(hdr,row)); rec['query']=name; archived_urls.append(rec)
+          (OUT/'all_cdx_records.json').write_text(json.dumps(archived_urls,indent=2))
+
+          union_names=set()
+          for entry in snapshot_files.values(): union_names.update(entry['zip_names'])
+          for rec in archived_urls:
+              original=urllib.parse.unquote(rec.get('original',''))
+              union_names.update(re.findall(r'(?i)([^/?&=]+\.zip)',original))
+              q=urllib.parse.parse_qs(urllib.parse.urlsplit(original).query)
+              for key in ('file','saveName','savename'):
+                  for v in q.get(key,[]):
+                      if v.lower().endswith('.zip'): union_names.add(v)
+          (OUT/'union_zip_names.txt').write_text('\n'.join(sorted(union_names,key=str.lower))+'\n')
+
+          current_html=get('https://refactorio.de/saves').text
+          current_names=set(re.findall(r'(?i)([A-Za-z0-9_.%+()\- ]+\.zip)',urllib.parse.unquote(current_html)))
+          historical_only=sorted(union_names-current_names,key=str.lower)
+          (OUT/'historical_only_zip_names.txt').write_text('\n'.join(historical_only)+'\n')
+
+          # Common Crawl, recent 2024-2026 indices.
+          cc_records=[]
+          try:
+              idx=get('https://index.commoncrawl.org/collinfo.json').json()
+              selected=[x for x in idx if re.search(r'CC-MAIN-202[456]',x.get('id',''))]
+              for ix in selected:
+                  for target in ('refactorio.de/saves*','redmew.com/FactorioWebInterface/V5/downloadSave*'):
+                      try:
+                          u=ix['cdx-api']+'?url='+urllib.parse.quote(target,safe='')+'&output=json&filter=status:200'
+                          r=get(u)
+                          for line in r.text.splitlines():
+                              try:
+                                  rec=json.loads(line); rec['_index']=ix['id']; rec['_target']=target; cc_records.append(rec)
+                              except Exception: pass
+                      except Exception as e: errors.append({'stage':'commoncrawl','index':ix.get('id'),'target':target,'error':repr(e)})
+              (OUT/'commoncrawl_records.json').write_text(json.dumps(cc_records,indent=2))
+          except Exception as e: errors.append({'stage':'commoncrawl-index','error':repr(e)})
+
+          # Internet Archive metadata search for RedMew/Factorio saves.
+          ia_queries=[
+              'redmew AND factorio',
+              '"Space Exploration" AND factorio AND save',
+              'refactorio',
+              'title:(factorio) AND (space exploration)',
+          ]
+          ia=[]
+          for q in ia_queries:
+              try:
+                  u='https://archive.org/advancedsearch.php?'+urllib.parse.urlencode({'q':q,'fl[]':['identifier','title','description','date','mediatype'],'rows':200,'page':1,'output':'json'},doseq=True)
+                  r=get(u)
+                  docs=r.json().get('response',{}).get('docs',[]) if r.ok else []
+                  ia.append({'query':q,'docs':docs})
+              except Exception as e: errors.append({'stage':'internetarchive','query':q,'error':repr(e)})
+          (OUT/'internet_archive_search.json').write_text(json.dumps(ia,indent=2))
+
+          # Public search APIs that preserve URL history.
+          extra={}
+          endpoints={
+              'urlscan':'https://urlscan.io/api/v1/search/?q=domain:refactorio.de%20filename:saves',
+              'github_commits':'https://api.github.com/search/code?q=%22se_crash.zip%22',
+          }
+          for name,u in endpoints.items():
+              try:
+                  r=get(u); extra[name]={'status':r.status_code,'url':r.url,'text':r.text[:200000]}
+              except Exception as e: extra[name]={'error':repr(e)}
+          (OUT/'extra_searches.json').write_text(json.dumps(extra,indent=2))
+
+          summary={
+              'wayback_snapshots':len(snapshots),
+              'cdx_records':len(archived_urls),
+              'snapshot_zip_union_count':len(union_names),
+              'historical_only_count':len(historical_only),
+              'historical_only':historical_only,
+              'commoncrawl_records':len(cc_records),
+              'errors':errors,
+          }
+          (OUT/'SUMMARY.json').write_text(json.dumps(summary,indent=2))
+          print(json.dumps(summary,indent=2))
+          PY
+          python3 archive-crawl/crawl.py
+      - name: Upload crawl results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redmew-historical-archive-crawl
+          path: archive-crawl/
+          retention-days: 7
