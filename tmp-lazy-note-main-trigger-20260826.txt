@@ -1,0 +1,1 @@
+Trigger the recognized lazy_kojocho Note attachment extractor.
