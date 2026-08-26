@@ -1,0 +1,153 @@
+name: Relay stubborn SE 0.7 minimal audits
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    name: relay-${{ matrix.id }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: rk-se-2
+            url: https://forums.factorio.com/download/file.php?id=109074
+          - id: spaceexploration-108368
+            url: https://forums.factorio.com/download/file.php?id=108368
+    env:
+      ID: ${{ matrix.id }}
+      URL: ${{ matrix.url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: tmp-se07-salvage-minimal-v2-20260826
+      - name: Fetch save, runtime, and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip file golang-go
+          mkdir -p reports attempts match factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'Mozilla/5.0 Factorio-save-auditor' -o save.zip "$URL"
+          file save.zip | tee reports/file.txt
+          stat -c 'save_bytes=%s' save.zip | tee reports/save-size.txt
+          sha256sum save.zip | tee reports/save-sha256.txt
+          unzip -t save.zip > reports/unzip-test.txt 2>&1
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"2.0.99","title":"Base","author":"Wube","factorio_version":"2.0"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip > reports/exact-mod-list.txt 2>reports/fmm-stderr.txt
+          cat reports/exact-mod-list.txt
+          awk 'NF==2 && $1!="base" {print $1 "\t" $2}' reports/exact-mod-list.txt > reports/mod-versions.tsv
+          se=$(awk '$1=="space-exploration"{print $2}' reports/exact-mod-list.txt | head -1)
+          k2=$(awk '$1=="Krastorio2"{print $2}' reports/exact-mod-list.txt | head -1)
+          printf 'space_exploration=%s\nkrastorio2=%s\n' "$se" "$k2" > reports/identity.txt
+          case "$se" in 0.7.*) ;; *) exit 2 ;; esac
+          test -z "$k2"
+          curl -fL --retry 5 --retry-all-errors --max-time 1200 -o factorio.tar.xz https://www.factorio.com/get-download/2.0.76/headless/linux64
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee reports/factorio-version.txt
+          while IFS=$'\t' read -r mod version; do
+            case "$mod" in quality|space-age|elevated-rails) continue ;; esac
+            out="factorio/mods/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 1200 -A 'factorio-mod-downloader/1.0' -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?x=$RANDOM-$RANDOM"
+            unzip -t "$out" >/dev/null
+          done < reports/mod-versions.tsv
+      - name: Build minimal required mod closure
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-v3_0.1.0
+          cp tmp-se-auditor-v3/control.lua factorio/mods/jj-se-stage-auditor-v3_0.1.0/control.lua
+          cp tmp-se-auditor-v3/info.json factorio/mods/jj-se-stage-auditor-v3_0.1.0/info.json
+          python3 - <<'PY'
+          import json,re,zipfile
+          from pathlib import Path
+          md=Path('factorio/mods'); infos={}; vers={}
+          for l in Path('reports/mod-versions.tsv').read_text().splitlines():
+              n,v=l.split('\t',1); vers[n]=v
+          for z in md.glob('*.zip'):
+              with zipfile.ZipFile(z) as f:
+                  try:p=next(x for x in f.namelist() if x.count('/')==1 and x.endswith('/info.json'))
+                  except StopIteration:continue
+                  i=json.loads(f.read(p)); infos[i['name']]=i
+          infos['jj-se-stage-auditor-v3']=json.loads((md/'jj-se-stage-auditor-v3_0.1.0/info.json').read_text())
+          def dep(s):
+              s=s.strip()
+              if s.startswith('(?)') or s[:1] in '?!': return None
+              if s[:1]=='~': s=s[1:].strip()
+              m=re.match(r'[A-Za-z0-9_.-]+',s); return m.group(0) if m else None
+          req={'space-exploration','jj-se-stage-auditor-v3'}; q=list(req)
+          while q:
+              i=infos.get(q.pop(),{}); ds=i.get('dependencies',[]) or []
+              if isinstance(ds,str): ds=[ds]
+              for raw in ds:
+                  d=dep(raw)
+                  if d and d!='base' and d not in req: req.add(d); q.append(d)
+          Path('reports/required-mod-closure.txt').write_text('\n'.join(sorted(req))+'\n')
+          built={'quality','space-age','elevated-rails'}
+          mods=[{'name':'base','enabled':True}]+[{'name':x,'enabled':x in req} for x in sorted(built)]
+          for n,v in sorted(vers.items()):
+              if n not in built and (md/f'{n}_{v}.zip').exists(): mods.append({'name':n,'enabled':n in req})
+          mods.append({'name':'jj-se-stage-auditor-v3','enabled':True})
+          (md/'mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          PY
+          cp factorio/data/server-settings.example.json server-settings.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('server-settings.json'); d=json.loads(p.read_text()); d.update(name='JJ audit',require_user_verification=False,autosave_interval=0,max_players=1); d['visibility']={'public':False,'lan':False}; p.write_text(json.dumps(d))
+          PY
+      - name: Load and audit
+        shell: bash
+        continue-on-error: true
+        run: |
+          set +e
+          clean(){ pkill -9 -f 'factorio/bin/x64/factorio' >/dev/null 2>&1 || true; sleep 1; rm -f factorio/.lock factorio/temp/*.lock factorio/script-output/jj-se-live-audit-v3.json; }
+          grab(){ f=$(find factorio -type f -name jj-se-live-audit-v3.json 2>/dev/null | head -1); test -n "$f" && cp "$f" reports/jj-se-live-audit.json; }
+          clean
+          timeout --signal=TERM --kill-after=20s 25m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 >attempts/minimal-benchmark.log 2>&1
+          echo $? > attempts/minimal-benchmark.status
+          grab && exit 0
+          clean
+          timeout --signal=TERM --kill-after=20s 180s factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" --start-server "$PWD/save.zip" --server-settings "$PWD/server-settings.json" >attempts/minimal-server.log 2>&1
+          echo $? > attempts/minimal-server.status
+          grab || true
+          clean
+      - name: Classify and preserve winner
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,os,pathlib,shutil
+          p=pathlib.Path('reports/jj-se-live-audit.json'); r={'candidate':os.environ['ID'],'source':os.environ['URL'],'audit_succeeded':p.exists(),'exact_match':False}
+          if p.exists():
+              d=json.loads(p.read_text()); s=d.get('rocket_science',{}); produced=s.get('lifetime_produced') or 0; count=s.get('count') or 0; out=s.get('machines_with_automatic_output') or 0; log=s.get('machines_with_logistics') or 0; pps=s.get('estimated_packs_per_second_before_productivity') or 0
+              full=bool(d.get('full_scale_machine_heuristic_pass') or d.get('full_scale_throughput_heuristic_pass') or (((count>=4 and out>=3 and log>=3) or (pps>=.5 and out>=1 and log>=1)) and produced>0)); untouched=bool(d.get('orbit_untouched_heuristic_pass'))
+              r.update(space_exploration=d.get('space_exploration_version'),krastorio2=d.get('krastorio2_version'),rocket_science_researched=s.get('researched'),rocket_science_lifetime=produced,rocket_science_machines=count,rocket_science_output_machines=out,rocket_science_logistics_machines=log,rocket_science_pps=pps,full_scale=full,orbit_untouched=untouched,orbit_like_surfaces=d.get('orbit_like_surfaces'),exact_match=bool(full and untouched and not d.get('krastorio2_version')))
+              pathlib.Path('reports/live-audit.pretty.json').write_text(json.dumps(d,indent=2))
+          else:r['error']='minimal_load_failed'
+          pathlib.Path('reports/classification.json').write_text(json.dumps(r,indent=2)); print(json.dumps(r,indent=2))
+          if r['exact_match']:
+              m=pathlib.Path('match'); m.mkdir(exist_ok=True); shutil.copy2('save.zip',m/f"JJ_SE07_MATCH_{os.environ['ID']}.zip"); shutil.copy2('reports/classification.json',m/'verification.json'); shutil.copy2('reports/live-audit.pretty.json',m/'live-audit.json')
+          PY
+      - name: Upload result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-minimal-relay-${{ matrix.id }}
+          path: |
+            reports/
+            attempts/
+            match/
+          if-no-files-found: warn
+          retention-days: 7
+          compression-level: 6
