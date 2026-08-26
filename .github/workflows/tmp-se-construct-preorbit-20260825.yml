@@ -1,0 +1,110 @@
+name: Construct and verify SE 0.7 pre-orbit Rocket Science save
+
+on:
+  push:
+    branches: [tmp-se-construct-preorbit-20260825]
+
+permissions:
+  contents: write
+
+jobs:
+  construct:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download public natural source save and exact runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf work published
+          mkdir -p work/mods published
+          python3 -m pip install --quiet --upgrade gdown
+          gdown --no-cookies -O work/original.zip 1BeBIYfzItz_A7qKkWE2vwV_TZhtv-mZq
+          python3 tmp-se-construct-preorbit/setup.py | tee published/setup-console.txt
+          cat > work/server-settings.json <<'JSON'
+          {"name":"JJ constructor","visibility":{"public":false,"lan":false},"require_user_verification":false,"max_players":0,"autosave_interval":0,"allow_commands":"admins-only"}
+          JSON
+      - name: Load source, build 144-SPM block, prove production, and save
+        shell: bash
+        run: |
+          set -euo pipefail
+          work/factorio/bin/x64/factorio --start-server work/original.zip --mod-directory work/mods --server-settings work/server-settings.json --rcon-port 27420 --rcon-password inspect > published/source-server.log 2>&1 &
+          PID=$!; echo "$PID" > work/pid
+          for i in $(seq 1 480); do grep -q 'Starting RCON interface' published/source-server.log && break; kill -0 "$PID" 2>/dev/null || { tail -300 published/source-server.log; exit 1; }; sleep 1; done
+          grep -q 'Starting RCON interface' published/source-server.log
+          python3 tmp-se-construct-preorbit/construct_and_verify.py | tee published/constructor-console.txt
+          kill "$PID" || true; wait "$PID" || true
+          SAVE=$(find work/factorio -type f -name 'JJ_SE07_144SPM_PREORBIT_CONSTRUCTED*.zip' -print -quit)
+          test -n "$SAVE"
+          cp "$SAVE" published/JJ_SE07_144SPM_PREORBIT_CONSTRUCTED.zip
+      - name: Reload constructed save and independently verify state
+        shell: bash
+        run: |
+          set -euo pipefail
+          work/factorio/bin/x64/factorio --start-server published/JJ_SE07_144SPM_PREORBIT_CONSTRUCTED.zip --mod-directory work/mods --server-settings work/server-settings.json --rcon-port 27420 --rcon-password inspect > published/reload-server.log 2>&1 &
+          PID=$!
+          for i in $(seq 1 480); do grep -q 'Starting RCON interface' published/reload-server.log && break; kill -0 "$PID" 2>/dev/null || { tail -300 published/reload-server.log; exit 1; }; sleep 1; done
+          grep -q 'Starting RCON interface' published/reload-server.log
+          python3 - <<'PY' | tee published/reload-console.txt
+          import json,sys,pathlib
+          sys.path.insert(0,'tmp-se-construct-preorbit')
+          import construct_and_verify as c
+          q=c.query();pathlib.Path('published/reload-verification.json').write_text(json.dumps(q,indent=2,sort_keys=True));print(json.dumps(q,indent=2,sort_keys=True))
+          PY
+          kill "$PID" || true; wait "$PID" || true
+      - name: Grade exact requirements
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,pathlib
+          P=pathlib.Path; q=json.loads(P('published/reload-verification.json').read_text());h=json.loads(P('published/header.json').read_text())
+          force=max(q.get('forces',[]),key=lambda x:x.get('rocket_science_output',0),default={})
+          orbit=[];offworld=[];space_entities=0;launchpads=0
+          for s in q.get('surfaces',[]):
+              low=s['name'].lower(); ents=s.get('entities',{}); pe=s.get('player_entities',0); ch=s.get('chunks',0)
+              if 'orbit' in low and (pe>0 or ch>0): orbit.append({'name':s['name'],'chunks':ch,'player_entities':pe})
+              if low!='nauvis' and pe>0: offworld.append({'name':s['name'],'player_entities':pe})
+              space_entities += sum(max(0,ents.get(n,0)) for n in ('se-space-science-lab','se-space-assembling-machine','se-space-manufactory','se-rocket-landing-pad'))
+              launchpads += max(0,ents.get('se-rocket-launch-pad',0))
+          player_off=[p for p in q.get('players',[]) if p.get('surface','').lower()!='nauvis']
+          se=h.get('mods',{}).get('space-exploration','')
+          grade={
+            'factorio_version':h.get('factorio_version'),'space_exploration_version':se,
+            'native_se_0_7':se.startswith('0.7.'),'rocket_science_machines':q.get('rocket_science_machines',0),
+            'rocket_science_working_after_reload':q.get('rocket_science_working',0),
+            'rocket_science_production_stat':force.get('rocket_science_output',0),
+            'rocket_science_items_in_output_chests':q.get('rocket_science_output_items',0),
+            'design_rate_spm':144,'orbit_surfaces_with_generated_chunks_or_entities':orbit,
+            'offworld_player_entities':offworld,'players_off_nauvis':player_off,
+            'space_industry_entities':space_entities,'cargo_launch_pads':launchpads,
+            'backup_power_interfaces':q.get('backup_power_interfaces',0),
+          }
+          grade['passes']=all([grade['native_se_0_7'],grade['rocket_science_machines']>=24,grade['rocket_science_production_stat']>=1000,grade['rocket_science_items_in_output_chests']>0,not orbit,not offworld,not player_off,space_entities==0,launchpads==0])
+          save=P('published/JJ_SE07_144SPM_PREORBIT_CONSTRUCTED.zip');grade['save_size']=save.stat().st_size;grade['sha256']=hashlib.sha256(save.read_bytes()).hexdigest()
+          P('published/grade.json').write_text(json.dumps(grade,indent=2));
+          report=['# JJ SE 0.7 constructed pre-orbit save verification','',f"- PASS: **{grade['passes']}**",f"- Factorio: {grade['factorio_version']}",f"- Space Exploration: {se}",f"- Rocket Science assemblers: {grade['rocket_science_machines']}",f"- Design rate: {grade['design_rate_spm']} science packs/minute",f"- Packs recorded produced: {grade['rocket_science_production_stat']}",f"- Packs physically present in output chests: {grade['rocket_science_items_in_output_chests']}",f"- Generated/inhabited orbit surfaces: {orbit}",f"- Off-world player entities: {offworld}",f"- Players outside Nauvis: {player_off}",f"- Space-industry entities: {space_entities}",f"- Cargo launch pads: {launchpads}",f"- Backup power interfaces: {grade['backup_power_interfaces']}",f"- SHA-256: `{grade['sha256']}`",'', 'Construction disclosure: this starts from the public natural SE 0.7 pre-orbit save and adds a 24-machine, chest-fed automated Rocket Science block by console. It is not represented as an organic public playthrough.']
+          P('published/VERIFICATION.md').write_text('\n'.join(report));print('\n'.join(report))
+          if not grade['passes']:raise SystemExit('verification failed')
+          PY
+      - name: Upload verified save
+        uses: actions/upload-artifact@v4
+        with:
+          name: JJ-SE07-144SPM-PREORBIT-CONSTRUCTED
+          path: published/
+          retention-days: 30
+          compression-level: 0
+      - name: Publish verified save and reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git checkout -B tmp-se-construct-preorbit-result-20260825
+          rm -rf tmp-se-construct-preorbit-result
+          mkdir tmp-se-construct-preorbit-result
+          cp published/JJ_SE07_144SPM_PREORBIT_CONSTRUCTED.zip published/VERIFICATION.md published/grade.json published/header.json published/reload-verification.json tmp-se-construct-preorbit-result/
+          git add -f tmp-se-construct-preorbit-result
+          git commit -m 'Publish verified constructed SE 0.7 pre-orbit save'
+          git push --force origin HEAD:refs/heads/tmp-se-construct-preorbit-result-20260825
