@@ -1,0 +1,294 @@
+name: Live-audit overlooked SE 0.6 candidate
+
+on:
+  push:
+    branches: [tmp-se06-candidate-live-audit-20260826]
+
+permissions:
+  contents: read
+
+jobs:
+  audit-moduleinserter-save:
+    runs-on: ubuntu-latest
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download save, Factorio 1.1.110, and exact mods
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq unzip binutils golang-go
+          python3 -m pip install --quiet --upgrade gdown
+          gdown --no-cookies -O save.zip 1PUFevtOpF8XzMJSC9lGGiOitH2Zsg2Hs
+          unzip -t save.zip
+          sha256sum save.zip | tee save-sha256.txt
+          stat -c 'save_bytes=%s' save.zip | tee save-size.txt
+          curl -fL --retry 5 --retry-all-errors -o factorio.tar.xz \
+            'https://www.factorio.com/get-download/1.1.110/headless/linux64'
+          tar -xJf factorio.tar.xz
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          mkdir -p factorio/mods factorio/script-output fake-factorio/data/base fake-factorio/mods mirror-logs
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+          printf '%s\n' '{"name":"base","version":"1.1.110","title":"Base","author":"Wube","factorio_version":"1.1"}' > fake-factorio/data/base/info.json
+          FACTORIO_PATH="$PWD/fake-factorio" FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" ./fmm list save.zip | tee exact-mod-list.txt
+          awk 'NF == 2 && $1 != "base" {print $1 "\t" $2}' exact-mod-list.txt > mod-versions.tsv
+          export MOD_DIR="$PWD/factorio/mods"
+          download_one() {
+            mod="$1"; version="$2"; out="$MOD_DIR/${mod}_${version}.zip"
+            curl -fL --retry 5 --retry-all-errors --max-time 900 -A 'factorio-mod-downloader/1.0' \
+              -o "$out" "https://mods-storage.re146.dev/${mod}/${version}.zip?anticache=$RANDOM-$RANDOM" \
+              >"mirror-logs/${mod}_${version}.log" 2>&1
+            unzip -t "$out" >>"mirror-logs/${mod}_${version}.log" 2>&1
+          }
+          export -f download_one
+          set +e
+          xargs -P 8 -n 2 bash -c 'download_one "$0" "$1"' < mod-versions.tsv
+          dl_status=$?
+          set -e
+          echo "$dl_status" > mod-download-status.txt
+          find factorio/mods -maxdepth 1 -type f -name '*.zip' -printf '%f\n' | sort > downloaded-mod-files.txt
+          comm -23 <(awk -F '\t' '{print $1"_"$2".zip"}' mod-versions.tsv | sort) downloaded-mod-files.txt > missing-mod-files.txt
+          echo '--- missing exact mods ---'
+          cat missing-mod-files.txt
+
+      - name: Add Factorio 1.1 read-only progression auditor
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p factorio/mods/jj-se-stage-auditor-legacy_0.1.0
+          cat > factorio/mods/jj-se-stage-auditor-legacy_0.1.0/info.json <<'JSON'
+          {
+            "name": "jj-se-stage-auditor-legacy",
+            "version": "0.1.0",
+            "title": "JJ SE Stage Auditor Legacy",
+            "author": "JJ search audit",
+            "factorio_version": "1.1",
+            "dependencies": ["base >= 1.1"]
+          }
+          JSON
+          cat > factorio/mods/jj-se-stage-auditor-legacy_0.1.0/control.lua <<'LUA'
+          local OUT = "jj-se06-live-audit.json"
+          local function safe(fn, fallback)
+            local ok, value = pcall(fn)
+            if ok then return value end
+            return fallback
+          end
+          local function get_recipe(e) return safe(function() return e.get_recipe() end, nil) end
+          local function status_name(e)
+            for n,v in pairs(defines.entity_status) do if v == e.status then return n end end
+            return tostring(e.status)
+          end
+          local function is_natural_type(t)
+            return t == "character" or t == "resource" or t == "tree" or t == "cliff"
+              or t == "corpse" or t == "entity-ghost" or t == "tile-ghost"
+              or t == "item-entity" or t == "particle" or t == "projectile"
+              or t == "smoke" or t == "simple-entity"
+              or t == "simple-entity-with-force" or t == "simple-entity-with-owner"
+          end
+          local function point_in_box(point, box, margin)
+            margin = margin or 0
+            return point.x >= box.left_top.x-margin and point.x <= box.right_bottom.x+margin
+              and point.y >= box.left_top.y-margin and point.y <= box.right_bottom.y+margin
+          end
+          local function output_inserter_count(machine)
+            local b=machine.bounding_box
+            local area={{b.left_top.x-4,b.left_top.y-4},{b.right_bottom.x+4,b.right_bottom.y+4}}
+            local n=0
+            for _,i in pairs(machine.surface.find_entities_filtered{area=area,type="inserter",force=machine.force}) do
+              local p=safe(function() return i.pickup_position end,nil)
+              local d=safe(function() return i.drop_position end,nil)
+              if p and d and point_in_box(p,b,0.4) and not point_in_box(d,b,0.4) then n=n+1 end
+            end
+            return n
+          end
+          local function nearby_logistics(machine)
+            local p=machine.position
+            local area={{p.x-7,p.y-7},{p.x+7,p.y+7}}
+            local types={"inserter","loader","loader-1x1","transport-belt","underground-belt","splitter","container","logistic-container","pipe","pipe-to-ground","pump"}
+            local total,by_type=0,{}
+            for _,t in pairs(types) do
+              local n=#machine.surface.find_entities_filtered{area=area,type=t,force=machine.force}
+              by_type[t]=n; total=total+n
+            end
+            local network=safe(function() return machine.surface.find_logistic_network_by_position(machine.position,machine.force) end,nil)
+            return {total=total,by_type=by_type,logistic_network=network~=nil}
+          end
+          local function stat_count(stats, method, name)
+            if not stats then return nil end
+            return safe(function() return stats[method](name) end,nil)
+          end
+          local function count_storage(surface,force,item)
+            if not game.item_prototypes[item] then return 0 end
+            local total=0
+            for _,e in pairs(surface.find_entities_filtered{type={"container","logistic-container","cargo-wagon"},force=force}) do
+              local inv=safe(function() return e.get_inventory(defines.inventory.chest) or e.get_inventory(defines.inventory.cargo_wagon) end,nil)
+              if inv and inv.valid then total=total+safe(function() return inv.get_item_count(item) end,0) end
+            end
+            return total
+          end
+          local function surface_state(surface,force)
+            local built,by_name,generated,charted=0,{},0,0
+            for _,e in pairs(surface.find_entities_filtered{force=force}) do
+              if e.valid and not is_natural_type(e.type) then built=built+1; by_name[e.name]=(by_name[e.name] or 0)+1 end
+            end
+            for chunk in surface.get_chunks() do
+              generated=generated+1
+              if safe(function() return force.is_chunk_charted(surface,chunk) end,false) then charted=charted+1 end
+            end
+            return {name=surface.name,index=surface.index,player_built_entities=built,player_entity_names=by_name,generated_chunks=generated,charted_chunks=charted,character_entities=#surface.find_entities_filtered{type="character",force=force}}
+          end
+          local function audit()
+            local force=game.forces.player
+            local nauvis=game.surfaces["Nauvis"] or game.surfaces["nauvis"] or game.surfaces[1]
+            local active=script.active_mods
+            local r={researched=false,lifetime_produced=nil,lifetime_consumed=nil,machines={},count=0,working_now=0,total_crafting_speed=0,estimated_packs_per_second_before_productivity=0,machines_with_automatic_output=0,machines_with_logistics=0,upstream_ingredients={},upstream_automated_count=0,upstream_total_count=0,upstream_automation_fraction=0}
+            local report={tick=game.tick,factorio_version=active.base,space_exploration_version=active["space-exploration"],krastorio2_version=active.Krastorio2,active_mods=active,technologies={},rocket_science=r,launch_support={satellite_telemetry_lifetime_produced=nil,launch_pads_on_nauvis=0,landing_pads_on_nauvis=0,cargo_rocket_sections_in_storage=0,space_capsules_in_storage=0},non_nauvis_surfaces={},orbit_like_surfaces={}}
+            if not nauvis then report.error="Nauvis missing"; game.write_file(OUT,game.table_to_json(report),false); return end
+            for _,name in pairs({"se-rocket-science-pack","se-rocket-launch-pad","space-science-pack","se-space-science-lab","se-space-platform-scaffold"}) do
+              local t=force.technologies[name]; report.technologies[name]=t and t.researched or false
+            end
+            r.researched=report.technologies["se-rocket-science-pack"]
+            local stats=safe(function() return force.item_production_statistics end,nil)
+            r.lifetime_produced=stat_count(stats,"get_input_count","se-rocket-science-pack")
+            r.lifetime_consumed=stat_count(stats,"get_output_count","se-rocket-science-pack")
+            report.launch_support.satellite_telemetry_lifetime_produced=stat_count(stats,"get_input_count","se-satellite-telemetry")
+            local product_producers={}
+            for _,e in pairs(nauvis.find_entities_filtered{type={"assembling-machine","furnace","rocket-silo"},force=force}) do
+              local recipe=get_recipe(e)
+              if recipe then for _,p in pairs(recipe.products or {}) do if p.name then product_producers[p.name]=(product_producers[p.name] or 0)+1 end end end
+            end
+            local rp=game.recipe_prototypes["se-rocket-science-pack"]
+            if rp then
+              for _,ing in pairs(rp.ingredients or {}) do
+                local n=product_producers[ing.name] or 0
+                r.upstream_ingredients[ing.name]={producer_machines=n,automated=n>0}
+                r.upstream_total_count=r.upstream_total_count+1
+                if n>0 then r.upstream_automated_count=r.upstream_automated_count+1 end
+              end
+            end
+            local product_amount,energy=8,80
+            if rp then
+              energy=rp.energy or energy
+              for _,p in pairs(rp.products or {}) do
+                if p.name=="se-rocket-science-pack" then product_amount=p.amount or ((p.amount_min or 0)+(p.amount_max or 0))/2 or product_amount end
+              end
+            end
+            for _,m in pairs(nauvis.find_entities_filtered{type="assembling-machine",force=force}) do
+              local recipe=get_recipe(m)
+              if recipe and recipe.name=="se-rocket-science-pack" then
+                local outputs=output_inserter_count(m); local logistics=nearby_logistics(m)
+                local has_output=outputs>0 or (logistics.by_type.loader or 0)>0 or (logistics.by_type["loader-1x1"] or 0)>0 or logistics.logistic_network
+                local has_logistics=logistics.total>=4 or logistics.logistic_network
+                local speed=m.crafting_speed or 0
+                r.count=r.count+1; r.total_crafting_speed=r.total_crafting_speed+speed
+                r.estimated_packs_per_second_before_productivity=r.estimated_packs_per_second_before_productivity+speed*product_amount/energy
+                if m.status==defines.entity_status.working then r.working_now=r.working_now+1 end
+                if has_output then r.machines_with_automatic_output=r.machines_with_automatic_output+1 end
+                if has_logistics then r.machines_with_logistics=r.machines_with_logistics+1 end
+                table.insert(r.machines,{name=m.name,unit_number=m.unit_number,position={x=m.position.x,y=m.position.y},status=status_name(m),crafting_speed=speed,productivity_bonus=m.productivity_bonus,output_inserters=outputs,nearby_logistics=logistics,has_automatic_output=has_output,has_logistics=has_logistics})
+              end
+            end
+            if r.upstream_total_count>0 then r.upstream_automation_fraction=r.upstream_automated_count/r.upstream_total_count end
+            if game.entity_prototypes["se-rocket-launch-pad"] then report.launch_support.launch_pads_on_nauvis=#nauvis.find_entities_filtered{name="se-rocket-launch-pad",force=force} end
+            if game.entity_prototypes["se-rocket-landing-pad"] then report.launch_support.landing_pads_on_nauvis=#nauvis.find_entities_filtered{name="se-rocket-landing-pad",force=force} end
+            report.launch_support.cargo_rocket_sections_in_storage=count_storage(nauvis,force,"se-cargo-rocket-section")
+            report.launch_support.space_capsules_in_storage=count_storage(nauvis,force,"se-space-capsule")
+            local untouched=true
+            for _,s in pairs(game.surfaces) do
+              if s.index~=nauvis.index then
+                local e=surface_state(s,force); table.insert(report.non_nauvis_surfaces,e)
+                local lower=string.lower(s.name)
+                if string.find(lower,"orbit",1,true) or string.find(lower,"asteroid",1,true) or string.find(lower,"space",1,true) then
+                  table.insert(report.orbit_like_surfaces,e)
+                  if e.player_built_entities>0 or e.charted_chunks>0 or e.character_entities>0 then untouched=false end
+                end
+              end
+            end
+            report.orbit_untouched_heuristic_pass=untouched
+            report.full_scale_machine_heuristic_pass=r.count>=4 and r.machines_with_automatic_output>=3 and r.machines_with_logistics>=3 and r.upstream_automation_fraction>=0.75
+            report.full_scale_throughput_heuristic_pass=r.estimated_packs_per_second_before_productivity>=0.5 and r.machines_with_automatic_output>=1 and r.machines_with_logistics>=1 and r.upstream_automation_fraction>=0.75
+            game.write_file(OUT,game.table_to_json(report),false)
+          end
+          local target=nil
+          script.on_init(function() target=game.tick+120 end)
+          script.on_configuration_changed(function() target=game.tick+120 end)
+          script.on_event(defines.events.on_tick,function(event) if target and event.tick>=target then target=nil; audit() end end)
+          LUA
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          mods=[{'name':'base','enabled':True}]
+          for line in Path('mod-versions.tsv').read_text().splitlines():
+              name,version=line.split('\t',1)
+              if Path(f'factorio/mods/{name}_{version}.zip').exists(): mods.append({'name':name,'enabled':True})
+          mods.append({'name':'jj-se-stage-auditor-legacy','enabled':True})
+          Path('factorio/mods/mod-list.json').write_text(json.dumps({'mods':mods},indent=2)+'\n')
+          PY
+          cp factorio/mods/mod-list.json final-mod-list.json
+
+      - name: Live-load and audit exact save
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 30m factorio/bin/x64/factorio --mod-directory "$PWD/factorio/mods" \
+            --benchmark "$PWD/save.zip" --benchmark-ticks 600 --benchmark-runs 1 \
+            2>&1 | tee factorio-live-audit.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          find "$PWD" -type f -name jj-se06-live-audit.json -print -exec cp '{}' ./jj-se06-live-audit.json \; || true
+          exit "$status"
+
+      - name: Summarize audit
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "factorio_live_status=${{ steps.live.outputs.status }}" > workflow-status.txt
+          if test -f jj-se06-live-audit.json; then
+            python3 -m json.tool jj-se06-live-audit.json > jj-se06-live-audit.pretty.json
+            python3 - <<'PY' > concise-verdict.txt
+          import json
+          d=json.load(open('jj-se06-live-audit.json')); r=d['rocket_science']; l=d['launch_support']
+          for k,v in [
+            ('factorio_version',d.get('factorio_version')),('space_exploration_version',d.get('space_exploration_version')),('krastorio2_version',d.get('krastorio2_version')),
+            ('rocket_science_researched',r.get('researched')),('rocket_science_lifetime_produced',r.get('lifetime_produced')),('rocket_science_machine_count',r.get('count')),
+            ('rocket_science_working_now',r.get('working_now')),('rocket_science_output_machines',r.get('machines_with_automatic_output')),('rocket_science_logistics_machines',r.get('machines_with_logistics')),
+            ('rocket_science_estimated_pps',r.get('estimated_packs_per_second_before_productivity')),('upstream_automation_fraction',r.get('upstream_automation_fraction')),
+            ('satellite_telemetry_lifetime',l.get('satellite_telemetry_lifetime_produced')),('cargo_launch_pads_nauvis',l.get('launch_pads_on_nauvis')),
+            ('non_nauvis_surfaces',len(d.get('non_nauvis_surfaces',[]))),('orbit_like_surfaces',d.get('orbit_like_surfaces')),('orbit_untouched',d.get('orbit_untouched_heuristic_pass')),
+            ('full_scale_machine_pass',d.get('full_scale_machine_heuristic_pass')),('full_scale_throughput_pass',d.get('full_scale_throughput_heuristic_pass'))]: print(f'{k}={v}')
+          PY
+            cat concise-verdict.txt
+          else
+            echo AUDIT_FILE_NOT_PRODUCED > audit-missing.txt
+            tail -300 factorio-live-audit.log || true
+          fi
+
+      - name: Upload audit evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moduleinserter-se06-live-audit-20260826
+          path: |
+            save-sha256.txt
+            save-size.txt
+            factorio-version.txt
+            exact-mod-list.txt
+            mod-versions.tsv
+            downloaded-mod-files.txt
+            missing-mod-files.txt
+            mod-download-status.txt
+            final-mod-list.json
+            factorio-live-audit.log
+            workflow-status.txt
+            jj-se06-live-audit.json
+            jj-se06-live-audit.pretty.json
+            concise-verdict.txt
+            audit-missing.txt
+            mirror-logs/
+          if-no-files-found: warn
+          retention-days: 7
