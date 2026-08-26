@@ -43,6 +43,7 @@ jobs:
           Path('work/setup.py').write_text(extract('setup.py'))
           Path('work/query.py').write_text(extract('query.py'))
           PY
+          sed -i 's#2\.0\.66/headless#2.0.69/headless#' work/setup.py
           python3 work/setup.py | tee published/setup-console.txt
 
       - name: Load and audit save
