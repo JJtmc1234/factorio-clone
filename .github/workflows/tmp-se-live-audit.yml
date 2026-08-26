@@ -1,0 +1,427 @@
+name: Temporary SE live audit
+
+on:
+  push:
+    branches:
+      - tmp-se-attachment-fetch-20260825
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      FACTORIO_USERNAME: ${{ secrets.FACTORIO_USERNAME }}
+      FACTORIO_TOKEN: ${{ secrets.FACTORIO_TOKEN }}
+    steps:
+      - name: Download recovered public save
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'Mozilla/5.0 GitHub-Actions-SE-save-verifier' \
+            --output save.zip \
+            'https://github.com/user-attachments/files/23688004/SPACE.EXPLORATION.0.7.zip'
+          unzip -t save.zip
+          sha256sum save.zip | tee save-sha256.txt
+
+      - name: Download Factorio 2.0.72 headless
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 --retry-all-errors \
+            --output factorio-headless.tar.xz \
+            'https://www.factorio.com/get-download/2.0.72/headless/linux64'
+          tar -xJf factorio-headless.tar.xz
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          mkdir -p factorio/mods factorio/script-output
+
+      - name: Build current fmm
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          (cd fmm-src && go build -o ../fmm .)
+
+      - name: Download exact save mods
+        id: sync
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          FACTORIO_PATH="$PWD/factorio" \
+          FACTORIO_MODS_PATH="$PWD/factorio/mods" \
+          ./fmm sync save.zip 2>&1 | tee fmm-sync.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          find factorio/mods -maxdepth 1 -type f -printf '%f\n' | sort > downloaded-mod-files.txt || true
+          du -sh factorio/mods | tee mods-size.txt
+          exit "$status"
+
+      - name: Create read-only audit mod
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          moddir='factorio/mods/jj-se-stage-auditor_0.2.0'
+          mkdir -p "$moddir"
+          cat > "$moddir/info.json" <<'JSON'
+          {
+            "name": "jj-se-stage-auditor",
+            "version": "0.2.0",
+            "title": "JJ SE Stage Auditor",
+            "author": "OpenAI",
+            "factorio_version": "2.0",
+            "dependencies": ["base >= 2.0", "space-exploration >= 0.7.0"],
+            "description": "Read-only audit of Rocket Science automation and orbital development."
+          }
+          JSON
+          cat > "$moddir/control.lua" <<'LUA'
+          local FILE = "jj-se-live-audit.json"
+
+          local function safe(fn, fallback)
+            local ok, value = pcall(fn)
+            if ok then return value end
+            return fallback
+          end
+
+          local function to_json(value)
+            if helpers and helpers.table_to_json then return helpers.table_to_json(value) end
+            return game.table_to_json(value)
+          end
+
+          local function write_file(name, value)
+            local text = to_json(value)
+            if helpers and helpers.write_file then
+              helpers.write_file(name, text, false)
+            else
+              game.write_file(name, text, false)
+            end
+          end
+
+          local function recipe_of(entity)
+            return safe(function() return entity.get_recipe() end, nil)
+          end
+
+          local function products_of(recipe)
+            local out = {}
+            if not recipe then return out end
+            for _, product in pairs(recipe.products or {}) do
+              if product.name then out[product.name] = true end
+            end
+            return out
+          end
+
+          local function point_in_box(point, box, margin)
+            margin = margin or 0
+            return point.x >= box.left_top.x - margin
+              and point.x <= box.right_bottom.x + margin
+              and point.y >= box.left_top.y - margin
+              and point.y <= box.right_bottom.y + margin
+          end
+
+          local function output_inserters(machine)
+            local area = {
+              {machine.bounding_box.left_top.x - 4, machine.bounding_box.left_top.y - 4},
+              {machine.bounding_box.right_bottom.x + 4, machine.bounding_box.right_bottom.y + 4}
+            }
+            local count = 0
+            for _, inserter in pairs(machine.surface.find_entities_filtered{
+              area = area, type = "inserter", force = machine.force
+            }) do
+              local pickup = safe(function() return inserter.pickup_position end, nil)
+              local drop = safe(function() return inserter.drop_position end, nil)
+              if pickup and drop
+                and point_in_box(pickup, machine.bounding_box, 0.35)
+                and not point_in_box(drop, machine.bounding_box, 0.35)
+              then
+                count = count + 1
+              end
+            end
+            return count
+          end
+
+          local function logistics_near(machine)
+            local p = machine.position
+            local area = {{p.x - 7, p.y - 7}, {p.x + 7, p.y + 7}}
+            local types = {
+              "inserter", "loader", "loader-1x1", "transport-belt",
+              "underground-belt", "splitter", "container", "logistic-container",
+              "pipe", "pipe-to-ground", "pump"
+            }
+            local by_type, total = {}, 0
+            for _, kind in pairs(types) do
+              local n = #machine.surface.find_entities_filtered{
+                area = area, type = kind, force = machine.force
+              }
+              by_type[kind] = n
+              total = total + n
+            end
+            local network = safe(function()
+              return machine.surface.find_logistic_network_by_position(machine.position, machine.force)
+            end, nil)
+            return {total = total, by_type = by_type, logistic_network = network ~= nil}
+          end
+
+          local ignored = {
+            character=true, resource=true, tree=true, cliff=true, corpse=true,
+            ["entity-ghost"]=true, ["tile-ghost"]=true, ["item-entity"]=true,
+            particle=true, projectile=true, smoke=true, ["simple-entity"]=true,
+            ["simple-entity-with-force"]=true, ["simple-entity-with-owner"]=true
+          }
+
+          local function built_entities(surface, force)
+            local count, types = 0, {}
+            for _, entity in pairs(surface.find_entities_filtered{force = force}) do
+              if entity.valid and not ignored[entity.type] then
+                count = count + 1
+                types[entity.type] = (types[entity.type] or 0) + 1
+              end
+            end
+            return count, types
+          end
+
+          local function charted_chunks(surface, force)
+            local generated, charted = 0, 0
+            for chunk in surface.get_chunks() do
+              generated = generated + 1
+              if safe(function() return force.is_chunk_charted(surface, chunk) end, false) then
+                charted = charted + 1
+              end
+            end
+            return generated, charted
+          end
+
+          local function audit()
+            local force = game.forces.player
+            local nauvis = game.surfaces["Nauvis"] or game.surfaces["nauvis"] or game.surfaces[1]
+            local active = script.active_mods
+            local report = {
+              tick = game.tick,
+              factorio_version = active.base,
+              space_exploration_version = active["space-exploration"],
+              krastorio2_version = active.Krastorio2,
+              all_active_mods = active,
+              nauvis = nauvis and nauvis.name or nil,
+              rocket_science = {
+                researched = false,
+                machines = {}, count = 0, working_now = 0,
+                total_crafting_speed = 0,
+                automatic_output = 0, automatic_logistics = 0,
+                produced_lifetime = nil, consumed_lifetime = nil,
+                ingredients = {}, automated_ingredients = 0, ingredient_count = 0
+              },
+              cargo_rocket = {launch_pads = 0, landing_pads = 0},
+              non_nauvis_surfaces = {},
+              acceptance = {
+                minimum_machines = 4,
+                minimum_automatic_output = 3,
+                minimum_automatic_logistics = 3,
+                minimum_ingredient_fraction = 0.75
+              }
+            }
+
+            if not nauvis then
+              report.error = "Nauvis not found"
+              write_file(FILE, report)
+              return
+            end
+
+            local tech = force.technologies["se-rocket-science-pack"]
+            report.rocket_science.researched = tech and tech.researched or false
+
+            local stats = safe(function() return force.get_item_production_statistics(nauvis) end, nil)
+            if stats then
+              report.rocket_science.produced_lifetime = safe(function()
+                return stats.get_input_count("se-rocket-science-pack")
+              end, nil)
+              report.rocket_science.consumed_lifetime = safe(function()
+                return stats.get_output_count("se-rocket-science-pack")
+              end, nil)
+            end
+
+            local crafters = nauvis.find_entities_filtered{
+              type = {"assembling-machine", "furnace", "rocket-silo"}, force = force
+            }
+            local producers = {}
+            for _, machine in pairs(crafters) do
+              for name, _ in pairs(products_of(recipe_of(machine))) do
+                producers[name] = (producers[name] or 0) + 1
+              end
+            end
+
+            local recipes = prototypes and prototypes.recipe or game.recipe_prototypes
+            local rocket_recipe = recipes and recipes["se-rocket-science-pack"] or nil
+            if rocket_recipe then
+              for _, ingredient in pairs(rocket_recipe.ingredients or {}) do
+                local n = producers[ingredient.name] or 0
+                report.rocket_science.ingredients[ingredient.name] = {
+                  producer_machines = n, automated = n > 0
+                }
+                report.rocket_science.ingredient_count = report.rocket_science.ingredient_count + 1
+                if n > 0 then
+                  report.rocket_science.automated_ingredients = report.rocket_science.automated_ingredients + 1
+                end
+              end
+            end
+
+            for _, machine in pairs(nauvis.find_entities_filtered{
+              type = "assembling-machine", force = force
+            }) do
+              local recipe = recipe_of(machine)
+              if recipe and recipe.name == "se-rocket-science-pack" then
+                local near = logistics_near(machine)
+                local outputs = output_inserters(machine)
+                local has_logistics = near.total >= 4 or near.logistic_network
+                local has_output = outputs > 0
+                  or (near.by_type.loader or 0) > 0
+                  or (near.by_type["loader-1x1"] or 0) > 0
+                  or near.logistic_network
+                local status = safe(function()
+                  for name, value in pairs(defines.entity_status) do
+                    if value == machine.status then return name end
+                  end
+                  return tostring(machine.status)
+                end, tostring(machine.status))
+
+                report.rocket_science.count = report.rocket_science.count + 1
+                report.rocket_science.total_crafting_speed = report.rocket_science.total_crafting_speed + (machine.crafting_speed or 0)
+                if machine.status == defines.entity_status.working then
+                  report.rocket_science.working_now = report.rocket_science.working_now + 1
+                end
+                if has_output then report.rocket_science.automatic_output = report.rocket_science.automatic_output + 1 end
+                if has_logistics then report.rocket_science.automatic_logistics = report.rocket_science.automatic_logistics + 1 end
+                table.insert(report.rocket_science.machines, {
+                  name = machine.name,
+                  unit_number = machine.unit_number,
+                  position = {x = machine.position.x, y = machine.position.y},
+                  status = status,
+                  crafting_speed = machine.crafting_speed,
+                  productivity_bonus = machine.productivity_bonus,
+                  output_inserters = outputs,
+                  nearby_logistics = near,
+                  has_output = has_output,
+                  has_logistics = has_logistics
+                })
+              end
+            end
+
+            report.cargo_rocket.launch_pads = #nauvis.find_entities_filtered{
+              name = "se-rocket-launch-pad", force = force
+            }
+            report.cargo_rocket.landing_pads = #nauvis.find_entities_filtered{
+              name = "se-rocket-landing-pad", force = force
+            }
+
+            for _, surface in pairs(game.surfaces) do
+              if surface.index ~= nauvis.index then
+                local built, types = built_entities(surface, force)
+                local generated, charted = charted_chunks(surface, force)
+                table.insert(report.non_nauvis_surfaces, {
+                  name = surface.name,
+                  index = surface.index,
+                  player_built_entities = built,
+                  player_entity_types = types,
+                  generated_chunks = generated,
+                  charted_chunks = charted
+                })
+              end
+            end
+
+            local fraction = 0
+            if report.rocket_science.ingredient_count > 0 then
+              fraction = report.rocket_science.automated_ingredients / report.rocket_science.ingredient_count
+            end
+            report.rocket_science.ingredient_automation_fraction = fraction
+            report.full_scale_heuristic_pass =
+              report.rocket_science.count >= report.acceptance.minimum_machines
+              and report.rocket_science.automatic_output >= report.acceptance.minimum_automatic_output
+              and report.rocket_science.automatic_logistics >= report.acceptance.minimum_automatic_logistics
+              and fraction >= report.acceptance.minimum_ingredient_fraction
+
+            write_file(FILE, report)
+            game.print("JJ live SE audit written: " .. FILE)
+          end
+
+          local target_tick = nil
+          script.on_init(function() target_tick = game.tick + 120 end)
+          script.on_configuration_changed(function() target_tick = game.tick + 120 end)
+          script.on_event(defines.events.on_tick, function(event)
+            if target_tick and event.tick >= target_tick then
+              target_tick = nil
+              audit()
+            end
+          end)
+          LUA
+
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('factorio/mods/mod-list.json')
+          if p.exists():
+              data = json.loads(p.read_text())
+          else:
+              data = {"mods": []}
+          mods = data.setdefault("mods", [])
+          for mod in mods:
+              if mod.get("name") == "jj-se-stage-auditor":
+                  mod["enabled"] = True
+                  break
+          else:
+              mods.append({"name": "jj-se-stage-auditor", "enabled": True})
+          p.write_text(json.dumps(data, indent=2) + "\n")
+          PY
+          cat factorio/mods/mod-list.json | tee final-mod-list.json
+
+      - name: Live-load and audit save
+        id: live
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 12m factorio/bin/x64/factorio \
+            --mod-directory "$PWD/factorio/mods" \
+            --benchmark "$PWD/save.zip" \
+            --benchmark-ticks 360 \
+            --benchmark-runs 1 \
+            2>&1 | tee factorio-live-audit.log
+          status=${PIPESTATUS[0]}
+          echo "status=$status" >> "$GITHUB_OUTPUT"
+          find "$PWD" -type f -name 'jj-se-live-audit.json' -print -exec cp '{}' ./jj-se-live-audit.json \; || true
+          exit "$status"
+
+      - name: Summarize audit
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "fmm_sync_status=${{ steps.sync.outputs.status }}" | tee workflow-status.txt
+          echo "factorio_live_status=${{ steps.live.outputs.status }}" | tee -a workflow-status.txt
+          if test -f jj-se-live-audit.json; then
+            python3 -m json.tool jj-se-live-audit.json | tee jj-se-live-audit.pretty.json
+          else
+            echo 'AUDIT_FILE_NOT_PRODUCED' | tee jj-se-live-audit-missing.txt
+          fi
+
+      - name: Upload all diagnostic results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-live-audit-results
+          path: |
+            save-sha256.txt
+            factorio-version.txt
+            fmm-sync.log
+            downloaded-mod-files.txt
+            mods-size.txt
+            final-mod-list.json
+            factorio-live-audit.log
+            workflow-status.txt
+            jj-se-live-audit.json
+            jj-se-live-audit.pretty.json
+            jj-se-live-audit-missing.txt
+          if-no-files-found: warn
+          retention-days: 1
