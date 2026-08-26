@@ -1,0 +1,35 @@
+name: Temporary Factorio headless export
+
+on:
+  push:
+    branches:
+      - tmp-se-attachment-fetch-20260825
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and verify Factorio 2.0.76 headless
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 --retry-all-errors \
+            --output factorio-headless-2.0.76.tar.xz \
+            'https://www.factorio.com/get-download/2.0.76/headless/linux64'
+          tar -xJf factorio-headless-2.0.76.tar.xz
+          factorio/bin/x64/factorio --version | tee factorio-version.txt
+          sha256sum factorio-headless-2.0.76.tar.xz | tee SHA256SUMS.txt
+      - name: Upload runtime
+        uses: actions/upload-artifact@v4
+        with:
+          name: factorio-headless-2.0.76
+          path: |
+            factorio-headless-2.0.76.tar.xz
+            factorio-version.txt
+            SHA256SUMS.txt
+          compression-level: 0
+          retention-days: 1
