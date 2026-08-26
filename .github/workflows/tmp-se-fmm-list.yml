@@ -1,0 +1,61 @@
+name: Temporary SE save mod-list probe
+
+on:
+  push:
+    branches:
+      - tmp-se-attachment-fetch-20260825
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download public issue attachment
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 5 --retry-all-errors \
+            --user-agent 'Mozilla/5.0 GitHub-Actions-SE-save-verifier' \
+            --output save.zip \
+            'https://github.com/user-attachments/files/23688004/SPACE.EXPLORATION.0.7.zip'
+          unzip -t save.zip
+
+      - name: Build latest fmm from Codeberg
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 https://codeberg.org/raiguard/fmm.git fmm-src
+          cd fmm-src
+          go build -o ../fmm .
+          ../fmm help || true
+
+      - name: Extract save mod list
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p fake-factorio/data/base fake-factorio/mods
+          cat > fake-factorio/data/base/info.json <<'JSON'
+          {
+            "name": "base",
+            "version": "2.0.72",
+            "title": "Base mod",
+            "author": "Wube Software",
+            "factorio_version": "2.0"
+          }
+          JSON
+          FACTORIO_PATH="$PWD/fake-factorio" \
+          FACTORIO_MODS_PATH="$PWD/fake-factorio/mods" \
+          ./fmm list save.zip | tee exact-mod-list.txt
+          test -s exact-mod-list.txt
+          grep -i '^Krastorio2' exact-mod-list.txt && exit 25 || true
+
+      - name: Upload probe result
+        uses: actions/upload-artifact@v4
+        with:
+          name: se07-issue-exact-mod-list
+          path: exact-mod-list.txt
+          if-no-files-found: error
+          retention-days: 1
