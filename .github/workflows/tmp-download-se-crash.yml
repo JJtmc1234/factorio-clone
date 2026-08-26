@@ -1,75 +1,43 @@
-name: Download RedMew SE crash save
+name: Audit stubborn native SE 0.7 saves
 
 on:
   push:
     branches: [main]
 
 permissions:
-  contents: write
-
-env:
-  RESULT_BRANCH: tmp-se-crash-result-20260826
+  contents: read
 
 jobs:
-  download:
+  audit:
     if: github.actor != 'github-actions[bot]'
+    name: audit-${{ matrix.id }}
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 75
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - id: rk-se-2
+            url: https://forums.factorio.com/download/file.php?id=109074
+          - id: spaceexploration-108368
+            url: https://forums.factorio.com/download/file.php?id=108368
     steps:
       - uses: actions/checkout@v4
-      - name: Download and validate save
+        with:
+          ref: tmp-se07-salvage-minimal-v2-20260826
+      - name: Audit candidate
         shell: bash
-        run: |
-          set -euo pipefail
-          rm -rf published
-          mkdir -p published
-          python3 - <<'PY'
-          import requests, pathlib, zipfile, hashlib, json
-          urls = [
-              'https://refactorio.de/saves?directory=public%2Ffinal&file=se_crash.zip',
-              'https://redmew.com/FactorioWebInterface/V5/downloadSave?directory=public/final&saveName=se_crash.zip',
-          ]
-          out = pathlib.Path('published/se_crash.zip')
-          errors=[]
-          for url in urls:
-              try:
-                  r=requests.get(url,headers={'User-Agent':'Mozilla/5.0 Factorio-save-auditor'},timeout=180,allow_redirects=True)
-                  r.raise_for_status()
-                  out.write_bytes(r.content)
-                  with zipfile.ZipFile(out) as z:
-                      names=z.namelist()
-                      if not any(n.endswith('/level-init.dat') for n in names):
-                          raise RuntimeError('downloaded ZIP lacks level-init.dat')
-                      if not any('/level.dat' in n for n in names):
-                          raise RuntimeError('downloaded ZIP lacks level.dat chunks')
-                  meta={'source_url':url,'final_url':r.url,'bytes':out.stat().st_size,'sha256':hashlib.sha256(out.read_bytes()).hexdigest(),'zip_entries':len(names)}
-                  pathlib.Path('published/metadata.json').write_text(json.dumps(meta,indent=2))
-                  print(json.dumps(meta,indent=2))
-                  break
-              except Exception as exc:
-                  errors.append({'url':url,'error':repr(exc)})
-                  if out.exists(): out.unlink()
-          else:
-              pathlib.Path('published/errors.json').write_text(json.dumps(errors,indent=2))
-              raise SystemExit(json.dumps(errors,indent=2))
-          PY
-      - name: Upload save artifact
+        run: bash scripts/stubborn-se07-audit.sh '${{ matrix.id }}' '${{ matrix.url }}'
+      - name: Upload audit
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: redmew-se-crash-save
-          path: published/
-          compression-level: 0
+          name: stubborn-se07-${{ matrix.id }}
+          path: |
+            reports/
+            attempts/
+            match/
+          if-no-files-found: warn
           retention-days: 7
-      - name: Publish result branch
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git checkout -B "$RESULT_BRANCH"
-          rm -rf tmp-se-crash-download
-          mkdir -p tmp-se-crash-download
-          cp -a published/. tmp-se-crash-download/
-          git add -f tmp-se-crash-download
-          git commit -m 'Download RedMew se_crash Factorio save'
-          git push --force origin "HEAD:refs/heads/$RESULT_BRANCH"
+          compression-level: 6
