@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  fetch:
+  decode:
     runs-on: ubuntu-latest
     steps:
       - name: Download public issue attachment
@@ -22,17 +22,97 @@ jobs:
             --user-agent 'Mozilla/5.0 GitHub-Actions-SE-save-verifier' \
             --output SPACE.EXPLORATION.0.7.zip "$url"
           test -s SPACE.EXPLORATION.0.7.zip
-          file SPACE.EXPLORATION.0.7.zip
           unzip -t SPACE.EXPLORATION.0.7.zip
           sha256sum SPACE.EXPLORATION.0.7.zip | tee SHA256SUMS.txt
-          ls -lh SPACE.EXPLORATION.0.7.zip
-      - name: Upload downloaded save
+
+      - name: Extract state files
+        shell: bash
+        run: |
+          set -euo pipefail
+          root="$(unzip -Z1 SPACE.EXPLORATION.0.7.zip | head -1 | cut -d/ -f1)"
+          unzip -p SPACE.EXPLORATION.0.7.zip "$root/script.dat" > script.dat
+          unzip -p SPACE.EXPLORATION.0.7.zip "$root/level-init.dat" > level-init.dat
+          printf 'root=%s\n' "$root" | tee archive-info.txt
+          printf 'script.dat bytes=%s\n' "$(stat -c%s script.dat)" | tee -a archive-info.txt
+          printf 'level-init.dat bytes=%s\n' "$(stat -c%s level-init.dat)" | tee -a archive-info.txt
+          strings level-init.dat | grep -Ei 'space-exploration|krastorio|milestones|[0-9]+\.[0-9]+\.[0-9]+' > level-init-interesting-strings.txt || true
+
+      - name: Decode Factorio script.dat
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check 'hornwitser.factorio_tools==0.0.7'
+          python -m hornwitser.factorio_tools dat2json --input script.dat --output script.json
+          ls -lh script.json
+
+      - name: Build compact search report
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat > inspect_state.py <<'PY'
+          import json
+          from pathlib import Path
+
+          data = json.loads(Path('script.json').read_text(encoding='utf-8'))
+          patterns = (
+              'space-exploration', 'milestone', 'rocket', 'satellite', 'orbit',
+              'surface', 'launch', 'zone', 'science', 'telemetry', 'cargo'
+          )
+          max_value = 800
+          lines = []
+          lines.append(f'top_type={type(data).__name__}')
+          if isinstance(data, dict):
+              lines.append('top_keys=' + repr(list(data.keys())[:200]))
+
+          seen = set()
+          def short(v):
+              s = repr(v)
+              return s if len(s) <= max_value else s[:max_value] + '...'
+
+          def walk(obj, path='$', depth=0):
+              if depth > 40:
+                  return
+              if isinstance(obj, dict):
+                  for k, v in obj.items():
+                      kp = f'{path}.{k}'
+                      kl = str(k).lower()
+                      if any(p in kl for p in patterns):
+                          key = (kp, short(v))
+                          if key not in seen:
+                              seen.add(key)
+                              lines.append(f'{kp} = {short(v)}')
+                      walk(v, kp, depth + 1)
+              elif isinstance(obj, list):
+                  for i, v in enumerate(obj):
+                      walk(v, f'{path}[{i}]', depth + 1)
+              elif isinstance(obj, str):
+                  vl = obj.lower()
+                  if any(p in vl for p in patterns):
+                      key = (path, short(obj))
+                      if key not in seen:
+                          seen.add(key)
+                          lines.append(f'{path} = {short(obj)}')
+
+          walk(data)
+          Path('script-pattern-report.txt').write_text('\n'.join(lines), encoding='utf-8')
+          print('\n'.join(lines[:500]))
+          print(f'pattern_report_lines={len(lines)}')
+          PY
+          python inspect_state.py
+          wc -l script-pattern-report.txt
+          du -h script.json script-pattern-report.txt
+
+      - name: Upload decoded state
         uses: actions/upload-artifact@v4
         with:
-          name: se07-public-issue-attachment
+          name: se07-public-issue-decoded-state
           path: |
             SPACE.EXPLORATION.0.7.zip
             SHA256SUMS.txt
+            archive-info.txt
+            level-init-interesting-strings.txt
+            script.json
+            script-pattern-report.txt
           if-no-files-found: error
-          compression-level: 0
+          compression-level: 6
           retention-days: 1
