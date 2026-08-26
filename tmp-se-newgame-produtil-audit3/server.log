@@ -1,0 +1,636 @@
+   0.000 2026-08-26 00:32:27; Factorio 1.1.110 (build 62357, linux64, headless)
+   0.005 Operating system: Linux (Ubuntu 24.04)
+   0.005 Program arguments: "work/factorio/bin/x64/factorio" "--start-server" "work/candidate.zip" "--mod-directory" "work/mods" "--server-settings" "work/server-settings.json" "--rcon-port" "27533" "--rcon-password" <private> 
+   0.005 Config path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/config/config.ini
+   0.005 Read data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/data
+   0.005 Write data path: /home/runner/work/factorio-clone/factorio-clone/work/factorio [87249/147718MB]
+   0.005 Binaries path: /home/runner/work/factorio-clone/factorio-clone/work/factorio/bin
+   0.008 System info: [CPU: Intel(R) Xeon(R) 6973P-C, 4 cores, RAM: 15988 MB]
+   0.008 Environment: DISPLAY=<unset> WAYLAND_DISPLAY=<unset> DESKTOP_SESSION=<unset> XDG_SESSION_DESKTOP=<unset> XDG_CURRENT_DESKTOP=<unset> __GL_FSAA_MODE=<unset> __GL_LOG_MAX_ANISO=<unset> __GL_SYNC_TO_VBLANK=<unset> __GL_SORT_FBCONFIGS=<unset> __GL_YIELD=<unset>
+   0.008 Running in headless mode
+   0.062 Loading mod settings aai-containers 0.2.11 (settings.lua)
+   0.063 Loading mod settings aai-loaders 0.1.6 (settings.lua)
+   0.063 Loading mod settings bobinserters 1.2.0 (settings.lua)
+   0.063 Loading mod settings helmod 1.0.14 (settings.lua)
+   0.065 Loading mod settings informatron 0.3.4 (settings.lua)
+   0.065 Loading mod settings InserterFuelLeech 0.2.7 (settings.lua)
+   0.065 Loading mod settings jetpack 0.3.14 (settings.lua)
+   0.065 Loading mod settings longer-poles 1.0.0 (settings.lua)
+   0.066 Loading mod settings nicefill-scriptfix 0.1.21 (settings.lua)
+   0.066 Loading mod settings nixie-tubes 1.1.5 (settings.lua)
+   0.066 Loading mod settings robot_attrition 0.5.15 (settings.lua)
+   0.066 Loading mod settings Shortcuts-ick 1.1.29 (settings.lua)
+   0.067 Loading mod settings show-max-underground-distance 0.0.9 (settings.lua)
+   0.067 Loading mod settings space-exploration-menu-simulations 0.6.10 (settings.lua)
+   0.067 Loading mod settings Squeak Through 1.8.2 (settings.lua)
+   0.067 Loading mod settings aai-industry 0.5.22 (settings.lua)
+   0.068 Loading mod settings aai-programmable-structures 0.7.4 (settings.lua)
+   0.068 Loading mod settings alien-biomes 0.6.8 (settings.lua)
+   0.068 Loading mod settings combat-mechanics-overhaul 0.6.24 (settings.lua)
+   0.069 Loading mod settings equipment-gantry 0.1.5 (settings.lua)
+   0.069 Loading mod settings space-exploration 0.6.145 (settings.lua)
+   0.069 Loading mod settings extended-descriptions 1.3.4 (settings.lua)
+   0.070 Loading mod settings space-exploration-postprocess 0.6.30 (settings.lua)
+   0.070 Loading mod settings fluid_permutations_fixed 0.5.4 (settings.lua)
+   0.070 Loading mod settings Transport_Drones 1.0.16 (settings.lua)
+   0.070 Loading mod settings steam-drones 1.2.0 (settings.lua)
+   0.071 Loading mod settings aai-loaders-electric 0.1.2 (settings-updates.lua)
+   0.071 Loading mod settings space-exploration-jetpack-gui 1.0.7 (settings-updates.lua)
+   0.073 Loading mod core 0.0.0 (data.lua)
+   0.086 Loading mod base 1.1.110 (data.lua)
+   0.191 Loading mod aai-containers 0.2.11 (data.lua)
+   0.202 Loading mod aai-loaders 0.1.6 (data.lua)
+   0.203 Script @__aai-loaders__/data.lua:5: Log mods once: {
+  AAITransmitterssNoPower = "1.0.0",
+  CleanedConcreteCompatibility = "1.0.0",
+  FNEI = "0.4.2",
+  InserterFuelLeech = "0.2.7",
+  MaxRateCalculator = "3.4.48",
+  ["NoRespawnGun-Updated"] = "1.18.5",
+  No_Friendly_Fire = "1.0.0",
+  ["Shortcuts-ick"] = "1.1.29",
+  ["Squeak Through"] = "1.8.2",
+  Transport_Drones = "1.0.16",
+  UMSupersonicTrains = "1.0.1",
+  Waterfill_v17 = "1.1.0",
+  ["aai-containers"] = "0.2.11",
+  ["aai-industry"] = "0.5.22",
+  ["aai-loaders"] = "0.1.6",
+  ["aai-loaders-electric"] = "0.1.2",
+  ["aai-programmable-structures"] = "0.7.4",
+  ["aai-signal-transmission"] = "0.4.9",
+  ["aai-signal-transmission-luarendered-channel-label"] = "1.0.3",
+  ["aai-signals"] = "0.6.1",
+  ["aai-zignal-transmission-luarendered-channel-label"] = "1.0.0",
+  ["aai-zones"] = "0.6.4",
+  ["alien-biomes"] = "0.6.8",
+  ["alien-biomes-hr-terrain"] = "0.6.1",
+  base = "1.1.110",
+  bobinserters = "1.2.0",
+  ["bullet-trails"] = "0.6.2",
+  ["combat-mechanics-overhaul"] = "0.6.24",
+  ["equipment-gantry"] = "0.1.5",
+  ["extended-descriptions"] = "1.3.4",
+  fluid_permutations_fixed = "0.5.4",
+  ["grappling-gun"] = "0.3.3",
+  helmod = "1.0.14",
+  informatron = "0.3.4",
+  jetpack = "0.3.14",
+  ["longer-poles"] = "1.0.0",
+  ["nicefill-scriptfix"] = "0.1.21",
+  ["nixie-tubes"] = "1.1.5",
+  robot_attrition = "0.5.15",
+  ["shield-projector"] = "0.1.6",
+  ["show-max-underground-distance"] = "0.0.9",
+  ["space-exploration"] = "0.6.145",
+  ["space-exploration-graphics"] = "0.6.18",
+  ["space-exploration-graphics-2"] = "0.6.1",
+  ["space-exploration-graphics-3"] = "0.6.2",
+  ["space-exploration-graphics-4"] = "0.6.3",
+  ["space-exploration-graphics-5"] = "0.6.2",
+  ["space-exploration-jetpack-gui"] = "1.0.7",
+  ["space-exploration-menu-simulations"] = "0.6.10",
+  ["space-exploration-postprocess"] = "0.6.30",
+  ["space-exploration-scripts"] = "1.1.2",
+  stdlib = "1.4.8",
+  ["steam-drones"] = "1.2.0",
+  ["underground-pipe-pack"] = "1.1.3"
+}
+   0.211 Loading mod aai-signal-transmission 0.4.9 (data.lua)
+   0.220 Loading mod aai-signals 0.6.1 (data.lua)
+   0.227 Loading mod aai-zones 0.6.4 (data.lua)
+   0.236 Loading mod alien-biomes-hr-terrain 0.6.1 (data.lua)
+   0.244 Loading mod bobinserters 1.2.0 (data.lua)
+   0.253 Loading mod bullet-trails 0.6.2 (data.lua)
+   0.260 Loading mod FNEI 0.4.2 (data.lua)
+   0.270 Loading mod grappling-gun 0.3.3 (data.lua)
+   0.281 Loading mod helmod 1.0.14 (data.lua)
+   0.341 Loading mod informatron 0.3.4 (data.lua)
+   0.363 Loading mod jetpack 0.3.14 (data.lua)
+   0.383 Loading mod longer-poles 1.0.0 (data.lua)
+   0.398 Loading mod MaxRateCalculator 3.4.48 (data.lua)
+   0.414 Loading mod nicefill-scriptfix 0.1.21 (data.lua)
+   0.429 Loading mod nixie-tubes 1.1.5 (data.lua)
+   0.445 Loading mod robot_attrition 0.5.15 (data.lua)
+   0.460 Loading mod shield-projector 0.1.6 (data.lua)
+   0.476 Loading mod Shortcuts-ick 1.1.29 (data.lua)
+   0.492 Loading mod space-exploration-menu-simulations 0.6.10 (data.lua)
+   0.507 Loading mod UMSupersonicTrains 1.0.1 (data.lua)
+   0.522 Loading mod Waterfill_v17 1.1.0 (data.lua)
+   0.536 Loading mod aai-industry 0.5.22 (data.lua)
+   0.561 Loading mod aai-programmable-structures 0.7.4 (data.lua)
+   0.576 Loading mod AAITransmitterssNoPower 1.0.0 (data.lua)
+   0.590 Loading mod alien-biomes 0.6.8 (data.lua)
+   0.785 Loading mod combat-mechanics-overhaul 0.6.24 (data.lua)
+   0.788 Script @__combat-mechanics-overhaul__/collision-mask-util-extended/data/collision-mask-util-extended.lua:133: Named collision layer [flying-layer] set to layer [layer-13]
+   0.789 Script @__combat-mechanics-overhaul__/collision-mask-util-extended/data/collision-mask-util-extended.lua:133: Named collision layer [projectile-layer] set to layer [layer-14]
+   0.790 Script @__combat-mechanics-overhaul__/collision-mask-util-extended/data/collision-mask-util-extended.lua:133: Named collision layer [vehicle-layer] set to layer [layer-15]
+   0.818 Loading mod equipment-gantry 0.1.5 (data.lua)
+   0.846 Loading mod space-exploration 0.6.145 (data.lua)
+   0.849 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [empty-space-tile] set to layer [layer-16]
+   0.850 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [space-tile] set to layer [layer-17]
+   0.851 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [moving-tile] set to layer [layer-18]
+   0.852 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [composite-entity-circuit-connection-layer] set to layer [layer-19]
+   0.884 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [addon-layer] set to layer [layer-20]
+   0.974 Loading mod space-exploration-postprocess 0.6.30 (data.lua)
+   1.007 Loading mod underground-pipe-pack 1.1.3 (data.lua)
+   1.072 Loading mod fluid_permutations_fixed 0.5.4 (data.lua)
+   1.104 Loading mod Transport_Drones 1.0.16 (data.lua)
+   1.141 Loading mod steam-drones 1.2.0 (data.lua)
+   1.172 Loading mod base 1.1.110 (data-updates.lua)
+   1.203 Loading mod aai-loaders 0.1.6 (data-updates.lua)
+   1.232 Loading mod bobinserters 1.2.0 (data-updates.lua)
+   1.261 Loading mod bullet-trails 0.6.2 (data-updates.lua)
+   1.291 Loading mod Shortcuts-ick 1.1.29 (data-updates.lua)
+   1.320 Loading mod Squeak Through 1.8.2 (data-updates.lua)
+   1.351 Loading mod aai-industry 0.5.22 (data-updates.lua)
+   1.386 Loading mod alien-biomes 0.6.8 (data-updates.lua)
+   1.416 Loading mod space-exploration 0.6.145 (data-updates.lua)
+   1.455 Loading mod fluid_permutations_fixed 0.5.4 (data-updates.lua)
+   1.485 Loading mod aai-containers 0.2.11 (data-final-fixes.lua)
+   1.514 Loading mod aai-loaders 0.1.6 (data-final-fixes.lua)
+   1.543 Loading mod bobinserters 1.2.0 (data-final-fixes.lua)
+   1.572 Loading mod CleanedConcreteCompatibility 1.0.0 (data-final-fixes.lua)
+   1.600 Loading mod InserterFuelLeech 0.2.7 (data-final-fixes.lua)
+   1.630 Loading mod jetpack 0.3.14 (data-final-fixes.lua)
+   1.661 Loading mod nixie-tubes 1.1.5 (data-final-fixes.lua)
+   1.691 Loading mod robot_attrition 0.5.15 (data-final-fixes.lua)
+   1.722 Loading mod Shortcuts-ick 1.1.29 (data-final-fixes.lua)
+   1.752 Loading mod show-max-underground-distance 0.0.9 (data-final-fixes.lua)
+   1.782 Loading mod aai-industry 0.5.22 (data-final-fixes.lua)
+   1.813 Loading mod aai-loaders-electric 0.1.2 (data-final-fixes.lua)
+   1.845 Loading mod aai-programmable-structures 0.7.4 (data-final-fixes.lua)
+   1.874 Loading mod alien-biomes 0.6.8 (data-final-fixes.lua)
+   1.894 Script @__alien-biomes__/data-final-fixes.lua:300: Setting decals to layer 163
+   1.895 Script @__alien-biomes__/data-final-fixes.lua:407: logging tile layers
+   1.901 Script @__alien-biomes__/data-final-fixes.lua:412: {
+  ["layer 0"] = "out-of-map",
+  ["layer 1"] = "water, water-green",
+  ["layer 2"] = "deepwater, deepwater-green",
+  ["layer 3"] = "water-wube",
+  ["layer 4"] = "water-shallow",
+  ["layer 5"] = "water-mud",
+  ["layer 6"] = "grass-1",
+  ["layer 7"] = "mineral-purple-dirt-1",
+  ["layer 8"] = "mineral-purple-dirt-2",
+  ["layer 9"] = "mineral-purple-dirt-3",
+  ["layer 10"] = "mineral-purple-dirt-4",
+  ["layer 11"] = "mineral-purple-dirt-5",
+  ["layer 12"] = "mineral-purple-dirt-6",
+  ["layer 13"] = "mineral-purple-sand-1",
+  ["layer 14"] = "mineral-purple-sand-2",
+  ["layer 15"] = "mineral-purple-sand-3",
+  ["layer 16"] = "mineral-violet-dirt-1",
+  ["layer 17"] = "mineral-violet-dirt-2",
+  ["layer 18"] = "mineral-violet-dirt-3",
+  ["layer 19"] = "mineral-violet-dirt-4",
+  ["layer 20"] = "mineral-violet-dirt-5",
+  ["layer 21"] = "mineral-violet-dirt-6",
+  ["layer 22"] = "mineral-violet-sand-1",
+  ["layer 23"] = "mineral-violet-sand-2",
+  ["layer 24"] = "mineral-violet-sand-3",
+  ["layer 25"] = "mineral-red-dirt-1",
+  ["layer 26"] = "mineral-red-dirt-2",
+  ["layer 27"] = "mineral-red-dirt-3",
+  ["layer 28"] = "mineral-red-dirt-4",
+  ["layer 29"] = "mineral-red-dirt-5",
+  ["layer 30"] = "mineral-red-dirt-6",
+  ["layer 31"] = "mineral-red-sand-1",
+  ["layer 32"] = "mineral-red-sand-2",
+  ["layer 33"] = "mineral-red-sand-3",
+  ["layer 34"] = "mineral-brown-dirt-1",
+  ["layer 35"] = "mineral-brown-dirt-2",
+  ["layer 36"] = "mineral-brown-dirt-3",
+  ["layer 37"] = "mineral-brown-dirt-4",
+  ["layer 38"] = "mineral-brown-dirt-5",
+  ["layer 39"] = "mineral-brown-dirt-6",
+  ["layer 40"] = "mineral-brown-sand-1",
+  ["layer 41"] = "mineral-brown-sand-2",
+  ["layer 42"] = "mineral-brown-sand-3",
+  ["layer 43"] = "mineral-tan-dirt-1",
+  ["layer 44"] = "mineral-tan-dirt-2",
+  ["layer 45"] = "mineral-tan-dirt-3",
+  ["layer 46"] = "mineral-tan-dirt-4",
+  ["layer 47"] = "mineral-tan-dirt-5",
+  ["layer 48"] = "mineral-tan-dirt-6",
+  ["layer 49"] = "mineral-tan-sand-1",
+  ["layer 50"] = "mineral-tan-sand-2",
+  ["layer 51"] = "mineral-tan-sand-3",
+  ["layer 52"] = "mineral-aubergine-dirt-1",
+  ["layer 53"] = "mineral-aubergine-dirt-2",
+  ["layer 54"] = "mineral-aubergine-dirt-3",
+  ["layer 55"] = "mineral-aubergine-dirt-4",
+  ["layer 56"] = "mineral-aubergine-dirt-5",
+  ["layer 57"] = "mineral-aubergine-dirt-6",
+  ["layer 58"] = "mineral-aubergine-sand-1",
+  ["layer 59"] = "mineral-aubergine-sand-2",
+  ["layer 60"] = "mineral-aubergine-sand-3",
+  ["layer 61"] = "mineral-dustyrose-dirt-1",
+  ["layer 62"] = "mineral-dustyrose-dirt-2",
+  ["layer 63"] = "mineral-dustyrose-dirt-3",
+  ["layer 64"] = "mineral-dustyrose-dirt-4",
+  ["layer 65"] = "mineral-dustyrose-dirt-5",
+  ["layer 66"] = "mineral-dustyrose-dirt-6",
+  ["layer 67"] = "mineral-dustyrose-sand-1",
+  ["layer 68"] = "mineral-dustyrose-sand-2",
+  ["layer 69"] = "mineral-dustyrose-sand-3",
+  ["layer 70"] = "mineral-beige-dirt-1",
+  ["layer 71"] = "mineral-beige-dirt-2",
+  ["layer 72"] = "mineral-beige-dirt-3",
+  ["layer 73"] = "mineral-beige-dirt-4",
+  ["layer 74"] = "mineral-beige-dirt-5",
+  ["layer 75"] = "mineral-beige-dirt-6",
+  ["layer 76"] = "mineral-beige-sand-1",
+  ["layer 77"] = "mineral-beige-sand-2",
+  ["layer 78"] = "mineral-beige-sand-3",
+  ["layer 79"] = "mineral-cream-dirt-1",
+  ["layer 80"] = "mineral-cream-dirt-2",
+  ["layer 81"] = "mineral-cream-dirt-3",
+  ["layer 82"] = "mineral-cream-dirt-4",
+  ["layer 83"] = "mineral-cream-dirt-5",
+  ["layer 84"] = "mineral-cream-dirt-6",
+  ["layer 85"] = "mineral-cream-sand-1",
+  ["layer 86"] = "mineral-cream-sand-2",
+  ["layer 87"] = "mineral-cream-sand-3",
+  ["layer 88"] = "mineral-black-dirt-1",
+  ["layer 89"] = "mineral-black-dirt-2",
+  ["layer 90"] = "mineral-black-dirt-3",
+  ["layer 91"] = "mineral-black-dirt-4",
+  ["layer 92"] = "mineral-black-dirt-5",
+  ["layer 93"] = "mineral-black-dirt-6",
+  ["layer 94"] = "mineral-black-sand-1",
+  ["layer 95"] = "mineral-black-sand-2",
+  ["layer 96"] = "mineral-black-sand-3",
+  ["layer 97"] = "mineral-grey-dirt-1",
+  ["layer 98"] = "mineral-grey-dirt-2",
+  ["layer 99"] = "mineral-grey-dirt-3",
+  ["layer 100"] = "mineral-grey-dirt-4",
+  ["layer 101"] = "mineral-grey-dirt-5",
+  ["layer 102"] = "mineral-grey-dirt-6",
+  ["layer 103"] = "mineral-grey-sand-1",
+  ["layer 104"] = "mineral-grey-sand-2",
+  ["layer 105"] = "mineral-grey-sand-3",
+  ["layer 106"] = "mineral-white-dirt-1",
+  ["layer 107"] = "mineral-white-dirt-2",
+  ["layer 108"] = "mineral-white-dirt-3",
+  ["layer 109"] = "mineral-white-dirt-4",
+  ["layer 110"] = "mineral-white-dirt-5",
+  ["layer 111"] = "mineral-white-dirt-6",
+  ["layer 112"] = "mineral-white-sand-1",
+  ["layer 113"] = "mineral-white-sand-2",
+  ["layer 114"] = "mineral-white-sand-3",
+  ["layer 115"] = "vegetation-turquoise-grass-1",
+  ["layer 116"] = "vegetation-turquoise-grass-2",
+  ["layer 117"] = "vegetation-green-grass-1",
+  ["layer 118"] = "vegetation-green-grass-2",
+  ["layer 119"] = "vegetation-green-grass-3",
+  ["layer 120"] = "vegetation-green-grass-4",
+  ["layer 121"] = "vegetation-olive-grass-1",
+  ["layer 122"] = "vegetation-olive-grass-2",
+  ["layer 123"] = "vegetation-yellow-grass-1",
+  ["layer 124"] = "vegetation-yellow-grass-2",
+  ["layer 125"] = "vegetation-orange-grass-1",
+  ["layer 126"] = "vegetation-orange-grass-2",
+  ["layer 127"] = "vegetation-red-grass-1",
+  ["layer 128"] = "vegetation-red-grass-2",
+  ["layer 129"] = "vegetation-violet-grass-1",
+  ["layer 130"] = "vegetation-violet-grass-2",
+  ["layer 131"] = "vegetation-purple-grass-1",
+  ["layer 132"] = "vegetation-purple-grass-2",
+  ["layer 133"] = "vegetation-mauve-grass-1",
+  ["layer 134"] = "vegetation-mauve-grass-2",
+  ["layer 135"] = "vegetation-blue-grass-1",
+  ["layer 136"] = "vegetation-blue-grass-2",
+  ["layer 137"] = "volcanic-orange-heat-1",
+  ["layer 138"] = "volcanic-orange-heat-2",
+  ["layer 139"] = "volcanic-orange-heat-3",
+  ["layer 140"] = "volcanic-orange-heat-4",
+  ["layer 141"] = "volcanic-green-heat-1",
+  ["layer 142"] = "volcanic-green-heat-2",
+  ["layer 143"] = "volcanic-green-heat-3",
+  ["layer 144"] = "volcanic-green-heat-4",
+  ["layer 145"] = "volcanic-blue-heat-1",
+  ["layer 146"] = "volcanic-blue-heat-2",
+  ["layer 147"] = "volcanic-blue-heat-3",
+  ["layer 148"] = "volcanic-blue-heat-4",
+  ["layer 149"] = "volcanic-purple-heat-1",
+  ["layer 150"] = "volcanic-purple-heat-2",
+  ["layer 151"] = "volcanic-purple-heat-3",
+  ["layer 152"] = "volcanic-purple-heat-4",
+  ["layer 153"] = "frozen-snow-0",
+  ["layer 154"] = "frozen-snow-1",
+  ["layer 155"] = "frozen-snow-2",
+  ["layer 156"] = "frozen-snow-3",
+  ["layer 157"] = "frozen-snow-4",
+  ["layer 158"] = "frozen-snow-5",
+  ["layer 159"] = "frozen-snow-6",
+  ["layer 160"] = "frozen-snow-7",
+  ["layer 161"] = "frozen-snow-8",
+  ["layer 162"] = "frozen-snow-9",
+  ["layer 163"] = "landfill",
+  ["layer 164"] = "tile-unknown",
+  ["layer 165"] = "se-space",
+  ["layer 166"] = "interior-divider",
+  ["layer 167"] = "sand-1",
+  ["layer 168"] = "sand-2",
+  ["layer 169"] = "sand-3",
+  ["layer 170"] = "red-desert-1",
+  ["layer 171"] = "red-desert-2",
+  ["layer 172"] = "red-desert-3",
+  ["layer 173"] = "dry-dirt",
+  ["layer 174"] = "dirt-1",
+  ["layer 175"] = "dirt-2",
+  ["layer 176"] = "se-asteroid",
+  ["layer 177"] = "dirt-3",
+  ["layer 178"] = "dirt-4",
+  ["layer 179"] = "dirt-5",
+  ["layer 180"] = "dirt-6",
+  ["layer 181"] = "dirt-7",
+  ["layer 182"] = "grass-2",
+  ["layer 183"] = "grass-3",
+  ["layer 184"] = "grass-4",
+  ["layer 185"] = "red-desert-0",
+  ["layer 186"] = "nuclear-ground",
+  ["layer 187"] = "tdebug",
+  ["layer 188"] = "tutorial-grid",
+  ["layer 189"] = "rough-stone-path",
+  ["layer 190"] = "stone-path",
+  ["layer 191"] = "concrete",
+  ["layer 192"] = "hazard-concrete-left, hazard-concrete-right",
+  ["layer 193"] = "refined-concrete",
+  ["layer 194"] = "refined-hazard-concrete-left, refined-hazard-concrete-right",
+  ["layer 195"] = "red-refined-concrete",
+  ["layer 196"] = "lab-dark-1",
+  ["layer 197"] = "lab-dark-2",
+  ["layer 198"] = "lab-white",
+  ["layer 199"] = "green-refined-concrete",
+  ["layer 200"] = "blue-refined-concrete",
+  ["layer 201"] = "orange-refined-concrete",
+  ["layer 202"] = "yellow-refined-concrete",
+  ["layer 203"] = "pink-refined-concrete",
+  ["layer 204"] = "purple-refined-concrete",
+  ["layer 205"] = "black-refined-concrete",
+  ["layer 206"] = "brown-refined-concrete",
+  ["layer 207"] = "cyan-refined-concrete",
+  ["layer 208"] = "acid-refined-concrete",
+  ["layer 209"] = "se-regolith",
+  ["layer 210"] = "se-space-platform-scaffold",
+  ["layer 211"] = "se-space-platform-plating",
+  ["layer 212"] = "se-spaceship-floor",
+  ["layer 213"] = "transport-drone-road",
+  ["layer 214"] = "transport-drone-road-better"
+}
+   1.930 Loading mod combat-mechanics-overhaul 0.6.24 (data-final-fixes.lua)
+   1.966 Loading mod space-exploration 0.6.145 (data-final-fixes.lua)
+   2.061 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: iron-ore: iron-ore
+   2.061 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: iron-ore
+   2.062 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: copper-ore: copper-ore
+   2.062 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: copper-ore
+   2.063 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: coal: coal
+   2.063 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: coal
+   2.063 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: stone: stone
+   2.063 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: stone
+   2.064 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: uranium-ore: uranium-ore
+   2.064 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: uranium-ore
+   2.065 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: crude-oil: crude-oil
+   2.065 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: crude-oil
+   2.066 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-water-ice: se-water-ice
+   2.066 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-water-ice
+   2.067 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-methane-ice: se-methane-ice
+   2.067 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-methane-ice
+   2.068 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-beryllium-ore: se-beryllium-ice
+   2.068 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-beryllium-ore
+   2.068 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-cryonite: se-cryonite
+   2.068 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-cryonite
+   2.069 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-holmium-ore: se-holmium-ore
+   2.069 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-holmium-ore
+   2.070 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-iridium-ore: se-iridium-ore
+   2.070 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-iridium-ore
+   2.071 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-naquium-ore: se-naquium-ore
+   2.071 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-naquium-ore
+   2.072 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-vulcanite: se-vulcanite
+   2.072 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-vulcanite
+   2.073 Script @__space-exploration__/prototypes/phase-3/resources.lua:26: Resource has control: se-vitamelange: se-vitamelange
+   2.073 Script @__space-exploration__/prototypes/phase-3/resources.lua:44: Resource can place: se-vitamelange
+   2.119 Loading mod extended-descriptions 1.3.4 (data-final-fixes.lua)
+   2.455 Loading mod space-exploration-postprocess 0.6.30 (data-final-fixes.lua)
+   2.654 Script @__space-exploration__/collision-mask-util-extended/data/collision-mask-util-extended.lua:115: Named collision layer [planet-tile] set to layer [layer-21]
+   2.697 Loading mod fluid_permutations_fixed 0.5.4 (data-final-fixes.lua)
+   2.708 Script @__fluid_permutations_fixed__/data-final-fixes.lua:526: Affected recipes count: 95
+   2.708 Script @__fluid_permutations_fixed__/data-final-fixes.lua:527: New recipes count: 187
+   2.750 Loading mod Transport_Drones 1.0.16 (data-final-fixes.lua)
+   2.833 Loading mod steam-drones 1.2.0 (data-final-fixes.lua)
+   3.050 Checksum for core: 607699937
+   3.050 Checksum of aai-zignal-transmission-luarendered-channel-label: 0
+   3.050 Checksum of base: 2464433227
+   3.050 Checksum of aai-containers: 2377647159
+   3.050 Checksum of aai-loaders: 1393068247
+   3.050 Checksum of aai-signal-transmission: 117271088
+   3.050 Checksum of aai-signals: 3732766133
+   3.050 Checksum of aai-zones: 764660141
+   3.050 Checksum of alien-biomes-hr-terrain: 2010945986
+   3.050 Checksum of bobinserters: 1069262719
+   3.050 Checksum of bullet-trails: 3735931065
+   3.050 Checksum of CleanedConcreteCompatibility: 1877641813
+   3.050 Checksum of FNEI: 2510082999
+   3.050 Checksum of grappling-gun: 849742706
+   3.050 Checksum of helmod: 1713265098
+   3.050 Checksum of informatron: 3677685015
+   3.050 Checksum of InserterFuelLeech: 2689657689
+   3.050 Checksum of jetpack: 705397686
+   3.050 Checksum of longer-poles: 3541271370
+   3.050 Checksum of MaxRateCalculator: 2275685544
+   3.050 Checksum of nicefill-scriptfix: 3495403796
+   3.050 Checksum of nixie-tubes: 1341236474
+   3.050 Checksum of NoRespawnGun-Updated: 0
+   3.050 Checksum of No_Friendly_Fire: 0
+   3.050 Checksum of robot_attrition: 3717203635
+   3.050 Checksum of shield-projector: 1559000050
+   3.050 Checksum of Shortcuts-ick: 1185395486
+   3.050 Checksum of show-max-underground-distance: 1201560390
+   3.050 Checksum of space-exploration-graphics: 0
+   3.050 Checksum of space-exploration-graphics-2: 0
+   3.050 Checksum of space-exploration-graphics-3: 0
+   3.050 Checksum of space-exploration-graphics-4: 0
+   3.050 Checksum of space-exploration-graphics-5: 0
+   3.050 Checksum of space-exploration-menu-simulations: 2303969094
+   3.050 Checksum of Squeak Through: 2759453103
+   3.050 Checksum of stdlib: 0
+   3.050 Checksum of UMSupersonicTrains: 3769654549
+   3.050 Checksum of Waterfill_v17: 1222806128
+   3.050 Checksum of aai-industry: 2140685713
+   3.050 Checksum of aai-loaders-electric: 4075465948
+   3.050 Checksum of aai-programmable-structures: 2922343567
+   3.050 Checksum of aai-signal-transmission-luarendered-channel-label: 0
+   3.050 Checksum of AAITransmitterssNoPower: 1767313450
+   3.050 Checksum of alien-biomes: 775631206
+   3.050 Checksum of combat-mechanics-overhaul: 1819902836
+   3.050 Checksum of equipment-gantry: 3031703972
+   3.050 Checksum of space-exploration: 120412128
+   3.050 Checksum of extended-descriptions: 293913415
+   3.050 Checksum of space-exploration-postprocess: 322783178
+   3.050 Checksum of space-exploration-scripts: 0
+   3.050 Checksum of underground-pipe-pack: 387739821
+   3.050 Checksum of fluid_permutations_fixed: 1999680569
+   3.050 Checksum of space-exploration-jetpack-gui: 1574329120
+   3.050 Checksum of Transport_Drones: 1336001318
+   3.050 Checksum of steam-drones: 3313551348
+   3.525 Prototype list checksum: 2006750745
+   3.731 Info PlayerData.cpp:78: Local player-data.json unavailable
+   3.731 Info PlayerData.cpp:83: Cloud player-data.json unavailable
+   3.731 Factorio initialised
+   3.732 Info ServerSynchronizer.cpp:29: nextHeartbeatSequenceNumber(0) initialized Synchronizer nextTickClosureTick(0).
+   3.732 Info ServerMultiplayerManager.cpp:814: updateTick(4294967295) changing state from(Ready) to(PreparedToHostGame)
+   3.732 Info ServerMultiplayerManager.cpp:814: updateTick(4294967295) changing state from(PreparedToHostGame) to(CreatingGame)
+   3.732 Loading map /home/runner/work/factorio-clone/factorio-clone/work/candidate.zip: 3341368 bytes.
+   3.744 Loading level.dat: 6655895 bytes.
+   3.747 Info Scenario.cpp:204: Map version 1.1.110-0
+   3.925 Loading script.dat: 6351968 bytes.
+   3.927 Checksum for script /home/runner/work/factorio-clone/factorio-clone/work/factorio/temp/currently-playing/control.lua: 3702463597
+   3.927 Checksum for script __aai-zignal-transmission-luarendered-channel-label__/control.lua: 3466741368
+   3.928 Checksum for script __aai-loaders__/control.lua: 2878091467
+   3.929 Checksum for script __aai-signal-transmission__/control.lua: 3246550091
+   3.930 Checksum for script __aai-zones__/control.lua: 1868523975
+   3.931 Checksum for script __bobinserters__/control.lua: 2288292242
+   3.935 Checksum for script __FNEI__/control.lua: 3461276190
+   3.936 Checksum for script __grappling-gun__/control.lua: 1677303540
+   3.958 Checksum for script __helmod__/control.lua: 659687261
+   3.959 Checksum for script __informatron__/control.lua: 2245850782
+   3.960 Checksum for script __InserterFuelLeech__/control.lua: 1911480456
+   3.962 Checksum for script __jetpack__/control.lua: 826306685
+   3.964 Checksum for script __MaxRateCalculator__/control.lua: 1592920920
+   3.965 Checksum for script __nicefill-scriptfix__/control.lua: 3358390991
+   3.965 Checksum for script __nixie-tubes__/control.lua: 159186865
+   3.966 Checksum for script __NoRespawnGun-Updated__/control.lua: 1907827565
+   3.966 Checksum for script __No_Friendly_Fire__/control.lua: 2047631262
+   3.966 Checksum for script __robot_attrition__/control.lua: 3576548156
+   3.968 Checksum for script __shield-projector__/control.lua: 2583582067
+   3.970 Checksum for script __Shortcuts-ick__/control.lua: 2129733627
+   3.971 Checksum for script __aai-industry__/control.lua: 3660103181
+   3.973 Checksum for script __aai-programmable-structures__/control.lua: 1909028456
+   3.973 Checksum for script __aai-signal-transmission-luarendered-channel-label__/control.lua: 4003742776
+   3.974 Checksum for script __alien-biomes__/control.lua: 1814481397
+   3.974 Checksum for script __combat-mechanics-overhaul__/control.lua: 2672313821
+   3.975 Checksum for script __equipment-gantry__/control.lua: 525186582
+   4.056 Checksum for script __space-exploration__/control.lua: 3479166205
+   4.056 Checksum for script __space-exploration-postprocess__/control.lua: 1923020810
+   4.059 Checksum for script __space-exploration-scripts__/control.lua: 2888885123
+   4.062 Checksum for script __underground-pipe-pack__/control.lua: 2842273367
+   4.063 Checksum for script __fluid_permutations_fixed__/control.lua: 779772210
+   4.065 Checksum for script __space-exploration-jetpack-gui__/control.lua: 2359961815
+   4.070 Checksum for script __Transport_Drones__/control.lua: 3817078269
+   4.749 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'unit_scan'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'output_pulse' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'unitdata_scan'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'output_pulse' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'path_scan'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'output_pulse' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'zone_scan'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'output_pulse' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'tile_scan'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'output_pulse' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'unit_control'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'unitdata_control'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'path_control'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'zone_control'
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'tick_limit'
+   4.750 Script @__aai-programmable-structures__/control.lua:1732: AAI: default of 'tick_limit' set
+   4.750 Script @__aai-programmable-structures__/control.lua:1729: AAI: checking for 'output_pulse'
+   4.750 Script @__aai-programmable-structures__/control.lua:1717: AAI: checking 'errors'
+   4.768 Script @__space-exploration__/scripts/zone.lua:3058: Zone.zone_fix_all_tiles: planet Nauvis is_land 0 tiles changed surface_index 1 surface_name nauvis
+   4.883 Info UDPSocket.cpp:33: Opening socket at (IP ADDR:({0.0.0.0:34197}))
+   4.883 Hosting game at IP ADDR:({0.0.0.0:34197})
+   4.883 Info ServerMultiplayerManager.cpp:814: updateTick(4067) changing state from(CreatingGame) to(InGame)
+   4.884 Error InterruptibleStdioStream.cpp:61: Got EOF on stdin; closing
+   4.884 Info RemoteCommandProcessor.cpp:133: Starting RCON interface at IP ADDR:({0.0.0.0:27533})
+   5.031 Info RemoteCommandProcessor.cpp:252: New RCON connection from IP ADDR:({127.0.0.1:41012})
+2026-08-26 00:32:32 [WARNING] Player <server> tried using the command "
+local out={tick=game.tick,hours=game.tick/216000,forces={},players={},surfaces={},science_stats={},science_recipes={},researched_specialist={}}
+local patterns={"science%-pack","catalogue","insight","significant%-data"}
+local specialist_terms={"astronomic","biological","energy%-science","material%-science","deep%-space"}
+local function is_science_name(n)
+  for _,p in pairs(patterns) do if string.find(n,p) then return true end end
+  return false
+end
+local function is_specialist(n)
+  for _,p in pairs(specialist_terms) do if string.find(n,p) then return true end end
+  return false
+end
+for _,f in pairs(game.forces) do
+  local fr={name=f.name,rockets_launched=f.rockets_launched or 0,items={},researched_specialist={}}
+  for n,_ in pairs(game.item_prototypes) do
+    if is_science_name(n) then
+      local o=0;local i=0
+      pcall(function() o=f.item_production_statistics.get_output_count(n) end)
+      pcall(function() i=f.item_production_statistics.get_input_count(n) end)
+      if o>0 or i>0 then fr.items[n]={output=o,input=i} end
+    end
+  end
+  for n,t in pairs(f.technologies) do
+    if t.researched and is_specialist(n) then table.insert(fr.researched_specialist,n) end
+  end
+  table.sort(fr.researched_specialist)
+  table.insert(out.forces,fr)
+end
+for _,p in pairs(game.players) do table.insert(out.players,{name=p.name,force=p.force.name,surface=p.surface and p.surface.name or nil,position=p.position}) end
+for _,s in pairs(game.surfaces) do
+  local sr={name=s.name,index=s.index,chunks=0,player_entities=0,science_recipes={}}
+  for _ in s.get_chunks() do sr.chunks=sr.chunks+1 end
+  for _,f in pairs(game.forces) do
+    if f.name~="enemy" and f.name~="neutral" then
+      local ok,c=pcall(function() return s.count_entities_filtered{force=f} end)
+      if ok then sr.player_entities=sr.player_entities+c end
+    end
+  end
+  local ok,entities=pcall(function() return s.find_entities_filtered{type={"assembling-machine","furnace","rocket-silo","lab"}} end)
+  if ok then
+    for _,e in pairs(entities) do
+      local okr,r=pcall(function() return e.get_recipe() end)
+      if okr and r and is_science_name(r.name) then
+        sr.science_recipes[r.name]=(sr.science_recipes[r.name] or 0)+1
+        out.science_recipes[r.name]=(out.science_recipes[r.name] or 0)+1
+      end
+    end
+  end
+  table.insert(out.surfaces,sr)
+end
+game.write_file("jj-se-audit.json", game.table_to_json(out), false)".
+2026-08-26 00:32:32 [WARNING] Using Lua console commands will disable achievements. Please repeat the command to proceed.
+   7.157 Received SIGTERM, shutting down
+   7.157 Quitting: signal.
+   7.157 Info MainLoop.cpp:446: Saving map as /home/runner/work/factorio-clone/factorio-clone/work/candidate.zip
+   7.358 Info MainLoop.cpp:457: Saving progress: 0.200000%
+   7.366 Info MainLoop.cpp:457: Saving progress: 100.000000%
+   7.385 Info ServerMultiplayerManager.cpp:127: Disconnecting multiplayer connection.
+   7.385 Info ServerMultiplayerManager.cpp:814: updateTick(4068) changing state from(InGame) to(DisconnectingScheduled)
+   7.419 Info ServerMultiplayerManager.cpp:814: updateTick(4068) changing state from(DisconnectingScheduled) to(Disconnecting)
+   7.452 Info ServerMultiplayerManager.cpp:814: updateTick(4068) changing state from(Disconnecting) to(Disconnected)
+   7.452 Info ServerMultiplayerManager.cpp:154: Quitting multiplayer connection.
+   7.452 Info ServerMultiplayerManager.cpp:814: updateTick(4068) changing state from(Disconnected) to(Closed)
+   7.687 Info UDPSocket.cpp:233: Closing socket
+   7.688 Info UDPSocket.cpp:263: Socket closed
+   7.820 Goodbye
